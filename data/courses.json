@@ -1,14 +1,14 @@
 [
   {
     "id": "optics-basics",
-    "name": {"ja": "光学の基礎から", "en": "Optics from the ground up"},
-    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光、光学材料と薄膜を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学に進み、最後に分光と干渉計測、測光と色彩で光を測る方法を確かめます。光学系の設計や実験の土台を固めたい人に向いています。", "en": "Start with refraction and lens imaging, work through interference, diffraction, polarization, and optical materials and thin films, then move on to lasers and Gaussian beams, imaging and optical design, and nonlinear optics, and finish with spectroscopy and interferometric measurement, and photometry and color, to see how light is measured. Suited to anyone who wants a solid foundation for designing optical systems or running optics experiments."},
+    "name": {"ja": "光学の基礎から", "en": "Optics from the ground up", "zh-hant": "從基礎學光學"},
+    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光、光学材料と薄膜を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学に進み、最後に分光と干渉計測、測光と色彩で光を測る方法を確かめます。光学系の設計や実験の土台を固めたい人に向いています。", "en": "Start with refraction and lens imaging, work through interference, diffraction, polarization, and optical materials and thin films, then move on to lasers and Gaussian beams, imaging and optical design, and nonlinear optics, and finish with spectroscopy and interferometric measurement, and photometry and color, to see how light is measured. Suited to anyone who wants a solid foundation for designing optical systems or running optics experiments.", "zh-hant": "從折射與透鏡成像開始，依序確認干涉與繞射、偏振、光學材料與薄膜，再進入雷射與高斯光束、成像與光學設計、非線性光學，最後以光譜與干涉量測、光度學與色彩確認量測光的方法。適合想打穩光學系統設計或實驗基礎的人。"},
     "steps": ["geometric", "wave", "polarization", "optical-materials", "laser", "optical-design", "nonlinear", "spectroscopy", "photometry-color"]
   },
   {
     "id": "optical-comm",
-    "name": {"ja": "光通信・シリコンフォトニクス", "en": "Optical communications and silicon photonics"},
-    "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測、FBGや分布型ファイバセンサによる光センシングまでをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。", "en": "Connect fiber transmission, photodetectors and noise, the design of silicon optical circuits, optical measurements such as OTDR and LiDAR, and optical sensing with FBGs and distributed fiber sensors. Aimed at early-career engineers working on optical transceivers and photonic integrated circuits."},
+    "name": {"ja": "光通信・シリコンフォトニクス", "en": "Optical communications and silicon photonics", "zh-hant": "光通訊與矽光子學"},
+    "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測、FBGや分布型ファイバセンサによる光センシングまでをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。", "en": "Connect fiber transmission, photodetectors and noise, the design of silicon optical circuits, optical measurements such as OTDR and LiDAR, and optical sensing with FBGs and distributed fiber sensors. Aimed at early-career engineers working on optical transceivers and photonic integrated circuits.", "zh-hant": "把光纖傳輸、光偵測器與雜訊、矽光學電路的設計、OTDR與光達等光學量測，以及以FBG與分散式光纖感測器進行的光學感測串連起來學習。適合從事光收發器或光子積體電路的新進工程師。"},
     "steps": ["fiber", "detectors", "silicon-photonics", "measurement", "optical-sensing"]
   }
 ]

@@ -1,0 +1,6 @@
+{
+  "main": {
+    "name": "光學",
+    "groups": { "basic": "光的基礎", "sources": "光源與傳輸", "devices": "光偵測與光子積體", "applied": "量測與應用" }
+  }
+}
