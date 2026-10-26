@@ -10,5 +10,11 @@
     "name": {"ja": "光通信・シリコンフォトニクス", "en": "Optical communications and silicon photonics", "zh-hant": "光通訊與矽光子學"},
     "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測、FBGや分布型ファイバセンサによる光センシングまでをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。", "en": "Connect fiber transmission, photodetectors and noise, the design of silicon optical circuits, optical measurements such as OTDR and LiDAR, and optical sensing with FBGs and distributed fiber sensors. Aimed at early-career engineers working on optical transceivers and photonic integrated circuits.", "zh-hant": "把光纖傳輸、光偵測器與雜訊、矽光學電路的設計、OTDR與光達等光學量測，以及以FBG與分散式光纖感測器進行的光學感測串連起來學習。適合從事光收發器或光子積體電路的新進工程師。"},
     "steps": ["fiber", "detectors", "silicon-photonics", "measurement", "optical-sensing"]
+  },
+  {
+    "id": "imaging",
+    "name": {"ja": "結像と顕微鏡", "en": "Imaging and microscopy", "zh-hant": "成像與顯微鏡"},
+    "desc": {"ja": "レンズの結像と干渉・回折から始め、収差とMTFを扱う光学設計、空間周波数と4f系、ホログラフィのフーリエ光学に進み、最後に照明とコントラスト法、蛍光、共焦点と超解像の顕微鏡で、像ができる仕組みと分解能の限界を一続きで確かめます。顕微鏡や撮像系を扱う研究者や技術者に向いています。", "en": "Start with lens imaging and interference and diffraction, move on to optical design with aberrations and MTF, then to Fourier optics with spatial frequency, the 4f system and holography, and finish with microscopy, covering illumination and contrast methods, fluorescence, confocal and super-resolution imaging, to follow how images form and what limits resolution from start to finish. Suited to researchers and engineers who work with microscopes and imaging systems.", "zh-hant": "從透鏡成像與干涉、繞射開始，進入處理像差與MTF的光學設計、空間頻率與4f系統、全像術的傅立葉光學，最後以照明與對比法、螢光、共軛焦與超解析的顯微鏡，一貫確認影像形成的機制與解析度的極限。適合從事顯微鏡或攝像系統的研究人員與工程師。"},
+    "steps": ["geometric", "wave", "optical-design", "fourier-optics", "microscopy"]
   }
 ]
