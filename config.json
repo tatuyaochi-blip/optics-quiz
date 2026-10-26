@@ -2,7 +2,8 @@
   "baseUrl": "https://tatuyaochi-blip.github.io/optics-quiz/",
   "siteName": {
     "ja": "光学教室",
-    "en": "Optics Room"
+    "en": "Optics Room",
+    "zh-hant": "光學教室"
   },
   "languages": [
     {
@@ -60,6 +61,19 @@
       "hero": "Learn optics and photonics with quick quizzes",
       "hero_lead": "From lenses and interference to lasers, optical fibers and silicon photonics, with an explanation for every question.",
       "tools_lead": "Free browser calculators for everyday optics: wavelength and photon energy conversion, Gaussian beams, and the NA and V-number of optical fibers."
+    },
+    "zh-hant": {
+      "subject": "光學",
+      "subject_title": "光學",
+      "site": "光學教室",
+      "site_en": "Optics Room",
+      "search_example": "數值孔徑",
+      "tools_example": "光束直徑與光纖NA",
+      "full_title": "光學教室｜雷射、光纖與矽光子的練習題與解析",
+      "scope": "幾何光學、干涉與偏振、雷射與高斯光束、光纖、光偵測器、矽光子學與光學量測",
+      "hero": "用三選一測驗學光學與光子學",
+      "hero_lead": "從透鏡與干涉的基礎，到雷射、光纖與矽光子學，每一題都附有解說。",
+      "tools_lead": "免費的瀏覽器計算工具，可確認波長與光子能量的換算、高斯光束、光纖的NA與V值等光學常用的計算。"
     }
   },
   "icon": {
