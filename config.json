@@ -11,6 +11,13 @@
       "htmlLang": "ja",
       "locale": "ja-JP",
       "label": "日本語"
+    },
+    {
+      "code": "en",
+      "path": "en/",
+      "htmlLang": "en",
+      "locale": "en-US",
+      "label": "English"
     }
   ],
   "mainLang": "ja",
@@ -40,6 +47,19 @@
       "hero": "光学とフォトニクスを、3択クイズで学ぶ",
       "hero_lead": "レンズと干渉の基礎から、レーザー・光ファイバ・シリコンフォトニクスまで。すべての問題に解説が付いています。",
       "tools_lead": "波長と光子エネルギーの換算、ガウシアンビーム、光ファイバのNAとV値など、光学でよく使う計算をブラウザ上で確かめられる無料のツールです。"
+    },
+    "en": {
+      "subject": "optics and photonics",
+      "subject_title": "Optics and Photonics",
+      "site": "Optics Room",
+      "site_en": "Optics Room",
+      "search_example": "numerical aperture",
+      "tools_example": "beam sizes and fiber NA",
+      "full_title": "Optics Room | Practice Questions on Lasers, Optical Fibers and Silicon Photonics",
+      "scope": "geometric optics, interference and polarization, lasers and Gaussian beams, optical fibers, photodetectors, silicon photonics and optical measurement",
+      "hero": "Learn optics and photonics with quick quizzes",
+      "hero_lead": "From lenses and interference to lasers, optical fibers and silicon photonics, with an explanation for every question.",
+      "tools_lead": "Free browser calculators for everyday optics: wavelength and photon energy conversion, Gaussian beams, and the NA and V-number of optical fibers."
     }
   },
   "icon": {

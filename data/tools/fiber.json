@@ -125,6 +125,68 @@
           "a": "LP11などの高次モードも伝わるマルチモード動作になり、モード間の干渉や分散で信号が乱れます。シングルモードファイバは、カットオフ波長より長い波長(1310 nm帯や1550 nm帯)で使います。"
         }
       ]
+    },
+    "en": {
+      "nav": "Fiber NA and V-number calculator",
+      "card": "Find the numerical aperture, acceptance angle, V-number and cutoff wavelength from core and cladding indices",
+      "title": "Optical Fiber Calculator: Numerical Aperture, Acceptance Angle, V-Number and Cutoff Wavelength",
+      "description": "From the core and cladding indices, core radius and wavelength of a step-index optical fiber, calculate the numerical aperture NA, maximum acceptance angle, relative index difference, normalized frequency V, the single-mode condition (V < 2.405) and the cutoff wavelength.",
+      "h1": "Optical Fiber NA and V-Number Calculator",
+      "lead": "From the core and cladding indices, the core radius and the operating wavelength, determine the range of angles the fiber accepts and how many modes it guides. The defaults are close to a standard single-mode fiber used at 1550 nm (core radius 4.1 µm).",
+      "in_heading": "Inputs",
+      "n1": "Core index n1",
+      "n2": "Cladding index n2",
+      "a": "Core radius a (µm)",
+      "lambda": "Wavelength λ (nm)",
+      "out_heading": "Results",
+      "na": "Numerical aperture NA",
+      "theta": "Maximum acceptance angle (in air, half-angle)",
+      "delta": "Relative index difference Δ",
+      "mode_heading": "Modes",
+      "v": "Normalized frequency V",
+      "mode": "Regime",
+      "lc": "Cutoff wavelength λc",
+      "modes": "Number of guided modes (approx.)",
+      "note": "Calculated for a step-index fiber (uniform core index). The fiber is single-mode at wavelengths longer than the cutoff wavelength. The mode-count estimate V²/2 is an approximation for multimode fibers with sufficiently large V.",
+      "practice": "Practice optical fiber questions",
+      "related": "Related terms",
+      "js": {
+        "single": "Single-mode (V < 2.405)",
+        "multi": "Multimode (V ≥ 2.405)",
+        "bad": "Make n1 larger than n2"
+      },
+      "sections": [
+        {
+          "h": "Numerical aperture and acceptance angle",
+          "p": "An optical fiber surrounds a high-index core (n1) with a lower-index cladding (n2) and confines light by total internal reflection at the boundary. The condition for total internal reflection sets the maximum angle θmax at which light entering the fiber end is guided; in air, sinθmax = NA = √(n1² − n2²). With the defaults, NA ≈ 0.124 and the acceptance angle is about 7.1° (half-angle). Multimode fibers typically have an NA of about 0.2–0.3 and single-mode fibers about 0.1–0.14; a larger NA makes it easier to launch light but increases dispersion between modes."
+        },
+        {
+          "h": "V-number and the single-mode condition",
+          "p": "The number of modes a fiber guides is essentially set by the normalized frequency V = 2πa·NA/λ. A step-index fiber is single-mode, guiding only the fundamental mode (LP01), when V < 2.405, the first zero of the zeroth-order Bessel function. At the default 1550 nm, V ≈ 2.06, so the fiber is single-mode. For the same fiber, a shorter wavelength raises V, and below a certain wavelength the fiber becomes multimode. That boundary is the cutoff wavelength λc = 2πa·NA/2.405, about 1327 nm with the defaults."
+        },
+        {
+          "h": "Relative index difference",
+          "p": "The relative index difference Δ = (n1² − n2²)/(2n1²) ≈ (n1 − n2)/n1 expresses the index difference between core and cladding in relative terms. With the defaults it is about 0.365%, and 0.3–0.4% is typical for silica single-mode fibers. NA can also be written n1·√(2Δ). A larger Δ confines light more strongly and reduces bending loss, but the core must then be narrower to stay single-mode."
+        },
+        {
+          "h": "Number of modes in multimode fiber",
+          "p": "In a step-index fiber with large V, the number of guided modes is roughly V²/2. For example, a 50 µm core with NA 0.2 at 850 nm gives V ≈ 37 and about 680 modes. Because each mode travels at a different speed, modal dispersion spreads pulses and limits transmission distance and speed. A graded-index profile, with the index highest at the center, greatly reduces the speed differences between modes."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is the 2.405 in the single-mode condition V < 2.405?",
+          "a": "It is the first zero (about 2.405) of the zeroth-order Bessel function of the first kind, J0. When V exceeds this value, the second mode (LP11) starts to propagate."
+        },
+        {
+          "q": "How are NA and the acceptance angle related?",
+          "a": "In air, NA = sinθmax. When light is launched from a liquid or other medium of index n0, n0·sinθmax = NA, so the acceptance angle is smaller."
+        },
+        {
+          "q": "What happens if the fiber is used below its cutoff wavelength?",
+          "a": "Higher-order modes such as LP11 also propagate, giving multimode operation in which interference and dispersion between modes distort the signal. Single-mode fibers are used at wavelengths longer than the cutoff wavelength (the 1310 nm and 1550 nm bands)."
+        }
+      ]
     }
   }
 }

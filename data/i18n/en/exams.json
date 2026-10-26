@@ -1,0 +1,6 @@
+{
+  "main": {
+    "name": "Optics",
+    "groups": { "basic": "Fundamentals of light", "sources": "Light sources and transmission", "devices": "Detection and integrated photonics", "applied": "Measurement and applications" }
+  }
+}

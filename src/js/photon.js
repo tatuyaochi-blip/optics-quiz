@@ -2,6 +2,7 @@
 // どの欄を書き換えても、ほかの欄を計算し直す(真空中の波長として扱う)
 import { num, sci } from './eng.js';
 const form = document.getElementById('ph-form');
+const T = form.dataset.text ? JSON.parse(form.dataset.text) : {}; // 言語ごとの単位の文言(data/tools/photon.json の text.js)
 const out = k => document.querySelector(`[data-out="${k}"]`);
 const c = 299792458, h = 6.62607015e-34, q = 1.602176634e-19;
 const HC_EV_NM = h * c / q * 1e9; // 1239.84 eV·nm
@@ -24,7 +25,7 @@ function update(e) {
   const pw = Number(f.mw.value) / 1000;
   const eJ = ev * q;
   out('joule').textContent = `${sci(eJ)} J`;
-  out('rate').textContent = pw > 0 ? `${sci(pw / eJ)} 個/s` : '–';
+  out('rate').textContent = pw > 0 ? `${sci(pw / eJ)} ${T.per_s ?? '個/s'}` : '–';
   out('resp').textContent = `${num(nm / HC_EV_NM, 4)} A/W`;
 }
 form.addEventListener('input', update);

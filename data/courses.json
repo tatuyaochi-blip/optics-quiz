@@ -1,14 +1,14 @@
 [
   {
     "id": "optics-basics",
-    "name": {"ja": "光学の基礎から"},
-    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学まで進みます。光学系の設計や実験の土台を固めたい人に向いています。"},
+    "name": {"ja": "光学の基礎から", "en": "Optics from the ground up"},
+    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学まで進みます。光学系の設計や実験の土台を固めたい人に向いています。", "en": "Start with refraction and lens imaging, work through interference, diffraction and polarization, then move on to lasers and Gaussian beams, imaging and optical design, and nonlinear optics. Suited to anyone who wants a solid foundation for designing optical systems or running optics experiments."},
     "steps": ["geometric", "wave", "polarization", "laser", "optical-design", "nonlinear"]
   },
   {
     "id": "optical-comm",
-    "name": {"ja": "光通信・シリコンフォトニクス"},
-    "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測までをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。"},
+    "name": {"ja": "光通信・シリコンフォトニクス", "en": "Optical communications and silicon photonics"},
+    "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測までをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。", "en": "Connect fiber transmission, photodetectors and noise, the design of silicon optical circuits, and optical measurements such as OTDR and LiDAR. Aimed at early-career engineers working on optical transceivers and photonic integrated circuits."},
     "steps": ["fiber", "detectors", "silicon-photonics", "measurement"]
   }
 ]

@@ -110,6 +110,65 @@
           "q": "1550 nm と 1310 nm の光子エネルギーは?",
           "a": "1550 nmは約0.800 eV(約193.4 THz)、1310 nmは約0.946 eV(約228.8 THz)です。どちらもシリコンのバンドギャップ(約1.12 eV)より小さいので、シリコンでは吸収されず、受光にはInGaAsやGeが使われます。"
         }
+      ],
+      "js": {
+        "per_s": "個/s"
+      }
+    },
+    "en": {
+      "nav": "Wavelength and photon energy converter",
+      "card": "Convert between wavelength, frequency, photon energy (eV) and wavenumber",
+      "title": "Wavelength to Photon Energy Converter: nm, THz, eV and cm⁻¹",
+      "description": "Convert light between wavelength (nm), frequency (THz), photon energy (eV) and wavenumber (cm⁻¹). From optical power, it also calculates photons per second and the responsivity of an ideal photodetector at 100% quantum efficiency.",
+      "h1": "Wavelength, Frequency and Photon Energy Converter",
+      "lead": "Edit any one field and the others are converted. Enter an optical power to see how many photons arrive per second and the responsivity of an ideal photodetector. The defaults are 1550 nm, in the C band used for optical communications.",
+      "in_heading": "Inputs (edit any field)",
+      "nm": "Wavelength λ (nm)",
+      "thz": "Frequency ν (THz)",
+      "ev": "Photon energy E (eV)",
+      "kayser": "Wavenumber (cm⁻¹)",
+      "mw": "Optical power (mW)",
+      "out_heading": "Results",
+      "joule": "Energy of one photon",
+      "rate": "Photons per second",
+      "resp": "Maximum responsivity (100% quantum efficiency)",
+      "note": "Wavelengths are treated as vacuum values (inside a material the wavelength becomes 1/n, but frequency and photon energy do not change). Constants: c = 299,792,458 m/s, h = 6.62607015 × 10⁻³⁴ J·s, e = 1.602176634 × 10⁻¹⁹ C.",
+      "practice": "Practice photodetector and light-detection questions",
+      "related": "Related terms",
+      "js": {
+        "per_s": "photons/s"
+      },
+      "sections": [
+        {
+          "h": "Wavelength and photon energy",
+          "p": "The energy of one photon is E = hν = hc/λ, larger at shorter wavelengths. In electronvolts (eV) and nanometers (nm), E[eV] ≈ 1239.84/λ[nm]; a handy rule is “1240 divided by the wavelength in nanometers gives eV”. The default 1550 nm is about 0.80 eV, visible green (530 nm) about 2.34 eV, and ultraviolet at 365 nm about 3.40 eV. For semiconductor photodetectors and light sources, comparing the band gap with the photon energy tells you whether that wavelength can be absorbed or emitted."
+        },
+        {
+          "h": "Frequency and wavenumber",
+          "p": "Frequency is ν = c/λ, and 1550 nm is about 193.4 THz. Dense wavelength-division multiplexing (DWDM) in optical communications defines its channels by frequency rather than wavelength, with 50 GHz or 100 GHz spacing centered on 193.1 THz. Near 1550 nm, 100 GHz corresponds to about 0.8 nm. Wavenumber (cm⁻¹) is the number of waves per centimeter, 1/λ expressed in cm⁻¹. It is the standard unit in infrared and Raman spectroscopy; 1550 nm is about 6452 cm⁻¹."
+        },
+        {
+          "h": "Optical power and photon count",
+          "p": "Dividing optical power P by the energy of one photon gives the number of photons per second, N = P/(hν). For 1 mW at 1550 nm, it is about 7.80 × 10¹⁵ photons/s. At the same power, longer wavelengths have less energy per photon and therefore more photons. This photon count is the starting point when considering shot noise or single-photon detection."
+        },
+        {
+          "h": "The upper limit of responsivity",
+          "p": "The responsivity of a photodetector is R = η·qλ/(hc), and with a quantum efficiency η of 100%, R[A/W] ≈ λ[nm]/1239.84. The upper limit is about 1.25 A/W at 1550 nm and about 0.686 A/W at 850 nm. Real InGaAs photodiodes have a responsivity of roughly 0.9–1.0 A/W at 1550 nm, which corresponds to a quantum efficiency of about 70–80%. Responsivity is proportional to wavelength because, at the same power, longer wavelengths carry more photons."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do I convert eV to nm?",
+          "a": "Use λ[nm] ≈ 1239.84/E[eV]. For example, silicon's band gap of 1.12 eV corresponds to about 1107 nm, and GaN's 3.4 eV to about 365 nm."
+        },
+        {
+          "q": "Does photon energy change inside a material?",
+          "a": "No. In a material with refractive index n, the speed and wavelength of light become 1/n of their vacuum values, but the frequency and photon energy stay the same. This calculator treats wavelengths as vacuum values."
+        },
+        {
+          "q": "What are the photon energies at 1550 nm and 1310 nm?",
+          "a": "1550 nm is about 0.800 eV (about 193.4 THz) and 1310 nm about 0.946 eV (about 228.8 THz). Both are below silicon's band gap (about 1.12 eV), so silicon does not absorb them, and InGaAs or Ge is used for detection."
+        }
       ]
     }
   }

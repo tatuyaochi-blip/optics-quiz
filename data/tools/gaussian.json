@@ -123,6 +123,63 @@
           "a": "ビーム半径がウエストの√2倍、断面積が2倍になるまでの距離です。この範囲ではビームがほぼ平行で強度もあまり落ちないので、レーザー加工では加工の余裕(焦点深度)の目安になります。"
         }
       ]
+    },
+    "en": {
+      "nav": "Gaussian beam calculator",
+      "card": "Find the Rayleigh range, divergence and beam size at distance z from the beam waist",
+      "title": "Gaussian Beam Calculator: Rayleigh Range, Divergence, Beam Size and M²",
+      "description": "From the laser wavelength and beam waist radius w0, calculate the Rayleigh range zR, depth of focus and divergence, plus the beam radius w(z) and wavefront radius of curvature R(z) at distance z. Supports beam quality M².",
+      "h1": "Gaussian Beam Calculator",
+      "lead": "From the radius w0 at the narrowest point of the beam (the beam waist) and the wavelength, calculate how far the beam travels before it spreads, and by how much. The defaults are an ideal beam (M² = 1) at 1064 nm with w0 = 500 µm, viewed 1000 mm from the waist.",
+      "in_heading": "Inputs",
+      "lambda": "Wavelength λ (nm, in vacuum)",
+      "w0": "Beam waist radius w0 (µm, 1/e²)",
+      "m2": "Beam quality M²",
+      "n": "Refractive index of the medium n",
+      "z": "Distance from the waist z (mm)",
+      "out_heading": "Results",
+      "zr": "Rayleigh range zR",
+      "dof": "Depth of focus 2zR",
+      "theta": "Divergence (half-angle) θ",
+      "z_heading": "Values at distance z",
+      "wz": "Beam radius w(z)",
+      "dz": "Beam diameter 2w(z)",
+      "rz": "Wavefront radius of curvature R(z)",
+      "note": "The beam radius is the distance to the point where the intensity falls to 1/e² (about 13.5%) of its center value. The divergence is the value far from the waist (z ≫ zR). For beams with M² greater than 1, the calculation assumes that, for the same w0, the beam spreads M² times faster than an ideal Gaussian beam.",
+      "practice": "Practice laser and Gaussian beam questions",
+      "related": "Related terms",
+      "sections": [
+        {
+          "h": "Gaussian beams and the Rayleigh range",
+          "p": "The output of most lasers is a Gaussian beam (TEM00 mode), whose cross-sectional intensity follows a Gaussian distribution. The beam is narrowest at the waist and spreads away from it as w(z) = w0·√(1 + (z/zR)²). The Rayleigh range zR = πw0²/λ is the distance at which the beam area has doubled (the radius has grown by √2), and within it the beam can be regarded as nearly collimated. With the defaults (λ = 1064 nm, w0 = 500 µm), zR = π × (0.5 mm)² / 1.064 µm ≈ 738 mm. The depth of focus is often given as twice that, 2zR, about 1.48 m."
+        },
+        {
+          "h": "Divergence and the beam parameter product",
+          "p": "Far enough from the waist, the beam spreads at a constant angle with half-angle θ = λ/(πw0), about 0.677 mrad with the defaults. The product w0·θ = λ/π depends only on wavelength and expresses the trade-off that the more tightly a beam is squeezed, the faster it spreads. This product is called the beam parameter product (BPP); for real beams it becomes M²·λ/π. To focus a beam to a small spot with a lens, make the input beam wider or use a shorter wavelength."
+        },
+        {
+          "h": "M²: a measure of beam quality",
+          "p": "M² (M-squared) expresses how many times faster a real beam spreads than an ideal Gaussian beam; it is 1 for an ideal beam. Single-mode fiber lasers and He-Ne lasers are below 1.1, while multimode solid-state lasers and the slow axis of semiconductor lasers range from a few to tens. With a large M², the divergence for the same waist is M² times larger and the Rayleigh range 1/M² as long, so the beam does not stay narrow over long distances and its focused spot is larger."
+        },
+        {
+          "h": "Wavefront curvature and position",
+          "p": "The wavefront of a Gaussian beam is flat at the waist and curves away from it, with radius of curvature R(z) = z·(1 + (zR/z)²). R is smallest at z = zR, where it equals 2zR. Far from the waist, R ≈ z, approaching a spherical wave centered on the waist. At the default z = 1000 mm, w(z) ≈ 842 µm and R(z) ≈ 1545 mm. In resonator design, matching the mirror radii of curvature to this R(z) creates a stable mode inside the resonator."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is the difference between the 1/e² beam diameter and FWHM?",
+          "a": "The 1/e² diameter is measured where the intensity falls to about 13.5% of its center value and is commonly used in laser specifications. FWHM (full width at half maximum) is the width where the intensity is 50%; for a Gaussian beam it is about 0.589 times the 1/e² diameter (√(2 ln 2)/2 times)."
+        },
+        {
+          "q": "What spot size do I get when focusing with a lens?",
+          "a": "When a wide beam with waist radius W enters a lens of focal length f, the waist radius at the focus is about w0 ≈ M²·λf/(πW). For example, λ = 1064 nm, f = 100 mm, W = 5 mm and M² = 1 give about 6.8 µm."
+        },
+        {
+          "q": "What does the Rayleigh range represent?",
+          "a": "It is the distance over which the beam radius grows to √2 times the waist and the beam area doubles. Within this range the beam is nearly collimated and its intensity does not drop much, so in laser machining it serves as a rough measure of the working tolerance (depth of focus)."
+        }
+      ]
     }
   }
 }
