@@ -1,0 +1,266 @@
+{
+  "id": "thinlens",
+  "order": 4,
+  "slug": "thin-lens-calculator",
+  "cats": [
+    "geometric",
+    "optical-design"
+  ],
+  "cat": "geometric",
+  "terms": [
+    "ABCD行列",
+    "収差",
+    "色消しレンズ"
+  ],
+  "questions": [
+    "geometric-004",
+    "geometric-012",
+    "geometric-015"
+  ],
+  "figures": [],
+  "compares": [],
+  "form": {
+    "id": "tl-form",
+    "fields": [
+      {
+        "name": "f1",
+        "value": 50,
+        "attrs": "step=\"any\""
+      },
+      {
+        "name": "a",
+        "value": 150,
+        "attrs": "min=\"0\" step=\"any\""
+      },
+      {
+        "name": "f2",
+        "value": 100,
+        "attrs": "step=\"any\""
+      },
+      {
+        "name": "d",
+        "value": 30,
+        "attrs": "min=\"0\" step=\"any\""
+      }
+    ],
+    "outputs": [
+      {
+        "stats": [
+          "b",
+          "m",
+          "kind",
+          "p1"
+        ]
+      },
+      {
+        "heading": "two_heading",
+        "stats": [
+          "fc",
+          "pc",
+          "bfd"
+        ]
+      }
+    ],
+    "note": "note"
+  },
+  "text": {
+    "ja": {
+      "nav": "薄肉レンズの結像",
+      "card": "焦点距離と物体距離から像距離・倍率を、2枚のレンズの合成焦点距離も計算",
+      "title": "薄肉レンズの結像計算ツール(像距離・横倍率・2枚のレンズの合成焦点距離)",
+      "description": "薄肉レンズの式 1/a + 1/b = 1/f から、焦点距離と物体距離で像距離・横倍率・実像か虚像かを求めます。2枚の薄肉レンズを間隔dで並べたときの合成焦点距離・屈折力・バックフォーカスも計算します。",
+      "h1": "薄肉レンズの結像計算ツール",
+      "lead": "レンズの焦点距離fと、レンズから物体までの距離aを入れると、像のできる位置b、横倍率m、像が実像か虚像かを計算します。2枚目のレンズの焦点距離と間隔を入れると、2枚を1枚のレンズとみなしたときの合成焦点距離も求めます。既定値は、焦点距離50 mmの凸レンズの前方150 mmに物体を置き、焦点距離100 mmのレンズを30 mm後ろに置いた場合です。",
+      "in_heading": "入力(空気中、近軸)",
+      "f1": "レンズ1の焦点距離 f₁ (mm、凹レンズは負)",
+      "a": "物体からレンズ1までの距離 a (mm)",
+      "f2": "レンズ2の焦点距離 f₂ (mm、凹レンズは負)",
+      "d": "レンズ1と2の間隔 d (mm)",
+      "out_heading": "結果",
+      "b": "像距離 b(レンズ1による像)",
+      "m": "横倍率 m = −b/a",
+      "kind": "像の種類",
+      "p1": "レンズ1の屈折力 1/f₁",
+      "two_heading": "2枚のレンズの合成",
+      "fc": "合成焦点距離 f",
+      "pc": "合成屈折力 1/f",
+      "bfd": "バックフォーカス(レンズ2から後側焦点まで)",
+      "note": "空気中の薄肉レンズとして、光軸に近い光線(近軸光線)で計算しています。距離はレンズより物体側をa > 0、像側をb > 0とし、b < 0はレンズの物体側にできる虚像を表します。横倍率が負のときは倒立像です。実際のレンズは厚みと収差があるので、焦点距離は主点から測った値として扱ってください。",
+      "practice": "幾何光学と結像の問題を解く",
+      "related": "関連する用語",
+      "js": {
+        "real": "実像(倒立)",
+        "virtual": "虚像(正立)",
+        "inf": "像は無限遠(平行光)",
+        "behind": "(レンズの後方)",
+        "front": "(レンズの前方)",
+        "afocal": "無限大(無焦点系)",
+        "zero": "f は 0 以外にしてください"
+      },
+      "sections": [
+        {
+          "h": "薄肉レンズの式と符号の決め方",
+          "p": "厚みを無視できる薄いレンズでは、物体距離a、像距離b、焦点距離fの間に 1/a + 1/b = 1/f(ガウスのレンズ公式)が成り立ちます。このツールでは、物体がレンズの前方にあるときa > 0、像がレンズの後方(光の進む側)にできるときb > 0とし、凸レンズはf > 0、凹レンズはf < 0です。既定値(f = 50 mm、a = 150 mm)では 1/b = 1/50 − 1/150 = 2/150 で、b = 75 mm です。教科書によっては物体距離を負にとる符号の決め方(1/b − 1/a = 1/f)もあるので、ほかの資料と比べるときは符号の約束を確かめてください。"
+        },
+        {
+          "h": "横倍率と像の種類",
+          "p": "像の大きさと物体の大きさの比を横倍率といい、m = −b/a です。既定値では m = −75/150 = −0.5 で、半分の大きさの倒立した実像ができます。凸レンズでは、物体を焦点距離の2倍(2f)より遠くに置くと縮小、fと2fの間に置くと拡大した実像になり、ちょうど2fでは等倍(m = −1)です。物体を焦点より内側に置くとbが負になり、正立した拡大の虚像が物体側に見えます。これがルーペ(拡大鏡)の原理です。物体が焦点の位置にあると、光はレンズを出たあと平行になり、像は無限遠にできます。"
+        },
+        {
+          "h": "2枚のレンズの合成焦点距離",
+          "p": "焦点距離f₁とf₂の薄肉レンズを間隔dで並べると、合成焦点距離fは 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) で表されます。屈折力(焦点距離の逆数で、メートルで測ったときの単位がディオプトリ D)で書くと P = P₁ + P₂ − dP₁P₂ です。密着させたとき(d = 0)は屈折力がそのまま足し算になり、100 mmと200 mmのレンズなら 10 D + 5 D = 15 D、f ≈ 66.7 mm です。既定値(50 mm、100 mm、d = 30 mm)では 1/f = 0.02 + 0.01 − 0.006 = 0.024 mm⁻¹ で、f ≈ 41.7 mm(24 D)になります。d = f₁ + f₂ のときは屈折力が0になり、ビームエキスパンダや望遠鏡のような無焦点系になります。"
+        },
+        {
+          "h": "バックフォーカスと主点",
+          "p": "2枚のレンズの系に平行光を入れたとき、光が集まる点(後側焦点)は、2枚目のレンズから BFD = f·(1 − d/f₁) の位置にあります。既定値では 41.7 × (1 − 30/50) ≈ 16.7 mm で、合成焦点距離の41.7 mmより短くなります。これは、合成焦点距離が後側の主点から測った長さで、既定値では後側の主点がレンズ2より25 mm前(2枚のレンズの間)にあるためです。光線行列(ABCD行列)で2枚のレンズと間隔の行列を掛け合わせると、同じ結果が得られます。実際のカメラのレンズでも、焦点距離とレンズの後端から像面までの距離(バックフォーカス)は一般に一致しません。"
+        }
+      ],
+      "faq": [
+        {
+          "q": "凹レンズで計算するには?",
+          "a": "焦点距離に負の値を入れます。たとえば f = −50 mm、a = 100 mm では b ≈ −33.3 mm、m ≈ 0.33 で、レンズの前方に正立した縮小の虚像ができます。凹レンズ1枚では、実在する物体の像はいつも虚像になります。"
+        },
+        {
+          "q": "屈折力(ディオプトリ)とは?",
+          "a": "焦点距離をメートルで表したときの逆数で、単位はディオプトリ(D = m⁻¹)です。焦点距離50 mmのレンズは20 D、眼鏡の度数で −2 D なら焦点距離 −0.5 m の凹レンズです。密着した薄肉レンズの屈折力は足し算になります。"
+        },
+        {
+          "q": "厚いレンズや実際のカメラのレンズにも使えますか?",
+          "a": "距離を前側・後側の主点から測れば、同じ式が近軸の範囲で成り立ちます。ただし主点の位置はレンズのデータから求める必要があり、レンズの端から測った距離をそのまま入れるとずれます。また、収差による像のぼけはこの計算には含まれません。"
+        }
+      ]
+    },
+    "en": {
+      "nav": "Thin lens calculator",
+      "card": "Find image distance and magnification from focal length and object distance, plus the combined focal length of two lenses",
+      "title": "Thin Lens Calculator: Image Distance, Magnification and Two-Lens Focal Length",
+      "description": "Use the thin-lens equation 1/a + 1/b = 1/f to find the image distance, lateral magnification and whether the image is real or virtual from the focal length and object distance. Also calculates the combined focal length, optical power and back focal distance of two thin lenses separated by d.",
+      "h1": "Thin Lens Calculator",
+      "lead": "Enter the focal length f of a lens and the distance a from the lens to the object to find where the image forms (b), the lateral magnification m, and whether the image is real or virtual. Enter the focal length and spacing of a second lens to find the combined focal length when the pair is treated as a single lens. The defaults are an object 150 mm in front of a 50 mm convex lens, with a 100 mm lens placed 30 mm behind it.",
+      "in_heading": "Inputs (in air, paraxial)",
+      "f1": "Focal length of lens 1, f₁ (mm, negative for a concave lens)",
+      "a": "Distance from the object to lens 1, a (mm)",
+      "f2": "Focal length of lens 2, f₂ (mm, negative for a concave lens)",
+      "d": "Spacing between lenses 1 and 2, d (mm)",
+      "out_heading": "Results",
+      "b": "Image distance b (image formed by lens 1)",
+      "m": "Lateral magnification m = −b/a",
+      "kind": "Type of image",
+      "p1": "Optical power of lens 1, 1/f₁",
+      "two_heading": "Combination of two lenses",
+      "fc": "Combined focal length f",
+      "pc": "Combined optical power 1/f",
+      "bfd": "Back focal distance (from lens 2 to the rear focal point)",
+      "note": "The calculation treats the lenses as thin lenses in air and uses rays close to the optical axis (paraxial rays). Distances are positive for an object in front of the lens (a > 0) and an image behind it (b > 0); b < 0 means a virtual image on the object side of the lens. A negative magnification means an inverted image. Real lenses have thickness and aberrations, so treat the focal length as measured from the principal planes.",
+      "practice": "Practice geometric optics and imaging questions",
+      "related": "Related terms",
+      "js": {
+        "real": "Real (inverted)",
+        "virtual": "Virtual (upright)",
+        "inf": "Image at infinity (collimated)",
+        "behind": "(behind the lens)",
+        "front": "(in front of the lens)",
+        "afocal": "Infinite (afocal system)",
+        "zero": "Use a focal length other than 0"
+      },
+      "sections": [
+        {
+          "h": "The thin-lens equation and sign convention",
+          "p": "For a lens thin enough that its thickness can be ignored, the object distance a, image distance b and focal length f satisfy 1/a + 1/b = 1/f (the Gaussian lens formula). In this tool, a > 0 when the object is in front of the lens and b > 0 when the image forms behind it (on the side the light travels to); f > 0 for a convex lens and f < 0 for a concave lens. With the defaults (f = 50 mm, a = 150 mm), 1/b = 1/50 − 1/150 = 2/150, so b = 75 mm. Some textbooks use a convention in which the object distance is negative (1/b − 1/a = 1/f), so check the sign convention when comparing with other sources."
+        },
+        {
+          "h": "Lateral magnification and type of image",
+          "p": "The ratio of image size to object size is the lateral magnification, m = −b/a. With the defaults, m = −75/150 = −0.5: an inverted real image half the size of the object. With a convex lens, an object farther than twice the focal length (2f) gives a reduced real image, an object between f and 2f gives an enlarged real image, and an object at exactly 2f gives unit magnification (m = −1). An object inside the focal point gives a negative b, and an enlarged, upright virtual image appears on the object side; this is the principle of a magnifying glass. An object at the focal point makes the light leave the lens collimated, and the image forms at infinity."
+        },
+        {
+          "h": "Combined focal length of two lenses",
+          "p": "When thin lenses with focal lengths f₁ and f₂ are separated by d, the combined focal length f is given by 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂). In terms of optical power (the reciprocal of focal length, in diopters D when measured in meters), P = P₁ + P₂ − dP₁P₂. In contact (d = 0) the powers simply add: 100 mm and 200 mm lenses give 10 D + 5 D = 15 D, or f ≈ 66.7 mm. With the defaults (50 mm, 100 mm, d = 30 mm), 1/f = 0.02 + 0.01 − 0.006 = 0.024 mm⁻¹, so f ≈ 41.7 mm (24 D). When d = f₁ + f₂, the power becomes zero and the pair forms an afocal system such as a beam expander or telescope."
+        },
+        {
+          "h": "Back focal distance and principal planes",
+          "p": "When collimated light enters a two-lens system, it converges at the rear focal point, located BFD = f·(1 − d/f₁) from the second lens. With the defaults this is 41.7 × (1 − 30/50) ≈ 16.7 mm, shorter than the combined focal length of 41.7 mm. This is because the combined focal length is measured from the rear principal plane, which for the defaults lies 25 mm in front of lens 2 (between the two lenses). Multiplying the ray-transfer (ABCD) matrices of the two lenses and the gap gives the same result. For real camera lenses too, the focal length and the distance from the last lens surface to the image plane (back focus) generally differ."
+        }
+      ],
+      "faq": [
+        {
+          "q": "How do I calculate with a concave lens?",
+          "a": "Enter a negative focal length. For example, f = −50 mm and a = 100 mm give b ≈ −33.3 mm and m ≈ 0.33: a reduced, upright virtual image in front of the lens. A single concave lens always forms a virtual image of a real object."
+        },
+        {
+          "q": "What is optical power (diopters)?",
+          "a": "It is the reciprocal of the focal length expressed in meters, in units of diopters (D = m⁻¹). A 50 mm lens has a power of 20 D, and an eyeglass prescription of −2 D is a concave lens with a focal length of −0.5 m. The powers of thin lenses in contact add."
+        },
+        {
+          "q": "Can I use this for thick lenses or real camera lenses?",
+          "a": "If distances are measured from the front and rear principal planes, the same equation holds in the paraxial region. However, the principal plane positions must be found from the lens data; entering distances measured from the lens surfaces gives errors. Image blur from aberrations is not included in this calculation."
+        }
+      ]
+    },
+    "zh-hant": {
+      "nav": "薄透鏡成像",
+      "card": "由焦距與物距計算像距與放大率，也能計算2片透鏡的合成焦距",
+      "title": "薄透鏡成像計算工具（像距、橫向放大率、2片透鏡的合成焦距）",
+      "description": "由薄透鏡公式 1/a + 1/b = 1/f，以焦距與物距求出像距、橫向放大率，以及成實像或虛像。也計算2片薄透鏡相隔d排列時的合成焦距、屈光力與後焦距。",
+      "h1": "薄透鏡成像計算工具",
+      "lead": "輸入透鏡的焦距f與透鏡到物體的距離a，就能計算成像的位置b、橫向放大率m，以及像是實像或虛像。輸入第2片透鏡的焦距與間距，也能求出把2片視為1片透鏡時的合成焦距。預設值是把物體放在焦距50 mm之凸透鏡前方150 mm處，並在其後30 mm處放置焦距100 mm之透鏡的情形。",
+      "in_heading": "輸入（空氣中，近軸）",
+      "f1": "透鏡1的焦距 f₁ (mm，凹透鏡為負)",
+      "a": "物體到透鏡1的距離 a (mm)",
+      "f2": "透鏡2的焦距 f₂ (mm，凹透鏡為負)",
+      "d": "透鏡1與2的間距 d (mm)",
+      "out_heading": "結果",
+      "b": "像距 b（透鏡1所成的像）",
+      "m": "橫向放大率 m = −b/a",
+      "kind": "像的種類",
+      "p1": "透鏡1的屈光力 1/f₁",
+      "two_heading": "2片透鏡的合成",
+      "fc": "合成焦距 f",
+      "pc": "合成屈光力 1/f",
+      "bfd": "後焦距（透鏡2到後焦點）",
+      "note": "以空氣中的薄透鏡，用靠近光軸的光線（近軸光線）計算。距離以物體在透鏡前方為 a > 0、像在透鏡後方為 b > 0，b < 0 表示成在透鏡物體側的虛像。橫向放大率為負時為倒立像。實際透鏡有厚度與像差，焦距請視為從主點量起的值。",
+      "practice": "練習幾何光學與成像的題目",
+      "related": "相關名詞",
+      "js": {
+        "real": "實像（倒立）",
+        "virtual": "虛像（正立）",
+        "inf": "像在無限遠（平行光）",
+        "behind": "（透鏡後方）",
+        "front": "（透鏡前方）",
+        "afocal": "無限大（無焦系統）",
+        "zero": "請使 f 不為 0"
+      },
+      "sections": [
+        {
+          "h": "薄透鏡公式與符號的約定",
+          "p": "對厚度可以忽略的薄透鏡，物距a、像距b與焦距f之間成立 1/a + 1/b = 1/f（高斯透鏡公式）。本工具以物體在透鏡前方時 a > 0、像成在透鏡後方（光前進的一側）時 b > 0，凸透鏡 f > 0、凹透鏡 f < 0。預設值（f = 50 mm、a = 150 mm）下 1/b = 1/50 − 1/150 = 2/150，b = 75 mm。有些教科書採用物距取負值的符號約定（1/b − 1/a = 1/f），與其他資料比較時請確認符號的約定。"
+        },
+        {
+          "h": "橫向放大率與像的種類",
+          "p": "像的大小與物體大小之比稱為橫向放大率，m = −b/a。預設值下 m = −75/150 = −0.5，形成大小一半的倒立實像。對凸透鏡而言，物體放在比焦距2倍（2f）更遠處成縮小的實像，放在f與2f之間成放大的實像，恰好在2f時為等倍（m = −1）。物體放在焦點內側時b變為負，在物體側看到正立放大的虛像，這就是放大鏡的原理。物體在焦點位置時，光離開透鏡後變為平行，像成在無限遠。"
+        },
+        {
+          "h": "2片透鏡的合成焦距",
+          "p": "把焦距f₁與f₂的薄透鏡相隔d排列，合成焦距f以 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) 表示。以屈光力（焦距的倒數，以公尺量時單位為屈光度D）寫成 P = P₁ + P₂ − dP₁P₂。密接（d = 0）時屈光力直接相加，100 mm與200 mm的透鏡為 10 D + 5 D = 15 D，f ≈ 66.7 mm。預設值（50 mm、100 mm、d = 30 mm）下 1/f = 0.02 + 0.01 − 0.006 = 0.024 mm⁻¹，f ≈ 41.7 mm（24 D）。d = f₁ + f₂ 時屈光力為0，成為擴束器或望遠鏡那樣的無焦系統。"
+        },
+        {
+          "h": "後焦距與主點",
+          "p": "對2片透鏡的系統射入平行光時，光會聚的點（後焦點）位於離第2片透鏡 BFD = f·(1 − d/f₁) 處。預設值下為 41.7 × (1 − 30/50) ≈ 16.7 mm，比合成焦距41.7 mm短。這是因為合成焦距是從後主點量起的長度，而預設值下後主點位於透鏡2前方25 mm處（2片透鏡之間）。以光線矩陣（ABCD矩陣）把2片透鏡與間距的矩陣相乘，也能得到相同結果。實際的相機鏡頭中，焦距與鏡頭後端到像面的距離（後焦距）一般也不一致。"
+        }
+      ],
+      "faq": [
+        {
+          "q": "如何以凹透鏡計算？",
+          "a": "在焦距輸入負值。例如 f = −50 mm、a = 100 mm 時 b ≈ −33.3 mm、m ≈ 0.33，在透鏡前方形成正立縮小的虛像。單片凹透鏡對實際存在的物體，所成的像一定是虛像。"
+        },
+        {
+          "q": "屈光力（屈光度）是什麼？",
+          "a": "以公尺表示之焦距的倒數，單位為屈光度（D = m⁻¹）。焦距50 mm的透鏡為20 D，眼鏡度數 −2 D 則是焦距 −0.5 m 的凹透鏡。密接之薄透鏡的屈光力相加。"
+        },
+        {
+          "q": "也能用於厚透鏡或實際的相機鏡頭嗎？",
+          "a": "只要從前、後主點量距離，在近軸範圍內同樣的公式成立。不過主點的位置須由透鏡的資料求出，直接輸入從透鏡表面量起的距離會產生偏差。此外，像差造成的像模糊不包含在這個計算中。"
+        }
+      ]
+    }
+  }
+}

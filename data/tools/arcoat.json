@@ -1,0 +1,243 @@
+{
+  "id": "arcoat",
+  "order": 5,
+  "slug": "anti-reflection-coating-calculator",
+  "cats": [
+    "wave",
+    "optical-materials"
+  ],
+  "cat": "wave",
+  "terms": [
+    "反射防止膜",
+    "誘電体多層膜ミラー",
+    "ファブリ・ペロー共振器"
+  ],
+  "questions": [
+    "wave-003",
+    "wave-004",
+    "wave-005"
+  ],
+  "figures": [],
+  "compares": [],
+  "form": {
+    "id": "ar-form",
+    "fields": [
+      {
+        "name": "lambda0",
+        "value": 550,
+        "attrs": "min=\"1\" step=\"any\""
+      },
+      {
+        "name": "n0",
+        "value": 1,
+        "attrs": "min=\"1\" step=\"0.01\""
+      },
+      {
+        "name": "ns",
+        "value": 1.52,
+        "attrs": "min=\"1\" step=\"0.01\""
+      },
+      {
+        "name": "n1",
+        "value": 1.38,
+        "attrs": "min=\"1\" step=\"0.01\""
+      },
+      {
+        "name": "lambda",
+        "value": 450,
+        "attrs": "min=\"1\" step=\"any\""
+      }
+    ],
+    "outputs": [
+      {
+        "stats": [
+          "nideal",
+          "thick",
+          "r0"
+        ]
+      },
+      {
+        "heading": "coat_heading",
+        "stats": [
+          "rdes",
+          "rlam",
+          "nideal-r"
+        ]
+      }
+    ],
+    "note": "note"
+  },
+  "text": {
+    "ja": {
+      "nav": "反射防止膜",
+      "card": "単層の反射防止膜のλ/4厚さ、理想の膜の屈折率、垂直入射の反射率を計算",
+      "title": "反射防止膜の計算ツール(単層λ/4膜の厚さ・理想の屈折率・反射率)",
+      "description": "単層の反射防止膜について、設計波長でのλ/4膜の物理的な厚さ、反射をゼロにする理想の膜の屈折率 √(n₀nₛ)、膜がないときと膜をつけたときの垂直入射の反射率を計算します。設計波長からずれた波長での反射率も求めます。",
+      "h1": "反射防止膜の計算ツール",
+      "lead": "基板の屈折率と膜の材料の屈折率、設計波長を入れると、光学的な厚さが λ/4 になる膜の物理的な厚さと、垂直に入射した光の反射率を計算します。既定値は、屈折率1.52のガラス(BK7程度)に、屈折率1.38のフッ化マグネシウム(MgF₂)を波長550 nm用のλ/4膜としてつけ、450 nmの青い光で見た場合です。",
+      "in_heading": "入力(垂直入射)",
+      "lambda0": "設計波長 λ₀ (nm、真空中)",
+      "n0": "入射側の媒質の屈折率 n₀(空気は1)",
+      "ns": "基板の屈折率 nₛ",
+      "n1": "膜の屈折率 n₁",
+      "lambda": "反射率を見る波長 λ (nm)",
+      "out_heading": "結果",
+      "nideal": "理想の膜の屈折率 √(n₀nₛ)",
+      "thick": "λ/4膜の物理的な厚さ d = λ₀/(4n₁)",
+      "r0": "膜がないときの反射率",
+      "coat_heading": "膜をつけたときの反射率(1面)",
+      "rdes": "設計波長 λ₀ での反射率",
+      "rlam": "波長 λ での反射率",
+      "nideal_r": "理想の屈折率の膜なら(λ₀で)",
+      "note": "吸収のない膜と基板で、屈折率は波長によらない(分散なし)として、垂直入射の1つの面の反射率を計算しています。基板の裏面の反射や、斜めに入射したときの偏光による違いは含みません。反射率は強度(パワー)の比です。",
+      "practice": "干渉と回折の問題を解く",
+      "related": "関連する用語",
+      "sections": [
+        {
+          "h": "λ/4膜で反射を打ち消すしくみ",
+          "p": "基板の上に薄い膜をつけると、膜の表面で反射した光と、膜と基板の境界で反射した光が重なります。n₀ < n₁ < nₛ のときは2つの境界での反射の位相の変化が同じなので、膜の光学的な厚さ(屈折率×物理的な厚さ)を λ/4 にすると、膜の中を往復する光の光路差が λ/2 になり、2つの反射光の位相が半周期ずれて打ち消し合います。膜の中では波長が λ/n₁ に縮むので、物理的な厚さは d = λ₀/(4n₁) です。既定値(MgF₂、n₁ = 1.38、λ₀ = 550 nm)では d ≈ 99.6 nm になり、屈折率で割らない λ/4 = 137.5 nm とは違います。光学的な厚さが λ/2 の膜は往復の光路差が1波長になって反射を打ち消さず、膜がないときと同じ反射率になります。"
+        },
+        {
+          "h": "理想の膜の屈折率 √(n₀nₛ)",
+          "p": "2つの反射光を完全に打ち消すには、位相だけでなく振幅もそろえる必要があります。垂直入射で2つの境界の反射の振幅が等しくなる条件から、膜の屈折率は n₁ = √(n₀nₛ) が理想になり、このとき設計波長での反射率は0です。空気中のガラス(nₛ = 1.52)では √1.52 ≈ 1.23 ですが、これほど屈折率が低く丈夫な材料は少なく、実際にはMgF₂(1.38)がよく使われます。波長1.55 µmで屈折率3.48のシリコンなら理想は約1.87で、窒化シリコン(約2.0)や酸窒化シリコンなどが近い値になります。"
+        },
+        {
+          "h": "垂直入射の反射率",
+          "p": "屈折率n₀とnₛの境界に垂直に入射した光の反射率は、フレネルの式から R = ((n₀ − nₛ)/(n₀ + nₛ))² です。既定値のガラスでは約4.26 %、シリコン(1.55 µmで3.48)では約31 %になります。λ/4膜をつけると設計波長での反射率は R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))² になり、MgF₂をガラスにつけた既定値では約1.26 %まで下がります。理想の屈折率から離れるほど反射は残り、膜の屈折率が基板より高いと反射はかえって増えます。"
+        },
+        {
+          "h": "設計波長から外れた波長と多層膜",
+          "p": "膜の厚さは設計波長に合わせて決めるので、ほかの波長では位相の条件がずれて反射が増えます。既定値では、550 nmで約1.26 %の反射率が、450 nmで約1.62 %、700 nmで約1.60 %になります(分散を無視した値)。既定値の単層膜でも可視域(400〜700 nm)の反射率はおよそ2.2 %以下(最も高いのは400 nmの端)に収まりますが、さらに低く広い波長域で反射を抑えるには、高屈折率と低屈折率の膜を組み合わせた多層膜(マルチコート)を使います。同じλ/4膜を高・低交互に重ねると、逆に反射を強め合う誘電体多層膜ミラーになります。"
+        }
+      ],
+      "faq": [
+        {
+          "q": "物理的な厚さと光学的な厚さの違いは?",
+          "a": "光学的な厚さは屈折率×物理的な厚さで、光の位相の進みを決めます。λ/4膜は光学的な厚さが λ/4 の膜で、物理的な厚さはその 1/n₁ です。MgF₂で550 nm用なら約99.6 nmです。"
+        },
+        {
+          "q": "眼鏡やカメラのレンズの反射防止は単層ですか?",
+          "a": "安価なものではMgF₂の単層膜もありますが、多くは数層から十数層の多層膜で、可視域全体で反射率を1 %未満、高性能なものでは0.5 %程度以下に抑えています。反射の残りが少し色づいて見える(緑や紫)のは、波長によって反射率が違うためです。"
+        },
+        {
+          "q": "斜めに入射した光ではどうなりますか?",
+          "a": "斜めに入射すると膜の中の光路の位相差が小さくなり、反射率が最小になる波長が短い側にずれます。また、s偏光とp偏光で反射率が変わります。このツールは垂直入射だけを扱っているので、入射角が大きい用途では別の計算が必要です。"
+        }
+      ]
+    },
+    "en": {
+      "nav": "Anti-reflection coating calculator",
+      "card": "Find the quarter-wave thickness, ideal coating index and normal-incidence reflectance of a single-layer AR coating",
+      "title": "Anti-Reflection Coating Calculator: Quarter-Wave Thickness, Ideal Index and Reflectance",
+      "description": "For a single-layer anti-reflection coating, calculate the physical thickness of a quarter-wave layer at the design wavelength, the ideal coating index √(n₀nₛ) that makes the reflection zero, and the normal-incidence reflectance with and without the coating. Also finds the reflectance at wavelengths away from the design wavelength.",
+      "h1": "Anti-Reflection Coating Calculator",
+      "lead": "Enter the refractive indices of the substrate and coating material and the design wavelength to find the physical thickness of a layer whose optical thickness is λ/4, and the reflectance for light at normal incidence. The defaults are magnesium fluoride (MgF₂, index 1.38) applied as a quarter-wave layer for 550 nm on glass with an index of 1.52 (about that of BK7), viewed in blue light at 450 nm.",
+      "in_heading": "Inputs (normal incidence)",
+      "lambda0": "Design wavelength λ₀ (nm, in vacuum)",
+      "n0": "Index of the incident medium n₀ (1 for air)",
+      "ns": "Substrate index nₛ",
+      "n1": "Coating index n₁",
+      "lambda": "Wavelength for the reflectance, λ (nm)",
+      "out_heading": "Results",
+      "nideal": "Ideal coating index √(n₀nₛ)",
+      "thick": "Quarter-wave physical thickness d = λ₀/(4n₁)",
+      "r0": "Reflectance without coating",
+      "coat_heading": "Reflectance with the coating (one surface)",
+      "rdes": "Reflectance at design wavelength λ₀",
+      "rlam": "Reflectance at wavelength λ",
+      "nideal_r": "With an ideal-index coating (at λ₀)",
+      "note": "The calculation assumes a non-absorbing coating and substrate with wavelength-independent indices (no dispersion), and gives the reflectance of one surface at normal incidence. Reflection from the back of the substrate and polarization effects at oblique incidence are not included. Reflectance is the ratio of intensities (powers).",
+      "practice": "Practice interference and diffraction questions",
+      "related": "Related terms",
+      "sections": [
+        {
+          "h": "How a quarter-wave layer cancels reflection",
+          "p": "When a thin layer is applied to a substrate, light reflected from the top of the layer overlaps with light reflected from the layer–substrate boundary. When n₀ < n₁ < nₛ, the phase changes on reflection at the two boundaries are the same, so if the optical thickness of the layer (index × physical thickness) is λ/4, the round-trip path difference inside the layer is λ/2, so the two reflected beams are half a cycle out of phase and cancel. Because the wavelength inside the layer shrinks to λ/n₁, the physical thickness is d = λ₀/(4n₁). With the defaults (MgF₂, n₁ = 1.38, λ₀ = 550 nm), d ≈ 99.6 nm, which differs from λ/4 = 137.5 nm without dividing by the index. A layer with an optical thickness of λ/2 has a round-trip path difference of one wavelength, does not cancel the reflection, and gives the same reflectance as no coating."
+        },
+        {
+          "h": "The ideal coating index √(n₀nₛ)",
+          "p": "Complete cancellation of the two reflected beams requires matching not only their phases but also their amplitudes. The condition that the reflection amplitudes at the two boundaries be equal at normal incidence makes the ideal coating index n₁ = √(n₀nₛ), for which the reflectance at the design wavelength is zero. For glass (nₛ = 1.52) in air this is √1.52 ≈ 1.23, but few durable materials have such a low index, so MgF₂ (1.38) is commonly used in practice. For silicon with an index of 3.48 at a wavelength of 1.55 µm the ideal is about 1.87, close to materials such as silicon nitride (about 2.0) or silicon oxynitride."
+        },
+        {
+          "h": "Reflectance at normal incidence",
+          "p": "From the Fresnel equations, the reflectance of light normally incident on a boundary between indices n₀ and nₛ is R = ((n₀ − nₛ)/(n₀ + nₛ))². This is about 4.26% for the default glass and about 31% for silicon (3.48 at 1.55 µm). With a quarter-wave layer, the reflectance at the design wavelength becomes R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))², which falls to about 1.26% for the default MgF₂ on glass. The farther the index is from the ideal, the more reflection remains, and a coating with a higher index than the substrate actually increases the reflection."
+        },
+        {
+          "h": "Wavelengths away from the design and multilayer coatings",
+          "p": "Because the thickness is set for the design wavelength, the phase condition shifts at other wavelengths and the reflection increases. With the defaults, the reflectance of about 1.26% at 550 nm becomes about 1.62% at 450 nm and about 1.60% at 700 nm (ignoring dispersion). Even the default single layer keeps the reflectance below about 2.2% across the visible range (400–700 nm; highest at the 400 nm end), but to suppress it further over a wide band, multilayer coatings that combine high- and low-index layers are used. Stacking the same quarter-wave layers alternately with high and low indices instead reinforces the reflection, giving a dielectric mirror."
+        }
+      ],
+      "faq": [
+        {
+          "q": "What is the difference between physical and optical thickness?",
+          "a": "The optical thickness is index × physical thickness and determines how far the phase of the light advances. A quarter-wave layer has an optical thickness of λ/4, so its physical thickness is 1/n₁ of that: about 99.6 nm for MgF₂ designed for 550 nm."
+        },
+        {
+          "q": "Are eyeglass and camera lens coatings single layers?",
+          "a": "Inexpensive ones may use a single MgF₂ layer, but most use multilayer coatings of several to more than ten layers, keeping the reflectance below 1% across the visible range, or around 0.5% or less in high-performance coatings. The faint color of the residual reflection (green or purple) comes from the reflectance varying with wavelength."
+        },
+        {
+          "q": "What happens at oblique incidence?",
+          "a": "At oblique incidence the phase difference across the layer decreases, shifting the wavelength of minimum reflectance toward shorter wavelengths, and the reflectance differs between s- and p-polarization. This tool handles only normal incidence, so applications with large incidence angles need a separate calculation."
+        }
+      ]
+    },
+    "zh-hant": {
+      "nav": "抗反射膜",
+      "card": "計算單層抗反射膜的λ/4厚度、理想膜的折射率與垂直入射的反射率",
+      "title": "抗反射膜計算工具（單層λ/4膜的厚度、理想折射率、反射率）",
+      "description": "針對單層抗反射膜，計算設計波長下λ/4膜的物理厚度、使反射為零之理想膜的折射率 √(n₀nₛ)，以及無膜與鍍膜時垂直入射的反射率。也求出偏離設計波長之波長的反射率。",
+      "h1": "抗反射膜計算工具",
+      "lead": "輸入基板的折射率、膜材料的折射率與設計波長，就能計算光學厚度為 λ/4 之膜的物理厚度，以及垂直入射光的反射率。預設值是在折射率1.52的玻璃（約為BK7）上，鍍上折射率1.38的氟化鎂（MgF₂）作為波長550 nm用的λ/4膜，並以450 nm的藍光觀察的情形。",
+      "in_heading": "輸入（垂直入射）",
+      "lambda0": "設計波長 λ₀ (nm，真空中)",
+      "n0": "入射側介質的折射率 n₀（空氣為1）",
+      "ns": "基板的折射率 nₛ",
+      "n1": "膜的折射率 n₁",
+      "lambda": "計算反射率的波長 λ (nm)",
+      "out_heading": "結果",
+      "nideal": "理想膜的折射率 √(n₀nₛ)",
+      "thick": "λ/4膜的物理厚度 d = λ₀/(4n₁)",
+      "r0": "無膜時的反射率",
+      "coat_heading": "鍍膜時的反射率（1面）",
+      "rdes": "設計波長 λ₀ 的反射率",
+      "rlam": "波長 λ 的反射率",
+      "nideal_r": "若為理想折射率的膜（在λ₀）",
+      "note": "以無吸收的膜與基板，並假設折射率不隨波長改變（無色散），計算垂直入射時1個面的反射率。不包含基板背面的反射，以及斜向入射時偏振造成的差異。反射率是強度（功率）之比。",
+      "practice": "練習干涉與繞射的題目",
+      "related": "相關名詞",
+      "sections": [
+        {
+          "h": "以λ/4膜抵消反射的機制",
+          "p": "在基板上鍍上薄膜，膜表面反射的光會與膜和基板交界反射的光重疊。n₀ < n₁ < nₛ 時，2個交界反射的相位變化相同，因此使膜的光學厚度（折射率×物理厚度）為 λ/4，在膜中往返之光的光程差就成為 λ/2，2道反射光的相位相差半個週期而互相抵消。膜中的波長縮短為 λ/n₁，因此物理厚度為 d = λ₀/(4n₁)。預設值（MgF₂、n₁ = 1.38、λ₀ = 550 nm）下 d ≈ 99.6 nm，與未除以折射率的 λ/4 = 137.5 nm 不同。光學厚度為 λ/2 的膜往返光程差為1個波長，不會抵消反射，反射率與無膜時相同。"
+        },
+        {
+          "h": "理想膜的折射率 √(n₀nₛ)",
+          "p": "要完全抵消2道反射光，不只相位，振幅也必須相等。由垂直入射時2個交界之反射振幅相等的條件，膜的折射率以 n₁ = √(n₀nₛ) 為理想，此時設計波長的反射率為0。空氣中的玻璃（nₛ = 1.52）為 √1.52 ≈ 1.23，但折射率這麼低又堅固的材料很少，實際上常使用MgF₂（1.38）。波長1.55 µm下折射率3.48的矽，理想值約為1.87，氮化矽（約2.0）或氮氧化矽等材料接近這個值。"
+        },
+        {
+          "h": "垂直入射的反射率",
+          "p": "垂直入射到折射率n₀與nₛ之交界的光，由菲涅耳方程式得反射率 R = ((n₀ − nₛ)/(n₀ + nₛ))²。預設值的玻璃約為4.26 %，矽（1.55 µm下為3.48）約為31 %。鍍上λ/4膜後，設計波長的反射率變為 R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²，在玻璃上鍍MgF₂的預設值下降到約1.26 %。離理想折射率越遠，殘留的反射越多；膜的折射率比基板高時，反射反而增加。"
+        },
+        {
+          "h": "偏離設計波長的波長與多層膜",
+          "p": "膜厚是配合設計波長決定的，因此在其他波長相位條件會偏移，反射增加。預設值下，550 nm約1.26 %的反射率，在450 nm約為1.62 %、700 nm約為1.60 %（忽略色散的值）。即使是預設值的單層膜，可見光範圍（400至700 nm）的反射率也在約2.2 %以下（最高在400 nm端），但要在更寬的波長範圍進一步降低反射，要使用組合高折射率與低折射率膜的多層膜。把相同的λ/4膜以高、低交替堆疊，反而會使反射互相加強，成為介電質多層膜反射鏡。"
+        }
+      ],
+      "faq": [
+        {
+          "q": "物理厚度與光學厚度有什麼不同？",
+          "a": "光學厚度是折射率×物理厚度，決定光的相位前進多少。λ/4膜是光學厚度為 λ/4 的膜，物理厚度是其 1/n₁。以MgF₂做550 nm用時約為99.6 nm。"
+        },
+        {
+          "q": "眼鏡或相機鏡頭的抗反射是單層嗎？",
+          "a": "便宜的產品也有MgF₂單層膜，但多數是數層至十數層的多層膜，在整個可見光範圍把反射率壓到1 %以下，高性能的產品約在0.5 %以下。殘留的反射看起來略帶顏色（綠色或紫色），是因為反射率隨波長而不同。"
+        },
+        {
+          "q": "斜向入射的光會如何？",
+          "a": "斜向入射時膜中光程的相位差變小，反射率最小的波長往短波長側偏移，s偏振與p偏振的反射率也不同。本工具只處理垂直入射，入射角大的用途需要另外計算。"
+        }
+      ]
+    }
+  }
+}
