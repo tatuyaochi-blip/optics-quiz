@@ -2,8 +2,8 @@
   {
     "id": "optics-basics",
     "name": {"ja": "光学の基礎から"},
-    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビームまで進みます。光学系の設計や実験の土台を固めたい人に向いています。"},
-    "steps": ["geometric", "wave", "polarization", "laser"]
+    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学まで進みます。光学系の設計や実験の土台を固めたい人に向いています。"},
+    "steps": ["geometric", "wave", "polarization", "laser", "optical-design", "nonlinear"]
   },
   {
     "id": "optical-comm",
