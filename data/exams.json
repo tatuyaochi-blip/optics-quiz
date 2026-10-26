@@ -1,0 +1,12 @@
+[
+  {
+    "id": "main",
+    "name": "光学",
+    "groups": [
+      { "id": "basic", "name": "光の基礎" },
+      { "id": "sources", "name": "光源と伝送" },
+      { "id": "devices", "name": "受光と光集積" },
+      { "id": "applied", "name": "計測と応用" }
+    ]
+  }
+]

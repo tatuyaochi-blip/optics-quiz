@@ -1,0 +1,14 @@
+[
+  {
+    "id": "optics-basics",
+    "name": {"ja": "光学の基礎から"},
+    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビームまで進みます。光学系の設計や実験の土台を固めたい人に向いています。"},
+    "steps": ["geometric", "wave", "polarization", "laser"]
+  },
+  {
+    "id": "optical-comm",
+    "name": {"ja": "光通信・シリコンフォトニクス"},
+    "desc": {"ja": "光ファイバの伝送から受光素子と雑音、シリコンの光回路の設計、OTDRやLiDARなどの光計測までをつなげて学びます。光トランシーバや光集積回路に関わる若手エンジニア向けです。"},
+    "steps": ["fiber", "detectors", "silicon-photonics", "measurement"]
+  }
+]

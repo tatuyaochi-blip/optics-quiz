@@ -1,0 +1,50 @@
+{
+  "baseUrl": "https://tatuyaochi-blip.github.io/optics-quiz/",
+  "siteName": {
+    "ja": "光学教室",
+    "en": "Optics Room"
+  },
+  "languages": [
+    {
+      "code": "ja",
+      "path": "",
+      "htmlLang": "ja",
+      "locale": "ja-JP",
+      "label": "日本語"
+    }
+  ],
+  "mainLang": "ja",
+  "cname": null,
+  "noindex": true,
+  "onlyReviewed": false,
+  "contactFormUrl": {
+    "ja": "https://forms.gle/VZFqdvB4m1fLpBEg7",
+    "en": "https://forms.gle/2Hmk3GZD2oU8z6b98"
+  },
+  "reportFormUrl": null,
+  "adPlaceholders": false,
+  "adsenseClient": null,
+  "adsenseSlots": null,
+  "amazonTag": null,
+  "amazonDomain": null,
+  "ga4Id": null,
+  "brand": {
+    "ja": {
+      "search_example": "開口数",
+      "tools_example": "ビーム径やファイバのNA",
+      "subject": "光学",
+      "site": "光学教室",
+      "site_en": "Optics Room",
+      "full_title": "光学教室｜レーザー・光ファイバ・シリコンフォトニクスの練習問題と解説",
+      "scope": "幾何光学・干渉・偏光の基礎から、レーザーとガウシアンビーム、光ファイバ、受光素子、シリコンフォトニクス、光計測",
+      "hero": "光学とフォトニクスを、3択クイズで学ぶ",
+      "hero_lead": "レンズと干渉の基礎から、レーザー・光ファイバ・シリコンフォトニクスまで。すべての問題に解説が付いています。",
+      "tools_lead": "波長と光子エネルギーの換算、ガウシアンビーム、光ファイバのNAとV値など、光学でよく使う計算をブラウザ上で確かめられる無料のツールです。"
+    }
+  },
+  "icon": {
+    "c1": "#b5470f",
+    "c2": "#c98a00",
+    "glyph": "lens"
+  }
+}
