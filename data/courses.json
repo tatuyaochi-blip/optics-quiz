@@ -2,8 +2,8 @@
   {
     "id": "optics-basics",
     "name": {"ja": "光学の基礎から", "en": "Optics from the ground up"},
-    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学まで進みます。光学系の設計や実験の土台を固めたい人に向いています。", "en": "Start with refraction and lens imaging, work through interference, diffraction and polarization, then move on to lasers and Gaussian beams, imaging and optical design, and nonlinear optics. Suited to anyone who wants a solid foundation for designing optical systems or running optics experiments."},
-    "steps": ["geometric", "wave", "polarization", "laser", "optical-design", "nonlinear"]
+    "desc": {"ja": "屈折とレンズの結像から始め、干渉と回折、偏光を順に確かめたうえで、レーザーとガウシアンビーム、結像と光学設計、非線形光学に進み、最後に分光と干渉計測、測光と色彩で光を測る方法を確かめます。光学系の設計や実験の土台を固めたい人に向いています。", "en": "Start with refraction and lens imaging, work through interference, diffraction and polarization, then move on to lasers and Gaussian beams, imaging and optical design, and nonlinear optics, and finish with spectroscopy and interferometric measurement, and photometry and color, to see how light is measured. Suited to anyone who wants a solid foundation for designing optical systems or running optics experiments."},
+    "steps": ["geometric", "wave", "polarization", "laser", "optical-design", "nonlinear", "spectroscopy", "photometry-color"]
   },
   {
     "id": "optical-comm",
