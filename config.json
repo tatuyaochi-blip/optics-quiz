@@ -3,7 +3,9 @@
   "siteName": {
     "ja": "光学教室",
     "en": "Optics Room",
-    "zh-hant": "光學教室"
+    "zh-hant": "光學教室",
+    "ko": "광학 교실",
+    "de": "Lernraum Optik"
   },
   "languages": [
     {
@@ -81,11 +83,42 @@
       "hero": "用三選一測驗學光學與光子學",
       "hero_lead": "從透鏡與干涉的基礎，到雷射、光纖與矽光子學，每一題都附有解說。",
       "tools_lead": "免費的瀏覽器計算工具，可確認波長與光子能量的換算、高斯光束、光纖的NA與V值等光學常用的計算。"
+    },
+    "ko": {
+      "subject": "광학과 포토닉스",
+      "subject_title": "광학과 포토닉스",
+      "site": "광학 교실",
+      "site_en": "Optics Room",
+      "search_example": "개구수",
+      "tools_example": "빔 지름과 광섬유의 NA",
+      "full_title": "광학 교실 | 레이저·광섬유·실리콘 포토닉스 연습 문제와 해설",
+      "scope": "기하광학, 간섭과 편광, 레이저와 가우시안 빔, 광섬유, 광검출기, 실리콘 포토닉스와 광 계측",
+      "hero": "3지선다 퀴즈로 배우는 광학과 포토닉스",
+      "hero_lead": "렌즈와 간섭의 기초부터 레이저, 광섬유, 실리콘 포토닉스까지. 모든 문제에 해설이 있습니다.",
+      "tools_lead": "파장과 광자 에너지 환산, 가우시안 빔, 광섬유의 NA와 V 값 등 광학에서 자주 쓰는 계산을 브라우저에서 바로 확인할 수 있는 무료 도구입니다."
+    },
+    "de": {
+      "subject": "Optik und Photonik",
+      "subject_title": "Optik und Photonik",
+      "site": "Lernraum Optik",
+      "site_en": "Optics Room",
+      "search_example": "numerische Apertur",
+      "tools_example": "Strahldurchmesser und die NA von Fasern",
+      "full_title": "Lernraum Optik | Übungsfragen zu Lasern, Lichtwellenleitern und Siliziumphotonik",
+      "scope": "geometrische Optik, Interferenz und Polarisation, Laser und Gauß-Strahlen, Lichtwellenleiter, Photodetektoren, Siliziumphotonik und optische Messtechnik",
+      "hero": "Optik und Photonik lernen – mit kurzen Quizfragen",
+      "hero_lead": "Von Linsen und Interferenz bis zu Lasern, Lichtwellenleitern und Siliziumphotonik – zu jeder Frage gibt es eine Erläuterung.",
+      "tools_lead": "Kostenlose Rechner im Browser für den Optik-Alltag: Umrechnung von Wellenlänge und Photonenenergie, Gauß-Strahlen sowie NA und V-Parameter von Lichtwellenleitern."
     }
   },
   "icon": {
     "c1": "#b5470f",
     "c2": "#c98a00",
     "glyph": "lens"
-  }
+  },
+  "indexQuestionLangs": [
+    "ja",
+    "en",
+    "zh-hant"
+  ]
 }
