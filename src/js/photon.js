@@ -25,7 +25,7 @@ function update(e) {
   const pw = Number(f.mw.value) / 1000;
   const eJ = ev * q;
   out('joule').textContent = `${sci(eJ)} J`;
-  out('rate').textContent = pw > 0 ? `${sci(pw / eJ)} ${T.per_s ?? '個/s'}` : '–';
+  out('rate').textContent = pw > 0 ? `${sci(pw / eJ)} ${T.per_s ?? '/s'}` : '–';
   out('resp').textContent = `${num(nm / HC_EV_NM, 4)} A/W`;
 }
 form.addEventListener('input', update);
