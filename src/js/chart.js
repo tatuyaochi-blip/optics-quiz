@@ -1,10 +1,10 @@
 // 計算ツール用の簡単な折れ線グラフ(SVG)。series: [{ points: [[x, y], ...], cls: 'ac'|'ac2'|'dash', label }]
 // xlog / ylog で対数軸。marks: [[x, y, 文字]] は点と注記
 // 指数表記は必要な桁だけ出す(1500 を 2e+3 と丸めないように)
-// 目盛りの数: 1万までは桁区切りで、それより大きい・0.01 より小さい数は「2×10⁵」の形にする(「2e+5」は読みにくい)
+// 目盛りの数: 1万までは桁区切りで(ドイツ語は区切らない)、それより大きい・0.01 より小さい数は「2×10⁵」の形にする(「2e+5」は読みにくい)
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 const fmtTick = (v, lang) => {
-  if (Math.abs(v) < 1e5 && (Math.abs(v) >= 0.01 || v === 0)) return v.toLocaleString(lang, { maximumFractionDigits: 2 }).replace(/^-/, '−');
+  if (Math.abs(v) < 1e5 && (Math.abs(v) >= 0.01 || v === 0)) return v.toLocaleString(lang, { maximumFractionDigits: 2, useGrouping: !/^de/.test(lang) }).replace(/^-/, '−');
   const [m, e] = Number(v.toPrecision(3)).toExponential().split('e');
   return `${m === '1' ? '' : `${m.replace(/^-/, '−')}×`}10${String(Number(e)).replace(/./g, c => SUP[c])}`;
 };
