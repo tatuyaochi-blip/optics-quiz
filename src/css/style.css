@@ -613,6 +613,7 @@ table.compare thead th:first-child { position: sticky; left: 0; z-index: 2; }
 .dy-form h2 { grid-column: 1 / -1; margin-bottom: 0; }
 .dy-field { display: flex; flex-direction: column; gap: 4px; font-size: .88rem; color: var(--muted); }
 .dy-field span { flex: 1; }
+.dy-field input[aria-invalid="true"] { border-color: var(--ng); box-shadow: 0 0 0 1px var(--ng); }
 .dy-field input, .dy-field select { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; min-height: 42px; width: 100%; }
 .dy-stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; margin: 0 0 12px; }
 .dy-stats div { background: var(--bg); border-radius: 8px; padding: 10px 12px; }

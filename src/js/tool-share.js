@@ -1,26 +1,29 @@
 // 計算ツールの共通の機能: 入力をURLのクエリに残す(共有・ブックマーク用)、結果のコピー、お気に入りと最近使ったツール。
 // 各ツールの {id}.js より先に読み込み、URLの値を入力欄に入れてから計算させる
 import { isToolFav, toggleToolFav, useTool } from './store.js';
+import { parseNum, inVal } from './eng.js';
 
 const bar = document.querySelector('[data-tool-id]');
 const id = bar?.dataset.toolId;
 const form = document.querySelector('.dy form');
 // URLに残すのは数値の入力欄と選択肢(テキストやチェックボックスは使わない)
-const fields = bar?.dataset.share != null && form ? [...form.elements].filter(el => el.name && (el.tagName === 'SELECT' || el.type === 'number')) : [];
+const fields = bar?.dataset.share != null && form ? [...form.elements].filter(el => el.name && (el.tagName === 'SELECT' || el.type === 'number' || el.hasAttribute('data-num'))) : [];
 const initial = el => (el.tagName === 'SELECT' ? ([...el.options].find(o => o.defaultSelected) ?? el.options[0])?.value : el.defaultValue);
 
+// URLの数は言語によらず小数点「.」で持つ(言語の切り替え先でも同じ値に読めるように)
+const urlVal = el => (el.tagName === 'SELECT' ? el.value : Number.isFinite(parseNum(el.value)) ? String(parseNum(el.value)) : el.value);
 // URLの値を入力欄へ(選べない値や数値でない値は無視する)
 const params = new URLSearchParams(location.search);
 for (const el of fields) {
   if (!params.has(el.name)) continue;
   const v = params.get(el.name).trim();
-  if (el.tagName === 'SELECT' ? [...el.options].some(o => o.value === v) : v !== '' && Number.isFinite(Number(v))) el.value = v;
+  if (el.tagName === 'SELECT' ? [...el.options].some(o => o.value === v) : Number.isFinite(parseNum(v))) el.value = el.tagName === 'SELECT' ? v : inVal(parseNum(v));
 }
 
 // 入力が変わるたびにURLを書き換える。既定値のままならクエリなし、1つでも変えたら全部の値を入れる(既定値が変わっても同じ結果になるように)
 function sync() {
   const changed = fields.some(el => el.value !== initial(el));
-  const query = changed ? `?${fields.map(el => `${el.name}=${encodeURIComponent(el.value)}`).join('&')}` : '';
+  const query = changed ? `?${fields.map(el => `${el.name}=${encodeURIComponent(urlVal(el))}`).join('&')}` : '';
   history.replaceState(history.state, '', location.pathname + query + location.hash);
   // 言語の切り替え先にも同じ条件を渡す
   document.querySelectorAll('.lang-switch a').forEach(a => { a.search = query; });

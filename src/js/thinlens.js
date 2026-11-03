@@ -5,7 +5,7 @@ const form = document.getElementById('tl-form');
 const out = k => document.querySelector(`[data-out="${k}"]`);
 const read = reader(form);
 // 空欄は既定値に戻す(Number('') は 0 になり、f = 0 や a = 0 と区別できないため)
-const val = (k, min) => (form.elements[k].value.trim() === '' ? Number(form.elements[k].defaultValue) : read(k, min));
+const val = (k, min) => read(k, min); // 空欄は既定値(reader が扱う)
 const T = JSON.parse(form.dataset.text);
 // 負の数はハイフンでなくマイナス記号で表示する
 const fmt = x => num(x === 0 ? 0 : x, 4).replace(/^-/, '−'); // −0 は 0 に

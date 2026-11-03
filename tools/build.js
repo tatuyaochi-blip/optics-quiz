@@ -1733,7 +1733,8 @@ ${x.faq?.length ? `<section class="faq">
 
   // 計算ツール。計算はブラウザ側の {id}.js で行い、HTMLには入力欄・結果の枠・解説を置く。
   // ツールごとに違う部分(入力欄と結果の枠)は toolBody[id] が作り、解説・練習問題・よくある質問・関連用語は共通
-  const field = (name, label, value, attrs = '') => `<label class="dy-field"><span>${esc(label)}</span><input name="${name}" type="number" inputmode="decimal" value="${value}" ${attrs}></label>`;
+  // 数の欄は type="text"(src/js/eng.js の parseNum が読む。type="number" だとブラウザによって de の小数のコンマが誤って読まれる)。de は既定値も小数のコンマ
+  const field = (name, label, value, attrs = '') => `<label class="dy-field"><span>${esc(label)}</span><input name="${name}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-num value="${code === 'de' ? String(value).replace('.', ',') : value}" ${attrs}></label>`;
   const select = (name, label, options, value) => `<label class="dy-field"><span>${esc(label)}</span><select name="${name}">${options.map(([v, text]) => `<option value="${v}"${v === value ? ' selected' : ''}>${esc(text)}</option>`).join('')}</select></label>`;
   const stat = (key, label) => `<div><dt>${esc(label)}</dt><dd data-out="${key}">–</dd></div>`;
   // 入力欄と結果の枠を data/tools/{ID}.json の form から作る(toolBody に専用の形がないツール)。
