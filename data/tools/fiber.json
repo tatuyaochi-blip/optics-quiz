@@ -311,6 +311,68 @@
           "a": "LP11 등의 고차 모드도 전파되는 다중 모드 동작이 되어, 모드 간 간섭이나 분산으로 신호가 흐트러집니다. 단일 모드 광섬유는 차단 파장보다 긴 파장(1310 nm 대역이나 1550 nm 대역)에서 사용합니다."
         }
       ]
+    },
+    "de": {
+      "nav": "NA und V-Parameter von Glasfasern",
+      "card": "Aus den Brechungsindizes von Kern und Mantel numerische Apertur, Akzeptanzwinkel, V-Parameter und Grenzwellenlänge berechnen",
+      "title": "Rechner für Lichtwellenleiter (numerische Apertur NA, Akzeptanzwinkel, V-Parameter, Einmodenbedingung, Grenzwellenlänge)",
+      "description": "Berechnet aus den Brechungsindizes von Kern und Mantel, dem Kernradius und der Wellenlänge einer Stufenindexfaser die numerische Apertur NA, den maximalen Akzeptanzwinkel, die relative Brechungsindexdifferenz, die normierte Frequenz V, die Einmodenbedingung (V < 2,405) und die Grenzwellenlänge.",
+      "h1": "Rechner für NA und V-Parameter von Glasfasern",
+      "lead": "Aus den Brechungsindizes von Kern und Mantel, dem Kernradius und der verwendeten Wellenlänge werden der Winkel, unter dem die Faser Licht aufnimmt, und die Zahl der geführten Moden bestimmt. Voreingestellt sind Werte nahe einer Standard-Einmodenfaser für 1550 nm (Kernradius 4,1 µm).",
+      "in_heading": "Eingaben",
+      "n1": "Brechungsindex des Kerns n1",
+      "n2": "Brechungsindex des Mantels n2",
+      "a": "Kernradius a (µm)",
+      "lambda": "Wellenlänge λ (nm)",
+      "out_heading": "Ergebnisse",
+      "na": "Numerische Apertur NA",
+      "theta": "Maximaler Akzeptanzwinkel (in Luft, halber Winkel)",
+      "delta": "Relative Brechungsindexdifferenz Δ",
+      "mode_heading": "Moden",
+      "v": "Normierte Frequenz V",
+      "mode": "Ergebnis",
+      "lc": "Grenzwellenlänge λc",
+      "modes": "Zahl der geführten Moden (Richtwert)",
+      "note": "Gerechnet wird für eine Stufenindexfaser (gleichmäßiger Brechungsindex im Kern). Bei Wellenlängen oberhalb der Grenzwellenlänge ist die Faser einmodig. Der Richtwert V²/2 für die Modenzahl ist eine Näherung für Multimodefasern mit ausreichend großem V.",
+      "practice": "Fragen zu Glasfasern lösen",
+      "related": "Verwandte Begriffe",
+      "js": {
+        "single": "Einmodig (V < 2,405)",
+        "multi": "Mehrmodig (V ≥ 2,405)",
+        "bad": "n1 muss größer als n2 sein"
+      },
+      "sections": [
+        {
+          "h": "Numerische Apertur und Akzeptanzwinkel",
+          "p": "Eine Glasfaser umgibt einen Kern mit höherem Brechungsindex (n1) mit einem Mantel mit niedrigerem Brechungsindex (n2) und schließt das Licht durch Totalreflexion an der Grenzfläche ein. Aus der Bedingung für Totalreflexion folgt der größte Winkel θmax, unter dem in die Stirnfläche eingekoppeltes Licht noch geführt wird; in Luft gilt sinθmax = NA = √(n1² − n2²). Mit den Voreinstellungen ergeben sich NA ≈ 0,124 und ein Akzeptanzwinkel von etwa 7,1° (halber Winkel). Üblich sind bei Multimodefasern NA von etwa 0,2 bis 0,3 und bei Einmodenfasern von etwa 0,1 bis 0,14; je größer die NA, desto leichter lässt sich Licht einkoppeln, desto größer wird aber auch die Dispersion zwischen den Moden."
+        },
+        {
+          "h": "V-Parameter und Einmodenbedingung",
+          "p": "Die Zahl der in der Faser geführten Moden wird im Wesentlichen durch die normierte Frequenz V = 2πa·NA/λ bestimmt. Eine Stufenindexfaser ist für V < 2,405 einmodig, es wird also nur die Grundmode (LP01) geführt. 2,405 ist die erste Nullstelle der Bessel-Funktion nullter Ordnung. Bei der Voreinstellung von 1550 nm ist V ≈ 2,06, die Faser also einmodig. Verkürzt man bei derselben Faser die Wellenlänge, wird V größer, und unterhalb einer bestimmten Wellenlänge wird die Faser mehrmodig. Diese Grenze ist die Grenzwellenlänge λc = 2πa·NA/2,405, mit den Voreinstellungen etwa 1327 nm."
+        },
+        {
+          "h": "Relative Brechungsindexdifferenz",
+          "p": "Die relative Brechungsindexdifferenz Δ = (n1² − n2²)/(2n1²) ≈ (n1 − n2)/n1 gibt den Unterschied der Brechungsindizes von Kern und Mantel relativ an. Mit den Voreinstellungen beträgt sie etwa 0,365 %; bei Einmodenfasern aus Quarzglas sind etwa 0,3 bis 0,4 % üblich. Die NA lässt sich auch als n1·√(2Δ) schreiben. Ein größeres Δ schließt das Licht stärker ein und verringert die Biegeverluste; um die Faser einmodig zu halten, muss der Kern dann aber dünner werden."
+        },
+        {
+          "h": "Modenzahl von Multimodefasern",
+          "p": "Bei einer Stufenindexfaser mit großem V beträgt die Zahl der geführten Moden etwa V²/2. Für einen Kerndurchmesser von 50 µm, NA 0,2 und 850 nm Wellenlänge ist zum Beispiel V ≈ 37, und es gibt etwa 680 Moden. Da sich die Moden unterschiedlich schnell ausbreiten, verbreitern sich Pulse durch Modendispersion; das begrenzt Übertragungsstrecke und Datenrate. Mit einer Gradientenindexfaser, deren Brechungsindex zur Mitte hin zunimmt, lassen sich die Laufzeitunterschiede zwischen den Moden stark verringern."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Was bedeutet die 2,405 in der Einmodenbedingung V < 2,405?",
+          "a": "Es ist die erste Nullstelle (etwa 2,405) der Bessel-Funktion erster Art nullter Ordnung J0. Überschreitet V diesen Wert, wird auch die zweite Mode (LP11) geführt."
+        },
+        {
+          "q": "Wie hängen NA und Akzeptanzwinkel zusammen?",
+          "a": "In Luft gilt NA = sinθmax. Koppelt man Licht aus einer Flüssigkeit oder einem anderen Medium mit dem Brechungsindex n0 ein, gilt n0·sinθmax = NA, und der Akzeptanzwinkel wird kleiner."
+        },
+        {
+          "q": "Was passiert bei Wellenlängen unterhalb der Grenzwellenlänge?",
+          "a": "Dann werden auch Moden höherer Ordnung wie LP11 geführt, die Faser arbeitet mehrmodig, und Interferenz und Dispersion zwischen den Moden stören das Signal. Einmodenfasern betreibt man bei Wellenlängen oberhalb der Grenzwellenlänge (im 1310-nm- oder 1550-nm-Band)."
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,182 @@
+{
+  "fourier-optics-001": {
+    "question": "Welche Ortsfrequenz hat ein sinusförmiges Hell-Dunkel-Streifenmuster mit der Periode 2 µm?",
+    "choices": [
+      "0,5 Perioden/mm",
+      "ca. 3,1×10³ Perioden/mm",
+      "500 Perioden/mm"
+    ],
+    "explanation": "Die Ortsfrequenz ist die Zahl der Perioden je Längeneinheit, also der Kehrwert der Periode. Mit der Periode 2 µm = 2×10⁻³ mm ergibt sich 1/(2×10⁻³ mm) = 500 Perioden/mm. 0,5 Perioden/mm ist ein Fehler, bei dem 1/(2 µm) = 0,5 µm⁻¹ mit mm⁻¹ verwechselt wurde. Ca. 3,1×10³ Perioden/mm ist der Wert der Kreisortsfrequenz 2π/d mit dem Faktor 2π; ihre Einheit ist rad/mm, und sie ist keine Zahl von Perioden. In der Fourier-Optik behandelt man jede Helligkeitsverteilung als Überlagerung sinusförmiger Streifenmuster mit verschiedenen Ortsfrequenzen und Richtungen. Auch die MTF, die die Abbildungsleistung eines Objektivs beschreibt, und die Nyquist-Frequenz eines Bildsensors vergleicht man in der Einheit Perioden/mm (lp/mm)."
+  },
+  "fourier-optics-002": {
+    "question": "Mit einer aberrationsfreien Sammellinse der Brennweite f soll die exakte Fourier-Transformation (ohne zusätzlichen Phasenfaktor) der Amplitudenverteilung eines mit kohärentem parallelem Licht beleuchteten Transmissionsobjekts gewonnen werden. Welche Anordnung von Objekt und Beobachtungsebene trifft zu?",
+    "choices": [
+      "Das Objekt liegt unmittelbar vor der Linse an, beobachtet wird direkt hinter der Linse",
+      "Das Objekt steht in der objektseitigen Brennebene, beobachtet wird in der bildseitigen Brennebene",
+      "Das Objekt steht im Abstand 2f vor der Linse, beobachtet wird in der Ebene 2f dahinter"
+    ],
+    "explanation": "Im paraxialen Bereich ist die Amplitude in der bildseitigen Brennebene der Linse die Fourier-Transformierte der Amplitudenverteilung des Objekts, und der Anteil mit der Ortsfrequenz ν sammelt sich an der Stelle x = λfν. Steht das Objekt in der objektseitigen Brennebene, hebt sich der zusätzliche quadratische Phasenfaktor auf, und man erhält eine in Amplitude und Phase exakte Fourier-Transformation (steht das Objekt unmittelbar vor der Linse, ist die Intensitätsverteilung in der bildseitigen Brennebene dieselbe, doch in der Phase bleibt ein quadratischer Faktor). Direkt hinter der Linse hat das Licht noch nahezu dieselbe Verteilung wie das Objekt und ist keine Fourier-Transformierte. In der 2f-2f-Anordnung entsteht ein umgekehrtes Bild im Maßstab 1:1; es entspricht einer zweimaligen Fourier-Transformation und ist nicht die Fourier-Transformierte des Objekts."
+  },
+  "fourier-optics-003": {
+    "question": "In die objektseitige Brennebene einer Linse mit der Brennweite 200 mm wird ein sinusförmiges Amplitudengitter mit der Ortsfrequenz 100 Perioden/mm gestellt und mit parallelem Licht der Wellenlänge 633 nm beleuchtet. Welcher Wert kommt dem Abstand der Punkte, an denen sich die Beugungsordnungen ±1 in der bildseitigen Brennebene sammeln, von der optischen Achse am nächsten? (Paraxiale Näherung verwenden.)",
+    "choices": [
+      "ca. 12,7 mm",
+      "ca. 79,5 mm",
+      "ca. 1,27 mm"
+    ],
+    "explanation": "Der Anteil mit der Ortsfrequenz ν wird in die Richtung sinθ = λν gebeugt und sammelt sich in der bildseitigen Brennebene an der Stelle x = λfν. x = 633×10⁻⁶ mm × 200 mm × 100 mm⁻¹ ≈ 12,7 mm (mit θ ≈ 3,6° ist die paraxiale Näherung anwendbar). Ca. 79,5 mm ist der Wert mit einem überzähligen Faktor 2π, bei dem Ortsfrequenz und Kreisortsfrequenz verwechselt wurden. Ca. 1,27 mm ist ein Wert mit einem Fehler um eine Zehnerpotenz bei der Umrechnung von nm in mm. Bei einem sinusförmigen Amplitudengitter erscheinen nur drei Punkte, die nullte und die ±1. Ordnung, und Anteile mit höherer Frequenz sammeln sich weiter von der optischen Achse entfernt. Mit diesem Zusammenhang lassen sich aus der Lage in der Brennebene die Ortsfrequenzen des Objekts ablesen oder gezielt einzelne Frequenzanteile ausblenden."
+  },
+  "fourier-optics-004": {
+    "question": "Aus zwei Linsen mit den Brennweiten f₁ = 100 mm und f₂ = 200 mm wird ein 4f-System aufgebaut (das Objekt steht in der objektseitigen Brennebene der ersten Linse, der Linsenabstand beträgt f₁ + f₂). Welche Kombination aus Abbildungsmaßstab und Gesamtlänge vom Objekt bis zum Bild trifft zu?",
+    "choices": [
+      "Abbildungsmaßstab −2 (umgekehrt), Gesamtlänge 300 mm",
+      "Abbildungsmaßstab −2 (umgekehrt), Gesamtlänge 600 mm",
+      "Abbildungsmaßstab −0,5 (umgekehrt), Gesamtlänge 600 mm"
+    ],
+    "explanation": "Im 4f-System erzeugt die erste Linse die Fourier-Transformierte des Objekts in der gemeinsamen Brennebene (Fourier-Ebene), und die zweite Linse transformiert diese erneut und erzeugt in ihrer bildseitigen Brennebene ein Bild. Bei zweimaliger Fourier-Transformation kehren sich die Koordinaten um, daher ist das Bild umgekehrt, und der Abbildungsmaßstab beträgt −f₂/f₁ = −200/100 = −2. Die Gesamtlänge ist f₁ + (f₁ + f₂) + f₂ = 2f₁ + 2f₂ = 600 mm. 300 mm berücksichtigt nur den Abstand der beiden Linsen. Der Abbildungsmaßstab −0,5 ist ein Fehler mit umgekehrtem Brennweitenverhältnis. Im 4f-System lassen sich die Ortsfrequenzanteile in der Fourier-Ebene direkt bearbeiten, und es ist objekt- wie bildseitig telezentrisch; daher wird es für Raumfilter, Mustererkennung und Pulsformung verwendet."
+  },
+  "fourier-optics-005": {
+    "question": "In die Mitte (auf die optische Achse) der Fourier-Ebene eines 4f-Systems wird eine kleine Abdeckung gesetzt, die nur das Licht nullter Ordnung blockiert. Welche Aussage über die Änderung des Bildes eines mit kohärentem Licht beleuchteten Objekts trifft zu?",
+    "choices": [
+      "Der Anteil gleichmäßiger Helligkeit entfällt, der Hintergrund wird dunkel, und Kanten sowie feine Strukturen des Objekts treten hell hervor",
+      "Die Mitte ist der Ort, an dem sich die Anteile feiner Strukturen sammeln; sie entfallen, und das ganze Bild wird gleichmäßig unscharf",
+      "Das Licht nullter Ordnung bestimmt nur die mittlere Bildhelligkeit, daher wird das Bild gleichmäßig dunkler, Form und Kontrast bleiben gleich"
+    ],
+    "explanation": "In der Fourier-Ebene sammelt sich auf der optischen Achse der Anteil gleichmäßiger Helligkeit (Ortsfrequenz null), und die Anteile feiner Strukturen liegen umso weiter außen. Blockiert man nur die Mitte, entsteht ein Hochpass-Raumfilter, der die niederfrequenten Anteile entfernt; im Bild bleiben nur Kanten mit Helligkeitsänderung und feine Strukturen übrig, sodass ein kantenbetontes Bild entsteht. Da die Strukturen des Präparats vor dunklem Hintergrund leuchten, entspricht dies dem Prinzip der Dunkelfeldbeleuchtung im Mikroskop. Unscharf durch den Verlust feiner Strukturen wird das Bild umgekehrt, wenn man ein Pinhole (Tiefpassfilter) setzt, das nur die Mitte durchlässt. Blockiert man das Licht nullter Ordnung, ändern sich die Verhältnisse der Anteile, daher sinkt die Helligkeit nicht einfach gleichmäßig. Verschiebt man nur die Phase des Lichts nullter Ordnung, erhält man das Prinzip des Phasenkontrastmikroskops."
+  },
+  "fourier-optics-006": {
+    "question": "Ein Raumfilter für Laserstrahlen besteht aus einem Pinhole am Ort des Fokus, in den eine Linse den Strahl bündelt. Welche Aussage über die Funktion des Pinholes trifft zu?",
+    "choices": [
+      "Durch das Pinhole bleibt nur ein Teil des im Fokus nach Wellenlängen aufgespaltenen Lichts übrig, die spektrale Breite des Strahls sinkt, die Monochromasie des Laserlichts steigt, und auch der Kontrast von Interferenzstreifen verbessert sich",
+      "Je kleiner der Pinhole-Durchmesser gegenüber dem Fokusfleck, desto besser werden die durch Beugung aufgeweiteten Wellenfronten geglättet, sodass sich die Formungswirkung fast ohne Leistungsverlust steigern lässt",
+      "Der Fokus ist die Fourier-Ebene des Strahls; Störungen hoher Ortsfrequenz durch Verschmutzung oder Ungleichmäßigkeit verteilen sich um den Fokus herum und werden ausgeblendet, sodass ein glatter Strahl entsteht"
+    ],
+    "explanation": "Die Brennebene der Fokussierlinse ist die Fourier-Ebene der Amplitudenverteilung des einfallenden Strahls. Ein idealer Gauß-Strahl erzeugt im Fokus einen kleinen Fleck, doch feine Störungen durch Verschmutzungen und Kratzer auf der Linse oder Ungleichmäßigkeiten des Strahls sind Anteile hoher Ortsfrequenz und verteilen sich um den Fokus herum. Setzt man ein Pinhole, das etwas größer als der Fleck ist, werden nur die Störanteile ausgeblendet, und der mit einer weiteren Linse wieder parallelisierte Strahl nähert sich einer glatten Gauß-Form an. Der 1/e²-Durchmesser des Fokusflecks beträgt etwa 4λf/(πD); bei 633 nm Wellenlänge, f = 10 mm und 2 mm Strahldurchmesser sind das ca. 4 µm, daher verwendet man als Richtwert ein Pinhole mit etwa dem 1,5-Fachen dieses Durchmessers. Ein Pinhole, das kleiner als der Fleck ist, beschneidet auch den Strahlkern und verursacht große Leistungsverluste. Das Pinhole wählt die räumliche Verteilung aus und verändert die spektrale Breite nicht."
+  },
+  "fourier-optics-007": {
+    "question": "Eine aberrationsfreie kreisförmige Öffnung wird durch eine konzentrisch abgedeckte Ringapertur ersetzt (etwa durch die Zentralabschattung des Sekundärspiegels eines Spiegelteleskops). Welche Aussage über die Änderung des Punktbildes in der Brennebene trifft zu, wenn der Außendurchmesser gleich bleibt?",
+    "choices": [
+      "Durch die Abdeckung der Mitte verbreitert sich der helle Kern, die Ringe verschwinden, und es entsteht ein glattes, nahezu gaußförmiges Punktbild",
+      "Der helle Kern wird etwas schmaler, dafür steigt der Anteil der Energie in den umgebenden Ringen",
+      "Bei gleichem Außendurchmesser bleibt auch die numerische Apertur, die die Größe des Punktbildes bestimmt, gleich; nur die Helligkeit sinkt, die Form bleibt"
+    ],
+    "explanation": "Die Amplitude des Punktbildes ist die Fourier-Transformierte der Pupillenfunktion (der Amplitudenverteilung der Öffnung), und die Intensität des Punktbildes ist ihr Betragsquadrat. Deckt man die Mitte ab, steigt der Anteil der äußeren Pupillenbereiche, und die Anteile hoher Ortsfrequenz werden relativ stärker, sodass der helle Kern (das Airy-Scheibchen) etwas schmaler wird. Dafür wandert Energie in die umgebenden Ringe, und die MTF sinkt bei mittleren Frequenzen. Ein breiterer Kern mit verschwindenden Ringen ist die Wirkung der Apodisation, die die Transmission zum Rand der Öffnung hin verringert, also die umgekehrte Richtung. Auch bei gleichem Außendurchmesser ändert sich mit der Pupillenform die Form des Punktbildes als ihrer Fourier-Transformierten, daher ist auch die Antwort falsch, nach der nur die Helligkeit sinkt."
+  },
+  "fourier-optics-008": {
+    "question": "Welche Kombination aus der Bedingung, unter der sich die Beugung an einer Öffnung als Fraunhofer-Beugung behandeln lässt (die Amplitude des Beugungsbildes in der Beobachtungsebene ist die Fourier-Transformierte der Amplitudenverteilung der Öffnung), und einem Verfahren, dies auf kurzer Strecke zu verwirklichen, trifft zu? (a ist der Radius der Öffnung, L der Abstand zur Beobachtungsebene, λ die Wellenlänge.)",
+    "choices": [
+      "Wenn die Fresnel-Zahl a²/(λL) viel größer als 1 ist; beobachtet man in der Brennebene einer Linse, erhält man dasselbe Beugungsbild auch auf kurze Entfernung",
+      "Wenn die Öffnung viel größer als die Wellenlänge ist und das Licht geometrisch-optisch geradlinig läuft; der Schatten der Öffnung ist dann selbst das Beugungsbild",
+      "Wenn die Fresnel-Zahl a²/(λL) viel kleiner als 1 ist; beobachtet man in der Brennebene einer Linse, erhält man dasselbe Beugungsbild auch auf kurze Entfernung"
+    ],
+    "explanation": "Ist die Phasendifferenz πa²/(λL) durch den quadratischen Term der Abstände von den Punkten der Öffnung zum Beobachtungspunkt vernachlässigbar, also bei der Fresnel-Zahl NF = a²/(λL) ≪ 1, ist das Beugungsbild die Fourier-Transformierte der Amplitudenverteilung der Öffnung. Bei einer Öffnung mit 1 mm Radius und 500 nm Wellenlänge ist a²/λ = 2 m, daher ist ein deutlich größerer Abstand von einigen zehn m oder mehr nötig. Mit einer Linse sammeln sich die in dieselbe Richtung laufenden parallelen Anteile in einem Punkt der Brennebene, sodass sich das Beugungsbild im Unendlichen in die Brennebene holen lässt. Bei NF ≫ 1 entstehen am Rand des Schattens der Öffnung nur feine Streifen, und es liegt keine Fraunhofer-Beugung vor. Ein unverändert abgebildeter Schatten ist der geometrisch-optische Grenzfall ohne merkliche Beugung, in dem die Fourier-Beziehung nicht gilt. Den Bereich mit NF um 1 behandelt man als Fresnel-Beugung."
+  },
+  "fourier-optics-009": {
+    "question": "Fällt paralleles kohärentes Licht der Wellenlänge 500 nm senkrecht auf ein Gitter mit der Periode d = 10 µm, erscheint in einem bestimmten Abstand vom Gitter ein Hell-Dunkel-Bild, das dem Gitter gleicht und seitlich nicht verschoben ist (Talbot-Effekt). Welcher Wert kommt diesem ersten Abstand (Talbot-Abstand zT = 2d²/λ, paraxiale Näherung) am nächsten?",
+    "choices": [
+      "ca. 0,4 mm",
+      "ca. 0,2 mm",
+      "ca. 0,1 mm"
+    ],
+    "explanation": "Der Talbot-Abstand beträgt zT = 2d²/λ = 2 × (10×10⁻⁶)² / (500×10⁻⁹) = 4×10⁻⁴ m, also ca. 0,4 mm. Ca. 0,2 mm ist zT/2; an dieser Stelle erscheint zwar auch ein Gitterbild, das aber um eine halbe Periode seitlich verschoben ist und daher die Bedingung eines unverschobenen Bildes nicht erfüllt. Ca. 0,1 mm ist zT/4; dort erscheinen bei einem sinusförmigen Gitter schwache Streifen mit halber Periode und bei einem Rechteckgitter mit gleich breiten hellen und dunklen Bereichen eine gleichmäßige Helligkeit, also kein dem Gitter gleiches Bild. Das am Gitter gebeugte Licht ist ein Satz ebener Wellen mit festen Winkeln; bei der Ausbreitung verschieben sich die Phasen der Ordnungen proportional zum Quadrat der Ordnung, und nach jedem zT stimmen die Phasen aller Ordnungen wieder überein, sodass die ursprüngliche Verteilung zurückkehrt. Da ohne Linse Bilder periodischer Strukturen entstehen, nutzt man den Effekt für die Röntgen-Phasenkontrastbildgebung, die Gitterprüfung und die Lithographie."
+  },
+  "fourier-optics-010": {
+    "question": "Weshalb lässt sich in der Holographie aus dem aufgezeichneten Interferenzmuster ein räumliches Bild des Objekts rekonstruieren?",
+    "choices": [
+      "Im Interferenzmuster von Objekt- und Referenzwelle sind Amplitude und Phase der Objektwelle aufgezeichnet, und bei Beleuchtung mit der Referenzwelle wird die ursprüngliche Wellenfront durch Beugung rekonstruiert",
+      "Die Helligkeitsverteilung des Objekts wird mit einer Linse abgebildet und wie bei einer Fotografie aus zwei Richtungen aufgezeichnet, die zum linken und zum rechten Auge zeigen",
+      "Das lichtempfindliche Material ist ein besonderes Material, das statt der Lichtintensität direkt die Phase des elektrischen Feldes speichert und aus dieser Phasenverteilung die Tiefe rekonstruiert"
+    ],
+    "explanation": "Lichtempfindliche Materialien und Bildsensoren können nur die Lichtintensität aufzeichnen, und bei einer gewöhnlichen Fotografie geht die Phaseninformation verloren. In der Holographie überlagert man die Objektwelle O mit einer kohärenten Referenzwelle R und zeichnet die Intensität |O + R|² = |O|² + |R|² + OR* + O*R auf. In der Lage der Interferenzstreifen ist die Phase von O gespeichert, im Streifenkontrast die Amplitude. Beleuchtet man das aufgezeichnete Hologramm mit R, enthält das durchgelassene Licht einen zu |R|²O proportionalen Anteil, und die Wellenfront des vom Objekt kommenden Lichts selbst wird rekonstruiert; man sieht daher ein räumliches Bild, dessen Ansicht sich mit der Blickrichtung ändert. Die Aufzeichnung über eine abbildende Linse ist die gewöhnliche Fotografie. Das lichtempfindliche Material selbst reagiert nur auf die Intensität; die Phase wird durch Interferenz in Intensitätsstreifen umgesetzt und so aufgezeichnet."
+  },
+  "fourier-optics-011": {
+    "question": "Mit einem He-Ne-Laser der Wellenlänge 633 nm wird ein Hologramm aufgezeichnet, wobei sich Objekt- und Referenzwelle unter einem Winkel von 30° kreuzen. Welcher Wert kommt dem Abstand der aufgezeichneten Interferenzstreifen am nächsten? (Beide Wellen fallen symmetrisch zur Normalen der Aufzeichnungsfläche ein.)",
+    "choices": [
+      "ca. 0,633 µm",
+      "ca. 2,45 µm",
+      "ca. 1,22 µm"
+    ],
+    "explanation": "Kreuzen sich zwei ebene Wellen unter dem Winkel θ, beträgt der Streifenabstand Λ = λ/(2 sin(θ/2)). Λ = 633 nm / (2 × sin15°) = 633/(2 × 0,259) ≈ 1,22 µm; als Ortsfrequenz sind das ca. 820 Perioden/mm. Ca. 0,633 µm ist ein Fehler, bei dem statt des halben der volle Winkel eingesetzt und λ/(2 sin30°) gerechnet wurde. Ca. 2,45 µm ist ein Fehler, bei dem der Faktor 2 im Nenner fehlt, also λ/sin(θ/2) gerechnet wurde. Gewöhnlicher Fotofilm kann so feine Streifen nicht aufzeichnen, daher verwendet man für Hologramme spezielle Platten oder Photopolymere, die einige tausend Perioden/mm aufzeichnen können. Bewegen sich die Streifen während der Belichtung auch nur um einen Bruchteil ihres Abstands, geht der Kontrast verloren; daher ist es auch wichtig, Schwingungen des optischen Tisches zu unterdrücken."
+  },
+  "fourier-optics-012": {
+    "question": "Welche Aussage über den Hauptvorteil des Off-Axis-Hologramms (nach Leith und Upatnieks), bei dem die Referenzwelle schräg einfällt, gegenüber dem ursprünglich von Gabor verwendeten In-Line-Hologramm mit Objekt- und Referenzwelle auf derselben Achse trifft zu?",
+    "choices": [
+      "Bei schräg einfallender Referenzwelle wird der Abstand der Interferenzstreifen größer, sodass auch Fotofilm mit geringer Auflösung zur Aufzeichnung genügt",
+      "Bei der Rekonstruktion laufen Objektbild, konjugiertes Bild (Zwillingsbild) und unverändert durchgehendes Licht nullter Ordnung in verschiedene Richtungen und lassen sich ohne Überlappung beobachten",
+      "Die Objektwelle selbst übernimmt die Rolle der Referenzwelle, sodass keine eigene Referenzwelle nötig ist und auch mit wenig kohärenten Lichtquellen aufgezeichnet werden kann"
+    ],
+    "explanation": "Die aufgezeichnete Intensität |O + R|² enthält die beiden Terme OR* und O*R, und bei der Rekonstruktion erscheinen gleichzeitig das Objektbild und ein phaseninvertiertes konjugiertes Bild (Zwillingsbild). Beim In-Line-Hologramm überlagern sich diese beiden und das Licht nullter Ordnung auf derselben Achse, sodass das Bild schwer zu erkennen ist. Beim Off-Axis-Hologramm fällt die Referenzwelle unter dem Winkel θ ein; Bild und konjugiertes Bild laufen daher in Richtungen, die um ±θ gegen die Richtung der Rekonstruktionsbeleuchtung geneigt sind, während das Licht nullter Ordnung in Richtung der Beleuchtung weiterläuft, sodass sie räumlich getrennt sind. Dafür wird der Abstand der Interferenzstreifen bei senkrecht auf die Aufzeichnungsfläche fallender Objektwelle mit etwa λ/sinθ klein, und man braucht hochauflösende lichtempfindliche Materialien; die Antwort mit größerem Streifenabstand kehrt die Verhältnisse also um. Beide Arten zeichnen die Phase durch Interferenz mit der Referenzwelle auf, daher ist die Referenzwelle unverzichtbar und die Lichtquelle muss kohärent sein."
+  },
+  "fourier-optics-013": {
+    "question": "Weshalb kann ein Reflexions-Volumenhologramm (Denisjuk-Hologramm), bei dem Objekt- und Referenzwelle von entgegengesetzten Seiten in das lichtempfindliche Material eintreten, auch bei Beleuchtung mit weißem Licht ein Bild rekonstruieren?",
+    "choices": [
+      "Die Wellenlängen des weißen Lichts werden zwar unter verschiedenen Winkeln gebeugt, doch im Volumenhologramm wird die Winkelabweichung innerhalb der Dicke korrigiert, sodass sich die Bilder aller Farben genau an derselben Stelle überlagern",
+      "Der Streifenabstand ist viel größer als die Aufzeichnungswellenlänge und der Beugungswinkel klein, sodass alle Wellenlängen mit gleicher Effizienz gebeugt werden und die Verschiebung der Bilder der einzelnen Farben kaum auffällt",
+      "In Dickenrichtung entstehen schichtförmige Streifen im Abstand von etwa einer halben Wellenlänge im Material, die nur Farben nahe der Aufzeichnungswellenlänge stark reflektieren, für die die Bragg-Bedingung erfüllt ist"
+    ],
+    "explanation": "Interferieren zwei Wellen im Material gegenläufig, entstehen nahezu parallel zur Materialoberfläche liegende Streifen im Abstand von etwa einer halben Wellenlänge im Material (λ/(2n)), in Dickenrichtung zu einigen Dutzend Schichten gestapelt. Dieser Schichtstapel wirkt wie ein dielektrischer Mehrschichtspiegel und reflektiert nur die Wellenlänge, für die die Bragg-Bedingung erfüllt ist, bei der sich die Reflexionen an den Schichten verstärken. Selbst bei Beleuchtung mit weißem Licht wird das Bild daher nur mit Licht eines schmalen Bands nahe der Aufzeichnungswellenlänge rekonstruiert, und Farbsäume bleiben gering. Bei dünnen Transmissionshologrammen werden die Wellenlängen des weißen Lichts unter verschiedenen Winkeln gebeugt, sodass sich farbverschobene Bilder überlagern und verschwimmen. Volumenhologramme haben eine starke Wellenlängen- und Winkelselektivität; die Antwort, nach der die Effizienz nicht von der Wellenlänge abhängt, kehrt den Sachverhalt um. Schrumpft das Material bei der Entwicklung, ändert sich der Streifenabstand, und die Rekonstruktionsfarbe weicht von der Aufzeichnungswellenlänge ab."
+  },
+  "fourier-optics-014": {
+    "question": "Welcher Wert kommt dem theoretischen Höchstwert der Beugungseffizienz in der ersten Ordnung eines dünnen Phasenhologramms (Beugungsgitters) mit sinusförmiger Phasenmodulation am nächsten?",
+    "choices": [
+      "ca. 34 %",
+      "ca. 6,3 %",
+      "100 %"
+    ],
+    "explanation": "Bei einem dünnen sinusförmigen Phasengitter mit der Phasenamplitude a ist die Beugungseffizienz der q-ten Ordnung über Bessel-Funktionen durch ηq = Jq²(a) gegeben. Der Höchstwert von J₁ beträgt bei a ≈ 1,84 ca. 0,582, daher ist die Effizienz der ersten Ordnung höchstens 0,582² ≈ 0,339, also ca. 34 %. Ca. 6,3 % (1/16) ist der Höchstwert der ersten Ordnung bei einem Amplitudengitter mit sinusförmig veränderlicher Transmission, bei dem ein Großteil des Lichts absorbiert wird oder in die nullte Ordnung geht. 100 % ist der Wert, der grundsätzlich mit einem Gitter mit sägezahnförmiger Phase (Blaze) oder einem dicken Volumenhologramm, das die Bragg-Bedingung erfüllt, erreichbar ist; beim dünnen sinusförmigen Phasengitter verteilt sich das Licht auch auf höhere Ordnungen, sodass dieser Wert nicht erreicht wird. Bei computergenerierten Hologrammen und räumlichen Lichtmodulatoren wird die Phase mehrstufig gestaltet, um sich dem Blaze anzunähern und die Effizienz zu erhöhen."
+  },
+  "fourier-optics-015": {
+    "question": "Bei der digitalen Holographie wird ein Off-Axis-Hologramm direkt auf einem Bildsensor mit 3,45 µm Pixelabstand aufgezeichnet; die Objektwelle fällt senkrecht auf die Sensorfläche, die Referenzwelle unter dem Winkel θ (Wellenlänge 633 nm). Welcher Bereich von θ folgt aus der Bedingung, eine Periode der Interferenzstreifen mit mindestens zwei Pixeln abzutasten?",
+    "choices": [
+      "höchstens ca. 10,6°",
+      "höchstens ca. 5,3°",
+      "mindestens ca. 5,3°"
+    ],
+    "explanation": "Fällt die Objektwelle senkrecht und die Referenzwelle unter dem Winkel θ ein, beträgt die Periode der Interferenzstreifen λ/sinθ. Um sie mit mindestens zwei Pixeln abzutasten, muss λ/sinθ ≥ 2p gelten, also sinθ ≤ λ/(2p) = 0,633/(2 × 3,45) ≈ 0,0917 und θ ≤ ca. 5,3°. Höchstens ca. 10,6° ergibt sich aus λ/sinθ ≥ p mit nur einem Pixel je Periode; das erfüllt die Nyquist-Bedingung nicht, und die Streifen werden nicht korrekt aufgezeichnet. Je größer der Winkel, desto feiner die Streifen, daher ist die Bedingung eine Obergrenze, und die Angabe mindestens ca. 5,3° hat die falsche Richtung. Ist der Winkel andererseits zu klein, lassen sich bei der rechnerischen Rekonstruktion Bild, Licht nullter Ordnung und konjugiertes Bild nicht mehr trennen; man wählt den Winkel daher passend zur Bandbreite des Objekts nahe der Obergrenze. Da die Pixel von Bildsensoren groß sind, ist der Winkel der Referenzwelle auf einige Grad oder weniger begrenzt."
+  },
+  "fourier-optics-016": {
+    "question": "Die Amplitudenverteilung des Lichts in der Ebene z = 0 wird als Überlagerung ebener Wellen mit der Ortsfrequenz ν (Winkelspektrum) dargestellt. Wie breiten sich bei Licht der Wellenlänge λ die Anteile mit einer Ortsfrequenz größer als 1/λ aus?",
+    "choices": [
+      "Oberhalb von 1/λ bleibt die Wellenzahl in Ausbreitungsrichtung reell und wird größer, und die Anteile erreichen als ebene Wellen, die nahezu senkrecht zur optischen Achse laufen, auch weit entfernte Ebenen",
+      "Die Wellenzahl in Ausbreitungsrichtung wird imaginär, und es entstehen evaneszente Wellen, die in z-Richtung exponentiell abklingen, sodass sie weit entfernte Ebenen kaum erreichen",
+      "Anteile, die feiner als die Wellenlänge sind, laufen nur mit umgekehrter Phase weiter und erreichen weit entfernte Ebenen als helligkeitsumgekehrtes Bild; mit einer Linse gesammelt, geben sie die ursprüngliche Feinheit wieder"
+    ],
+    "explanation": "Der Anteil mit der Ortsfrequenz ν ist eine ebene Welle mit der transversalen Wellenzahl kx = 2πν, und die Wellenzahl in Ausbreitungsrichtung ist kz = √((2π/λ)² − (2πν)²). Für ν < 1/λ ist kz reell, und es entsteht eine ebene Welle, die in Richtung sinθ = λν läuft. Für ν > 1/λ wird kz imaginär, und der Anteil klingt mit z exponentiell ab; ist ν hinreichend größer als 1/λ, verschwindet er innerhalb einer Strecke von etwa einer Wellenlänge oder weniger. Da es keine Richtung mit sinθ größer als 1 gibt, läuft er auch nicht senkrecht zur Achse. Ebenso wenig kommt er phasenumgekehrt an, und die Information wird nicht ins Fernfeld getragen. Deshalb kann keine Linse Strukturen wiedergeben, die viel feiner als die Wellenlänge sind; das Nahfeldmikroskop überwindet die Beugungsgrenze, indem es diese Anteile in unmittelbarer Nähe des Präparats aufnimmt."
+  },
+  "fourier-optics-017": {
+    "question": "Bei einer Fresnelschen Zonenplatte mit abwechselnd transparenten und undurchsichtigen Ringzonen liegt die äußere Grenze der m-ten Zone, von der Mitte aus gezählt, dort, wo der optische Weg von diesem Punkt zum axialen Fokus um mλ/2 länger ist als der von der Mitte zum Fokus. Welcher Wert kommt der Brennweite des Hauptfokus am nächsten, wenn der Radius der ersten Grenze 0,50 mm und die Wellenlänge 500 nm beträgt? (Paraxiale Näherung verwenden.)",
+    "choices": [
+      "ca. 0,50 m",
+      "ca. 0,25 m",
+      "ca. 1,0 m"
+    ],
+    "explanation": "Der optische Weg von einem Punkt im Abstand r zum Fokus im Abstand f ist √(f² + r²) ≈ f + r²/(2f); die Bedingung lautet also r_m²/(2f) = mλ/2, das heißt r_m² = mλf. Es folgt f = r₁²/λ = (0,50×10⁻³ m)²/(500×10⁻⁹ m) = 0,50 m. Ca. 0,25 m ist der Wert, bei dem der Wegunterschied je Grenze als λ angesetzt wurde, ca. 1,0 m der Wert ohne den Faktor 1/2 in r²/(2f). Das Licht aus den einzelnen Zonen verstärkt sich im Fokus, und auch bei f/3 und f/5 entstehen schwache Foki. Eine Zonenplatte kann als binär aufgezeichnetes Hologramm des Interferenzmusters aus einer Kugelwelle einer Punktquelle und einer ebenen Welle aufgefasst werden und dient etwa zur Fokussierung von Röntgenstrahlung, für die sich Linsen nur schwer herstellen lassen."
+  },
+  "fourier-optics-018": {
+    "question": "Auf ein dünnes Phasengitter mit 50 % Tastverhältnis, dessen Phase abwechselnd die zwei Werte 0 und π annimmt (die Grundform eines binären computergenerierten Hologramms), fällt senkrecht paralleles Licht. Welche Aussage über die Aufteilung des gebeugten Lichts trifft zu? (Betrachtung nach der skalaren Beugungstheorie.)",
+    "choices": [
+      "In der nullten Ordnung verbleiben ca. 50 %, in die +1. und −1. Ordnung gehen je ca. 25 %, und Beugungsordnungen ab der zweiten treten nicht auf",
+      "Die Phasenstufe lenkt das Licht zu einer Seite ab, nur in der +1. Ordnung sammeln sich ca. 81 % (8/π²), und Licht der −1. Ordnung tritt nicht auf",
+      "Das Licht nullter Ordnung löscht sich zu null aus, und in die +1. und −1. Ordnung gehen je ca. 40 % (4/π²) des Lichts"
+    ],
+    "explanation": "Die Transmission ist eine Rechteckwelle, die abwechselnd +1 und −1 annimmt; ihr Mittelwert, also die Amplitude der nullten Ordnung, ist 0, und das Licht nullter Ordnung verschwindet. Die Fourier-Koeffizienten der Rechteckwelle betragen für ungerade Ordnungen 2/(mπ), daher ist die Effizienz der ±1. Ordnung jeweils (2/π)² = 4/π² ≈ 40,5 %, zusammen ca. 81 %, und der Rest geht in die ±3., ±5. … Ordnung. Da dieses binäre Gitter symmetrisch ist, sind +1. und −1. Ordnung stets gleich stark; um das Licht auf eine Seite zu bündeln, braucht man einen Blaze (Kinoform) mit sägezahnförmiger Phase. 50 % in der nullten Ordnung verbleiben etwa bei einer Phasenstufe von π/2; für das Gitter mit 0 und π gilt das nicht. Wegen dieser Eigenschaft wird das Gitter mit 0 und π als Strahlteiler verwendet, der Licht gleichmäßig auf zwei Strahlen aufteilt."
+  },
+  "fourier-optics-019": {
+    "question": "Beim Schlierenverfahren, mit dem Brechungsindexänderungen durch transparente Luftströmungen oder Temperaturungleichmäßigkeiten sichtbar gemacht werden, fokussiert man das Licht nach dem Objekt mit einer Linse und blendet im Fokus (Fourier-Ebene) mit einer Schneide einen Teil des Lichts aus. Weshalb entstehen dabei im Bild Hell-Dunkel-Unterschiede?",
+    "choices": [
+      "Durch Brechungsindexgradienten abgelenktes Licht sammelt sich neben dem Fokus; blendet die Schneide eine Seite aus, ändert sich die Bildhelligkeit je nach Richtung und Größe des Gradienten",
+      "Die Schneide verschiebt die Phase des Lichts nullter Ordnung um λ/4 und setzt die Phasenänderung des Objekts selbst in Helligkeit um, sodass die Helligkeit proportional zum Brechungsindex selbst statt zu seinem Gradienten ist",
+      "Die Schneide entfernt als Tiefpassfilter alle Anteile hoher Ortsfrequenz, sodass nur sanft veränderliche Brechungsindexänderungen übrig bleiben und feine Störungen unsichtbar werden"
+    ],
+    "explanation": "Bei einem Brechungsindexgradienten werden Lichtstrahlen in dessen Richtung abgelenkt und sammeln sich in der Brennebene der Linse neben dem eigentlichen Fokus. Die Schneide in der Fourier-Ebene blendet die Ortsfrequenzen einer Seite aus; in eine Richtung abgelenktes Licht wird blockiert und erscheint dunkel, in die Gegenrichtung abgelenktes Licht geht durch und erscheint hell, sodass die Bildhelligkeit den Brechungsindexgradienten (die Strahlablenkung) darstellt. Dreht man die Schneide um 90°, werden Gradienten in der anderen Richtung sichtbar. Die Phase des Lichts nullter Ordnung um λ/4 zu verschieben und den Phasenwert in Helligkeit umzusetzen, ist das Zernikesche Phasenkontrastverfahren, ein vom Schlierenverfahren verschiedener Raumfilter. Die Schneide ist kein Tiefpassfilter, der nur hohe Frequenzen entfernt, und auch feine Störungen werden als Gradienten sichtbar."
+  },
+  "fourier-optics-020": {
+    "question": "Ein Transmissionsobjekt steht in der objektseitigen Brennebene einer Linse mit der Brennweite f, wird mit kohärentem parallelem Licht beleuchtet, und man beobachtet die Intensitätsverteilung in der bildseitigen Brennebene (Fourier-Ebene). Welche Aussage über die Änderung dieser Intensitätsverteilung trifft zu, wenn das Objekt senkrecht zur optischen Achse etwas verschoben wird? (Das Objekt bleibt innerhalb des beleuchteten Bereichs.)",
+    "choices": [
+      "Auch die Intensitätsverteilung verschiebt sich in derselben Richtung um denselben Betrag parallel, und die Form des Musters bleibt gleich",
+      "Weiter von der Achse entfernte Objekte enthalten mehr Anteile hoher Ortsfrequenz, daher weitet sich die Intensitätsverteilung entsprechend der Verschiebung nach außen",
+      "Die Intensitätsverteilung bleibt gleich; der Amplitude wird lediglich eine lineare Phase hinzugefügt, deren Neigung proportional zur Verschiebung ist"
+    ],
+    "explanation": "Die Amplitudenverteilung t(x) in der objektseitigen Brennebene wird in der bildseitigen Brennebene zur Fourier-Transformierten T(ν) mit der Ortsfrequenz ν = x′/(λf). Die Fourier-Transformierte des um a verschobenen Objekts t(x − a) ist T(ν)exp(−i2πνa) (Verschiebungssatz); der Betrag bleibt gleich, und es kommt nur eine zu ν proportionale Phase hinzu. Die Intensität |T|² hängt daher nicht von der Lage des Objekts ab, und Raumfilter oder optische Korrelatoren in der Fourier-Ebene wirken gleich, wo auch immer das Objekt liegt. Eine parallele Verschiebung der Intensitätsverteilung tritt auf, wenn man das Beleuchtungslicht kippt; bei verschobenem Objekt bewegt sich das Bild in der Bildebene. Die Lage des Objekts ändert seine Ortsfrequenzanteile nicht, daher weitet sich die Verteilung auch nicht nach außen. Die hinzugekommene Phasenneigung zeigt sich bei einer erneuten Fourier-Transformation durch eine zweite Linse als Verschiebung der Bildlage."
+  }
+}

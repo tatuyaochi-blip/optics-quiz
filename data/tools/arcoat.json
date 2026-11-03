@@ -295,6 +295,63 @@
           "a": "비스듬히 입사하면 막 속 광경로의 위상차가 작아져, 반사율이 최소가 되는 파장이 짧은 쪽으로 이동합니다. 또한 s 편광과 p 편광에서 반사율이 달라집니다. 이 도구는 수직 입사만 다루므로, 입사각이 큰 용도에서는 별도의 계산이 필요합니다."
         }
       ]
+    },
+    "de": {
+      "nav": "Antireflexschicht",
+      "card": "Dicke einer einlagigen λ/4-Antireflexschicht, idealen Brechungsindex der Schicht und Reflexionsgrad bei senkrechtem Einfall berechnen",
+      "title": "Rechner für Antireflexschichten (Dicke einer einlagigen λ/4-Schicht, idealer Brechungsindex, Reflexionsgrad)",
+      "description": "Berechnet für eine einlagige Antireflexschicht die physikalische Dicke der λ/4-Schicht bei der Entwurfswellenlänge, den idealen Brechungsindex √(n₀nₛ), bei dem die Reflexion verschwindet, und den Reflexionsgrad bei senkrechtem Einfall ohne und mit Schicht. Auch der Reflexionsgrad bei Wellenlängen abseits der Entwurfswellenlänge wird bestimmt.",
+      "h1": "Rechner für Antireflexschichten",
+      "lead": "Geben Sie den Brechungsindex des Substrats, den Brechungsindex des Schichtmaterials und die Entwurfswellenlänge ein; berechnet werden die physikalische Dicke der Schicht, deren optische Dicke λ/4 beträgt, und der Reflexionsgrad für senkrecht einfallendes Licht. Voreingestellt ist ein Glas mit dem Brechungsindex 1,52 (etwa BK7), auf das Magnesiumfluorid (MgF₂) mit dem Brechungsindex 1,38 als λ/4-Schicht für 550 nm aufgebracht ist, betrachtet mit blauem Licht von 450 nm.",
+      "in_heading": "Eingaben (senkrechter Einfall)",
+      "lambda0": "Entwurfswellenlänge λ₀ (nm, im Vakuum)",
+      "n0": "Brechungsindex des Eintrittsmediums n₀ (Luft: 1)",
+      "ns": "Brechungsindex des Substrats nₛ",
+      "n1": "Brechungsindex der Schicht n₁",
+      "lambda": "Wellenlänge für den Reflexionsgrad λ (nm)",
+      "out_heading": "Ergebnisse",
+      "nideal": "Idealer Brechungsindex der Schicht √(n₀nₛ)",
+      "thick": "Physikalische Dicke der λ/4-Schicht d = λ₀/(4n₁)",
+      "r0": "Reflexionsgrad ohne Schicht",
+      "coat_heading": "Reflexionsgrad mit Schicht (eine Fläche)",
+      "rdes": "Reflexionsgrad bei der Entwurfswellenlänge λ₀",
+      "rlam": "Reflexionsgrad bei der Wellenlänge λ",
+      "nideal_r": "Mit einer Schicht mit idealem Brechungsindex (bei λ₀)",
+      "note": "Gerechnet wird der Reflexionsgrad einer einzelnen Fläche bei senkrechtem Einfall für absorptionsfreie Schicht und absorptionsfreies Substrat mit wellenlängenunabhängigen Brechungsindizes (ohne Dispersion). Die Reflexion an der Rückseite des Substrats und polarisationsabhängige Unterschiede bei schrägem Einfall sind nicht enthalten. Der Reflexionsgrad ist das Verhältnis der Intensitäten (Leistungen).",
+      "practice": "Fragen zu Interferenz und Beugung lösen",
+      "related": "Verwandte Begriffe",
+      "sections": [
+        {
+          "h": "Wie eine λ/4-Schicht die Reflexion auslöscht",
+          "p": "Bringt man eine dünne Schicht auf ein Substrat auf, überlagern sich das an der Schichtoberfläche reflektierte Licht und das an der Grenzfläche zwischen Schicht und Substrat reflektierte Licht. Für n₀ < n₁ < nₛ ist der Phasensprung bei der Reflexion an beiden Grenzflächen gleich; beträgt die optische Dicke der Schicht (Brechungsindex × physikalische Dicke) λ/4, ist der Gangunterschied des in der Schicht hin- und zurücklaufenden Lichts λ/2, die Phasen der beiden reflektierten Wellen sind um eine halbe Periode verschoben, und sie löschen sich aus. In der Schicht verkürzt sich die Wellenlänge auf λ/n₁; die physikalische Dicke beträgt daher d = λ₀/(4n₁). Mit den Voreinstellungen (MgF₂, n₁ = 1,38, λ₀ = 550 nm) ist d ≈ 99,6 nm – nicht zu verwechseln mit λ/4 = 137,5 nm ohne Division durch den Brechungsindex. Bei einer Schicht mit der optischen Dicke λ/2 beträgt der Gangunterschied hin und zurück eine Wellenlänge; sie löscht die Reflexion nicht aus, und der Reflexionsgrad ist derselbe wie ohne Schicht."
+        },
+        {
+          "h": "Idealer Brechungsindex der Schicht √(n₀nₛ)",
+          "p": "Damit sich die beiden reflektierten Wellen vollständig auslöschen, müssen nicht nur die Phasen, sondern auch die Amplituden übereinstimmen. Aus der Bedingung, dass die Reflexionsamplituden an beiden Grenzflächen bei senkrechtem Einfall gleich sind, folgt als idealer Brechungsindex der Schicht n₁ = √(n₀nₛ); dann ist der Reflexionsgrad bei der Entwurfswellenlänge 0. Für Glas in Luft (nₛ = 1,52) ergibt sich √1,52 ≈ 1,23, doch so niedrig brechende und zugleich beständige Materialien gibt es kaum; in der Praxis wird häufig MgF₂ (1,38) verwendet. Für Silizium mit dem Brechungsindex 3,48 bei 1,55 µm liegt der Idealwert bei etwa 1,87; Siliziumnitrid (etwa 2,0) oder Siliziumoxinitrid kommen dem nahe."
+        },
+        {
+          "h": "Reflexionsgrad bei senkrechtem Einfall",
+          "p": "Der Reflexionsgrad für Licht, das senkrecht auf eine Grenzfläche zwischen den Brechungsindizes n₀ und nₛ fällt, folgt aus den Fresnelschen Formeln zu R = ((n₀ − nₛ)/(n₀ + nₛ))². Für das voreingestellte Glas sind das etwa 4,26 %, für Silizium (3,48 bei 1,55 µm) etwa 31 %. Mit einer λ/4-Schicht beträgt der Reflexionsgrad bei der Entwurfswellenlänge R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²; mit MgF₂ auf Glas (Voreinstellung) sinkt er auf etwa 1,26 %. Je weiter der Brechungsindex vom Idealwert abweicht, desto mehr Reflexion bleibt übrig, und ist der Brechungsindex der Schicht höher als der des Substrats, nimmt die Reflexion sogar zu."
+        },
+        {
+          "h": "Wellenlängen abseits der Entwurfswellenlänge und Mehrschichtsysteme",
+          "p": "Da die Schichtdicke auf die Entwurfswellenlänge abgestimmt ist, verschiebt sich bei anderen Wellenlängen die Phasenbedingung, und die Reflexion nimmt zu. Mit den Voreinstellungen steigt der Reflexionsgrad von etwa 1,26 % bei 550 nm auf etwa 1,62 % bei 450 nm und etwa 1,60 % bei 700 nm (Werte ohne Dispersion). Schon die voreingestellte Einzelschicht hält den Reflexionsgrad im sichtbaren Bereich (400 bis 700 nm) bei höchstens etwa 2,2 % (am höchsten am Rand bei 400 nm); um die Reflexion noch weiter und über einen breiteren Wellenlängenbereich zu unterdrücken, verwendet man Mehrschichtsysteme (Mehrfachvergütung) aus hoch- und niedrigbrechenden Schichten. Stapelt man dieselben λ/4-Schichten abwechselnd hoch- und niedrigbrechend, verstärken sich die Reflexionen umgekehrt, und es entsteht ein dielektrischer Mehrschichtspiegel."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Was ist der Unterschied zwischen physikalischer und optischer Dicke?",
+          "a": "Die optische Dicke ist Brechungsindex × physikalische Dicke und bestimmt den Phasenfortschritt des Lichts. Eine λ/4-Schicht hat die optische Dicke λ/4; ihre physikalische Dicke ist das 1/n₁-Fache davon. Für MgF₂ und 550 nm sind das etwa 99,6 nm."
+        },
+        {
+          "q": "Sind Antireflexschichten auf Brillengläsern und Kameraobjektiven einlagig?",
+          "a": "Bei preiswerten Produkten gibt es auch einlagige MgF₂-Schichten, meist sind es aber Mehrschichtsysteme aus einigen bis über zehn Schichten, die den Reflexionsgrad im gesamten sichtbaren Bereich unter 1 % halten, bei hochwertigen Ausführungen bei etwa 0,5 % oder darunter. Dass die Restreflexion leicht farbig (grün oder violett) erscheint, liegt daran, dass der Reflexionsgrad von der Wellenlänge abhängt."
+        },
+        {
+          "q": "Was ändert sich bei schräg einfallendem Licht?",
+          "a": "Bei schrägem Einfall wird die Phasendifferenz des Lichtwegs in der Schicht kleiner, und die Wellenlänge mit dem kleinsten Reflexionsgrad verschiebt sich zu kürzeren Wellenlängen. Außerdem unterscheiden sich die Reflexionsgrade für s- und p-Polarisation. Dieser Rechner behandelt nur den senkrechten Einfall; für Anwendungen mit großen Einfallswinkeln ist eine andere Rechnung nötig."
+        }
+      ]
     }
   }
 }

@@ -1,0 +1,11 @@
+{
+  "main": {
+    "name": "Optik",
+    "groups": {
+      "basic": "Grundlagen des Lichts",
+      "sources": "Lichtquellen und Übertragung",
+      "devices": "Detektion und integrierte Photonik",
+      "applied": "Messtechnik und Anwendungen"
+    }
+  }
+}

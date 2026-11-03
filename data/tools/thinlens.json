@@ -327,6 +327,72 @@
           "a": "거리를 앞쪽·뒤쪽 주점에서 재면, 근축 범위에서 같은 식이 성립합니다. 다만 주점의 위치는 렌즈 데이터로부터 구해야 하며, 렌즈 끝에서 잰 거리를 그대로 넣으면 어긋납니다. 또한 수차에 의한 상의 흐림은 이 계산에 포함되지 않습니다."
         }
       ]
+    },
+    "de": {
+      "nav": "Abbildung mit dünnen Linsen",
+      "card": "Aus Brennweite und Gegenstandsweite Bildweite und Abbildungsmaßstab berechnen, dazu die Gesamtbrennweite zweier Linsen",
+      "title": "Rechner für die Abbildung mit dünnen Linsen (Bildweite, Abbildungsmaßstab, Gesamtbrennweite zweier Linsen)",
+      "description": "Bestimmt mit der Linsengleichung 1/a + 1/b = 1/f aus Brennweite und Gegenstandsweite die Bildweite, den Abbildungsmaßstab und ob ein reelles oder ein virtuelles Bild entsteht. Für zwei dünne Linsen im Abstand d werden außerdem Gesamtbrennweite, Brechkraft und bildseitige Schnittweite berechnet.",
+      "h1": "Rechner für die Abbildung mit dünnen Linsen",
+      "lead": "Geben Sie die Brennweite f der Linse und den Abstand a des Gegenstands von der Linse ein; berechnet werden der Ort b, an dem das Bild entsteht, der Abbildungsmaßstab m und ob das Bild reell oder virtuell ist. Mit der Brennweite einer zweiten Linse und dem Abstand der Linsen wird zusätzlich die Gesamtbrennweite bestimmt, wenn man beide Linsen als eine einzige auffasst. Voreingestellt ist ein Gegenstand 150 mm vor einer Sammellinse mit 50 mm Brennweite und eine Linse mit 100 mm Brennweite 30 mm dahinter.",
+      "in_heading": "Eingaben (in Luft, paraxial)",
+      "f1": "Brennweite von Linse 1 f₁ (mm, Zerstreuungslinse negativ)",
+      "a": "Abstand vom Gegenstand zu Linse 1 a (mm)",
+      "f2": "Brennweite von Linse 2 f₂ (mm, Zerstreuungslinse negativ)",
+      "d": "Abstand zwischen Linse 1 und 2 d (mm)",
+      "out_heading": "Ergebnisse",
+      "b": "Bildweite b (Bild von Linse 1)",
+      "m": "Abbildungsmaßstab m = −b/a",
+      "kind": "Art des Bildes",
+      "p1": "Brechkraft von Linse 1 1/f₁",
+      "two_heading": "Kombination zweier Linsen",
+      "fc": "Gesamtbrennweite f",
+      "pc": "Gesamtbrechkraft 1/f",
+      "bfd": "Bildseitige Schnittweite (von Linse 2 bis zum bildseitigen Brennpunkt)",
+      "note": "Gerechnet wird für dünne Linsen in Luft mit achsnahen Strahlen (Paraxialstrahlen). Abstände auf der Gegenstandsseite der Linse zählen als a > 0, auf der Bildseite als b > 0; b < 0 bedeutet ein virtuelles Bild auf der Gegenstandsseite der Linse. Ein negativer Abbildungsmaßstab bedeutet ein umgekehrtes Bild. Reale Linsen haben eine Dicke und Abbildungsfehler; behandeln Sie die Brennweite daher als von der Hauptebene aus gemessenen Wert.",
+      "practice": "Fragen zu geometrischer Optik und Abbildung lösen",
+      "related": "Verwandte Begriffe",
+      "js": {
+        "real": "Reelles Bild (umgekehrt)",
+        "virtual": "Virtuelles Bild (aufrecht)",
+        "inf": "Bild im Unendlichen (paralleles Licht)",
+        "behind": "(hinter der Linse)",
+        "front": "(vor der Linse)",
+        "afocal": "Unendlich (afokales System)",
+        "zero": "f darf nicht 0 sein"
+      },
+      "sections": [
+        {
+          "h": "Linsengleichung und Vorzeichenkonvention",
+          "p": "Für dünne Linsen, deren Dicke sich vernachlässigen lässt, gilt zwischen Gegenstandsweite a, Bildweite b und Brennweite f die Beziehung 1/a + 1/b = 1/f (Gaußsche Linsengleichung). In diesem Rechner gilt a > 0, wenn der Gegenstand vor der Linse liegt, und b > 0, wenn das Bild hinter der Linse (auf der Seite, in die das Licht läuft) entsteht; Sammellinsen haben f > 0, Zerstreuungslinsen f < 0. Mit den Voreinstellungen (f = 50 mm, a = 150 mm) ergibt sich 1/b = 1/50 − 1/150 = 2/150, also b = 75 mm. Manche Lehrbücher verwenden eine Vorzeichenkonvention, bei der die Gegenstandsweite negativ gezählt wird (1/b − 1/a = 1/f); prüfen Sie daher beim Vergleich mit anderen Quellen die Vorzeichenkonvention."
+        },
+        {
+          "h": "Abbildungsmaßstab und Art des Bildes",
+          "p": "Das Verhältnis von Bildgröße zu Gegenstandsgröße heißt Abbildungsmaßstab; es gilt m = −b/a. Mit den Voreinstellungen ist m = −75/150 = −0,5, es entsteht also ein umgekehrtes reelles Bild halber Größe. Bei einer Sammellinse entsteht ein verkleinertes reelles Bild, wenn der Gegenstand weiter als die doppelte Brennweite (2f) entfernt ist, ein vergrößertes, wenn er zwischen f und 2f liegt, und genau bei 2f ein Bild gleicher Größe (m = −1). Liegt der Gegenstand innerhalb der Brennweite, wird b negativ, und auf der Gegenstandsseite erscheint ein aufrechtes, vergrößertes virtuelles Bild. Das ist das Prinzip der Lupe. Liegt der Gegenstand genau im Brennpunkt, verläuft das Licht hinter der Linse parallel, und das Bild entsteht im Unendlichen."
+        },
+        {
+          "h": "Gesamtbrennweite zweier Linsen",
+          "p": "Stellt man dünne Linsen mit den Brennweiten f₁ und f₂ im Abstand d hintereinander, gilt für die Gesamtbrennweite f die Beziehung 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂). Mit der Brechkraft (dem Kehrwert der Brennweite, in Metern gemessen mit der Einheit Dioptrie, D) geschrieben lautet sie P = P₁ + P₂ − dP₁P₂. Liegen die Linsen direkt aneinander (d = 0), addieren sich die Brechkräfte einfach; für Linsen mit 100 mm und 200 mm ergibt sich 10 D + 5 D = 15 D, also f ≈ 66,7 mm. Mit den Voreinstellungen (50 mm, 100 mm, d = 30 mm) ist 1/f = 0,02 + 0,01 − 0,006 = 0,024 mm⁻¹, also f ≈ 41,7 mm (24 D). Für d = f₁ + f₂ wird die Brechkraft 0, und es entsteht ein afokales System wie ein Strahlaufweiter oder ein Fernrohr."
+        },
+        {
+          "h": "Bildseitige Schnittweite und Hauptebenen",
+          "p": "Fällt paralleles Licht auf ein System aus zwei Linsen, liegt der Punkt, in dem es sich sammelt (der bildseitige Brennpunkt), im Abstand BFD = f·(1 − d/f₁) hinter der zweiten Linse. Mit den Voreinstellungen sind das 41,7 × (1 − 30/50) ≈ 16,7 mm, also weniger als die Gesamtbrennweite von 41,7 mm. Der Grund ist, dass die Gesamtbrennweite von der bildseitigen Hauptebene aus gemessen wird, die mit den Voreinstellungen 25 mm vor Linse 2 (zwischen den beiden Linsen) liegt. Multipliziert man mit der Strahlmatrix (ABCD-Matrix) die Matrizen der beiden Linsen und der Strecke dazwischen, erhält man dasselbe Ergebnis. Auch bei realen Kameraobjektiven stimmen Brennweite und der Abstand vom hinteren Linsenscheitel zur Bildebene (die bildseitige Schnittweite) im Allgemeinen nicht überein."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie rechnet man mit einer Zerstreuungslinse?",
+          "a": "Geben Sie die Brennweite als negativen Wert ein. Für f = −50 mm und a = 100 mm ergeben sich zum Beispiel b ≈ −33,3 mm und m ≈ 0,33; vor der Linse entsteht ein aufrechtes, verkleinertes virtuelles Bild. Eine einzelne Zerstreuungslinse erzeugt von einem realen Gegenstand immer ein virtuelles Bild."
+        },
+        {
+          "q": "Was ist die Brechkraft (Dioptrie)?",
+          "a": "Der Kehrwert der in Metern angegebenen Brennweite, mit der Einheit Dioptrie (D = m⁻¹). Eine Linse mit 50 mm Brennweite hat 20 D; ein Brillenglas mit −2 D ist eine Zerstreuungslinse mit der Brennweite −0,5 m. Bei dünnen Linsen, die direkt aneinanderliegen, addieren sich die Brechkräfte."
+        },
+        {
+          "q": "Lässt sich der Rechner auch für dicke Linsen oder reale Kameraobjektive verwenden?",
+          "a": "Misst man die Abstände von der gegenstandsseitigen und der bildseitigen Hauptebene aus, gelten im paraxialen Bereich dieselben Gleichungen. Die Lage der Hauptebenen muss allerdings aus den Linsendaten bestimmt werden; setzt man die vom Linsenscheitel aus gemessenen Abstände direkt ein, ergeben sich Abweichungen. Unschärfe durch Abbildungsfehler ist in dieser Rechnung außerdem nicht enthalten."
+        }
+      ]
     }
   }
 }

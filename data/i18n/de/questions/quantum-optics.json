@@ -1,0 +1,182 @@
+{
+  "quantum-optics-001": {
+    "question": "Für Licht gleicher mittlerer Photonenzahl wird die Schwankung (Varianz ⟨Δn²⟩) der Zahl der in einer festen Zeit detektierten Photonen verglichen. Welche Kombination trifft bei Verwendung eines idealen, verlustfreien Detektors zu?",
+    "choices": [
+      "Die Photonenzahl wird allein durch den statistischen Vorgang der photoelektrischen Umwandlung im Detektor bestimmt; unabhängig von der Lichtquelle ergibt sich für jedes Licht eine Poisson-Verteilung mit ⟨Δn²⟩ = n̄",
+      "Laserlicht ist Poisson-verteilt mit ⟨Δn²⟩ = n̄, thermisches Einmodenlicht hat ⟨Δn²⟩ = n̄ + n̄², ein Photonenzahlzustand hat 0",
+      "Laserlicht hat eine feste Phase, daher schwankt auch die Photonenzahl nicht, ⟨Δn²⟩ = 0; nur thermisches Licht mit schwankender Intensität folgt der Poisson-Verteilung ⟨Δn²⟩ = n̄"
+    ],
+    "explanation": "Die Photonenzahl eines kohärenten Zustands folgt der Poisson-Verteilung P(n) = n̄ⁿe^(−n̄)/n!, ihre Varianz ist gleich dem Mittelwert n̄. Thermisches Einmodenlicht folgt der Bose-Einstein-Verteilung P(n) = n̄ⁿ/(1 + n̄)ⁿ⁺¹; seine Varianz n̄ + n̄² ist größer als die der Poisson-Verteilung (superpoissonisch). Ein Photonenzahlzustand mit genau festgelegter Photonenzahl hat die Varianz 0; Licht mit geringeren Schwankungen als die Poisson-Verteilung (subpoissonisch) lässt sich im klassischen Wellenbild nicht erklären. Auch bei Laserlicht schwankt die Photonenzahl, die Varianz ist also nicht 0, und sie hängt von der Lichtquelle ab. Verluste oder Detektoren geringer Effizienz dünnen die Photonen zufällig aus, sodass sich subpoissonische Eigenschaften der Poisson-Verteilung annähern."
+  },
+  "quantum-optics-002": {
+    "question": "Laserlicht wird so abgeschwächt, dass die mittlere Photonenzahl pro Puls μ = 0,1 beträgt. Welcher Wert kommt der Wahrscheinlichkeit am nächsten, dass ein Puls zwei oder mehr Photonen enthält, wenn die Photonenzahl einer Poisson-Verteilung folgt?",
+    "choices": [
+      "ca. 0,47 %",
+      "ca. 9,0 %",
+      "ca. 1,0 %"
+    ],
+    "explanation": "Für die Poisson-Verteilung gilt P(n) = μⁿe^(−μ)/n!. Mit P(0) = e^(−0,1) ≈ 0,905 und P(1) = 0,1 × e^(−0,1) ≈ 0,0905 beträgt die Wahrscheinlichkeit für zwei oder mehr Photonen 1 − 0,905 − 0,0905 ≈ 0,0047, ca. 0,47 %. Für kleines μ lässt sie sich mit μ²/2 = 0,005 nähern. Ca. 9,0 % ist die Wahrscheinlichkeit für genau ein Photon, ca. 1,0 % ist μ² ohne Division durch 2. Unter den Pulsen mit mindestens einem Photon beträgt der Anteil mit zwei oder mehr Photonen ca. 5 %. Verwendet man bei der Quantenschlüsselverteilung abgeschwächte Laser, eröffnen solche Mehrphotonenpulse Spielraum für den Photon-Number-Splitting-Angriff, bei dem ein Lauscher ein Photon abzweigt; dem begegnet man mit dem Decoy-Verfahren, das Köderpulse unterschiedlicher Stärke beimischt."
+  },
+  "quantum-optics-003": {
+    "question": "Welche Aussage über den Wert der Korrelationsfunktion zweiter Ordnung g⁽²⁾(τ) = ⟨I(t)I(t + τ)⟩/⟨I⟩², die die zeitliche Korrelation der Lichtintensität beschreibt, bei der Verzögerung τ = 0 trifft zu?",
+    "choices": [
+      "Für jedes Licht ist g⁽²⁾(0) = 1; nur die Art der Abnahme bei großer Verzögerung τ (bestimmt durch die Kohärenzzeit) unterscheidet sich je nach Lichtquelle",
+      "Bei thermischem Licht kommen die Photonen vereinzelt an, daher 0; bei Laserlicht ist die Phase einheitlich und die Photonen kommen gebündelt an, daher 2",
+      "Für Laserlicht (kohärenter Zustand) 1, für thermisches Einmodenlicht 2, für Licht eines einzelnen Atoms oder Quantenpunkts kleiner als 1, im Idealfall 0"
+    ],
+    "explanation": "g⁽²⁾(0) gibt an, um welchen Faktor die Wahrscheinlichkeit, zum Zeitpunkt des Nachweises eines Photons ein weiteres nachzuweisen, die eines völlig zufälligen Falls übersteigt. Im kohärenten Zustand ist die Ankunft der Photonen zufällig, g⁽²⁾(0) = 1; bei thermischem Licht schwankt die Intensität, die Photonen kommen gebündelt an (Bunching), g⁽²⁾(0) = 2. Ein einzelner Emitter kann nach der Abgabe eines Photons erst nach erneuter Anregung das nächste aussenden, daher g⁽²⁾(0) < 1 (Antibunching), bei einer idealen Einzelphotonenquelle 0. Für klassische Lichtintensitäten gilt stets g⁽²⁾(0) ≥ 1, ein Wert unter 1 ist daher ein Beleg für die Quantennatur des Lichts. Die Beschreibung mit 0 für thermisches Licht und 2 für Laserlicht vertauscht, welche Lichtquelle Bunching zeigt, und ordnet zudem thermischem Licht den Wert des Antibunchings zu. Die Beschreibung mit 1 für jedes Licht übersieht die Unterschiede zwischen Lichtquellen."
+  },
+  "quantum-optics-004": {
+    "question": "Das Licht einer Einzelphotonenquelle wird in einer HBT-Anordnung mit einem 50:50-Strahlteiler aufgeteilt und jeweils mit einem Einzelphotonendetektor empfangen, und die Koinzidenzen werden gemessen. Die Zählraten beider Detektoren betragen je 1,0×10⁵ /s, das Koinzidenzfenster 1 ns, die Messzeit 100 s, und im Zeitfenster bei Verzögerung 0 wurden 200 Koinzidenzen gezählt. Welcher Wert kommt dem auf die für Licht mit zufälliger Ankunft erwarteten Koinzidenzen normierten g⁽²⁾(0) am nächsten?",
+    "choices": [
+      "ca. 5",
+      "ca. 20",
+      "ca. 0,2"
+    ],
+    "explanation": "Bei Licht mit zufälliger Ankunft beträgt die Zahl der zufällig in das Zeitfenster Δt fallenden Koinzidenzen R₁R₂ΔtT = 1,0×10⁵ × 1,0×10⁵ × 1×10⁻⁹ × 100 = 1000. Teilt man die gemessenen 200 dadurch, erhält man g⁽²⁾(0) ≈ 0,2, also Antibunching mit einem Wert unter 1. Für das Licht von N unabhängigen Einzelphotonenquellen gilt g⁽²⁾(0) = 1 − 1/N, schon bei zweien also 0,5; liegt der Wert unter 0,5, kann man schließen, dass das Licht überwiegend von einem einzelnen Emitter stammt. Ca. 5 ist das umgekehrte Verhältnis, ca. 20 vergisst die Messzeit und teilt durch den Erwartungswert von 10 pro Sekunde. In der Praxis heben Zeitauflösung des Detektors, Hintergrundlicht und Dunkelzählungen g⁽²⁾(0) an."
+  },
+  "quantum-optics-005": {
+    "question": "Das Licht einer Glühlampe wird durch einen Polarisator und ein schmalbandiges Interferenzfilter geleitet, und die Intensitätskorrelation wird in einer HBT-Anordnung gemessen. Für thermisches Licht ist g⁽²⁾(0) idealerweise 2. Welches Ergebnis wird gemessen, wenn die Zeitauflösung von Detektoren und Zählelektronik viel länger als die Kohärenzzeit des Lichts ist?",
+    "choices": [
+      "Unabhängig von der Zeitauflösung wird der Wert bei Verzögerung 0 weiterhin als 2 gemessen; nur die Breite der Erhebung erscheint auf die Größenordnung der Zeitauflösung verbreitert",
+      "Die Bunching-Erhebung um die Verzögerung 0 schrumpft etwa um das Verhältnis von Kohärenzzeit zu Zeitauflösung, und g⁽²⁾(0) wird sehr nahe bei 1 gemessen",
+      "Bei langer Zeitauflösung fallen Koinzidenzen bei Verzögerung 0 aus dem Zeitfenster heraus und werden weniger, daher wird g⁽²⁾(0) kleiner als 1 (wie Antibunching) gemessen"
+    ],
+    "explanation": "Die Intensität thermischen Lichts schwankt auf einer Zeitskala der Kohärenzzeit τc ≈ 1/Δν, und nur in dieser Zeit kommen die Photonen gebündelt an; g⁽²⁾(τ) ist daher in dem Bereich größer als 1, in dem |τ| kürzer als τc ist. Ist die Zeitauflösung T viel länger als τc, wird diese schmale Erhebung über die Breite T geglättet, und ihre Höhe schrumpft auf etwa τc/T. Bei Licht um 800 nm mit 1 nm Bandbreite beträgt τc z. B. ca. 2 ps; bei 50 ps Auflösung ist die Höhe der Erhebung etwa τc/T ≈ 0,04, und g⁽²⁾(0) liegt nur um einige Prozent über 1 (höchstens ca. 1,04). Die Fläche der Erhebung bleibt nahezu erhalten, daher bleibt der Wert nicht bei 2, während nur die Breite zunimmt. Werte unter 1 sind eine Eigenschaft von Licht mit Antibunching und keine Folge der Zeitauflösung."
+  },
+  "quantum-optics-006": {
+    "question": "Welche Aussage über gequetschtes Licht (gequetschter Zustand der Quadraturkomponenten) trifft zu?",
+    "choices": [
+      "Licht, bei dem die Schwankung einer der beiden Quadraturkomponenten des Feldes unter die Vakuumschwankung gesenkt ist; dafür nimmt die der anderen zu, und das Produkt unterschreitet die Grenze der Unschärferelation nicht",
+      "Licht, bei dem die Schwankungen beider Quadraturkomponenten des Feldes gleichzeitig unter die Vakuumschwankung gesenkt sind; jede gemessene Komponente zeigt Rauschen unterhalb des Schrotrauschens, und die Unschärferelation schränkt es nicht ein",
+      "Licht, bei dem Laserlicht zur Verringerung der Photonenzahlschwankung stark abgeschwächt wird, damit die Photonen vereinzelt kommen und die Schwankung unter das Vakuumniveau (Schrotrauschen) sinkt"
+    ],
+    "explanation": "Das Feld lässt sich durch zwei Quadraturkomponenten X₁ und X₂ beschreiben, die den Koeffizienten von cos ωt und sin ωt entsprechen; für ihre Schwankungen gilt die Unschärferelation ΔX₁ΔX₂ ≥ 1/4 (in Einheiten, in denen im Vakuum ΔX₁ = ΔX₂ = 1/2 ist). Im Vakuum und im kohärenten Zustand sind beide gleich 1/2; das ist der Ursprung des Schrotrauschens. Ein gequetschter Zustand macht eine Komponente kleiner als 1/2 und dafür die andere größer; beide gleichzeitig zu verkleinern, ist unmöglich. Misst man die kleinere Komponente, lassen sich Phase oder Amplitude mit Rauschen unterhalb des Schrotrauschens messen. Schwächt man Laserlicht ab, wird es nur als kohärenter Zustand schwächer, und die Schwankung sinkt nicht unter das Vakuumniveau. Gequetschtes Vakuum erzeugt man etwa mit einem entarteten OPO unterhalb der Schwelle."
+  },
+  "quantum-optics-007": {
+    "question": "Es wurde gequetschtes Licht erzeugt, dessen Varianz einer Quadraturkomponente 10 dB unter der Vakuumschwankung (Schrotrauschniveau) liegt. Welcher Wert kommt der gemessenen Quetschung am nächsten, wenn es in einem System mit einer Gesamtnachweiseffizienz von 90 % (10 % Verlust) gemessen wird? Der Verlust wird als Strahlteiler behandelt, der den Anteil η des Lichts durchlässt und den übrigen Anteil 1 − η mit Vakuumschwankungen mischt.",
+    "choices": [
+      "ca. 9,5 dB",
+      "ca. 7,2 dB",
+      "ca. 9,0 dB"
+    ],
+    "explanation": "10 dB Quetschung bedeuten eine Varianz vom 0,1-Fachen des Vakuums. Nach einem Verlust mit der Effizienz η wird die Varianz V' = ηV + (1 − η) = 0,9 × 0,1 + 0,1 = 0,19, und es bleiben nur −10 log₁₀0,19 ≈ 7,2 dB Quetschung. Ca. 9,5 dB zieht nur die Abschwächung durch den Verlust, 10 log₁₀0,9 ≈ −0,46 dB, ab und übersieht die beigemischte Vakuumschwankung. Ca. 9,0 dB multipliziert fälschlich den dB-Wert mit der Effizienz. In einem System mit der Effizienz η sinkt die Varianz bei noch so starker Quetschung nicht unter 1 − η = 0,1, messbar sind also höchstens 10 dB. Gequetschtes Licht ist verlustempfindlich; etwa in Gravitationswellendetektoren sind die Quanteneffizienz der Photodetektoren und die Verluste der optischen Komponenten entscheidend."
+  },
+  "quantum-optics-008": {
+    "question": "In einem χ⁽²⁾-Kristall werden mit Pumplicht durch spontane parametrische Fluoreszenz (SPDC) Photonenpaare erzeugt; der Nachweis des einen Photons (Idler) kündigt das andere (Signal) an, das als Einzelphoton dient (angekündigte Einzelphotonenquelle). Welche Aussage über dieses Verfahren trifft zu?",
+    "choices": [
+      "Aus einem Pumpphoton entstehen zwei Photonen mit jeweils der Frequenz der Pumpe, daher lassen sich die Paarphotonen mit unveränderter Pumpwellenlänge in derselben Richtung wie das Pumplicht entnehmen",
+      "Photonen vermehren sich durch denselben Mechanismus wie die stimulierte Emission; je stärker die Pumpe, desto höher die Paarerzeugungswahrscheinlichkeit, während der Anteil gleichzeitiger Doppelpaare sinkt und die Einzelphotonenreinheit steigt",
+      "Ein Pumpphoton zerfällt in zwei, die nahezu gleichzeitig entstehen; erhöht man jedoch die Paarerzeugungswahrscheinlichkeit p, wächst die Wahrscheinlichkeit für zwei Paare etwa mit p², und die Reinheit sinkt"
+    ],
+    "explanation": "Bei der SPDC zerfällt ein Pumpphoton in zwei Photonen, die ωp = ωs + ωi und die Phasenanpassung kp = ks + ki erfüllen. Da beide im selben Elementarprozess entstehen, stimmen ihre Ankunftszeiten mit einer Genauigkeit von etwa der Kohärenzzeit überein, und der Nachweis des einen kündigt das Vorhandensein des anderen an. Da sie sich die Energie teilen, ist die Summe der Frequenzen von Signal und Idler gleich der Pumpfrequenz; zwei Photonen mit der Frequenz der Pumpe entstehen nicht. Die Paarerzeugung ist statistisch; erhöht man p, wächst auch die Wahrscheinlichkeit für mehrere Paare etwa mit p², und das g⁽²⁾(0) des angekündigten Photons verschlechtert sich. Deshalb hält man p klein; Helligkeit und Reinheit stehen in einem Zielkonflikt. Es ist ein von der stimulierten Emission verschiedener Vorgang."
+  },
+  "quantum-optics-009": {
+    "question": "Signal und Idler von SPDC-Photonenpaaren werden mit getrennten Detektoren gezählt: Die Zählrate auf der Signalseite beträgt 2,0×10⁵ /s, auf der Idlerseite 2,5×10⁵ /s, die Koinzidenzrate 5,0×10⁴ /s. Welcher Wert kommt der Zahl der im Kristall erzeugten Photonenpaare (pro Sekunde) am nächsten, wenn Dunkelzählungen und zufällige Koinzidenzen vernachlässigt werden?",
+    "choices": [
+      "ca. 1,0×10⁶ /s",
+      "ca. 5,0×10⁴ /s",
+      "ca. 4,5×10⁵ /s"
+    ],
+    "explanation": "Mit der Paarerzeugungsrate N und den Nachweiseffizienzen ηs und ηi (einschließlich Kopplung und Verlusten) auf Signal- und Idlerseite sind die Zählraten Ns = ηsN und Ni = ηiN und die Koinzidenzrate C = ηsηiN. Daraus folgen ηs = C/Ni = 5,0×10⁴/2,5×10⁵ = 0,2 und ηi = C/Ns = 0,25, und N = NsNi/C = 2,0×10⁵ × 2,5×10⁵/5,0×10⁴ = 1,0×10⁶ /s. Ca. 5,0×10⁴ /s setzt die nachgewiesenen Koinzidenzen unmittelbar als Paarzahl an, ca. 4,5×10⁵ /s addiert nur die beiden Zählraten; beide berücksichtigen nicht die durch die Nachweiseffizienz verlorenen Paare. Diese Beziehung heißt Methode von Klyshko und wird auch genutzt, um Nachweiseffizienzen ohne kalibrierte Lichtquelle zu bestimmen."
+  },
+  "quantum-optics-010": {
+    "question": "Photon A und Photon B eines polarisationsverschränkten Photonenpaars (|HH⟩ + |VV⟩)/√2 werden an getrennten Orten jeweils mit einem Polarisator und einem Detektor gemessen (H horizontale, V vertikale Polarisation). Welche Aussage trifft zu?",
+    "choices": [
+      "Wie auch immer der Polarisator von A ausgerichtet ist, für A allein geht das Photon mit der Wahrscheinlichkeit 1/2 durch; bei einem Winkelunterschied θ der Polarisatoren von A und B gehen beide mit (1/2)cos²θ durch",
+      "Misst man mit dem Polarisator von A unter 45°, ist in diesem Moment die Polarisation von B festgelegt; allein aus den Zählungen auf der Seite von B lässt sich die Einstellung von A ohne Kommunikation schneller als das Licht erfahren",
+      "Die Paarphotonen sind von ihrer Entstehung an entweder horizontal oder vertikal festgelegt; richtet man beide Polarisatoren von A und B auf 45° aus, gehen beide mit der Wahrscheinlichkeit 1/4 durch"
+    ],
+    "explanation": "In diesem verschränkten Zustand ist die Polarisation eines einzelnen Photons nicht festgelegt, und unter welchem Winkel der Polarisator von A auch steht, die Durchlasswahrscheinlichkeit beträgt 1/2. Die Wahrscheinlichkeit, dass beide durchgehen, ist (1/2)cos²(θA − θB); bei gleichem Winkel stimmen die Ergebnisse immer überein. Richtet man beide auf 45° aus, gehen beide mit der Wahrscheinlichkeit 1/2 durch; bei einem gemischten Zustand, der bei der Entstehung auf HH oder VV festgelegt ist, wären es nur 1/4, und dieser Unterschied dient zum Nachweis der Verschränkung. Die Statistik auf der Seite von B allein bleibt dagegen unabhängig von der Einstellung von A bei 1/2; zum Abgleich der Ergebnisse braucht man gewöhnliche Kommunikation, daher lässt sich mit Verschränkung keine Information schneller als das Licht übertragen."
+  },
+  "quantum-optics-011": {
+    "question": "Mit polarisationsverschränkten Photonenpaaren wird die Bellsche Ungleichung (CHSH-Form) geprüft. Im idealen Zustand ist der größte CHSH-Wert S gleich 2√2, in einem Zustand mit dem Interferenzkontrast V (gleichmäßig mit Rauschen gemischter Zustand) höchstens S = 2√2 V. Welche Aussage über den größten Wert von S bei V = 0,90 und sein Verhältnis zur Obergrenze S ≤ 2 des lokalen Realismus trifft zu?",
+    "choices": [
+      "ca. 1,80, überschreitet die Obergrenze 2 nicht",
+      "ca. 2,83, überschreitet die Obergrenze 2",
+      "ca. 2,55, überschreitet die Obergrenze 2"
+    ],
+    "explanation": "S = 2√2 × 0,90 ≈ 2,83 × 0,90 ≈ 2,55; das überschreitet die Obergrenze 2, die Theorien lokaler verborgener Variablen zulassen. Der Kontrast ist (Maximum − Minimum)/(Maximum + Minimum) der Koinzidenzen, wenn man einen Polarisator festhält und den anderen dreht. Zum Überschreiten der Obergrenze ist V > 1/√2 ≈ 0,71 nötig; sinkt der Kontrast durch Rauschen oder zufällige Koinzidenzen, ist keine Verletzung mehr zu sehen. Ca. 1,80 rechnet fälschlich 2V ohne √2, ca. 2,83 ist der Idealwert ohne die Verringerung durch Rauschen (der quantenmechanisch zulässige Höchstwert). Die Polarisatorwinkel, bei denen S am größten wird, sind z. B. 0° und 45° für A sowie 22,5° und 67,5° für B."
+  },
+  "quantum-optics-012": {
+    "question": "Zwei ununterscheidbare Einzelphotonen werden gleichzeitig in die beiden Eingänge eines 50:50-Strahlteilers geschickt, und mit Detektoren an den beiden Ausgängen werden die Koinzidenzen gemessen (Hong-Ou-Mandel-Interferenz). Welche Aussage trifft zu?",
+    "choices": [
+      "Jedes der beiden Photonen wählt unabhängig mit der Wahrscheinlichkeit 1/2 einen Ausgang; die Koinzidenzwahrscheinlichkeit bleibt bei gleichzeitiger wie bei versetzter Ankunft 1/2 und ist über der Verzögerung flach",
+      "Die beiden Photonen verlassen gemeinsam denselben Ausgang, die Koinzidenzen sind idealerweise 0, und über der Verzögerung erscheint ein Einbruch mit einer Breite von etwa der Kohärenzzeit",
+      "Die beiden Photonen verlassen stets verschiedene Ausgänge; bei gleichzeitiger Ankunft nehmen die Koinzidenzen zu, und über der Verzögerung erscheint eine Spitze mit einer Breite von etwa der Kohärenzzeit"
+    ],
+    "explanation": "Der Weg, bei dem beide Photonen reflektiert werden, und der Weg, bei dem beide transmittiert werden, sind am Ausgang ununterscheidbar und haben Amplituden entgegengesetzten Vorzeichens, die sich auslöschen. Deshalb verlassen die Photonen zu zweit einen der beiden Ausgänge, und die Koinzidenzen werden 0. Verzögert man eines, sodass sie unterscheidbar werden, tritt keine Auslöschung auf, und die Koinzidenzen kehren zur Wahrscheinlichkeit 1/2 unabhängiger Teilchen zurück; über der Verzögerung erscheint daher ein Einbruch mit einer Breite von etwa der Kohärenzzeit. Bei Photonen, die sich durch Polarisation oder Wellenlänge unterscheiden, entsteht auch bei gleichzeitiger Ankunft kein Einbruch. Die Tiefe des Einbruchs ist ein Maß für die Ununterscheidbarkeit der beiden Photonen und dient zur Bewertung von Einzelphotonenquellen sowie als Grundlage optischer Quantencomputer. Mit klassischem Licht erreicht der Einbruch höchstens 50 % Tiefe."
+  },
+  "quantum-optics-013": {
+    "question": "Welche Aussage über die zum Nachweis einzelner Photonen verwendete SPAD (Einzelphotonen-Lawinendiode) und den supraleitenden Nanodraht-Einzelphotonendetektor (SNSPD) trifft zu?",
+    "choices": [
+      "Die SPAD wird mit einer Sperrspannung unterhalb der Durchbruchspannung betrieben; die Höhe des Ausgangspulses ist proportional zur Photonenzahl, sodass sie sich aus einem Puls ablesen lässt, und es gibt keine Totzeit",
+      "Der SNSPD arbeitet bei Raumtemperatur und liest die Erwärmung des Drahts nach Absorption eines Photons mit einem Thermoelement aus; er braucht keine Kühlung und detektiert bei jeder Wellenlänge mit gleicher Effizienz",
+      "Die SPAD löst mit einer Sperrspannung oberhalb der Durchbruchspannung aus einem Photon eine Lawine aus und hat eine Totzeit; der SNSPD detektiert, indem ein tiefgekühlter supraleitender Draht bei Absorption lokal normalleitend wird"
+    ],
+    "explanation": "Die SPAD wird im Geiger-Modus betrieben: Man legt eine Sperrspannung oberhalb der Durchbruchspannung an, und die von einem Photon erzeugten Ladungsträger lösen eine selbsterhaltende Lawine aus. Die Größe der Lawine hängt nicht von der Photonenzahl ab, daher lässt sich ein Photon nicht von mehreren unterscheiden; nötig sind eine Schaltung, die die Lawine löscht (Quenching), und eine Totzeit bis zur Wiederherstellung der Spannung. Werden eingefangene Ladungsträger verzögert freigesetzt, entstehen außerdem falsche Zählereignisse (Nachpulse). Ein zur Lichtintensität proportionaler Ausgang bei Spannungen unterhalb der Durchbruchspannung ist der lineare Modus einer gewöhnlichen APD. Der SNSPD verwendet einen supraleitenden Nanodraht, durch den ein Strom nahe dem kritischen Strom fließt und der auf einige K oder darunter gekühlt wird; kennzeichnend sind eine hohe Nachweiseffizienz auch im 1550-nm-Band, wenige Dunkelzählungen und ein kleiner Zeitjitter, doch er braucht eine Kältemaschine."
+  },
+  "quantum-optics-014": {
+    "question": "Bei der Quantenschlüsselverteilung nach BB84 wählt der Sender die Polarisation der Photonen zufällig in einer von zwei Basen (0°/90° und 45°/135°), und der Empfänger misst ebenfalls in einer zufällig gewählten Basis. Ein Lauscher misst alle Photonen unterwegs in einer zufälligen Basis und sendet Photonen mit der gemessenen Polarisation neu aus. Welcher Wert kommt der Fehlerrate der Bits mit übereinstimmender Basis von Sender und Empfänger (Schlüssel nach dem Sifting) am nächsten (die Geräte seien fehlerfrei)?",
+    "choices": [
+      "ca. 50 %",
+      "ca. 25 %",
+      "0 %"
+    ],
+    "explanation": "Mit der Wahrscheinlichkeit 1/2 wählt der Lauscher dieselbe Basis wie der Sender, misst dann korrekt und sendet dieselbe Polarisation neu aus, sodass kein Fehler entsteht. In der anderen Hälfte misst er in der anderen Basis, das neu gesendete Photon ist gegenüber der Basis des Empfängers um 45° verdreht, und das Ergebnis des Empfängers ist mit der Wahrscheinlichkeit 1/2 falsch. Die Fehlerrate beträgt 1/2 × 1/2 = 1/4, ca. 25 %. Ein unbekannter Quantenzustand lässt sich nicht kopieren (No-Cloning-Theorem); der Lauscher kann keine Kopie anfertigen, ohne den Zustand zu stören, und hinterlässt beim Messen Fehler. 0 % entspricht der Vorstellung klassischer Signale, deren Zustand durch Messen nicht gestört wird. Ca. 50 % nimmt an, die Basis werde bei allen Photonen falsch gewählt. In der Praxis wird kein Schlüssel erzeugt, wenn die Fehlerrate den theoretisch bestimmten zulässigen Wert (bei typischer Analyse von BB84 ca. 11 %) überschreitet."
+  },
+  "quantum-optics-015": {
+    "question": "Bei der Quantenschlüsselverteilung nach BB84 werden Pulse eines abgeschwächten Lasers mit 1 GHz Wiederholrate und mittlerer Photonenzahl μ = 0,5 über 100 km Faser mit 0,2 dB/km Dämpfung gesendet und mit einem Einzelphotonendetektor mit 20 % Nachweiseffizienz empfangen. Welcher Wert kommt der Schlüsselrate nach dem Sifting durch den Basisabgleich am nächsten, wenn Dunkelzählungen vernachlässigt werden und die Nachweiswahrscheinlichkeit eines Pulses μ × (Transmission der Faser) × (Nachweiseffizienz) ist?",
+    "choices": [
+      "ca. 5×10⁵ bit/s",
+      "ca. 1×10⁶ bit/s",
+      "ca. 5×10⁷ bit/s"
+    ],
+    "explanation": "Die Faserdämpfung beträgt 0,2 × 100 = 20 dB, die Transmission 10⁻². Die Nachweiswahrscheinlichkeit eines Pulses ist 0,5 × 10⁻² × 0,2 = 1×10⁻³, die Zahl der Nachweise also 10⁹ × 10⁻³ = 1×10⁶ /s. Bei BB84 stimmen die Basen von Sender und Empfänger nur in der Hälfte der Fälle überein, der Schlüssel nach dem Sifting beträgt daher ca. 5×10⁵ bit/s. Ca. 1×10⁶ bit/s berücksichtigt nicht, dass beim Basisabgleich die Hälfte verworfen wird, ca. 5×10⁷ bit/s lässt die Faserdämpfung weg. Der tatsächliche Schlüssel wird durch Fehlerkorrektur und Privacy Amplification weiter verkürzt. Mit wachsender Entfernung nimmt die Zahl der ankommenden Photonen exponentiell ab, und bei großen Entfernungen überwiegen die Dunkelzählungen. Da sich Quantenzustände nicht kopieren lassen, kann man auch nicht mit gewöhnlichen optischen Verstärkern zwischenverstärken."
+  },
+  "quantum-optics-016": {
+    "question": "Drei voneinander unabhängig leuchtende, gleich helle ideale Einzelphotonenquellen (jede mit g⁽²⁾(0) = 0) liegen im Sichtfeld des Detektors. Welcher Wert kommt dem g⁽²⁾(0) am nächsten, wenn das Licht aller drei zusammen in einer HBT-Anordnung gemessen wird? Die Zeitauflösung des Nachweises sei viel länger als die Kohärenzzeit des Lichts, und Interferenzeffekte zwischen dem Licht verschiedener Quellen mitteln sich heraus.",
+    "choices": [
+      "ca. 0,33",
+      "ca. 0,50",
+      "ca. 0,67"
+    ],
+    "explanation": "Da eine Quelle nie zwei Photonen gleichzeitig aussendet, entstehen Koinzidenzen bei Verzögerung 0 nur aus Paaren von Photonen verschiedener Quellen. Bei N Quellen gleicher Intensität tragen von den N² Paaren, die ⟨I²⟩ entsprechen, die N Paare derselben Quelle nicht bei, daher g⁽²⁾(0) = (N² − N)/N² = 1 − 1/N = 1 − 1/3 ≈ 0,67. Ca. 0,33 ist 1/N, also der Anteil der nicht beitragenden Paare. Ca. 0,50 ist der Wert für N = 2 und verwechselt das Ergebnis mit dem Richtwert g⁽²⁾(0) < 0,5, der anzeigt, dass das Licht überwiegend von einer Quelle stammt. Mit wachsendem N nähert sich g⁽²⁾(0) dem Wert 1; betrachtet man viele unabhängige Emitter zusammen, ist die Eigenschaft, Photonen einzeln auszusenden, daher kaum noch zu erkennen."
+  },
+  "quantum-optics-017": {
+    "question": "Auf einen Einzelphotonendetektor mit 50 ns Totzeit treffen Photonen zufällig mit einer mittleren Rate von 1,0×10⁷ /s. Welcher Wert kommt der gemessenen Zählrate am nächsten, wenn die Nachweiseffizienz 1 ist und Photonen, die während der Totzeit ankommen, nicht gezählt werden und die Totzeit nicht verlängern (nicht paralysierbarer Typ)?",
+    "choices": [
+      "ca. 6,7×10⁶ /s",
+      "ca. 5,0×10⁶ /s",
+      "ca. 2,0×10⁷ /s"
+    ],
+    "explanation": "Mit der Zählrate m ist der Anteil einer Sekunde, in dem der Detektor nicht arbeitet, mτ; gezählt werden nur Photonen, die während der Arbeitszeit ankommen, daher m = n(1 − mτ), also m = n/(1 + nτ). Mit nτ = 1,0×10⁷ × 50×10⁻⁹ = 0,5 ergibt sich m = 1,0×10⁷/1,5 ≈ 6,7×10⁶ /s. Ca. 5,0×10⁶ /s verwendet die Näherung n(1 − nτ), die die tote Zeit mit der wahren Ankunftsrate abschätzt, in einem Bereich mit großer Korrektur. Ca. 2,0×10⁷ /s ist die Obergrenze 1/τ der Zählrate; mehr als die ankommende Rate kann nicht gezählt werden. Die Totzeitkorrektur ist für die richtige Bestimmung von Zählraten und g⁽²⁾ unverzichtbar; bei starkem Licht teilt man es zur Messung auf mehrere Detektoren auf."
+  },
+  "quantum-optics-018": {
+    "question": "Welche Aussage über die balancierte Homodyndetektion, mit der die Schwankungen der Quadraturkomponenten gequetschten Lichts gemessen werden, trifft zu?",
+    "choices": [
+      "Das Signallicht wird mit zwei Einzelphotonendetektoren gezählt, und aus der Korrelation der Ankunftszeiten werden beide Quadraturkomponenten bestimmt; weder ein starker Lokaloszillator noch eine Phasenreferenz ist nötig",
+      "Ein starker Lokaloszillator und das Signal werden an einem 50:50-Strahlteiler gemischt; aus der Differenz der Ströme zweier Photodetektoren erhält man die durch die LO-Phase gewählte Quadraturkomponente. Das Intensitätsrauschen des LO hebt sich auf",
+      "Die Ströme der beiden Photodetektoren werden addiert und die Lichtintensität gemessen; unabhängig von der LO-Phase lassen sich aus der Größe der Intensitätsschwankung beide Quadraturkomponenten zugleich bestimmen und mit dem Schrotrauschen vergleichen"
+    ],
+    "explanation": "Bei der balancierten Homodyndetektion überlagert man einen starken Lokaloszillator (LO) derselben Frequenz wie das Signal an einem 50:50-Strahlteiler und empfängt beide Ausgänge mit Photodetektoren. In der Stromdifferenz bleibt nur der Interferenzterm von LO und Signal übrig, dessen Größe das Produkt aus der LO-Amplitude und der durch die LO-Phase θ gewählten Quadraturkomponente X_θ des Signals ist. Die Intensitätsschwankung des LO selbst gelangt gleichermaßen in beide Photodetektoren und hebt sich in der Differenz auf. Das Rauschen bei abgeblocktem Signal, wenn nur Vakuum eintritt, ist die Bezugsgröße des Schrotrauschens (die Vakuumschwankung); liegt das Rauschen darunter, ist Quetschung nachgewiesen. Die Stromsumme gibt nur die Intensität wieder, die Phaseninformation geht verloren. Aus der Korrelation der Ankunftszeiten erhält man g⁽²⁾, eine von den Quadraturkomponenten verschiedene Größe."
+  },
+  "quantum-optics-019": {
+    "question": "Schickt man Einzelphotonen nacheinander in ein Mach-Zehnder-Interferometer und zählt die Photonen an den beiden Ausgängen, erscheinen in den Zählanteilen vieler Photonen Interferenzstreifen, die vom Gangunterschied der beiden Arme abhängen. Welche Aussage über die Änderung trifft zu, wenn man in einen Arm ein Element einsetzt, das die Polarisation um 90° dreht, sodass das Licht in den beiden Armen senkrecht zueinander polarisiert ist (die Detektoren unterscheiden die Polarisation nicht)?",
+    "choices": [
+      "Die Photonen kommen einzeln an und interferieren nicht miteinander; die Streifen sind nur ein Mittelungseffekt vieler Photonen, und die Zählanteile ändern sich durch die Polarisation nicht",
+      "Auch bei orthogonalen Polarisationen teilt sich das Photon auf die beiden Arme auf und interferiert mit sich selbst; solange die Detektoren die Polarisation nicht unterscheiden, bleibt der Kontrast der Streifen völlig unverändert",
+      "Welcher Arm durchlaufen wurde, ist in der Polarisation gespeichert und prinzipiell unterscheidbar; die Streifen verschwinden, und unabhängig vom Gangunterschied tritt an jedem Ausgang die Hälfte aus"
+    ],
+    "explanation": "Auch bei Einzelphotonen überlagern sich die Wahrscheinlichkeitsamplituden der beiden Wege, sodass beim Aufsummieren der Zählungen vom Gangunterschied abhängige Interferenzstreifen erscheinen. Das ist die Interferenz der Wahrscheinlichkeitsamplituden eines einzelnen Photons und keine Interferenz von Photonen untereinander. Macht man die Polarisationen der beiden Arme orthogonal, verrät die Polarisation, welcher Arm durchlaufen wurde; die Amplituden der beiden Wege sind orthogonal und überlagern sich nicht, daher verschwindet der Interferenzterm, auch wenn die Detektoren die Polarisation nicht messen. Die Erklärung, einzeln eintretende Photonen interferierten nicht, widerspricht der Voraussetzung, dass Streifen erscheinen. Ob die Weginformation prinzipiell zugänglich ist, entscheidet über die Interferenz; löscht man die Weginformation mit einem 45°-Polarisator auf der Ausgangsseite, kehren die Streifen zurück (Quantenradierer)."
+  },
+  "quantum-optics-020": {
+    "question": "In BBO, einem negativ einachsigen Kristall, werden Photonenpaare durch spontane parametrische Fluoreszenz (SPDC) mit doppelbrechender Phasenanpassung vom Typ II erzeugt. Welche Kombination aus der Polarisation der entstehenden Photonenpaare und der Art, polarisationsverschränkte Paare zu gewinnen, trifft zu?",
+    "choices": [
+      "Signal und Idler entstehen beide mit der Polarisation der Pumpe, ihre Polarisationen sind nicht zueinander senkrecht; Polarisationsverschränkung ist nicht erhältlich, man nutzt nur die Verschränkung der Wellenlänge",
+      "Signal und Idler sind als ordentlicher und außerordentlicher Strahl orthogonal polarisiert; in den beiden Schnittrichtungen zweier Kegel ist nicht unterscheidbar, welches Photon welche Polarisation hat, und das Paar ist polarisationsverschränkt",
+      "Signal und Idler sind beide ordentliche Strahlen mit gleicher Polarisation; die Photonen zweier gegenüberliegender Punkte auf einem Kegel lassen sich unmittelbar als polarisationsverschränktes Paar entnehmen"
+    ],
+    "explanation": "Bei der Phasenanpassung vom Typ II zerfällt eine außerordentliche Pumpe in ein ordentliches (o) und ein außerordentliches (e) Photon (e → o + e), daher sind die Polarisationen der Paarphotonen senkrecht zueinander. Da o- und e-Photon verschiedene Brechungsindizes haben, treten sie jeweils auf zwei Kegeln mit gegeneinander verschobenen Mitten aus; in den beiden Richtungen, in denen sich die Kegel schneiden, kann das Photon einer Richtung sowohl o als auch e sein. Der Paarzustand wird daher (|HV⟩ + e^(iφ)|VH⟩)/√2, und gleicht man Phase φ und Zeitversatz mit Kompensatorplatten ab, erhält man polarisationsverschränkte Photonenpaare. Gleiche Polarisation beider Photonen (o + o) ergibt Typ I; mit einem einzelnen Kristall vom Typ I erhält man Polarisationsverschränkung nicht unmittelbar und verwendet etwa zwei gestapelte Kristalle mit senkrecht zueinander stehenden optischen Achsen. Eine Kombination, in der alle drei dieselbe Polarisation haben, lässt sich mit doppelbrechender Phasenanpassung nicht erfüllen."
+  }
+}
