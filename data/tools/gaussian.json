@@ -294,6 +294,63 @@
           "a": "빔 반지름이 허리의 √2배, 단면적이 2배가 될 때까지의 거리입니다. 이 범위에서는 빔이 거의 평행하고 세기도 그다지 떨어지지 않으므로, 레이저 가공에서는 가공 여유(초점 심도)의 기준이 됩니다."
         }
       ]
+    },
+    "de": {
+      "nav": "Gauß-Strahl",
+      "card": "Aus der Strahltaille Rayleigh-Länge, Divergenzwinkel und Strahldurchmesser im Abstand z berechnen",
+      "title": "Rechner für Gauß-Strahlen (Rayleigh-Länge, Divergenzwinkel, Strahldurchmesser, M²)",
+      "description": "Berechnet aus der Laserwellenlänge und dem Taillenradius w0 die Rayleigh-Länge zR, die Fokustiefe und den Divergenzwinkel sowie den Strahlradius w(z) und den Krümmungsradius R(z) der Wellenfront im Abstand z. Die Strahlqualität M² lässt sich ebenfalls berücksichtigen.",
+      "h1": "Rechner für Gauß-Strahlen",
+      "lead": "Aus dem Radius an der engsten Stelle des Strahls (der Strahltaille) w0 und der Wellenlänge wird berechnet, wie stark sich der Strahl über welche Entfernung aufweitet. Voreingestellt ist ein idealer Strahl (M² = 1) mit der Wellenlänge 1064 nm und w0 = 500 µm, betrachtet 1000 mm hinter der Taille.",
+      "in_heading": "Eingaben",
+      "lambda": "Wellenlänge λ (nm, im Vakuum)",
+      "w0": "Taillenradius w0 (µm, 1/e²)",
+      "m2": "Strahlqualität M²",
+      "n": "Brechungsindex des Mediums n",
+      "z": "Abstand von der Taille z (mm)",
+      "out_heading": "Ergebnisse",
+      "zr": "Rayleigh-Länge zR",
+      "dof": "Fokustiefe 2zR",
+      "theta": "Divergenzwinkel (halber Winkel) θ",
+      "z_heading": "Werte im Abstand z",
+      "wz": "Strahlradius w(z)",
+      "dz": "Strahldurchmesser 2w(z)",
+      "rz": "Krümmungsradius der Wellenfront R(z)",
+      "note": "Der Strahlradius ist der Abstand bis zu der Stelle, an der die Intensität auf 1/e² (etwa 13,5 %) des Wertes in der Mitte gefallen ist. Der Divergenzwinkel gilt in ausreichender Entfernung von der Taille (z ≫ zR). Ein Strahl mit M² größer als 1 wird so berechnet, dass er sich bei gleichem w0 M²-mal so schnell aufweitet wie ein idealer Gauß-Strahl.",
+      "practice": "Fragen zu Lasern und Gauß-Strahlen lösen",
+      "related": "Verwandte Begriffe",
+      "sections": [
+        {
+          "h": "Gauß-Strahl und Rayleigh-Länge",
+          "p": "Die Ausgangsstrahlung der meisten Laser ist ein Gauß-Strahl (TEM00-Mode), dessen Intensität über den Querschnitt einer Gauß-Verteilung folgt. Der Strahl ist an der Taille am engsten und weitet sich mit wachsendem Abstand gemäß w(z) = w0·√(1 + (z/zR)²) auf. Die Rayleigh-Länge zR = πw0²/λ ist der Abstand, bei dem sich die Querschnittsfläche des Strahls verdoppelt (der Radius auf das √2-Fache wächst); bis dahin lässt sich der Strahl als nahezu parallel ansehen. Mit den Voreinstellungen (λ = 1064 nm, w0 = 500 µm) ergibt sich zR = π × (0,5 mm)² / 1,064 µm ≈ 738 mm. Die Fokustiefe wird häufig als das Doppelte, 2zR, angegeben und beträgt hier etwa 1,48 m."
+        },
+        {
+          "h": "Divergenzwinkel und Strahlparameterprodukt",
+          "p": "In ausreichender Entfernung von der Taille weitet sich der Strahl unter einem konstanten Winkel auf; der halbe Winkel beträgt θ = λ/(πw0), mit den Voreinstellungen etwa 0,677 mrad. Das Produkt aus w0 und θ, w0·θ = λ/π, hängt nur von der Wellenlänge ab und drückt den Zielkonflikt aus, dass ein Strahl sich umso schneller aufweitet, je stärker man ihn bündelt. Dieses Produkt heißt Strahlparameterprodukt (BPP); für reale Strahlen beträgt es M²·λ/π. Will man mit einer Linse auf einen kleinen Fleck fokussieren, weitet man den einfallenden Strahl auf oder verwendet eine kürzere Wellenlänge."
+        },
+        {
+          "h": "M²: Maß für die Strahlqualität",
+          "p": "M² (Beugungsmaßzahl) gibt an, wievielmal schneller sich ein realer Strahl aufweitet als ein idealer Gauß-Strahl; für einen idealen Strahl ist es 1. Einmodige Faserlaser und He-Ne-Laser liegen unter 1,1, Multimode-Festkörperlaser und Halbleiterlaser in der langsamen Achse bei einigen bis einigen zehn. Bei großem M² ist der Divergenzwinkel bei gleichem Taillendurchmesser M²-mal so groß und die Rayleigh-Länge 1/M²-mal so lang; der Strahl bleibt dann nicht über große Entfernungen schmal, und auch der Fokusfleck wird größer."
+        },
+        {
+          "h": "Krümmung der Wellenfront und Rechnung mit dem Ort",
+          "p": "Die Wellenfront eines Gauß-Strahls ist an der Taille eben und krümmt sich mit wachsendem Abstand; der Krümmungsradius beträgt R(z) = z·(1 + (zR/z)²). Am kleinsten ist R bei z = zR, und zwar 2zR. In ausreichender Entfernung von der Taille gilt R ≈ z, die Welle nähert sich also einer Kugelwelle mit dem Mittelpunkt in der Taille. Mit der Voreinstellung z = 1000 mm ergeben sich w(z) ≈ 842 µm und R(z) ≈ 1545 mm. Beim Entwurf von Resonatoren entsteht eine stabile Mode im Resonator, wenn die Krümmungsradien der Spiegel mit diesem R(z) übereinstimmen."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Was ist der Unterschied zwischen dem 1/e²-Strahldurchmesser und der FWHM?",
+          "a": "Der 1/e²-Durchmesser wird an der Stelle gemessen, an der die Intensität auf etwa 13,5 % des Wertes in der Mitte gefallen ist, und ist in Laserdatenblättern üblich. Die FWHM (Halbwertsbreite) ist die Breite an den Stellen, an denen die Intensität 50 % beträgt; beim Gauß-Strahl ist sie etwa das 0,589-Fache des 1/e²-Durchmessers (das √(2 ln 2)/2-Fache)."
+        },
+        {
+          "q": "Wie groß wird der Fokusfleck beim Fokussieren mit einer Linse?",
+          "a": "Fällt ein breiter Strahl mit dem Taillenradius W auf eine Linse mit der Brennweite f, beträgt der Taillenradius im Fokus etwa w0 ≈ M²·λf/(πW). Für λ = 1064 nm, f = 100 mm, W = 5 mm und M² = 1 sind es zum Beispiel etwa 6,8 µm."
+        },
+        {
+          "q": "Was gibt die Rayleigh-Länge an?",
+          "a": "Den Abstand, bis zu dem der Strahlradius auf das √2-Fache des Taillenradius und die Querschnittsfläche auf das Doppelte anwächst. In diesem Bereich ist der Strahl nahezu parallel und seine Intensität sinkt kaum; in der Lasermaterialbearbeitung dient sie daher als Anhaltspunkt für den Bearbeitungsspielraum (die Fokustiefe)."
+        }
+      ]
     }
   }
 }

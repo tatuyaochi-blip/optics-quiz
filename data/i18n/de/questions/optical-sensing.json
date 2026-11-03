@@ -1,0 +1,182 @@
+{
+  "optical-sensing-001": {
+    "question": "Bei einem LiDAR nach dem ToF-Verfahren wird mitunter eine SPAD (Einzelphotonen-Lawinendiode) als Empfänger verwendet und für viele Pulse die Ankunftszeit der Photonen aufgezeichnet und zu einem Histogramm aufgetragen (zeitkorrelierte Einzelphotonenzählung, TCSPC). Was ist der Hauptvorteil dieses Verfahrens?",
+    "choices": [
+      "Die SPAD misst für jedes einzelne Photon die Frequenzverschiebung des zurückkehrenden Lichts (Doppler-Verschiebung), sodass eine Messung neben der Entfernung auch die Geschwindigkeit des Objekts liefert",
+      "Mittelt man die Laufzeit im Histogramm, lässt sich die Entfernung unabhängig von der Pulswiederholfrequenz für beliebig weit entfernte Objekte eindeutig bestimmen",
+      "Auch wenn je Puls nur wenige Photonen zurückkehren, häufen sich die Photonen des reflektierten Lichts bei derselben Ankunftszeit, sodass sie sich von zufälligem Hintergrundlicht und Dunkelzählereignissen unterscheiden lassen"
+    ],
+    "explanation": "Von weit entfernten oder schwach reflektierenden Objekten kehren je Puls höchstens einige wenige Photonen zurück. Eine SPAD kann zwar schon ein einzelnes Photon nachweisen, zählt aber auch Hintergrundlicht wie Sonnenlicht und Dunkelzählereignisse zu zufälligen Zeitpunkten. Trägt man die Ankunftszeiten vieler Pulse als Histogramm auf, häufen sich die Photonen des reflektierten Lichts an der Stelle der Laufzeit und lassen sich vom nahezu gleichmäßig verteilten Hintergrund unterscheiden. Die SPAD misst die Ankunftszeit, nicht die Frequenzverschiebung des Lichts, sodass sich die Geschwindigkeit nicht direkt bestimmen lässt. Kehrt das Licht außerdem nicht vor dem nächsten Puls zurück, wird die Entfernung mehrdeutig; die größte eindeutig messbare Entfernung ist auf c/(2f_rep) begrenzt, bei 1 MHz Wiederholfrequenz also auf 150 m. Bei starkem Hintergrundlicht ist auch die Verzerrung der Zählung durch die Totzeit der SPAD (Pile-up) zu beachten."
+  },
+  "optical-sensing-002": {
+    "question": "Bei einem LiDAR nach dem FMCW-Verfahren wird die Lichtfrequenz linear über die Bandbreite B = 1 GHz durchgestimmt. Welcher Wert kommt der Entfernungsauflösung ΔR = c/(2B) am nächsten? (c = 3,0×10⁸ m/s)",
+    "choices": [
+      "ca. 15 cm",
+      "ca. 30 cm",
+      "ca. 7,5 cm"
+    ],
+    "explanation": "ΔR = c/(2B) = 3,0×10⁸/(2 × 1×10⁹) = 0,15 m, also ca. 15 cm. Bei der Durchstimmdauer T beträgt die Schwebungsfrequenz für ein Objekt in der Entfernung R (B/T)(2R/c); da sich in der Messzeit T Frequenzen trennen lassen, die sich um etwa 1/T unterscheiden, beträgt der trennbare Entfernungsunterschied c/(2B) und hängt nicht von der Durchstimmdauer ab. Ca. 30 cm ist der Wert c/B ohne den Faktor 2 für Hin- und Rückweg, ca. 7,5 cm ergibt sich bei einer zusätzlichen Division durch 2. Für eine Auflösung von 1,5 cm ist eine Durchstimmung über 10 GHz nötig, und auch die Linearität der Frequenzrampe beeinflusst die Auflösung. Da die messbare Entfernung zudem durch die Kohärenzlänge (Linienbreite) des Lasers begrenzt ist, verwendet man beim FMCW-Verfahren schmalbandige Laser."
+  },
+  "optical-sensing-003": {
+    "question": "Mit einem FMCW-LiDAR, das die Lichtfrequenz dreieckförmig hoch- und herunterfährt (Up-Chirp und Down-Chirp), wird ein sich näherndes Objekt gemessen. Welche Aussage über die Bestimmung von Entfernung und Geschwindigkeit aus den Schwebungsfrequenzen f_up und f_down der beiden Rampen trifft zu?",
+    "choices": [
+      "Die entfernungsbedingte Schwebungsfrequenz folgt aus der Differenz von f_up und f_down, die Doppler-Verschiebung aus ihrer Summe",
+      "Die entfernungsbedingte Schwebungsfrequenz folgt aus dem Mittelwert von f_up und f_down, die Doppler-Verschiebung aus ihrer halben Differenz",
+      "Schon eine der beiden Schwebungsfrequenzen bestimmt Entfernung und Geschwindigkeit; die andere dient nur zur Kontrolle"
+    ],
+    "explanation": "Bezeichnet man den entfernungsbedingten Frequenzunterschied mit f_R und die Doppler-Verschiebung mit f_D, so ist bei einem sich nähernden Objekt die Frequenz des zurückkehrenden Lichts erhöht; die Schwebung beim Up-Chirp ist dann f_up = f_R − f_D, beim Down-Chirp f_down = f_R + f_D. Daraus folgen f_R = (f_up + f_down)/2 und f_D = (f_down − f_up)/2, und aus f_D ergibt sich die Geschwindigkeit v = f_D λ/2. Bei Licht von 1550 nm und 1 m/s ist f_D ≈ 1,29 MHz. Die Antwort mit vertauschter Differenz und Summe verwechselt diesen Zusammenhang. Eine einzelne Schwebung liefert nur die Summe oder die Differenz von f_R und f_D und kann die beiden Unbekannten nicht trennen. Welche Schwebung größer ist, zeigt außerdem, ob sich das Objekt nähert oder entfernt."
+  },
+  "optical-sensing-004": {
+    "question": "In den Kern einer Einmodenfaser mit dem effektiven Brechungsindex 1,447 ist ein Faser-Bragg-Gitter (FBG) eingeschrieben, dessen periodische Brechungsindexstruktur die Periode Λ = 535,6 nm hat. Welcher Wert kommt der stark reflektierten Wellenlänge (Bragg-Wellenlänge λB = 2 n_eff Λ) am nächsten?",
+    "choices": [
+      "ca. 1550 nm",
+      "ca. 775 nm",
+      "ca. 1071 nm"
+    ],
+    "explanation": "λB = 2 n_eff Λ = 2 × 1,447 × 535,6 nm ≈ 1550 nm. Die schwachen Reflexionen an den einzelnen Flächen der periodischen Struktur verstärken sich phasengleich bei der Wellenlänge, bei der der Gangunterschied für Hin- und Rückweg 2n_effΛ genau eine Wellenlänge beträgt, sodass nur diese Wellenlänge stark reflektiert wird. Ca. 775 nm ist der Wert ohne den Faktor 2 für Hin- und Rückweg, ca. 1071 nm der Wert 2Λ ohne Multiplikation mit dem effektiven Brechungsindex. Die Reflexionsbandbreite ist mit üblicherweise etwa 0,1–1 nm schmal, und andere Wellenlängen werden nahezu ungehindert durchgelassen. Daher lassen sich viele FBG mit unterschiedlichen Bragg-Wellenlängen in einer Faser anordnen und über ihre Reflexionswellenlängen unterscheiden, also Sensoren im Wellenlängenmultiplex aufbauen. FBG werden eingeschrieben, indem man den Brechungsindex des Kerns mit Interferenzstreifen von UV-Licht oder einer Phasenmaske periodisch verändert."
+  },
+  "optical-sensing-005": {
+    "question": "Auf ein FBG mit der Bragg-Wellenlänge 1550 nm wird in Faserachsenrichtung eine Zugdehnung von 500 µε (Dehnung 5×10⁻⁴) aufgebracht. Welcher Wert kommt der Wellenlängenänderung am nächsten, wenn die Temperatur konstant ist und die Änderung der Bragg-Wellenlänge durch ΔλB = (1 − pe) ε λB (effektiver photoelastischer Koeffizient pe = 0,22) gegeben ist?",
+    "choices": [
+      "ca. 0,78 nm",
+      "ca. 0,17 nm",
+      "ca. 0,60 nm"
+    ],
+    "explanation": "ΔλB = (1 − 0,22) × 5×10⁻⁴ × 1550 nm ≈ 0,60 nm. Je 1 µε sind das ca. 1,2 pm, ein Richtwert für die Dehnungsempfindlichkeit von FBG im 1550-nm-Band. Zieht man an der Faser, verlängert sich die Periode Λ, doch der photoelastische Effekt senkt den effektiven Brechungsindex geringfügig, sodass die Wellenlängenzunahme um den Faktor (1 − pe) kleiner ausfällt. Ca. 0,78 nm ist der Wert ελB unter Vernachlässigung des photoelastischen Effekts, ca. 0,17 nm der Wert, bei dem nur mit pe multipliziert wurde. Lässt sich die Reflexionswellenlänge mit 1 pm Auflösung ablesen, sind Dehnungen von etwa 1 µε nachweisbar. Da die Wellenlänge nicht von Schwankungen der Lichtintensität oder von Verbindungsverlusten beeinflusst wird, messen FBG auch über lange Verbindungsstrecken stabil."
+  },
+  "optical-sensing-006": {
+    "question": "Welche Kombination aus dem Grund, weshalb beim Einsatz eines FBG als Dehnungssensor Temperaturänderungen zu berücksichtigen sind, und der Gegenmaßnahme trifft zu?",
+    "choices": [
+      "Die Bragg-Wellenlänge ändert sich nicht mit der Temperatur, daher ist keine Maßnahme nötig, und jede Wellenlängenänderung kann der Dehnung (ca. 1,2 pm/µε) zugeschrieben werden",
+      "Die Bragg-Wellenlänge ändert sich auch mit der Temperatur um ca. 10 pm/K (1550-nm-Band) und ist nicht von Dehnung zu unterscheiden; mit einem dehnungsfreien Referenz-FBG wird der Temperaturanteil abgezogen",
+      "Mit steigender Temperatur sinkt nur der Reflexionsgrad des FBG, die Bragg-Wellenlänge bleibt gleich; der Temperaturanteil wird anhand der Intensität des reflektierten Lichts korrigiert"
+    ],
+    "explanation": "Die Bragg-Wellenlänge ändert sich durch die Temperaturabhängigkeit des Brechungsindex von Quarzglas (thermooptischer Effekt) und durch die Wärmeausdehnung im 1550-nm-Band um ca. 10 pm/K. Da die Dehnungsempfindlichkeit ca. 1,2 pm/µε beträgt, bewirkt eine Temperaturänderung von 1 K eine ebenso große Wellenlängenänderung wie eine Dehnung von ca. 8 µε, und die Wellenlänge allein kann beide nicht unterscheiden. Man bringt daher an einer Stelle mit gleicher Temperatur ein Referenz-FBG an, das so befestigt ist, dass keine Dehnung darauf übertragen wird, und zieht dessen Wellenlängenänderung ab. Die Annahme, die Wellenlänge ändere sich nicht mit der Temperatur, ist falsch; umgekehrt lässt sich das FBG wegen dieser Eigenschaft als Temperatursensor nutzen. Mit der Temperatur ändert sich hauptsächlich die Wellenlänge, nicht der Reflexionsgrad, daher ist auch die Korrektur über die Intensität falsch. Beim Aufkleben auf Bauwerke kommt außerdem die Dehnung durch die Wärmeausdehnung des Grundwerkstoffs hinzu."
+  },
+  "optical-sensing-007": {
+    "question": "Welche Aussage über die Bestimmung der Temperatur an jedem Ort der Faser bei der verteilten Temperaturmessung (DTS) mit Raman-Streuung trifft zu?",
+    "choices": [
+      "Man nutzt, dass sich die Frequenzverschiebung des rückgestreuten Lichts (im 1550-nm-Band ca. 11 GHz) mit der Temperatur ändert, und misst diese Frequenz an jedem Ort der Faser",
+      "Für jeden über die Laufzeit bestimmten Ort wird das Intensitätsverhältnis des stark temperaturabhängigen Anti-Stokes- und des schwach abhängigen Stokes-Lichts der Pulsrückstreuung ermittelt",
+      "Man liest die Reflexionswellenlängen der an jedem Ort der Faser eingeschriebenen FBG im Wellenlängenmultiplex aus"
+    ],
+    "explanation": "Die Raman-Streuung in Quarzglas tritt bei Wellenlängen auf, die ca. 13 THz vom eingestrahlten Licht entfernt liegen. Die Intensität des kurzwelligeren Anti-Stokes-Lichts hängt wegen des Boltzmann-Faktors, der die Zahl der schwingungsangeregten Moleküle angibt, stark von der Temperatur ab. Das langwelligere Stokes-Licht hängt nur schwach von der Temperatur ab; bildet man das Verhältnis beider, heben sich Schwankungen der Lichtquellenleistung und der Faserdämpfung auf, und die Temperatur lässt sich bestimmen. Den Ort bestimmt man wie beim OTDR aus der Zeit zwischen dem Aussenden des Pulses und der Rückkehr des Streulichts. Die Frequenzverschiebung von ca. 11 GHz nutzen Verfahren mit Brillouin-Streuung. Die Anordnung von FBG ist ein quasiverteiltes Verfahren, das nur die Punkte mit FBG misst, und unterscheidet sich von verteilten Verfahren, die alle Orte der Faser lückenlos erfassen. DTS dient zur Temperaturüberwachung von Stromkabeln, Rohrleitungen und Bohrlöchern."
+  },
+  "optical-sensing-008": {
+    "question": "Welche Aussage über verteilte faseroptische Sensoren mit Brillouin-Streuung (BOTDR, BOTDA) trifft zu?",
+    "choices": [
+      "Da nur das Intensitätsverhältnis des Streulichts genutzt wird, sind sie unempfindlich gegen Dehnung und messen nur die Temperatur an jedem Ort der Faser",
+      "Die Streuung an winzigen Brechungsindexschwankungen ist elastisch und ändert die Frequenz nicht; man bestimmt die Dehnung aus der Phasenänderung des Streulichts gleicher Frequenz an jedem Ort",
+      "Die Frequenzverschiebung des Streulichts (ca. 10,8 GHz im 1550-nm-Band) hängt von Dehnung und Temperatur ab; die Dehnungsverteilung ist messbar, der Temperaturanteil muss aber abgetrennt werden"
+    ],
+    "explanation": "Die Brillouin-Streuung ist die Streuung an Schallwellen (akustischen Phononen) in der Faser, und ihre Frequenzverschiebung beträgt νB = 2nVa/λ. Mit n = 1,45, der Schallgeschwindigkeit Va = 5800 m/s und λ = 1,55 µm ergibt sich ca. 10,8 GHz. Da Schallgeschwindigkeit und Brechungsindex von Dehnung und Temperatur abhängen, ändert sich νB um ca. 0,05 MHz/µε mit der Dehnung und um ca. 1 MHz/K mit der Temperatur, und die Dehnungsverteilung von Bauwerken lässt sich über einige zehn km messen. Wegen der Empfindlichkeit für beide Größen trennt man den Temperaturanteil jedoch ab, indem man zusätzlich ein Raman-Verfahren oder eine dehnungsfreie Faser einsetzt. Die Nutzung nur der Intensität zur reinen Temperaturmessung ist ein Fehler, der eher das Raman-Verfahren beschreibt. Elastische Streuung mit derselben Frequenz wie das eingestrahlte Licht ist die Rayleigh-Streuung. BOTDA nutzt die stimulierte Brillouin-Streuung zwischen gegenläufigem Pump- und Probelicht und liefert ein starkes Signal."
+  },
+  "optical-sensing-009": {
+    "question": "Welche Aussage über das Prinzip der verteilten akustischen Sensorik (DAS), bei der eine Kommunikationsfaser über einige zehn km als Sensor für Schwingungen und Schall genutzt wird, trifft zu?",
+    "choices": [
+      "Man speist schmalbandige Lichtpulse ein und erfasst für jeden Ort die zeitliche Änderung der Phase (der Interferenzintensität) des Rayleigh-Rückstreulichts",
+      "Die Signale elektrischer Mikrofone, die in regelmäßigen Abständen entlang der Faser angebracht sind, werden über die Faser gemultiplext übertragen",
+      "Man nutzt, dass sich die Intensität des Anti-Stokes-Lichts der Raman-Streuung durch schwingungsbedingte Dehnung ändert, und bestimmt den Ort aus der Laufzeit"
+    ],
+    "explanation": "Speist man Pulse eines schmalbandigen Lasers ein, interferiert das Rayleigh-Rückstreulicht der vielen Streuzentren innerhalb der Pulslänge, und es entsteht ein Signalverlauf, dessen Intensität vom Ort abhängt (φ-OTDR). Dehnt oder staucht sich die Faser durch Schwingungen oder Schall geringfügig, ändert sich an dieser Stelle die optische Weglänge und damit die Phase des Streulichts; verfolgt man mit wiederholten Pulsen die Phasenänderung an jedem Ort, wirkt die ganze Faser wie eine Reihe von Mikrofonen. Elektrische Mikrofone werden nicht verwendet; die Faser selbst ist der Sensor. Die Intensität der Raman-Streuung ändert sich mit der Temperatur, reagiert aber kaum auf Schwingungen. Da der nächste Puls erst nach der Rückkehr des vorherigen Streulichts ausgesendet wird, ist die Wiederholfrequenz bei 50 km Länge (Gruppenindex 1,468) auf höchstens ca. 2,0 kHz begrenzt, und messbare Schwingungsfrequenzen reichen nur bis zur Hälfte davon."
+  },
+  "optical-sensing-010": {
+    "question": "Eine OCT verwendet eine Lichtquelle mit gaußförmigem Spektrum, der Mittenwellenlänge 840 nm und der spektralen Breite (Halbwertsbreite) 50 nm. Welcher Wert kommt der Tiefenauflösung in biologischem Gewebe mit dem Brechungsindex 1,35 am nächsten? Die Auflösung in Luft Δz = (2 ln2/π) λ²/Δλ sei durch den Brechungsindex des Gewebes zu teilen.",
+    "choices": [
+      "ca. 4,6 µm",
+      "ca. 6,2 µm",
+      "ca. 8,4 µm"
+    ],
+    "explanation": "Die Auflösung in Luft beträgt Δz = 0,441 × (840 nm)²/50 nm ≈ 6,2 µm; im Gewebe ist die optische Weglänge n-mal so groß, sodass sich als physikalische Tiefe 6,2/1,35 ≈ 4,6 µm ergibt. Ca. 6,2 µm ist der Wert in Luft, bei dem die Division durch den Brechungsindex vergessen wurde, ca. 8,4 µm der Wert, bei dem mit dem Brechungsindex multipliziert statt geteilt wurde. Die Tiefenauflösung wird durch die Kohärenzlänge der Lichtquelle bestimmt und ist proportional zu λ²/Δλ; sie wird umso feiner, je kürzer die Mittenwellenlänge und je breiter das Band der Lichtquelle ist. Das 840-nm-Band wird wegen der geringen Wasserabsorption für Aufnahmen der Netzhaut verwendet. Für stark streuendes Gewebe wie Haut wählt man das 1310-nm-Band, das trotz geringerer Auflösung tiefer reicht. Die laterale Auflösung wird unabhängig von der Tiefenauflösung durch die Fokussierung mit dem Objektiv bestimmt."
+  },
+  "optical-sensing-011": {
+    "question": "Wie gewinnt die Fourier-Domänen-OCT (Spektral-Domänen-OCT) Tiefeninformation, ohne den Referenzspiegel zu bewegen?",
+    "choices": [
+      "Man misst die Interferenzintensität von Referenz- und Signallicht mit einem einzigen Empfänger und bestimmt die Tiefe aus der Größe der Intensität, da tiefere Reflexionen stärker gedämpft sind",
+      "Misst man das Interferenzlicht mit einem Spektrometer für jede Wellenlänge, erscheinen im Spektrum umso feinere Streifen, je tiefer die reflektierende Fläche liegt; man Fourier-transformiert nach der Wellenzahl",
+      "Man misst die Laufzeit der Lichtpulse direkt und bestimmt die Tiefe jeder reflektierenden Fläche wie beim ToF-LiDAR aus dem halben Produkt von Lichtgeschwindigkeit und Zeit"
+    ],
+    "explanation": "Licht von einer reflektierenden Fläche mit dem Gangunterschied 2z gegenüber dem Referenzlicht erzeugt im Spektrum Streifen der Form cos(2kz) (k ist die Wellenzahl), und je tiefer die Fläche liegt, desto feiner sind die Streifen. Eine Fourier-Transformation des Spektrums nach der Wellenzahl liefert die Reflexionsstärken aller Tiefen auf einmal (A-Scan). Das Verfahren ist schneller und empfindlicher als die Zeit-Domänen-OCT mit abgerastertem Referenzspiegel und ist heute der Standard. Die größte messbare Tiefe ist auf etwa λ²/(4δλ) begrenzt, bestimmt durch die spektrale Auflösung δλ des Spektrometers. Misst man nur die Interferenzintensität mit einem einzigen Empfänger, lassen sich Reflexionsstärke und Tiefe nicht trennen. Um mit ToF 10 µm Tiefe aufzulösen, wäre eine Zeitauflösung von ca. 67 fs nötig, die sich elektrisch nicht messen lässt; deshalb misst die OCT den Gangunterschied interferometrisch."
+  },
+  "optical-sensing-012": {
+    "question": "Bei einem optischen Drehgeber mit 2500 Schlitzen je Umdrehung werden alle steigenden und fallenden Flanken der um 90° phasenverschobenen Signale der Spuren A und B gezählt (Vierfachauswertung). Welcher Wert kommt dem Drehwinkel je Zählschritt am nächsten?",
+    "choices": [
+      "ca. 0,144°",
+      "ca. 0,072°",
+      "ca. 0,036°"
+    ],
+    "explanation": "Bei der Vierfachauswertung wird jede Periode in vier Teile geteilt, daher beträgt die Zahl der Zählschritte je Umdrehung 2500 × 4 = 10 000, und ein Zählschritt entspricht 360°/10 000 = 0,036°. Ca. 0,144° ist der Wert 360°/2500 ohne Vervielfachung, bei dem nur die Perioden der Spur A gezählt werden, ca. 0,072° der Wert der Zweifachauswertung, die nur steigende und fallende Flanken der Spur A zählt. Da die Spuren A und B um eine Viertelperiode versetzt sind, haben die beiden Signale je Periode vier Flanken, und aus der Reihenfolge der Änderungen ergibt sich auch die Drehrichtung. Für noch feinere Messungen nutzt man die Interpolation, die aus den sinusförmigen Signalen der Spuren A und B über den Arkustangens die Phase bestimmt und eine Periode in einige hundert bis einige tausend Teile teilt. Um die Position beim Einschalten zu kennen, verwendet man ein Referenzsignal (Spur Z) oder einen Absolutwertgeber."
+  },
+  "optical-sensing-013": {
+    "question": "Was ist der Hauptgrund dafür, dass ein optischer Inkrementalgeber zwei Signale, A und B, mit einem gegenseitigen Versatz von einer Viertelperiode (90°) ausgibt?",
+    "choices": [
+      "Zur Redundanz, damit bei Ausfall eines Signals mit dem anderen ersatzweise weitergezählt werden kann",
+      "Weil sich bei der Addition beider Signale Helligkeitsschwankungen der Lichtquelle und temperaturbedingte Drift aufheben",
+      "Weil die Reihenfolge der Signaländerungen die Bewegungsrichtung angibt und sich jede Periode in vier Teile teilen lässt"
+    ],
+    "explanation": "Mit einem einzigen Signal lässt sich aus der Zahl der Hell-Dunkel-Wechsel zwar der Verfahrweg bestimmen, nicht aber die Bewegungsrichtung. Sind die Spuren A und B um eine Viertelperiode versetzt, ändert sich in positiver Richtung A vor B und in negativer Richtung B zuerst, sodass sich die Richtung erkennen lässt. Die steigenden und fallenden Flanken beider Signale ergeben vier Wechsel je Periode und damit die Auflösung der Vierfachauswertung. Für Redundanz würde es genügen, zwei gleichphasige Signale auszugeben; ein Versatz um 90° wäre nicht nötig. Helligkeitsschwankungen der Lichtquelle hebt man auf, indem man das Signal A und das dazu invertierte Signal differenziell empfängt; das ist jedoch nicht der Zweck der Phasendifferenz zwischen A und B. Da um 90° versetzte Signale sin und cos entsprechen, kann man auch über den Arkustangens die Phase bestimmen und eine Periode fein interpolieren."
+  },
+  "optical-sensing-014": {
+    "question": "Ein Laser-Doppler-Anemometer (LDA) in Differenzanordnung kreuzt zwei Laserstrahlen der Wellenlänge 532 nm unter einem Kreuzungswinkel (Gesamtwinkel zwischen beiden Strahlen) von 10°. Der Abstand der Interferenzstreifen im Kreuzungsbereich sei d = λ/(2 sin(θ/2)). Welcher Wert kommt der Frequenz, mit der die Intensität des Streulichts eines Teilchens schwankt, das die Streifen senkrecht mit 2 m/s durchquert (Doppler-Frequenz f = v/d), am nächsten?",
+    "choices": [
+      "ca. 655 kHz",
+      "ca. 7,5 MHz",
+      "ca. 1,31 MHz"
+    ],
+    "explanation": "Der Streifenabstand beträgt d = 532 nm/(2 sin5°) = 532 nm/0,1743 ≈ 3,05 µm. Jedes Mal, wenn das Teilchen einen Streifen durchquert, wird das Streulicht einmal hell und dunkel, daher ist f = v/d = 2/(3,05×10⁻⁶) ≈ 655 kHz. Ca. 7,5 MHz ist der Wert mit der Formel 2v/λ für einen einzelnen rückwärts reflektierten Strahl und entspricht nicht der Differenzanordnung. Ca. 1,31 MHz ergibt sich mit sinθ statt sin(θ/2) und halbiertem Streifenabstand. In der Differenzanordnung hängt die Frequenz nur vom Kreuzungswinkel und von der Wellenlänge ab, nicht von der Beobachtungsrichtung des Streulichts, sodass die Empfangsoptik frei angeordnet werden kann. Gemessen wird nur die Geschwindigkeitskomponente senkrecht zu den Streifen; bei Strömungsmessungen mischt man der Strömung kleine Teilchen (Tracer) bei, um Streulicht zu erhalten."
+  },
+  "optical-sensing-015": {
+    "question": "Bei einem Laser-Doppler-Anemometer (LDA) in Differenzanordnung wird die Frequenz eines der beiden Strahlen mitunter mit einem akustooptischen Modulator (Bragg-Zelle) um 40 MHz verschoben. Was ist der Hauptzweck?",
+    "choices": [
+      "Die Streulichtintensität zu erhöhen und das S/N zu verbessern, damit auch Teilchen mit kleinem Durchmesser nicht im Rauschen untergehen und der messbare Teilchenbereich größer wird",
+      "Die Interferenzstreifen wandern mit konstanter Geschwindigkeit, sodass auch ein ruhendes Teilchen ein 40-MHz-Signal liefert; ob das Signal darüber oder darunter liegt, zeigt die Richtung",
+      "Die Bragg-Zelle ändert die Wellenlänge eines Strahls und vergrößert effektiv den Kreuzungswinkel, sodass die Streifen enger werden und die Geschwindigkeitsauflösung steigt"
+    ],
+    "explanation": "Ohne Frequenzverschiebung beträgt die Signalfrequenz f = |v|/d; sie ist für beide Bewegungsrichtungen des Teilchens gleich, und Teilchen mit nahezu verschwindender Geschwindigkeit liefern kein Signal. Erhalten die beiden Strahlen einen Frequenzunterschied von 40 MHz, wandern die Interferenzstreifen im Kreuzungsbereich mit konstanter Geschwindigkeit, sodass auch ein ruhendes Teilchen ein Signal von 40 MHz liefert. Bei einem Streifenabstand von 3,05 µm ergibt ein Teilchen mit 2 m/s je nach Richtung ca. 40,66 MHz oder ca. 39,34 MHz, und ob die Frequenz über oder unter 40 MHz liegt, zeigt die Richtung an. Eine Frequenzverschiebung um 40 MHz ändert die Lichtwellenlänge nur verschwindend wenig, sodass sich Streifenabstand und Streulichtintensität praktisch nicht ändern. Auch Laser-Vibrometer, die Oberflächenschwingungen von Objekten messen, erkennen die Richtung auf dieselbe Weise durch Heterodyndetektion mit verschobener Frequenz."
+  },
+  "optical-sensing-016": {
+    "question": "Bei einer Spektral-Domänen-OCT wird das Interferenzspektrum um die Mittenwellenlänge 840 nm mit einem Wellenlängenabstand von 0,05 nm je Pixel des Bildsensors im Spektrometer abgetastet. Welcher Wert kommt der größten messbaren Tiefe (Bereich auf einer Seite des Gangunterschieds null) in Luft am nächsten, wenn z_max = λ₀²/(4δλ) gilt (δλ ist der Wellenlängenabstand je Pixel)?",
+    "choices": [
+      "ca. 7,1 mm",
+      "ca. 14 mm",
+      "ca. 3,5 mm"
+    ],
+    "explanation": "Eine reflektierende Fläche in der Tiefe z erzeugt im Spektrum Streifen mit der Periode π/z bezogen auf die Wellenzahl k = 2π/λ; je tiefer die Fläche liegt, desto feiner die Streifen. Aus der Bedingung, die Streifen mit dem Wellenzahlabstand je Pixel mit mindestens zwei Punkten je Periode abzutasten, folgt z_max = λ₀²/(4δλ). Mit Zahlen ergibt sich (840 nm)²/(4 × 0,05 nm) = 7,06×10⁵ nm²/0,2 nm ≈ 3,5×10⁶ nm, also ca. 3,5 mm. Ca. 7,1 mm ist der Wert mit Division durch 2 statt 4, ca. 14 mm der Wert λ₀²/δλ; beide berücksichtigen die Abtastbedingung nicht richtig. Im Gewebe ist der Wert durch den Brechungsindex zu teilen, und je tiefer die Fläche liegt, desto stärker werden die hellen und dunklen Streifen durch Pixel und Spektrometerauflösung geglättet, sodass die Empfindlichkeit abnimmt."
+  },
+  "optical-sensing-017": {
+    "question": "Die Bragg-Wellenlänge eines FBG im 1550-nm-Band nimmt je 1 K Temperaturerhöhung um ca. 10 pm zu. Welche Aussage über die Hauptursache dieser temperaturbedingten Änderung trifft zu? (Der lineare Wärmeausdehnungskoeffizient der Quarzglasfaser beträgt ca. 0,55×10⁻⁶ /K.)",
+    "choices": [
+      "Hauptursache ist der thermooptische Effekt, durch den der Brechungsindex von Quarzglas mit der Temperatur zunimmt; die Verlängerung der Gitterperiode durch Wärmeausdehnung trägt nur etwa ein Zehntel bei",
+      "Hauptursache ist die Verlängerung der Gitterperiode Λ durch Wärmeausdehnung der Faser; da der Brechungsindex temperaturunabhängig ist, entspricht die Änderung dem Wärmeausdehnungskoeffizienten",
+      "Mit steigender Temperatur sinkt der Brechungsindex des Kerns und die Wellenlänge wird kürzer, doch die stärkere Wärmeausdehnung der Beschichtung dehnt die Faser, sodass sie insgesamt zunimmt"
+    ],
+    "explanation": "Die relative Änderung der Bragg-Wellenlänge λB = 2n_eff Λ ist ΔλB/λB = (α + ξ)ΔT (α ist der lineare Wärmeausdehnungskoeffizient, ξ = (1/n)dn/dT der thermooptische Koeffizient). Ca. 10 pm/K entsprechen bezogen auf 1550 nm einem Anteil von ca. 6,5×10⁻⁶ /K, wovon der Wärmeausdehnungskoeffizient 0,55×10⁻⁶ /K nur etwa ein Zehntel ausmacht. Der Rest stammt vom thermooptischen Effekt, durch den der Brechungsindex von Quarzglas mit der Temperatur zunimmt. Wärmeausdehnung allein ergäbe nur ca. 0,85 pm/K, eine Größenordnung weniger als der tatsächliche Wert. Die Erklärung, der Brechungsindex von Quarzglas sinke mit steigender Temperatur, hat die falsche Richtung. Klebt man das FBG auf einen Werkstoff mit großer Ausdehnung, ändert sich die Empfindlichkeit, doch bei der blanken Faser ist der thermooptische Effekt die Hauptursache."
+  },
+  "optical-sensing-018": {
+    "question": "Bei einer verteilten Temperaturmessung mit Raman-Streuung folge das Intensitätsverhältnis R von Anti-Stokes- zu Stokes-Licht R ∝ exp(−hΔν/kT) (Δν ist die Raman-Verschiebung von Quarzglas, 13,2 THz; der wellenlängenabhängige Vorfaktor sei temperaturunabhängig). Welcher Wert kommt der relativen Änderung des Verhältnisses je 1 K, (1/R)(dR/dT), um 300 K am nächsten? (h = 6,63×10⁻³⁴ J·s, k = 1,38×10⁻²³ J/K)",
+    "choices": [
+      "ca. 0,33 %/K",
+      "ca. 0,70 %/K",
+      "ca. 0,11 %/K"
+    ],
+    "explanation": "Aus ln R = −hΔν/(kT) + Konstante folgt (1/R)(dR/dT) = hΔν/(kT²). Mit hΔν/k = 6,63×10⁻³⁴ × 13,2×10¹² / 1,38×10⁻²³ ≈ 634 K ergibt sich 634/300² ≈ 7,0×10⁻³, also ca. 0,70 %/K. Ca. 0,33 %/K ist 1/T und entspricht der Annahme, das Verhältnis sei proportional zur Temperatur. Ca. 0,11 %/K ist ein Fehler, bei dem h/2π statt h verwendet wurde. Da ein Intensitätsverhältnis gebildet wird, heben sich Schwankungen der Lichtquellenleistung und Verluste, die beiden Lichtanteilen gemeinsam sind, auf, und eine Änderung um 1 K lässt sich als Änderung des Verhältnisses um ca. 0,7 % ablesen. Da das Anti-Stokes-Licht schwach ist, mittelt man jedoch über viele Pulse, um die Genauigkeit zu erhöhen."
+  },
+  "optical-sensing-019": {
+    "question": "Ein optischer Absolutwertgeber, der seine Position auch nach dem Ausschalten nicht verliert, liest den Winkel aus den Hell-Dunkel-Mustern mehrerer konzentrischer Spuren als Binärcode. Weshalb wird für diesen Code statt gewöhnlicher Binärzahlen häufig der Gray-Code verwendet?",
+    "choices": [
+      "Benachbarte Positionen unterscheiden sich nur in einem Bit, sodass der Fehler höchstens ein Segment beträgt, auch wenn die Spuren an einer Grenze zu leicht verschiedenen Zeitpunkten gelesen werden",
+      "Er trägt mehr Information je Bit und erreicht mit weniger Spuren als gewöhnliche Binärzahlen dieselbe Auflösung, sodass die Scheibe kleiner wird und nur halb so viele Empfänger nötig sind",
+      "Die Hell-Dunkel-Grenzen liegen auf allen Spuren beim selben Winkel, sodass alle Spuren gleichzeitig umschalten und selbst bei leicht versetztem Lesezeitpunkt überhaupt kein Fehler entsteht"
+    ],
+    "explanation": "Bei gewöhnlichen Binärzahlen ändern sich zum Beispiel beim Übergang von 7 (0111) nach 8 (1000) vier Bits gleichzeitig. Weichen die Lage der Spurgrenzen oder das Ansprechen der Empfänger geringfügig voneinander ab, entstehen Augenblicke, in denen völlig andere Werte wie 1111 oder 0000 gelesen werden. Beim Gray-Code unterscheiden sich benachbarte Codes stets nur in einem Bit, daher bleibt ein Fehllesen an jeder Grenze auf den Nachbarwert beschränkt. Mit n Bit werden wie bei gewöhnlichen Binärzahlen 2ⁿ Segmente dargestellt, die Zahl der Spuren sinkt also nicht. Grenzen, die zusammenfallen und gleichzeitig umschalten, hat gerade der gewöhnliche Binärcode, und das ist die Ursache des Fehllesens. Der gelesene Gray-Code wird in einer Schaltung in eine gewöhnliche Binärzahl umgewandelt."
+  },
+  "optical-sensing-020": {
+    "question": "Ein Wegsensor nach dem Triangulationsprinzip richtet Laserlicht auf ein Objekt, bildet den Lichtfleck mit einer Linse (Brennweite f), die um die Basislänge b von der Lichtquelle entfernt ist, auf einen Bildsensor ab und bestimmt die Entfernung z aus der Bildlage. Welche Aussage über die Entfernungsauflösung bei gleichem Ablesefehler der Bildlage trifft zu, wenn sich die Bildlage gemäß x ≈ bf/z ändert?",
+    "choices": [
+      "Der Entfernungsfehler ist unabhängig von z, sodass am nahen und am fernen Ende des Messbereichs dieselbe Auflösung erreicht wird; die Basislänge beeinflusst die Auflösung nicht",
+      "Der Entfernungsfehler ist proportional zu z² und wird bei doppelter Entfernung etwa viermal so groß; man gleicht dies durch größere Basislänge oder Brennweite aus",
+      "Der Entfernungsfehler ist proportional zu z und verdoppelt sich bei doppelter Entfernung; je kürzer die Basislänge, desto größer die Bildbewegung und desto besser die Auflösung"
+    ],
+    "explanation": "Leitet man x = bf/z nach z ab, erhält man dx/dz = −bf/z²; der Entfernungsfehler zum Bildlagefehler Δx ist also Δz = z²Δx/(bf). Bei doppelter Entfernung wird Δz für dasselbe Δx viermal so groß. Größere Basislänge b oder Brennweite f vergrößern die Bildbewegung und verbessern die Auflösung, machen das Gerät aber größer, und nahe Objekte fallen leichter aus dem Sehfeld. Die Antworten mit konstantem oder zu z proportionalem Fehler übersehen, dass x umgekehrt proportional zu z ist. Eine kürzere Basislänge verkleinert die Bildbewegung und verschlechtert daher die Auflösung. Wegen dieser Eigenschaft eignet sich die Triangulation für präzise Messungen auf kurze Entfernung, während man für große Entfernungen etwa das ToF-Verfahren verwendet."
+  }
+}

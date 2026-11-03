@@ -282,6 +282,62 @@
       "js": {
         "per_s": "개/s"
       }
+    },
+    "de": {
+      "nav": "Wellenlänge und Energie umrechnen",
+      "card": "Wellenlänge, Frequenz, Photonenenergie (eV) und Wellenzahl ineinander umrechnen",
+      "title": "Rechner für Wellenlänge, Frequenz und Photonenenergie (nm ⇔ THz ⇔ eV ⇔ cm⁻¹)",
+      "description": "Rechnet Wellenlänge (nm), Frequenz (THz), Photonenenergie (eV) und Wellenzahl (cm⁻¹) des Lichts ineinander um. Aus der optischen Leistung werden außerdem die Zahl der Photonen pro Sekunde und die spektrale Empfindlichkeit eines Photodetektors bei 100 % Quanteneffizienz berechnet.",
+      "h1": "Rechner für Wellenlänge, Frequenz und Photonenenergie",
+      "lead": "Wenn Sie eines der Felder ändern, werden die übrigen Felder umgerechnet. Geben Sie eine optische Leistung ein, erhalten Sie außerdem die Zahl der Photonen, die pro Sekunde ankommen, und die spektrale Empfindlichkeit eines idealen Photodetektors. Voreingestellt sind 1550 nm aus dem C-Band der optischen Nachrichtentechnik.",
+      "in_heading": "Eingaben (jedes Feld kann geändert werden)",
+      "nm": "Wellenlänge λ (nm)",
+      "thz": "Frequenz ν (THz)",
+      "ev": "Photonenenergie E (eV)",
+      "kayser": "Wellenzahl (cm⁻¹)",
+      "mw": "Optische Leistung (mW)",
+      "out_heading": "Ergebnisse",
+      "joule": "Energie eines Photons",
+      "rate": "Photonen pro Sekunde",
+      "resp": "Obergrenze der spektralen Empfindlichkeit (Quanteneffizienz 100 %)",
+      "note": "Gerechnet wird mit der Vakuumwellenlänge (in Materie verkürzt sich die Wellenlänge auf 1/n, Frequenz und Photonenenergie bleiben jedoch gleich). Die Konstanten sind c = 299 792 458 m/s, h = 6,62607015 × 10⁻³⁴ J·s und e = 1,602176634 × 10⁻¹⁹ C.",
+      "practice": "Fragen zu Photodetektoren und Lichtdetektion lösen",
+      "related": "Verwandte Begriffe",
+      "sections": [
+        {
+          "h": "Wellenlänge und Photonenenergie",
+          "p": "Die Energie eines Photons beträgt E = hν = hc/λ und ist umso größer, je kürzer die Wellenlänge ist. In Elektronenvolt (eV) und Nanometern (nm) ausgedrückt gilt E[eV] ≈ 1239,84/λ[nm]; praktisch ist die Faustregel „1240 geteilt durch die Wellenlänge in Nanometern ergibt eV“. Bei den voreingestellten 1550 nm sind es etwa 0,80 eV, bei grünem sichtbarem Licht (530 nm) etwa 2,34 eV und bei ultraviolettem Licht von 365 nm etwa 3,40 eV. Bei Photodetektoren und Lichtquellen aus Halbleitern zeigt der Vergleich von Bandlücke und Photonenenergie, ob Licht dieser Wellenlänge absorbiert oder emittiert werden kann."
+        },
+        {
+          "h": "Frequenz und Wellenzahl",
+          "p": "Die Frequenz beträgt ν = c/λ; 1550 nm entsprechen etwa 193,4 THz. Im Wellenlängenmultiplex der optischen Nachrichtentechnik (DWDM) werden die Kanäle nicht über die Wellenlänge, sondern über die Frequenz festgelegt, mit Abständen von 50 GHz oder 100 GHz um 193,1 THz. In der Nähe von 1550 nm entsprechen 100 GHz etwa 0,8 nm. Die Wellenzahl (cm⁻¹) ist die Zahl der Wellen pro 1 cm, also 1/λ in cm⁻¹. In der Infrarot- und der Raman-Spektroskopie ist diese Einheit üblich; 1550 nm entsprechen etwa 6452 cm⁻¹."
+        },
+        {
+          "h": "Optische Leistung und Zahl der Photonen",
+          "p": "Teilt man die optische Leistung P durch die Energie eines Photons, erhält man die Zahl der Photonen pro Sekunde N = P/(hν). Bei 1550 nm und 1 mW sind es etwa 7,80 × 10¹⁵ Photonen/s. Bei gleicher Leistung ist die Zahl der Photonen umso größer, je länger die Wellenlänge ist, weil die Energie eines Photons dann kleiner ist. Bei Überlegungen zum Schrotrauschen oder zur Einzelphotonendetektion ist diese Photonenzahl die Grundlage."
+        },
+        {
+          "h": "Obergrenze der spektralen Empfindlichkeit",
+          "p": "Die spektrale Empfindlichkeit eines Photodetektors beträgt R = η·qλ/(hc); bei einer Quanteneffizienz η von 100 % gilt R[A/W] ≈ λ[nm]/1239,84. Bei 1550 nm liegt die Obergrenze bei etwa 1,25 A/W, bei 850 nm bei etwa 0,686 A/W. Reale InGaAs-Photodioden erreichen bei 1550 nm etwa 0,9 bis 1,0 A/W, was einer Quanteneffizienz von etwa 70 bis 80 % entspricht. Die spektrale Empfindlichkeit ist proportional zur Wellenlänge, weil bei gleicher Leistung längere Wellenlängen mehr Photonen bedeuten."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Wie rechnet man eV in nm um?",
+          "a": "Mit λ[nm] ≈ 1239,84/E[eV]. Die Bandlücke von Silizium mit 1,12 eV entspricht zum Beispiel etwa 1107 nm, die von GaN mit 3,4 eV etwa 365 nm."
+        },
+        {
+          "q": "Ändert sich die Photonenenergie in Materie?",
+          "a": "Nein. In einem Material mit dem Brechungsindex n verringern sich Lichtgeschwindigkeit und Wellenlänge auf 1/n, Frequenz und Photonenenergie bleiben jedoch unverändert. Dieser Rechner behandelt die Wellenlänge als Wert im Vakuum."
+        },
+        {
+          "q": "Wie groß ist die Photonenenergie bei 1550 nm und bei 1310 nm?",
+          "a": "1550 nm entsprechen etwa 0,800 eV (etwa 193,4 THz), 1310 nm etwa 0,946 eV (etwa 228,8 THz). Beide Werte liegen unter der Bandlücke von Silizium (etwa 1,12 eV); Silizium absorbiert dieses Licht daher nicht, und für die Detektion verwendet man InGaAs oder Ge."
+        }
+      ],
+      "js": {
+        "per_s": "Photonen/s"
+      }
     }
   }
 }

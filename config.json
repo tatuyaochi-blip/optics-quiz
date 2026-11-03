@@ -35,6 +35,13 @@
       "htmlLang": "ko",
       "locale": "ko-KR",
       "label": "한국어"
+    },
+    {
+      "code": "de",
+      "path": "de/",
+      "htmlLang": "de",
+      "locale": "de-DE",
+      "label": "Deutsch"
     }
   ],
   "mainLang": "ja",

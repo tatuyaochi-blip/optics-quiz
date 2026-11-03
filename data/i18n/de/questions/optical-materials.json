@@ -1,0 +1,182 @@
+{
+  "optical-materials-001": {
+    "question": "Welche Aussage über die Wellenlängenabhängigkeit des Brechungsindex eines im Sichtbaren transparenten optischen Glases trifft zu?",
+    "choices": [
+      "Je größer die Wellenlänge, desto größer der Brechungsindex; im Prisma wird rotes Licht stärker abgelenkt als blaues",
+      "Je größer die Wellenlänge, desto kleiner der Brechungsindex; die Änderung wird zu kurzen Wellenlängen nahe der UV-Absorption steiler",
+      "Im transparenten Bereich ist der Brechungsindex wellenlängenunabhängig; er ändert sich nur bei Wellenlängen mit Absorption"
+    ],
+    "explanation": "Im transparenten Wellenlängenbereich zeigt Glas normale Dispersion: Der Brechungsindex nimmt mit zunehmender Wellenlänge ab. Bei einem Glas vom Typ BK7 beträgt er zum Beispiel für die F-Linie (486,1 nm) ca. 1,522 und für die C-Linie (656,3 nm) ca. 1,514. Die Änderung des Brechungsindex wird zur ultravioletten Absorptionsbande hin steiler, der Betrag von dn/dλ wächst also zu kürzeren Wellenlängen. Im Prisma wird deshalb blaues Licht stärker abgelenkt; die Aussage, rotes Licht werde stärker abgelenkt, kehrt die Verhältnisse um. Auch im transparenten Bereich ändert sich der Brechungsindex mit der Wellenlänge, sodass auch die Annahme eines konstanten Werts falsch ist; diese Änderung ist die Ursache der chromatischen Aberration einer Einzellinse. Innerhalb einer Absorptionsbande tritt anomale Dispersion auf, bei der der Brechungsindex mit zunehmender Wellenlänge zunimmt."
+  },
+  "optical-materials-002": {
+    "question": "Ein Glas hat für die d-Linie (587,6 nm) den Brechungsindex nd = 1,5168, für die F-Linie (486,1 nm) nF = 1,52238 und für die C-Linie (656,3 nm) nC = 1,51432. Welche Kombination aus Abbe-Zahl Vd = (nd − 1)/(nF − nC) und Einordnung dieses Glases trifft zu? (Als Faustregel heißen Gläser mit einer Abbe-Zahl über etwa 50 Krongläser, solche darunter Flintgläser.)",
+    "choices": [
+      "Ca. 64; das Glas ist ein Kronglas",
+      "Ca. 64; das Glas ist ein Flintglas",
+      "Ca. 0,016; das Glas hat eine große Dispersion"
+    ],
+    "explanation": "Mit nF − nC = 1,52238 − 1,51432 = 0,00806 folgt Vd = 0,5168/0,00806 ≈ 64,1. Die Abbe-Zahl ist ein Maß für eine geringe Dispersion: Je größer sie ist, desto geringer ist der Unterschied der Brechungsindizes zwischen den Wellenlängen. Ca. 64 liegt über dem Richtwert 50, das Glas ist also ein Kronglas mit geringer Dispersion (ein typischer Wert für Gläser vom Typ BK7). Die Einordnung als Flintglas beruht auf der umgekehrten Annahme, eine größere Abbe-Zahl bedeute eine größere Dispersion. Ca. 0,016 ist der Wert (nF − nC)/(nd − 1) mit vertauschtem Zähler und Nenner und keine Abbe-Zahl. Ein Achromat entsteht durch die Kombination einer Sammellinse aus Kronglas mit großer Abbe-Zahl und einer Zerstreuungslinse aus Flintglas mit kleiner Abbe-Zahl."
+  },
+  "optical-materials-003": {
+    "question": "Welche Aussage über das Konzept der Sellmeier-Gleichung n²(λ) = 1 + Σ Bᵢλ²/(λ² − Cᵢ), die die Dispersion des Brechungsindex beschreibt, trifft zu?",
+    "choices": [
+      "Sie ist ein bloß an Messwerte angepasstes Polynom ohne physikalische Bedeutung der Terme und gilt daher auch außerhalb des gemessenen Bereichs genau",
+      "Sie beschreibt die Temperaturabhängigkeit des Brechungsindex; Cᵢ entspricht dem Wärmeausdehnungskoeffizienten, Bᵢ dem thermooptischen Koeffizienten dn/dT",
+      "Sie behandelt Elektronen und Gitterschwingungen als Oszillatoren mit Resonanz bei der Wellenlänge √Cᵢ; der transparente Bereich liegt zwischen UV- und IR-Resonanzen"
+    ],
+    "explanation": "Die Sellmeier-Gleichung beschreibt die Polarisation der Elektronen (Resonanz im Ultravioletten) und die Gitterschwingungen (Resonanz im Infraroten) als Oszillatoren; jeder Term divergiert bei seiner Resonanzwellenlänge √Cᵢ. Mit typischen Koeffizienten für synthetisches Quarzglas liegen die Resonanzen im Ultravioletten bei ca. 0,068 µm und ca. 0,116 µm sowie im Infraroten bei ca. 9,9 µm; im transparenten Bereich dazwischen zeigt das Glas normale Dispersion. Dass sich der Brechungsindex zu kürzeren Wellenlängen hin stärker ändert, liegt an der Annäherung an die UV-Resonanz. Die Beschreibung als Polynom ohne physikalische Bedeutung passt eher zu einer empirischen Formel wie der Cauchy-Gleichung; bei beiden Formeln ist die Genauigkeit außerhalb des gemessenen Bereichs und innerhalb von Absorptionsbanden nicht gewährleistet. Die Temperaturabhängigkeit wird gesondert durch den thermooptischen Koeffizienten dn/dT erfasst, und Cᵢ ist kein Wärmeausdehnungskoeffizient."
+  },
+  "optical-materials-004": {
+    "question": "Synthetisches Quarzglas habe bei der Wellenlänge 1,55 µm den Brechungsindex n = 1,444 und die Ableitung des Brechungsindex nach der Wellenlänge dn/dλ = −0,0118 µm⁻¹. Welcher Wert kommt dem Gruppenindex ng = n − λ dn/dλ bei dieser Wellenlänge am nächsten?",
+    "choices": [
+      "ca. 1,426",
+      "ca. 1,444",
+      "ca. 1,462"
+    ],
+    "explanation": "ng = n − λ dn/dλ = 1,444 − 1,55 × (−0,0118) = 1,444 + 0,0183 ≈ 1,462. Bei normaler Dispersion ist dn/dλ < 0, daher ist der Gruppenindex größer als der Brechungsindex, und die Einhüllende von Pulsen oder Modulationen läuft mit c/ng ≈ 2,05×10⁸ m/s langsamer als c/n. Ca. 1,426 ergibt sich mit umgekehrtem Vorzeichen von dn/dλ; in einem Material mit normaler Dispersion ist ng < n nicht möglich. Ca. 1,444 ist der Brechungsindex selbst, der die Phasengeschwindigkeit bestimmt; hier wird nicht zwischen Brechungsindex und Gruppenindex unterschieden. Für die Entfernungsbestimmung mit dem OTDR oder die Abschätzung der Ankunftszeit von Pulsen verwendet man den Gruppenindex, nicht den Brechungsindex. Die Wellenlängenabhängigkeit des Gruppenindex ergibt die Materialdispersion der Faser."
+  },
+  "optical-materials-005": {
+    "question": "Welches Fenstermaterial eignet sich am besten, um mit einer einzigen Scheibe Licht vom Ultraviolett bei 0,25 µm bis zum Infrarot bei 8 µm durchzulassen? (Dicke einige mm; Reflexionsverluste an den Oberflächen bleiben unberücksichtigt.)",
+    "choices": [
+      "Ein Calciumfluorid-Kristall (CaF₂)",
+      "Ein Saphir-Kristall (Al₂O₃)",
+      "Synthetisches Quarzglas (SiO₂)"
+    ],
+    "explanation": "Die kurzwellige Grenze des Transmissionsbereichs wird durch die Absorption an der Bandlücke bestimmt, die langwellige durch die Multiphononenabsorption der Gitterschwingungen. CaF₂ hat mit ca. 12 eV eine große Bandlücke und ist ein Fluorid mit schwachen Bindungen und schweren Bausteinen; es transmittiert etwa von 0,13 µm bis gegen 10 µm und deckt 0,25–8 µm mit einer Scheibe ab. Saphir transmittiert ab etwa 0,2 µm, absorbiert aber auf der Infrarotseite ab ca. 5 µm stark. Synthetisches Quarzglas transmittiert bis ins tiefe Ultraviolett, seine Grenze im Infraroten liegt jedoch bei ca. 3,5 µm. Oxide haben starke Bindungen und leichte Bausteine, daher liegt ihre infrarote Grenze bei kürzeren Wellenlängen als bei Fluoriden. CaF₂ ist empfindlich gegen Temperaturschocks und bricht leicht, daher sind schnelle Temperaturänderungen bei der Handhabung zu vermeiden."
+  },
+  "optical-materials-006": {
+    "question": "Synthetisches Quarzglas gibt es je nach Herstellungsverfahren mit hohem OH-Gehalt (etwa einige hundert bis 1000 ppm) und nahezu ohne OH-Gruppen. Für welche Anwendung sollte am ehesten synthetisches Quarzglas mit geringem OH-Gehalt gewählt werden?",
+    "choices": [
+      "Für Anwendungen wie die Optik eines ArF-Excimerlasers bei 193 nm, bei denen Transmission und Beständigkeit im tiefen UV vorrangig sind",
+      "Für Anwendungen, bei denen Licht vom nahen bis zum mittleren Infrarot einschließlich der Umgebung von 2,7 µm durchgelassen werden soll",
+      "Für Linsen im Sichtbaren, deren Dispersion möglichst klein sein soll"
+    ],
+    "explanation": "OH-Gruppen in Quarzglas haben eine starke Absorption durch die Grundschwingung der Streckschwingung bei ca. 2,7 µm sowie Absorptionen durch Oberschwingungen und Kombinationsschwingungen bei ca. 1,38 µm und 2,2 µm. Für Fenster und Linsen, die infrarotes Licht einschließlich der Umgebung von 2,7 µm durchlassen sollen, wählt man daher Infrarot-Quarzglas nahezu ohne OH-Gruppen. Auch der „Wasserpeak“ mit erhöhtem Verlust um 1,38 µm in optischen Fasern hat diese Ursache. Für Excimerlaser im tiefen UV verwendet man dagegen in der Regel synthetisches Quarzglas mit hohem OH-Gehalt, das eine hohe UV-Transmission und eine gute Beständigkeit gegen laserinduzierte Schädigung bietet; die Wahl für die Optik des ArF-Excimerlasers kehrt die Verhältnisse also um. Der OH-Gehalt verändert die Dispersion im Sichtbaren kaum; für eine kleine Dispersion wählt man ein Material mit großer Abbe-Zahl."
+  },
+  "optical-materials-007": {
+    "question": "Saphir (Al₂O₃) ist ein einachsiger Kristall mit geringer Doppelbrechung (|ne − no| ≈ 0,008). Wie ist der Kristall zu schneiden, wenn er als Fenster dienen soll, das senkrecht einfallendes Licht ohne Änderung des Polarisationszustands durchlässt?",
+    "choices": [
+      "Die c-Achse (optische Achse) senkrecht zur Fensterfläche (c-Schnitt), sodass das Licht parallel zur c-Achse läuft",
+      "Ein Schnitt mit der c-Achse in der Fensterebene, bei dem für keine Polarisation Doppelbrechung auftritt",
+      "Unabhängig von der Kristallorientierung eine Dicke, bei der die Phasendifferenz ein ganzzahliges Vielfaches der Wellenlänge ist; dann bleibt die Polarisation bei jeder Wellenlänge erhalten"
+    ],
+    "explanation": "In einem einachsigen Kristall erfährt Licht, das parallel zur optischen Achse läuft, unabhängig von seiner Polarisationsrichtung den ordentlichen Brechungsindex no, sodass keine Phasendifferenz durch Doppelbrechung entsteht. Für ein polarisationserhaltendes Fenster verwendet man daher ein c-Schnitt-Substrat, dessen c-Achse senkrecht zur Fläche steht. Liegt die c-Achse in der Fensterebene, wirkt die Doppelbrechung am stärksten: Schon bei 1 mm Dicke beträgt der Gangunterschied ca. 0,008 mm, für Licht von 633 nm also eine Phasendifferenz von gut zehn Wellenlängen, und das Fenster wirkt als Verzögerungsplatte. Die Phasendifferenz auf ein ganzzahliges Vielfaches der Wellenlänge abzustimmen, gelingt nur für eine bestimmte Wellenlänge und Temperatur und ist daher falsch. Auch beim c-Schnitt-Fenster tritt bei schrägem Einfall oder fokussiertem Licht etwas Doppelbrechung auf, sodass in polarisationsempfindlichen optischen Systemen auch auf den Einfallswinkel zu achten ist."
+  },
+  "optical-materials-008": {
+    "question": "Ein dielektrischer Mehrschichtspiegel besteht auf einem Glassubstrat (ns = 1,52) aus abwechselnd gestapelten λ/4-Schichten mit hohem Brechungsindex nH = 2,35 und niedrigem Brechungsindex nL = 1,45 in der Folge (HL)⁵H mit 11 Schichten (beide Enden hochbrechend). Welcher Wert kommt dem Reflexionsgrad für senkrecht von der Luftseite einfallendes Licht der Entwurfswellenlänge am nächsten? Der Reflexionsgrad dieses Aufbaus sei durch R = [(1 − Y)/(1 + Y)]² mit Y = (nH/nL)^(2N)·nH²/ns (N = 5) gegeben.",
+    "choices": [
+      "ca. 90,6 %",
+      "ca. 32 %",
+      "ca. 99,1 %"
+    ],
+    "explanation": "Mit nH/nL = 2,35/1,45 ≈ 1,621 ist (nH/nL)¹⁰ ≈ 125,0 und nH²/ns = 5,5225/1,52 ≈ 3,633, also Y ≈ 454. Dann ist R = [(1 − 454)/(1 + 454)]² ≈ (0,9956)² ≈ 0,991, also ca. 99,1 %. Ca. 90,6 % ergibt sich mit dem Exponenten N statt 2N; dabei geht verloren, dass in jedem Paar zwei Grenzflächen zwischen hoch- und niedrigbrechender Schicht zur Reflexion beitragen. Ca. 32 % ist der Reflexionsgrad einer einzelnen hochbrechenden Schicht (Y = nH²/ns). Mit jedem weiteren Paar wächst Y um den Faktor (nH/nL)² ≈ 2,6, und der Reflexionsgrad nähert sich 100 %. Da sich allein mit absorptionsfreien Dielektrika ein höherer Reflexionsgrad als mit Metallspiegeln erreichen lässt, werden solche Spiegel in Laserresonatoren verwendet."
+  },
+  "optical-materials-009": {
+    "question": "Welche Maßnahme vergrößert bei einem dielektrischen Mehrschichtspiegel aus λ/4-Schichten die Breite des Wellenlängenbereichs mit hohem Reflexionsgrad (Hochreflexionsband), gemessen als Verhältnis Δλ/λ₀ zur Mittenwellenlänge?",
+    "choices": [
+      "Die Zahl der Paare aus hoch- und niedrigbrechender Schicht erhöhen",
+      "Den Unterschied der Brechungsindizes beider Schichtsorten vergrößern",
+      "Die Dicken sämtlicher Schichten im gleichen Verhältnis vergrößern"
+    ],
+    "explanation": "Die relative Breite des Hochreflexionsbands eines λ/4-Stapels beträgt Δλ/λ₀ ≈ (4/π) arcsin[(nH − nL)/(nH + nL)] und hängt nur vom Verhältnis der Brechungsindizes der beiden Materialien ab. Für TiO₂ (2,35) und SiO₂ (1,45) ergibt sich ca. 0,30, für Ta₂O₅ (2,1) und SiO₂ ca. 0,23; je größer der Unterschied der Brechungsindizes, desto breiter das Band. Mehr Schichtpaare erhöhen den Reflexionsgrad innerhalb des Bands und machen seine Flanken steiler, ändern die Breite aber kaum. Werden alle Schichten um denselben Faktor dicker, verschiebt sich die Bandmitte zu größeren Wellenlängen, und die Breite ändert sich nur proportional zur Mittenwellenlänge, sodass Δλ/λ₀ gleich bleibt. Für eine noch größere Breite stapelt man Schichtfolgen mit gegeneinander verschobenen Mittenwellenlängen übereinander."
+  },
+  "optical-materials-010": {
+    "question": "Auf einen hochreflektierenden Spiegel aus λ/4-Schichten mit der Entwurfswellenlänge λ₀ = 1064 nm (optische Dicke jeder Schicht λ₀/4) fällt senkrecht Licht der Wellenlänge 532 nm. Welche Aussage über die Reflexion dieses Spiegels bei 532 nm trifft zu, wenn die Materialdispersion vernachlässigt wird?",
+    "choices": [
+      "532 nm ist die zweite Harmonische von 1064 nm, daher ist der Reflexionsgrad ebenso hoch wie im Hochreflexionsband der Entwurfswellenlänge",
+      "Jede Schicht ist optisch eine halbe Wellenlänge dick und wirkt, als wäre sie nicht vorhanden; der Reflexionsgrad ist so niedrig wie beim Substrat allein",
+      "532 nm ist genau die Hälfte von λ₀, daher beträgt auch der Reflexionsgrad etwa die Hälfte des Werts bei der Entwurfswellenlänge, also ca. 50 %"
+    ],
+    "explanation": "Die optische Dicke λ₀/4 = 266 nm jeder Schicht entspricht für Licht von 532 nm einer halben Wellenlänge. Eine Halbwellenschicht hat bei dieser Wellenlänge (bis auf das Vorzeichen) die Einheitsmatrix als Matrix und wirkt als „Absentee-Schicht“, als wäre sie gar nicht da. Der gesamte Stapel verhält sich daher, als wäre er verschwunden, und der Reflexionsgrad sinkt auf die etwa 4 % des Glassubstrats (1,52) allein. Hohe Reflexionsgrade treten wieder bei Wellenlängen wie λ₀/3 (ca. 355 nm) oder λ₀/5 auf, bei denen jede Schicht ein ungeradzahliges Vielfaches von λ/4 ist. Die Annahme eines ebenso hohen Reflexionsgrads wie bei der Entwurfswellenlänge übersieht, dass dies nur für ungerade Ordnungen gilt. Auch eine Proportionalität, nach der der Reflexionsgrad mit halbierter Wellenlänge halbiert würde, besteht nicht. Spiegel, die sowohl 1064 nm als auch 532 nm reflektieren sollen, werden mit einer von λ/4 abweichenden Auslegung entworfen."
+  },
+  "optical-materials-011": {
+    "question": "Welche Aussage über die Änderungen trifft zu, wenn ein schmalbandiges dielektrisches Mehrschicht-Bandpassfilter gegenüber dem senkrechten Einfall gekippt verwendet wird?",
+    "choices": [
+      "Die Mittenwellenlänge der Transmission verschiebt sich zu kürzeren Wellenlängen, und bei großer Neigung trennen sich die Kennlinien für s- und p-Polarisation",
+      "Wegen des längeren Lichtwegs in der Schicht verschiebt sich die Mittenwellenlänge zu größeren Wellenlängen, und Polarisationsunterschiede entstehen nicht",
+      "Die physikalische Schichtdicke ändert sich nicht, daher bleibt die Mittenwellenlänge gleich, und nur die Bandbreite der Transmission wird etwas größer"
+    ],
+    "explanation": "Für Licht, das schräg durch die Schicht läuft, beträgt die Phasendicke einer Schicht 2πnd cosθ/λ (θ ist der Winkel in der Schicht); die Schicht wirkt also um den Faktor cosθ dünner. Die Mittenwellenlänge verschiebt sich deshalb zu kürzeren Wellenlängen gemäß λ(θ) ≈ λ₀√(1 − (sinθ/n_eff)²). Bei einem Filter mit dem effektiven Brechungsindex n_eff = 1,8 und der Entwurfswellenlänge 1550 nm liegt die Mittenwellenlänge bei einer Neigung um 30° bei ca. 1489 nm. Eine Verschiebung zu größeren Wellenlängen hat die falsche Richtung. Bei schrägem Einfall unterscheiden sich die effektiven Brechungsindizes der Schichten für s- und p-Polarisation, sodass sich die Kennlinien bei großen Winkeln nach der Polarisation trennen. Auch die Aussage, die Mittenwellenlänge bleibe gleich, ist falsch; man nutzt diese Eigenschaft sogar, um die Transmissionswellenlänge durch Kippen des Filters abzustimmen."
+  },
+  "optical-materials-012": {
+    "question": "Die Verlängerung eines 100 mm langen Bauteils bei einer Temperaturerhöhung um 10 K wird für ein optisches Glas vom Typ BK7 (linearer Wärmeausdehnungskoeffizient 7,1×10⁻⁶ /K) und für synthetisches Quarzglas (0,55×10⁻⁶ /K) verglichen. Welche Kombination der Verlängerungen trifft zu?",
+    "choices": [
+      "BK7-Typ ca. 71 µm, synthetisches Quarzglas ca. 5,5 µm",
+      "BK7-Typ ca. 0,71 µm, synthetisches Quarzglas ca. 0,055 µm",
+      "BK7-Typ ca. 7,1 µm, synthetisches Quarzglas ca. 0,55 µm"
+    ],
+    "explanation": "Die Verlängerung ist ΔL = αLΔT. Für den BK7-Typ ergibt sich 7,1×10⁻⁶ × 100 mm × 10 = 7,1×10⁻³ mm = 7,1 µm, für synthetisches Quarzglas 0,55×10⁻⁶ × 100 mm × 10 = 0,55 µm. Ca. 71 µm und ca. 0,71 µm sind Werte, bei denen beim Umrechnen zwischen mm und µm eine Zehnerpotenz verrutscht ist. 7,1 µm entsprechen etwa dem 11-Fachen der Wellenlänge 633 nm und sind in Interferometern und Resonatoren eine nicht vernachlässigbare Änderung. Synthetisches Quarzglas dehnt sich um etwa den Faktor 13 weniger aus und ist zudem temperaturschockbeständig, daher wird es für Präzisionssubstrate und UV-Optiken verwendet. Für Hauptspiegel von Teleskopen und Referenzresonatoren nutzt man Glaskeramiken oder Gläser mit sehr geringer Ausdehnung, die auf eine nahezu verschwindende Ausdehnung abgestimmt sind. Zur temperaturbedingten Änderung des optischen Wegs kommt noch der Temperaturkoeffizient des Brechungsindex dn/dT hinzu."
+  },
+  "optical-materials-013": {
+    "question": "Für eine Antireflexschicht ist eine Laserzerstörschwelle von 10 J/cm² bei 1064 nm Wellenlänge und 10 ns Pulsdauer angegeben. Welcher Wert kommt der Schwelle bei gleicher Wellenlänge und 1 ns Pulsdauer am nächsten, wenn man die Faustregel verwendet, dass die Schwellfluenz im Bereich von etwa 1 ns bis 100 ns proportional zur Quadratwurzel der Pulsdauer ist?",
+    "choices": [
+      "ca. 3,2 J/cm²",
+      "ca. 1,0 J/cm²",
+      "ca. 32 J/cm²"
+    ],
+    "explanation": "Die Faustregel lautet F(τ₂) = F(τ₁)√(τ₂/τ₁); daraus folgt 10 J/cm² × √(1/10) ≈ 3,2 J/cm². Bei ns-Pulsen ist die Strecke, über die sich die an Schichtdefekten oder durch Absorption entstandene Wärme ausbreitet, proportional zu √(Dτ); je kürzer der Puls, desto schlechter kann die Wärme abfließen, und die Schädigung tritt schon bei kleinerer Fluenz ein. Ca. 1,0 J/cm² ist der Wert bei Proportionalität zur Pulsdauer und entspricht der Annahme gleicher Spitzenintensität. Ca. 32 J/cm² ergibt sich mit umgekehrter Richtung der Wurzel; dann wären kürzere Pulse weniger schädlich. Diese Faustregel ist ein Erfahrungswert für den Bereich, in dem Wärme die Hauptursache ist; im ps- bis fs-Bereich wirken andere Mechanismen wie Mehrphotonenabsorption, daher darf nicht extrapoliert werden. Da die Schwelle auch von der Wellenlänge abhängt, prüft man in der Praxis den Wert für die tatsächlichen Einsatzbedingungen und plant bei der Auslegung eine Reserve ein."
+  },
+  "optical-materials-014": {
+    "question": "Was ist der Hauptgrund dafür, dass für Glan-Taylor-Polarisatoren und Strahlversetzer (Bauelemente, die Licht nach der Polarisation in zwei parallele Strahlen aufteilen) häufig Kalkspat oder YVO₄ statt Quarz verwendet wird?",
+    "choices": [
+      "Kalkspat und YVO₄ sind isotrope Kristalle ohne Doppelbrechung, sodass sich die Polarisationen allein über Totalreflexion und Fresnel-Reflexion an der schrägen Kontaktfläche der Prismen trennen lassen",
+      "Ihre Doppelbrechung |ne − no| ist mehr als eine Größenordnung größer als die von Quarz (ca. 0,009), sodass kurze Kristalle die beiden Polarisationen in Winkel und Lage weit trennen",
+      "Sie sind über einen breiteren Wellenlängenbereich vom UV bis ins IR transparent als Quarz und haben eine größere optische Aktivität, sodass sie die Polarisationsebene mit kurzer Kristalllänge stark drehen"
+    ],
+    "explanation": "Bei polarisationstrennenden Bauelementen gilt: Je größer der Unterschied der Brechungsindizes für die beiden Polarisationen, desto stärker unterscheiden sich die Bedingungen für Totalreflexion und die Ausbreitungsrichtungen. Kalkspat hat im Sichtbaren eine Doppelbrechung von ca. 0,17 und YVO₄ von ca. 0,2, also um mehr als eine Größenordnung größer als bei Quarz mit ca. 0,009. Damit lassen sich Glan-Taylor-Polarisatoren bauen, die eine Polarisation durch Totalreflexion an einem Luftspalt entfernen, und Strahlversetzer, die auf wenigen mm Länge zwei Strahlen trennen. Die Annahme fehlender Doppelbrechung kehrt den Sachverhalt um, denn gerade die Doppelbrechung ist das Funktionsprinzip dieser Bauelemente. Auch Transmissionsbereich oder optische Aktivität als Grund sind falsch: Quarz transmittiert ab ca. 0,15 µm im UV und hat einen breiteren Transmissionsbereich als Kalkspat, und Kalkspat und YVO₄ zeigen als zentrosymmetrische Kristalle keine optische Aktivität. Quarz nutzt man wegen seiner geringen Doppelbrechung für Verzögerungsplatten mit gut handhabbarer Dicke."
+  },
+  "optical-materials-015": {
+    "question": "Auf eine Glasplatte mit dem spannungsoptischen Koeffizienten K = 2,8×10⁻¹² Pa⁻¹ wirkt senkrecht zur Ausbreitungsrichtung des Lichts eine einachsige Spannung von 2 MPa. Welcher Wert kommt dem Gangunterschied Δ = Kσd zwischen den beiden Polarisationen für Licht, das 20 mm Dicke durchläuft, am nächsten?",
+    "choices": [
+      "ca. 11 nm",
+      "ca. 1,1 µm",
+      "ca. 112 nm"
+    ],
+    "explanation": "Δ = Kσd = 2,8×10⁻¹² Pa⁻¹ × 2×10⁶ Pa × 0,020 m = 1,12×10⁻⁷ m ≈ 112 nm. Das ist etwa das 0,18-Fache der Wellenlänge 633 nm und entspricht einer Phasendifferenz von rund 70 % von λ/4 (ca. 158 nm); linear polarisiertes Licht wird dadurch deutlich elliptisch. Ca. 11 nm ist der Wert für eine Dicke von 2 mm, ca. 1,1 µm ein um eine Zehnerpotenz zu großer Wert. Auch in isotropem Glas ändert sich unter Spannung der Brechungsindex in Spannungsrichtung und senkrecht dazu unterschiedlich, und es entsteht Spannungsdoppelbrechung. In Glasdatenblättern wird die Doppelbrechung durch Restspannungen als Gangunterschied je 1 cm Dicke (nm/cm) angegeben. Dieses Beispiel entspricht 56 nm/cm; für präzise optische Systeme mit Polarisation wählt man daher gut feingekühltes Glas und zieht Halterungen nicht zu fest an."
+  },
+  "optical-materials-016": {
+    "question": "Ein Farbglasfilter hat bei 10 mm Dicke einen Reintransmissionsgrad (Transmissionsgrad allein aufgrund der Absorption im Material, ohne Oberflächenreflexion) von 80 %. Welcher Wert kommt dem Reintransmissionsgrad desselben Materials bei 30 mm Dicke am nächsten? (Die Absorption folge dem Lambert-Beerschen Gesetz.)",
+    "choices": [
+      "ca. 40 %",
+      "ca. 51 %",
+      "ca. 93 %"
+    ],
+    "explanation": "Der Transmissionsgrad bei Absorption ist T = exp(−αd) und nimmt exponentiell mit der Dicke ab. Bei dreifacher Dicke ist T₃₀ = (T₁₀)³ = 0,80³ = 0,512, also ca. 51 %. Ca. 40 % beruht auf der proportionalen Annahme, wenn bei 10 mm 20 % verloren gingen, seien es bei 30 mm 60 %; das gilt als Näherung nur bei schwacher Absorption. Ca. 93 % ist die dritte Wurzel aus 0,80 und verwendet das Dickenverhältnis umgekehrt. Glaskataloge geben den Reintransmissionsgrad für Dicken von 10 mm oder 25 mm an, und für andere Dicken rechnet man über die Exponentialbeziehung um. Der Transmissionsgrad eines realen Filters ergibt sich, wenn man dies noch mit den Reflexionsverlusten an beiden Flächen multipliziert (bei einem Brechungsindex von 1,5 ca. 4 % je Fläche)."
+  },
+  "optical-materials-017": {
+    "question": "Es soll ein Metallspiegel mit hohem Reflexionsgrad über den weiten Bereich vom Ultraviolett bei 200–400 nm bis ins Sichtbare hergestellt werden. Welches aufzudampfende Metall ist am besten geeignet?",
+    "choices": [
+      "Aluminium. Es reflektiert vom UV bis ins Sichtbare etwa 85–90 % und wird zum Schutz vor Oxidation mit einer Schutzschicht wie MgF₂ verwendet",
+      "Silber. Im Sichtbaren reflektiert es von allen Metallen am stärksten, und bis zu kurzen UV-Wellenlängen bleibt der Reflexionsgrad wie im Sichtbaren über 95 %",
+      "Gold. Es reflektiert im IR stark und ist chemisch stabil und oxidiert nicht, sodass es auch ohne Schutzschicht im UV und im Blauen ca. 98 % Reflexionsgrad erreicht"
+    ],
+    "explanation": "Der Reflexionsgrad eines Metalls ist hoch bei Frequenzen unterhalb der Plasmafrequenz, also der Frequenz, bis zu der die freien Elektronen dem elektrischen Feld folgen können. Aluminium hat eine hohe Plasmafrequenz und reflektiert vom Ultraviolett ab ca. 200 nm über das Sichtbare bis ins Infrarote etwa 85–90 % oder mehr (mit einer kleinen Senke um 800 nm). Da die Oberfläche schnell oxidiert und die UV-Reflexion abnimmt, bringt man eine dünne Schutzschicht wie MgF₂ auf. Silber reflektiert im Sichtbaren und Infraroten über 95 %, doch sein Reflexionsgrad fällt um ca. 320 nm steil ab, sodass es für das UV ungeeignet ist. Gold erreicht im Infraroten rund 98 %, doch wegen Interbandabsorption der Elektronen sinkt sein Reflexionsgrad unterhalb von ca. 600 nm und liegt im Blauen bei rund 40 %; deshalb erscheint es gelb."
+  },
+  "optical-materials-018": {
+    "question": "Welche Kombination aus dem gebräuchlichsten Linsenmaterial für Wärmebildkameras im langwelligen Infrarot bei 8–14 µm und dem dabei zu beachtenden Punkt trifft zu?",
+    "choices": [
+      "Synthetisches Quarzglas. Es ist vom UV bis ins langwellige IR transparent und hat mit ca. 1,45 einen kleinen Brechungsindex, sodass die Reflexion je Fläche auch ohne Antireflexschicht nur ca. 3 % beträgt",
+      "Saphir. Er ist hart, kratzfest und bis ins langwellige IR transparent, ist aber doppelbrechend, sodass die c-Achse auf die optische Achse ausgerichtet wird",
+      "Germanium. Mit einem Brechungsindex von ca. 4 reflektiert jede Fläche ca. 36 %, sodass eine Antireflexschicht unverzichtbar ist; bei hoher Temperatur nimmt die Absorption zu"
+    ],
+    "explanation": "Germanium transmittiert Infrarot von etwa 2 bis 14 µm und hat mit ca. 4,0 einen großen Brechungsindex, sodass auch schwach gekrümmte Flächen eine hohe Brechkraft liefern. Der Reflexionsgrad bei senkrechtem Einfall beträgt ((4,0 − 1)/(4,0 + 1))² = 0,36 (36 %); an zwei Flächen geht mehr als die Hälfte des Lichts verloren, daher ist eine Antireflexschicht unerlässlich. Mit steigender Temperatur nimmt die Absorption durch thermisch erzeugte freie Ladungsträger zu, und oberhalb von etwa 100 °C sinkt der Transmissionsgrad. Synthetisches Quarzglas lässt wegen der Absorption durch die Si–O-Gitterschwingungen Wellenlängen über ca. 4 µm nicht durch, und auch Saphir absorbiert ab etwa 5 µm, sodass beide für 8–14 µm unbrauchbar sind. In diesem Band werden außerdem ZnSe und Chalkogenidgläser verwendet."
+  },
+  "optical-materials-019": {
+    "question": "Ein Laserpuls mit 10 mJ Pulsenergie trifft mit einer gaußförmigen Verteilung F(r) = F₀ exp(−2r²/w²) und dem Strahlradius w = 0,5 mm (Radius, bei dem die Intensität auf 1/e² des Mittenwerts gefallen ist) auf ein optisches Bauelement. Welcher Wert kommt der Fluenz F₀ in der Strahlmitte am nächsten?",
+    "choices": [
+      "ca. 1,3 J/cm²",
+      "ca. 2,5 J/cm²",
+      "ca. 5,1 J/cm²"
+    ],
+    "explanation": "Integriert man F(r) = F₀ exp(−2r²/w²) über die gesamte Fläche, erhält man E = F₀πw²/2, also F₀ = 2E/(πw²). Mit w = 0,05 cm ist πw² ≈ 7,85×10⁻³ cm², also F₀ = 2 × 0,010 J / 7,85×10⁻³ cm² ≈ 2,5 J/cm². Ca. 1,3 J/cm² ist der Mittelwert, bei dem die Energie durch die Kreisfläche mit dem Radius w geteilt wird; in der Mitte eines Gauß-Strahls ist die Fluenz doppelt so groß. Ca. 5,1 J/cm² entsteht, wenn w als Durchmesser aufgefasst und durch einen Kreis mit dem Radius w/2 geteilt wird. Da die Schädigung in der Mitte mit der höchsten Fluenz beginnt, vergleicht man die Mittenfluenz mit der Laserzerstörschwelle und muss auch die Definition des Strahldurchmessers (1/e² oder Halbwertsbreite) prüfen."
+  },
+  "optical-materials-020": {
+    "question": "Für große Teleskopspiegel und Substrate von Normalen in der Präzisionsmesstechnik werden Glaskeramiken verwendet, deren linearer Wärmeausdehnungskoeffizient um Raumtemperatur nahezu null ist (in der Größenordnung von 10⁻⁸ /K). Welche Aussage über den Mechanismus, der die Ausdehnung nahezu aufhebt, trifft zu?",
+    "choices": [
+      "Durch Wärmebehandlung ausgeschiedene feine Kristalle mit negativer und die Restglasphase mit positiver Ausdehnung werden im Anteil so abgestimmt, dass sich die Ausdehnung aufhebt",
+      "Kristalle sind vollständig beseitigt und die Atomanordnung ist ungeordnet, sodass sich die Atomabstände bei Erwärmung nicht ändern und die Ausdehnung bei jeder Temperatur null ist",
+      "Ein hoher Zusatz hochbrechender Schwermetalloxide verstärkt die atomaren Bindungen, sodass Wärmeschwingungen unterdrückt werden und die Ausdehnung nahezu null wird"
+    ],
+    "explanation": "Bei der Wärmebehandlung eines Glases auf Lithium-Alumosilicat-Basis scheiden sich feine Kristalle mit einer Struktur ähnlich der Hochtemperaturmodifikation des Quarzes aus. Diese Kristalle haben eine negative Ausdehnung, ziehen sich also bei Erwärmung zusammen; stimmt man ihren Volumenanteil auf die verbleibende Glasphase mit positiver Ausdehnung ab, lässt sich die Ausdehnung um Raumtemperatur nahezu auf null bringen. Sind die Kristalle deutlich kleiner als die Lichtwellenlänge, entstehen auch Werkstoffe, die sichtbares Licht gut durchlassen. Auch Quarzglas mit einigen Prozent TiO₂ ist ein Werkstoff mit geringer Ausdehnung. Ein amorpher Zustand allein beseitigt die Ausdehnung nicht; auch amorphes synthetisches Quarzglas dehnt sich mit ca. 0,55×10⁻⁶ /K aus. Bindungsverstärkende Zusätze allein bringen die Ausdehnung nicht auf null; eine nahezu verschwindende Ausdehnung erreicht man durch das Aufheben positiver und negativer Beiträge."
+  }
+}

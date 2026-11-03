@@ -1,0 +1,182 @@
+{
+  "microscopy-001": {
+    "question": "Ein Objektiv für ein Mikroskop mit Unendlich-Optik ist so ausgelegt, dass es zusammen mit einer Tubuslinse der Brennweite 200 mm den Abbildungsmaßstab 40× ergibt. Welche Kombination aus der Brennweite dieses Objektivs und dem Abbildungsmaßstab an einem anderen Mikroskop mit einer Tubuslinse der Brennweite 180 mm trifft zu?",
+    "choices": [
+      "Brennweite 5 mm; der Abbildungsmaßstab bleibt wie angegeben bei 40×",
+      "Brennweite 5 mm; der Abbildungsmaßstab beträgt 36×",
+      "Brennweite 5 mm; der Abbildungsmaßstab beträgt ca. 44×"
+    ],
+    "explanation": "Bei der Unendlich-Optik steht das Objekt in der objektseitigen Brennebene des Objektivs, daher verlässt das Licht das Objektiv als paralleles Licht, und die Tubuslinse erzeugt in ihrer Brennebene das Bild. Der Abbildungsmaßstab ist M = f_TL/f_obj, also f_obj = 200/40 = 5 mm. Mit einer Tubuslinse der Brennweite 180 mm ergibt sich M = 180/5 = 36×. Die Annahme, es bleibe bei 40×, beruht auf dem Irrtum, der Abbildungsmaßstab werde allein vom Objektiv bestimmt. Ca. 44× ist ein Fehler mit umgekehrtem Verhältnis, 40 × 200/180 ≈ 44. Da die Brennweite der Tubuslinse je nach Hersteller verschieden ist, weicht der Abbildungsmaßstab beim Einsatz von Objektiven anderer Hersteller von der Angabe ab, und auch die Korrektur der Abbildungsfehler entspricht unter Umständen nicht der Auslegung."
+  },
+  "microscopy-002": {
+    "question": "Welches Element liegt bei der Köhlerschen Beleuchtung eines Mikroskops an einem zur Präparatebene konjugierten Ort (einem Ort, der in die Präparatebene abgebildet wird)?",
+    "choices": [
+      "Die Leuchtfeldblende",
+      "Die Aperturblende des Kondensors",
+      "Die Lichtquelle (die Glühwendel der Lampe)"
+    ],
+    "explanation": "Bei der Köhlerschen Beleuchtung wird die Lichtquelle in die Ebene der Aperturblende des Kondensors (die objektseitige Brennebene des Kondensors) abgebildet und die Leuchtfeldblende durch den Kondensor in die Präparatebene. In der Präparatebene erscheint daher kein Bild der Lichtquelle, und das Sehfeld wird auch bei ungleichmäßiger Form der Glühwendel gleichmäßig ausgeleuchtet. Schließt man die Leuchtfeldblende, verkleinert sich nur der beleuchtete Bereich, und Streulicht lässt sich verringern. Lichtquelle und Aperturblende sind auch zur bildseitigen Brennebene des Objektivs konjugiert; diese Gruppe konjugierter Ebenen bestimmt den Winkelbereich der Beleuchtung, also die numerische Apertur des Kondensors, und ist nicht zur Präparatebene konjugiert. Ein Verfahren, das die Lichtquelle direkt in die Präparatebene abbildet, heißt kritische Beleuchtung; dabei überlagern sich Ungleichmäßigkeiten der Lichtquelle dem Bild."
+  },
+  "microscopy-003": {
+    "question": "Bei einem Hellfeldmikroskop im Durchlicht wird die Aperturblende des Kondensors stark geschlossen, sodass die numerische Apertur der Beleuchtung viel kleiner als die des Objektivs ist. Welche Aussage über die Änderung des Bildes trifft zu?",
+    "choices": [
+      "Die Winkel des Beleuchtungslichts werden einheitlicher, die Abbildungsfehler nehmen ab, und damit steigt auch die Auflösung",
+      "Nur der beleuchtete Bereich des Sehfelds wird kleiner; Auflösung und Kontrast ändern sich nicht",
+      "Kontrast und Fokustiefe nehmen zu, die Auflösung sinkt jedoch, und an Objektkanten treten Beugungssäume deutlicher hervor"
+    ],
+    "explanation": "Die Aperturblende bestimmt den Winkelbereich des Beleuchtungslichts (die numerische Apertur des Kondensors). Nach der Abbeschen Abbildungstheorie gelangt an feinen Strukturen des Präparats gebeugtes Licht umso leichter ins Objektiv, je schräger das Beleuchtungslicht einfällt, und die Auflösungsgrenze beträgt etwa λ/(NA_obj + NA_cond). Schließt man die Blende und verringert NA_cond, sinkt die Auflösung, und weil die Beleuchtung annähernd kohärent wird, entstehen an Kanten Beugungssäume; dafür steigt der Kontrast auch bei transparenten Präparaten, und die Fokustiefe nimmt zu. Die Antwort mit steigender Auflösung hat die falsche Richtung. Den beleuchteten Bereich zu verändern, ist Aufgabe der Leuchtfeldblende; diese Antwort verwechselt sie mit der Aperturblende. Als Richtwert stellt man die Aperturblende auf etwa 70–80 % der numerischen Apertur des Objektivs ein."
+  },
+  "microscopy-004": {
+    "question": "Mit einem Objektiv der numerischen Apertur NA = 0,5 wird ein periodisches gitterförmiges Präparat beobachtet, das mit kohärentem parallelem Licht der Wellenlänge 550 nm senkrecht entlang der optischen Achse beleuchtet wird. Welcher Wert kommt der kleinsten Periode, bei der ein Bild entsteht, am nächsten, wenn nach der Abbeschen Abbildungstheorie ein Gitterbild entsteht, sobald das Licht nullter Ordnung und das gebeugte Licht erster Ordnung ins Objektiv gelangen?",
+    "choices": [
+      "ca. 1,1 µm",
+      "ca. 0,55 µm",
+      "ca. 0,67 µm"
+    ],
+    "explanation": "Fällt Licht senkrecht auf ein Gitter der Periode d, tritt das gebeugte Licht erster Ordnung in Richtung sinθ = λ/d aus. Das Objektiv nimmt Winkel mit sinθ ≤ NA auf, daher lautet die Bedingung für den Eintritt der ersten Ordnung d ≥ λ/NA = 0,55 µm/0,5 = 1,1 µm. Mit dem Licht nullter Ordnung allein entsteht nur gleichmäßige Helligkeit, und die Gitterstreifen werden nicht abgebildet. Ca. 0,55 µm ist λ/(2NA) und entspricht der Grenze bei maximal schräger Beleuchtung, bei der die nullte und eine der ersten Ordnungen an entgegengesetzten Rändern der Öffnung eintreten; das ist eine andere Bedingung als bei senkrechter Beleuchtung. Ca. 0,67 µm ist 0,61λ/NA und verwechselt die Aufgabe mit dem Rayleigh-Kriterium für zwei inkohärente Punkte. Die Feinheit des Bildes wird durch den Bereich des ins Objektiv gelangenden gebeugten Lichts bestimmt."
+  },
+  "microscopy-005": {
+    "question": "Mit einem Ölimmersionsobjektiv mit dem Abbildungsmaßstab 60× und der numerischen Apertur 1,4 wird ein Fluoreszenzbild bei 520 nm Wellenlänge mit einer Kamera aufgenommen. Welcher Wert kommt der Obergrenze des Pixelabstands der Kamera am nächsten, wenn man als Richtwert die Auflösung in der Präparatebene d = 0,61λ/NA mit mindestens zwei Pixeln abtastet (ein Pixel ist höchstens halb so groß wie d auf der Kamerafläche)? (Der Abbildungsmaßstab von Objektiv und Tubuslinse zusammen sei 60×.)",
+    "choices": [
+      "ca. 13,6 µm",
+      "ca. 0,11 µm",
+      "ca. 6,8 µm"
+    ],
+    "explanation": "Die Auflösung in der Präparatebene beträgt d = 0,61 × 0,52 µm / 1,4 ≈ 0,227 µm. Auf der Kamerafläche wird dies 60-fach vergrößert und beträgt ca. 13,6 µm; für eine Abtastung mit mindestens zwei Pixeln muss der Pixelabstand daher höchstens 13,6/2 ≈ 6,8 µm betragen. Ca. 13,6 µm ist der Wert, bei dem die Auflösung von einem einzigen Pixel erfasst wird; die Abtastung ist zu grob, und Details gehen in den Pixeln unter. Ca. 0,11 µm ist ein Fehler, bei dem die Multiplikation mit dem Abbildungsmaßstab vergessen und mit der Größe in der Präparatebene verglichen wurde. Macht man die Pixel unnötig klein, fällt auf jedes Pixel weniger Licht, und das Rauschen fällt stärker ins Gewicht; daher ist es wichtig, Abbildungsmaßstab und Pixelgröße aufeinander abzustimmen. Legt man die Grenzfrequenz 2NA/λ zugrunde, sind noch feinere Pixel von ca. 5,6 µm nötig."
+  },
+  "microscopy-006": {
+    "question": "Wodurch ist in einem Dunkelfeldmikroskop im Durchlicht der Hintergrund dunkel, während winzige Teilchen oder feine Strukturen hell leuchtend erscheinen?",
+    "choices": [
+      "Das Beleuchtungslicht wird mit einem Polarisator linear polarisiert, ein gekreuzter Analysator löscht das Hintergrundlicht, und nur doppelbrechende Strukturen erscheinen hell",
+      "Das Licht fällt nur unter Winkeln größer als die numerische Apertur des Objektivs ein; direktes Licht gelangt nicht ins Objektiv, und nur am Präparat gestreutes und gebeugtes Licht erzeugt das Bild",
+      "Die Phase des ungehindert durch das Präparat gehenden Beleuchtungslichts wird um λ/4 verschoben und das Licht gedämpft, sodass es sich mit dem gebeugten Licht verstärkt und die Teilchenkanten hell leuchten"
+    ],
+    "explanation": "Bei der Dunkelfeldbeleuchtung beleuchtet man das Präparat mit einer Ringblende, die die Mitte des Kondensors abdeckt, oder mit einem eigenen Kondensor unter Winkeln, die größer als die numerische Apertur des Objektivs sind. Das direkte Beleuchtungslicht läuft am Objektiv vorbei, daher ist der Hintergrund dunkel, und nur das am Präparat gestreute und gebeugte Licht gelangt ins Objektiv und erzeugt das Bild. So lassen sich auch Teilchen unterhalb der Auflösungsgrenze bei ausreichendem Streulicht als leuchtende Punkte nachweisen (ihre Größe wird allerdings nicht richtig abgebildet). Voraussetzung ist, dass die numerische Apertur der Beleuchtung größer als die des Objektivs ist; bei Objektiven mit großer numerischer Apertur verwendet man daher Objektive mit Irisblende, um die numerische Apertur zu verringern. Doppelbrechung mit gekreuzten Polarisatoren sichtbar zu machen, ist das Prinzip des Polarisationsmikroskops, die Phase des direkten Lichts zu verschieben und zur Interferenz zu bringen, das des Phasenkontrastmikroskops."
+  },
+  "microscopy-007": {
+    "question": "Farblose, transparente Zellen werden mit einem Phasenkontrastmikroskop beobachtet. Wodurch entsteht im Bild Kontrast?",
+    "choices": [
+      "Geringe Unterschiede in der Lichtabsorption der Zellen werden von einer hochempfindlichen Kamera zu Hell-Dunkel-Unterschieden verstärkt, sodass auch ohne Färbung Kontrast entsteht",
+      "Brechungsindexunterschiede der Zellen lenken das Licht geringfügig ab; ein Detektor liest den Betrag der Bildverschiebung ab und stellt ihn als Hell-Dunkel-Unterschied dar",
+      "Eine Phasenplatte in der bildseitigen Brennebene des Objektivs verschiebt die Phase des direkten Lichts um etwa λ/4 und wandelt die Phasenbeziehung zum gebeugten Licht in Helligkeitsunterschiede um"
+    ],
+    "explanation": "Ein transparentes Präparat verändert die Amplitude des Lichts kaum und verzögert nur seine Phase; es ist ein Phasenobjekt. Ist die Phasenverzögerung φ klein, lässt sich das durchgelassene Licht als exp(iφ) ≈ 1 + iφ schreiben, also als Summe aus starkem direktem Licht und schwachem gebeugtem Licht mit einer Phasenverschiebung von etwa π/2; so ändert sich die Intensität kaum. Beim Zernikeschen Phasenkontrastverfahren setzt man eine Phasenplatte an die Stelle in der bildseitigen Brennebene des Objektivs, an der sich das durch die Ringblende des Kondensors gegangene direkte Licht ringförmig sammelt, verschiebt die Phase des direkten Lichts um etwa λ/4 und dämpft es. Dann verstärken oder schwächen sich direktes und gebeugtes Licht gegenseitig, und Phasenunterschiede werden zu Helligkeitsunterschieden. Bei nahezu absorptionsfreien Präparaten wird auch durch Verstärken von Absorptionsunterschieden nichts sichtbar. Die Hell-Dunkel-Unterschiede entstehen durch Interferenz, nicht durch Bildverschiebung, und kennzeichnend für das Verfahren ist ein heller Halo an den Kanten."
+  },
+  "microscopy-008": {
+    "question": "Beobachtet man Zellen in einer Kulturschale aus Kunststoff mit einem Differentialinterferenzkontrast-Mikroskop (DIC) nach Nomarski, geht der Bildkontrast oft stark verloren. Was ist der Hauptgrund dafür?",
+    "choices": [
+      "DIC nutzt zwei orthogonale Polarisationen; der durch Spritzgießspannungen doppelbrechende Kunststoffboden stört die Polarisation, sodass die Interferenzbedingung nicht mehr erfüllt ist",
+      "Kunststoff absorbiert sichtbares Licht, besonders die bei DIC verwendeten kurzen Wellenlängen, stark, sodass das Beleuchtungslicht das Präparat nicht ausreichend erreicht",
+      "Der Brechungsindex von Kunststoff ist kleiner als der von Glas, daher sinkt die numerische Apertur des Objektivs, und die Auflösung nimmt ab"
+    ],
+    "explanation": "Bei DIC wird das durch einen Polarisator gegangene linear polarisierte Licht mit einem Nomarski-Prisma in zwei zueinander orthogonal polarisierte Lichtbündel aufgeteilt und seitlich geringfügig versetzt; nach dem Präparat werden sie wieder vereinigt und mit einem Analysator zur Interferenz gebracht. Der Unterschied der optischen Wege an den Durchtrittsstellen der beiden Bündel, also der Phasengradient, wird zu Helligkeit, sodass ein schattiertes, plastisch wirkendes Bild entsteht. Da dieser Mechanismus wohldefinierte Polarisationszustände der beiden Bündel voraussetzt, wird die Polarisation beim Durchgang durch eine Kunststoffschale, die durch Spannungen aus dem Spritzgießen doppelbrechend ist, gestört, und der Kontrast geht verloren. Man verwendet daher Schalen mit Glasboden oder wählt das Phasenkontrastverfahren, das ohne Polarisation arbeitet. Der Kunststoff von Kulturschalen absorbiert sichtbares Licht kaum, und das Schalenmaterial verringert auch nicht die numerische Apertur des Objektivs."
+  },
+  "microscopy-009": {
+    "question": "Mit einem Auflicht-Fluoreszenzmikroskop wird ein grüner Fluoreszenzfarbstoff (Absorptionsmaximum ca. 490 nm, Fluoreszenzmaximum ca. 520 nm) beobachtet. Welche Kombination des Filtersatzes trifft zu?",
+    "choices": [
+      "Anregungsfilter lässt ca. 510–550 nm durch, dichroitischer Spiegel reflektiert Licht oberhalb von ca. 500 nm, Emissionsfilter lässt ca. 470–490 nm durch",
+      "Anregungsfilter lässt ca. 470–490 nm durch, dichroitischer Spiegel reflektiert unterhalb von ca. 500 nm und transmittiert darüber, Emissionsfilter lässt ca. 510–550 nm durch",
+      "Anregungs- und Emissionsfilter haben dasselbe Band (ca. 480–530 nm), und statt eines dichroitischen Spiegels teilt ein halbdurchlässiger Spiegel das Licht zu gleichen Teilen"
+    ],
+    "explanation": "Fluoreszenz entsteht, nachdem das angeregte Molekül durch Schwingungsrelaxation einen Teil seiner Energie verloren hat, und tritt daher bei größeren Wellenlängen als das Anregungslicht auf (Stokes-Verschiebung). Man wählt deshalb mit dem Anregungsfilter nur die kurzwellige Seite der Absorptionsbande (ca. 470–490 nm), reflektiert das Anregungslicht mit dem dichroitischen Spiegel zum Präparat, lässt die langwelligere Fluoreszenz vom Präparat durch und entfernt schließlich mit dem Emissionsfilter durchgesickertes Anregungslicht, sodass nur ca. 510–550 nm zum Detektor gelangen. Die Fluoreszenz ist oft um Größenordnungen schwächer als das Anregungslicht, und schon ein geringer Durchtritt von Anregungslicht lässt sie im Hintergrund untergehen; Aufbauten mit überlappenden Bändern oder mit einem halbdurchlässigen Spiegel, an dem jeweils die Hälfte des Lichts verloren geht, werden daher nicht verwendet. Bei der Kombination mit vertauschten Wellenlängenbereichen würde man bei großen Wellenlängen mit geringer Absorption des Farbstoffs anregen, und Fluoreszenz bei kürzeren Wellenlängen als das Anregungslicht entsteht praktisch nicht, sodass kaum etwas zu sehen wäre."
+  },
+  "microscopy-010": {
+    "question": "Welche Aussage über die Rolle des Pinholes vor dem Detektor eines konfokalen Laser-Scanning-Mikroskops trifft zu?",
+    "choices": [
+      "Es bündelt das Anregungslicht, erhöht die Intensität im Fokus und verhindert, dass außerhalb der Fokusebene Fluoreszenz entsteht, sodass ein Bild ohne Unschärfe entsteht",
+      "Es beugt das Laserlicht, weitet den Beleuchtungsbereich auf und beleuchtet ohne Rasterung mit Spiegeln das gesamte Sehfeld auf einmal gleichmäßig",
+      "Es steht an einem zur Fokusebene konjugierten Ort, blendet Licht von außerhalb der Fokusebene aus und liefert Bilder nur einer dünnen Schicht entlang der optischen Achse (optische Schnitte)"
+    ],
+    "explanation": "Im Konfokalmikroskop fokussiert das Objektiv das Laserlicht auf einen Punkt im Präparat, sammelt die dort entstehende Fluoreszenz mit demselben Objektiv und weist sie durch ein Pinhole an einem zum Fokus konjugierten Ort nach. Licht aus der Fokusebene wird auf das Pinhole fokussiert und geht hindurch, Licht von oberhalb oder unterhalb der Fokusebene ist am Ort des Pinholes dagegen aufgeweitet und wird größtenteils ausgeblendet. Dadurch erhält man auch bei dicken Präparaten Bilder dünner Schichten mit wenig Unschärfe, und durch Stapeln bei verschiedenen Fokuslagen entsteht ein räumliches Bild. Auch außerhalb des Fokus entsteht Fluoreszenz; sie auf der Detektionsseite zu entfernen, ist der Grundgedanke der Konfokalmikroskopie, während das Unterbinden der Fluoreszenz außerhalb des Fokus das Prinzip der Zwei-Photonen-Anregung ist. Da das Bild durch Abrastern eines Punktes Pixel für Pixel entsteht, wird nicht das gesamte Sehfeld auf einmal beleuchtet."
+  },
+  "microscopy-011": {
+    "question": "Bei einem Konfokalmikroskop mit einem Objektiv mit dem Abbildungsmaßstab 63× und der numerischen Apertur 1,4 soll der Pinhole-Durchmesser dem Durchmesser des Airy-Scheibchens der Fluoreszenz (Wellenlänge 520 nm) entsprechen (Durchmesser des ersten dunklen Rings, in der Präparatebene 1,22λ/NA), also 1 Airy-Einheit betragen. Welcher Wert kommt dem Pinhole-Durchmesser am nächsten, wenn der Abbildungsmaßstab in der Pinhole-Ebene 63× beträgt?",
+    "choices": [
+      "ca. 14,3 µm",
+      "ca. 28,5 µm",
+      "ca. 0,45 µm"
+    ],
+    "explanation": "Der Durchmesser des Airy-Scheibchens in der Präparatebene beträgt 1,22λ/NA = 1,22 × 0,52 µm / 1,4 ≈ 0,453 µm. In der Pinhole-Ebene ist er 63-fach vergrößert, also 0,453 × 63 ≈ 28,5 µm. Ca. 14,3 µm ist der Wert mit dem Radius des ersten dunklen Rings 0,61λ/NA, also der halbe Durchmesser. Ca. 0,45 µm ist die Größe in der Präparatebene, bei der die Multiplikation mit dem Abbildungsmaßstab vergessen wurde. Macht man das Pinhole kleiner als 1 Airy-Einheit, wird der optische Schnitt etwas dünner, doch das durchgelassene Licht nimmt rasch ab, und das Signal-Rausch-Verhältnis sinkt. Ein größeres Pinhole macht das Bild heller, lässt aber Licht von außerhalb des Fokus herein; daher verwendet man häufig etwa 1 Airy-Einheit. Je größer die Fluoreszenzwellenlänge, desto größer ist das passende Pinhole."
+  },
+  "microscopy-012": {
+    "question": "Weshalb ist im Mikroskop die Auflösung entlang der optischen Achse (in der Tiefe) schlechter (hat einen größeren Wert) als die laterale Auflösung?",
+    "choices": [
+      "Das Objektiv sammelt Licht nur von einer Seite und in begrenztem Winkel, daher ist der aufnehmbare Ortsfrequenzbereich entlang der Achse schmaler als lateral",
+      "Die Auflösung entlang der optischen Achse wird allein durch die Wellenlänge bestimmt und ändert sich auch bei größerer numerischer Apertur nicht",
+      "Die laterale Auflösung ist proportional zu 1/NA, die axiale zu 1/NA², daher wird bei Ölimmersionsobjektiven mit NA über 1 umgekehrt die axiale Auflösung besser"
+    ],
+    "explanation": "Die Ausdehnung des Punktbildes wird durch den Winkelbereich des vom Objektiv gesammelten Lichts bestimmt. Lateral tragen die Strahlen an den beiden Rändern der Öffnung Ortsfrequenzen bis 2n sinθ/λ, entlang der optischen Achse aber nur etwa n(1 − cosθ)/λ; bei einem Mikroskop, das Licht nur von einer Seite sammelt, ist das axiale Band daher schmaler. Als Richtwerte gelten für die laterale Auflösung 0,61λ/NA und für die axiale 2nλ/NA²; mit λ = 520 nm, NA = 1,4 und n = 1,518 ergeben sich ca. 0,23 µm und ca. 0,81 µm, die axiale Auflösung ist also mehr als dreimal schlechter. Da die axiale Auflösung umgekehrt proportional zu NA² ist, wirkt sich eine größere NA dort sogar stärker aus, und sie wird nicht allein durch die Wellenlänge bestimmt. Die Formel enthält den Brechungsindex n, und NA ist nie größer als n; daher übertrifft die axiale Auflösung die laterale auch bei NA über 1 nicht."
+  },
+  "microscopy-013": {
+    "question": "Bei einem Fluoreszenzmikroskop mit Totalreflexionsbeleuchtung (TIRF) trifft Anregungslicht der Wellenlänge 488 nm unter einem Einfallswinkel von 70° auf die Grenzfläche zwischen Deckglas (Brechungsindex 1,518) und wässriger Lösung (Brechungsindex 1,33) und wird totalreflektiert. Welcher Wert kommt der Tiefe d = λ/(4π√(n₁²sin²θ − n₂²)), in der die Intensität der in das Wasser eindringenden evaneszenten Welle auf 1/e abgefallen ist, am nächsten?",
+    "choices": [
+      "ca. 75 nm",
+      "ca. 150 nm",
+      "ca. 950 nm"
+    ],
+    "explanation": "Mit n₁ sinθ = 1,518 × sin70° ≈ 1,426 ist n₁²sin²θ − n₂² ≈ 2,035 − 1,769 = 0,266, und die Quadratwurzel daraus beträgt ca. 0,516. Damit ist d = 488 nm / (4π × 0,516) ≈ 75 nm. Ca. 150 nm ist der Wert mit 2π statt 4π; er entspricht der Tiefe, in der die Amplitude des elektrischen Feldes auf 1/e abgefallen ist, während die Tiefe für die Intensität nur halb so groß ist. Ca. 950 nm ist der Wert, bei dem die Division durch 4π vergessen wurde. Da das Anregungslicht nur etwa 100 nm über die Grenzfläche hinaus reicht, lassen sich nur Moleküle nahe der Zellmembran mit wenig Hintergrund beobachten. Beim Verfahren mit Totalreflexion durch das Objektiv muss die numerische Apertur des Objektivs mindestens n₁ sinθ betragen (in diesem Beispiel ca. 1,43), daher verwendet man Ölimmersionsobjektive mit einer numerischen Apertur von etwa 1,45–1,49."
+  },
+  "microscopy-014": {
+    "question": "Welche Kombination aus dem Grund, weshalb ein Zwei-Photonen-Fluoreszenzmikroskop optische Schnitte ohne Pinhole wie beim Konfokalmikroskop erhält, und der Anregungswellenlänge für die Zwei-Photonen-Anregung eines Farbstoffs, der mit einem Photon bei 480 nm angeregt wird, trifft zu?",
+    "choices": [
+      "Die Wahrscheinlichkeit gleichzeitiger Absorption zweier Photonen ist proportional zum Quadrat der Intensität, und Anregung findet nur nahe dem intensiven Fokus statt. Als Anregungslicht dient Licht von ca. 240 nm",
+      "Nahinfrarotes Licht wird im Gewebe nicht gestreut, daher gelangt kein Licht an Orte außerhalb des Fokus. Als Anregungslicht dient Licht von ca. 960 nm",
+      "Die Wahrscheinlichkeit gleichzeitiger Absorption zweier Photonen ist proportional zum Quadrat der Intensität, und Anregung findet nur nahe dem intensiven Fokus statt. Als Anregungslicht dient Licht von ca. 960 nm"
+    ],
+    "explanation": "Bei der Zwei-Photonen-Anregung absorbiert ein Molekül zwei Photonen nahezu gleichzeitig und wird durch die Summe ihrer Energien angeregt. Da die Energie, die einem Photon von 480 nm entspricht, auf zwei Photonen verteilt wird, hat jedes Photon die halbe Energie, also etwa die doppelte Wellenlänge von 960 nm. Ca. 240 nm ist ein Fehler, bei dem statt der Addition der Energien die Wellenlänge halbiert wurde. Da die Absorptionswahrscheinlichkeit proportional zum Quadrat der Intensität ist, wird nur nahe dem Fokus fokussierter Femtosekundenpulse stark angeregt, und außerhalb des Fokus entsteht kaum Fluoreszenz. Auf der Detektionsseite ist daher kein Pinhole nötig, und auch gestreute Fluoreszenz lässt sich als Signal sammeln. Nahinfrarotes Licht wird weniger gestreut als sichtbares und dringt tiefer ein, ist aber nicht streufrei; der Grund für die optischen Schnitte ist die quadratische Abhängigkeit von der Intensität."
+  },
+  "microscopy-015": {
+    "question": "Im STED-Mikroskop wird der Fleck angeregter Fluoreszenz von einem intensiven donutförmigen Licht umgeben, das die Fluoreszenz durch stimulierte Emission löscht und den leuchtenden Bereich verkleinert. Welcher Wert kommt der Auflösung am nächsten, wenn sie durch d ≈ d₀/√(1 + I/Is) gegeben ist (d₀ ist die beugungsbegrenzte Auflösung, I die Intensität des STED-Lichts, Is die Sättigungsintensität) und d₀ = λ/(2NA), Fluoreszenzwellenlänge λ = 600 nm, NA = 1,4 und I/Is = 15 gelten?",
+    "choices": [
+      "ca. 13 nm",
+      "ca. 54 nm",
+      "ca. 214 nm"
+    ],
+    "explanation": "Es ist d₀ = 600 nm/(2 × 1,4) ≈ 214 nm und √(1 + 15) = 4, also d ≈ 214/4 ≈ 54 nm. Ca. 13 nm ist ein Fehler, bei dem ohne Quadratwurzel durch 1 + I/Is = 16 geteilt wurde. Ca. 214 nm ist der Wert unter der Annahme, die Beugungsgrenze lasse sich mit keinem Verfahren unterschreiten. Bei STED bleibt in der Mitte des Donuts, wo die Intensität null ist, die Fluoreszenz erhalten, während in der Umgebung die Moleküle durch stimulierte Emission in den Grundzustand zurückgebracht werden und nicht leuchten. Je stärker das STED-Licht, desto näher rückt der gelöschte Bereich an die Mitte heran, und der leuchtende Bereich wird kleiner als die Beugungsgrenze. Die Fokussierung des Lichts selbst bleibt beugungsbegrenzt; der Grundgedanke des Verfahrens ist, die Grenze durch nichtlineares Ein- und Ausschalten der Fluoreszenzmoleküle zu überwinden. Ausbleichen und Schädigung durch das starke STED-Licht sind die praktischen Einschränkungen."
+  },
+  "microscopy-016": {
+    "question": "Ein Fluoreszenzmolekül in einem Einbettmedium mit dem Brechungsindex 1,518 (gleich dem des Immersionsöls) strahlt gleichmäßig in alle Richtungen. Welcher Wert kommt dem Anteil des Lichts, den ein Ölimmersionsobjektiv mit der numerischen Apertur 1,4 sammeln kann, am nächsten? (Der halbe Öffnungswinkel θ folgt aus NA = n sinθ, und der Raumwinkel eines Kegels mit dem halben Öffnungswinkel θ ist 2π(1 − cosθ).)",
+    "choices": [
+      "ca. 61 %",
+      "ca. 31 %",
+      "ca. 46 %"
+    ],
+    "explanation": "Aus sinθ = 1,4/1,518 ≈ 0,922 folgt θ ≈ 67,3° und cosθ ≈ 0,386. Der Anteil am gesamten Raumwinkel 4π beträgt 2π(1 − cosθ)/4π = (1 − 0,386)/2 ≈ 0,31, also ca. 31 %. Selbst mit der großen numerischen Apertur von 1,4 lässt sich von einer Seite nur etwa ein Drittel sammeln. Ca. 61 % ist 1 − cosθ ohne die Division durch 2, also der Wert, bei dem die Halbkugel (2π) als Ganzes genommen wurde. Ca. 46 % ist sinθ/2 und verwechselt den Sinus des Winkels mit dem Raumwinkelanteil. Da Fluoreszenz schwach ist, ist die starke Zunahme des gesammelten Anteils mit der NA einer der Gründe, für helle Fluoreszenzbilder Objektive mit hoher NA zu verwenden."
+  },
+  "microscopy-017": {
+    "question": "Hochvergrößernde Trockenobjektive mit einer numerischen Apertur um 0,9 tragen die Aufschrift „0,17“, manche haben zudem einen Korrekturring. Welche Aussage über diese Aufschrift und den Korrekturring trifft zu?",
+    "choices": [
+      "Sie gibt an, dass der Arbeitsabstand von der Objektivfront bis zum Präparat 0,17 mm beträgt, und der Korrekturring ist ein Feintrieb, der den Arbeitsabstand zum Fokussieren verändert",
+      "Sie gibt an, dass der Brechungsindex des Deckglases 1,7 beträgt, und der Korrekturring gleicht die Absorption durch die Färbung des Deckglases aus und stellt die Farbbalance des Bildes ein",
+      "Die sphärische Aberration ist für die Beobachtung durch ein 0,17 mm dickes Deckglas korrigiert; bei anderer Dicke tritt sie auf, und der Korrekturring passt die Linsenabstände an"
+    ],
+    "explanation": "Licht vom Präparat erfährt beim Durchgang durch die planparallele Platte des Deckglases eine sphärische Aberration, bei der sich die Fokuslage umso stärker verschiebt, je größer der Winkel des Strahls ist. Trockenobjektive mit hoher NA sind so ausgelegt, dass sie auch die sphärische Aberration einer 0,17 mm dicken Platte kompensieren, und schon eine Dickenabweichung von 0,01–0,02 mm verringert die Bildschärfe. Der Korrekturring verändert die Abstände der Linsengruppen und korrigiert die sphärische Aberration passend zur tatsächlichen Dicke. Der Arbeitsabstand wird gewöhnlich gesondert angegeben, und der Korrekturring dient nicht zum Fokussieren. Der Brechungsindex von Deckglas beträgt ca. 1,52. Bei Ölimmersionsobjektiven sind die Brechungsindizes von Öl und Deckglas nahezu gleich, daher wirken sich Dickenabweichungen weniger aus."
+  },
+  "microscopy-018": {
+    "question": "Bei der Beobachtung mit einem Ölimmersionsobjektiv der numerischen Apertur 1,4 wird die Gesamtvergrößerung durch stärkere Okulare oder Kameraoptiken immer weiter erhöht; ab einer bestimmten Vergrößerung werden keine weiteren Details mehr sichtbar. Welche Erklärung trifft zu? (Der vom Auge auflösbare Abstand betrage ca. 0,2 mm.)",
+    "choices": [
+      "Die Auflösung wird durch NA und Wellenlänge bestimmt; die förderliche Vergrößerung liegt beim 500- bis 1000-Fachen der NA (hier ca. 700- bis 1400-fach), darüber wird das Bild nur größer",
+      "Mit steigender Gesamtvergrößerung verbessert sich die Auflösung proportional, doch die Bildhelligkeit sinkt umgekehrt proportional zum Quadrat der Vergrößerung, sodass die sichtbaren Details an der Helligkeitsgrenze stagnieren",
+      "Mit steigender Vergrößerung wächst effektiv auch die numerische Apertur, sodass die Auflösung weiter steigt; doch die Aberrationen stark vergrößernder Okulare oder Kameraoptiken nehmen zu, und ab einer Vergrößerung verschwinden Details"
+    ],
+    "explanation": "Die Auflösung des Mikroskops wird durch die NA des Objektivs und die Wellenlänge bestimmt; für Licht von 520 nm und NA = 1,4 beträgt sie 0,61λ/NA ≈ 0,23 µm. Um dies auf die vom Auge auflösbaren ca. 0,2 mm zu vergrößern, ist eine Vergrößerung von 0,2 mm/0,23 µm ≈ 900-fach nötig; als Richtwert gilt das 500- bis 1000-Fache der NA, bei diesem Objektiv also ca. 700- bis 1400-fach, als Bereich der förderlichen Vergrößerung. Vergrößert man darüber hinaus, wird das unscharfe Bild nur größer, und es erscheinen keine neuen Details (leere Vergrößerung). Eine höhere Vergrößerung ändert weder NA noch Auflösung, und die sinkende Helligkeit ist eine Folge, nicht die Ursache für das Ausbleiben weiterer Details. Bei Kameraaufnahmen wählt man die Vergrößerung passend zur Pixelgröße und zur Abtastbedingung."
+  },
+  "microscopy-019": {
+    "question": "Transparente Zellen werden mit einem Differentialinterferenzkontrast-Mikroskop (DIC) nach Nomarski und mit einem Phasenkontrastmikroskop beobachtet und verglichen. Welche Aussage über die Merkmale des DIC-Bildes trifft zu?",
+    "choices": [
+      "Die Helligkeit ist proportional zur optischen Weglänge selbst statt zum Gangunterschied zweier Bündel; dickere Zellbereiche erscheinen gleichmäßig dunkler, und weder plastische Schattierung an Kanten noch Halo treten auf",
+      "Der Gangunterschied zweier leicht versetzter Bündel, also der Gradient der optischen Weglänge, wird zu Helligkeit; es entsteht ein plastischer, wie von einer Seite beleuchteter Schattenwurf ohne den Halo des Phasenkontrasts",
+      "Eine Phasenplatte im Objektiv verschiebt die Phase des direkten Lichts um λ/4; an den Zellkanten erscheint ein heller Halo, doch auch bei dicken Präparaten erhält man Bilder optischer Schnitte"
+    ],
+    "explanation": "Bei DIC werden mithilfe der Polarisation zwei in der Präparatebene seitlich geringfügig versetzte Lichtbündel erzeugt und wieder zur Interferenz gebracht. Die Helligkeit ist proportional zum Gangunterschied der beiden Bündel, also zum Gradienten der optischen Weglänge in Versatzrichtung; Kanten, an denen die optische Weglänge zunimmt, erscheinen hell, solche, an denen sie abnimmt, dunkel, und es entsteht ein Reliefbild wie bei schräger Beleuchtung. Zur optischen Weglänge selbst ist die Helligkeit nicht proportional, und Bereiche gleichmäßiger Dicke erscheinen so hell wie der Hintergrund. Eine Phasenplatte, die die Phase des direkten Lichts verschiebt, und Halos an den Kanten sind Merkmale des Phasenkontrastmikroskops. Da DIC große Aperturen von Kondensor und Objektiv nutzen kann, ist seine Fokustiefe gering, was den zusätzlichen Vorteil hat, dass sich auch bei dicken Präparaten Bilder der Fokusebene leicht gewinnen lassen."
+  },
+  "microscopy-020": {
+    "question": "Welche Aussage über die laterale Auflösung eines konfokalen Laser-Scanning-Mikroskops mit einem Pinhole, das viel kleiner als 1 Airy-Einheit ist, im Vergleich mit einem gewöhnlichen Weitfeld-Fluoreszenzmikroskop trifft zu? (Anregungs- und Fluoreszenzwellenlänge seien ähnlich.)",
+    "choices": [
+      "Je kleiner das Pinhole, desto besser wird die Auflösung ohne Beugungsgrenze; halbiert man den Pinhole-Durchmesser, halbiert sich auch die Breite des Punktbildes",
+      "Das Pinhole blendet nur Licht von außerhalb der Fokusebene aus, daher ändert sich die laterale Auflösung überhaupt nicht, und auch die nachgewiesene Lichtleistung bleibt beim Schließen gleich",
+      "Das Bild wird durch das Produkt aus Anregungs- und Detektionspunktbild bestimmt; die Breite des Punktbildes sinkt auf etwa das 0,7-Fache, doch die durch das Pinhole gelangende Fluoreszenz nimmt stark ab"
+    ],
+    "explanation": "Im Konfokalmikroskop wirken sowohl das Punktbild des Anregungslichts, das das Präparat beleuchtet, als auch das Punktbild der Detektion durch das Pinhole; ist das Pinhole hinreichend klein, ist das effektive Punktbild das Produkt aus beiden. In Gauß-Näherung hat das Produkt zweier gleich breiter Funktionen die 1/√2-fache Breite, und auch nach der Beugungsrechnung sinkt die Halbwertsbreite von ca. 0,51λ/NA auf ca. 0,37λ/NA, also auf etwa das 0,7-Fache; die laterale Auflösung verbessert sich um etwa den Faktor 1,3–1,4. Darüber hinaus ist sie durch die beugungsbestimmte Breite des Punktbildes begrenzt und verbessert sich nicht proportional zur Pinhole-Größe. Je weiter man das Pinhole schließt, desto weniger Fluoreszenz gelangt hindurch; in der Praxis arbeitet man daher meist mit etwa 1 Airy-Einheit, um das S/N zu erhalten, wobei die Verbesserung der lateralen Auflösung gering ist und der Hauptvorteil in den optischen Schnitten liegt. Die Erklärung, weder Auflösung noch nachgewiesene Lichtleistung änderten sich, ist falsch."
+  }
+}

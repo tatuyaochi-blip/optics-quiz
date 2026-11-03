@@ -1,0 +1,182 @@
+{
+  "photovoltaics-001": {
+    "question": "Wodurch kann eine beleuchtete pn-Solarzelle elektrische Leistung nach außen abgeben?",
+    "choices": [
+      "Das Licht erwärmt den Übergang, und die durch den Temperaturunterschied zwischen p- und n-Seite entstehende Thermospannung (Seebeck-Effekt) treibt einen zum Temperaturunterschied proportionalen Strom durch die Last",
+      "Mit einer äußeren Spannungsquelle wird eine Spannung in Flussrichtung angelegt, und der durch das Licht vergrößerte Durchlassstrom wird der Last entnommen; ohne Spannungsquelle erhält man keine Leistung",
+      "Durch Licht erzeugte Elektronen und Löcher werden vom eingebauten Feld des Übergangs zur n- und p-Seite getrennt; bei einer Spannung in Flussrichtung fließt ein dem Durchlassstrom entgegengesetzter Strom durch die Last"
+    ],
+    "explanation": "Diffundieren durch Licht erzeugte Minoritätsladungsträger bis zum Übergang, werden im eingebauten Feld der Raumladungszone Elektronen zur n-Seite und Löcher zur p-Seite befördert. Das ist der Photostrom; bei offenen Anschlüssen sammeln sich Elektronen auf der n-Seite und Löcher auf der p-Seite, und es entsteht eine Spannung in Flussrichtung. Schließt man eine Last an, bleibt die Spannung in Flussrichtung, der Strom fließt aber entgegengesetzt zum Durchlassstrom der Diode; die Zelle arbeitet daher in dem Quadranten, in dem das Produkt aus Strom und Spannung negativ ist (Leistung abgegeben wird). Eine äußere Spannungsquelle ist nicht nötig, und der Vorgang unterscheidet sich auch vom thermoelektrischen Effekt durch Temperaturunterschiede. Auch eine Photodiode ohne Vorspannung nutzt denselben photovoltaischen Effekt, die Solarzelle ist jedoch dafür ausgelegt, über eine große Fläche Leistung zu entnehmen."
+  },
+  "photovoltaics-002": {
+    "question": "Welche Aussage über die Standardtestbedingungen (STC) für den Leistungsvergleich von Solarzellen trifft zu?",
+    "choices": [
+      "Spektrum AM1.5 (Weg ca. das 1,5-Fache des senkrechten Weges), Bestrahlungsstärke 1000 W/m², Zelltemperatur 25 °C",
+      "Spektrum des Sonnenlichts außerhalb der Atmosphäre (AM0), Bestrahlungsstärke gleich der Solarkonstante von ca. 1360 W/m², Zelltemperatur 0 °C",
+      "Spektrum AM1.5, Bestrahlungsstärke 100 W/m², Umgebungstemperatur 25 °C, wobei die Zelltemperatur durch die Einstrahlung frei ansteigen darf"
+    ],
+    "explanation": "Die Air Mass (AM) gibt die Weglänge des Sonnenlichts durch die Atmosphäre an, bezogen auf 1 bei senkrecht von oben einfallendem Licht; beim Zenitwinkel θ beträgt sie etwa 1/cos θ. AM1.5 entspricht einem Zenitwinkel von ca. 48°; als repräsentative Bedingung auf der Erde misst man mit dem Streulicht enthaltenden Spektrum AM1.5G, das auf 1000 W/m² (= 100 mW/cm²) normiert ist, bei einer Zelltemperatur von 25 °C. Das Spektrum AM0 außerhalb der Atmosphäre (ca. 1360 W/m²) verwendet man zur Bewertung von Solarzellen für Satelliten. Im Betrieb im Freien steigt die Zelltemperatur und der Wirkungsgrad sinkt, daher wird die Temperatur nicht als Umgebungstemperatur, sondern als Temperatur der Zelle selbst festgelegt. 100 W/m² ist ein Zehnerpotenzfehler."
+  },
+  "photovoltaics-003": {
+    "question": "Welche Aussage über die Größen der Strom-Spannungs-Kennlinie (I-U-Kennlinie) einer Solarzelle trifft zu?",
+    "choices": [
+      "Die maximale Leistung ist das Produkt aus Leerlaufspannung V_oc und Kurzschlussstrom I_sc; um sie zu erhalten, wählt man den Lastwiderstand zur Anpassung gleich V_oc/I_sc",
+      "Der Füllfaktor FF ist die maximale Leistung P_max geteilt durch das Produkt aus Leerlaufspannung V_oc und Kurzschlussstrom I_sc, gibt die Rechteckigkeit der I-U-Kennlinie an und ist kleiner als 1",
+      "Die Leerlaufspannung ist die Spannung im Punkt größten Stroms, der Kurzschlussstrom der Strom im Punkt größter Spannung, und in beiden Punkten ist die Leistung maximal"
+    ],
+    "explanation": "Schließt man die Anschlüsse kurz, fließt bei der Spannung 0 der Kurzschlussstrom I_sc; öffnet man sie, erscheint beim Strom 0 die Leerlaufspannung V_oc. In beiden Punkten ist Spannung oder Strom 0 und damit die Leistung 0; dazwischen liegt der Punkt maximaler Leistung (V_mp, I_mp), in dem das Produkt aus Strom und Spannung am größten ist. Der Füllfaktor ist FF = V_mpI_mp/(V_ocI_sc), das Flächenverhältnis des größten Leistungsrechtecks innerhalb der I-U-Kennlinie zum Rechteck aus V_oc und I_sc. Wegen der exponentiellen Kennlinie der Diode wird er nie 1; gute Zellen aus kristallinem Silizium erreichen etwa 0,8. V_oc × I_sc lässt sich in Wirklichkeit nicht entnehmen; der Wirkungsgrad wird als η = V_ocI_scFF/P_in angegeben."
+  },
+  "photovoltaics-004": {
+    "question": "Welcher Wert kommt der Leerlaufspannung einer Solarzelle nach der idealen Diodengleichung J = J_sc − J₀[exp(qV/kT) − 1] mit der Kurzschlussstromdichte J_sc = 40 mA/cm² und der Sättigungsstromdichte J₀ = 1,0×10⁻¹² A/cm² am nächsten (Temperatur 300 K, kT/q = 0,0259 V)?",
+    "choices": [
+      "ca. 0,27 V",
+      "ca. 0,63 V",
+      "ca. 1,1 V"
+    ],
+    "explanation": "Mit J = 0 folgt V_oc = (kT/q) ln(J_sc/J₀ + 1). J_sc/J₀ = 0,040/1,0×10⁻¹² = 4,0×10¹⁰, dessen natürlicher Logarithmus ca. 24,4 beträgt; also V_oc ≈ 0,0259 × 24,4 ≈ 0,63 V. Ca. 0,27 V verwendet fälschlich den dekadischen Logarithmus (ca. 10,6), ca. 1,1 V entspricht der Bandlücke von Silizium; die Leerlaufspannung ist stets kleiner als die Bandlücke geteilt durch q. Da V_oc durch den Logarithmus von J₀ bestimmt ist, steigt sie um ca. 60 mV (= 0,0259 × ln10), wenn man J₀ durch weniger Rekombination um eine Zehnerpotenz senkt. J₀ durch Oberflächenpassivierung und hochwertige Kristalle niedrig zu halten, ist der Schlüssel zu hohem V_oc."
+  },
+  "photovoltaics-005": {
+    "question": "Eine Solarzelle mit 0,70 V Leerlaufspannung, 40 mA/cm² Kurzschlussstromdichte und einem Füllfaktor von 0,80 wird unter Standardtestbedingungen (Bestrahlungsstärke 100 mW/cm²) gemessen. Welcher Wert kommt dem Wirkungsgrad am nächsten?",
+    "choices": [
+      "ca. 28 %",
+      "ca. 18 %",
+      "ca. 22 %"
+    ],
+    "explanation": "Die maximale Leistungsdichte beträgt V_oc × J_sc × FF = 0,70 V × 40 mA/cm² × 0,80 = 22,4 mW/cm². Geteilt durch die eingestrahlten 100 mW/cm² ergibt sich ein Wirkungsgrad von 22,4 %, ca. 22 %. Ca. 28 % vergisst den Füllfaktor und setzt das Produkt aus V_oc und J_sc direkt als entnehmbare Leistung an; tatsächlich ist die Leistung im Leerlauf- und im Kurzschlusspunkt 0. Ca. 18 % multipliziert den Füllfaktor zweimal. Da der Wirkungsgrad das Produkt der drei Größen ist, lässt er sich durch Anheben jeder einzelnen erhöhen: von V_oc (weniger Rekombination), von J_sc (weniger Verluste durch Reflexion und unvollständige Absorption) oder von FF (kleinerer Serienwiderstand, weniger Leckströme)."
+  },
+  "photovoltaics-006": {
+    "question": "Welche Aussage über den Einfluss von Serienwiderstand R_s und Parallelwiderstand (Shunt-Widerstand) R_sh einer Solarzelle auf die I-U-Kennlinie trifft zu?",
+    "choices": [
+      "Ein großes R_s macht die Kennlinie auf der Seite der Leerlaufspannung flacher, ein kleines R_sh lässt auf der Seite des Kurzschlussstroms den Strom mit der Spannung abnehmen; beides senkt den Füllfaktor",
+      "Je größer R_s, desto kleiner die Leerlaufspannung, je größer R_sh, desto kleiner der Kurzschlussstrom; daher sollten sowohl Serien- als auch Parallelwiderstand möglichst klein sein",
+      "R_s und R_sh wirken im Leerlauf nicht, weil dort kein Strom fließt; sie beeinflussen weder Leerlaufspannung noch Füllfaktor und senken nur den Kurzschlussstrom geringfügig"
+    ],
+    "explanation": "Der Serienwiderstand ist der Widerstand, den der Strom in Elektroden und Halbleiter erfährt; je größer der Strom, desto mehr Spannung IR_s fällt ab, sodass die Kennlinie vom Punkt maximaler Leistung zur Leerlaufspannung hin flacher wird und der Füllfaktor sinkt. Im Leerlauf ist der Strom 0, daher wirkt R_s nicht auf die Leerlaufspannung. Der Parallelwiderstand ist ein Leckpfad, der den Übergang überbrückt; ist er klein, fließt ein zur Spannung proportionaler Leckstrom V/R_sh, und die Kennlinie neigt sich auf der Seite des Kurzschlussstroms. Da der Leckstrom den erzeugten Strom wegnimmt, sinkt bei schwachem Licht mit kleinem Photostrom auch die Leerlaufspannung stark. Eine gute Solarzelle hat ein kleines R_s und ein großes R_sh; die Annahme, ein möglichst kleines R_sh sei besser, kehrt den Sachverhalt um. Auch im Leerlauf fließt durch R_sh ein Leckstrom, daher ist auch die Aussage falsch, beide wirkten weder auf Leerlaufspannung noch auf Füllfaktor."
+  },
+  "photovoltaics-007": {
+    "question": "Welche Aussage über die typische Änderung beim Anstieg der Zelltemperatur einer Solarzelle aus kristallinem Silizium (bei gleichen Lichtverhältnissen) trifft zu?",
+    "choices": [
+      "Da die thermische Energie kT der Ladungsträger zunimmt, steigt die Leerlaufspannung proportional zu kT/q, und auch der Kurzschlussstrom nimmt zu, sodass der Wirkungsgrad mit der Temperatur steigt",
+      "Mit der Temperatur ändert sich nur der Kurzschlussstrom; Leerlaufspannung und Füllfaktor sind allein durch die Bandlücke bestimmt und temperaturunabhängig, sodass der Wirkungsgrad nahezu konstant bleibt",
+      "Der Sättigungsstrom J₀ nimmt rasch zu, die Leerlaufspannung sinkt (um ca. 2 mV je K), der Kurzschlussstrom steigt geringfügig, und insgesamt sinkt der Wirkungsgrad"
+    ],
+    "explanation": "Der Sättigungsstrom nimmt wie J₀ ∝ nᵢ² ∝ T³exp(−Eg/kT) rasch mit der Temperatur zu; die Abnahme im Logarithmus von V_oc ≈ (kT/q) ln(J_sc/J₀) überwiegt die Zunahme von kT/q, daher sinkt die Leerlaufspannung. Bei kristallinem Silizium beträgt dies ca. −2 mV je K, und der Temperaturkoeffizient des Wirkungsgrads liegt relativ bei etwa −0,3 bis −0,5 %/K (je nach Zellaufbau). Mit steigender Temperatur wird die Bandlücke etwas schmaler, die Absorption langer Wellenlängen nimmt zu und der Kurzschlussstrom steigt etwas, die Abnahme der Spannung wirkt sich jedoch weit stärker aus. Auch der Füllfaktor sinkt mit der Temperatur. Im Freien liegt die Zelltemperatur deutlich über der Umgebungstemperatur, daher beeinflusst die Wärmeabfuhr des Moduls den Ertrag."
+  },
+  "photovoltaics-008": {
+    "question": "Welche Aussage über das Konzept der theoretischen Obergrenze des Wirkungsgrads einer Solarzelle mit einem Übergang (Shockley-Queisser-Grenze) trifft zu?",
+    "choices": [
+      "Sie wird unter der Annahme bestimmt, dass alle Photonen oberhalb der Bandlücke absorbiert und ihre gesamte Energie in elektrische Leistung umgewandelt wird; je kleiner die Bandlücke, desto mehr Absorption, und die Grenze nähert sich 100 %",
+      "Sie wird aus dem detaillierten Gleichgewicht bestimmt: ein Elektron-Loch-Paar pro Photon, überschüssige Energie wird zu Wärme, nur strahlende Rekombination; für AM1.5G ergeben sich bei etwa 1,3 eV ca. 33 %",
+      "Die Obergrenze des Wirkungsgrads ist genau der Carnot-Wirkungsgrad von ca. 95 %, der durch die Oberflächentemperatur der Sonne von ca. 5800 K und die Zelltemperatur von 300 K bestimmt ist, und hängt nicht von der Bandlücke ab"
+    ],
+    "explanation": "Shockley und Queisser bestimmten die Obergrenze des Wirkungsgrads einer Zelle mit einem Übergang aus dem detaillierten Gleichgewicht von Absorption und Emission von Licht zwischen Solarzelle und Sonne. Große Verluste sind die Transmission von Licht mit Energien unterhalb der Bandlücke Eg und die Umwandlung der überschüssigen Energie von Photonen oberhalb von Eg in Wärme durch Thermalisierung der Ladungsträger. Ein kleineres Eg erlaubt die Absorption von mehr Licht, senkt aber die Spannung; ein größeres erhöht die Spannung, verringert aber das absorbierbare Licht; für AM1.5G ergibt sich bei etwa 1,3 bis 1,4 eV das Maximum von ca. 33 %. Da die strahlende Rekombination, bei der die Zelle selbst Licht aussendet, unvermeidbar ist, ist auch die Leerlaufspannung kleiner als Eg/q. Der Carnot-Wirkungsgrad von ca. 95 % ist die Obergrenze einer Wärmekraftmaschine und nicht die einer Solarzelle mit einem Übergang."
+  },
+  "photovoltaics-009": {
+    "question": "Eine Siliziumsolarzelle mit 1,12 eV Bandlücke absorbiert ein Photon der Wellenlänge 500 nm. Etwa wie viel Prozent der Photonenenergie gehen als Wärme verloren, wenn das erzeugte Elektron und Loch zu den Bandkanten relaxieren (thermalisieren) (E[eV] ≈ 1240/λ[nm])?",
+    "choices": [
+      "ca. 55 %",
+      "ca. 45 %",
+      "nahezu 0 % (die überschüssige Energie erzeugt ein zweites Elektron-Loch-Paar)"
+    ],
+    "explanation": "Die Photonenenergie beträgt 1240/500 ≈ 2,48 eV. Elektron und Loch relaxieren unter Abgabe von Phononen innerhalb von höchstens einer Pikosekunde zu den Bandkanten; die über Eg hinausgehenden 2,48 − 1,12 = 1,36 eV werden zu Wärme, ihr Anteil beträgt 1,36/2,48 ≈ 0,55, ca. 55 %. Ca. 45 % ist der bis zur Bandkante verbleibende Anteil 1,12/2,48; hier wird der verbleibende mit dem verlorenen Anteil verwechselt. Vorgänge, bei denen aus einem Photon zwei oder mehr Paare entstehen, treten in Silizium nur in geringem Maß bei ultraviolettem Licht auf und bei Licht von 500 nm kaum; nahezu 0 % ergibt sich daher nicht. Diesen Thermalisierungsverlust zu verringern, ist der Gedanke der Tandemsolarzelle, die Zellen mit unterschiedlichen Bandlücken stapelt."
+  },
+  "photovoltaics-010": {
+    "question": "Welche Aussage über die Eigenschaften einer Solarzelle, deren Leerlaufspannung nahe an der theoretischen Obergrenze liegt, trifft zu?",
+    "choices": [
+      "Je weniger Licht sie im Leerlauf aussendet, desto besser; Materialien, die bei der Rekombination Licht aussenden, verlieren durch dieses Licht einen Teil der erzeugten Leistung und haben eine niedrige Leerlaufspannung",
+      "Im Leerlauf rekombinieren alle Ladungsträger in der Zelle; je weniger nichtstrahlende Rekombination und je höher die externe Quanteneffizienz der Lumineszenz, desto höher die Leerlaufspannung",
+      "Die Leerlaufspannung ist allein durch die Bandlücke bestimmt (bei Silizium ca. 1,12 V) und hängt weder von der Art der Rekombination noch von der Lumineszenzeffizienz noch vom Umfang nichtstrahlender Rekombination ab"
+    ],
+    "explanation": "Im Leerlauf wird kein Strom entnommen, daher rekombinieren alle erzeugten Ladungsträger in der Zelle. Gibt es nur strahlende Rekombination, bleibt die Ladungsträgerdichte am höchsten, und die Leerlaufspannung erreicht die Obergrenze des detaillierten Gleichgewichts. Nichtstrahlende Rekombination lässt Ladungsträger schneller verloren gehen; die Leerlaufspannung sinkt mit der externen Quanteneffizienz der Lumineszenz ηext um (kT/q)|ln ηext|, bei ηext = 1 % und 300 K um ca. 0,12 V. Auch das Photonenrecycling, bei dem durch strahlende Rekombination ausgesandte Photonen wieder absorbiert werden, wirkt mit; bei hocheffizienten GaAs-Zellen legt man daher auch die Auskopplung der Lumineszenz aus. Das Aussenden von Licht ist selbst kein Verlust; die Leerlaufspannung sinkt durch Rekombination, die ohne Lichtaussendung Wärme erzeugt. Die Leerlaufspannung ist stets kleiner als die Bandlücke geteilt durch q, und der Unterschied wird durch die Rekombination bestimmt."
+  },
+  "photovoltaics-011": {
+    "question": "Welche Aussage über die Wellenlängenabhängigkeit der externen Quanteneffizienz (EQE, Zahl der an den äußeren Stromkreis abgegebenen Elektronen je einfallendem Photon) einer Solarzelle aus kristallinem Silizium trifft zu?",
+    "choices": [
+      "Bei langen Wellenlängen ist die Absorption schwach und unvollständig, sodass die EQE zu ca. 1100 nm hin abfällt; bei kurzen Wellenlängen fällt sie durch Verluste aus Oberflächenrekombination ab",
+      "Die EQE ist proportional zur Photonenenergie; sie ist umso höher, je kürzer die Wellenlänge, und am größten für ultraviolettes Licht, das nahe der Oberfläche absorbiert wird",
+      "Die EQE ist für alle Wellenlängen unterhalb der Bandlückenwellenlänge konstant, enthält nicht den Einfluss von Oberflächenreflexion und unvollständiger Absorption und hängt nicht von der Zelldicke ab"
+    ],
+    "explanation": "Die EQE ist das Verhältnis der Elektronenzahl zur Photonenzahl und enthält alle Verluste durch Reflexion, unvollständige Absorption und Ladungsträgersammlung. Silizium ist ein indirekter Halbleiter, dessen Absorptionskoeffizient bei Wellenlängen um ca. 1100 nm nahe der Bandlücke klein ist; Zellen von etwas über hundert µm Dicke absorbieren das Licht daher nicht vollständig; hier hilft der Lichteinfang (Light Trapping), der den Lichtweg durch Oberflächentexturen und rückseitige Reflexion verlängert. Ultraviolettes und blaues Licht wird in einer flachen Schicht von etwa 0,5 µm unter der Oberfläche absorbiert und ist daher anfällig für Verluste durch Oberflächenrekombination und in hochdotierten Schichten. Die ohne den Reflexionsanteil auf die absorbierten Photonen bezogene Größe ist die interne Quanteneffizienz (IQE). Da die EQE ein Verhältnis von Teilchenzahlen ist, steigt sie nicht proportional zur Photonenenergie; sie ist nicht dasselbe wie die auf die Leistung bezogene spektrale Empfindlichkeit."
+  },
+  "photovoltaics-012": {
+    "question": "Die Zahl der Photonen im Sonnenlicht AM1.5G (1000 W/m²) mit Energien oberhalb der Bandlücke von Silizium (1,12 eV) sei 2,7×10¹⁷ /(cm²·s). Welcher Wert kommt der Kurzschlussstromdichte einer Zelle mit einer mittleren externen Quanteneffizienz von 90 % für diese Photonen am nächsten (q = 1,6×10⁻¹⁹ C)?",
+    "choices": [
+      "ca. 43 mA/cm²",
+      "ca. 3,9 mA/cm²",
+      "ca. 39 mA/cm²"
+    ],
+    "explanation": "Die Kurzschlussstromdichte ist die Zahl der abgegebenen Elektronen mal der Elementarladung: J_sc = qΦ × EQE = 1,6×10⁻¹⁹ × 2,7×10¹⁷ × 0,90 ≈ 3,9×10⁻² A/cm², ca. 39 mA/cm². Ca. 43 mA/cm² ist der Wert für eine externe Quanteneffizienz von 100 %, die Obergrenze einer idealen Zelle ohne Reflexion und Rekombination. Ca. 3,9 mA/cm² ist ein Zehnerpotenzfehler bei der Umrechnung von A in mA. Tatsächlich ändert sich die externe Quanteneffizienz mit der Wellenlänge; man bestimmt J_sc daher nach J_sc = q∫EQE(λ)Φ(λ)dλ, indem man das gemessene EQE-Spektrum mit der Photonenzahl des Standardspektrums multipliziert und aufsummiert, und nutzt dies auch zur Kontrolle des mit einem Sonnensimulator gemessenen Stroms."
+  },
+  "photovoltaics-013": {
+    "question": "Welche Aussage über eine Tandemsolarzelle, bei der zwei Zellen unterschiedlicher Bandlücke von der Lichteinfallsseite her gestapelt und über zwei Anschlüsse in Reihe geschaltet sind, trifft zu?",
+    "choices": [
+      "Die Zelle mit großer Bandlücke liegt auf der Einfallsseite; die Spannung ist etwa die Summe beider, der Strom aber durch die Zelle mit dem kleineren Strom begrenzt, daher legt man sie so aus, dass die Ströme gleich sind",
+      "Die Zelle mit kleiner Bandlücke liegt auf der Einfallsseite und absorbiert zuerst Licht eines breiten Wellenlängenbereichs; das durchgelassene Licht nutzt die darunterliegende Zelle mit großer Bandlücke",
+      "Die Ströme der beiden Zellen addieren sich, und die Spannung ist die der Zelle mit der kleineren Spannung; daher wählt man die Bandlücken nahe beieinander, damit die Leerlaufspannungen der Zellen gleich sind"
+    ],
+    "explanation": "Liegt die Zelle mit großer Bandlücke oben, werden energiereiche Photonen bei hoher Spannung genutzt, und der Thermalisierungsverlust sinkt. Das von der oberen Zelle durchgelassene Licht wird in der unteren Zelle mit kleiner Bandlücke absorbiert. Liegt die Zelle mit kleiner Bandlücke oben, wird fast alles Licht dort absorbiert, und die untere Zelle erhält kein Licht. Bei der Reihenschaltung mit zwei Anschlüssen fließt durch beide Zellen derselbe Strom; die Spannungen addieren sich, der Strom wird aber durch die Zelle mit dem kleineren Strom bestimmt: Liefert die obere Zelle z. B. 19 mA/cm² und die untere 21 mA/cm², lassen sich nur etwa 19 mA/cm² entnehmen. Deshalb stellt man Dicke oder Bandlücke der oberen Zelle so ein, dass die Ströme gleich sind (Stromanpassung). Bei einem Aufbau mit vier Anschlüssen, bei dem jede Zelle eigene Anschlüsse hat, ist keine Stromanpassung nötig."
+  },
+  "photovoltaics-014": {
+    "question": "Welche Aussage über Solarzellen mit einem Metallhalogenid-Perowskit (z. B. CH₃NH₃PbI₃ oder Varianten mit geänderter Zusammensetzung) als Absorberschicht trifft zu?",
+    "choices": [
+      "Es ist ein indirekter Halbleiter mit kleinem Absorptionskoeffizienten; wie bei Silizium muss das Licht in einer Schicht von mindestens 100 µm Dicke absorbiert werden, und eine Herstellung durch Beschichten ist nicht möglich",
+      "Schon geringe Kristalldefekte unterbinden die Stromerzeugung, daher lassen sie sich wie Silizium nur durch Züchten von Einkristallen bei hohen Temperaturen herstellen",
+      "Die Bandlücke lässt sich über die Halogenzusammensetzung einstellen, was sie für die obere Zelle von Tandems mit Silizium geeignet macht; die Stabilität gegenüber Feuchte, Wärme und Licht bleibt jedoch eine Herausforderung"
+    ],
+    "explanation": "Halogenid-Perowskite sind direkte Halbleiter mit großem Absorptionskoeffizienten; Schichten von einigen hundert nm Dicke absorbieren das Sonnenlicht ausreichend, und die Schichten lassen sich durch Beschichten aus Lösung oder Aufdampfen bei niedriger Temperatur herstellen. Selbst in polykristallinen Schichten erzeugen die meisten Defekte flache Niveaus nahe den Bandkanten und verschlechtern die Leistung kaum (Defekttoleranz); zusammen mit der großen Diffusionslänge der Ladungsträger gilt dies als Grund für den hohen Wirkungsgrad. Ersetzt man Iod durch Brom, wird die Bandlücke breiter, sodass sich in Tandems mit Silizium (1,12 eV) eine obere Zelle um 1,7 eV realisieren lässt. Andererseits verursachen Zersetzung durch Feuchte, Wärme und Licht sowie Ionenwanderung die Degradation; die Ionenwanderung führt außerdem zu einer Hysterese, bei der sich die I-U-Kennlinie mit Richtung und Geschwindigkeit des Spannungsdurchlaufs ändert, weshalb man die Leistung prüft, indem man den Punkt maximaler Leistung eine gewisse Zeit lang nachführt."
+  },
+  "photovoltaics-015": {
+    "question": "Eine Solarzelle mit dem Idealitätsfaktor 1 wird mit Licht bestrahlt, das eine Linse auf die 100-fache Bestrahlungsstärke (100 Sonnen) konzentriert. Welcher Wert kommt der Änderung der Leerlaufspannung am nächsten, wenn der Kurzschlussstrom proportional zur Bestrahlungsstärke ist und die Zelltemperatur bei 300 K (kT/q = 0,0259 V) gehalten wird?",
+    "choices": [
+      "Anstieg um ca. 0,05 V",
+      "Anstieg um ca. 0,12 V",
+      "keine Änderung (nur der Strom wird 100-mal so groß)"
+    ],
+    "explanation": "Wegen V_oc ≈ (kT/q) ln(J_sc/J₀) steigt V_oc bei 100-fachem J_sc um (kT/q) ln100 = 0,0259 × 4,61 ≈ 0,12 V. Die Leistung wächst stärker als der 100-fache Strom, weil zusätzlich die Spannung steigt; daher steigt bei kleinen Verlusten im Serienwiderstand auch der Wirkungsgrad. Ca. 0,05 V verwendet fälschlich den dekadischen Logarithmus log₁₀100 = 2. Da die Leerlaufspannung mit dem Logarithmus des Stroms wächst, ist auch die Aussage falsch, sie ändere sich nicht. Bei der realen Konzentrator-Photovoltaik muss man die Verluste im Serienwiderstand durch den großen Strom und den Anstieg der Zelltemperatur begrenzen; da Linsen nur gerichtete Direktstrahlung bündeln, braucht man außerdem eine der Sonne nachgeführte Montierung. Für hohe Konzentration verwendet man hocheffiziente III-V-Mehrfachzellen."
+  },
+  "photovoltaics-016": {
+    "question": "Bei einer Siliziumsolarzelle mit zufällig strukturierter, lichtstreuender Oberfläche und reflektierender Rückseite verlängert sich der Weg schwach absorbierten langwelligen Lichts auf einige zehn Zelldicken. Was ist der Hauptgrund dafür, dass das gestreute Licht in der Zelle eingeschlossen wird (Brechungsindex von Silizium ca. 3,5)?",
+    "choices": [
+      "Vom in alle Richtungen gestreuten Licht kann nur der schmale Kegel innerhalb des Grenzwinkels (ca. 17°) die Oberfläche nach außen verlassen; der Rest wird totalreflektiert und läuft viele Male hin und her",
+      "Durch die Strukturierung ändert sich die Dicke der Antireflexschicht von Ort zu Ort ein wenig, sodass Licht unter keinem Einfallswinkel an der Oberfläche reflektiert wird und an der Rückseite reflektiertes Licht vollständig in der Zelle absorbiert wird",
+      "Das gestreute Licht verschiebt sich zu längeren Wellenlängen, bei denen der Absorptionskoeffizient von Silizium groß ist, und wird absorbiert, bevor es einen Weg von einigen zehn Zelldicken zurücklegt"
+    ],
+    "explanation": "In einer flachen Zelle läuft das an der Rückseite reflektierte Licht in seine Einfallsrichtung zurück und tritt nach einem Hin- und Rücklauf wieder aus. Streut man das Licht an der Oberfläche in zufällige Richtungen, verteilt es sich in der Zelle in alle Richtungen; austreten kann jedoch nur Licht mit sinθ < 1/n, bei Silizium also innerhalb eines Kegels mit dem Grenzwinkel von ca. 17°, und sein Anteil beträgt etwa 1/n². Der Rest wird durch Totalreflexion zurückgeworfen und läuft unter wiederholter Streuung viele Male hin und her. Bei idealer Lambert-Streuung wird der Weg bis zu 4n² ≈ 49-mal so lang wie die Dicke. Eine Antireflexschicht kann die Reflexion nicht für alle Richtungen beseitigen; der Mechanismus des Einschlusses ist vielmehr die Totalreflexion an der Oberfläche. Durch Streuung ändern sich weder die Wellenlänge des Lichts noch der Absorptionskoeffizient."
+  },
+  "photovoltaics-017": {
+    "question": "Welcher Wert kommt der Diffusionslänge L = √(Dτ) in einem p-Siliziumsubstrat am nächsten, wenn die Minoritätsladungsträger (Elektronen) einen Diffusionskoeffizienten von 30 cm²/s und eine Lebensdauer von 100 µs haben?",
+    "choices": [
+      "ca. 55 µm",
+      "ca. 30 µm",
+      "ca. 550 µm"
+    ],
+    "explanation": "Wegen Dτ = 30 cm²/s × 100×10⁻⁶ s = 3,0×10⁻³ cm² ist L = √(3,0×10⁻³ cm²) ≈ 0,055 cm = 550 µm. Die Diffusionslänge ist ein Richtwert für die Strecke, die durch Licht erzeugte Minoritätsladungsträger bis zur Rekombination zurücklegen können; ist sie deutlich länger als die Zelldicke (bei kristallinem Silizium etwas über hundert µm), erreichen auch tief erzeugte Elektronen den Übergang und tragen zum Strom bei. Ca. 55 µm ist ein Zehnerpotenzfehler bei der Umrechnung von cm in µm, ca. 30 µm ergibt sich, wenn man 3,0×10⁻³ ohne Wurzelziehen als Länge in cm liest. Die Lebensdauer verkürzt sich durch Rekombination an Verunreinigungen und Defekten; da L proportional zu √τ ist, sinkt die Diffusionslänge auf 1/10, wenn die Lebensdauer auf 1/100 sinkt."
+  },
+  "photovoltaics-018": {
+    "question": "In einem Solarmodul aus vielen in Reihe geschalteten Zellen wird nur eine Zelle verschattet. Welche Kombination aus dieser Situation und der Funktion der Bypassdioden, die für jede Zellgruppe antiparallel eingebaut sind, trifft zu?",
+    "choices": [
+      "Die verschattete Zelle liefert nur keine Spannung und beeinflusst die übrigen Zellen nicht; die Bypassdiode verhindert nachts den Rückstrom aus Batterie oder Netz in das Modul",
+      "Die verschattete Zelle wird durch die Spannung der übrigen Zellen in Sperrrichtung vorgespannt und verbraucht Leistung als Wärme (Hotspot); die Bypassdiode leitet den Strom an der Zellgruppe vorbei",
+      "In der verschatteten Zelle nimmt der Photostrom zu und es entsteht Überstrom; die Bypassdiode leitet diesen überschüssigen Strom ab und gleicht den Strom des ganzen Moduls an die hellen Zellen an"
+    ],
+    "explanation": "Durch in Reihe geschaltete Zellen fließt derselbe Strom; gibt es eine verschattete Zelle mit kleinem Photostrom, begrenzt sie den Strom des gesamten Strangs. Versuchen die übrigen Zellen, den Strom hindurchzutreiben, liegt an der verschatteten Zelle eine Sperrspannung an, und statt Leistung zu erzeugen, verbraucht sie Leistung und erhitzt sich lokal (Hotspot). Baut man für Gruppen von gut zehn bis gut zwanzig Zellen jeweils eine Bypassdiode parallel ein, leitet die Diode, sobald die Spannung der Gruppe negativ wird, und leitet den Strom an der Gruppe vorbei; die Sperrspannung an der Zelle wird begrenzt, und die übrigen Gruppen erzeugen weiter Strom. Den Rückstrom in der Nacht zu verhindern, ist die Aufgabe einer in Reihe geschalteten Rückstromdiode. Durch Verschattung nimmt der Photostrom nicht zu."
+  },
+  "photovoltaics-019": {
+    "question": "Weshalb führt man beim Anschluss von Solarzellen an einen Wechselrichter eine Regelung zur Nachführung des Punktes maximaler Leistung (MPPT) durch?",
+    "choices": [
+      "Die Arbeitsspannung maximaler Leistung ändert sich mit Bestrahlungsstärke und Zelltemperatur; man verändert die Spannung schrittweise, beobachtet die Zu- oder Abnahme der Leistung und betreibt die Zelle stets im Punkt maximaler Leistung",
+      "Die Spannung im Punkt maximaler Leistung ist gleich der Leerlaufspannung; misst man diese einmal und hält die Spannung fest, erhält man bei jeder Bestrahlungsstärke und Temperatur die maximale Leistung",
+      "Der Punkt maximaler Leistung ist allein durch das Zellmaterial bestimmt und ändert sich nicht mit Bestrahlungsstärke oder Temperatur; das Halten einer einmal eingestellten Spannung verhindert die Degradation der Zelle"
+    ],
+    "explanation": "Die Ausgangsleistung P = IV einer Solarzelle ist an beiden Enden, im Kurzschluss (V = 0) und im Leerlauf (I = 0), null und im dazwischenliegenden Punkt maximaler Leistung am größten. Wird das Licht schwächer, nimmt der Strom nahezu proportional ab, und die Spannung sinkt nur geringfügig (logarithmisch). Steigt die Temperatur, sinkt die Leerlaufspannung und damit auch die Spannung im Punkt maximaler Leistung. Deshalb folgt man dem Punkt maximaler Leistung bei sich ändernden Bedingungen fortlaufend, etwa mit dem Hill-Climbing-Verfahren, das die Arbeitsspannung leicht verändert und in die Richtung zunehmender Leistung weitergeht. Bei der Leerlaufspannung ist der Strom null und damit auch die Leistung; bei kristallinem Silizium beträgt die Spannung im Punkt maximaler Leistung etwa 80 % der Leerlaufspannung. Auch die Beschreibung, der Punkt maximaler Leistung sei unabhängig von den Bedingungen konstant, übersieht die Änderung mit Temperatur und Bestrahlungsstärke."
+  },
+  "photovoltaics-020": {
+    "question": "Auf der Rückseite einer Solarzelle mit p-Siliziumsubstrat wird eine hochdotierte p⁺-Schicht (Back Surface Field, BSF) angebracht. Welche Aussage über ihre Funktion trifft zu?",
+    "choices": [
+      "Die p⁺-Schicht absorbiert Licht gut; sie absorbiert langwelliges Licht, das das Silizium durchdrungen hat, erzeugt neue Elektron-Loch-Paare und erhöht den Strom",
+      "Zwischen p⁺-Schicht und Substrat entsteht ein weiterer pn-Übergang, dessen Spannung sich in Reihe zum vorderseitigen pn-Übergang addiert, sodass sich die Leerlaufspannung nahezu verdoppelt",
+      "Das Feld aus dem Dotierungsunterschied von p und p⁺ drängt die Elektronen (Minoritätsträger) von der Rückseite zurück, mindert die Rekombination am Rückkontakt und hebt Leerlaufspannung und Langwellenempfindlichkeit"
+    ],
+    "explanation": "Erreichen durch Licht im Substrat erzeugte Minoritätsladungsträger (Elektronen) den Rückkontakt, bevor sie am vorderseitigen Übergang gesammelt werden, rekombinieren sie und gehen verloren. Bringt man auf der Rückseite eine hochdotierte p⁺-Schicht an, entsteht an der Grenze zwischen p und p⁺ eine Energiestufe (ein Feld) im Leitungsband, die die Elektronen zum Substrat zurückdrängt. Die effektive Rekombinationsgeschwindigkeit an der Rückseite sinkt, daher nimmt der Sättigungsstrom ab und die Leerlaufspannung steigt, und auch der Strom aus langwelligem Licht, das nahe der Rückseite absorbiert wird, nimmt zu. p und p⁺ sind beide p-leitend und bilden keinen pn-Übergang; Spannungen addieren sich nicht. In der hochdotierten Schicht ist die Rekombination schnell, daher tragen dort durch Absorption erzeugte Ladungsträger kaum zum Strom bei."
+  }
+}

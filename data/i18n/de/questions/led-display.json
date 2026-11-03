@@ -1,0 +1,182 @@
+{
+  "led-display-001": {
+    "question": "Wodurch sendet eine Leuchtdiode (LED) Licht aus?",
+    "choices": [
+      "An einem in Sperrrichtung vorgespannten pn-Übergang werden Elektronen und Löcher durch ein starkes Feld getrennt und geben die dabei gewonnene Energie als Photon ab",
+      "Durch die Flussspannung in den pn-Übergang injizierte Elektronen und Löcher rekombinieren und senden ein Photon mit einer Energie nahe der Bandlücke aus",
+      "Fließt Strom, erhitzt sich nur die aktive Schicht lokal durch Joulesche Wärme, und der Halbleiterkristall sendet wie eine Glühlampe Schwarzkörperstrahlung aus"
+    ],
+    "explanation": "Legt man an eine LED eine Spannung in Flussrichtung, werden von der n-Seite Elektronen und von der p-Seite Löcher in den Übergang (meist eine aktive Schicht aus Quantentöpfen) injiziert, und Elektronen im Leitungsband rekombinieren mit Löchern im Valenzband. Die dabei frei werdende Energie wird als Photon mit einer Energie nahe der Bandlücke Eg abgegeben; die Emissionswellenlänge wird daher durch das Eg des Materials bestimmt, und die spektrale Breite ist mit einigen zehn nm schmal. Elektronen und Löcher mit einer Sperrspannung zu trennen und als Strom abzuführen, ist die Funktionsweise einer lichtempfangenden Photodiode, also die umgekehrte Richtung. Thermisches Leuchten durch Schwarzkörperstrahlung ist das Prinzip der Glühlampe; die LED leuchtet bei niedriger Temperatur durch Elektrolumineszenz. Steigt die Temperatur der aktiven Schicht, sinkt die Effizienz sogar."
+  },
+  "led-display-002": {
+    "question": "Was ist der Hauptgrund dafür, dass Silizium kaum für die aktive Schicht von LEDs im Sichtbaren oder nahen Infrarot verwendet wird?",
+    "choices": [
+      "Bei einer Bandlücke von 1,12 eV reicht die bei der Rekombination frei werdende Energie nicht einmal für ein Photon im nahen Infrarot, sodass Licht keiner Wellenlänge entstehen kann",
+      "In Silizium lassen sich auch durch Dotierung p- und n-Leitung nicht im selben Kristall herstellen, sodass am pn-Übergang Elektronen und Löcher nicht am selben Ort injiziert werden können",
+      "Es ist ein indirekter Halbleiter; die Rekombination braucht ein Phonon zum Impulsausgleich, daher ist strahlende Rekombination unwahrscheinlich und unterliegt der nichtstrahlenden"
+    ],
+    "explanation": "Silizium ist ein indirekter Halbleiter, bei dem das Minimum des Leitungsbands und das Maximum des Valenzbands bei verschiedenen Wellenzahlen (Impulsen) liegen. Da ein Photon nahezu keinen Impuls trägt, muss an der Rekombination unter Lichtemission gleichzeitig ein Phonon beteiligt sein, und die Wahrscheinlichkeit der strahlenden Rekombination ist um viele Größenordnungen kleiner als bei direkten Halbleitern wie GaAs oder InGaN. In der Zwischenzeit findet nichtstrahlende Rekombination etwa über Defekte statt, sodass die Effizienz der Lichtemission sehr gering ist. Eine Bandlücke von 1,12 eV entspricht einem Photon im nahen Infrarot bei etwa 1,1 µm Wellenlänge; an Energie fehlt es also nicht. Silizium ist ein Material, in dem sich pn-Übergänge wie in Photodioden und integrierten Schaltungen beliebig herstellen lassen, daher ist auch die Begründung mit fehlenden Übergängen falsch."
+  },
+  "led-display-003": {
+    "question": "Eine blaue LED mit 90 % interner Quanteneffizienz und 80 % Lichtauskopplungseffizienz wird mit 100 mA betrieben. Welcher Wert kommt der Zahl der Photonen, die je Sekunde die LED verlassen, am nächsten, wenn die Injektionseffizienz der Elektronen in die aktive Schicht 1 beträgt? (Elementarladung q = 1,6×10⁻¹⁹ C)",
+    "choices": [
+      "ca. 4,5×10¹⁷",
+      "ca. 6,3×10¹⁷",
+      "ca. 5,6×10¹⁷"
+    ],
+    "explanation": "Je Sekunde fließen I/q = 0,1/(1,6×10⁻¹⁹) ≈ 6,25×10¹⁷ Elektronen hinein. Die externe Quanteneffizienz ist das Produkt aus Injektionseffizienz, dem Anteil, der in der aktiven Schicht zu Photonen wird (interne Quanteneffizienz), und dem Anteil der Photonen, die das Bauelement verlassen (Lichtauskopplungseffizienz), hier also 1 × 0,9 × 0,8 = 0,72. Die austretenden Photonen betragen daher 6,25×10¹⁷ × 0,72 ≈ 4,5×10¹⁷ je Sekunde. Ca. 6,3×10¹⁷ ist der Wert ohne Multiplikation mit den Effizienzen, bei dem jedes Elektron sicher als ein Photon nach außen gelangt. Ca. 5,6×10¹⁷ ist der Wert, bei dem nur mit der internen Quanteneffizienz multipliziert und Photonen mitgezählt wurden, die im Bauelement absorbiert oder eingeschlossen werden."
+  },
+  "led-display-004": {
+    "question": "Eine blaue LED mit der Wellenlänge 450 nm wird mit 3,0 V und 350 mA betrieben und liefert eine Lichtleistung von 500 mW. Welche Kombination aus externer Quanteneffizienz (Zahl austretender Photonen je Elektron) und Leistungswirkungsgrad (Lichtleistung/elektrische Eingangsleistung) kommt dem Ergebnis am nächsten? (Photonenenergie E[eV] ≈ 1240/λ[nm])",
+    "choices": [
+      "Externe Quanteneffizienz ca. 48 %, Leistungswirkungsgrad ca. 52 %",
+      "Externe Quanteneffizienz und Leistungswirkungsgrad beide ca. 48 %",
+      "Externe Quanteneffizienz ca. 52 %, Leistungswirkungsgrad ca. 48 %"
+    ],
+    "explanation": "Die Energie eines Photons beträgt 1240/450 ≈ 2,76 eV, daher ist die Zahl der Photonen je Sekunde 0,5 W/(2,76 × 1,6×10⁻¹⁹ J) und die Zahl der Elektronen 0,35 A/q. Aus dem Verhältnis folgt die externe Quanteneffizienz 0,5/(2,76 × 0,35) ≈ 0,52, also ca. 52 %. Der Leistungswirkungsgrad ist 0,5/(3,0 × 0,35) ≈ 0,48, also ca. 48 %. Der Unterschied zwischen beiden ist das Verhältnis der 3,0 eV, die ein Elektron von der Spannungsquelle erhält, zu den 2,76 eV des austretenden Photons (ca. 0,92); der Spannungsaufschlag durch die Widerstände von Elektroden und Halbleiter ist ein Verlust. Die Antwort mit gleichen Werten übersieht diesen Unterschied. Die Kombination mit vertauschten Werten verwechselt die Definitionen; der Leistungswirkungsgrad ist nur dann höher, wenn die Betriebsspannung unter 2,76 V liegt."
+  },
+  "led-display-005": {
+    "question": "Welcher Wert kommt dem Anteil des Lichts, das in einem GaN-Kristall mit dem Brechungsindex 2,5 von einem Punkt gleichmäßig in alle Richtungen ausgesandt wird und durch die ebene Oberseite in die Luft austreten kann, am nächsten? Berücksichtigt wird nur die Totalreflexion an der Oberseite; Fresnel-Reflexion und Absorption werden vernachlässigt.",
+    "choices": [
+      "ca. 4 %",
+      "ca. 8 %",
+      "ca. 26 %"
+    ],
+    "explanation": "Durch die Oberseite kann nur Licht austreten, das in den Kegel innerhalb des Grenzwinkels θc = arcsin(1/2,5) ≈ 23,6° fällt (Austrittskegel). Das Verhältnis des Raumwinkels 2π(1 − cosθc) eines Kegels mit dem halben Öffnungswinkel θc zum gesamten Raumwinkel 4π beträgt (1 − cos23,6°)/2 ≈ 0,042, also ca. 4 %. Für kleine Winkel lässt sich dies durch 1/(4n²) = 0,04 nähern. Ca. 8 % ist der Wert bezogen auf die Halbkugel statt auf die volle Kugel, bei dem die Division durch 2 vergessen wurde; ca. 26 % verwechselt das Winkelverhältnis 23,6°/90° mit dem Raumwinkelverhältnis. Das übrige Licht wird bei wiederholter Totalreflexion absorbiert; man erhöht daher die Auskopplungseffizienz durch aufgeraute Oberflächen, strukturierte Saphirsubstrate oder eine Verkapselung mit Harz vom Brechungsindex ca. 1,5 (der Grenzwinkel weitet sich auf ca. 36,9° auf)."
+  },
+  "led-display-006": {
+    "question": "Erhöht man bei einer blauen LED auf InGaN-Basis die Stromdichte, nimmt die externe Quanteneffizienz, die bei kleinem Strom ihr Maximum erreicht hat, bei großem Strom wieder ab. Welche Kombination aus der Bezeichnung dieser Erscheinung und ihrer vermuteten Hauptursache trifft zu?",
+    "choices": [
+      "Sie heißt Effizienz-Droop; die nichtstrahlende Rekombination über Defekte (SRH-Rekombination) nimmt bei großem Strom sprunghaft zu und entzieht den Großteil der injizierten Ladungsträger",
+      "Sie heißt Effizienz-Droop; nichtstrahlende Prozesse wie die mit der dritten Potenz der Ladungsträgerdichte wachsende Auger-Rekombination und Elektronenverluste aus der aktiven Schicht nehmen bei großem Strom zu",
+      "Sie heißt Effizienz-Droop; die Bandlücke der aktiven Schicht wächst mit dem Strom, die Energie je Photon steigt, und bei gleicher Leistung können weniger Photonen ausgesandt werden"
+    ],
+    "explanation": "Die Rekombinationsrate wird mit der Ladungsträgerdichte n als An + Bn² + Cn³ dargestellt; A ist der Koeffizient der nichtstrahlenden Rekombination über Defekte, B der der strahlenden Rekombination und C der der Auger-Rekombination. Die interne Quanteneffizienz ist Bn²/(An + Bn² + Cn³); bei kleinem Strom ist die Rekombination über Defekte (An) relativ groß, und mit steigendem Strom überwiegt Bn², sodass die Effizienz zunimmt. Bei noch höherem Strom wirken die mit n³ wachsende Auger-Rekombination und der Verlust von Elektronen, die die aktive Schicht überwinden und zur p-Seite entweichen, und die Effizienz sinkt. Das ist der Effizienz-Droop, ein Problem beim Betrieb mit großem Strom für die Beleuchtung. Die Rekombination über Defekte ist proportional zu n und wird bei großem Strom relativ sogar kleiner. Auch die Erklärung, die Bandlücke wachse mit dem Strom und verändere so die Effizienz, ist falsch."
+  },
+  "led-display-007": {
+    "question": "Welche Aussage über die Änderungen bei steigender Temperatur der aktiven Schicht (des Übergangs) einer LED entspricht der allgemeinen Tendenz? (Der Strom sei konstant.)",
+    "choices": [
+      "Die Bandlücke sinkt, die Wellenlänge verschiebt sich ins Langwellige, und durch mehr nichtstrahlende Rekombination sinkt die Lichtleistung",
+      "Die Bandlücke wird größer, die Emissionswellenlänge verschiebt sich daher zu kürzeren Wellenlängen, und die Lichtleistung steigt",
+      "Die Emissionswellenlänge wird vom Material bestimmt und ändert sich nicht; nur die Lichtleistung sinkt"
+    ],
+    "explanation": "Die Bandlücke eines Halbleiters wird mit steigender Temperatur durch Gitterausdehnung und die Wechselwirkung der Elektronen mit Gitterschwingungen kleiner, daher verschiebt sich das Emissionsmaximum zu größeren Wellenlängen. Außerdem nehmen die nichtstrahlende Rekombination über Defekte und das Entweichen von Ladungsträgern aus der aktiven Schicht mit der Temperatur zu, sodass die Lichtleistung bei gleichem Strom sinkt. Rote LEDs auf AlGaInP-Basis sind besonders temperaturempfindlich; erzeugt man durch Kombination mit blauen InGaN-LEDs Weiß, kann sich die Farbe mit der Temperatur verschieben. Die Antwort mit kürzerer Wellenlänge und steigender Leistung nimmt die falsche Richtung der Temperaturabhängigkeit der Bandlücke an. Die Antwort mit unveränderter Wellenlänge übersieht die temperaturbedingte Änderung der Bandlücke. Deshalb ist bei LEDs für die Beleuchtung die Auslegung der Wärmeabfuhr wichtig."
+  },
+  "led-display-008": {
+    "question": "In einer weißen LED absorbiert ein Leuchtstoff einen Teil des blauen Lichts von 450 nm und wandelt ihn in gelbes Licht von 560 nm um. Welcher Wert kommt dem Anteil der absorbierten Energie des blauen Lichts, der als gelbes Licht abgegeben wird, am nächsten, wenn die Quantenausbeute des Leuchtstoffs (Zahl der abgegebenen Photonen je absorbiertem Photon) 0,9 beträgt?",
+    "choices": [
+      "ca. 90 %",
+      "ca. 80 %",
+      "ca. 72 %"
+    ],
+    "explanation": "Die Energie eines Photons ist umgekehrt proportional zur Wellenlänge; wandelt man ein Photon von 450 nm in ein Photon von 560 nm um, beträgt die Energie das 450/560 ≈ 0,80-Fache. Das ist der Stokes-Verlust des Leuchtstoffs, und die übrigen ca. 20 % werden zu Wärme. Hinzu kommt die Quantenausbeute von 0,9, daher beträgt der energetische Wirkungsgrad 0,9 × 0,80 ≈ 0,72, also ca. 72 %. Ca. 90 % berücksichtigt nur die Quantenausbeute und vergisst den Energieverlust durch die größere Wellenlänge. Ca. 80 % berücksichtigt umgekehrt nur das Energieverhältnis je Photon und vergisst die Absorption, die nicht zu Photonen führt (Quantenausbeute). Die im Leuchtstoff verlorene Energie wird zu Wärme, erhöht die Leuchtstofftemperatur und senkt Effizienz und Lebensdauer; sie ist daher auch bei der Wärmeabfuhr weißer LEDs zu berücksichtigen."
+  },
+  "led-display-009": {
+    "question": "Welche Aussage über weiße LEDs aus einer blauen LED und einem gelben Leuchtstoff (YAG:Ce) trifft zu?",
+    "choices": [
+      "Der Leuchtstoff wandelt einen Teil des blauen Lichts in Gelb um, das sich mit dem durchgelassenen Blau zu Weiß mischt. Ein zusätzlicher roter Leuchtstoff ergänzt den Rotanteil und verbessert Farbwiedergabe und Lichtausbeute zugleich",
+      "Der Leuchtstoff wandelt einen Teil des blauen Lichts in Gelb um, das sich mit dem durchgelassenen Blau zu Weiß mischt. Ein zusätzlicher roter Leuchtstoff verbessert die Farbwiedergabe, senkt aber meist die Lichtausbeute",
+      "Der Leuchtstoff wandelt das gesamte blaue Licht in gelbes um, sodass nur gelbes Licht austritt, das als Zwischenfarbe von Rot und Grün dem Auge weiß erscheint"
+    ],
+    "explanation": "Bei diesem Verfahren geht ein Teil des blauen Lichts durch den Leuchtstoff, und der Rest wird in breitbandiges Licht mit Schwerpunkt im Gelben umgewandelt. Blau und Gelb sind Komplementärfarben, daher erscheint ihre Mischung weiß. Da der Rotanteil jedoch gering ist, werden rote Gegenstände schlecht wiedergegeben, und der Farbwiedergabeindex liegt meist bei nur etwa 70–80. Ein zusätzlicher roter Leuchtstoff verbessert die Farbwiedergabe, doch weil der Anteil oberhalb von 600 nm zunimmt, wo das Auge wenig empfindlich ist, sinkt der Lichtstrom je Strahlungsleistung, und die Lichtausbeute (lm/W) nimmt tendenziell ab. Die Antwort, nach der Farbwiedergabe und Effizienz zugleich steigen, übersieht diesen Zielkonflikt. Würde das gesamte blaue Licht in Gelb umgewandelt, erschiene das austretende Licht gelb und nicht weiß."
+  },
+  "led-display-010": {
+    "question": "Bei einer organischen Leuchtdiode (OLED) mit herkömmlichem Fluoreszenzmaterial (ohne Mechanismus zur Umwandlung von Triplett- in Singulett-Exzitonen) seien die Ladungsbilanz (Anteil der injizierten Elektronen und Löcher, die Exzitonen bilden) 1, die Quantenausbeute der Lichtemission der Exzitonen 1 und die Lichtauskopplungseffizienz 20 %. Welcher Wert kommt der Obergrenze der externen Quanteneffizienz am nächsten, wenn man den durch die Spinstatistik bestimmten Bildungsanteil der Exzitonen berücksichtigt?",
+    "choices": [
+      "ca. 5 %",
+      "ca. 20 %",
+      "ca. 15 %"
+    ],
+    "explanation": "Exzitonen, die bei der Rekombination von Elektronen und Löchern entstehen, bilden sich aufgrund der Spinkombinationen zu 25 % als Singuletts und zu 75 % als Tripletts. In Fluoreszenzmaterialien können nur Singuletts Licht aussenden, daher liegt die Obergrenze der internen Quanteneffizienz bei 25 %. Mit der Lichtauskopplungseffizienz von 20 % multipliziert, beträgt die Obergrenze der externen Quanteneffizienz 0,25 × 0,2 = 0,05, also ca. 5 %. Ca. 20 % ist die Obergrenze für Phosphoreszenzmaterialien (Komplexe mit schweren Atomen wie Iridium), die auch aus Tripletts Licht aussenden können, und gilt nicht für Fluoreszenzmaterialien. Ca. 15 % verwechselt die Anteile von Singuletts und Tripletts und nimmt an, 75 % sendeten Licht aus. Materialien, die Tripletts thermisch in Singuletts zurückführen (TADF), überwinden diese Grenze. Die Lichtauskopplungseffizienz einer OLED ist mit ca. 20 % niedrig, weil Licht in den hochbrechenden organischen Schichten, der transparenten Elektrode und dem Glas eingeschlossen wird."
+  },
+  "led-display-011": {
+    "question": "Welche Aussage über die Merkmale eines OLED-Displays (organische Leuchtdioden) im Vergleich zu einem Flüssigkristallbildschirm (LCD) trifft zu?",
+    "choices": [
+      "Die Pixel leuchten selbst, doch bei schwarzer Anzeige sperrt der Flüssigkristall das Licht der Hintergrundbeleuchtung, sodass Schwarz leicht aufgehellt erscheint",
+      "Die Pixel leuchten selbst, daher müssen schwarz anzeigende Pixel nur die Emission einstellen, und im dunklen Raum lässt sich ein sehr hoher Kontrast erreichen",
+      "Die Pixel leuchten nicht selbst, daher ist für eine helle Weißdarstellung eine starke Hintergrundbeleuchtung nötig"
+    ],
+    "explanation": "Die OLED ist ein Selbstleuchter, bei dem die organischen Schichten jedes Pixels durch Strom leuchten; ein schwarz anzeigendes Pixel leuchtet nicht, wenn kein Strom fließt. Abgesehen von der Reflexion von Umgebungslicht lässt sich die Leuchtdichte von Schwarz nahezu auf 0 bringen, und das Kontrastverhältnis in dunkler Umgebung wird sehr hoch. Beim LCD sendet der Flüssigkristall kein Licht aus, sondern ist ein Lichtverschluss, der das Licht der Hintergrundbeleuchtung mit Polarisatoren und Flüssigkristall durchlässt oder sperrt. Auch bei schwarzer Anzeige tritt etwas Licht aus, das Kontrastverhältnis liegt bei etwa einigen hundert bis einigen tausend zu 1, und man gleicht dies durch Local Dimming aus, das die Hintergrundbeleuchtung bereichsweise dimmt. Die Erklärungen mit austretendem Licht der Hintergrundbeleuchtung bei Schwarz und mit nötiger starker Hintergrundbeleuchtung übertragen beide Eigenschaften des LCD fälschlich auf die OLED. Andererseits hat die OLED das Problem des Einbrennens, wenn lange dasselbe Bild angezeigt wird."
+  },
+  "led-display-012": {
+    "question": "Welche Aussage über die Funktion eines Pixels eines normally white arbeitenden Flüssigkristallbildschirms mit einem um 90° verdrillten TN-Flüssigkristall zwischen zwei Polarisatoren mit gekreuzten Durchlassrichtungen trifft zu?",
+    "choices": [
+      "Ohne Spannung wird das Licht gesperrt; mit Spannung verdrillen sich die Moleküle um 90°, drehen die Polarisation, und nur bei Übereinstimmung mit der Durchlassrichtung des austrittsseitigen Polarisators geht Licht durch",
+      "Der Flüssigkristall wirkt selbst als Polarisator, daher genügt ein Polarisator; die Spannung ändert die Absorptionsstärke des Flüssigkristalls und regelt die Helligkeit je nach Verdrillungswinkel",
+      "Ohne Spannung dreht sich die Polarisation entlang der Verdrillung um 90°, und Licht geht durch; mit Spannung richten sich die Moleküle im Feld auf, die Polarisation dreht sich nicht, und das Licht wird gesperrt"
+    ],
+    "explanation": "Beim TN-Flüssigkristall sind die Moleküle durch Orientierungsschichten auf dem oberen und unteren Substrat so ausgerichtet, dass sie um 90° verdrillt sind; ohne Spannung folgt das eintretende linear polarisierte Licht der Verdrillung der Moleküle, ändert dabei seine Richtung und tritt um 90° gedreht aus. Seine Polarisation stimmt dann mit der Durchlassrichtung des austrittsseitigen der beiden gekreuzten Polarisatoren überein, und es geht durch, sodass das Pixel ohne Spannung weiß ist (normally white). Legt man Spannung an, richten sich die Moleküle wegen der Anisotropie der Permittivität entlang des Feldes auf, die Drehung der Polarisation durch die Verdrillung entfällt, und der austrittsseitige Polarisator sperrt das Licht, sodass das Pixel schwarz wird. Mit Zwischenspannungen lässt sich die Helligkeit verändern. Dunkel ohne und hell mit Spannung ist der Fall normally black mit parallel angeordneten Polarisatoren, und auch dort verdrillen sich die Moleküle unter Spannung nicht, sondern die Verdrillung löst sich auf. Der Flüssigkristall verändert den Polarisationszustand, ersetzt aber keinen Polarisator; zwei Polarisatoren sind nötig."
+  },
+  "led-display-013": {
+    "question": "Für einen Flüssigkristallbildschirm wird der Transmissionsgrad abgeschätzt, mit dem das unpolarisierte Licht der Hintergrundbeleuchtung den Bildschirm verlässt. Welcher Wert kommt dem gesamten Transmissionsgrad bei weißer Anzeige am nächsten, wenn der Transmissionsgrad von zwei Polarisatoren und Flüssigkristall zusammen 40 % (bezogen auf unpolarisiertes einfallendes Licht), der der Farbfilter 30 % und das Öffnungsverhältnis der Pixel (Flächenanteil, der nicht von Leiterbahnen oder Transistoren verdeckt ist) 60 % beträgt?",
+    "choices": [
+      "ca. 2,9 %",
+      "ca. 24 %",
+      "ca. 7,2 %"
+    ],
+    "explanation": "Das Licht durchläuft die Stufen nacheinander, daher multipliziert man die Transmissionsgrade: 0,40 × 0,30 × 0,60 = 0,072, also ca. 7,2 %. Unpolarisiertes Licht wird beim Durchgang durch einen absorbierenden Polarisator grundsätzlich auf höchstens die Hälfte verringert, und reale Polarisatoren und Flüssigkristall zusammen erreichen etwa 40 %. Farbfilter lassen nur eine der Farben Rot, Grün und Blau durch, sodass ein Subpixel höchstens etwa ein Drittel des weißen Lichts durchlässt. Ca. 2,9 % ist der Wert, bei dem die 40 % für beide Polarisatoren zusammen noch einmal multipliziert und die Verluste doppelt gezählt wurden. Ca. 24 % ist der Wert ohne Multiplikation mit dem Farbfilter. Da über 90 % des Lichts der Hintergrundbeleuchtung im Bildschirm verloren gehen, erhöht man die Effizienz mit Folien, die die vom Polarisator verworfene Polarisation reflektieren und wiederverwenden, und durch ein größeres Öffnungsverhältnis."
+  },
+  "led-display-014": {
+    "question": "Um den Farbumfang eines Displays zu vergrößern, macht man die Spektren der roten, grünen und blauen Primärfarben schmaler (etwa mit Quantenpunkten oder schmalbandigen Leuchtstoffen). Weshalb vergrößert das den Farbumfang?",
+    "choices": [
+      "Je schmaler und monochromatischer das Spektrum, desto näher liegen die Farbörter der Primärfarben am Spektralfarbenzug der xy-Normfarbtafel, und das Dreieck mit den drei Primärfarben als Ecken weitet sich nach außen",
+      "Ein schmaleres Spektrum erhöht bei gleicher Leistung die Leuchtdichte der Primärfarben, und in der Normfarbtafel vergrößert sich auch das Dreieck der drei Primärfarben proportional zur Leuchtdichte nach außen",
+      "Je breiter das Spektrum, desto mehr Wellenlängen enthält es, sodass mehr Farben durch Mischung wiedergegeben werden können und der Farbumfang wächst"
+    ],
+    "explanation": "Die durch Mischen des Lichts dreier Primärfarben wiedergebbaren Farben sind auf das Innere des Dreiecks beschränkt, dessen Ecken die Farbörter der drei Primärfarben in der xy-Normfarbtafel sind. Die Farbörter monochromatischen Lichts liegen auf dem hufeisenförmigen Spektralfarbenzug; je breiter das Spektrum eines Lichts, desto mehr benachbarte Wellenlängen sind beigemischt, und sein Farbort rückt vom Zug nach innen (zur Weißseite), die Farbe wird also weniger gesättigt. Bei Quantenpunkten lässt sich die Emissionswellenlänge über die Größe wählen, und die Halbwertsbreite ist mit einigen zehn nm schmal, sodass sich die Primärfarben an den Zug annähern und das Dreieck vergrößern lässt. Die Farbart ist eine von der Helligkeit unabhängige Koordinate, daher ändert sich die Größe des Dreiecks auch bei höherer Leuchtdichte nicht. Die Antwort, nach der ein breiteres Spektrum den Farbumfang vergrößert, kehrt den Zusammenhang um; die Sättigung der Primärfarben sinkt, und der Farbumfang wird kleiner. Je idealer monochromatisch die Primärfarben, desto größer der Farbumfang; die Primärfarben von BT.2020 liegen auf dem Spektralfarbenzug."
+  },
+  "led-display-015": {
+    "question": "Ein für sRGB erstelltes Bild wird auf einem Display mit größerem Farbumfang als sRGB ohne Farbumrechnung (Farbmanagement) unverändert angezeigt. Welche Aussage über den Bildeindruck trifft zu?",
+    "choices": [
+      "Der darstellbare Farbbereich umfasst sRGB, daher wird auch das sRGB-Bild automatisch in den richtigen Farben angezeigt, und keine Farbe fällt heraus",
+      "Die Primärfarben des Displays liegen in der Normfarbtafel weiter außen als die von sRGB, daher wirken die Farben bei gleichen RGB-Werten zu kräftig",
+      "Die Primärfarben des Displays liegen weiter außen, daher wachsen bei gleichen RGB-Werten die Abstände der Primärfarben, die Farben werden verdünnt, und das sRGB-Bild wirkt matt"
+    ],
+    "explanation": "RGB-Werte sind Zahlen, die angeben, mit welcher Stärke jede Primärfarbe gemischt wird; welche Farbe entsteht, bestimmen die Farbörter der Primärfarben. Das Rot (255, 0, 0) in sRGB bedeutet die rote Primärfarbe von sRGB; zeigt man es unverändert auf einem Display mit großem Farbumfang an, leuchtet dessen weiter außen liegende rote Primärfarbe, und das Rot wird kräftiger als vorgesehen. Auch Hauttöne werden insgesamt stärker gesättigt und wirken unnatürlich. Für eine korrekte Darstellung muss man die Werte vom Farbraum des Bildes in den des Displays umrechnen und Farben im sRGB-Bereich mit den sRGB-Farbörtern ausgeben. Ein großer Farbumfang allein führt nicht automatisch zu richtigen Farben. Ein matter Eindruck entsteht umgekehrt, wenn man die Werte eines Bildes mit großem Farbumfang unverändert auf einem Display mit kleinem Farbumfang anzeigt."
+  },
+  "led-display-016": {
+    "question": "Die Halbwertsbreite des Spontanemissionsspektrums einer idealen LED beträgt in Energie etwa 1,8kT (k ist die Boltzmann-Konstante, T die Temperatur). Welcher Wert kommt der in Wellenlänge ausgedrückten Halbwertsbreite einer GaAs-LED mit dem Emissionsmaximum bei 870 nm bei 300 K (kT = 0,0259 eV) am nächsten? (E[eV] ≈ 1240/λ[nm])",
+    "choices": [
+      "ca. 28 nm",
+      "ca. 16 nm",
+      "ca. 8 nm"
+    ],
+    "explanation": "Die Energiebreite beträgt 1,8 × 0,0259 ≈ 0,047 eV. Aus E = 1240/λ folgt Δλ ≈ λ²ΔE/1240 = 870² × 0,047/1240 ≈ 28 nm. Ca. 16 nm ist der Wert mit der Breite kT, ca. 8 nm der Wert mit kT/2; beide verwenden den Faktor 1,8 nicht. Elektronen und Löcher sind jeweils innerhalb ihres Bandes thermisch verteilt, und diese Energieverteilung ist einige kT breit; daher ist das Licht einer LED nicht so scharf wie das eines Lasers, sondern einige zehn nm breit. Bei gleicher Energiebreite ist Δλ proportional zu λ², daher ist die in Wellenlänge ausgedrückte Breite bei LEDs mit größerer Wellenlänge größer."
+  },
+  "led-display-017": {
+    "question": "Ein LED-Chip wird mitunter mit einer Halbkugel aus transparentem Harz vom Brechungsindex ca. 1,5 umhüllt, wobei der Chip nahe dem Mittelpunkt der Halbkugel liegt. Weshalb erhöht dieser Aufbau die Lichtauskopplungseffizienz?",
+    "choices": [
+      "Der Brechungsindex des Harzes liegt zwischen Luft und Chip, daher wird der Grenzwinkel der Totalreflexion an der Harzoberfläche kleiner, und das Licht wird nach mehrfacher Reflexion in der Halbkugel nach vorn gebündelt",
+      "Der Grenzwinkel vom Chip zum Harz ist größer als zur Luft, sodass mehr Licht austritt, und an der Halbkugel trifft das Licht nahezu senkrecht auf, sodass es beim Übergang in die Luft nicht totalreflektiert wird",
+      "Durch die Linsenwirkung der Halbkugel sammelt sich das Licht im Fokus, daher entfällt die Totalreflexion im Chip, und unabhängig vom Brechungsindex des Chips lässt sich alles Licht auskoppeln"
+    ],
+    "explanation": "Tritt Licht aus dem Halbleiter des Chips (Brechungsindex 2,5–3,5) direkt in Luft aus, ist der Grenzwinkel klein, und nur Licht in einem sehr engen Kegel kann austreten. Grenzt der Chip an Harz mit dem Brechungsindex 1,5, weitet sich der Grenzwinkel auf sin⁻¹(1,5/n) auf, und mehr Licht kann vom Chip ins Harz übertreten. Formt man die Harzoberfläche als Halbkugel und setzt den Chip in die Mitte, trifft das vom Mittelpunkt ausgehende Licht nahezu senkrecht auf die Oberfläche und kann auch vom Harz ohne Totalreflexion in die Luft austreten. Bei einer ebenen Harzschicht tritt dagegen an der Grenzfläche zwischen Harz und Luft Totalreflexion auf; die Form ist also entscheidend. Licht an der Harzoberfläche einzuschließen, erhöht die Auskopplungseffizienz nicht, und da auch weiterhin Licht im Chip totalreflektiert wird, lässt sich nicht alles Licht auskoppeln."
+  },
+  "led-display-018": {
+    "question": "Eine weiße LED hat ein photometrisches Strahlungsäquivalent (Lichtstrom je 1 W Strahlungsleistung) von 320 lm/W und einen Leistungswirkungsgrad (Strahlungsleistung/elektrische Eingangsleistung) von 40 %. Welcher Wert kommt dem Lichtstrom je 1 W elektrischer Eingangsleistung (Lichtausbeute der Lichtquelle) am nächsten?",
+    "choices": [
+      "ca. 270 lm/W",
+      "ca. 800 lm/W",
+      "ca. 130 lm/W"
+    ],
+    "explanation": "Die Lichtausbeute der Lichtquelle ist das Produkt aus dem Leistungswirkungsgrad der Umwandlung von elektrischer in Strahlungsleistung und dem durch das Spektrum bestimmten photometrischen Strahlungsäquivalent: 0,40 × 320 lm/W = 128 lm/W, also ca. 130 lm/W. Ca. 270 lm/W ist der Wert, bei dem der Wirkungsgrad mit dem Maximalwert des photometrischen Strahlungsäquivalents von 683 lm/W multipliziert wurde, der nur für monochromatisches Licht von 555 nm gilt; die spektrale Gewichtung weißen Lichts wird dabei vernachlässigt. Ca. 800 lm/W ist ein Fehler, bei dem durch den Wirkungsgrad geteilt wurde; Werte über 683 lm/W sind für keine Lichtquelle möglich. Das photometrische Strahlungsäquivalent wird durch die Gewichtung mit dem spektralen Hellempfindlichkeitsgrad V(λ) bestimmt und liegt für weißes Licht mit blauen und roten Anteilen bei rund 300 lm/W. Fügt man zur Verbesserung der Farbwiedergabe tiefrote Anteile hinzu, sinkt dieser Wert."
+  },
+  "led-display-019": {
+    "question": "Was ist der Hauptgrund dafür, dass Flüssigkristallbildschirme nach dem IPS-Verfahren (In-Plane Switching) einen größeren Blickwinkel als solche nach dem TN-Verfahren haben?",
+    "choices": [
+      "Ein laterales Feld parallel zum Substrat dreht die Moleküle in der Ebene, ohne sie aufzurichten, sodass sich auch bei schräger Betrachtung die Doppelbrechung für das Licht wenig ändert",
+      "Ein Feld senkrecht zum Substrat richtet die Moleküle auf, sodass ihre Orientierung auch bei schräger Betrachtung ebenso wie von vorn auf die Ausbreitungsrichtung des Lichts ausgerichtet ist",
+      "Licht wird ohne Polarisatoren allein durch Streuung im Flüssigkristall durchgelassen oder gesperrt, sodass keine polarisationsbedingte Winkelabhängigkeit besteht und die Helligkeit aus jeder Richtung gleich ist"
+    ],
+    "explanation": "Beim TN-Verfahren richten sich die Moleküle unter Spannung vom Substrat auf. Geneigte Moleküle stehen je nach Blickrichtung unter sehr verschiedenen Winkeln zum Licht, daher ändert sich bei schräger Betrachtung die doppelbrechungsbedingte Polarisationsänderung, Helligkeit und Farbe verändern sich, und es kann sogar zur Umkehr der Graustufen kommen. Beim IPS-Verfahren legt man mit Elektroden auf einem der Substrate ein Feld parallel zum Substrat an und dreht die Moleküle in der Ebene, um die Polarisation zu steuern. Die Moleküle bleiben liegen und ändern nur ihre Richtung, sodass sich die Doppelbrechung mit dem Blickwinkel wenig ändert und der Blickwinkel groß wird. Moleküle mit einem zum Substrat senkrechten Feld aufzurichten, ist die Funktionsweise des TN- oder VA-Verfahrens, und auf die Ausbreitungsrichtung ausgerichtet ist die Molekülorientierung nur für die eine Richtung von vorn. Auch das IPS-Verfahren verwendet zwei Polarisatoren und ist kein Streuverfahren."
+  },
+  "led-display-020": {
+    "question": "Die externe Quanteneffizienz von LEDs ist bei Blau und Rot hoch, bei Grün bis Gelbgrün um 550 nm dagegen meist niedrig (Green Gap). Welche Aussage über die Hauptursache trifft zu?",
+    "choices": [
+      "Der spektrale Hellempfindlichkeitsgrad des Auges ist um 550 nm am niedrigsten, sodass grüne LEDs trotz gleicher Photonenzahl dunkler gemessen werden und ihre externe Quanteneffizienz niedrig erscheint",
+      "Bei InGaN sinkt die Effizienz mit steigendem In-Gehalt etwa durch die Trennung von Elektronen und Löchern im inneren Feld, und AlGaInP nähert sich zu kürzeren Wellenlängen einem indirekten Halbleiter",
+      "Die Energie grüner Photonen wird größer als die Bandlücke der aktiven Schicht, daher wird das Licht in der aktiven Schicht stark absorbiert und geht verloren, bevor es austritt"
+    ],
+    "explanation": "Um die Emission des für blaue LEDs verwendeten InGaN zu größeren Wellenlängen zu verschieben, erhöht man den In-Anteil. Bei hohem In-Gehalt wird die Verspannung groß, und das piezoelektrische Feld zieht Elektronen und Löcher zu entgegengesetzten Seiten des Quantentopfs (quantenbeschränkter Stark-Effekt, QCSE), sodass die Rekombinationswahrscheinlichkeit sinkt; hinzu kommen Einflüsse von Zusammensetzungsschwankungen und Defekten, und wie groß die einzelnen Beiträge sind, wird noch erforscht. Beim für rote LEDs verwendeten AlGaInP nähert sich bei höherem Al-Anteil für kürzere Wellenlängen das Minimum des Leitungsbands dem indirekten Tal, und Elektronen entweichen dorthin oder zur p-Seite, sodass die Effizienz sinkt. Deshalb fällt die Effizienz im Grünen zwischen den beiden Materialsystemen ab. Der spektrale Hellempfindlichkeitsgrad hat um 555 nm sein Maximum, die Begründung kehrt die Verhältnisse also um, und die externe Quanteneffizienz ist ein Verhältnis von Photonenzahlen und hängt nicht vom Hellempfindlichkeitsgrad ab. Die aktive Schicht sendet Photonen mit einer Energie nahe ihrer Bandlücke aus, daher entsteht kein Licht mit größerer Energie."
+  }
+}

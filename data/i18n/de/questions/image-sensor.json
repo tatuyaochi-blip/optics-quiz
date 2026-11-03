@@ -1,0 +1,182 @@
+{
+  "image-sensor-001": {
+    "question": "Welche Aussage über den Unterschied im Auslesen des Signals zwischen einem CCD-Bildsensor und einem CMOS-Bildsensor trifft zu?",
+    "choices": [
+      "Der CCD-Sensor wandelt die Ladung mit einem Verstärker in jedem Pixel in eine Spannung um und liest zeilenweise aus; der CMOS-Sensor schiebt die Ladung wie eine Eimerkette weiter und liest sie mit einem Ausgangsverstärker aus",
+      "Beide wandeln das Licht nicht in Ladung um, sondern lesen die Lichtintensität direkt als Widerstandsänderung jedes Pixels aus; sie unterscheiden sich nur in der Anordnung der Pixel",
+      "Der CCD-Sensor schiebt die Ladung von Pixel zu Pixel weiter und wandelt sie mit wenigen Ausgangsverstärkern in eine Spannung um; der CMOS-Sensor wandelt sie mit einem Verstärker in jedem Pixel um und liest zeilenweise aus"
+    ],
+    "explanation": "Beide Sensoren wandeln in einer Photodiode Photonen in Elektronen um und sammeln diese im Pixel. Der CCD-Sensor schaltet die Elektrodenspannungen nacheinander um, schiebt die Ladung so zum benachbarten Pixel weiter und wandelt sie zuletzt mit wenigen Ausgangsverstärkern in eine Spannung um. Die Verluste beim Transfer sind sehr gering und die Unterschiede zwischen den Pixeln klein, für den Transfer sind jedoch hohe Spannungen und eine große Leistungsaufnahme nötig. Der CMOS-Bildsensor ist ein Active-Pixel-Sensor mit einem Verstärkertransistor (Sourcefolger) in jedem Pixel; er wählt Zeilen aus, liest sie mit Schaltungen pro Spalte parallel aus und kann alles bis zur AD-Wandlung auf demselben Chip integrieren, weshalb er schnell ist und wenig Leistung aufnimmt. Die Antwort, die die Beschreibungen der beiden vertauscht, ist falsch. Ein Bauelement, das die Lichtintensität als Widerstandsänderung ausliest, ist ein Photowiderstand und kein Verfahren heutiger Bildsensoren."
+  },
+  "image-sensor-002": {
+    "question": "Auf ein Pixel mit 60 % Quanteneffizienz fallen während der Belichtung im Mittel 10 000 Photonen. Welcher Wert kommt dem S/N (Zahl der Signalelektronen / Zahl der Rauschelektronen) dieses Pixels am nächsten, wenn nur das Photonen-Schrotrauschen berücksichtigt wird?",
+    "choices": [
+      "ca. 77",
+      "ca. 100",
+      "ca. 60"
+    ],
+    "explanation": "Im Pixel sammeln sich im Mittel 10 000 × 0,6 = 6000 Elektronen. Das Eintreffen der Photonen ist zufällig und folgt einer Poisson-Verteilung; auch die mit der Quanteneffizienz ausgedünnte Elektronenzahl ist Poisson-verteilt, daher ist das Rauschen (die Standardabweichung) die Quadratwurzel der Elektronenzahl, √6000 ≈ 77,5. Das S/N ist 6000/77,5 = √6000 ≈ 77, also etwa 38 dB. Ca. 100 ist die Quadratwurzel der Zahl der einfallenden Photonen, 10 000; dabei wurde vergessen, mit der Quanteneffizienz zu multiplizieren. Ca. 60 teilt das Signal von 6000 Elektronen durch die Quadratwurzel der Photonenzahl, 100, und vermischt damit Elektronen- und Photonenzahl. Das durch das Schrotrauschen bestimmte S/N ist die Quadratwurzel der Zahl der gesammelten Elektronen; um das S/N zu verdoppeln, braucht man daher die vierfache Lichtmenge. Je höher die Quanteneffizienz eines Bauelements, desto besser das S/N bei gleichem Licht."
+  },
+  "image-sensor-003": {
+    "question": "Welcher Wert kommt dem Dynamikumfang eines Bildsensors mit einer Full-Well-Kapazität (größte Zahl von Elektronen, die ein Pixel speichern kann) von 20 000 Elektronen und einem Ausleserauschen von 4 Elektronen (Effektivwert) am nächsten? Der Dynamikumfang wird als Verhältnis von Full-Well-Kapazität zu Ausleserauschen in 20 log₁₀ angegeben.",
+    "choices": [
+      "ca. 37 dB",
+      "ca. 74 dB",
+      "ca. 86 dB"
+    ],
+    "explanation": "Der Dynamikumfang ist das Verhältnis des hellsten zum dunkelsten Signal, das in einem Bild gleichzeitig verarbeitet werden kann; die helle Seite bestimmt die Full-Well-Kapazität, die dunkle Seite das Rauschen ohne Licht (hier das Ausleserauschen). Das Verhältnis ist 20 000/4 = 5000, und 20 log₁₀ 5000 ≈ 74 dB. Ca. 37 dB rechnet das Verhältnis der Elektronenzahlen wie ein Leistungsverhältnis mit 10 log₁₀ um. Bei Bildsensoren behandelt man die Zahl der Signalelektronen als Amplitudengröße wie eine Spannung und verwendet üblicherweise 20 log₁₀. Ca. 86 dB setzt das Ausleserauschen mit 1 Elektron an und bildet das Verhältnis 20 000. Das S/N nahe der Full-Well-Kapazität bleibt übrigens bei √20 000 ≈ 141 (ca. 43 dB); Dynamikumfang und S/N sind verschiedene Größen."
+  },
+  "image-sensor-004": {
+    "question": "In einer dunklen Szene beträgt das Signal eines Pixels im Mittel 16 Elektronen und das Ausleserauschen 3 Elektronen (Effektivwert). Welcher Wert kommt dem S/N am nächsten, wenn der Dunkelstrom vernachlässigbar ist und nur das Schrotrauschen des Signals und das Ausleserauschen auftreten?",
+    "choices": [
+      "ca. 4,0",
+      "ca. 3,2",
+      "ca. 5,3"
+    ],
+    "explanation": "Voneinander unabhängige Rauschanteile addiert man über ihre Varianzen (Quadrate). Die Varianz des Schrotrauschens ist gleich der Zahl der Signalelektronen, 16, die des Ausleserauschens 3² = 9; das Gesamtrauschen ist daher √(16 + 9) = 5 Elektronen. Das S/N ist 16/5 = 3,2. Ca. 4,0 ist der Wert √16 = 4, der nur das Schrotrauschen berücksichtigt und das Ausleserauschen übersieht. Ca. 5,3 setzt nur das Ausleserauschen an, also 16/3. Ist das Signal kleiner als das Quadrat des Ausleserauschens (hier 9 Elektronen), überwiegt das Ausleserauschen, ist es größer, überwiegt das Schrotrauschen. Deshalb sind rauscharme Sensoren mit einem Ausleserauschen von 1 bis 2 Elektronen bei Aufnahmen dunkler Szenen im Vorteil, während in hellen Szenen bei jedem Sensor das Schrotrauschen des Lichts das S/N bestimmt."
+  },
+  "image-sensor-005": {
+    "question": "Im Pixel eines CMOS-Bildsensors hat die Floating Diffusion, die die Ladung in eine Spannung umwandelt, eine Kapazität von 2 fF. Welche Kombination aus der Spannung je Elektron (Konversionsverstärkung) und der Auswirkung einer kleineren Kapazität trifft zu (q = 1,6×10⁻¹⁹ C)?",
+    "choices": [
+      "ca. 80 µV/Elektron. Mit kleinerer Kapazität wird die Spannung je Elektron größer, und sowohl das Ausleserauschen als auch die Full-Well-Kapazität verbessern sich",
+      "ca. 8 µV/Elektron. Mit kleinerer Kapazität wird die Spannung je Elektron größer; das in Elektronen umgerechnete Ausleserauschen sinkt, aber die Full-Well-Kapazität nimmt ab",
+      "ca. 80 µV/Elektron. Mit kleinerer Kapazität wird die Spannung je Elektron größer; das in Elektronen umgerechnete Ausleserauschen sinkt, aber die Full-Well-Kapazität nimmt ab"
+    ],
+    "explanation": "Bringt man eine Ladung Q auf eine Kapazität C, ist die Spannung V = Q/C; für ein Elektron ergibt sich q/C = 1,6×10⁻¹⁹/(2×10⁻¹⁵) = 8×10⁻⁵ V, also ca. 80 µV. Eine kleinere Kapazität erhöht die Konversionsverstärkung, und das in Elektronen umgerechnete Rauschen (eine Spannung) der nachfolgenden Schaltung wird kleiner, sodass der Sensor in dunklen Szenen besser wird. Andererseits ist der Spannungshub der Floating Diffusion durch die Versorgungsspannung und Ähnliches begrenzt; bei einem Hub von beispielsweise 1 V verringert sich die verarbeitbare Elektronenzahl von ca. 12 500 bei 2 fF auf ca. 6250 bei 1 fF, und die helle Seite des Dynamikumfangs wird schmaler. Die Antwort, nach der sich beides verbessert, übersieht diesen Zielkonflikt. Ca. 8 µV ist der Wert, der fF fälschlich als 10⁻¹⁴ F umrechnet."
+  },
+  "image-sensor-006": {
+    "question": "Welche Aussage über die Funktion der in CMOS-Bildsensoren verwendeten korrelierten Doppelabtastung (CDS) trifft zu?",
+    "choices": [
+      "Sie bildet die Differenz der Spannung unmittelbar nach dem Zurücksetzen und der Spannung nach dem Ladungstransfer und hebt so das bei jedem Zurücksetzen andere kTC-Rauschen und den Offset des Verstärkers auf",
+      "Sie belichtet dasselbe Pixel zweimal nacheinander und addiert beide Aufnahmen; das Signal verdoppelt sich, während sich das zufällige Schrotrauschen, dessen Vorzeichen zwischen beiden wechselt, aufhebt",
+      "Sie bildet die Differenz der Signale zweier benachbarter Pixel, hebt so die Konturen des Motivs hervor und erleichtert das Erkennen der Position, an der das Bild scharf gestellt ist"
+    ],
+    "explanation": "Setzt man die Floating Diffusion zurück, bleibt auf der Spannung der Kapazität C eine durch thermisches Rauschen verursachte Schwankung von √(kT/C) (kTC-Rauschen), deren Wert sich bei jedem Zurücksetzen ändert. Bei der CDS liest man zuerst die Spannung nach dem Zurücksetzen (Reset-Pegel), dann die Spannung nach dem Transfer der Ladung aus der Photodiode (Signalpegel) und verwendet die Differenz als Signal. Beide Auslesevorgänge enthalten dasselbe Reset-Rauschen und denselben Verstärkeroffset, die sich daher in der Differenz aufheben; auch das Festmusterrauschen der einzelnen Pixel nimmt ab. Das Schrotrauschen ist eine Schwankung des Lichts selbst und lässt sich durch keine Schaltung aufheben; auch die Addition zweier Belichtungen verbessert das S/N nur mit der Quadratwurzel der Lichtmenge. Die Differenzbildung mit dem Nachbarpixel ist eine Konturverstärkung, eine von der CDS verschiedene Bildverarbeitung."
+  },
+  "image-sensor-007": {
+    "question": "In einer gekühlten Kamera wird die Temperatur des Bildsensors um 21 K gesenkt. Welche Kombination aus der Änderung des Dunkelstroms und der des von ihm verursachten Schrotrauschens (bei gleicher Belichtungszeit) trifft zu, wenn sich der Dunkelstrom je 7 K Abkühlung halbiert?",
+    "choices": [
+      "Dunkelstrom ca. 1/8, Schrotrauschen des Dunkelstroms ebenfalls ca. 1/8",
+      "Dunkelstrom ca. 1/3, Schrotrauschen des Dunkelstroms ca. 1/1,7",
+      "Dunkelstrom ca. 1/8, Schrotrauschen des Dunkelstroms ca. 1/2,8"
+    ],
+    "explanation": "Der Dunkelstrom ist der Strom thermisch angeregter Elektronen, die sich unabhängig vom Licht ansammeln; er ändert sich exponentiell mit der Temperatur. Halbiert er sich je 7 K, ergibt eine Abkühlung um 21 K den Faktor 2³ = 8, der Dunkelstrom sinkt also auf ca. 1/8. Auch die durch den Dunkelstrom gesammelten Elektronen sind Poisson-verteilt, ihr Rauschen ist daher proportional zur Quadratwurzel der Elektronenzahl und sinkt wegen √8 ≈ 2,8 auf ca. 1/2,8. Die Antwort, nach der auch das Rauschen auf 1/8 sinkt, nimmt fälschlich an, das Rauschen sei proportional zur Elektronenzahl. Die Antwort mit ca. 1/3 verwechselt 21/7 = 3 mit dem Faktor und behandelt die exponentielle Änderung wie eine proportionale. Die Temperaturdifferenz, bei der sich der Dunkelstrom halbiert, liegt je nach Bauelement zwischen einigen K und etwa 10 K; die 7 K hier sind ein Richtwert. Gekühlt wird etwa bei langen Belichtungen in der Astrofotografie."
+  },
+  "image-sensor-008": {
+    "question": "Welche Aussage über die in farbigen Bildsensoren verbreitete Bayer-Matrix der Farbfilter trifft zu?",
+    "choices": [
+      "Rote, grüne und blaue Filter sind in gleicher Zahl schachbrettartig angeordnet, und jedes Pixel misst die Stärke aller drei Farben, sodass keine Interpolation der Farben aus den umliegenden Pixeln nötig ist",
+      "Von 2×2 Pixeln sind zwei grün und je eines rot und blau; Grün, für das das Auge empfindlicher ist, wird häufiger abgetastet, und die beiden in einem Pixel fehlenden Farben werden aus den umliegenden Pixeln interpoliert",
+      "Zwei von 2×2 Pixeln sind grün, weil die Quanteneffizienz von Silizium bei grünen Wellenlängen am niedrigsten ist und dieser Mangel durch das Signal zweier Pixel ausgeglichen wird"
+    ],
+    "explanation": "Bei der Bayer-Matrix ist Grün schachbrettartig angeordnet, Rot und Blau besetzen die übrigen Plätze in jeder zweiten Zeile; die Hälfte der Pixel ist grün, je ein Viertel rot und blau. Der spektrale Hellempfindlichkeitsgrad des menschlichen Auges ist im Grünen hoch, und Grün trägt einen Großteil der Information über die Helligkeit (Leuchtdichte) des Bildes; häufigeres Abtasten von Grün ist daher für die Auflösung feiner Hell-Dunkel-Strukturen günstig. Jedes Pixel misst nur die Stärke der einen Farbe, die sein Filter durchlässt; die Werte der beiden anderen Farben werden durch Interpolation aus den umliegenden Pixeln bestimmt (Demosaicing), wobei bei feinen Mustern Falschfarben auftreten können. Rot und Blau werden waagerecht wie senkrecht nur in jedem zweiten Pixel abgetastet, die Farbauflösung ist daher geringer als die Auflösung der Leuchtdichte. Dass jedes Pixel drei Farben misst, gilt für Verfahren mit drei Sensoren oder für spezielle Verfahren, die die Farben nach der Tiefe trennen. Im Sichtbaren ist die Quanteneffizienz von Silizium eher auf der blauen Seite niedrig; die Begründung, die Empfindlichkeit für Grün werde ausgeglichen, ist falsch."
+  },
+  "image-sensor-009": {
+    "question": "Was ist der Hauptgrund dafür, vor dem Bildsensor einer Digitalkamera ein Infrarot-Sperrfilter anzubringen?",
+    "choices": [
+      "Silizium ist auch im nahen Infrarot bis etwa 1,1 µm empfindlich, und auch die Farbfilter lassen nahes Infrarot durch; unsichtbares Infrarotlicht verursacht daher Fehler in Farbe und Helligkeit",
+      "Absorbiert Silizium Infrarotlicht, wird der Kristall geschädigt und die Zahl der Pixeldefekte nimmt zu; das Filter schützt das Bauelement bei langen Aufnahmen",
+      "Infrarotlicht wird in Silizium nicht absorbiert und durchdringt das Bauelement; das Filter verhindert, dass vom rückseitigen Gehäuse reflektiertes Licht Geisterbilder oder Überstrahlung des ganzen Bildes erzeugt"
+    ],
+    "explanation": "Die Bandlücke von Silizium beträgt ca. 1,12 eV; Licht mit Wellenlängen unterhalb von ca. 1,1 µm wird absorbiert und erzeugt Elektronen, sodass auch im nahen Infrarot um 700 bis 1000 nm eine beträchtliche Empfindlichkeit besteht. Die roten, grünen und blauen Filter der Bayer-Matrix aus organischen Farbstoffen lassen nahes Infrarot teilweise durch; ohne Unterdrückung des Infrarots weicht die Farbwiedergabe vom menschlichen Sehen ab, etwa wenn ein für das Auge schwarzer Stoff rötlich-violett erscheint. Deshalb bringt man ein Filter an, das nur sichtbares Licht durchlässt, und nähert so die Empfindlichkeit der des Auges an. Das Bauelement wird durch Infrarotlicht nicht zerstört; in Überwachungskameras entfernt man das Filter und nimmt nachts mit Beleuchtung im nahen Infrarot auf. Silizium wird nur von Wellenlängen oberhalb von ca. 1,1 µm durchdrungen; Licht von 700 bis 1000 nm wird absorbiert und trägt zum Signal bei."
+  },
+  "image-sensor-010": {
+    "question": "Was ist der Hauptgrund dafür, dass bei CMOS-Bildsensoren mit kleinen Pixeln die Rückseitenbelichtung (BSI) gegenüber der Vorderseitenbelichtung vorteilhaft ist?",
+    "choices": [
+      "Bei Belichtung von der Rückseite lässt sich eine dicke Siliziumschicht nutzen, sodass auch Licht im nahen Infrarot mit großer Absorptionslänge gut absorbiert wird und die Quanteneffizienz im nahen Infrarot stark steigt",
+      "Das Licht tritt von der den Verdrahtungsebenen abgewandten Seite in die Photodiode ein, wird daher nicht von der Metallverdrahtung abgeschattet oder gestreut, und auch schräg einfallendes Licht wird gut aufgenommen",
+      "Bei Belichtung von der Rückseite gelangt die Wärme der Verdrahtung kaum durch das Substrat zur Photodiode, deren Temperatur daher sinkt, sodass der Dunkelstrom fast vollständig verschwindet"
+    ],
+    "explanation": "Bei der Vorderseitenbelichtung liegen über der Photodiode mehrere Ebenen von Metallverdrahtung, und das Licht gelangt durch die Lücken der Verdrahtung zur Photodiode. Je kleiner die Pixel, desto größer der Anteil der Verdrahtung; selbst mit Mikrolinsen wird ein Teil des Lichts abgeschattet, und schräg einfallendes Licht wird in benachbarte Pixel gestreut und verursacht Farbübersprechen. Bei der Rückseitenbelichtung wird der Wafer dünn geschliffen und das Licht von der Rückseite ohne Verdrahtung eingekoppelt; über der lichtempfindlichen Fläche liegt nichts, was abschattet, der Öffnungsanteil und die Winkelcharakteristik verbessern sich, und auch kleine Pixel behalten ihre Empfindlichkeit. Bei der Rückseitenbelichtung wird das Silizium sogar auf wenige µm gedünnt, sodass nahes Infrarot mit großer Absorptionslänge eher durchgelassen wird. Die Belichtungsrichtung senkt die Temperatur nicht; vielmehr ist eine Behandlung nötig, die den Dunkelstrom aus Defekten an der geschliffenen Oberfläche unterdrückt."
+  },
+  "image-sensor-011": {
+    "question": "Beim Binning werden die Signale von 2×2 = 4 Pixeln zu einem Pixel zusammengefasst. Verglichen werden das Verfahren, wie beim CCD die Ladungen zu addieren und einmal auszulesen, und das Verfahren, beim CMOS-Bildsensor die 4 Pixel einzeln auszulesen und digital zu addieren. Welche Aussage über das S/N in dunklen Szenen trifft zu?",
+    "choices": [
+      "In beiden Fällen wird das Signal 4-mal so groß, und beim Rauschen vervierfacht sich nur die Varianz des Schrotrauschens; das S/N ist daher auch in dunklen Szenen genau gleich",
+      "Beim digitalen Addieren mittelt sich das Ausleserauschen über die 4 Auslesevorgänge heraus und verschwindet; in dunklen Szenen ergibt das digitale Addieren daher das bessere S/N",
+      "Das Signal wird in beiden Fällen 4-mal so groß, doch das Ausleserauschen kommt beim Addieren der Ladung einmal, beim digitalen Addieren viermal als Varianz hinzu; in dunklen Szenen ist Ersteres besser"
+    ],
+    "explanation": "Bei beiden Verfahren vervierfacht sich die Zahl der gesammelten Elektronen und damit auch die Varianz des Schrotrauschens. Der Unterschied liegt im Ausleserauschen: Addiert man die Ladung und liest einmal aus, bleibt seine Varianz σr², liest man die 4 Pixel einzeln aus und addiert, wird sie 4σr², das Rauschen verdoppelt sich. Beträgt das Signal jedes Pixels z. B. 25 Elektronen und σr = 4 Elektronen, ergibt das Addieren der Ladung 100/√(100 + 16) ≈ 9,3, das digitale Addieren 100/√(100 + 64) ≈ 7,8. In hellen Szenen überwiegt das Schrotrauschen und der Unterschied wird klein, in dunklen Szenen ist das Addieren der Ladung jedoch im Vorteil. Die Antwort, nach der das S/N gleich ist, übersieht die unterschiedliche Zahl der Auslesevorgänge. Unabhängige Rauschanteile wachsen auch beim Addieren über ihre Varianzen und mitteln sich nicht heraus."
+  },
+  "image-sensor-012": {
+    "question": "Welche Kombination aus dem Effekt, der beim Aufnehmen eines schnell seitwärts bewegten Motivs mit dem Rolling Shutter eines CMOS-Bildsensors leicht auftritt, und seinem Grund trifft zu?",
+    "choices": [
+      "Das Bild wird verzerrt, etwa ein senkrechter Stab schräg geneigt. Der Belichtungszeitpunkt verschiebt sich von Zeile zu Zeile, und das Motiv wird in oberen und unteren Zeilen an verschiedenen Orten aufgezeichnet",
+      "Das ganze Bild verwischt gleichmäßig. Beim Rolling Shutter werden alle Pixel gleichzeitig und länger belichtet als beim Global Shutter",
+      "Es entsteht keine Verzerrung. Auch wenn sich der Belichtungszeitpunkt von Zeile zu Zeile verschiebt, werden zuletzt alle Zeilen zusammen ausgelesen, sodass der aufgezeichnete Zeitpunkt gleich ist"
+    ],
+    "explanation": "Beim Rolling Shutter werden Zurücksetzen und Auslesen zeilenweise nacheinander ausgeführt; die Belichtungsdauer ist für jede Zeile gleich, Beginn und Ende verschieben sich jedoch von oben nach unten ein wenig. Dauert das Auslesen eines Bildes z. B. einige zehn ms, erscheint ein sich in dieser Zeit seitwärts bewegendes Motiv in oberen und unteren Zeilen an verschiedenen Orten: Ein senkrechter Stab wird schräg geneigt, ein rotierender Propeller gekrümmt abgebildet. Bei schnell flackernder Beleuchtung können außerdem zeilenweise helle und dunkle Streifen auftreten. Alle Pixel gleichzeitig zu belichten, ist das Verfahren des Global Shutter, das in jedem Pixel einen Bereich zum Zwischenspeichern der Ladung braucht. Ein gleichmäßiges Verwischen des ganzen Bildes ist Bewegungsunschärfe durch eine lange Belichtungszeit und kein für den Rolling Shutter typischer Effekt. Auch wenn man alle Zeilen zusammen ausliest, verschwindet der Versatz der Belichtungszeitpunkte nicht."
+  },
+  "image-sensor-013": {
+    "question": "Mit einem auf Blende 8 abgeblendeten, aberrationsfreien Objektiv wird eine Punktlichtquelle bei der Wellenlänge 550 nm aufgenommen. Welcher Wert kommt dem Durchmesser des ersten dunklen Rings des Beugungsbildes (Airy-Scheibchen) am nächsten?",
+    "choices": [
+      "ca. 10,7 µm",
+      "ca. 5,4 µm",
+      "ca. 4,4 µm"
+    ],
+    "explanation": "Bei einem aberrationsfreien Objektiv mit kreisförmiger Öffnung ist der Radius des ersten dunklen Rings des Punktbildes 1,22λN, der Durchmesser 2,44λN (N ist die Blendenzahl). Mit λ = 0,55 µm und N = 8 ergibt sich 2,44 × 0,55 × 8 ≈ 10,7 µm. Bei einem Sensor mit 4 µm Pixelabstand verteilt sich das Punktbild auf ca. 2,7 Pixel; bei kleinen Sensoren mit feinen Pixeln wird die Beugungsunschärfe bei zu großer Blendenzahl größer als ein Pixel, und Details werden sogar weicher (Beugungsunschärfe durch starkes Abblenden). Ca. 5,4 µm verwechselt den Radius 1,22λN mit dem Durchmesser. Ca. 4,4 µm berechnet nur λN und lässt den Faktor weg. Auch wenn man eine große Schärfentiefe möchte, wählt man die Blende als Richtwert so, dass die Beugungsunschärfe im Vergleich zur Pixelgröße nicht auffällt."
+  },
+  "image-sensor-014": {
+    "question": "Ein Foto wird mit einem 35-mm-Kleinbildsensor und einem Objektiv mit 50 mm Brennweite und F2 aufgenommen. Mit gleichem Bildwinkel und gleicher Aufnahmeentfernung wird mit einem Sensor halber Diagonale und einem Objektiv mit 25 mm Brennweite und F2 aufgenommen. Welche Aussage über die Schärfentiefe trifft zu, wenn beide Bilder auf dieselbe Größe vergrößert betrachtet werden? Die Aufnahmeentfernung sei viel kleiner als die hyperfokale Entfernung, und die Schärfentiefe sei etwa 2Ncs²/f² (N Blendenzahl, c Durchmesser des zulässigen Zerstreuungskreises, s Aufnahmeentfernung, f Brennweite).",
+    "choices": [
+      "Da die Blendenzahl mit F2 gleich ist, ist auch die Helligkeit in der Bildebene gleich, und die Schärfentiefe ist dieselbe wie beim 35-mm-Kleinbild",
+      "Bei einem kleineren Sensor wird auch der zulässige Zerstreuungskreis proportional kleiner, daher wird die Schärfentiefe bei gleicher Blendenzahl geringer",
+      "Die Schärfentiefe wird etwa doppelt so groß und entspricht ungefähr der beim 35-mm-Kleinbild mit auf F4 abgeblendetem Objektiv"
+    ],
+    "explanation": "Um auf dieselbe Größe zu vergrößern, muss das Bild des kleineren Sensors doppelt so stark vergrößert werden, daher muss auch der zulässige Zerstreuungskreis c halbiert werden. In der Formel 2Ncs²/f² ist c halb und f halb, die Schärfentiefe wird also (1/2)/(1/2)² = 2-mal so groß. Beim 35-mm-Kleinbild erhält man dasselbe, wenn man N auf F4 verdoppelt; das ist der Gedanke der sogenannten äquivalenten Blendenzahl. Die Antwort, nach der bei gleicher Blendenzahl auch die Schärfentiefe gleich ist, verwechselt die Helligkeit in der Bildebene (durch die Blendenzahl bestimmt) mit der Schärfentiefe. Der kleinere zulässige Zerstreuungskreis wirkt sich zwar aus, doch die kürzere Brennweite geht quadratisch ein, sodass die Schärfentiefe insgesamt größer wird. Deshalb lässt sich bei Smartphones mit kleinen Sensoren der Hintergrund nur schwer unscharf machen."
+  },
+  "image-sensor-015": {
+    "question": "Welche Aussage über das Erhöhen der ISO-Einstellung einer Digitalkamera (Erhöhen der analogen Verstärkung des Sensorausgangs) trifft zu?",
+    "choices": [
+      "Mit höherer ISO-Empfindlichkeit steigt die Spannung an der Photodiode und damit die Quanteneffizienz; bei gleichem Licht werden mehr Elektronen gesammelt, und das S/N dunkler Szenen verbessert sich grundlegend",
+      "Die Zahl der Photonen nimmt nicht zu, daher ändert sich das durch das Schrotrauschen bestimmte S/N nicht. Der Einfluss nachfolgenden Rauschens sinkt relativ, doch Sättigung tritt leichter ein und der Dynamikumfang wird kleiner",
+      "Mit höherer ISO-Empfindlichkeit wird die Full-Well-Kapazität größer; helle Bereiche gehen daher seltener in Sättigung, und zusammen mit den dunklen Bereichen wird der Dynamikumfang größer"
+    ],
+    "explanation": "Die ISO-Einstellung legt fest, wie stark das im Pixel in Elektronen umgewandelte Signal vor der Aufzeichnung verstärkt wird; die Quanteneffizienz der Umwandlung von Photonen in Elektronen und die Full-Well-Kapazität des Pixels ändern sich nicht. Die Zahl der in einer dunklen Szene gesammelten Elektronen wird durch Belichtungszeit, Blendenzahl und Helligkeit des Motivs bestimmt, und auch das durch das Schrotrauschen des Lichts bestimmte S/N bleibt gleich. Eine höhere Verstärkung verkleinert das in Elektronen umgerechnete Rauschen, das nach dem Verstärker und bei der AD-Wandlung hinzukommt, und verringert daher das Rauschen in dunklen Bereichen etwas. Die Zahl der Elektronen, bei der der Höchstwert des AD-Wandlers erreicht wird, nimmt jedoch umgekehrt proportional zur Verstärkung ab; helle Bereiche gehen leichter in Sättigung, und der Dynamikumfang wird kleiner. Die Antworten, nach denen sich Quanteneffizienz oder Full-Well-Kapazität ändern, verwechseln die Verstärkung mit den Eigenschaften des Pixels."
+  },
+  "image-sensor-016": {
+    "question": "Nimmt man mit einem Interline-CCD-Bildsensor eine starke Lichtquelle (Sonne oder Beleuchtung) im Bild auf, kann ober- und unterhalb der Lichtquelle eine helle senkrechte Linie erscheinen. Welche Aussage über die Hauptursache dieses Effekts (Smear) trifft zu?",
+    "choices": [
+      "Starkes Licht wird im Objektiv mehrfach reflektiert und erscheint als Ring oder Lichtfleck um die Lichtquelle, der in Ausleserichtung des Sensors gestreckt wird und deshalb als senkrechte Linie erscheint",
+      "Starkes Licht erwärmt die Photodiode lokal, sodass der Dunkelstrom aller Pixel derselben Spalte zusammen zunimmt und nur diese Spalte hell wird",
+      "Ein Teil des starken Lichts dringt in das Transferregister ein, das die Ladung senkrecht weiterschiebt, oder tief erzeugte Ladung diffundiert hinein und kommt zur gerade transportierten Ladung hinzu"
+    ],
+    "explanation": "Beim Interline-CCD liegt neben den Photodioden jeder Spalte ein abgeschattetes senkrechtes Transferregister, das die Ladung nacheinander nach unten schiebt und ausliest. Fällt starkes Licht ein, dringt Licht durch Lücken der Abschattung in das Transferregister ein, und auch tief im Silizium erzeugte Ladung diffundiert hinein. Zu allen Ladungen, die gerade durch diese Spalte transportiert werden, kommt zusätzliche Ladung hinzu, sodass ober- und unterhalb der Lichtquelle eine senkrechte helle Linie entsteht. Beim CMOS-Bildsensor, der mit einem Verstärker in jedem Pixel in eine Spannung umwandelt und ausliest, wird die Ladung nicht entlang der Spalte transportiert, daher tritt Smear in dieser Form nicht auf. Mehrfachreflexionen im Objektiv verursachen Streulicht (Flare) und Geisterbilder, aber keine senkrechten Linien. Auch steigt der Dunkelstrom einer ganzen Spalte nicht durch eine lokale Erwärmung gleichmäßig an."
+  },
+  "image-sensor-017": {
+    "question": "Mit einem Bildsensor wird ein Bild bei gleichmäßiger Beleuchtung aufgenommen; nach Abzug des Dunkelbildes beträgt das mittlere Signal 2000 DN und die Varianz der zeitlichen Schwankung der Pixel 1000 DN². Welcher Wert kommt dem Umrechnungsfaktor (Zahl der Elektronen je DN) am nächsten, wenn das Ausleserauschen vernachlässigbar ist und die Schwankung nur aus dem Photonen-Schrotrauschen besteht (DN ist die Einheit des A/D-Wandler-Ausgangs)?",
+    "choices": [
+      "ca. 0,5 e⁻/DN",
+      "ca. 2,0 e⁻/DN",
+      "ca. 45 e⁻/DN"
+    ],
+    "explanation": "Mit dem Umrechnungsfaktor K [e⁻/DN] ist die Elektronenzahl N = 2000K und die Varianz ihres Schrotrauschens N (in Elektronen zum Quadrat). In DN umgerechnet ist die Varianz N/K² = 2000/K; aus 2000/K = 1000 folgt K = 2,0 e⁻/DN, das Signal entspricht ca. 4000 Elektronen. Ca. 0,5 e⁻/DN ist die Varianz geteilt durch den Mittelwert und kehrt die Beziehung zwischen DN und Elektronen um. Ca. 45 e⁻/DN ist nur die Quadratwurzel des Mittelwerts, √2000. Trägt man Varianz und Mittelwert für viele Helligkeiten in ein Diagramm ein (Photon-Transfer-Kurve), erhält man aus der Steigung 1/K den Umrechnungsfaktor und aus dem Wert auf der dunklen Seite das Ausleserauschen."
+  },
+  "image-sensor-018": {
+    "question": "Ein Bildsensor hat eine Empfindlichkeitsschwankung der Pixel (PRNU) von 1 %. Welche Aussage über diese Schwankung trifft zu, wenn eine helle, gleichmäßige Fläche aufgenommen wird, bei der sich im Mittel 40 000 Elektronen ansammeln?",
+    "choices": [
+      "Die Schwankung ist proportional zum Signal und entspricht ca. 400 Elektronen, mehr als das Schrotrauschen (ca. 200); sie lässt sich durch Teilen durch ein Bild einer gleichmäßigen Fläche (Flat-Korrektur) beseitigen",
+      "Die Schwankung ist unabhängig vom Signal konstant und wird daher mit zunehmender Helligkeit relativ kleiner; gegenüber dem Schrotrauschen (ca. 200) ist sie vernachlässigbar und braucht keine Korrektur",
+      "Die Schwankung ist ein zeitlich unregelmäßig veränderliches Rauschen; sie wird durch Mitteln vieler Bilder derselben Szene kleiner, lässt sich aber nicht durch Teilen durch ein Bild einer gleichmäßigen Fläche korrigieren"
+    ],
+    "explanation": "Die PRNU ist der Empfindlichkeitsunterschied zwischen den Pixeln, ein zum Signal proportionales Festmusterrauschen. Bei 1 % ergibt sich für 40 000 Elektronen eine Schwankung von ca. 400 Elektronen, das Doppelte des Schrotrauschens √40 000 = 200 Elektronen. Ohne Korrektur sinkt das S/N von 200, dem nur durch das Schrotrauschen bestimmten Wert, auf 40 000/√(200² + 400²) ≈ 89. Da dasselbe Pixel jedoch immer denselben Unterschied zeigt, lässt sie sich durch Teilen durch ein Bild einer gleichmäßigen Fläche (Flat-Bild) beseitigen. Eine vom Signal unabhängige konstante Schwankung ist die Eigenschaft des Festmusters von Dunkelstrom und Offset (DSNU), das in dunklen Szenen wirkt. Die PRNU ändert sich zeitlich nicht und wird daher auch durch Mitteln vieler Bilder nicht kleiner."
+  },
+  "image-sensor-019": {
+    "question": "In optischen Systemen mit dünnem Objektiv nahe am Sensor, wie in Smartphone-Kameras, fallen die Hauptstrahlen zum Rand der Bildfläche hin schräger ein (großer Einfallswinkel des Hauptstrahls). Welche Kombination aus Auswirkung und Gegenmaßnahme trifft zu?",
+    "choices": [
+      "In den Randpixeln legt schräg einfallendes Licht einen längeren Weg im Silizium zurück und wird stärker absorbiert, sodass der Rand heller als die Mitte erscheint; das wird durch Bildverarbeitung abgedunkelt und angeglichen",
+      "Der Winkel des Hauptstrahls beeinflusst die Bildhelligkeit nicht, vergrößert aber die Verzeichnung; daher ordnet man die Pixel zum Rand hin mit größerem Abstand an, um die Verzerrung aufzuheben",
+      "In den Randpixeln verschiebt sich der Fokuspunkt gegenüber der Photodiode, und es entstehen Abdunklung und Farbübersprechen; daher werden Mikrolinsen und Farbfilter zur Mitte hin versetzt angeordnet"
+    ],
+    "explanation": "Die Mikrolinsen über den Pixeln sind so ausgelegt, dass sie senkrecht von oben einfallendes Licht auf die Photodiode bündeln. Fällt das Licht schräg ein, verschiebt sich der Fokuspunkt seitlich, und das Licht wird an der Verdrahtung oder an den Pixelgrenzen abgeschattet oder gelangt in das Nachbarpixel; dadurch entstehen Shading, bei dem der Rand dunkler wird, und Farbübersprechen, bei dem sich Licht aus dem benachbarten Farbfilter beimischt. Deshalb werden Mikrolinsen und Farbfilter entsprechend dem Winkel des Hauptstrahls an jeder Stelle der Bildfläche schrittweise zur Mitte hin versetzt angeordnet. Bei schrägem Licht überwiegt der Verlust durch den versetzten Fokuspunkt, der Rand wird also nicht heller. Die Verzeichnung wird durch die Auslegung des Objektivs oder durch Bildverarbeitung korrigiert, die Pixel bleiben äquidistant angeordnet."
+  },
+  "image-sensor-020": {
+    "question": "Eine Full-Well-Kapazität von 20 000 Elektronen wird dem gesamten Bereich (4096 Stufen) eines 12-Bit-A/D-Wandlers zugeordnet und ausgelesen. Welcher Wert kommt dem in Elektronen umgerechneten Quantisierungsrauschen (Effektivwert, 1/√12 der Stufenbreite) am nächsten?",
+    "choices": [
+      "ca. 4,9 Elektronen",
+      "ca. 1,4 Elektronen",
+      "ca. 2,4 Elektronen"
+    ],
+    "explanation": "Die Breite einer Stufe beträgt 20 000/4096 ≈ 4,9 Elektronen. Der Quantisierungsfehler lässt sich als gleichverteilt zwischen −0,5 und +0,5 Stufen betrachten; sein Effektivwert ist das 1/√12 ≈ 0,29-Fache der Stufenbreite, also 4,9 × 0,29 ≈ 1,4 Elektronen. Ca. 4,9 Elektronen ist die Stufenbreite selbst, ca. 2,4 Elektronen die halbe Breite; dabei werden der Höchstwert und der Effektivwert des Fehlers verwechselt. Beträgt das Ausleserauschen z. B. 3 Elektronen, steigt das Gesamtrauschen leicht auf √(3² + 1,4²) ≈ 3,3 Elektronen. Bei Sensoren mit kleinem Ausleserauschen unterdrückt man den Einfluss des Quantisierungsrauschens, indem man die Bitzahl erhöht oder dunkle Signale vor der Wandlung stark verstärkt."
+  }
+}
