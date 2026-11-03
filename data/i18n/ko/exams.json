@@ -1,0 +1,6 @@
+{
+  "main": {
+    "name": "광학",
+    "groups": { "basic": "빛의 기초", "sources": "광원과 전송", "devices": "수광과 광집적", "applied": "계측과 응용" }
+  }
+}
