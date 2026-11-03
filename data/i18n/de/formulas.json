@@ -1,0 +1,1691 @@
+{
+  "title": "Formelsammlung Optik (Formelzeichen, Einheiten, Gültigkeitsbereich, Rechenbeispiele)",
+  "description": "78 Formeln der Optik, vom Snelliusschen Brechungsgesetz, der Abbildungsgleichung dünner Linsen, den Fresnelschen Formeln, dem Brewster-Winkel und der Gittergleichung bis zu Gauß-Strahlen, Resonatorstabilität, V-Parameter und Dispersion von Glasfasern, spektraler Empfindlichkeit und Schrotrauschen, Phasenanpassung bei SHG, dem Planckschen Strahlungsgesetz und der Shockley-Queisser-Grenze, jeweils mit Formelzeichen und SI-Einheiten, Gültigkeitsbereich, typischen Fehlern und einem Zahlenbeispiel. Nur die ausgewählten Formeln auf A4 drucken.",
+  "h1": "Formelsammlung",
+  "lead": "Die Formeln, die in Vorlesungen, Prüfungen und im Beruf in Optik und Photonik gebraucht werden, nach Themen geordnet. Zu jeder Formel gibt es Formelzeichen mit SI-Einheiten, Gültigkeitsbedingungen und -bereich, typische Fehler und ein Zahlenbeispiel; die Dimensionen beider Seiten wurden durchweg maschinell geprüft. Links führen zu Rechnern, die dieselbe Formel verwenden.",
+  "note": "Die Beispielwerte sind die Voreinstellungen der Rechner dieser Website oder stimmen mit Lehrbuch- und Herstellerangaben überein (die Quellen stehen bei jeder Formel). Für die Auslegung die Werte aus den Datenblättern der Bauteile und Materialien verwenden.",
+  "groups": {
+    "geo": "Geometrische Optik und Abbildung",
+    "wave": "Interferenz, Beugung und Spektroskopie",
+    "pol": "Polarisation",
+    "material": "Optische Materialien und Dünnschichten",
+    "laser": "Laser und Gauß-Strahlen",
+    "fiber": "Glasfasern und optische Nachrichtentechnik",
+    "detect": "Photodetektion und Bildsensoren",
+    "nonlinear": "Nichtlineare Optik und ultrakurze Pulse",
+    "photo": "Radiometrie, Photometrie und Farbmetrik",
+    "quantum": "Photonen, Quantenoptik und Solarzellen"
+  },
+  "guide": [
+    {
+      "h": "Bedienung",
+      "p": [
+        "Geben Sie einen Formelnamen, ein Formelzeichen oder einen Begriff („Brewster“, „z_R“, „Gruppenindex“) in das Suchfeld ein, damit nur die passenden Formeln stehen bleiben, oder grenzen Sie mit den Themenschaltflächen ein. Jede Überschrift hat einen Link (#f-…), der direkt zu dieser Formel springt.",
+        "Setzen Sie bei einer Formel das Häkchen „Auswählen“, um sie in Ihr eigenes Formelblatt aufzunehmen. „Nur Ausgewählte drucken“ druckt die Formeln und Symboltabellen der ausgewählten Einträge zweispaltig auf A4 (10 bis 15 Formeln passen auf ein bis zwei Seiten). Mit „Auch Bedingungen und Beispiele drucken“ werden auch diese mitgedruckt.",
+        "„Link zur Auswahl kopieren“ liefert eine URL (?f=…), die dieselbe Auswahl öffnet. Die Auswahl wird außerdem in diesem Browser gespeichert (localStorage) und nie an einen Server gesendet. Blockiert Ihr Browser die Speicherung, stellt die URL die Auswahl trotzdem wieder her."
+      ]
+    },
+    {
+      "h": "So werden die Dimensionen geprüft",
+      "p": [
+        "Für jede Formel (insgesamt 78) rechnet ein Programm die SI-Einheiten der Symboltabelle in Basiseinheiten (kg, m, s, K, mol, A, cd) um und prüft, dass beide Seiten dieselbe Dimension haben, dass addierte Terme übereinstimmen und dass die Argumente von exp, ln, log und Winkelfunktionen dimensionslos sind. Die [ ] hinter jeder Formel geben die Dimension beider Seiten dieser Zeile an.",
+        "Radiant (rad) und Steradiant (sr) zählen als Dimension 1. Auch dB und dBm haben die Dimension 1, werden in den Symboltabellen aber als Einheiten angegeben (dB ist ein Verhältnis, dBm ein Pegel bezogen auf 1 mW, und für ihre Addition gelten unterschiedliche Regeln). Das Lumen ist cd·sr, daher erscheint in den Dimensionen photometrischer Formeln cd."
+      ]
+    }
+  ],
+  "units_h": "Umrechnung von Einheiten",
+  "units_lead": "Umrechnungen für in der Optik übliche Einheiten, um Werte vor dem Einsetzen in eine Formel in SI-Einheiten zu bringen (nach NIST SP 811 und der SI-Broschüre, 9. Aufl.).",
+  "units": [
+    {
+      "a": "λ [nm] → ν [THz]",
+      "b": "ν = 299 792,458/λ (1550 nm = 193,414 THz)",
+      "q": "Wellenlänge und Frequenz (Vakuum)"
+    },
+    {
+      "a": "λ [nm] → E [eV]",
+      "b": "E = 1239,842/λ (1550 nm = 0,7999 eV)",
+      "q": "Photonenenergie"
+    },
+    {
+      "a": "λ [nm] → σ̃ [cm⁻¹]",
+      "b": "σ̃ = 10⁷/λ (1550 nm = 6451,6 cm⁻¹)",
+      "q": "Wellenzahl (Spektroskopie)"
+    },
+    {
+      "a": "1 eV",
+      "b": "1,602 176 634 × 10⁻¹⁹ J = 241,799 THz = 8065,54 cm⁻¹",
+      "q": "Energie"
+    },
+    {
+      "a": "Δλ → Δν",
+      "b": "Δν = cΔλ/λ² (0,8 nm ≈ 100 GHz bei 1550 nm)",
+      "q": "spektrale Breite, Kanalabstand"
+    },
+    {
+      "a": "1 Å",
+      "b": "0,1 nm = 10⁻¹⁰ m",
+      "q": "Länge (Wellenlänge, Schichtdicke)"
+    },
+    {
+      "a": "G [dB]",
+      "b": "10 log₁₀(P₂/P₁) (+3,01 dB = ×2; +10 dB = ×10; 20 log₁₀ für Amplituden)",
+      "q": "Leistungsverhältnis"
+    },
+    {
+      "a": "P [dBm]",
+      "b": "10 log₁₀(P/1 mW) (0 dBm = 1 mW; 30 dBm = 1 W; −30 dBm = 1 µW)",
+      "q": "Leistung"
+    },
+    {
+      "a": "1 dB/km",
+      "b": "0,2303 km⁻¹ = 2,303 × 10⁻⁴ m⁻¹ (α[dB/km] = 4,343 α[km⁻¹])",
+      "q": "Dämpfung, Absorption (Leistung)"
+    },
+    {
+      "a": "1 ps/(nm·km)",
+      "b": "10⁻⁶ s/m²",
+      "q": "Dispersionsparameter D"
+    },
+    {
+      "a": "1 ps²/km",
+      "b": "10⁻²⁷ s²/m",
+      "q": "Gruppengeschwindigkeitsdispersion β₂"
+    },
+    {
+      "a": "1 W/cm²",
+      "b": "10⁴ W/m² (1 GW/cm² = 10¹³ W/m²)",
+      "q": "Intensität"
+    },
+    {
+      "a": "1 cm²/W",
+      "b": "10⁻⁴ m²/W",
+      "q": "nichtlinearer Brechungsindex n₂"
+    },
+    {
+      "a": "1 lm (555 nm)",
+      "b": "1/683 W = 1,464 mW (monochromatisch bei 540 THz)",
+      "q": "Lichtstrom und Strahlungsfluss"
+    },
+    {
+      "a": "1 lx",
+      "b": "1 lm/m² (1 fc = 10,764 lx)",
+      "q": "Beleuchtungsstärke"
+    },
+    {
+      "a": "1 nt",
+      "b": "1 cd/m²",
+      "q": "Leuchtdichte"
+    },
+    {
+      "a": "1 D (Dioptrie)",
+      "b": "1 m⁻¹ (f = 50 mm entspricht 20 D)",
+      "q": "Brechkraft einer Linse"
+    },
+    {
+      "a": "1″ (Bogensekunde)",
+      "b": "4,848 µrad (1 mrad = 206,3″)",
+      "q": "Winkel"
+    },
+    {
+      "a": "1 mA/cm²",
+      "b": "10 A/m²",
+      "q": "Stromdichte (Solarzellen)"
+    },
+    {
+      "a": "T [K]",
+      "b": "t [°C] + 273,15",
+      "q": "Temperatur (in Strahlungsgesetzen in K)"
+    }
+  ],
+  "const_h": "Physikalische Konstanten",
+  "const_lead": "Empfohlene Werte nach CODATA 2022 (Mohr u. a., Rev. Mod. Phys. 97, 025002 (2025); physics.nist.gov/cuu). „Exakt“ kennzeichnet die im SI von 2019 festgelegten Konstanten und die daraus abgeleiteten. Die Ziffern in Klammern sind die Standardunsicherheit in den letzten Stellen. Die Beispiele verwenden diese Werte.",
+  "constants": [
+    "Lichtgeschwindigkeit im Vakuum",
+    "Planck-Konstante",
+    "reduzierte Planck-Konstante h/2π",
+    "Elementarladung",
+    "Boltzmann-Konstante",
+    "Boltzmann-Konstante (eV)",
+    "Planck-Konstante × Lichtgeschwindigkeit",
+    "Stefan-Boltzmann-Konstante",
+    "Wiensche Verschiebungskonstante (Wellenlänge)",
+    "Wiensche Verschiebungskonstante (Frequenz)",
+    "erste Strahlungskonstante 2πhc²",
+    "zweite Strahlungskonstante hc/k_B",
+    "photometrisches Strahlungsäquivalent (540 THz)",
+    "elektrische Feldkonstante",
+    "magnetische Feldkonstante",
+    "Wellenwiderstand des Vakuums μ₀c",
+    "Elektronenmasse"
+  ],
+  "faq": [
+    [
+      "Soll ich den Gruppenindex oder den Phasenindex verwenden?",
+      "Größen, die durch die Phase bestimmt sind, verwenden den Phasenindex n: Lage der Interferenzstreifen, Dicke einer λ/4-Schicht, Resonanzwellenlängen von Ringen (mλ = n_eff L) und Phasenanpassung (Δk). Größen, die von der Energie oder der Einhüllenden getragen werden, verwenden den Gruppenindex n_g = n − λ dn/dλ: Pulsverzögerung, FSR eines Resonators und Abstand der Longitudinalmoden sowie die Lage der Einhüllenden bei OCT oder Weißlichtinterferometrie. In Quarzglasfasern unterscheiden sich beide um etwa 1 %, in Siliziumwellenleitern dagegen stark (n_eff ≈ 2,4 und n_g ≈ 4,2)."
+    ],
+    [
+      "Wann verwende ich paraxiale und wann exakte Formeln?",
+      "Die Abbildungsgleichung dünner Linsen, ABCD-Matrizen, die Lagrange-Invariante und die Formeln für Gauß-Strahlen sind paraxial (sinθ ≈ θ). Bei Strahlneigungen von 0,1 rad (etwa 6°) liegt der Fehler unter 0,2 %, aber Objektive mit hoher NA und Weitwinkelobjektive erfordern eine Strahlverfolgung mit dem Snelliusschen Brechungsgesetz oder eine Aberrationsrechnung. NA = n sinθ ist exakt; NA ≈ 1/(2N) ist die Beziehung für eine Linse, die die Sinusbedingung mit dem Gegenstand im Unendlichen erfüllt."
+    ],
+    [
+      "Was ist der Unterschied zwischen Amplituden- und Intensitätsreflexion?",
+      "Die r und t der Fresnelschen Formeln sind Verhältnisse von Feldamplituden und tragen ein Vorzeichen (Phase). Das Leistungsverhältnis ist R = |r|², der Transmissionsgrad aber T = (n₂cosθ_t)/(n₁cosθ_i)·|t|², nicht |t|² (der Brechungsindex ändert die Leistung der Welle und der Winkel den Strahlquerschnitt). Interferenzrechnungen (dünne Schichten, Fabry-Pérot) addieren zuerst die Amplituden und quadrieren dann. In dB wird für Leistungen 10 log₁₀ und für Amplituden 20 log₁₀ verwendet."
+    ],
+    [
+      "Was ist der Unterschied zwischen radiometrischen (W) und photometrischen (lm) Größen?",
+      "Radiometrische Größen sind physikalische Energieflüsse (W, W/m², W/(m²·sr)); photometrische Größen sind mit der Empfindlichkeit des Auges V(λ) gewichtet (lm, lx, cd/m²). Ein und dieselbe Strahlungsleistung von 1 W entspricht bei 555 nm 683 lm, bei 650 nm etwa 73 lm und im Infraroten 0 lm. Eine Rangfolge von LEDs nach W oder nach lm/W kann unterschiedlich ausfallen."
+    ],
+    [
+      "Bei welchen Formeln unterscheiden sich die Vorzeichenkonventionen zwischen Lehrbüchern?",
+      "Vor allem bei der Gegenstandsweite der dünnen Linse (diese Seite und der Rechner zählen einen reellen Gegenstand positiv, 1/a + 1/b = 1/f), der Richtung von Krümmungsradien, dem Vorzeichen von r_p in den Fresnelschen Formeln, der Richtung der Beugungswinkel am Gitter, dem Drehsinn zirkularer Polarisation und dem Vorzeichen des Imaginärteils des q-Parameters. Messbare Größen wie Reflexionsgrad oder Brennweite hängen nicht von der Konvention ab; gleichen Sie daher die Konventionen an, bevor Sie Zwischenschritte mit anderen Quellen vergleichen."
+    ],
+    [
+      "Was bedeuten die [ ] rechts neben jeder Formel?",
+      "Die Dimension beider Seiten dieser Zeile in SI-Basiseinheiten (kg, m, s, K, mol, A, cd). Die Intensität ist zum Beispiel kg·s⁻³ (= W/m²); bei dimensionslosen Größen steht 1. Damit lässt sich die Einheit des Ergebnisses prüfen. Bei jeder Formel wurde von einem Programm geprüft, dass beide Seiten dieselbe Dimension haben."
+    ],
+    [
+      "Wie viele Seiten ergibt der Druck der ausgewählten Formeln?",
+      "Nur mit Formeln und Symboltabellen passen 10 bis 15 Formeln zweispaltig auf etwa ein bis zwei A4-Seiten. Mit Bedingungen und Beispielen wird es länger. Kopfzeile, Werbung und Suchfeld werden nicht gedruckt, und die Seite bleibt lesbar, wenn in den Druckeinstellungen die „Hintergrundgrafiken“ ausgeschaltet sind."
+    ],
+    [
+      "Können die Beispielwerte leicht von den Rechnern abweichen?",
+      "Beispiele mit den Voreinstellungen der Rechner (dünne Linse, Antireflexschicht, Glasfaser, Gauß-Strahl, Umrechnung der Wellenlänge) ergeben dieselben Werte, die die Rechner anzeigen. Weicht die Zahl der Stellen ab, liegt das nur an der Rundung. Die Rechner verwenden dieselben Formeln, Formelzeichen und Vorzeichenkonventionen wie diese Seite."
+    ]
+  ],
+  "sources_h": "Wichtigste Quellen",
+  "refs": {
+    "hecht": "Hecht 5. Aufl.",
+    "saleh": "Saleh & Teich 3. Aufl.",
+    "bornwolf": "Born & Wolf 7. Aufl.",
+    "smith": "Smith 4. Aufl.",
+    "yariv": "Yariv & Yeh 6. Aufl.",
+    "palmer": "Palmer 8. Aufl.",
+    "schott": "SCHOTT-Datenblätter",
+    "malitson": "Malitson 1965",
+    "macleod": "Macleod 5. Aufl.",
+    "siegman": "Siegman",
+    "kogelnik": "Kogelnik & Li 1966",
+    "iso11146": "ISO 11146-1",
+    "coldren": "Coldren u. a. 2. Aufl.",
+    "koechner": "Koechner 6. Aufl.",
+    "agrawal-fo": "Agrawal, Fiber-Optic Comm. 5. Aufl.",
+    "agrawal-nfo": "Agrawal, Nonlinear Fiber Optics 6. Aufl.",
+    "marcuse": "Marcuse 1977",
+    "itu-g652": "ITU-T G.652",
+    "bogaerts": "Bogaerts u. a. 2012",
+    "sze": "Sze & Ng 3. Aufl.",
+    "mcintyre": "McIntyre 1966",
+    "rogalski": "Rogalski 3. Aufl.",
+    "emva1288": "EMVA 1288 4.0",
+    "boyd": "Boyd 4. Aufl.",
+    "jundt": "Jundt 1997",
+    "diels": "Diels & Rudolph 2. Aufl.",
+    "weiner": "Weiner",
+    "udem": "Udem u. a. 2002",
+    "mccluney": "McCluney 2. Aufl.",
+    "cie015": "CIE 015:2018",
+    "bipm-si": "SI-Broschüre 9. Aufl.",
+    "codata": "CODATA 2022",
+    "loudon": "Loudon 3. Aufl.",
+    "fox": "Fox",
+    "schubert": "Schubert 2. Aufl.",
+    "green": "Green",
+    "sq1961": "Shockley & Queisser 1961"
+  },
+  "formulas": {
+    "snell": {
+      "name": "Snelliussches Brechungsgesetz",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Brechungsindizes des Einfalls- und des Brechungsmediums",
+        "Einfallswinkel (gegen die Flächennormale gemessen)",
+        "Brechungswinkel (gegen die Normale gemessen)"
+      ],
+      "when": "Ebene Grenzfläche (bei gekrümmten Flächen die Tangentialebene im Einfallspunkt) zwischen zwei homogenen, isotropen Medien, groß gegenüber der Wellenlänge. Für den außerordentlichen Strahl in einem doppelbrechenden Kristall ist eine gesonderte Behandlung nötig. Für n₁ sinθ₁/n₂ > 1 gibt es keine Lösung, und das Licht wird totalreflektiert.",
+      "miss": "Die Winkel gegen die Oberfläche statt gegen die Normale messen. Grad und Bogenmaß am Taschenrechner verwechseln. Licht, das in das optisch dichtere Medium eintritt, wird zur Normalen hin gebrochen, nicht von ihr weg.",
+      "ex": "Von Luft (n = 1) in Glas mit n = 1,5 unter θ₁ = 45°: sinθ₂ = sin45°/1,5 = 0,4714, also θ₂ = 28,13°. In Wasser (n = 1,33): 32,12°.",
+      "kw": "Snellius Brechungsgesetz Brechung Brechungswinkel Einfallswinkel Brechungsindex Brechzahl"
+    },
+    "critical-angle": {
+      "name": "Grenzwinkel der Totalreflexion",
+      "l": [
+        "(n₁ > n₂)"
+      ],
+      "m": [
+        "Grenzwinkel (gegen die Normale gemessen)",
+        "Brechungsindex der Seite, von der das Licht kommt (höherer Brechungsindex)",
+        "Brechungsindex der Außenseite (niedrigerer Brechungsindex)"
+      ],
+      "when": "Nur für Licht, das vom Medium mit höherem in das Medium mit niedrigerem Brechungsindex läuft. Für θ₁ > θ_c wird das Licht totalreflektiert, und eine evaneszente Welle dringt in das äußere Medium ein (Eindringtiefe in der Größenordnung einer Wellenlänge). An einer verlustfreien Grenzfläche ist der Reflexionsgrad 1.",
+      "miss": "n₁ und n₂ vertauschen, sodass sin > 1 wird. Einen Grenzwinkel auch für Licht erwarten, das in das optisch dichtere Medium eintritt. Vergessen, dass s und p bei der Totalreflexion unterschiedliche Phasensprünge erfahren (Fresnelsche Formeln).",
+      "ex": "Glas (n = 1,5) gegen Luft: θ_c = arcsin(1/1,5) = 41,81°. Wasser (1,333) gegen Luft: 48,61°. An der Grenze Kern/Mantel einer Faser mit 1,45 und 1,4447: 85,10°.",
+      "kw": "Grenzwinkel Totalreflexion evaneszent interne Reflexion"
+    },
+    "thin-lens": {
+      "name": "Abbildungsgleichung der dünnen Linse und Abbildungsmaßstab",
+      "l": [
+        "Abbildung",
+        "Abbildungsmaßstab",
+        "Brechkraft"
+      ],
+      "m": [
+        "Gegenstandsweite (positiv für einen Gegenstand vor der Linse)",
+        "Bildweite (positiv für ein Bild hinter der Linse)",
+        "Brennweite (positiv für Sammellinsen, negativ für Zerstreuungslinsen)",
+        "Abbildungsmaßstab (negativ: umgekehrtes Bild)",
+        "Brechkraft (m⁻¹ = Dioptrie D)"
+      ],
+      "when": "Dünne Linse in Luft, paraxiale Strahlen. Für dicke Linsen gilt dieselbe Form, wenn die Abstände von den Hauptebenen aus gemessen werden. Die Vorzeichen folgen derselben Konvention wie der Rechner dieser Website: „reeller Gegenstand und reelles Bild sind positiv“. Manche Lehrbücher zählen die Gegenstandsweite negativ (1/b − 1/a = 1/f).",
+      "miss": "Vorzeichenkonventionen verschiedener Lehrbücher mischen (ein positives a in 1/b − 1/a = 1/f einsetzen). b < 0 für einen Rechenfehler halten (es ist ein virtuelles Bild auf der Gegenstandsseite). Die Brechkraft in mm⁻¹ angeben und D nennen (D ist m⁻¹).",
+      "ex": "f = 50 mm, a = 150 mm: aus 1/b = 1/50 − 1/150 folgt b = 75 mm und m = −0,5 (umgekehrtes reelles Bild in halber Größe). Mit a = 30 mm (innerhalb der Brennweite) ist b = −75 mm und m = 2,5 (aufrechtes virtuelles Bild, Lupe). P = 1/0,05 m = 20 D.",
+      "kw": "dünne Linse Linsengleichung Abbildungsgleichung Linsenformel Abbildungsmaßstab Vergrößerung Bildweite Gegenstandsweite Dioptrie"
+    },
+    "lensmaker": {
+      "name": "Linsenschleiferformel (Linsenmacherformel)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Brennweite",
+        "Brechungsindex des Linsenmaterials (in Luft)",
+        "Krümmungsradien der ersten und der zweiten Fläche (positiv, wenn der Krümmungsmittelpunkt hinter der Fläche liegt)"
+      ],
+      "when": "Dünne Linse in Luft (Dicke ≪ Krümmungsradien), paraxial. Mit der Dicke t: 1/f = (n − 1)[1/R₁ − 1/R₂ + (n − 1)t/(nR₁R₂)]. In einem Medium mit dem Brechungsindex n_m wird (n − 1) durch (n/n_m − 1) ersetzt.",
+      "miss": "Das Vorzeichen von R₂ bei einer Bikonvexlinse (die hintere Fläche hat R₂ < 0). Krümmungsradius und Durchmesser verwechseln. Den Brechungsindex des umgebenden Mediums vergessen (eine Linse in Wasser hat eine größere Brennweite).",
+      "ex": "Bikonvexlinse aus N-BK7 (n_d = 1,5168), R₁ = 100 mm, R₂ = −100 mm: aus 1/f = 0,5168 × (1/100 + 1/100) folgt f = 96,75 mm.",
+      "kw": "Linsenschleiferformel Linsenmacherformel Linsenmachergleichung Krümmungsradius Brennweite bikonvex plankonvex"
+    },
+    "two-lens": {
+      "name": "Zwei dünne Linsen: Gesamtbrennweite und Schnittweite",
+      "l": [
+        "Kombination",
+        "bildseitige Schnittweite"
+      ],
+      "m": [
+        "Gesamtbrennweite (von der hinteren Hauptebene aus gemessen)",
+        "Brennweiten der ersten und der zweiten Linse",
+        "Abstand der beiden Linsen",
+        "Abstand von der zweiten Linse zum hinteren Brennpunkt"
+      ],
+      "when": "Zwei dünne Linsen in Luft, paraxial. Mit Brechkräften geschrieben: P = P₁ + P₂ − dP₁P₂. Für d = f₁ + f₂ ist P = 0: ein afokales System (Fernrohr, Strahlaufweiter).",
+      "miss": "Die Gesamtbrennweite von Linse 2 aus messen (von Linse 2 bis zum Brennpunkt gemessen ist es die bildseitige Schnittweite BFD). Die einfache Summe für anliegende Linsen (d = 0) auf Linsen mit Abstand anwenden.",
+      "ex": "f₁ = 50 mm, f₂ = 100 mm, d = 30 mm: 1/f = 0,02 + 0,01 − 0,006 = 0,024 mm⁻¹, also f = 41,67 mm (24 D) und BFD = 41,67 × (1 − 30/50) = 16,67 mm.",
+      "kw": "Gesamtbrennweite zwei Linsen Linsensystem Schnittweite Hauptebene Brechkraft afokal"
+    },
+    "abcd": {
+      "name": "Strahltransfermatrix (ABCD-Matrix)",
+      "l": [
+        "Höhe",
+        "Winkel",
+        "Determinante"
+      ],
+      "m": [
+        "Strahlhöhe am Eingang und am Ausgang",
+        "Strahlneigung am Eingang und am Ausgang (paraxial)",
+        "Diagonalelemente der Matrix",
+        "Matrixelement (Dimension einer Länge)",
+        "Matrixelement (−C ist die Brechkraft des Systems)",
+        "Brechungsindizes des Eingangs- und des Ausgangsmediums"
+      ],
+      "when": "Paraxiale Strahlen (sinθ ≈ θ). Eine freie Strecke der Länge d ist [[1, d], [0, 1]], eine dünne Linse der Brennweite f ist [[1, 0], [−1/f, 1]]. In der Reihenfolge, in der das Licht auf die Elemente trifft, von rechts nach links multiplizieren. Bei gleichem Medium am Eingang und am Ausgang ist AD − BC = 1. Die Brennweite ist f = −1/C, der Abstand von der letzten Fläche zum hinteren Brennpunkt −A/C.",
+      "miss": "In der falschen Reihenfolge multiplizieren (das erste Element steht ganz rechts). Winkel in Grad einsetzen. Bei unterschiedlichen Medien mit der Konvention mischen, die n θ statt θ verwendet (dann ist die Determinante 1).",
+      "ex": "Für f₁ = 50 mm, d = 30 mm, f₂ = 100 mm: M = L₂·T(30)·L₁ = [[0,4; 30], [−0,024; 0,7]], also f = −1/C = 41,67 mm und −A/C = 16,67 mm (wie bei der Formel für zwei Linsen), mit AD − BC = 1.",
+      "kw": "ABCD Strahlmatrix Transfermatrix Strahlverfolgung Raytracing paraxial"
+    },
+    "lagrange": {
+      "name": "Lagrange-Invariante",
+      "l": [
+        "Invariante",
+        "zwischen konjugierten Ebenen"
+      ],
+      "m": [
+        "Lagrange-Invariante",
+        "Brechungsindizes auf der Gegenstands- und der Bildseite",
+        "Neigung des Randstrahls (vom Achsenpunkt zum Rand der Apertur)",
+        "Gegenstands- und Bildhöhe"
+      ],
+      "when": "Paraxial, zwischen Gegenstands- und Bildebene (konjugierten Ebenen). Allgemein ist H = n(ū y − u ȳ) (Randstrahl y, u und Hauptstrahl ȳ, ū) an jeder Fläche des Systems gleich. Ihr Quadrat ist proportional zur Lichtmenge, die das System durchlassen kann (Lichtleitwert, Etendue).",
+      "miss": "Den Abbildungsmaßstab m = y′/y für die Winkelvergrößerung halten (m = n u/(n′ u′)). Vergessen, dass ein kleineres Bild größere Winkel (höhere NA) bedeutet, und über die NA der Linse hinaus auslegen.",
+      "ex": "Gegenstandshöhe y = 10 mm und Randstrahlneigung u = 0,1 auf der Gegenstandsseite (in Luft): H = 1,0 mm. Eine Abbildung mit m = −0,5 ergibt y′ = −5 mm, also u′ = H/y′ = −0,2: Die bildseitige Neigung (NA) verdoppelt sich.",
+      "kw": "Lagrange-Invariante Helmholtz Etendue Lichtleitwert konjugiert paraxial"
+    },
+    "na-fnumber": {
+      "name": "Numerische Apertur und Blendenzahl",
+      "l": [
+        "numerische Apertur",
+        "Blendenzahl",
+        "Gegenstand im Unendlichen, in Luft"
+      ],
+      "m": [
+        "numerische Apertur",
+        "Brechungsindex auf der Gegenstandsseite (oder Bildseite)",
+        "halber Öffnungswinkel des Randstrahls",
+        "Blendenzahl (auch F/#)",
+        "Brennweite",
+        "Durchmesser der Eintrittspupille"
+      ],
+      "when": "Die Formel für die NA ist exakt. NA ≈ 1/(2N) gilt für eine Linse, die die Sinusbedingung erfüllt (aberrationskorrigiert), mit dem Gegenstand im Unendlichen. Für nahe Gegenstände wird die effektive Blendenzahl N(1 + |m|) verwendet. Immersionsobjektive haben eine NA über 1.",
+      "miss": "Den vollen Öffnungswinkel statt des halben Winkels einsetzen. NA ≈ 1/(2N) auf Abbildungen mit endlichem Abstand anwenden. Den Zusammenhang zwischen Blendenzahl und Öffnung umkehren (eine kleinere Blendenzahl ergibt ein helleres Bild).",
+      "ex": "f = 50 mm, D = 25 mm: N = 2 und NA ≈ 1/(2N) = 0,25 (bei einer Linse, die die Sinusbedingung erfüllt, ist die Randstrahlhöhe f sinθ, also gilt sinθ = 12,5/50 = 0,25 unmittelbar; der Wert 0,2425 aus arctan(12,5/50) mit ebener Hauptebene gilt für eine Linse, die die Sinusbedingung nicht erfüllt). Ölimmersion (n = 1,515) mit θ = 67,5°: NA = 1,40.",
+      "kw": "numerische Apertur NA Blendenzahl F/# Öffnungsverhältnis Helligkeit Immersion"
+    },
+    "young": {
+      "name": "Youngscher Doppelspaltversuch",
+      "l": [
+        "helle Streifen",
+        "Streifenabstand"
+      ],
+      "m": [
+        "Abstand der beiden Spalte",
+        "Richtung eines hellen Streifens",
+        "Ordnung (ganzzahlig)",
+        "Wellenlänge",
+        "Streifenabstand auf dem Schirm",
+        "Abstand von den Spalten zum Schirm"
+      ],
+      "when": "Die beiden Quellen schwingen in Phase (räumlich kohärent). Die Formel für Δy setzt L ≫ d und kleine θ voraus (sinθ ≈ tanθ). Die Einhüllende der Streifen wird durch die Beugung am Einzelspalt bestimmt.",
+      "miss": "Spaltbreite und Spaltabstand verwechseln. Vergessen, dass die Wellenlänge in einem Medium λ₀/n ist. Die dunklen Streifen als d sinθ = mλ schreiben (dunkle Streifen liegen bei (m + 1/2)λ).",
+      "ex": "λ = 632,8 nm; d = 0,25 mm; L = 1,0 m: Δy = 632,8 × 10⁻⁹ × 1,0/(0,25 × 10⁻³) = 2,531 mm.",
+      "kw": "Young Doppelspalt Interferenz Interferenzstreifen Streifenabstand"
+    },
+    "michelson": {
+      "name": "Michelson-Interferometer",
+      "l": [
+        "helle Ringe",
+        "Streifen zählen"
+      ],
+      "m": [
+        "Differenz der Armlängen (Spiegelpositionen)",
+        "Winkel des Lichts (Winkel im Gesichtsfeld)",
+        "Ordnung",
+        "Wellenlänge (in Luft)",
+        "Verschiebeweg des Spiegels",
+        "Anzahl der durch die Mitte gelaufenen Streifen"
+      ],
+      "when": "Beide Arme haben gleich viele Reflexionen und denselben Phasensprung am Strahlteiler (mit Kompensationsplatte). Je nach Strahlteiler können die Bedingungen für hell und dunkel vertauscht sein. Die Streifen verschwinden, sobald der Gangunterschied die Kohärenzlänge übersteigt.",
+      "miss": "Den Hin- und Rückweg vergessen und Δd = Nλ schreiben (eine Spiegelverschiebung um λ/2 verschiebt das Muster um einen Streifen). Bei Präzisionslängenmessungen den Unterschied zwischen Vakuum- und Luftwellenlänge (n ≈ 1,00027) vernachlässigen.",
+      "ex": "Mit Licht von 632,8 nm laufen 1000 Streifen durch: Δd = 1000 × 632,8/2 nm = 316,4 µm.",
+      "kw": "Michelson Interferometer Gangunterschied optische Weglänge Streifen Verschiebung Längenmessung"
+    },
+    "coherence-length": {
+      "name": "Kohärenzlänge",
+      "l": [
+        "",
+        "aus der Wellenlängenbreite"
+      ],
+      "m": [
+        "Kohärenzlänge (im Vakuum)",
+        "Kohärenzzeit",
+        "Lichtgeschwindigkeit",
+        "spektrale Breite (Frequenz)",
+        "Mittenwellenlänge",
+        "spektrale Breite (Wellenlänge)"
+      ],
+      "when": "Eine Formel für die Größenordnung. Der Vorfaktor hängt von der Form des Spektrums und der Definition der Breite ab (für ein gaußförmiges Spektrum mit der Halbwertsbreite Δλ und l_c als Halbwertsbreite von |g(τ)| im Gangunterschied gilt l_c = (4 ln2/π)λ²/Δλ ≈ 0,88λ²/Δλ). In einem Medium durch den Gruppenindex teilen. Die Streifen sind deutlich, wenn der Gangunterschied klein dagegen ist.",
+      "miss": "Werte aus verschiedenen Lehrbüchern vergleichen, ohne den Vorfaktor vor λ²/Δλ zu beachten. Die Tiefenauflösung der OCT ist wegen des Hin- und Rückwegs l_c/2, für ein Gaußspektrum also (2 ln2/π)λ²/Δλ ≈ 0,44λ²/Δλ (manche Lehrbücher nennen diesen Ausdruck mit 0,44 die Kohärenzlänge, dann nicht noch einmal halbieren).",
+      "ex": "LED bei 850 nm (Δλ = 40 nm): l_c ≈ 850²/40 nm = 18,1 µm (15,9 µm mit der Definition über die Halbwertsbreite eines Gaußspektrums; OCT-Auflösung 7,97 µm). He-Ne-Laser mit Δν = 1,5 GHz: c/Δν = 0,200 m. Einfrequenzlaser mit 1 MHz Linienbreite: 300 m.",
+      "kw": "Kohärenzlänge Kohärenzzeit zeitliche Kohärenz Linienbreite OCT"
+    },
+    "fabry-perot": {
+      "name": "Transmission des Fabry-Pérot-Interferometers (Airy-Funktion)",
+      "l": [
+        "Transmissionsgrad",
+        "Finesse-Koeffizient",
+        "Umlaufphase"
+      ],
+      "m": [
+        "Transmissionsgrad (Intensität)",
+        "Finesse-Koeffizient (coefficient of finesse)",
+        "Reflexionsgrad der Spiegel (Intensität, beide gleich)",
+        "Umlaufphase",
+        "Brechungsindex des Mediums zwischen den Spiegeln",
+        "Spiegelabstand",
+        "Winkel des Lichts zwischen den Spiegeln",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Zwei gleiche verlustfreie Spiegel und eine ebene Welle. Mit der Absorption A sinkt der Spitzen-Transmissionsgrad auf (1 − A/(1 − R))². Die Reflexionsphase der Spiegel gehört in δ (hier als konstant angenommen und weggelassen).",
+      "miss": "Den Koeffizienten F mit der Finesse 𝓕 = π√F/2 verwechseln. Für R den Amplitudenreflexionsfaktor einsetzen. Die Transmissionsmaxima liegen bei δ = 2πm (L = mλ/(2n), eine ganze Zahl von Wellenlängen pro Umlauf).",
+      "ex": "R = 0,9: F = 4 × 0,9/0,1² = 360. Bei δ/2 = π/2 (minimale Transmission) ist T = 1/361 = 0,00277.",
+      "kw": "Fabry-Pérot Fabry-Perot Etalon Airy-Funktion Transmissionsgrad Resonanz"
+    },
+    "fsr-finesse": {
+      "name": "Freier Spektralbereich (FSR) und Finesse",
+      "l": [
+        "FSR",
+        "Finesse",
+        "Transmissionslinienbreite (Halbwertsbreite)"
+      ],
+      "m": [
+        "Abstand benachbarter Transmissionsmaxima (Frequenz)",
+        "Lichtgeschwindigkeit",
+        "Gruppenindex zwischen den Spiegeln (1 für Luft oder Vakuum)",
+        "Spiegelabstand",
+        "Finesse (nur durch den Reflexionsgrad bestimmt)",
+        "Reflexionsgrad der Spiegel (Intensität)",
+        "Halbwertsbreite eines Transmissionsmaximums"
+      ],
+      "when": "Die Formel für 𝓕 ist eine Näherung für R nahe 1 (R ≳ 0,5); Ebenheit und Parallelität der Spiegel verringern die tatsächliche Finesse. In der Wellenlänge gilt Δλ_FSR = λ²/(2n_g L). Beim Einsatz als Spektrometer muss das gemessene Licht schmaler als der FSR sein, sonst überlappen die Ordnungen.",
+      "miss": "Den FSR als c/(nL) schreiben (der Umlauf ist 2L). In einem dispersiven Medium den Phasenindex verwenden (richtig ist der Gruppenindex). Finesse (dimensionslos) und Güte Q (ν/δν) verwechseln.",
+      "ex": "Luftspalt L = 5 mm: Δν_FSR = c/(2 × 0,005 m) = 29,98 GHz. Mit R = 0,95 ist 𝓕 = π√0,95/0,05 = 61,2 und δν = 29,98/61,2 = 0,490 GHz.",
+      "kw": "FSR freier Spektralbereich Finesse Etalon Resonator Linienbreite"
+    },
+    "airy-rayleigh": {
+      "name": "Airy-Scheibchen und Rayleigh-Kriterium",
+      "l": [
+        "Winkel des ersten dunklen Rings",
+        "Mikroskopauflösung (Rayleigh)"
+      ],
+      "m": [
+        "Winkelradius des ersten dunklen Rings des Airy-Scheibchens (= kleinster auflösbarer Winkel)",
+        "Wellenlänge",
+        "Durchmesser der kreisförmigen Apertur",
+        "kleinster auflösbarer Abstand zweier Punkte (Gegenstandsebene)",
+        "numerische Apertur des Objektivs"
+      ],
+      "when": "Aberrationsfreie kreisförmige Apertur und zwei inkohärente Punkte (selbstleuchtend oder fluoreszierend). Nach Konvention gelten zwei Punkte als gerade aufgelöst, wenn die Mitte des einen Bildes auf dem ersten dunklen Ring des anderen liegt; die Senke zwischen ihnen beträgt etwa 74 % des Maximums. Der Faktor 1,22 ist die erste Nullstelle der Bessel-Funktion erster Ordnung, 3,832/π.",
+      "miss": "Durchmesser und Radius verwechseln (1,22λ/D verwendet den Durchmesser D). Die Umrechnung von Radiant in Bogensekunden vergessen. 0,61λ/NA für kohärente Beleuchtung verwenden (das Ergebnis hängt von der Beleuchtung ab).",
+      "ex": "Teleskop mit 100 mm Durchmesser bei λ = 550 nm: θ_R = 1,22 × 550 × 10⁻⁹/0,1 = 6,71 µrad = 1,38″. Objektiv mit NA 1,4 bei λ = 550 nm: δ = 0,61 × 550/1,4 = 240 nm.",
+      "kw": "Airy-Scheibchen Airy-Scheibe Rayleigh-Kriterium Auflösung Auflösungsvermögen Beugungsgrenze 1,22"
+    },
+    "abbe-limit": {
+      "name": "Abbesche Auflösungsgrenze",
+      "l": [
+        ""
+      ],
+      "m": [
+        "kleinste auflösbare Periode (Gitterkonstante)",
+        "Beleuchtungswellenlänge (Vakuum)",
+        "numerische Apertur des Objektivs (bei gleicher Beleuchtungsapertur)"
+      ],
+      "when": "Ein periodisches Objekt unter kohärenter Beleuchtung mit einer Beleuchtungsapertur gleich der Objektivapertur (oder schiefer Beleuchtung): die Grenze, bei der die 0. und die 1. Beugungsordnung beide in das Objektiv gelangen. Bei kohärenter Beleuchtung nur unter senkrechtem Einfall liegt die Grenze bei λ/NA. Die NA enthält den Brechungsindex des Mediums, daher wird die Grenze mit Immersion kleiner.",
+      "miss": "Mit dem Rayleigh-Kriterium (0,61λ/NA, zwei Punkte) mischen. d_min als Radius lesen (es ist eine Periode). Für die NA nur sinθ einsetzen und den Brechungsindex vergessen.",
+      "ex": "λ = 550 nm; NA = 1,4: d_min = 550/(2 × 1,4) = 196 nm.",
+      "kw": "Abbe Auflösung Auflösungsgrenze Beugungsgrenze numerische Apertur Mikroskop"
+    },
+    "grating": {
+      "name": "Gittergleichung und Auflösungsvermögen",
+      "l": [
+        "Beugungsrichtung",
+        "Auflösungsvermögen"
+      ],
+      "m": [
+        "Gitterkonstante (Kehrwert der Strichzahl pro mm)",
+        "Einfallswinkel (gegen die Normale)",
+        "Beugungswinkel (positiv auf derselben Seite wie das einfallende Licht)",
+        "Beugungsordnung",
+        "Wellenlänge",
+        "kleinster auflösbarer Wellenlängenunterschied",
+        "Anzahl der beleuchteten Striche"
+      ],
+      "when": "Ebenes Gitter und ebene Welle. Vorzeichenkonvention: Beugungswinkel auf derselben Seite wie der einfallende Strahl sind positiv (mit der umgekehrten Konvention lautet die Gleichung sinα − sinβ). Es gibt nur Ordnungen mit |sinβ| ≤ 1. Das Auflösungsvermögen ist der Idealwert; in einem realen Spektrometer begrenzt oft die Spaltbreite.",
+      "miss": "Die Strichzahl pro mm direkt für d einsetzen (d = 1/Strichzahl). Vorzeichenkonventionen mischen. Für N alle Striche des Gitters nehmen (nur der beleuchtete Teil zählt).",
+      "ex": "1200 Striche/mm (d = 833,3 nm), λ = 532 nm, senkrechter Einfall: sinβ = 532/833,3 = 0,6384, also β = 39,67° (1. Ordnung). Bei 50 mm beleuchteter Breite ist N = 60000 und in 1. Ordnung δλ = 532/60000 nm = 8,87 pm. Zur Trennung der Na-D-Linien (589,0 und 589,6 nm) ist mN > 982 nötig (589,3/0,6).",
+      "kw": "Beugungsgitter Gittergleichung Auflösungsvermögen Spektrometer Ordnung"
+    },
+    "fresnel-amp": {
+      "name": "Fresnelsche Formeln (Amplitudenkoeffizienten)",
+      "l": [
+        "s-Polarisation",
+        "p-Polarisation",
+        "s-Polarisation",
+        "p-Polarisation"
+      ],
+      "m": [
+        "Amplitudenreflexionsfaktoren (s: E senkrecht zur Einfallsebene, p: in der Einfallsebene)",
+        "Amplitudentransmissionsfaktoren",
+        "Brechungsindizes des Einfalls- und des Transmissionsmediums",
+        "Einfallswinkel",
+        "Brechungswinkel (aus dem Snelliusschen Brechungsgesetz)"
+      ],
+      "when": "Verlustfreie (reelles n) isotrope Medien mit der Permeabilität des Vakuums. Bei Absorption werden dieselben Formeln mit komplexem n verwendet. Das Vorzeichen von r_p ist in den Lehrbüchern unterschiedlich (diese Form folgt Hecht sowie Born & Wolf, mit r_p = −r_s bei senkrechtem Einfall).",
+      "miss": "Vorzeichenkonventionen für r_p mischen (der Reflexionsgrad bleibt derselbe). |t|² als Transmissionsgrad nehmen (es fehlt der Faktor aus Brechungsindex und Winkel). p („parallel“) als „E parallel zur Oberfläche“ lesen und mit s vertauschen (bei p liegt E in der Einfallsebene; parallel zur Oberfläche liegt das Feld bei s).",
+      "ex": "n₁ = 1; n₂ = 1,5; θ_i = 45° (θ_t = 28,13°): r_s = −0,3033; r_p = 0,0920; t_s = 0,6967; t_p = 0,7280.",
+      "kw": "Fresnelsche Formeln Fresnel-Gleichungen Reflexionsfaktor Transmissionsfaktor s-polarisiert p-polarisiert TE TM"
+    },
+    "fresnel-power": {
+      "name": "Reflexionsgrad und Transmissionsgrad (Intensität)",
+      "l": [
+        "Reflexionsgrad",
+        "Transmissionsgrad",
+        "senkrechter Einfall"
+      ],
+      "m": [
+        "Reflexionsgrad (Leistungsverhältnis)",
+        "Amplitudenreflexionsfaktor (s oder p)",
+        "Transmissionsgrad (Leistungsverhältnis, R + T = 1)",
+        "Amplitudentransmissionsfaktor",
+        "Brechungsindizes des Einfalls- und des Transmissionsmediums",
+        "Einfalls- und Brechungswinkel",
+        "Reflexionsgrad bei senkrechtem Einfall"
+      ],
+      "when": "Eine einzelne verlustfreie Grenzfläche. Für unpolarisiertes Licht (R_s + R_p)/2 verwenden. Für beide Seiten einer Platte inkohärent addieren (die Summe der Mehrfachreflexionen ergibt T_Platte = (1 − R)/(1 + R)).",
+      "miss": "Das Amplitudenverhältnis als Reflexionsgrad verwenden (quadrieren). T = |t|² schreiben (T enthält den Faktor aus Brechungsindex und Strahlquerschnitt). 4 % × 2 für die beiden Seiten einer Platte vergessen.",
+      "ex": "Glas (1,52) bei senkrechtem Einfall: R₀ = (0,52/2,52)² = 4,26 %. Silizium (3,48 bei 1,55 µm): 30,6 %. n = 1,5 unter 45°: R_s = 9,20 %; R_p = 0,85 %; T_s = 90,80 % (R_s + T_s = 1).",
+      "kw": "Reflexionsgrad Transmissionsgrad senkrechter Einfall 4 % Fresnel-Reflexion"
+    },
+    "brewster": {
+      "name": "Brewster-Winkel",
+      "l": [
+        "",
+        "Brechungswinkel beim Brewster-Winkel"
+      ],
+      "m": [
+        "Brewster-Winkel (Einfallswinkel, bei dem die p-Reflexion verschwindet)",
+        "Brechungsindizes des Einfalls- und des Transmissionsmediums",
+        "Brechungswinkel"
+      ],
+      "when": "Verlustfreie isotrope Medien, nur p-Polarisation. Bei absorbierenden Metallen wird der Reflexionsgrad nie null, hat aber ein Minimum (nahe dem Haupteinfallswinkel). Das reflektierte Licht ist rein s-polarisiert; das wird in Polarisatoren und in Brewster-Fenstern von Lasern genutzt.",
+      "miss": "n₁ und n₂ vertauschen (aus dem Glas heraus sind es 33,7°). Erwarten, dass auch die s-Reflexion verschwindet. Brewster-Winkel und Grenzwinkel der Totalreflexion verwechseln.",
+      "ex": "Von Luft in ein Medium mit n = 1,5: θ_B = arctan 1,5 = 56,31°. Aus dem Glas in Luft: arctan(1/1,5) = 33,69° (die Summe beider ist 90°).",
+      "kw": "Brewster-Winkel Polarisationswinkel p-polarisiert Brewster-Fenster"
+    },
+    "malus": {
+      "name": "Gesetz von Malus",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Intensität hinter dem Analysator",
+        "Intensität des linear polarisierten Lichts vor dem Analysator",
+        "Winkel zwischen Polarisationsrichtung und Durchlassrichtung des Analysators"
+      ],
+      "when": "Ein idealer Polarisator (lässt die Komponente entlang seiner Durchlassrichtung vollständig durch und sperrt die senkrechte) und vollständig linear polarisiertes Licht. Unpolarisiertes Licht ergibt hinter einem Polarisator I₀/2 (der Mittelwert von cos²). Reale Polarisatoren haben ein endliches Extinktionsverhältnis und einen endlichen Transmissionsgrad.",
+      "miss": "cos² auf unpolarisiertes Licht anwenden (es ist 1/2). Den Amplitudenfaktor cosθ mit dem Intensitätsfaktor cos²θ verwechseln.",
+      "ex": "θ = 60°: I/I₀ = cos²60° = 0,25. Unpolarisiertes Licht durch drei Polarisatoren bei 0°, 45° und 90°: 1/2 × cos²45° × cos²45° = 1/8 (nur 0° und 90° ergeben 0).",
+      "kw": "Malus Gesetz von Malus Polarisator Analysator cos2 Extinktion"
+    },
+    "jones": {
+      "name": "Jones-Matrizen",
+      "l": [
+        "Feldvektor",
+        "linearer Polarisator",
+        "Verzögerungsplatte (schnelle Achse entlang x)"
+      ],
+      "m": [
+        "elektrisches Feld des einfallenden und des austretenden Lichts (komplexe x- und y-Amplituden)",
+        "Jones-Matrix (2 × 2)",
+        "linearer Polarisator mit der Durchlassrichtung unter θ gegen x",
+        "Winkel der Durchlassrichtung",
+        "Verzögerungsplatte (gemeinsame Phase weggelassen)",
+        "Phasendifferenz zwischen schneller und langsamer Achse (Verzögerung)"
+      ],
+      "when": "Nur vollständig polarisiertes (kohärentes) Licht. Teilweise polarisiertes oder unpolarisiertes Licht erfordert Stokes-Vektoren und Mueller-Matrizen. Die Matrizen der Elemente in der Reihenfolge, in der das Licht auf sie trifft, von rechts nach links multiplizieren. Ein um φ gedrehtes Element wird zu R(−φ)·J·R(φ).",
+      "miss": "In der falschen Reihenfolge multiplizieren. Die Phasenkonvention (e^{i(kz − ωt)} oder e^{i(ωt − kz)}) kehrt die Bezeichnung von rechts- und linkszirkularem Licht um. Die Intensität ist |E_x|² + |E_y|² (Summe der Betragsquadrate der Komponenten).",
+      "ex": "Linear unter 45° polarisiertes Licht (1, 1)/√2 ergibt hinter einem λ/4-Plättchen mit der schnellen Achse entlang x (Γ = π/2) (1, i)/√2, also zirkular polarisiertes Licht. Linear unter 45° polarisiertes Licht ergibt hinter einem Polarisator bei 0° (1, 0)/√2 mit der Intensität 1/2 (wie nach dem Gesetz von Malus).",
+      "kw": "Jones-Matrix Jones-Vektor Polarisation Verzögerungsplatte zirkulare Polarisation"
+    },
+    "waveplate": {
+      "name": "Verzögerung einer Verzögerungsplatte",
+      "l": [
+        "",
+        "λ/4-Plättchen (nullter Ordnung)"
+      ],
+      "m": [
+        "Phasendifferenz zwischen ordentlichem und außerordentlichem Strahl",
+        "außerordentlicher und ordentlicher Brechungsindex (optische Achse in der Plattenebene)",
+        "Plattendicke",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Ein einachsiger Kristall mit der optischen Achse in der Plattenebene, senkrechter Einfall. Die Doppelbrechung n_e − n_o hängt von der Wellenlänge ab, daher ist eine Verzögerungsplatte nur bei ihrer Auslegungswellenlänge ein λ/4- oder λ/2-Plättchen. Verzögerungsplatten höherer Ordnung (Γ = 2πm + π/2) sind dicker und leichter herzustellen, aber empfindlicher gegen Änderungen von Wellenlänge, Temperatur und Winkel.",
+      "miss": "Für λ die Wellenlänge im Medium einsetzen. Das Vorzeichen von n_e − n_o (positiv für Quarz, negativ für Kalkspat) übersehen und die schnelle Achse verwechseln. Sich das λ/2-Plättchen als „dreht die Polarisation um 90°“ merken (es dreht um das Doppelte des Winkels zwischen Polarisation und Achse).",
+      "ex": "λ/4-Plättchen nullter Ordnung aus Quarz (n_e − n_o = 0,00907 bei 633 nm): d = 633/(4 × 0,00907) nm = 17,4 µm.",
+      "kw": "Verzögerungsplatte Wellenplatte λ/4-Plättchen Viertelwellenplatte λ/2-Plättchen Halbwellenplatte Verzögerung Doppelbrechung"
+    },
+    "faraday": {
+      "name": "Faraday-Rotation",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Drehwinkel der Polarisationsebene",
+        "Verdet-Konstante (abhängig von Material, Wellenlänge und Temperatur)",
+        "magnetische Flussdichte in Strahlrichtung",
+        "Länge des Materials"
+      ],
+      "when": "Ein homogenes Feld in Strahlrichtung. Der Drehsinn ist durch die Feldrichtung festgelegt, nicht durch die Ausbreitungsrichtung (nichtreziprok). Ein Hin- und Rückweg ergibt 2β, und ein 45°-Rotator zwischen Polarisatoren bildet einen optischen Isolator.",
+      "miss": "Erwarten, dass sich die Drehung auf dem Hin- und Rückweg aufhebt (sie tut es nicht, anders als bei der optischen Aktivität). In der Verdet-Konstante rad und Grad oder T und G (Gauß) verwechseln.",
+      "ex": "TGG (1064 nm, V ≈ −40 rad/(T·m)): Für eine Drehung um 45° (π/4 rad) ist |B|L = 0,785/40 = 0,0196 T·m nötig, bei 1 T also eine Länge von 19,6 mm.",
+      "kw": "Faraday-Rotation Faraday-Effekt Verdet-Konstante optischer Isolator magnetooptisch nichtreziprok"
+    },
+    "sellmeier": {
+      "name": "Sellmeier-Gleichung",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Brechungsindex",
+        "Vakuumwellenlänge (in Koeffiziententabellen oft in µm)",
+        "Koeffizienten (dimensionslos)",
+        "Koeffizienten (Quadrate der Absorptionswellenlängen)"
+      ],
+      "when": "Eine Anpassung für den transparenten Bereich abseits der Absorptionsbanden. Koeffizienten aus Herstellerdaten (z. B. SCHOTT) oder der Literatur verwenden und nicht über den angegebenen Wellenlängenbereich hinaus extrapolieren. Der Brechungsindex ändert sich mit der Temperatur (dn/dT).",
+      "miss": "C_i aus einer Tabelle in µm² mit λ in m mischen (einheitliche Einheiten verwenden). C_i für eine Wellenlänge statt für deren Quadrat halten. n² als n lesen (am Ende die Wurzel ziehen).",
+      "ex": "N-BK7 (B = 1,03961212; 0,231792344; 1,01046945; C = 0,00600069867; 0,0200179144; 103,560653 µm²) bei 587,56 nm: n = 1,51680. Quarzglas (Malitson 1965) bei 1550 nm: n = 1,44402.",
+      "kw": "Sellmeier Dispersionsformel Brechungsindex Brechzahl chromatische Dispersion"
+    },
+    "cauchy": {
+      "name": "Cauchy-Gleichung",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Brechungsindex",
+        "Koeffizient",
+        "Koeffizient",
+        "Koeffizient",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Eine einfache Anpassung für normale Dispersion im Sichtbaren (fern von Absorptionsbanden, n nimmt mit der Wellenlänge ab). Nahe den Absorptionsbanden im Ultravioletten und Infraroten versagt sie; über weite Bereiche die Sellmeier-Gleichung verwenden.",
+      "miss": "Die Einheiten von B nicht einheitlich halten (µm² oder nm²). Über den Bereich hinaus extrapolieren, ohne zu prüfen, ob zwei Glieder ausreichen.",
+      "ex": "A = 1,5046; B = 0,00420 µm² (Näherung für BK7): n = 1,5046 + 0,00420/0,5876² = 1,5168 bei 587,6 nm; 1,5224 bei 486,1 nm und 1,5144 bei 656,3 nm.",
+      "kw": "Cauchy Dispersion Brechungsindex Brechzahl normale Dispersion"
+    },
+    "abbe-number": {
+      "name": "Abbe-Zahl",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Abbe-Zahl (größer bedeutet geringere Dispersion)",
+        "Brechungsindex bei der d-Linie (587,56 nm)",
+        "Brechungsindex bei der F-Linie (486,13 nm)",
+        "Brechungsindex bei der C-Linie (656,27 nm)"
+      ],
+      "when": "Ein Maß für die Dispersion im Sichtbaren. Manche Normen verwenden V_e mit der e-Linie (546,07 nm), F′ (479,99 nm) und C′ (643,85 nm). Gläser mit V_d > 50 heißen üblicherweise Krongläser, solche darunter Flintgläser.",
+      "miss": "V_d und n_d verwechseln. Die Reihenfolge im Nenner umkehren (n_F − n_C, F ist die kürzere Wellenlänge) und einen negativen Wert erhalten.",
+      "ex": "N-BK7 (n_d = 1,51680; n_F = 1,522376; n_C = 1,514322): V_d = 0,51680/0,008054 = 64,17. F2 (n_d = 1,620040; n_F = 1,632081; n_C = 1,615032): V_d = 36,37.",
+      "kw": "Abbe-Zahl Abbesche Zahl Dispersion Kronglas Flintglas Farbfehler chromatische Aberration"
+    },
+    "achromat": {
+      "name": "Achromat (anliegende dünne Linsen)",
+      "l": [
+        "Achromasiebedingung",
+        "erste Linse",
+        "zweite Linse"
+      ],
+      "m": [
+        "Brechkraft des Achromaten und der einzelnen Linsen (1/f)",
+        "Abbe-Zahlen der beiden Gläser"
+      ],
+      "when": "Zwei anliegende dünne Linsen, die die Brennpunkte für F und C zusammenlegen (Korrektur für zwei Farben). Eine Restabweichung bei der d-Linie (sekundäres Spektrum) bleibt. Für drei Farben ist ein Apochromat (Glas mit anomaler Teildispersion) nötig.",
+      "miss": "Gläser mit kleiner Differenz V₁ − V₂ wählen (die einzelnen Linsen werden zu stark). Die Vorzeichen verwechseln (Sammellinse aus Kronglas mit Zerstreuungslinse aus Flintglas, φ₂ ist also negativ).",
+      "ex": "f = 100 mm (φ = 0,01 mm⁻¹) mit N-BK7 (64,17) und F2 (36,37): aus φ₁ = 0,01 × 64,17/27,80 folgt f₁ = 43,32 mm, aus φ₂ = −0,01 × 36,37/27,80 folgt f₂ = −76,44 mm.",
+      "kw": "Achromat achromatisch Farbfehler chromatische Aberration Abbe-Zahl Dublett Kittglied"
+    },
+    "absorption": {
+      "name": "Absorptionskoeffizient (Lambert-Beersches Gesetz)",
+      "l": [
+        "Intensität",
+        "aus dem Extinktionskoeffizienten"
+      ],
+      "m": [
+        "Intensität in der Tiefe z und am Eintritt",
+        "Absorptionskoeffizient (Intensität)",
+        "zurückgelegte Strecke",
+        "Extinktionskoeffizient (Imaginärteil des komplexen Brechungsindex n + iκ)",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Ein homogenes Medium ohne Streuung bei geringer Intensität (keine Sättigung). Reflexionsverluste an den Oberflächen gesondert berücksichtigen. In der Chemie schreibt man A = εcl mit dem molaren Extinktionskoeffizienten und dekadischen Logarithmen. In dB/m ist es 4,343α.",
+      "miss": "Die Amplitudendämpfung (α/2) mit der Intensitätsdämpfung (α) verwechseln. Die dekadische Extinktion mit dem natürlichen α mischen (α = 2,303 × Extinktion/Dicke).",
+      "ex": "κ = 1,0 × 10⁻⁴ bei λ = 1 µm: α = 4π × 10⁻⁴/10⁻⁶ = 1257 m⁻¹ (12,57 cm⁻¹), und die Intensität fällt bei 1/α = 0,796 mm auf 1/e (36,8 %).",
+      "kw": "Absorptionskoeffizient Lambert Beer Lambert-Beer Extinktionskoeffizient Eindringtiefe Extinktion"
+    },
+    "ar-quarter": {
+      "name": "Einschichtige Antireflexschicht (λ/4-Schicht)",
+      "l": [
+        "Schichtdicke",
+        "idealer Brechungsindex der Schicht",
+        "Reflexionsgrad bei der Auslegungswellenlänge"
+      ],
+      "m": [
+        "physikalische Dicke der Schicht",
+        "Auslegungswellenlänge (Vakuum)",
+        "Brechungsindex der Schicht",
+        "Brechungsindex des Einfallsmediums (1 für Luft)",
+        "Brechungsindex des Substrats",
+        "Reflexionsgrad bei der Auslegungswellenlänge, senkrechter Einfall (eine Fläche)"
+      ],
+      "when": "Senkrechter Einfall, nicht absorbierende und dispersionsfreie Schicht und Substrat, eine Fläche. Die Reflexion wird verringert, wenn n₀ < n₁ < nₛ. Bei schrägem Einfall verschiebt sich die ausgelöschte Wellenlänge zu kürzeren Wellenlängen, und s und p unterscheiden sich.",
+      "miss": "Die optische Dicke λ/4 für die physikalische Dicke halten (durch n₁ teilen). Erwarten, dass auch eine λ/2-Schicht die Reflexion verringert (sie wirkt wie keine Schicht). Die 4 % der Substratrückseite vergessen.",
+      "ex": "MgF₂ (n₁ = 1,38) auf Glas (nₛ = 1,52) für 550 nm: d = 550/(4 × 1,38) = 99,64 nm; idealer Brechungsindex √1,52 = 1,2329; R = ((1,52 − 1,9044)/(1,52 + 1,9044))² = 1,26 % (4,26 % ohne Schicht).",
+      "kw": "Antireflexschicht Entspiegelung AR-Beschichtung λ/4-Schicht MgF2 Einzelschicht"
+    },
+    "ar-single": {
+      "name": "Reflexionsgrad einer Einzelschicht (beliebige Wellenlänge)",
+      "l": [
+        "Amplitude",
+        "Phasendicke der Schicht"
+      ],
+      "m": [
+        "Amplitudenreflexionsfaktor der beschichteten Fläche (R = |r|²)",
+        "Amplitudenreflexionsfaktoren der oberen und der unteren Grenzfläche ((n₀ − n₁)/(n₀ + n₁) usw.)",
+        "Phase bei einfachem Durchgang durch die Schicht",
+        "Brechungsindex der Schicht",
+        "Schichtdicke",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Senkrechter Einfall und eine nicht absorbierende Schicht (die exakte Form, die alle Mehrfachreflexionen summiert). Bei schrägem Einfall δ mit cosθ₁ multiplizieren und die Koeffizienten für s und p verwenden. Für Mehrschichtsysteme wird das Produkt der charakteristischen Matrizen gebildet.",
+      "miss": "Die 2 in e^{−2iδ} vergessen (Hin- und Rückweg). Die Vorzeichenkonvention der Phase (manche Lehrbücher schreiben e^{+2iδ}; |r|² ist dasselbe).",
+      "ex": "MgF₂-λ/4-Schicht für 550 nm (99,64 nm) auf Glas (1,52): R = 1,62 % bei 450 nm, 1,60 % bei 700 nm und 2,21 % bei 400 nm.",
+      "kw": "Dünnschicht Interferenz Reflexionsgrad Einzelschicht Antireflexschicht spektral"
+    },
+    "hr-stack": {
+      "name": "Dielektrischer Mehrschichtspiegel ((HL)ᴺH)",
+      "l": [
+        "maximaler Reflexionsgrad",
+        "hochreflektierendes Band"
+      ],
+      "m": [
+        "Reflexionsgrad bei der Auslegungswellenlänge",
+        "normierte Admittanz des Schichtstapels",
+        "Brechungsindizes der hoch- und der niedrigbrechenden Schichten",
+        "Anzahl der HL-Paare (insgesamt 2N + 1 Schichten)",
+        "Brechungsindizes des Einfallsmediums und des Substrats",
+        "volle Breite des hochreflektierenden Bandes (in g = λ₀/λ)"
+      ],
+      "when": "Jede Schicht ist bei der Auslegungswellenlänge λ/4 dick, senkrechter Einfall, keine Absorption. Sowohl die äußerste Schicht als auch die Schicht am Substrat sind H-Schichten. Die Bandkanten liegen bei λ = λ₀/(1 ± Δg/2), und die Breite ist Δλ ≈ λ₀Δg, wenn das Band schmal ist.",
+      "miss": "N mit der Anzahl der Schichten verwechseln. Diese Formel für einen Stapel verwenden, der mit L endet (Y ändert sich). Halbe und volle Breite mischen.",
+      "ex": "TiO₂ (2,35)/SiO₂ (1,46) auf Glas (1,52): N = 7 (15 Schichten) ergibt R = 99,86 % und N = 5 ergibt 99,06 %. Die Bandbreite beträgt Δg = 0,300, um 1064 nm also λ₀Δg ≈ 319 nm (die Kanten liegen bei 925 nm und 1252 nm, also eine Breite von 327 nm).",
+      "kw": "dielektrischer Spiegel Mehrschichtspiegel Bragg-Spiegel HR-Beschichtung λ/4-Stapel"
+    },
+    "gauss-w": {
+      "name": "Strahlradius und Rayleigh-Länge des Gauß-Strahls",
+      "l": [
+        "Strahlradius",
+        "Rayleigh-Länge"
+      ],
+      "m": [
+        "Strahlradius im Abstand z (1/e² der Spitzenintensität)",
+        "Taillenradius",
+        "Abstand von der Strahltaille",
+        "Rayleigh-Länge (Abstand, bei dem der Radius auf das √2-Fache angewachsen ist)",
+        "Brechungsindex des Mediums",
+        "Strahlqualität (1 für einen idealen Strahl)",
+        "Vakuumwellenlänge"
+      ],
+      "when": "Paraxiale Strahlen (w₀ ≫ λ). Für reale Strahlen mit M² > 1 wird angenommen, dass der über das zweite Moment bestimmte Radius auf dieselbe Weise wächst (eingebetteter Gauß-Strahl).",
+      "miss": "Durchmesser und Radius verwechseln (der 1/e²-Durchmesser ist 2w). Die Halbwertsbreite der Intensität (FWHM = 1,177w) als w nehmen.",
+      "ex": "λ = 1064 nm; w₀ = 500 µm; M² = 1; in Luft: z_R = π × (0,5 mm)²/1,064 µm = 738,2 mm. Bei z = 1000 mm ist w = 842 µm (Durchmesser 1,68 mm).",
+      "kw": "Gauß-Strahl Gaußstrahl Strahlradius Strahldurchmesser Rayleigh-Länge Strahltaille Fokustiefe"
+    },
+    "gauss-r": {
+      "name": "Krümmungsradius der Wellenfront und Gouy-Phase",
+      "l": [
+        "Krümmungsradius",
+        "Gouy-Phase"
+      ],
+      "m": [
+        "Krümmungsradius der Wellenfront (positiv hinter der Strahltaille)",
+        "Abstand von der Strahltaille",
+        "Rayleigh-Länge",
+        "Gouy-Phase (Phasenverschiebung gegenüber einer ebenen Welle)"
+      ],
+      "when": "R ist in der Strahltaille unendlich (ebene Wellenfront), am kleinsten (2z_R) bei z = z_R und R ≈ z in großer Entfernung. Die Gouy-Phase ändert sich beim Durchgang durch die Taille insgesamt um π; Moden höherer Ordnung (TEMₘₙ) haben (m + n + 1)ψ, was ihre Resonanzfrequenzen in einem Resonator verschiebt.",
+      "miss": "R(z) gleich z setzen (das gilt nur für z ≫ z_R). Den Vorzeichenwechsel vor der Taille (z < 0) vergessen.",
+      "ex": "λ = 1064 nm; w₀ = 500 µm (z_R = 738,2 mm); z = 1000 mm: R = 1000 × (1 + 0,7382²) = 1545 mm und ψ = arctan(1000/738,2) = 53,57°.",
+      "kw": "Krümmungsradius Wellenfront Gouy-Phase Gauß-Strahl"
+    },
+    "divergence-bpp": {
+      "name": "Divergenz und Strahlparameterprodukt",
+      "l": [
+        "halber Winkel",
+        "BPP"
+      ],
+      "m": [
+        "halber Divergenzwinkel im Fernfeld",
+        "Strahlqualität",
+        "Vakuumwellenlänge",
+        "Brechungsindex des Mediums",
+        "Taillenradius"
+      ],
+      "when": "Fernfeld, z ≫ z_R. Das BPP wird meist als w₀θ (Radius × halber Winkel) angegeben und ändert sich durch aberrationsfreie Linsen nicht. Manche Datenblätter verwenden Durchmesser × vollen Winkel, was viermal größer ist.",
+      "miss": "Vollen und halben Winkel oder Durchmesser und Radius mischen (prüfen, welche Konvention ein BPP in mm·mrad verwendet).",
+      "ex": "λ = 1064 nm; w₀ = 500 µm; M² = 1: θ = 1,064/(π × 500) = 0,677 mrad und BPP = λ/π = 0,339 mm·mrad. Mit M² = 1,5: 0,508 mm·mrad.",
+      "kw": "Divergenz Divergenzwinkel BPP Strahlparameterprodukt M2 Beugungsmaßzahl Strahlqualität"
+    },
+    "focus-spot": {
+      "name": "Radius des fokussierten Flecks",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Taillenradius im Fokus",
+        "Strahlqualität",
+        "Wellenlänge",
+        "Brennweite der Linse",
+        "Strahlradius an der Linse (1/e²)"
+      ],
+      "when": "Der einfallende Strahl hat seine Taille nahe der Linse und eine Rayleigh-Länge, die viel größer als f ist (ein breiter kollimierter Strahl). Eine aberrationsfreie Linse, deren Apertur den Strahl nicht beschneidet (Linsendurchmesser ≳ 3W).",
+      "miss": "Für W den Durchmesser einsetzen. Annehmen, dass der Fokus genau bei f liegt (er rückt zur Linse hin, wenn das z_R des einfallenden Strahls nahe bei f liegt).",
+      "ex": "λ = 1064 nm; f = 100 mm; W = 5 mm; M² = 1: w_f = 1,064 × 10⁻⁶ × 0,1/(π × 0,005) = 6,77 µm.",
+      "kw": "Fokussierung Fokusdurchmesser Fleckgröße Spotgröße Fokus Gauß-Strahl Lasermaterialbearbeitung"
+    },
+    "q-abcd": {
+      "name": "q-Parameter und ABCD-Gesetz",
+      "l": [
+        "im Abstand z von der Strahltaille",
+        "aus R und w",
+        "ABCD-Gesetz"
+      ],
+      "m": [
+        "komplexer Strahlparameter",
+        "Abstand von der Strahltaille",
+        "Rayleigh-Länge",
+        "Krümmungsradius der Wellenfront",
+        "Strahlradius",
+        "Vakuumwellenlänge",
+        "Brechungsindex",
+        "Elemente der Strahlmatrix",
+        "Element der Strahlmatrix",
+        "Element der Strahlmatrix"
+      ],
+      "when": "Paraxiale Gauß-Strahlen (Grundmode). Dieselben Matrizen wie für Strahlen transformieren q. Für Strahlen mit M² > 1 wird λ durch M²λ ersetzt.",
+      "miss": "Vorzeichenkonventionen für den Imaginärteil von 1/q (e^{−iωt} oder e^{+iωt}) mischen. Die Strahltaille liegt dort, wo der Realteil von q null ist (Re q = 0).",
+      "ex": "Eine Strahltaille w₀ = 0,5 mm (1064 nm; z_R = 738,2 mm) mit einer Linse f = 200 mm genau an der Taille: Nach q₂ = q₁/(1 − q₁/f) liegt die neue Taille 186,3 mm hinter der Linse und hat einen Radius von 0,1308 mm.",
+      "kw": "q-Parameter ABCD komplexer Strahlparameter Gauß-Strahl Transformation"
+    },
+    "stability": {
+      "name": "Stabilitätsbedingung des Resonators",
+      "l": [
+        "stabil",
+        "g-Parameter"
+      ],
+      "m": [
+        "g-Parameter der Spiegel 1 und 2",
+        "g-Parameter des Spiegels i",
+        "Spiegelabstand (mit einem Kristall im Resonator die effektive Länge Σ L_i/n_i)",
+        "Krümmungsradius des Spiegels i (positiv für Hohlspiegel, ∞ für Planspiegel)"
+      ],
+      "when": "Resonatoren aus zwei sphärischen Spiegeln, paraxial. Die Grenzfälle (g₁g₂ = 0 oder 1: plan-parallel, konfokal, konzentrisch) werden schon bei geringer Dejustage instabil. Ein stabiler Resonator legt die Taille der Grundmode fest.",
+      "miss": "Das Vorzeichen von R für einen Wölbspiegel (negativ). Die Korrektur des Brechungsindex für L vergessen (ein Kristall der Länge L zählt als L/n).",
+      "ex": "L = 0,5 m, ein Planspiegel (R₁ = ∞, g₁ = 1) und R₂ = 1 m (g₂ = 0,5): g₁g₂ = 0,5; der Resonator ist stabil. Die Taille auf dem Planspiegel ergibt sich aus w₀² = (λ/π)√(L(R₂ − L)) bei 1064 nm zu w₀ = 0,412 mm.",
+      "kw": "Resonator Stabilitätsbedingung Stabilität g-Parameter Krümmung sphärischer Spiegel"
+    },
+    "long-modes": {
+      "name": "Abstand der Longitudinalmoden",
+      "l": [
+        "Resonanzfrequenzen",
+        "Abstand"
+      ],
+      "m": [
+        "Frequenz der q-ten Longitudinalmode",
+        "Modennummer (eine große ganze Zahl)",
+        "Lichtgeschwindigkeit",
+        "Brechungsindex im Resonator",
+        "Resonatorlänge",
+        "Abstand benachbarter Longitudinalmoden",
+        "Gruppenindex"
+      ],
+      "when": "Stehwellenresonatoren (lineare Resonatoren). Bei Ringresonatoren wird 2L durch die Umlauflänge ersetzt. Die Anzahl der anschwingenden Moden hängt von Verstärkungsbandbreite und Verlusten ab (etwa Verstärkungsbandbreite/Δν). Bei Halbleiterlasern wird der Gruppenindex (3,5 bis 4) verwendet.",
+      "miss": "L statt 2L schreiben. Beim Halbleiterlaser den Phasenindex verwenden (der Abstand wird überschätzt). Bei der Umrechnung des Abstands in die Wellenlänge den Faktor λ²/c vergessen (Δλ = λ²Δν/c).",
+      "ex": "He-Ne mit L = 0,3 m: Δν = c/0,6 m = 500 MHz (etwa 3 Moden in einer Verstärkungsbreite von 1,5 GHz). Halbleiterlaser mit L = 300 µm und n_g = 3,6: Δν = 139 GHz, Δλ = 1,11 nm bei 1550 nm.",
+      "kw": "Longitudinalmoden Modenabstand Resonator FSR longitudinaler Einmodenbetrieb"
+    },
+    "threshold": {
+      "name": "Schwellverstärkung des Lasers",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Schwellwert des Verstärkungskoeffizienten (Intensität, modale Verstärkung)",
+        "interne Verluste des Resonators (Absorption, Streuung)",
+        "Länge des Verstärkungsmediums (Resonators)",
+        "Reflexionsgrade der Spiegel (Intensität)"
+      ],
+      "when": "Die Umlaufverstärkung ist gleich den Verlusten (stationärer Zustand, Verstärkung gleichmäßig über den Resonator). Bei Halbleiterlasern erreicht Γg mit dem Confinement-Faktor (optischen Füllfaktor) Γ diesen Wert.",
+      "miss": "R₁R₂ in den ln schreiben und einen negativen Wert erhalten (es ist 1/(R₁R₂)). Den Umlauf 2L vergessen. cm⁻¹ und m⁻¹ verwechseln.",
+      "ex": "Halbleiterlaser mit gespaltenen Facetten (R₁ = R₂ = 0,31; L = 300 µm; α_i = 10 cm⁻¹): Spiegelverluste (1/0,06 cm) × ln(1/0,0961) = 39,0 cm⁻¹, also g_th = 49,0 cm⁻¹.",
+      "kw": "Laserschwelle Schwelle Schwellverstärkung Verstärkung Verluste Spiegelverluste Schwellbedingung"
+    },
+    "gain": {
+      "name": "Kleinsignalverstärkung und Wirkungsquerschnitt der stimulierten Emission",
+      "l": [
+        "Verstärkungskoeffizient",
+        "Kleinsignalverstärkung"
+      ],
+      "m": [
+        "Verstärkungskoeffizient (Intensität)",
+        "Wirkungsquerschnitt der stimulierten Emission",
+        "Besetzungsdichten des oberen und des unteren Niveaus",
+        "Entartungsgrade der Niveaus",
+        "Intensität im Abstand z und am Eintritt",
+        "Strecke im Verstärkungsmedium"
+      ],
+      "when": "Die Intensität liegt weit unter der Sättigungsintensität (Kleinsignal). Bei hoher Intensität sättigt γ gemäß γ₀/(1 + I/I_sat). γ > 0 nur bei Besetzungsinversion (N₂ > (g₂/g₁)N₁).",
+      "miss": "cm² und m² verwechseln (10⁻¹⁹ cm² = 10⁻²³ m²). Die Entartungsgrade vergessen. Verstärkung in dB mit der Verstärkung im Exponenten von e mischen.",
+      "ex": "Nd:YAG (σ = 2,8 × 10⁻¹⁹ cm²) mit einer Inversion N₂ − N₁ = 1 × 10¹⁷ cm⁻³ (unteres Niveau nahezu leer): γ = 0,028 cm⁻¹; ein Durchgang durch einen 10 cm langen Stab verstärkt also um den Faktor e^{0,28} = 1,32.",
+      "kw": "Verstärkung stimulierte Emission Wirkungsquerschnitt Besetzungsinversion Verstärker Sättigung"
+    },
+    "fiber-na": {
+      "name": "Numerische Apertur und relative Brechungsindexdifferenz der Faser",
+      "l": [
+        "numerische Apertur",
+        "relative Brechungsindexdifferenz",
+        ""
+      ],
+      "m": [
+        "numerische Apertur",
+        "Brechungsindizes von Kern und Mantel",
+        "Brechungsindex des Einkoppelmediums (1 für Luft)",
+        "maximaler halber Akzeptanzwinkel",
+        "relative Brechungsindexdifferenz (≈ (n₁ − n₂)/n₁)"
+      ],
+      "when": "Stufenindexfasern, Strahlenbild (Meridionalstrahlen). Für Einmodenfasern ist das Strahlenbild nur ein Anhaltspunkt; die tatsächliche Aufweitung wird durch den Modenfelddurchmesser bestimmt.",
+      "miss": "Die NA als n₁ − n₂ nehmen (sie ist die Wurzel aus der Differenz der Quadrate). Δ in % und als Dezimalbruch verwechseln. n₀ vergessen, wenn aus einem anderen Medium als Luft eingekoppelt wird.",
+      "ex": "n₁ = 1,45; n₂ = 1,4447: NA = 0,1239; halber Akzeptanzwinkel in Luft 7,12°; Δ = 0,365 %.",
+      "kw": "numerische Apertur NA relative Brechungsindexdifferenz Akzeptanzwinkel Kern Mantel Glasfaser"
+    },
+    "v-number": {
+      "name": "V-Parameter und Einmodenbedingung",
+      "l": [
+        "normierte Frequenz",
+        "einmodig",
+        "Grenzwellenlänge",
+        "Anzahl der Moden (V ≫ 1)"
+      ],
+      "m": [
+        "normierte Frequenz",
+        "Kernradius",
+        "numerische Apertur",
+        "Vakuumwellenlänge",
+        "Grenzwellenlänge (darüber einmodig)",
+        "Anzahl der geführten Moden (einschließlich Polarisationen, Näherung)"
+      ],
+      "when": "Stufenindexfasern, schwache Führung (Δ ≪ 1). 2,405 ist die erste Nullstelle von J₀. Gradientenindexfasern haben etwa halb so viele Moden (V²/4).",
+      "miss": "Für a den Kerndurchmesser einsetzen. Einmodigen Betrieb unterhalb von λ_c erwarten (einmodig ist die Faser oberhalb). V²/2 für kleine V verwenden.",
+      "ex": "n₁ = 1,45; n₂ = 1,4447; a = 4,1 µm; λ = 1550 nm: V = 2,059, einmodig, λ_c = 1327 nm. Kerndurchmesser 50 µm, NA 0,2 bei 850 nm: V = 37,0, etwa 683 Moden.",
+      "kw": "V-Parameter V-Zahl normierte Frequenz einmodig Einmodenfaser Grenzwellenlänge Cut-off-Wellenlänge Modenzahl"
+    },
+    "mfd": {
+      "name": "Modenfelddurchmesser (Näherung nach Marcuse)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Modenfeldradius (1/e²-Radius der Gauß-Näherung, MFD = 2w)",
+        "Kernradius",
+        "normierte Frequenz"
+      ],
+      "when": "Einmodige Stufenindexfasern. Die Anpassung nach Marcuse ist für 1,2 < V < 2,4 auf etwa 1 % genau und als Abschätzung für etwa 0,8 < V < 2,5 brauchbar. Die Grundmode wird durch eine Gauß-Funktion genähert.",
+      "miss": "w als Durchmesser nehmen (MFD = 2w). Den Kerndurchmesser mit dem MFD gleichsetzen (bei 1550 nm ist der MFD 20 bis 30 % größer).",
+      "ex": "a = 4,1 µm; V = 2,059: w = 4,1 × (0,65 + 0,5481 + 0,0378) = 5,07 µm; MFD = 10,1 µm.",
+      "kw": "Modenfelddurchmesser MFD Marcuse Einmodenfaser"
+    },
+    "group-index": {
+      "name": "Gruppenindex und Gruppengeschwindigkeit",
+      "l": [
+        "Gruppenindex",
+        "Gruppengeschwindigkeit"
+      ],
+      "m": [
+        "Gruppenindex",
+        "Phasenindex",
+        "Vakuumwellenlänge",
+        "Ableitung des Brechungsindex nach der Wellenlänge",
+        "Gruppengeschwindigkeit (Geschwindigkeit von Pulsen und Einhüllenden)",
+        "Lichtgeschwindigkeit"
+      ],
+      "when": "Wellenlängen mit geringer Absorption. Pulsverzögerung, FSR eines Resonators und die Einhüllende von Gangunterschieden in Interferometern verwenden n_g; die Phase (Lage der Interferenzstreifen, Phasenanpassung) verwendet n. In Wellenleitern wird n durch den effektiven Brechungsindex n_eff ersetzt.",
+      "miss": "Bei normaler Dispersion n_g < n annehmen (dn/dλ < 0 ergibt n_g > n). Für den FSR n verwenden.",
+      "ex": "Quarzglas (Sellmeier) bei 1550 nm: Aus n = 1,44402 und dn/dλ = −0,01198 µm⁻¹ folgt n_g = 1,44402 + 1,55 × 0,01198 = 1,46260.",
+      "kw": "Gruppenindex Gruppenbrechzahl Gruppengeschwindigkeit Phasengeschwindigkeit Dispersion effektiver Brechungsindex"
+    },
+    "modal-disp": {
+      "name": "Pulsverbreiterung durch Modendispersion",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Laufzeitunterschied zwischen dem schnellsten und dem langsamsten Strahl",
+        "Faserlänge",
+        "Brechungsindizes von Kern und Mantel",
+        "Lichtgeschwindigkeit",
+        "relative Brechungsindexdifferenz"
+      ],
+      "when": "Stufenindex-Mehrmodenfasern, der größte Unterschied im Strahlenbild (ohne Modenkopplung). Ein Gradientenprofil (parabolisch) verringert ihn auf etwa L n₁Δ²/(8c). Einmodenfasern haben keine Modendispersion.",
+      "miss": "Δ in % einsetzen. Vergessen, dass sich die Moden über lange Strecken mischen und die Verbreiterung dann eher mit √L wächst.",
+      "ex": "n₁ = 1,48; Δ = 1 %: L n₁Δ/c = 49,4 ns/km (50,1 ns/km mit der exakten Form).",
+      "kw": "Modendispersion Mehrmodenfaser Multimodefaser Pulsverbreiterung Bandbreite"
+    },
+    "chrom-disp": {
+      "name": "Pulsverbreiterung durch chromatische Dispersion",
+      "l": [
+        "Verbreiterung",
+        "D und β₂"
+      ],
+      "m": [
+        "Pulsverbreiterung",
+        "Dispersionsparameter (meist ps/(nm·km))",
+        "Faserlänge",
+        "spektrale Breite der Quelle",
+        "Lichtgeschwindigkeit",
+        "Wellenlänge",
+        "Gruppengeschwindigkeitsdispersion (GVD)"
+      ],
+      "when": "Wenn die spektrale Breite durch die Quelle bestimmt ist (breiter als die Modulation). Bei schmalbandigen Quellen bestimmt die Modulation die Breite, und Δλ skaliert mit der Signalbandbreite. D > 0 ist anomale Dispersion (β₂ < 0, längere Wellenlängen kommen später an).",
+      "miss": "Bei der Umrechnung von ps/(nm·km) in SI den Faktor 10⁻⁶ s/m² vergessen. Die Vorzeichen von D und β₂ verwechseln (D > 0 ⇔ β₂ < 0).",
+      "ex": "D = 17 ps/(nm·km) bei 1550 nm; L = 80 km; Δλ = 0,1 nm: Δτ = 17 × 80 × 0,1 = 136 ps. β₂ = −21,7 ps²/km.",
+      "kw": "chromatische Dispersion Dispersionsparameter GVD beta2 Pulsverbreiterung"
+    },
+    "db-dbm": {
+      "name": "dB und dBm",
+      "l": [
+        "Verhältnis (dB)",
+        "absoluter Pegel (dBm)"
+      ],
+      "m": [
+        "Leistungsverhältnis",
+        "die beiden verglichenen Leistungen",
+        "Leistung bezogen auf 1 mW",
+        "Leistung"
+      ],
+      "when": "Für Leistungs- (Intensitäts-)Verhältnisse. Für Feld- oder Spannungsamplituden 20 log₁₀ verwenden. dB-Werte lassen sich addieren und subtrahieren, aber die Addition von dBm-Werten ergibt nicht die Summe der Leistungen (zuerst in W umrechnen).",
+      "miss": "Für Leistungen 20 log verwenden. dBm und dB in Summen vermischen (dBm − dBm = dB, dBm + dB = dBm). −3 dB als „halbe Amplitude“ lesen (es ist die halbe Leistung).",
+      "ex": "1 mW = 0 dBm; 0,5 mW = −3,01 dBm; 2 µW = −26,99 dBm. Ein Verlust von 10 dB lässt 1/10 der Leistung übrig.",
+      "kw": "dB dBm Dezibel Logarithmus Leistung Pegel Dämpfung Verstärkung"
+    },
+    "fiber-loss": {
+      "name": "Dämpfung der Faser",
+      "l": [
+        "",
+        "dB und 1/m"
+      ],
+      "m": [
+        "Leistung bei der Länge L und am Eingang",
+        "Dämpfung (meist dB/km)",
+        "Faserlänge",
+        "Dämpfungskoeffizient in natürlich-logarithmischer Form (Leistung, P = P(0)e^{−αL})"
+      ],
+      "when": "Eine Faser mit gleichmäßiger, zur Länge proportionaler Dämpfung. Stecker- und Biegeverluste gesondert addieren. Einmodenfasern aus Quarzglas haben bei 1550 nm etwa 0,2 dB/km und bei 1310 nm etwa 0,35 dB/km (die Grenzwerte nach G.652.D sind 0,3 und 0,4 dB/km).",
+      "miss": "Einen Koeffizienten in 1/km mit dB/km mischen. Beim Abziehen eines Verlusts in dB das Vorzeichen falsch setzen.",
+      "ex": "0,2 dB/km × 50 km = 10 dB, also bleiben 10 % der Eingangsleistung. Bei 1 mW (0 dBm) Eingangsleistung ergibt das −10 dBm.",
+      "kw": "Faserdämpfung Dämpfung Verlust dB/km Übertragungsverlust"
+    },
+    "link-budget": {
+      "name": "Leistungsbudget (Link-Budget)",
+      "l": [
+        "Empfangsleistung (dBm)",
+        "Systemreserve (dB)"
+      ],
+      "m": [
+        "Leistung am Empfänger",
+        "Sendeleistung",
+        "Faserdämpfung",
+        "Faserlänge",
+        "Anzahl der Stecker und der Spleiße",
+        "Verlust pro Stecker und pro Spleiß",
+        "Systemreserve",
+        "Empfängerempfindlichkeit (mindestens nötige Leistung)"
+      ],
+      "when": "Alles wird in dB und dBm addiert und subtrahiert. Einige dB Reserve für Alterung, Temperatur und Reparaturspleiße einplanen. Dispersions- und Rauschabschläge (Penalties) werden ebenfalls in dB abgezogen.",
+      "miss": "W und dBm addieren. Die Empfindlichkeit als positiven dBm-Wert nehmen (sie ist meist negativ).",
+      "ex": "Sender 0 dBm; 40 km × 0,35 dB/km = 14 dB bei 1310 nm; 2 Stecker × 0,5 dB; 10 Spleiße × 0,1 dB: P_rx = 0 − 14 − 1 − 1 = −16 dBm. Bei einer Empfindlichkeit von −24 dBm beträgt die Reserve 8 dB.",
+      "kw": "Leistungsbudget Linkbudget Dämpfung Systemreserve Empfängerempfindlichkeit"
+    },
+    "ring": {
+      "name": "Ringresonator: Resonanzen und FSR",
+      "l": [
+        "Resonanzwellenlängen",
+        "FSR",
+        "Güte"
+      ],
+      "m": [
+        "Resonanzordnung",
+        "Resonanzwellenlänge",
+        "effektiver Brechungsindex des Wellenleiters",
+        "Umlauflänge des Rings (2πR)",
+        "Abstand benachbarter Resonanzen",
+        "Wellenlänge",
+        "Gruppenindex des Wellenleiters",
+        "Güte",
+        "Halbwertsbreite der Resonanz"
+      ],
+      "when": "Ein Umlauf in einem Wellenleiterring. Die Lage der Resonanzen folgt n_eff, ihr Abstand n_g. Kopplungsstärke und Verluste bestimmen Tiefe (null bei kritischer Kopplung) und Breite der Einbrüche. Die Temperatur ändert n_eff und verschiebt die Resonanz (in Silizium etwa 0,08 nm/K).",
+      "miss": "Für den FSR n_eff verwenden (in Siliziumwellenleitern unterscheiden sich n_g ≈ 4,2 und n_eff ≈ 2,4 stark). Für L den Radius einsetzen.",
+      "ex": "Silizium-Ring (Radius 10 µm, L = 62,83 µm, n_g = 4,2) bei 1550 nm: Δλ_FSR = 1,55²/(4,2 × 62,83) µm = 9,10 nm.",
+      "kw": "Ringresonator Mikroring FSR Güte Q-Faktor Siliziumphotonik"
+    },
+    "responsivity": {
+      "name": "Spektrale Empfindlichkeit und Quanteneffizienz",
+      "l": [
+        "spektrale Empfindlichkeit",
+        "Photostrom",
+        "Quanteneffizienz"
+      ],
+      "m": [
+        "spektrale Empfindlichkeit",
+        "Quanteneffizienz (extern)",
+        "Elementarladung",
+        "Vakuumwellenlänge",
+        "Planck-Konstante",
+        "Lichtgeschwindigkeit",
+        "Photostrom",
+        "einfallende optische Leistung",
+        "Lichtfrequenz"
+      ],
+      "when": "Detektoren ohne innere Verstärkung (PIN usw.). Bei einer APD mit dem Multiplikationsfaktor M multiplizieren. η enthält Oberflächenreflexion, Absorptionstiefe und Sammeleffizienz. Die spektrale Empfindlichkeit fällt ab, wenn sich die Wellenlänge der Absorptionskante nähert.",
+      "miss": "η in % einsetzen. In ℛ ≈ λ[µm]/1,24 die Wellenlänge in nm einsetzen (mit nm durch 1239,84 teilen).",
+      "ex": "Obergrenze mit η = 1: ℛ = 1,250 A/W bei 1550 nm und 0,686 A/W bei 850 nm. Mit η = 0,8 ergeben sich 1,000 A/W bei 1550 nm, also 1,00 mA für 1 mW.",
+      "kw": "spektrale Empfindlichkeit Responsivität Quanteneffizienz Photostrom A/W Photodiode"
+    },
+    "shot-noise": {
+      "name": "Schrotrauschen",
+      "l": [
+        ""
+      ],
+      "m": [
+        "mittleres Rauschstromquadrat",
+        "Elementarladung",
+        "Photostrom",
+        "Dunkelstrom",
+        "Messbandbreite"
+      ],
+      "when": "Die Ladungen fließen unabhängig voneinander (Poisson-Statistik). Für eine APD gilt 2qM²F(I_p + I_d)Δf mit I_p als unverstärktem Photostrom und I_d als multipliziertem Anteil des Dunkelstroms; der nicht multiplizierte Oberflächendunkelstrom trägt 2qI_{ds}Δf gesondert bei. Licht mit nicht-poissonscher Photonenstatistik (z. B. gequetschtes Licht) verhält sich anders.",
+      "miss": "Mittleres Quadrat und Effektivwert (√) verwechseln. Einseitige und zweiseitige Bandbreiten mischen (der Faktor 2 gilt für eine einseitige Bandbreite).",
+      "ex": "I_p = 1 µA; I_d = 1 nA; Δf = 1 GHz: √(2 × 1,602 × 10⁻¹⁹ × 1,001 × 10⁻⁶ × 10⁹) = 17,9 nA (Effektivwert).",
+      "kw": "Schrotrauschen Schottky-Rauschen Quantenrauschen Dunkelstrom Rauschen Bandbreite"
+    },
+    "snr": {
+      "name": "Signal-Rausch-Verhältnis des Empfängers (Schrot- und thermisches Rauschen)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Signal-Rausch-Leistungsverhältnis",
+        "Multiplikationsfaktor (1 für PIN)",
+        "spektrale Empfindlichkeit ohne Multiplikation",
+        "optische Leistung",
+        "Elementarladung",
+        "Zusatzrauschfaktor (1 für PIN)",
+        "Dunkelstrom (multiplizierter Anteil)",
+        "Bandbreite",
+        "Boltzmann-Konstante",
+        "Temperatur des Lastwiderstands",
+        "Lastwiderstand"
+      ],
+      "when": "Direktempfang mit nur Schrotrauschen und thermischem Rauschen des Lastwiderstands (den thermischen Term mit der Rauschzahl des Verstärkers multiplizieren). Bei geringer Leistung überwiegt das thermische Rauschen, bei hoher Leistung das Schrotrauschen.",
+      "miss": "Stromverhältnisse (√) mit Leistungsverhältnissen mischen (für dB 10 log verwenden). T in °C einsetzen.",
+      "ex": "PIN (M = F = 1), ℛ = 1 A/W, P = 10 µW, Δf = 1 GHz, R_L = 50 Ω, 300 K, I_d vernachlässigt: Schrotrauschen 3,20 × 10⁻¹⁵ A², thermisches Rauschen 3,31 × 10⁻¹³ A², SNR = 299 (24,8 dB).",
+      "kw": "SNR Signal-Rausch-Verhältnis Signal-Rausch-Abstand thermisches Rauschen Schrotrauschen Johnson-Rauschen Empfindlichkeit"
+    },
+    "nep": {
+      "name": "NEP und spezifische Detektivität D*",
+      "l": [
+        "rauschäquivalente Leistung",
+        "spezifische Detektivität"
+      ],
+      "m": [
+        "rauschäquivalente Leistung (pro 1 Hz Bandbreite, die Leistung, die SNR = 1 ergibt)",
+        "Rauschstromdichte (Effektivwert)",
+        "spektrale Empfindlichkeit",
+        "spezifische Detektivität (meist cm·Hz¹ᐟ²/W = Jones)",
+        "Detektorfläche"
+      ],
+      "when": "Bereich, in dem das Rauschen mit der Wurzel der Bandbreite wächst (weißes Rauschen). D* vergleicht Detektoren unterschiedlicher Fläche unter der Annahme, dass das Rauschen mit der Wurzel der Fläche skaliert.",
+      "miss": "Die NEP in W angeben (sie ist W/√Hz). In D* m und cm verwechseln (1 m·Hz¹ᐟ²/W = 100 cm·Hz¹ᐟ²/W).",
+      "ex": "Nur das Schrotrauschen eines Dunkelstroms von 1 nA, ℛ = 0,9 A/W: i_n = √(2q × 10⁻⁹) = 1,79 × 10⁻¹⁴ A/√Hz und NEP = 1,99 × 10⁻¹⁴ W/√Hz. Für einen Detektor mit 1 mm² ist D* = 5,03 × 10¹² cm·Hz¹ᐟ²/W.",
+      "kw": "NEP rauschäquivalente Leistung spezifische Detektivität D* Empfindlichkeit"
+    },
+    "apd": {
+      "name": "Multiplikation und Zusatzrauschfaktor der APD",
+      "l": [
+        "Photostrom",
+        "Zusatzrauschfaktor (McIntyre)"
+      ],
+      "m": [
+        "multiplizierter Photostrom",
+        "mittlerer Multiplikationsfaktor",
+        "spektrale Empfindlichkeit ohne Multiplikation",
+        "optische Leistung",
+        "Zusatzrauschfaktor",
+        "Verhältnis der Ionisationskoeffizienten (k = β/α bei elektroneninitiierter Multiplikation)"
+      ],
+      "when": "Eine APD mit homogener Multiplikationszone, in die der Ladungsträger mit dem größeren Ionisationskoeffizienten injiziert wird. Ein kleineres k bedeutet geringeres Rauschen (etwa 0,02 für Si, 0,4 bis 0,5 für InGaAs/InP). Das optimale M ergibt sich aus dem Gleichgewicht mit dem thermischen Rauschen.",
+      "miss": "Für k das umgekehrte Verhältnis (α/β) einsetzen. Erwarten, dass F proportional zu M wächst (für kleines k strebt F gegen 2).",
+      "ex": "Si-APD (k = 0,02) bei M = 100: F = 2,00 + 0,98 × 1,99 = 3,95. InGaAs-APD (k = 0,5) bei M = 10: F = 5,95.",
+      "kw": "APD Avalanche-Photodiode Lawinenphotodiode Multiplikationsfaktor Zusatzrauschen Ionisationskoeffizient"
+    },
+    "sensor-dr": {
+      "name": "Dynamikumfang und Signal-Rausch-Verhältnis eines Bildsensors",
+      "l": [
+        "Dynamikumfang (dB)",
+        "SNR eines Pixels"
+      ],
+      "m": [
+        "Dynamikumfang",
+        "Sättigungselektronenzahl (Full-Well-Kapazität)",
+        "Ausleserauschen (Effektivwert in Elektronen)",
+        "Signal-Rausch-Verhältnis (Amplitude)",
+        "Signalelektronen",
+        "Dunkelstrom (Elektronen/s)",
+        "Belichtungszeit"
+      ],
+      "when": "In Elektronen gezählt (nach Division durch die Konversionsverstärkung). Das Photonen-Schrotrauschen ist poissonverteilt (√S). Pixelungleichförmigkeit (PRNU) und Quantisierungsrauschen sind nicht berücksichtigt. EMVA 1288 gibt den DR als Verhältnis an; in dB ist er 20 log₁₀.",
+      "miss": "Für den DR 10 log verwenden (ein Verhältnis von Elektronenzahlen ist ein Amplitudenverhältnis, also 20 log). Das Photonen-Schrotrauschen beim SNR weglassen.",
+      "ex": "N_sat = 10000 e⁻; σ_r = 2 e⁻: DR = 20 log₁₀(5000) = 74,0 dB. Mit S = 10000 e⁻ (Dunkelstrom vernachlässigt) ist SNR = 10000/√10004 = 99,98 (fast √S).",
+      "kw": "Dynamikumfang Full-Well-Kapazität Ausleserauschen SNR Bildsensor Pixel"
+    },
+    "shg-pm": {
+      "name": "Phasenanpassung und Kohärenzlänge bei SHG",
+      "l": [
+        "Phasenfehlanpassung",
+        "Kohärenzlänge",
+        "Periode der Quasi-Phasenanpassung"
+      ],
+      "m": [
+        "Wellenvektor-Fehlanpassung",
+        "Wellenzahlen der zweiten Harmonischen und der Grundwelle",
+        "Vakuumwellenlänge der Grundwelle",
+        "Brechungsindizes bei der zweiten Harmonischen und der Grundwelle",
+        "Kohärenzlänge (Länge, über die sich die Konversion aufbaut)",
+        "Polungsperiode (erste Ordnung)"
+      ],
+      "when": "Schwache Konversion (keine Abschwächung der Grundwelle), ebene Wellen. Die konvertierte Intensität skaliert mit L² sinc²(ΔkL/2) und wächst bei Δk = 0 (Phasenanpassung) mit L². Δk = 0 wird durch Doppelbrechung (Winkel oder Temperatur) oder Quasi-Phasenanpassung erreicht.",
+      "miss": "Für λ die Wellenlänge der zweiten Harmonischen einsetzen (die der Grundwelle verwenden). In k = 2πn/λ die Wellenlänge im Medium einsetzen. L_c = π/Δk mit 2π/Δk verwechseln (die Definitionen unterscheiden sich zwischen Lehrbüchern).",
+      "ex": "Außerordentliche Welle in LiNbO₃ (24,5 °C, Gleichung nach Jundt: n_e(1064 nm) = 2,1558; n_e(532 nm) = 2,2342): L_c = 1,064/(4 × 0,0784) µm = 3,39 µm und Λ = 6,78 µm.",
+      "kw": "SHG Frequenzverdopplung zweite Harmonische Phasenanpassung Quasi-Phasenanpassung QPM PPLN Kohärenzlänge"
+    },
+    "kerr": {
+      "name": "Optischer Kerr-Effekt (intensitätsabhängiger Brechungsindex)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Brechungsindex",
+        "Brechungsindex bei geringer Intensität",
+        "nichtlinearer Brechungsindex",
+        "optische Intensität"
+      ],
+      "when": "Schnelle (elektronische) Nichtlinearität dritter Ordnung bei Intensitäten, bei denen Mehrphotonenabsorption und Ionisation gering sind. n₂ hängt mit χ⁽³⁾ über n₂ = 3χ⁽³⁾/(4n₀²ε₀c) zusammen (SI, lineare Polarisation).",
+      "miss": "cm²/W und m²/W verwechseln (10⁻¹⁶ cm²/W = 10⁻²⁰ m²/W). Mit einem über das Quadrat der Feldstärke definierten n₂ (esu) mischen.",
+      "ex": "Quarzglas (n₂ ≈ 2,7 × 10⁻²⁰ m²/W) bei 10 GW/cm² (10¹⁴ W/m²): Δn = 2,7 × 10⁻⁶.",
+      "kw": "optischer Kerr-Effekt nichtlinearer Brechungsindex n2 chi3 Selbstfokussierung"
+    },
+    "spm-b": {
+      "name": "Selbstphasenmodulation und B-Integral",
+      "l": [
+        "B-Integral",
+        "Nichtlinearitätskoeffizient der Faser",
+        "nichtlineare Phase in der Faser",
+        "effektive Länge"
+      ],
+      "m": [
+        "maximale nichtlineare Phase (B-Integral)",
+        "Vakuumwellenlänge",
+        "nichtlinearer Brechungsindex",
+        "Intensität",
+        "Ort entlang des Strahls",
+        "Nichtlinearitätskoeffizient der Faser",
+        "effektive Fläche",
+        "nichtlineare Phase",
+        "Spitzenleistung",
+        "effektive Länge",
+        "Dämpfung (natürlicher Logarithmus, Leistung)",
+        "Faserlänge"
+      ],
+      "when": "Über Längen mit schwacher Dispersion (L ≪ Dispersionslänge) bleibt die Pulsform erhalten, nur die Phase ändert sich, und das Spektrum verbreitert sich. In Hochleistungsverstärkern gilt B ≳ 3 bis 5 rad als übliche Warnschwelle für Selbstfokussierung und Pulsverschlechterung.",
+      "miss": "α in dB/km einsetzen (durch 4,343 teilen). Für A_eff die Kernfläche verwenden (aus dem MFD bestimmen).",
+      "ex": "SMF (n₂ = 2,6 × 10⁻²⁰ m²/W; A_eff = 80 µm²; 1550 nm): γ = 1,32 W⁻¹·km⁻¹. Mit 0,2 dB/km (α = 0,0461 km⁻¹) und 80 km ist L_eff = 21,2 km, und P = 10 mW ergibt φ_NL = 0,279 rad.",
+      "kw": "Selbstphasenmodulation SPM B-Integral nichtlineare Phase effektive Länge Nichtlinearitätskoeffizient"
+    },
+    "pockels": {
+      "name": "Pockels-Effekt und Halbwellenspannung",
+      "l": [
+        "Phasenänderung",
+        "Halbwellenspannung"
+      ],
+      "m": [
+        "durch die Spannung bewirkte Phasenänderung des Lichts",
+        "Brechungsindex für diese Polarisation",
+        "elektrooptischer Koeffizient (r₃₃ von LiNbO₃ usw.)",
+        "Spannung",
+        "Elektrodenlänge",
+        "Vakuumwellenlänge",
+        "Elektrodenabstand",
+        "Spannung für eine Phasenänderung um π"
+      ],
+      "when": "Transversale Anordnung (Feld senkrecht zum Licht), homogenes Feld und vollständiger Überlapp von Feld und optischer Mode. Bei realen Wellenleitermodulatoren wird durch einen Überlappfaktor (0,3 bis 0,7) geteilt. Mach-Zehnder-Modulatoren im Gegentaktbetrieb (Push-Pull) halbieren den Wert.",
+      "miss": "r in pm/V einsetzen. Longitudinale (V_π = λ/(2n³r₆₃), unabhängig von der Länge) und transversale Anordnung mischen.",
+      "ex": "LiNbO₃ (n_e = 2,138; r₃₃ = 30,8 pm/V), d = 10 µm, L = 2 cm, 1550 nm: V_π = 1,55 × 10⁻⁶ × 10⁻⁵/(2,138³ × 30,8 × 10⁻¹² × 0,02) = 2,57 V (etwa 5 V bei einem Überlapp von 0,5).",
+      "kw": "Pockels-Effekt elektrooptischer Effekt Halbwellenspannung Vpi Modulator LiNbO3"
+    },
+    "spdc": {
+      "name": "Energieerhaltung bei parametrischen Prozessen",
+      "l": [
+        "Energie",
+        "in Wellenlängen",
+        "Phasenanpassung (Impuls)"
+      ],
+      "m": [
+        "Kreisfrequenzen von Pump-, Signal- und Idlerwelle",
+        "Vakuumwellenlängen der einzelnen Wellen",
+        "Wellenvektoren der einzelnen Wellen"
+      ],
+      "when": "Gemeinsam für optische parametrische Verstärkung, Oszillation (OPO) und spontane parametrische Fluoreszenz (SPDC). Welches Wellenlängenpaar auftritt, legt die Phasenanpassung fest. Bei SPDC entstehen Photonenpaare gleichzeitig.",
+      "miss": "Die Wellenlängen direkt addieren (ihre Kehrwerte addieren). Wellenlängen im Medium und im Vakuum mischen.",
+      "ex": "Pumpe bei 405 nm mit einem Signal bei 780 nm: aus 1/λ_i = 1/405 − 1/780 folgt λ_i = 842,4 nm (810 nm im entarteten Fall). OPO mit Pumpe bei 1064 nm und Signal bei 1550 nm: λ_i = 3393 nm.",
+      "kw": "SPDC spontane parametrische Fluoreszenz parametrische Abwärtskonversion OPO Signal Idler Energieerhaltung"
+    },
+    "tbp": {
+      "name": "Zeit-Bandbreite-Produkt",
+      "l": [
+        ""
+      ],
+      "m": [
+        "spektrale Halbwertsbreite (Frequenz)",
+        "Halbwertsbreite der Pulsintensität",
+        "durch die Pulsform bestimmter Wert (0,441 für Gauß, 0,315 für sech²)"
+      ],
+      "when": "Die Gleichheit gilt für chirpfreie (bandbreitebegrenzte) Pulse. In der Wellenlänge ist Δλ = λ²Δν/c. K gilt für Halbwertsbreiten der Intensität und ändert sich bei anderen Breitendefinitionen.",
+      "miss": "Δν mit der Kreisfrequenz verwechseln (Δω = 2πΔν). Für die Pulsform das falsche K verwenden.",
+      "ex": "sech²-Puls mit 100 fs bei 800 nm: Δν = 0,315/100 fs = 3,15 THz; Δλ = 6,72 nm. Für einen Gauß-Puls: 4,41 THz; 9,41 nm.",
+      "kw": "Zeit-Bandbreite-Produkt TBP bandbreitebegrenzt Fourier-Limit Pulsdauer spektrale Breite"
+    },
+    "gdd": {
+      "name": "Pulsverbreiterung durch Gruppenlaufzeitdispersion",
+      "l": [
+        "Gauß-Puls",
+        "GDD"
+      ],
+      "m": [
+        "Halbwertsbreite der Intensität des Ausgangs- und des Eingangspulses",
+        "Gruppenlaufzeitdispersion (GDD)",
+        "Gruppengeschwindigkeitsdispersion (GVD)",
+        "Materiallänge"
+      ],
+      "when": "Ein chirpfreier gaußförmiger Eingangspuls und nur Dispersion zweiter Ordnung (Dispersion dritter Ordnung und Nichtlinearität vernachlässigt). Kürzere Pulse verbreitern sich stärker (Division durch τ_in²).",
+      "miss": "fs² und fs²/mm verwechseln. Den Faktor für Gauß-Pulse auf sech²-Pulse anwenden.",
+      "ex": "10 mm Quarzglas (36,1 fs²/mm bei 800 nm, φ₂ = 361 fs²): Aus 50 fs werden 53,9 fs, und auch aus 20 fs werden 53,9 fs (4 ln2 × 361/20² = 2,50).",
+      "kw": "GDD GVD Gruppenlaufzeitdispersion Pulsverbreiterung Chirp Dispersionskompensation"
+    },
+    "comb": {
+      "name": "Optischer Frequenzkamm",
+      "l": [
+        "Frequenz einer Kammlinie",
+        "Repetitionsrate"
+      ],
+      "m": [
+        "Frequenz der n-ten Kammlinie",
+        "Liniennummer (eine große ganze Zahl)",
+        "Repetitionsrate der Pulse",
+        "Träger-Einhüllenden-Offsetfrequenz",
+        "Pulsperiode (Umlauf-Gruppenlaufzeit)"
+      ],
+      "when": "Ein stabiler Pulszug aus einem modengekoppelten Laser. f_ceo wird mit einem f-2f-Interferometer oder Ähnlichem gemessen. Eine unbekannte Laserfrequenz folgt aus ihrer Schwebung f_b mit der nächstgelegenen Linie: f = n f_rep + f_ceo ± f_b.",
+      "miss": "f_ceo = 0 annehmen. Um die Liniennummer n festzulegen, muss die Frequenz vorher genauer als f_rep bekannt sein (z. B. mit einem Wellenlängenmesser).",
+      "ex": "f_rep = 250 MHz; f_ceo = 20 MHz; n = 776000: f_n = 194,000020 THz (1545,32 nm).",
+      "kw": "optischer Frequenzkamm f_rep f_ceo CEO Modenkopplung Frequenzmetrologie"
+    },
+    "planck": {
+      "name": "Plancksches Strahlungsgesetz",
+      "l": [
+        "spektrale Strahldichte"
+      ],
+      "m": [
+        "spektrale Strahldichte eines schwarzen Strahlers (pro Wellenlänge)",
+        "Temperatur",
+        "Planck-Konstante",
+        "Lichtgeschwindigkeit",
+        "Vakuumwellenlänge",
+        "Boltzmann-Konstante"
+      ],
+      "when": "Ein schwarzer Strahler (Emissionsgrad 1). Für reale Körper mit dem Emissionsgrad ε(λ) multiplizieren. B_ν pro Frequenz und B_λ pro Wellenlänge unterscheiden sich in Form und Lage des Maximums (B_λ dλ = B_ν dν). Für die spezifische Ausstrahlung in den Halbraum mit π multiplizieren.",
+      "miss": "T in °C einsetzen. λ in µm einsetzen, sodass die Einheiten nicht stimmen. Die Maxima von B_λ und B_ν bei derselben Wellenlänge erwarten.",
+      "ex": "T = 3000 K; λ = 1 µm: B_λ = 9,92 × 10¹¹ W·m⁻³·sr⁻¹ (= 99,2 W/(cm²·sr·µm)).",
+      "kw": "Planck Plancksches Strahlungsgesetz schwarzer Strahler Schwarzkörper Hohlraumstrahlung spektrale Strahldichte Strahlungsgesetz"
+    },
+    "wien": {
+      "name": "Wiensches Verschiebungsgesetz",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Wellenlänge, bei der B_λ am größten ist",
+        "Temperatur des schwarzen Strahlers",
+        "Wiensche Verschiebungskonstante (2,897 771 955 × 10⁻³ m·K)"
+      ],
+      "when": "Das Maximum der Verteilung B_λ pro Wellenlänge eines schwarzen Strahlers. Das Maximum der Verteilung pro Frequenz liegt bei ν_max = 5,879 × 10¹⁰ Hz/K × T, und c/ν_max ist nicht gleich λ_max.",
+      "miss": "Mit dem Maximum von B_ν verwechseln. T in °C einsetzen.",
+      "ex": "Sonne (5772 K): λ_max = 502,0 nm (das Frequenzmaximum, 339 THz, liegt bei 883 nm). 300 K: 9,66 µm. Eine Lampe mit 3000 K: 966 nm.",
+      "kw": "Wien Wiensches Verschiebungsgesetz Maximumwellenlänge schwarzer Strahler Schwarzkörper Farbtemperatur"
+    },
+    "stefan": {
+      "name": "Stefan-Boltzmann-Gesetz",
+      "l": [
+        ""
+      ],
+      "m": [
+        "spezifische Ausstrahlung (gesamte Leistung in den Halbraum pro Fläche)",
+        "Emissionsgrad (1 für einen schwarzen Strahler, konstant für einen grauen Strahler)",
+        "Stefan-Boltzmann-Konstante",
+        "Temperatur"
+      ],
+      "when": "Über alle Wellenlängen und den Halbraum summiert. Gültig für graue Strahler (ε unabhängig von der Wellenlänge). Der Nettoaustausch mit der Umgebung ist εσ(T⁴ − T_s⁴) (für einen Körper, der viel kleiner als seine Umgebung ist).",
+      "miss": "T in °C einsetzen. Mit der Strahldichte verwechseln (W·m⁻²·sr⁻¹, M/π).",
+      "ex": "Schwarzer Strahler bei 300 K: M = 5,670 × 10⁻⁸ × 300⁴ = 459 W/m². Bei 5772 K: 6,29 × 10⁷ W/m².",
+      "kw": "Stefan-Boltzmann schwarzer Strahler Schwarzkörper spezifische Ausstrahlung Emissionsgrad"
+    },
+    "lum-flux": {
+      "name": "Lichtstrom (aus dem Strahlungsfluss)",
+      "l": [
+        "",
+        "maximales photometrisches Strahlungsäquivalent"
+      ],
+      "m": [
+        "Lichtstrom",
+        "maximales photometrisches Strahlungsäquivalent (Tagsehen)",
+        "Hellempfindlichkeitsgrad für Tagsehen (1 bei 555 nm)",
+        "spektraler Strahlungsfluss (pro Wellenlänge)",
+        "Wellenlänge"
+      ],
+      "when": "Tagsehen (photopisch), Leuchtdichte über etwa 5 cd/m². 683 lm/W ist im SI für 540 × 10¹² Hz (555,0 nm in Luft) festgelegt. Für das Nachtsehen (skotopisch) gelten V′(λ) und 1700 lm/W.",
+      "miss": "Auch bei anderen Wellenlängen als 555 nm mit 683 lm/W multiplizieren (mit V(λ) multiplizieren). W und lm als dieselbe Größe behandeln.",
+      "ex": "1 mW bei 555 nm: Φ_v = 683 × 10⁻³ = 0,683 lm. 1 mW bei 650 nm (V = 0,107): 0,0731 lm.",
+      "kw": "Lichtstrom Lumen Hellempfindlichkeitsgrad V(λ) 683 lm/W Photometrie"
+    },
+    "illuminance": {
+      "name": "Beleuchtungsstärke (Abstandsquadrat- und Kosinusgesetz)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Beleuchtungsstärke",
+        "Lichtstärke in dieser Richtung",
+        "Winkel zwischen Flächennormale und Lichtrichtung",
+        "Abstand zur Lichtquelle"
+      ],
+      "when": "Für eine Lichtquelle, die als punktförmig gelten kann (kleiner als etwa 1/5 des Abstands). Für einen Punkt auf dem Boden seitlich einer Leuchte in der Höhe h ist d = h/cosθ, also E = I cos³θ/h².",
+      "miss": "Für einen schräg liegenden Punkt die Leuchtenhöhe als d beibehalten. lx und lm verwechseln (lx = lm/m²).",
+      "ex": "Lichtquelle mit 100 cd in 2 m Abstand, frontal: E = 100/4 = 25 lx. Bei einer um 45° geneigten Fläche: 17,7 lx.",
+      "kw": "Beleuchtungsstärke Lichtstärke photometrisches Entfernungsgesetz Abstandsquadratgesetz Kosinusgesetz Lux Candela"
+    },
+    "lambert": {
+      "name": "Vollkommen streuende Fläche (Lambert-Strahler)",
+      "l": [
+        "Winkelverteilung der Lichtstärke",
+        "spezifische Lichtausstrahlung und Leuchtdichte",
+        "beleuchtete weiße Fläche"
+      ],
+      "m": [
+        "Lichtstärke in Richtung θ und senkrecht zur Fläche",
+        "Winkel gegen die Flächennormale",
+        "spezifische Lichtausstrahlung (lm/m²)",
+        "Leuchtdichte (in jeder Richtung gleich)",
+        "Reflexionsgrad",
+        "Beleuchtungsstärke"
+      ],
+      "when": "Ein idealer Streuer (Leuchtdichte unabhängig von der Richtung). Papier und Wände folgen dem ungefähr, glänzende Flächen nicht. Das π ist das Halbraumintegral ∫cosθ dΩ = π sr, das das sr aus der Leuchtdichte entfernt (cd/m² = lm/(m²·sr)).",
+      "miss": "M = 2πL schreiben (die Kosinusgewichtung ergibt π). Die Einheiten von Leuchtdichte und Beleuchtungsstärke verwechseln (cd/m² und lx = lm/m²).",
+      "ex": "Weißes Papier mit dem Reflexionsgrad 0,9 bei 500 lx: L_v = 0,9 × 500/π = 143 cd/m².",
+      "kw": "Lambert Lambert-Strahler vollkommen streuend Leuchtdichte spezifische Lichtausstrahlung Kosinusgesetz"
+    },
+    "chromaticity": {
+      "name": "CIE-Normfarbwertanteile",
+      "l": [
+        "",
+        "",
+        "Normfarbwerte (Y und Z entsprechend)"
+      ],
+      "m": [
+        "Normfarbwertanteile (z = 1 − x − y)",
+        "Normfarbwerte (relativ)",
+        "Normierungskonstante (legt die Skala von Y fest)",
+        "spektrale Verteilung (relativ)",
+        "Spektralwertfunktion",
+        "Wellenlänge"
+      ],
+      "when": "Spektralwertfunktionen des 2°-Normalbeobachters CIE 1931 (für Gesichtsfelder über 4° den 10°-Normalbeobachter von 1964 verwenden). Die Farbart enthält keine Helligkeit. Für Farbabstände einen gleichabständigen Farbraum wie CIELAB verwenden.",
+      "miss": "Die Spektralwertfunktionen für 2° und 10° mischen. Abstände in der xy-Normfarbtafel als Farbabstände lesen (sie ist nicht gleichabständig).",
+      "ex": "Weiß D65 (X = 95,047; Y = 100; Z = 108,883): x = 0,3127; y = 0,3290.",
+      "kw": "Normfarbwertanteile Farbwertanteile xy Normfarbwerte Spektralwertfunktionen CIE XYZ Normfarbtafel"
+    },
+    "photon-energy": {
+      "name": "Photonenenergie, Frequenz und Wellenzahl",
+      "l": [
+        "Energie",
+        "Frequenz",
+        "Wellenzahl"
+      ],
+      "m": [
+        "Energie eines Photons",
+        "Planck-Konstante",
+        "Frequenz",
+        "Lichtgeschwindigkeit",
+        "Vakuumwellenlänge",
+        "Wellenzahl (meist cm⁻¹)"
+      ],
+      "when": "Vakuumwellenlängen. In einem Medium wird die Wellenlänge zu λ/n, Frequenz und Energie bleiben gleich. Praktische Formen: E[eV] = 1239,84/λ[nm]; ν[THz] = 299792,458/λ[nm]; σ̃[cm⁻¹] = 10⁷/λ[nm].",
+      "miss": "Mit der Wellenlänge in Luft oder in einem Medium rechnen (in der Präzisionsspektroskopie werden Luft- und Vakuumwellenlänge unterschieden). Die Wellenzahl mit der Kreiswellenzahl 2π/λ verwechseln.",
+      "ex": "1550 nm: E = 1,2816 × 10⁻¹⁹ J = 0,7999 eV; ν = 193,41 THz; σ̃ = 6451,6 cm⁻¹.",
+      "kw": "Photonenenergie eV Frequenz Wellenzahl 1240 Umrechnung"
+    },
+    "photon-flux": {
+      "name": "Photonenzahl (Photonenfluss)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Photonen pro Sekunde",
+        "optische Leistung",
+        "Planck-Konstante",
+        "Frequenz",
+        "Vakuumwellenlänge",
+        "Lichtgeschwindigkeit"
+      ],
+      "when": "Monochromatisches Licht. Für breitbandiges Licht über die Wellenlängen summieren (∫P_λ λ/(hc) dλ). Bei gleicher Leistung tragen längere Wellenlängen mehr Photonen.",
+      "miss": "mW und W verwechseln. Pulsenergie und Leistung verwechseln (die Photonen in einem Puls sind E_pulse/(hν)).",
+      "ex": "1 mW bei 1550 nm: Φ_p = 10⁻³/(1,2816 × 10⁻¹⁹) = 7,80 × 10¹⁵ s⁻¹. 1 W bei 532 nm: 2,68 × 10¹⁸ s⁻¹.",
+      "kw": "Photonenzahl Photonenfluss Photonenrate Leistung"
+    },
+    "g2": {
+      "name": "Korrelationsfunktion zweiter Ordnung g⁽²⁾(0)",
+      "l": [
+        "Definition",
+        "aus einer HBT-Messung"
+      ],
+      "m": [
+        "Korrelationsfunktion zweiter Ordnung bei Verzögerung null",
+        "Photonenzahl",
+        "Koinzidenzen bei Verzögerung null",
+        "Zählraten der beiden Detektoren",
+        "Koinzidenzfenster",
+        "Messzeit"
+      ],
+      "when": "Mit einem Koinzidenzfenster, das zur Kohärenzzeit des Lichts und zur Zeitauflösung der Detektoren passt. Thermisches Licht ergibt 2, kohärentes Licht (ein Laser) 1 und ein einzelnes Photon (Fock-Zustand n = 1) 0. g⁽²⁾(0) < 0,5 ist das übliche Kriterium für eine Einzelphotonenquelle.",
+      "miss": "Die zufälligen Koinzidenzen R₁R₂τT ohne das Zeitfenster berechnen. Übersehen, dass Dunkelzählungen und Zeitjitter g⁽²⁾(0) erhöhen.",
+      "ex": "Mit R₁ = R₂ = 100 kcps, τ = 1 ns und T = 10 s gibt es 100 zufällige Koinzidenzen. Bei gemessenen N_c = 5 ist g⁽²⁾(0) = 0,05.",
+      "kw": "g2 Korrelationsfunktion zweiter Ordnung HBT Hanbury Brown Twiss Antibunching Einzelphoton Photonenstatistik"
+    },
+    "led-eqe": {
+      "name": "Externe Quanteneffizienz und Lichtauskopplungseffizienz der LED",
+      "l": [
+        "externe Quanteneffizienz",
+        "Auskopplung durch eine ebene Fläche"
+      ],
+      "m": [
+        "externe Quanteneffizienz",
+        "abgestrahlte optische Leistung",
+        "Planck-Konstante",
+        "Lichtfrequenz",
+        "Strom",
+        "Elementarladung",
+        "interne Quanteneffizienz (Injektions- × Strahlungseffizienz)",
+        "Lichtauskopplungseffizienz",
+        "Grenzwinkel vom Halbleiter nach außen",
+        "Brechungsindex des Halbleiters (außen Luft)"
+      ],
+      "when": "Die Auskopplungsformel setzt einen isotropen Strahler unter einer ebenen Fläche voraus und vernachlässigt Fresnel-Reflexion und Photonen-Recycling. Reale LEDs vervielfachen den Wert durch Formgebung, Strukturierung und Reflektoren. Der Leistungswirkungsgrad (Wall-Plug-Effizienz, WPE) ist P/(IV).",
+      "miss": "Externe Quanteneffizienz und Leistungswirkungsgrad verwechseln. 1/(4n²) für die Summe über alle Flächen halten (es gilt für eine Fläche).",
+      "ex": "GaN (n = 2,5): θ_c = 23,58° und (1 − cosθ_c)/2 = 0,0417 (1/(4n²) = 0,040). Eine LED, die bei 450 nm und einem Strom von 0,35 A eine Leistung von 0,5 W abstrahlt: η_ext = 0,518.",
+      "kw": "externe Quanteneffizienz EQE Lichtauskopplungseffizienz Auskoppeleffizienz LED interne Quanteneffizienz"
+    },
+    "solar-ff": {
+      "name": "Füllfaktor und Wirkungsgrad der Solarzelle",
+      "l": [
+        "Füllfaktor",
+        "Wirkungsgrad"
+      ],
+      "m": [
+        "Füllfaktor",
+        "Spannung im Punkt maximaler Leistung",
+        "Stromdichte im Punkt maximaler Leistung",
+        "Leerlaufspannung",
+        "Kurzschlussstromdichte",
+        "Wirkungsgrad",
+        "einfallende Bestrahlungsstärke (Standard AM1.5G, 1000 W/m²)"
+      ],
+      "when": "Unter Standardtestbedingungen vergleichen (25 °C, AM1.5G, 1000 W/m²). Serien- und Parallelwiderstand verringern den FF. Angeben, ob die Fläche die Aperturfläche (aktive Fläche) oder die Gesamtfläche ist.",
+      "miss": "Die Umrechnung von mA/cm² in A/m² vergessen (1 mA/cm² = 10 A/m²). Mit dem FF in % multiplizieren.",
+      "ex": "V_oc = 0,70 V; J_sc = 40 mA/cm² (400 A/m²); FF = 0,80: η = 0,80 × 0,70 × 400/1000 = 22,4 %.",
+      "kw": "Füllfaktor FF Wirkungsgrad Leerlaufspannung Kurzschlussstrom Solarzelle"
+    },
+    "diode-voc": {
+      "name": "Diodengleichung und Leerlaufspannung der Solarzelle",
+      "l": [
+        "Strom-Spannung",
+        "Leerlaufspannung"
+      ],
+      "m": [
+        "abgegebene Stromdichte",
+        "Kurzschlussstromdichte (Photostrom)",
+        "Dunkelsättigungsstromdichte",
+        "Elementarladung",
+        "Spannung",
+        "Idealitätsfaktor (1 bis 2)",
+        "Boltzmann-Konstante",
+        "Zelltemperatur",
+        "Leerlaufspannung"
+      ],
+      "when": "Ein Eindiodenmodell ohne Serien- und Parallelwiderstand mit einem spannungsunabhängigen Photostrom. Eine Verzehnfachung von J_sc erhöht V_oc um (n_id k_B T/q) ln10 (59,2 mV bei 25 °C mit n_id = 1); deshalb steigt der Wirkungsgrad unter Konzentration.",
+      "miss": "T in °C einsetzen. Die Einheiten von J₀ (A/cm² und A/m²) mischen. V_oc sinkt mit steigender Temperatur (J₀ wächst).",
+      "ex": "J_sc = 400 A/m²; J₀ = 1 × 10⁻⁹ A/m²; n_id = 1; 25 °C (k_B T/q = 25,69 mV): V_oc = 25,69 mV × ln(4 × 10¹¹) = 0,686 V.",
+      "kw": "Leerlaufspannung Diodengleichung Sättigungsstrom Idealitätsfaktor Solarzelle"
+    },
+    "sq": {
+      "name": "Ultimativer Wirkungsgrad nach Shockley-Queisser und Strahlungsgrenze",
+      "l": [
+        "ultimativer Wirkungsgrad (x = E/(k_B T_s))",
+        "Strahlungs-Sättigungsstrom"
+      ],
+      "m": [
+        "ultimativer Wirkungsgrad (Sonne als schwarzer Strahler, jedes Photon oberhalb von E_g liefert E_g)",
+        "E_g/(k_B T_s)",
+        "E/(k_B T_s)",
+        "Sättigungsstromdichte bei ausschließlich strahlender Rekombination (eine Seite)",
+        "Elementarladung",
+        "Planck-Konstante",
+        "Lichtgeschwindigkeit",
+        "Photonenenergie",
+        "Bandlücke",
+        "Boltzmann-Konstante",
+        "Zelltemperatur"
+      ],
+      "when": "Ein Einfachübergang, der alles oberhalb von E_g und nichts darunter absorbiert. Der ultimative Wirkungsgrad ist die Grenze für eine Zelle bei 0 K; mit der Eigenemission der Zelle (J_{0,rad}) ergibt sich die Grenze des detaillierten Gleichgewichts von etwa 33 % unter AM1.5G (E_g ≈ 1,34 eV).",
+      "miss": "Den ultimativen Wirkungsgrad (etwa 44 %) mit der Grenze des detaillierten Gleichgewichts (etwa 33 %) verwechseln. T_s (Sonne, 6000 K) und T_c (Zelle, 300 K) mischen.",
+      "ex": "Für eine Sonne als schwarzer Strahler mit 6000 K liegt das Maximum von u bei 43,9 % für x_g = 2,17 (E_g = 1,12 eV). Mit E_g = 1,34 eV und T_c = 300 K ist J_{0,rad} = 2,36 × 10⁻¹⁶ A/m².",
+      "kw": "Shockley-Queisser SQ-Grenze detailliertes Gleichgewicht ultimativer Wirkungsgrad Bandlücke"
+    }
+  }
+}
