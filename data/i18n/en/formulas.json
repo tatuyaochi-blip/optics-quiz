@@ -1144,7 +1144,7 @@
       ],
       "when": "One round trip of a waveguide ring. The resonance positions follow n_eff and their spacing follows n_g. Coupling strength and loss set the depth (zero at critical coupling) and width of the dips. Temperature changes n_eff and shifts the resonance (about 0.08 nm/K in silicon).",
       "miss": "Using n_eff for the FSR (in silicon waveguides n_g ≈ 4.2 and n_eff ≈ 2.4 differ a lot). Using the radius for L.",
-      "ex": "Silicon ring (radius 10 µm, L = 62.83 µm, n_g = 4.2) at 1550 nm: Δλ_FSR = 1.55² /(4.2 × 62.83) µm = 9.10 nm.",
+      "ex": "Silicon ring (radius 10 µm, L = 62.83 µm, n_g = 4.2) at 1550 nm: Δλ_FSR = 1.55²/(4.2 × 62.83) µm = 9.10 nm.",
       "kw": "ring resonator microring FSR Q factor silicon photonics"
     },
     "responsivity": {
@@ -1182,7 +1182,7 @@
         "dark current",
         "measurement bandwidth"
       ],
-      "when": "Charges flow independently (Poisson statistics). For an APD it is 2qM²F(I_p + I_d)Δf, with I_p the unmultiplied photocurrent and I_d the multiplied part of the dark current; the unmultiplied surface dark current adds 2qI_dsΔf separately. Light with non-Poissonian photon statistics (e.g. squeezed light) is different.",
+      "when": "Charges flow independently (Poisson statistics). For an APD it is 2qM²F(I_p + I_d)Δf, with I_p the unmultiplied photocurrent and I_d the multiplied part of the dark current; the unmultiplied surface dark current adds 2qI_{ds}Δf separately. Light with non-Poissonian photon statistics (e.g. squeezed light) is different.",
       "miss": "Confusing mean square with rms (√). Mixing one- and two-sided bandwidths (the factor 2 is for a one-sided bandwidth).",
       "ex": "I_p = 1 µA, I_d = 1 nA, Δf = 1 GHz: √(2 × 1.602 × 10⁻¹⁹ × 1.001 × 10⁻⁶ × 10⁹) = 17.9 nA (rms).",
       "kw": "shot noise quantum noise dark current noise bandwidth"
