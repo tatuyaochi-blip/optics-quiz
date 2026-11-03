@@ -1,0 +1,1691 @@
+{
+  "title": "Optics formula sheet (symbols, units, conditions, worked examples)",
+  "description": "78 optics formulas, from Snell’s law, the thin-lens equation, the Fresnel equations, Brewster’s angle and the grating equation to Gaussian beams, resonator stability, fiber V number and dispersion, responsivity and shot noise, SHG phase matching, Planck’s law and Shockley–Queisser, each with symbols and SI units, conditions of use, common mistakes and a numerical example. Print only the formulas you pick on A4.",
+  "h1": "Formula sheet",
+  "lead": "The formulas used in optics and photonics courses, exams and work, grouped by topic. Each one lists symbols with SI units, conditions and range, common mistakes and a numerical example, and the dimensions of both sides have all been checked by machine. Links lead to calculators that use the same formula.",
+  "note": "Example values are this site’s calculator defaults or match textbook and manufacturer data (sources are given per formula). For design, use values from component and material datasheets.",
+  "groups": {
+    "geo": "Geometrical optics and imaging",
+    "wave": "Interference, diffraction, spectroscopy",
+    "pol": "Polarization",
+    "material": "Optical materials and thin films",
+    "laser": "Lasers and Gaussian beams",
+    "fiber": "Optical fibers and communications",
+    "detect": "Detection and imaging sensors",
+    "nonlinear": "Nonlinear optics and ultrafast pulses",
+    "photo": "Radiometry, photometry and colour",
+    "quantum": "Photons, quantum optics, solar cells"
+  },
+  "guide": [
+    {
+      "h": "How to use",
+      "p": [
+        "Type a formula name, symbol or term (“Brewster”, “z_R”, “group index”) in the search box to keep only the matching formulas, or narrow them with the topic buttons. Each heading has a link (#f-…) that jumps straight to that formula.",
+        "Tick “Pick” on a formula to add it to your own formula sheet. “Print picked only” prints the formulas and symbol tables of the picked items on A4 in two columns (10–15 formulas fit on one or two pages). Tick “Also print conditions and examples” to include those as well.",
+        "“Copy link to picked” gives a URL (?f=…) that opens the same selection. Picks are also kept in this browser (localStorage) and never sent to a server. If your browser blocks storage, the URL still restores them."
+      ]
+    },
+    {
+      "h": "How the dimensions are checked",
+      "p": [
+        "For every formula (78 in all), a program converts the SI units in the symbol table to base units (kg, m, s, K, mol, A, cd) and checks that both sides have equal dimensions, that added terms match, and that the arguments of exp, ln, log and trigonometric functions are dimensionless. The [ ] after each formula gives the dimensions of both sides of that line.",
+        "Radians (rad) and steradians (sr) count as dimension 1. dB and dBm are also dimension 1, but the symbol tables show them as units (dB is a ratio, dBm a level relative to 1 mW, and they follow different rules when added). The lumen is cd·sr, so photometric formulas show cd in their dimensions."
+      ]
+    }
+  ],
+  "units_h": "Unit conversions",
+  "units_lead": "Conversions for units common in optics when turning values into SI before using a formula (after NIST SP 811 and the SI Brochure, 9th ed.).",
+  "units": [
+    {
+      "a": "λ [nm] → ν [THz]",
+      "b": "ν = 299 792.458/λ (1550 nm = 193.414 THz)",
+      "q": "wavelength and frequency (vacuum)"
+    },
+    {
+      "a": "λ [nm] → E [eV]",
+      "b": "E = 1239.842/λ (1550 nm = 0.7999 eV)",
+      "q": "photon energy"
+    },
+    {
+      "a": "λ [nm] → σ̃ [cm⁻¹]",
+      "b": "σ̃ = 10⁷/λ (1550 nm = 6451.6 cm⁻¹)",
+      "q": "wavenumber (spectroscopy)"
+    },
+    {
+      "a": "1 eV",
+      "b": "1.602 176 634 × 10⁻¹⁹ J = 241.799 THz = 8065.54 cm⁻¹",
+      "q": "energy"
+    },
+    {
+      "a": "Δλ → Δν",
+      "b": "Δν = cΔλ/λ² (0.8 nm ≈ 100 GHz at 1550 nm)",
+      "q": "spectral width, channel spacing"
+    },
+    {
+      "a": "1 Å",
+      "b": "0.1 nm = 10⁻¹⁰ m",
+      "q": "length (wavelength, film thickness)"
+    },
+    {
+      "a": "G [dB]",
+      "b": "10 log₁₀(P₂/P₁) (+3.01 dB = ×2, +10 dB = ×10; 20 log₁₀ for amplitudes)",
+      "q": "power ratio"
+    },
+    {
+      "a": "P [dBm]",
+      "b": "10 log₁₀(P/1 mW) (0 dBm = 1 mW, 30 dBm = 1 W, −30 dBm = 1 µW)",
+      "q": "power"
+    },
+    {
+      "a": "1 dB/km",
+      "b": "0.2303 km⁻¹ = 2.303 × 10⁻⁴ m⁻¹ (α[dB/km] = 4.343 α[km⁻¹])",
+      "q": "loss, absorption (power)"
+    },
+    {
+      "a": "1 ps/(nm·km)",
+      "b": "10⁻⁶ s/m²",
+      "q": "dispersion parameter D"
+    },
+    {
+      "a": "1 ps²/km",
+      "b": "10⁻²⁷ s²/m",
+      "q": "group-velocity dispersion β₂"
+    },
+    {
+      "a": "1 W/cm²",
+      "b": "10⁴ W/m² (1 GW/cm² = 10¹³ W/m²)",
+      "q": "intensity"
+    },
+    {
+      "a": "1 cm²/W",
+      "b": "10⁻⁴ m²/W",
+      "q": "nonlinear index n₂"
+    },
+    {
+      "a": "1 lm (555 nm)",
+      "b": "1/683 W = 1.464 mW (monochromatic at 540 THz)",
+      "q": "luminous and radiant flux"
+    },
+    {
+      "a": "1 lx",
+      "b": "1 lm/m² (1 fc = 10.764 lx)",
+      "q": "illuminance"
+    },
+    {
+      "a": "1 nt",
+      "b": "1 cd/m²",
+      "q": "luminance"
+    },
+    {
+      "a": "1 D (dioptre)",
+      "b": "1 m⁻¹ (f = 50 mm is 20 D)",
+      "q": "lens power"
+    },
+    {
+      "a": "1″ (arcsecond)",
+      "b": "4.848 µrad (1 mrad = 206.3″)",
+      "q": "angle"
+    },
+    {
+      "a": "1 mA/cm²",
+      "b": "10 A/m²",
+      "q": "current density (solar cells)"
+    },
+    {
+      "a": "T [K]",
+      "b": "t [°C] + 273.15",
+      "q": "temperature (use K in radiation laws)"
+    }
+  ],
+  "const_h": "Physical constants",
+  "const_lead": "CODATA 2022 recommended values (Mohr et al., Rev. Mod. Phys. 97, 025002 (2025); physics.nist.gov/cuu). “Exact” marks constants fixed by the 2019 SI and those derived from them. Figures in parentheses are the standard uncertainty in the last digits. The examples use these values.",
+  "constants": [
+    "speed of light in vacuum",
+    "Planck constant",
+    "reduced Planck constant h/2π",
+    "elementary charge",
+    "Boltzmann constant",
+    "Boltzmann constant (eV)",
+    "Planck constant × speed of light",
+    "Stefan–Boltzmann constant",
+    "Wien wavelength displacement constant",
+    "Wien frequency displacement constant",
+    "first radiation constant 2πhc²",
+    "second radiation constant hc/k_B",
+    "luminous efficacy (540 THz)",
+    "vacuum electric permittivity",
+    "vacuum magnetic permeability",
+    "characteristic impedance of vacuum μ₀c",
+    "electron mass"
+  ],
+  "faq": [
+    [
+      "Should I use the group index or the phase index?",
+      "Quantities set by phase use the phase index n: fringe positions, the thickness of a λ/4 layer, ring resonance wavelengths (mλ = n_eff L) and phase matching (Δk). Quantities carried by energy or the envelope use the group index n_g = n − λ dn/dλ: pulse delay, cavity FSR and longitudinal mode spacing, and the envelope position in OCT or white-light interferometry. In silica fiber the two differ by about 1 %, but in silicon waveguides n_eff ≈ 2.4 and n_g ≈ 4.2 differ a lot."
+    ],
+    [
+      "When do I use paraxial formulas and when exact ones?",
+      "The thin-lens equation, ABCD matrices, the Lagrange invariant and the Gaussian-beam formulas are paraxial (sinθ ≈ θ). For ray slopes of 0.1 rad (about 6°) the error is below 0.2 %, but high-NA objectives and wide-angle lenses need ray tracing with Snell’s law or an aberration calculation. NA = n sinθ is exact; NA ≈ 1/(2N) is the relation for a lens satisfying the sine condition with the object at infinity."
+    ],
+    [
+      "What is the difference between amplitude and intensity reflectance?",
+      "The r and t of the Fresnel equations are ratios of field amplitudes and carry a sign (phase). The power ratio is R = |r|², but the transmittance is T = (n₂cosθ_t)/(n₁cosθ_i)·|t|², not |t|² (the index changes the wave’s power and the angle changes the beam’s cross-section). Interference calculations (thin films, Fabry–Pérot) add amplitudes first and then square. In dB, power uses 10 log₁₀ and amplitude 20 log₁₀."
+    ],
+    [
+      "What is the difference between radiometric (W) and photometric (lm) quantities?",
+      "Radiometric quantities are physical energy flows (W, W/m², W/(m²·sr)); photometric quantities are weighted by the eye’s sensitivity V(λ) (lm, lx, cd/m²). The same 1 W is 683 lm at 555 nm, about 73 lm at 650 nm and 0 lm in the infrared. Ranking LEDs by W or by lm/W can give different orders."
+    ],
+    [
+      "Which formulas have sign conventions that differ between books?",
+      "Mainly the object distance of a thin lens (this page and the calculator take a real object as positive, 1/a + 1/b = 1/f), the direction of radii of curvature, the sign of the Fresnel r_p, the direction of grating diffraction angles, the handedness of circular polarization and the sign of the imaginary part of the q parameter. Measurable quantities such as reflectance or focal length do not depend on the convention, so align conventions before comparing intermediate steps with other sources."
+    ],
+    [
+      "What is the [ ] to the right of each formula?",
+      "The dimensions of both sides of that line in SI base units (kg, m, s, K, mol, A, cd). Intensity, for example, is kg·s⁻³ (= W/m²); dimensionless quantities show 1. Use it to check the unit of your answer. Every formula has been checked by a program to have equal dimensions on both sides."
+    ],
+    [
+      "How many pages does printing the picked formulas take?",
+      "With formulas and symbol tables only, 10–15 formulas take roughly one or two A4 pages in two columns. Including conditions and examples makes it longer. The header, ads and search box are not printed, and the page stays readable with “background graphics” turned off in the print settings."
+    ],
+    [
+      "Can the example values differ slightly from the calculators?",
+      "Examples that use the calculators’ default values (thin lens, anti-reflection coating, fiber, Gaussian beam, wavelength conversion) give the same values as the calculators show. Where the number of digits differs, it is only rounding. The calculators use the same formulas, symbols and sign conventions as this page."
+    ]
+  ],
+  "sources_h": "Main sources",
+  "refs": {
+    "hecht": "Hecht 5th ed.",
+    "saleh": "Saleh & Teich 3rd ed.",
+    "bornwolf": "Born & Wolf 7th ed.",
+    "smith": "Smith 4th ed.",
+    "yariv": "Yariv & Yeh 6th ed.",
+    "palmer": "Palmer 8th ed.",
+    "schott": "SCHOTT data sheets",
+    "malitson": "Malitson 1965",
+    "macleod": "Macleod 5th ed.",
+    "siegman": "Siegman",
+    "kogelnik": "Kogelnik & Li 1966",
+    "iso11146": "ISO 11146-1",
+    "coldren": "Coldren et al. 2nd ed.",
+    "koechner": "Koechner 6th ed.",
+    "agrawal-fo": "Agrawal, Fiber-Optic Comm. 5th ed.",
+    "agrawal-nfo": "Agrawal, Nonlinear Fiber Optics 6th ed.",
+    "marcuse": "Marcuse 1977",
+    "itu-g652": "ITU-T G.652",
+    "bogaerts": "Bogaerts et al. 2012",
+    "sze": "Sze & Ng 3rd ed.",
+    "mcintyre": "McIntyre 1966",
+    "rogalski": "Rogalski 3rd ed.",
+    "emva1288": "EMVA 1288 4.0",
+    "boyd": "Boyd 4th ed.",
+    "jundt": "Jundt 1997",
+    "diels": "Diels & Rudolph 2nd ed.",
+    "weiner": "Weiner",
+    "udem": "Udem et al. 2002",
+    "mccluney": "McCluney 2nd ed.",
+    "cie015": "CIE 015:2018",
+    "bipm-si": "SI Brochure 9th ed.",
+    "codata": "CODATA 2022",
+    "loudon": "Loudon 3rd ed.",
+    "fox": "Fox",
+    "schubert": "Schubert 2nd ed.",
+    "green": "Green",
+    "sq1961": "Shockley & Queisser 1961"
+  },
+  "formulas": {
+    "snell": {
+      "name": "Snell’s law",
+      "l": [
+        ""
+      ],
+      "m": [
+        "refractive indices of the incident and refracting media",
+        "angle of incidence (from the surface normal)",
+        "angle of refraction (from the normal)"
+      ],
+      "when": "A flat boundary (or the tangent plane at the point of incidence) between two homogeneous, isotropic media, large compared with the wavelength. The extraordinary ray in a birefringent crystal needs separate treatment. If n₁ sinθ₁/n₂ > 1 there is no solution and the light is totally reflected.",
+      "miss": "Measuring the angles from the surface instead of the normal. Mixing degrees and radians on a calculator. Light entering the denser medium bends towards the normal, not away from it.",
+      "ex": "From air (n = 1) into glass of n = 1.5 at θ₁ = 45°: sinθ₂ = sin45°/1.5 = 0.4714, so θ₂ = 28.13°. Into water (n = 1.33): 32.12°.",
+      "kw": "Snell refraction angle of incidence refractive index"
+    },
+    "critical-angle": {
+      "name": "Critical angle for total internal reflection",
+      "l": [
+        "(n₁ > n₂)"
+      ],
+      "m": [
+        "critical angle (from the normal)",
+        "index of the side the light comes from (higher index)",
+        "index of the outer side (lower index)"
+      ],
+      "when": "Only for light going from a higher-index to a lower-index medium. For θ₁ > θ_c the light is totally reflected and an evanescent wave leaks into the outer medium (depth of the order of a wavelength). At a lossless boundary the reflectance is 1.",
+      "miss": "Swapping n₁ and n₂ so that sin > 1. Expecting a critical angle for light entering the denser medium. Forgetting that s and p get different phase shifts on total reflection (Fresnel equations).",
+      "ex": "Glass (n = 1.5) to air: θ_c = arcsin(1/1.5) = 41.81°. Water (1.333) to air: 48.61°. At the core–cladding boundary of a fiber with 1.45 and 1.4447: 85.10°.",
+      "kw": "critical angle total internal reflection TIR evanescent"
+    },
+    "thin-lens": {
+      "name": "Thin-lens equation and lateral magnification",
+      "l": [
+        "imaging",
+        "lateral magnification",
+        "power"
+      ],
+      "m": [
+        "object distance (positive for an object in front of the lens)",
+        "image distance (positive for an image behind the lens)",
+        "focal length (positive for a converging lens, negative for a diverging lens)",
+        "lateral magnification (negative means inverted)",
+        "optical power (m⁻¹ = dioptre D)"
+      ],
+      "when": "A thin lens in air, paraxial rays. For thick lenses the same form holds with distances measured from the principal planes. Signs follow the same “real object and real image are positive” convention as this site’s calculator. Some books take the object distance negative (1/b − 1/a = 1/f).",
+      "miss": "Mixing sign conventions from different books (putting a positive a into 1/b − 1/a = 1/f). Treating b < 0 as an error (it is a virtual image on the object side). Writing power in mm⁻¹ and calling it D (D is m⁻¹).",
+      "ex": "f = 50 mm, a = 150 mm: 1/b = 1/50 − 1/150 gives b = 75 mm and m = −0.5 (inverted real image, half size). With a = 30 mm (inside the focal point) b = −75 mm and m = 2.5 (upright virtual image, a magnifier). P = 1/0.05 m = 20 D.",
+      "kw": "thin lens equation Gaussian lens formula magnification image distance object distance dioptre"
+    },
+    "lensmaker": {
+      "name": "Lensmaker’s equation",
+      "l": [
+        ""
+      ],
+      "m": [
+        "focal length",
+        "refractive index of the lens material (in air)",
+        "radii of curvature of the first and second surfaces (positive if the centre of curvature lies behind the surface)"
+      ],
+      "when": "A thin lens in air (thickness ≪ radii), paraxial. With thickness t: 1/f = (n − 1)[1/R₁ − 1/R₂ + (n − 1)t/(nR₁R₂)]. In a medium of index n_m replace (n − 1) by (n/n_m − 1).",
+      "miss": "The sign of R₂ for a biconvex lens (the rear surface has R₂ < 0). Confusing radius of curvature with diameter. Forgetting the surrounding index (a lens in water has a longer focal length).",
+      "ex": "Biconvex N-BK7 lens (n_d = 1.5168), R₁ = 100 mm, R₂ = −100 mm: 1/f = 0.5168 × (1/100 + 1/100) gives f = 96.75 mm.",
+      "kw": "lensmaker radius of curvature focal length biconvex plano-convex"
+    },
+    "two-lens": {
+      "name": "Two thin lenses: effective focal length and back focal distance",
+      "l": [
+        "combination",
+        "back focal distance"
+      ],
+      "m": [
+        "effective focal length (measured from the rear principal plane)",
+        "focal lengths of the first and second lens",
+        "separation of the lenses",
+        "distance from the second lens to the rear focal point"
+      ],
+      "when": "Two thin lenses in air, paraxial. In terms of power, P = P₁ + P₂ − dP₁P₂. With d = f₁ + f₂, P = 0: an afocal system (telescope, beam expander).",
+      "miss": "Measuring the effective focal length from lens 2 (from lens 2 to the focus is the BFD). Using the simple sum for lenses in contact (d = 0) when they are separated.",
+      "ex": "f₁ = 50 mm, f₂ = 100 mm, d = 30 mm: 1/f = 0.02 + 0.01 − 0.006 = 0.024 mm⁻¹, so f = 41.67 mm (24 D) and BFD = 41.67 × (1 − 30/50) = 16.67 mm.",
+      "kw": "effective focal length two lenses back focal distance principal plane power afocal"
+    },
+    "abcd": {
+      "name": "Ray transfer matrix (ABCD matrix)",
+      "l": [
+        "height",
+        "angle",
+        "determinant"
+      ],
+      "m": [
+        "ray height at input and output",
+        "ray slope at input and output (paraxial)",
+        "diagonal elements of the matrix",
+        "matrix element (dimension of length)",
+        "matrix element (−C is the power of the system)",
+        "indices of the input and output media"
+      ],
+      "when": "Paraxial rays (sinθ ≈ θ). Free space of length d is [[1, d], [0, 1]]; a thin lens of focal length f is [[1, 0], [−1/f, 1]]. Multiply from right to left in the order the light meets the elements. With the same medium at input and output, AD − BC = 1. The focal length is f = −1/C and the distance from the last surface to the rear focus is −A/C.",
+      "miss": "Multiplying in the wrong order (the first element goes on the far right). Entering angles in degrees. Mixing with the convention that uses n θ instead of θ (which makes the determinant 1) across different media.",
+      "ex": "For f₁ = 50 mm, d = 30 mm, f₂ = 100 mm: M = L₂·T(30)·L₁ = [[0.4, 30], [−0.024, 0.7]], so f = −1/C = 41.67 mm and −A/C = 16.67 mm (the same as the two-lens formula), with AD − BC = 1.",
+      "kw": "ABCD ray matrix ray transfer ray tracing paraxial"
+    },
+    "lagrange": {
+      "name": "Lagrange invariant",
+      "l": [
+        "invariant",
+        "between conjugate planes"
+      ],
+      "m": [
+        "Lagrange invariant",
+        "refractive indices on the object and image sides",
+        "slope of the marginal ray (from the axial point to the edge of the aperture)",
+        "object and image heights"
+      ],
+      "when": "Paraxial, between the object and image planes (conjugate planes). At a general surface H = n(ū y − u ȳ) (marginal ray y, u and chief ray ȳ, ū) is the same at every surface. Its square is proportional to the light the system can pass (étendue).",
+      "miss": "Treating the lateral magnification m = y′/y as the angular magnification (m = n u/(n′ u′)). Forgetting that a smaller image means larger angles (higher NA), and designing beyond the lens NA.",
+      "ex": "Object height y = 10 mm and marginal-ray slope u = 0.1 at the object (in air): H = 1.0 mm. Imaging at m = −0.5 gives y′ = −5 mm, so u′ = H/y′ = −0.2: the image-side slope (NA) doubles.",
+      "kw": "Lagrange invariant Helmholtz étendue conjugate paraxial"
+    },
+    "na-fnumber": {
+      "name": "Numerical aperture and f-number",
+      "l": [
+        "numerical aperture",
+        "f-number",
+        "object at infinity, in air"
+      ],
+      "m": [
+        "numerical aperture",
+        "refractive index on the object (or image) side",
+        "half-angle of the marginal ray",
+        "f-number (also F/#)",
+        "focal length",
+        "diameter of the entrance pupil"
+      ],
+      "when": "The NA formula is exact. NA ≈ 1/(2N) holds for a lens satisfying the sine condition (aberration-corrected) with the object at infinity. For near objects use the working f-number N(1 + |m|). Immersion objectives have NA above 1.",
+      "miss": "Using the full cone angle instead of the half-angle. Applying NA ≈ 1/(2N) to finite conjugates. Reversing the relation between f-number and aperture (a smaller f-number is brighter).",
+      "ex": "f = 50 mm, D = 25 mm: N = 2 and NA ≈ 1/(2N) = 0.25 (in a lens obeying the sine condition the marginal ray height is f sinθ, so sinθ = 12.5/50 = 0.25 holds directly; the 0.2425 obtained from arctan(12.5/50) with a flat principal plane applies to a lens that does not satisfy the sine condition). Oil immersion (n = 1.515) with θ = 67.5°: NA = 1.40.",
+      "kw": "numerical aperture NA f-number F/# aperture immersion"
+    },
+    "young": {
+      "name": "Young’s double-slit interference",
+      "l": [
+        "bright fringes",
+        "fringe spacing"
+      ],
+      "m": [
+        "separation of the two slits",
+        "direction of a bright fringe",
+        "order (integer)",
+        "wavelength",
+        "fringe spacing on the screen",
+        "distance from the slits to the screen"
+      ],
+      "when": "The two sources are in phase (spatially coherent). The Δy formula needs L ≫ d and small θ (sinθ ≈ tanθ). The fringe envelope is set by the single-slit diffraction.",
+      "miss": "Confusing slit width with slit separation. Forgetting that the wavelength in a medium is λ₀/n. Writing the dark fringes as d sinθ = mλ (dark fringes are at (m + 1/2)λ).",
+      "ex": "λ = 632.8 nm, d = 0.25 mm, L = 1.0 m: Δy = 632.8 × 10⁻⁹ × 1.0/(0.25 × 10⁻³) = 2.531 mm.",
+      "kw": "Young double slit interference fringes fringe spacing"
+    },
+    "michelson": {
+      "name": "Michelson interferometer",
+      "l": [
+        "bright rings",
+        "counting fringes"
+      ],
+      "m": [
+        "difference of the arm lengths (mirror positions)",
+        "angle of the light (angle in the field of view)",
+        "order",
+        "wavelength (in air)",
+        "distance the mirror moved",
+        "number of fringes passing the centre"
+      ],
+      "when": "The two arms have the same number of reflections and the same beam-splitter phase (with a compensator plate). Depending on the splitter, bright and dark conditions can swap. The fringes vanish once the path difference exceeds the coherence length.",
+      "miss": "Forgetting the round trip and writing Δd = Nλ (moving the mirror by λ/2 shifts one fringe). Ignoring the difference between vacuum and air wavelength (n ≈ 1.00027) in precise length measurement.",
+      "ex": "With 632.8 nm light 1000 fringes pass: Δd = 1000 × 632.8/2 nm = 316.4 µm.",
+      "kw": "Michelson interferometer path difference fringes displacement"
+    },
+    "coherence-length": {
+      "name": "Coherence length",
+      "l": [
+        "",
+        "from the wavelength width"
+      ],
+      "m": [
+        "coherence length (in vacuum)",
+        "coherence time",
+        "speed of light",
+        "spectral width (frequency)",
+        "centre wavelength",
+        "spectral width (wavelength)"
+      ],
+      "when": "An order-of-magnitude formula. The prefactor depends on the spectral shape and the width definition (for a Gaussian spectrum with FWHM Δλ, taking l_c as the FWHM of |g(τ)| in path difference gives l_c = (4 ln2/π)λ²/Δλ ≈ 0.88λ²/Δλ). Divide by the group index in a medium. Fringes are clear when the path difference is well below this.",
+      "miss": "Comparing values from different books without noticing the prefactor on λ²/Δλ. The OCT depth resolution is l_c/2 because of the round trip, which for a Gaussian is (2 ln2/π)λ²/Δλ ≈ 0.44λ²/Δλ (some books call this 0.44 expression the coherence length, so do not halve it again).",
+      "ex": "850 nm LED (Δλ = 40 nm): l_c ≈ 850²/40 nm = 18.1 µm (15.9 µm with the Gaussian FWHM definition; OCT resolution 7.97 µm). He–Ne laser with Δν = 1.5 GHz: c/Δν = 0.200 m. Single-frequency laser with 1 MHz linewidth: 300 m.",
+      "kw": "coherence length coherence time temporal coherence linewidth OCT"
+    },
+    "fabry-perot": {
+      "name": "Fabry–Pérot transmission (Airy function)",
+      "l": [
+        "transmittance",
+        "coefficient of finesse",
+        "round-trip phase"
+      ],
+      "m": [
+        "transmittance (intensity)",
+        "coefficient of finesse",
+        "mirror reflectance (intensity, both the same)",
+        "round-trip phase",
+        "index of the medium between the mirrors",
+        "mirror spacing",
+        "angle of the light between the mirrors",
+        "vacuum wavelength"
+      ],
+      "when": "Two identical lossless mirrors and a plane wave. With absorption A the peak transmittance falls to (1 − A/(1 − R))². The mirror reflection phase belongs in δ (taken as constant and omitted here).",
+      "miss": "Confusing the coefficient F with the finesse 𝓕 = π√F/2. Using the amplitude reflectance for R. Transmission peaks are at δ = 2πm (L = mλ/(2n), an integer number of wavelengths per round trip).",
+      "ex": "R = 0.9: F = 4 × 0.9/0.1² = 360. At δ/2 = π/2 (minimum transmission) T = 1/361 = 0.00277.",
+      "kw": "Fabry-Perot etalon Airy function transmittance resonance"
+    },
+    "fsr-finesse": {
+      "name": "Free spectral range (FSR) and finesse",
+      "l": [
+        "FSR",
+        "finesse",
+        "transmission linewidth (FWHM)"
+      ],
+      "m": [
+        "spacing of adjacent transmission peaks (frequency)",
+        "speed of light",
+        "group index between the mirrors (1 for air or vacuum)",
+        "mirror spacing",
+        "finesse (reflectance-limited)",
+        "mirror reflectance (intensity)",
+        "full width at half maximum of a transmission peak"
+      ],
+      "when": "The 𝓕 formula is an approximation for R close to 1 (R ≳ 0.5); mirror flatness and parallelism reduce the real finesse. In wavelength, Δλ_FSR = λ²/(2n_g L). When used as a spectrometer, the measured light must be narrower than the FSR or orders overlap.",
+      "miss": "Writing the FSR as c/(nL) (the round trip is 2L). Using the phase index in a dispersive medium (use the group index). Confusing finesse (dimensionless) with the Q factor (ν/δν).",
+      "ex": "Air gap L = 5 mm: Δν_FSR = c/(2 × 0.005 m) = 29.98 GHz. With R = 0.95, 𝓕 = π√0.95/0.05 = 61.2 and δν = 29.98/61.2 = 0.490 GHz.",
+      "kw": "FSR free spectral range finesse etalon cavity linewidth"
+    },
+    "airy-rayleigh": {
+      "name": "Airy disk and the Rayleigh criterion",
+      "l": [
+        "angle of the first dark ring",
+        "microscope resolution (Rayleigh)"
+      ],
+      "m": [
+        "angular radius of the first dark ring of the Airy disk (= smallest resolvable angle)",
+        "wavelength",
+        "diameter of the circular aperture",
+        "smallest resolvable separation of two points (object plane)",
+        "numerical aperture of the objective"
+      ],
+      "when": "An aberration-free circular aperture and two incoherent points (self-luminous or fluorescent). By convention two points are just resolved when the centre of one image lies on the first dark ring of the other; the dip between them is about 74 % of the peak. The 1.22 is the first zero of the first-order Bessel function, 3.832/π.",
+      "miss": "Confusing diameter and radius (1.22λ/D uses the diameter D). Forgetting to convert radians to arcseconds. Using 0.61λ/NA for coherent illumination (it depends on the illumination).",
+      "ex": "Telescope of 100 mm diameter at λ = 550 nm: θ_R = 1.22 × 550 × 10⁻⁹/0.1 = 6.71 µrad = 1.38″. Objective with NA 1.4 at λ = 550 nm: δ = 0.61 × 550/1.4 = 240 nm.",
+      "kw": "Airy disk Rayleigh criterion resolution diffraction limit 1.22"
+    },
+    "abbe-limit": {
+      "name": "Abbe resolution limit",
+      "l": [
+        ""
+      ],
+      "m": [
+        "smallest resolvable period (grating spacing)",
+        "illumination wavelength (vacuum)",
+        "numerical aperture of the objective (with the same illumination NA)"
+      ],
+      "when": "A periodic object under coherent illumination with the illumination NA equal to the objective NA (or oblique illumination): the limit at which the 0th and 1st diffraction orders both enter the objective. With coherent illumination at normal incidence only, the limit is λ/NA. NA includes the medium index, so immersion makes it smaller.",
+      "miss": "Mixing it with the Rayleigh criterion (0.61λ/NA, two points). Reading d_min as a radius (it is a period). Using sinθ alone for NA and forgetting the refractive index.",
+      "ex": "λ = 550 nm, NA = 1.4: d_min = 550/(2 × 1.4) = 196 nm.",
+      "kw": "Abbe resolution diffraction limit numerical aperture microscope"
+    },
+    "grating": {
+      "name": "Grating equation and resolving power",
+      "l": [
+        "diffraction direction",
+        "resolving power"
+      ],
+      "m": [
+        "groove spacing (inverse of grooves per mm)",
+        "angle of incidence (from the normal)",
+        "diffraction angle (positive on the same side as the incident light)",
+        "diffraction order",
+        "wavelength",
+        "smallest resolvable wavelength difference",
+        "number of illuminated grooves"
+      ],
+      "when": "A plane grating and a plane wave. Sign convention: diffraction angles on the same side as the incident beam are positive (with the opposite convention it reads sinα − sinβ). Only orders with |sinβ| ≤ 1 exist. The resolving power is the ideal value; in a real spectrometer the slit width often limits it.",
+      "miss": "Putting grooves per mm directly into d (d = 1/density). Mixing sign conventions. Taking N as all grooves of the grating (only the illuminated part counts).",
+      "ex": "1200 grooves/mm (d = 833.3 nm), λ = 532 nm, normal incidence: sinβ = 532/833.3 = 0.6384, so β = 39.67° (1st order). Illuminating 50 mm gives N = 60000 and in 1st order δλ = 532/60000 nm = 8.87 pm. Separating the Na D lines (589.0 and 589.6 nm) needs mN > 982 (589.3/0.6).",
+      "kw": "diffraction grating grating equation resolving power spectrometer order"
+    },
+    "fresnel-amp": {
+      "name": "Fresnel equations (amplitude coefficients)",
+      "l": [
+        "s polarization",
+        "p polarization",
+        "s polarization",
+        "p polarization"
+      ],
+      "m": [
+        "amplitude reflection coefficients (s: E perpendicular to the plane of incidence, p: in the plane)",
+        "amplitude transmission coefficients",
+        "indices of the incident and transmitting media",
+        "angle of incidence",
+        "angle of refraction (from Snell’s law)"
+      ],
+      "when": "Lossless (real n) isotropic media with vacuum permeability. With absorption use a complex n in the same formulas. The sign of r_p differs between books (this form follows Hecht and Born & Wolf, with r_p = −r_s at normal incidence).",
+      "miss": "Mixing sign conventions for r_p (the intensity reflectance is the same). Taking |t|² as the transmittance (it needs the index and angle factor). Reading p (“parallel”) as “E parallel to the surface” and swapping it with s (p has E in the plane of incidence; it is the s field that lies parallel to the surface).",
+      "ex": "n₁ = 1, n₂ = 1.5, θ_i = 45° (θ_t = 28.13°): r_s = −0.3033, r_p = 0.0920, t_s = 0.6967, t_p = 0.7280.",
+      "kw": "Fresnel equations reflection coefficient transmission coefficient s-polarized p-polarized TE TM"
+    },
+    "fresnel-power": {
+      "name": "Reflectance and transmittance (intensity)",
+      "l": [
+        "reflectance",
+        "transmittance",
+        "normal incidence"
+      ],
+      "m": [
+        "reflectance (power ratio)",
+        "amplitude reflection coefficient (s or p)",
+        "transmittance (power ratio, R + T = 1)",
+        "amplitude transmission coefficient",
+        "indices of the incident and transmitting media",
+        "angles of incidence and refraction",
+        "reflectance at normal incidence"
+      ],
+      "when": "A single lossless interface. For unpolarized light use (R_s + R_p)/2. For both faces of a plate, add incoherently (summing multiple reflections gives T_plate = (1 − R)/(1 + R)).",
+      "miss": "Using the amplitude ratio as the reflectance (square it). Writing T = |t|² (T carries the index and beam-area factor). Forgetting 4 % × 2 for the two faces of a plate.",
+      "ex": "Glass (1.52) at normal incidence: R₀ = (0.52/2.52)² = 4.26 %. Silicon (3.48 at 1.55 µm): 30.6 %. n = 1.5 at 45°: R_s = 9.20 %, R_p = 0.85 %, T_s = 90.80 % (R_s + T_s = 1).",
+      "kw": "reflectance transmittance normal incidence 4% Fresnel reflection"
+    },
+    "brewster": {
+      "name": "Brewster’s angle",
+      "l": [
+        "",
+        "refraction angle at Brewster’s angle"
+      ],
+      "m": [
+        "Brewster’s angle (incidence angle where p reflection vanishes)",
+        "indices of the incident and transmitting media",
+        "angle of refraction"
+      ],
+      "when": "Lossless isotropic media, p polarization only. On absorbing metals the reflectance never reaches zero but has a minimum (near the principal angle). The reflected light is purely s-polarized, which is used in polarizers and Brewster windows of lasers.",
+      "miss": "Swapping n₁ and n₂ (from inside glass it is 33.7°). Expecting the s reflection to vanish too. Confusing Brewster’s angle with the critical angle.",
+      "ex": "Air to n = 1.5: θ_B = arctan 1.5 = 56.31°. From inside the glass to air: arctan(1/1.5) = 33.69° (the two add up to 90°).",
+      "kw": "Brewster angle polarizing angle p-polarized Brewster window"
+    },
+    "malus": {
+      "name": "Malus’s law",
+      "l": [
+        ""
+      ],
+      "m": [
+        "intensity after the analyser",
+        "intensity of the linearly polarized light entering the analyser",
+        "angle between the polarization and the analyser’s transmission axis"
+      ],
+      "when": "An ideal polarizer (passes the component along its axis fully and blocks the perpendicular one) and fully linearly polarized light. Unpolarized light through one polarizer gives I₀/2 (the mean of cos²). Real polarizers have finite extinction ratio and transmittance.",
+      "miss": "Applying cos² to unpolarized light (it is 1/2). Confusing the amplitude factor cosθ with the intensity factor cos²θ.",
+      "ex": "θ = 60°: I/I₀ = cos²60° = 0.25. Unpolarized light through three polarizers at 0°, 45° and 90°: 1/2 × cos²45° × cos²45° = 1/8 (just 0° and 90° gives 0).",
+      "kw": "Malus law polarizer analyser cos2 extinction"
+    },
+    "jones": {
+      "name": "Jones matrices",
+      "l": [
+        "field vector",
+        "linear polarizer",
+        "wave plate (fast axis along x)"
+      ],
+      "m": [
+        "electric field of the incoming and outgoing light (complex x and y amplitudes)",
+        "Jones matrix (2 × 2)",
+        "linear polarizer with its axis at θ from x",
+        "angle of the transmission axis",
+        "wave plate (common phase omitted)",
+        "phase difference between fast and slow axes (retardance)"
+      ],
+      "when": "Fully polarized (coherent) light only. Partially polarized or unpolarized light needs Stokes vectors and Mueller matrices. Multiply element matrices from right to left in the order the light meets them. An element rotated by φ becomes R(−φ)·J·R(φ).",
+      "miss": "Multiplying in the wrong order. The phase convention (e^{i(kz − ωt)} or e^{i(ωt − kz)}) reverses the naming of right- and left-handed light. The intensity is |E_x|² + |E_y|² (sum of the squared components).",
+      "ex": "45° linear polarization (1, 1)/√2 through a quarter-wave plate with the fast axis along x (Γ = π/2) gives (1, i)/√2, circular polarization. 45° linear light through a polarizer at 0° gives (1, 0)/√2, intensity 1/2 (as Malus’s law says).",
+      "kw": "Jones matrix Jones vector polarization wave plate circular polarization"
+    },
+    "waveplate": {
+      "name": "Wave-plate retardance",
+      "l": [
+        "",
+        "quarter-wave plate (zero order)"
+      ],
+      "m": [
+        "phase difference between ordinary and extraordinary rays",
+        "extraordinary and ordinary indices (optic axis in the plate)",
+        "plate thickness",
+        "vacuum wavelength"
+      ],
+      "when": "A uniaxial crystal with its optic axis in the plane of the plate, normal incidence. Birefringence n_e − n_o varies with wavelength, so a plate is λ/4 or λ/2 only at its design wavelength. Multi-order plates (Γ = 2πm + π/2) are thicker and easier to make, but more sensitive to wavelength, temperature and angle.",
+      "miss": "Using the wavelength in the medium for λ. Ignoring the sign of n_e − n_o (positive for quartz, negative for calcite) and mixing up the fast axis. Remembering a λ/2 plate as “rotates polarization by 90°” (it rotates by twice the angle between the polarization and the axis).",
+      "ex": "Zero-order quarter-wave plate of quartz (n_e − n_o = 0.00907 at 633 nm): d = 633/(4 × 0.00907) nm = 17.4 µm.",
+      "kw": "wave plate quarter-wave plate half-wave plate retardance birefringence"
+    },
+    "faraday": {
+      "name": "Faraday rotation",
+      "l": [
+        ""
+      ],
+      "m": [
+        "rotation of the plane of polarization",
+        "Verdet constant (depends on material, wavelength and temperature)",
+        "magnetic flux density along the beam",
+        "length of the material"
+      ],
+      "when": "A uniform field along the beam. The sense of rotation is fixed by the field direction, not by the direction of travel (non-reciprocal). A round trip gives 2β, and a 45° rotator between polarizers makes an optical isolator.",
+      "miss": "Expecting the rotation to cancel on a round trip (it does not, unlike optical activity). Mixing rad and degrees, or T and G (gauss), in the Verdet constant.",
+      "ex": "TGG (1064 nm, V ≈ −40 rad/(T·m)): a 45° (π/4 rad) rotation needs |B|L = 0.785/40 = 0.0196 T·m, i.e. a length of 19.6 mm at 1 T.",
+      "kw": "Faraday rotation Verdet constant optical isolator magneto-optic non-reciprocal"
+    },
+    "sellmeier": {
+      "name": "Sellmeier equation",
+      "l": [
+        ""
+      ],
+      "m": [
+        "refractive index",
+        "vacuum wavelength (often in µm in coefficient tables)",
+        "coefficients (dimensionless)",
+        "coefficients (squares of absorption wavelengths)"
+      ],
+      "when": "A fit for the transparent range away from absorption bands. Use coefficients from manufacturers’ data (e.g. SCHOTT) or the literature and do not extrapolate beyond the stated wavelength range. The index changes with temperature (dn/dT).",
+      "miss": "Mixing C_i from a µm² table with λ in m (use consistent units). Taking C_i as a wavelength rather than its square. Reading n² as n (take the square root at the end).",
+      "ex": "N-BK7 (B = 1.03961212, 0.231792344, 1.01046945; C = 0.00600069867, 0.0200179144, 103.560653 µm²) at 587.56 nm: n = 1.51680. Fused silica (Malitson 1965) at 1550 nm: n = 1.44402.",
+      "kw": "Sellmeier dispersion formula refractive index chromatic dispersion"
+    },
+    "cauchy": {
+      "name": "Cauchy equation",
+      "l": [
+        ""
+      ],
+      "m": [
+        "refractive index",
+        "coefficient",
+        "coefficient",
+        "coefficient",
+        "vacuum wavelength"
+      ],
+      "when": "A simple fit for normal dispersion in the visible (far from absorption bands, n decreasing with wavelength). It fails near ultraviolet and infrared absorption bands; use the Sellmeier equation over wide ranges.",
+      "miss": "Not keeping the units of B consistent (µm² or nm²). Extrapolating beyond the range without checking that two terms are enough.",
+      "ex": "A = 1.5046, B = 0.00420 µm² (approximation for BK7): n = 1.5046 + 0.00420/0.5876² = 1.5168 at 587.6 nm, 1.5224 at 486.1 nm and 1.5144 at 656.3 nm.",
+      "kw": "Cauchy dispersion refractive index normal dispersion"
+    },
+    "abbe-number": {
+      "name": "Abbe number",
+      "l": [
+        ""
+      ],
+      "m": [
+        "Abbe number (larger means less dispersion)",
+        "index at the d line (587.56 nm)",
+        "index at the F line (486.13 nm)",
+        "index at the C line (656.27 nm)"
+      ],
+      "when": "A measure of dispersion in the visible. Some standards use V_e with the e (546.07 nm), F′ (479.99 nm) and C′ (643.85 nm) lines. Glasses with V_d > 50 are commonly called crowns and those below, flints.",
+      "miss": "Confusing V_d and n_d. Reversing the order in the denominator (n_F − n_C, F is the shorter wavelength) and getting a negative value.",
+      "ex": "N-BK7 (n_d = 1.51680, n_F = 1.522376, n_C = 1.514322): V_d = 0.51680/0.008054 = 64.17. F2 (n_d = 1.620040, n_F = 1.632081, n_C = 1.615032): V_d = 36.37.",
+      "kw": "Abbe number dispersion crown flint chromatic aberration"
+    },
+    "achromat": {
+      "name": "Achromatic doublet (thin lenses in contact)",
+      "l": [
+        "achromatic condition",
+        "first lens",
+        "second lens"
+      ],
+      "m": [
+        "power of the doublet and of each lens (1/f)",
+        "Abbe numbers of the two glasses"
+      ],
+      "when": "Two thin lenses in contact, bringing the F and C foci together (two-colour correction). A residual difference at the d line (secondary spectrum) remains. Bringing three colours together needs an apochromat (anomalous-dispersion glass).",
+      "miss": "Choosing glasses with a small difference V₁ − V₂ (each lens becomes too strong). Getting the signs wrong (a converging crown with a diverging flint, so φ₂ is negative).",
+      "ex": "f = 100 mm (φ = 0.01 mm⁻¹) with N-BK7 (64.17) and F2 (36.37): φ₁ = 0.01 × 64.17/27.80 gives f₁ = 43.32 mm and φ₂ = −0.01 × 36.37/27.80 gives f₂ = −76.44 mm.",
+      "kw": "achromat achromatic doublet chromatic aberration Abbe number"
+    },
+    "absorption": {
+      "name": "Absorption coefficient (Beer–Lambert law)",
+      "l": [
+        "intensity",
+        "from the extinction coefficient"
+      ],
+      "m": [
+        "intensity at depth z and at the entrance",
+        "absorption coefficient (intensity)",
+        "distance travelled",
+        "extinction coefficient (imaginary part of the complex index n + iκ)",
+        "vacuum wavelength"
+      ],
+      "when": "A homogeneous medium without scattering, at low intensity (no saturation). Count reflection losses at the surfaces separately. Chemistry writes A = εcl with the molar absorptivity and base-10 logarithms. In dB/m it is 4.343α.",
+      "miss": "Confusing the amplitude decay (α/2) with the intensity decay (α). Mixing base-10 absorbance with natural-log α (α = 2.303 × absorbance/thickness).",
+      "ex": "κ = 1.0 × 10⁻⁴ at λ = 1 µm: α = 4π × 10⁻⁴/10⁻⁶ = 1257 m⁻¹ (12.57 cm⁻¹), and the intensity falls to 1/e (36.8 %) at 1/α = 0.796 mm.",
+      "kw": "absorption coefficient Beer Lambert extinction coefficient penetration depth absorbance"
+    },
+    "ar-quarter": {
+      "name": "Single-layer anti-reflection coating (quarter-wave layer)",
+      "l": [
+        "layer thickness",
+        "ideal coating index",
+        "reflectance at the design wavelength"
+      ],
+      "m": [
+        "physical thickness of the layer",
+        "design wavelength (vacuum)",
+        "index of the layer",
+        "index of the incident medium (1 for air)",
+        "index of the substrate",
+        "reflectance at the design wavelength, normal incidence (one surface)"
+      ],
+      "when": "Normal incidence, a non-absorbing, non-dispersive layer and substrate, one surface. It reduces reflection when n₀ < n₁ < nₛ. At oblique incidence the cancelled wavelength shifts shorter and s and p differ.",
+      "miss": "Taking the λ/4 optical thickness as the physical thickness (divide by n₁). Expecting a λ/2 layer to reduce reflection too (it is the same as no layer). Forgetting the 4 % from the back surface of the substrate.",
+      "ex": "MgF₂ (n₁ = 1.38) on glass (nₛ = 1.52) for 550 nm: d = 550/(4 × 1.38) = 99.64 nm, ideal index √1.52 = 1.2329, R = ((1.52 − 1.9044)/(1.52 + 1.9044))² = 1.26 % (4.26 % without the coating).",
+      "kw": "anti-reflection coating AR coating quarter-wave layer MgF2 single layer"
+    },
+    "ar-single": {
+      "name": "Reflectance of a single layer (any wavelength)",
+      "l": [
+        "amplitude",
+        "phase thickness of the layer"
+      ],
+      "m": [
+        "amplitude reflection coefficient of the coated surface (R = |r|²)",
+        "amplitude reflection coefficients of the top and bottom interfaces ((n₀ − n₁)/(n₀ + n₁) etc.)",
+        "one-way phase through the layer",
+        "index of the layer",
+        "layer thickness",
+        "vacuum wavelength"
+      ],
+      "when": "Normal incidence and one non-absorbing layer (the exact form summing all multiple reflections). At oblique incidence multiply δ by cosθ₁ and use the s and p coefficients. Multilayers use the product of characteristic matrices.",
+      "miss": "Forgetting the 2 in e^{−2iδ} (round trip). The phase sign convention (some books write e^{+2iδ}; |r|² is the same).",
+      "ex": "MgF₂ quarter-wave layer for 550 nm (99.64 nm) on glass (1.52): R = 1.62 % at 450 nm, 1.60 % at 700 nm and 2.21 % at 400 nm.",
+      "kw": "thin film interference reflectance single layer anti-reflection coating spectral"
+    },
+    "hr-stack": {
+      "name": "Dielectric multilayer mirror ((HL)ᴺH)",
+      "l": [
+        "peak reflectance",
+        "high-reflectance band"
+      ],
+      "m": [
+        "reflectance at the design wavelength",
+        "normalized admittance of the stack",
+        "indices of the high- and low-index layers",
+        "number of HL pairs (2N + 1 layers in total)",
+        "indices of the incident medium and substrate",
+        "full width of the high-reflectance band (in g = λ₀/λ)"
+      ],
+      "when": "Every layer is λ/4 at the design wavelength, normal incidence, no absorption. Both the outermost layer and the layer next to the substrate are H. The band edges are at λ = λ₀/(1 ± Δg/2), and the width is Δλ ≈ λ₀Δg when the band is narrow.",
+      "miss": "Confusing N with the number of layers. Using this formula for a stack ending in L (Y changes). Mixing half-width and full width.",
+      "ex": "TiO₂ (2.35)/SiO₂ (1.46) on glass (1.52): N = 7 (15 layers) gives R = 99.86 % and N = 5 gives 99.06 %. The band is Δg = 0.300, so around 1064 nm λ₀Δg ≈ 319 nm (the edges are at 925 nm and 1252 nm, a width of 327 nm).",
+      "kw": "dielectric mirror multilayer Bragg reflector HR coating quarter-wave stack"
+    },
+    "gauss-w": {
+      "name": "Gaussian beam radius and Rayleigh range",
+      "l": [
+        "beam radius",
+        "Rayleigh range"
+      ],
+      "m": [
+        "beam radius at distance z (1/e² of the peak intensity)",
+        "waist radius",
+        "distance from the waist",
+        "Rayleigh range (radius grows by √2)",
+        "refractive index of the medium",
+        "beam quality (1 for an ideal beam)",
+        "vacuum wavelength"
+      ],
+      "when": "Paraxial beams (w₀ ≫ λ). Real beams with M² > 1 are taken to grow in the same way for the second-moment radius (embedded Gaussian).",
+      "miss": "Confusing diameter and radius (the 1/e² diameter is 2w). Taking the intensity FWHM (FWHM = 1.177w) as w.",
+      "ex": "λ = 1064 nm, w₀ = 500 µm, M² = 1, in air: z_R = π × (0.5 mm)²/1.064 µm = 738.2 mm. At z = 1000 mm, w = 842 µm (diameter 1.68 mm).",
+      "kw": "Gaussian beam beam radius Rayleigh range waist depth of focus"
+    },
+    "gauss-r": {
+      "name": "Wavefront radius of curvature and Gouy phase",
+      "l": [
+        "radius of curvature",
+        "Gouy phase"
+      ],
+      "m": [
+        "radius of curvature of the wavefront (positive beyond the waist)",
+        "distance from the waist",
+        "Rayleigh range",
+        "Gouy phase (phase shift relative to a plane wave)"
+      ],
+      "when": "R is infinite at the waist (flat wavefront), smallest (2z_R) at z = z_R and R ≈ z far away. The Gouy phase changes by π in total through the waist; higher-order modes (TEMₘₙ) have (m + n + 1)ψ, which shifts their resonance frequencies in a cavity.",
+      "miss": "Treating R(z) as equal to z (only for z ≫ z_R). Forgetting the sign change before the waist (z < 0).",
+      "ex": "λ = 1064 nm, w₀ = 500 µm (z_R = 738.2 mm), z = 1000 mm: R = 1000 × (1 + 0.7382²) = 1545 mm and ψ = arctan(1000/738.2) = 53.57°.",
+      "kw": "radius of curvature wavefront Gouy phase Gaussian beam"
+    },
+    "divergence-bpp": {
+      "name": "Divergence and beam parameter product",
+      "l": [
+        "half-angle",
+        "BPP"
+      ],
+      "m": [
+        "far-field half-angle divergence",
+        "beam quality",
+        "vacuum wavelength",
+        "refractive index of the medium",
+        "waist radius"
+      ],
+      "when": "Far field, z ≫ z_R. The BPP is usually given as w₀θ (radius × half-angle) and is unchanged by aberration-free lenses. Some specifications use diameter × full angle, which is four times larger.",
+      "miss": "Mixing full and half angles, or diameter and radius (check which convention a BPP in mm·mrad uses).",
+      "ex": "λ = 1064 nm, w₀ = 500 µm, M² = 1: θ = 1.064/(π × 500) = 0.677 mrad and BPP = λ/π = 0.339 mm·mrad. With M² = 1.5: 0.508 mm·mrad.",
+      "kw": "divergence BPP beam parameter product M2 beam quality"
+    },
+    "focus-spot": {
+      "name": "Focused spot radius",
+      "l": [
+        ""
+      ],
+      "m": [
+        "waist radius at the focus",
+        "beam quality",
+        "wavelength",
+        "focal length of the lens",
+        "radius of the beam at the lens (1/e²)"
+      ],
+      "when": "The incoming beam has its waist near the lens and a Rayleigh range much longer than f (a wide collimated beam). An aberration-free lens whose aperture does not clip the beam (lens diameter ≳ 3W).",
+      "miss": "Using the diameter for W. Assuming the focus lies exactly at f (it moves towards the lens when the incoming z_R is close to f).",
+      "ex": "λ = 1064 nm, f = 100 mm, W = 5 mm, M² = 1: w_f = 1.064 × 10⁻⁶ × 0.1/(π × 0.005) = 6.77 µm.",
+      "kw": "focusing spot size focus Gaussian beam laser processing"
+    },
+    "q-abcd": {
+      "name": "q parameter and the ABCD law",
+      "l": [
+        "at distance z from the waist",
+        "from R and w",
+        "ABCD law"
+      ],
+      "m": [
+        "complex beam parameter",
+        "distance from the waist",
+        "Rayleigh range",
+        "radius of curvature of the wavefront",
+        "beam radius",
+        "vacuum wavelength",
+        "refractive index",
+        "elements of the ray matrix",
+        "element of the ray matrix",
+        "element of the ray matrix"
+      ],
+      "when": "Paraxial Gaussian beams (fundamental mode). The same matrices as for rays transform q. For beams with M² > 1 replace λ by M²λ.",
+      "miss": "Mixing sign conventions for the imaginary part of 1/q (e^{−iωt} or e^{+iωt}). The waist is where the real part of q is zero (Re q = 0).",
+      "ex": "A waist w₀ = 0.5 mm (1064 nm, z_R = 738.2 mm) with an f = 200 mm lens placed at it: q₂ = q₁/(1 − q₁/f) puts the new waist 186.3 mm behind the lens with a radius of 0.1308 mm.",
+      "kw": "q parameter ABCD complex beam parameter Gaussian beam transformation"
+    },
+    "stability": {
+      "name": "Resonator stability condition",
+      "l": [
+        "stable",
+        "g parameter"
+      ],
+      "m": [
+        "g parameters of mirrors 1 and 2",
+        "g parameter of mirror i",
+        "mirror spacing (with a crystal inside, the effective length Σ L_i/n_i)",
+        "radius of curvature of mirror i (positive for concave, ∞ for flat)"
+      ],
+      "when": "Two-mirror resonators with spherical mirrors, paraxial. The boundaries (g₁g₂ = 0 or 1: plane-parallel, confocal, concentric) become unstable with slight misalignment. A stable resonator fixes the waist of the fundamental mode.",
+      "miss": "The sign of R for a convex mirror (negative). Forgetting the index correction for L (a crystal of length L counts as L/n).",
+      "ex": "L = 0.5 m, a flat mirror (R₁ = ∞, g₁ = 1) and R₂ = 1 m (g₂ = 0.5): g₁g₂ = 0.5, stable. The waist on the flat mirror from w₀² = (λ/π)√(L(R₂ − L)) is w₀ = 0.412 mm at 1064 nm.",
+      "kw": "resonator stability g parameter curvature spherical mirror"
+    },
+    "long-modes": {
+      "name": "Longitudinal mode spacing",
+      "l": [
+        "resonance frequencies",
+        "spacing"
+      ],
+      "m": [
+        "frequency of the q-th longitudinal mode",
+        "mode number (a large integer)",
+        "speed of light",
+        "index inside the cavity",
+        "cavity length",
+        "spacing of adjacent longitudinal modes",
+        "group index"
+      ],
+      "when": "Standing-wave (linear) resonators. For ring resonators replace 2L by the round-trip length. The number of lasing modes depends on gain bandwidth and loss (about gain bandwidth/Δν). Semiconductor lasers use the group index (3.5–4).",
+      "miss": "Writing L instead of 2L. Using the phase index for a semiconductor laser (overestimating the spacing). Forgetting the factor λ²/c when converting the spacing to wavelength (Δλ = λ²Δν/c).",
+      "ex": "He–Ne with L = 0.3 m: Δν = c/0.6 m = 500 MHz (about 3 modes in a 1.5 GHz gain width). Semiconductor laser with L = 300 µm and n_g = 3.6: Δν = 139 GHz, Δλ = 1.11 nm at 1550 nm.",
+      "kw": "longitudinal modes mode spacing cavity FSR single longitudinal mode"
+    },
+    "threshold": {
+      "name": "Laser threshold gain",
+      "l": [
+        ""
+      ],
+      "m": [
+        "threshold gain coefficient (intensity, modal gain)",
+        "internal loss of the cavity (absorption, scattering)",
+        "length of the gain medium (cavity)",
+        "mirror reflectances (intensity)"
+      ],
+      "when": "The round-trip gain equals the loss (steady state, gain uniform over the cavity). In semiconductor lasers it is Γg, with the confinement factor Γ, that reaches this value.",
+      "miss": "Writing R₁R₂ inside the ln and getting a negative value (it is 1/(R₁R₂)). Forgetting the round trip 2L. Mixing cm⁻¹ and m⁻¹.",
+      "ex": "Semiconductor laser with cleaved facets (R₁ = R₂ = 0.31, L = 300 µm, α_i = 10 cm⁻¹): the mirror loss (1/0.06 cm) × ln(1/0.0961) = 39.0 cm⁻¹, so g_th = 49.0 cm⁻¹.",
+      "kw": "threshold gain loss mirror loss lasing condition"
+    },
+    "gain": {
+      "name": "Small-signal gain and stimulated-emission cross-section",
+      "l": [
+        "gain coefficient",
+        "small-signal amplification"
+      ],
+      "m": [
+        "gain coefficient (intensity)",
+        "stimulated-emission cross-section",
+        "upper- and lower-level densities",
+        "level degeneracies",
+        "intensity at distance z and at the entrance",
+        "distance in the gain medium"
+      ],
+      "when": "When the intensity is well below the saturation intensity (small signal). At high intensity γ saturates as γ₀/(1 + I/I_sat). γ > 0 only with population inversion (N₂ > (g₂/g₁)N₁).",
+      "miss": "Mixing cm² and m² (10⁻¹⁹ cm² = 10⁻²³ m²). Forgetting the degeneracies. Mixing gain in dB with gain in the exponent of e.",
+      "ex": "Nd:YAG (σ = 2.8 × 10⁻¹⁹ cm²) with an inversion N₂ − N₁ = 1 × 10¹⁷ cm⁻³ (lower level nearly empty): γ = 0.028 cm⁻¹, so one pass through a 10 cm rod gives e^{0.28} = 1.32 times.",
+      "kw": "gain stimulated emission cross section population inversion amplification saturation"
+    },
+    "fiber-na": {
+      "name": "Fiber numerical aperture and relative index difference",
+      "l": [
+        "numerical aperture",
+        "relative index difference",
+        ""
+      ],
+      "m": [
+        "numerical aperture",
+        "core and cladding indices",
+        "index of the launch medium (1 for air)",
+        "maximum acceptance half-angle",
+        "relative index difference (≈ (n₁ − n₂)/n₁)"
+      ],
+      "when": "Step-index fibers, ray picture (meridional rays). For single-mode fibers the ray picture is only a guide; the actual spread is set by the mode field diameter.",
+      "miss": "Taking NA as n₁ − n₂ (it is the square root of the difference of squares). Mixing Δ in % and as a fraction. Forgetting n₀ when launching from a medium other than air.",
+      "ex": "n₁ = 1.45, n₂ = 1.4447: NA = 0.1239, acceptance half-angle in air 7.12°, Δ = 0.365 %.",
+      "kw": "numerical aperture NA relative index difference acceptance angle core cladding"
+    },
+    "v-number": {
+      "name": "V number and the single-mode condition",
+      "l": [
+        "normalized frequency",
+        "single mode",
+        "cutoff wavelength",
+        "number of modes (V ≫ 1)"
+      ],
+      "m": [
+        "normalized frequency",
+        "core radius",
+        "numerical aperture",
+        "vacuum wavelength",
+        "cutoff wavelength (single-mode above it)",
+        "number of guided modes (including polarizations, approximate)"
+      ],
+      "when": "Step-index fibers, weak guidance (Δ ≪ 1). 2.405 is the first zero of J₀. Graded-index fibers have about half as many modes (V²/4).",
+      "miss": "Using the core diameter for a. Expecting single-mode operation below λ_c (it is single-mode above). Using V²/2 for small V.",
+      "ex": "n₁ = 1.45, n₂ = 1.4447, a = 4.1 µm, λ = 1550 nm: V = 2.059, single-mode, λ_c = 1327 nm. Core diameter 50 µm, NA 0.2 at 850 nm: V = 37.0, about 683 modes.",
+      "kw": "V number normalized frequency single-mode cutoff wavelength number of modes"
+    },
+    "mfd": {
+      "name": "Mode field diameter (Marcuse approximation)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "mode field radius (1/e² radius of the Gaussian approximation, MFD = 2w)",
+        "core radius",
+        "normalized frequency"
+      ],
+      "when": "Step-index single-mode fibers. Marcuse’s fit is good to about 1 % for 1.2 < V < 2.4 and usable as an estimate for roughly 0.8 < V < 2.5. The fundamental mode is approximated by a Gaussian.",
+      "miss": "Taking w as the diameter (MFD = 2w). Equating the core diameter with the MFD (at 1550 nm the MFD is 20–30 % larger).",
+      "ex": "a = 4.1 µm, V = 2.059: w = 4.1 × (0.65 + 0.5481 + 0.0378) = 5.07 µm, MFD = 10.1 µm.",
+      "kw": "mode field diameter MFD Marcuse single-mode fiber"
+    },
+    "group-index": {
+      "name": "Group index and group velocity",
+      "l": [
+        "group index",
+        "group velocity"
+      ],
+      "m": [
+        "group index",
+        "phase index",
+        "vacuum wavelength",
+        "wavelength derivative of the index",
+        "group velocity (speed of pulses and envelopes)",
+        "speed of light"
+      ],
+      "when": "Wavelengths with low absorption. Pulse delay, cavity FSR and the envelope of interferometer path differences use n_g; phase (fringe positions, phase matching) uses n. In waveguides replace n by the effective index n_eff.",
+      "miss": "Thinking n_g < n under normal dispersion (dn/dλ < 0 gives n_g > n). Using n for the FSR.",
+      "ex": "Fused silica (Sellmeier) at 1550 nm: n = 1.44402 and dn/dλ = −0.01198 µm⁻¹ give n_g = 1.44402 + 1.55 × 0.01198 = 1.46260.",
+      "kw": "group index group velocity phase velocity dispersion effective index"
+    },
+    "modal-disp": {
+      "name": "Pulse spreading by modal dispersion",
+      "l": [
+        ""
+      ],
+      "m": [
+        "difference in arrival time between the fastest and slowest rays",
+        "fiber length",
+        "core and cladding indices",
+        "speed of light",
+        "relative index difference"
+      ],
+      "when": "Step-index multimode fibers, the maximum difference in the ray picture (ignoring mode coupling). A graded-index (parabolic) profile reduces it to about L n₁Δ²/(8c). Single-mode fibers have none.",
+      "miss": "Entering Δ in %. Forgetting that over long distances modes mix and the spread grows closer to √L.",
+      "ex": "n₁ = 1.48, Δ = 1 %: L n₁Δ/c = 49.4 ns/km (50.1 ns/km with the exact form).",
+      "kw": "modal dispersion multimode fiber pulse broadening bandwidth"
+    },
+    "chrom-disp": {
+      "name": "Pulse spreading by chromatic dispersion",
+      "l": [
+        "spreading",
+        "D and β₂"
+      ],
+      "m": [
+        "pulse spreading",
+        "dispersion parameter (usually ps/(nm·km))",
+        "fiber length",
+        "spectral width of the source",
+        "speed of light",
+        "wavelength",
+        "group-velocity dispersion (GVD)"
+      ],
+      "when": "When the spectral width is set by the source (broader than the modulation). For narrow sources the modulation sets the width and Δλ scales with the signal bandwidth. D > 0 is anomalous dispersion (β₂ < 0, longer wavelengths arrive later).",
+      "miss": "Forgetting 10⁻⁶ s/m² when converting ps/(nm·km) to SI. Mixing the signs of D and β₂ (D > 0 ⇔ β₂ < 0).",
+      "ex": "D = 17 ps/(nm·km) at 1550 nm, L = 80 km, Δλ = 0.1 nm: Δτ = 17 × 80 × 0.1 = 136 ps. β₂ = −21.7 ps²/km.",
+      "kw": "chromatic dispersion dispersion parameter GVD beta2 pulse broadening"
+    },
+    "db-dbm": {
+      "name": "dB and dBm",
+      "l": [
+        "ratio (dB)",
+        "absolute level (dBm)"
+      ],
+      "m": [
+        "power ratio",
+        "the two powers compared",
+        "power relative to 1 mW",
+        "power"
+      ],
+      "when": "For power (intensity) ratios. For field or voltage amplitudes use 20 log₁₀. dB values add and subtract, but adding dBm values does not give the sum of powers (convert to W first).",
+      "miss": "Using 20 log for power. Mixing dBm and dB in sums (dBm − dBm = dB, dBm + dB = dBm). Reading −3 dB as “half the amplitude” (it is half the power).",
+      "ex": "1 mW = 0 dBm, 0.5 mW = −3.01 dBm, 2 µW = −26.99 dBm. A 10 dB loss leaves 1/10 of the power.",
+      "kw": "dB dBm decibel logarithm power loss gain"
+    },
+    "fiber-loss": {
+      "name": "Fiber attenuation",
+      "l": [
+        "",
+        "dB and 1/m"
+      ],
+      "m": [
+        "power at length L and at the input",
+        "attenuation (usually dB/km)",
+        "fiber length",
+        "attenuation coefficient in natural-log form (power, P = P(0)e^{−αL})"
+      ],
+      "when": "A fiber with uniform loss proportional to length. Add connector and bending losses separately. Silica single-mode fiber is about 0.2 dB/km at 1550 nm and about 0.35 dB/km at 1310 nm (the G.652.D limits are 0.3 and 0.4 dB/km).",
+      "miss": "Mixing a 1/km coefficient with dB/km. Getting the sign wrong when subtracting a dB loss.",
+      "ex": "0.2 dB/km × 50 km = 10 dB, so 10 % of the input power remains. Launching 1 mW (0 dBm) gives −10 dBm.",
+      "kw": "fiber loss attenuation dB/km transmission loss"
+    },
+    "link-budget": {
+      "name": "Link budget (power budget)",
+      "l": [
+        "received power (dBm)",
+        "margin (dB)"
+      ],
+      "m": [
+        "power reaching the receiver",
+        "transmitter power",
+        "fiber attenuation",
+        "fiber length",
+        "numbers of connectors and fusion splices",
+        "loss per connector and per splice",
+        "system margin",
+        "receiver sensitivity (minimum required power)"
+      ],
+      "when": "Everything adds and subtracts in dB and dBm. Keep a few dB of margin for ageing, temperature and repair splices. Dispersion and noise penalties are also subtracted in dB.",
+      "miss": "Adding W and dBm. Taking the sensitivity as a positive dBm value (it is usually negative).",
+      "ex": "Transmitter 0 dBm, 40 km × 0.35 dB/km = 14 dB at 1310 nm, 2 connectors × 0.5 dB, 10 splices × 0.1 dB: P_rx = 0 − 14 − 1 − 1 = −16 dBm. With a −24 dBm sensitivity the margin is 8 dB.",
+      "kw": "link budget power budget loss margin receiver sensitivity"
+    },
+    "ring": {
+      "name": "Ring resonator: resonances and FSR",
+      "l": [
+        "resonance wavelengths",
+        "FSR",
+        "Q factor"
+      ],
+      "m": [
+        "resonance order",
+        "resonance wavelength",
+        "effective index of the waveguide",
+        "round-trip length of the ring (2πR)",
+        "spacing of adjacent resonances",
+        "wavelength",
+        "group index of the waveguide",
+        "Q factor",
+        "full width at half maximum of the resonance"
+      ],
+      "when": "One round trip of a waveguide ring. The resonance positions follow n_eff and their spacing follows n_g. Coupling strength and loss set the depth (zero at critical coupling) and width of the dips. Temperature changes n_eff and shifts the resonance (about 0.08 nm/K in silicon).",
+      "miss": "Using n_eff for the FSR (in silicon waveguides n_g ≈ 4.2 and n_eff ≈ 2.4 differ a lot). Using the radius for L.",
+      "ex": "Silicon ring (radius 10 µm, L = 62.83 µm, n_g = 4.2) at 1550 nm: Δλ_FSR = 1.55² /(4.2 × 62.83) µm = 9.10 nm.",
+      "kw": "ring resonator microring FSR Q factor silicon photonics"
+    },
+    "responsivity": {
+      "name": "Responsivity and quantum efficiency",
+      "l": [
+        "responsivity",
+        "photocurrent",
+        "quantum efficiency"
+      ],
+      "m": [
+        "responsivity",
+        "quantum efficiency (external)",
+        "elementary charge",
+        "vacuum wavelength",
+        "Planck constant",
+        "speed of light",
+        "photocurrent",
+        "incident optical power",
+        "optical frequency"
+      ],
+      "when": "Detectors without gain (PIN etc.). For an APD multiply by the gain M. η includes surface reflection, absorption depth and collection efficiency. Responsivity drops as the wavelength approaches the absorption edge.",
+      "miss": "Entering η in %. Putting nm into ℛ ≈ λ[µm]/1.24 (with nm divide by 1239.84).",
+      "ex": "Upper limit with η = 1: ℛ = 1.250 A/W at 1550 nm and 0.686 A/W at 850 nm. With η = 0.8, 1.000 A/W at 1550 nm, i.e. 1.00 mA for 1 mW.",
+      "kw": "responsivity quantum efficiency photocurrent A/W photodiode"
+    },
+    "shot-noise": {
+      "name": "Shot noise",
+      "l": [
+        ""
+      ],
+      "m": [
+        "mean-square noise current",
+        "elementary charge",
+        "photocurrent",
+        "dark current",
+        "measurement bandwidth"
+      ],
+      "when": "Charges flow independently (Poisson statistics). For an APD it is 2qM²F(I_p + I_d)Δf, with I_p the unmultiplied photocurrent and I_d the multiplied part of the dark current; the unmultiplied surface dark current adds 2qI_dsΔf separately. Light with non-Poissonian photon statistics (e.g. squeezed light) is different.",
+      "miss": "Confusing mean square with rms (√). Mixing one- and two-sided bandwidths (the factor 2 is for a one-sided bandwidth).",
+      "ex": "I_p = 1 µA, I_d = 1 nA, Δf = 1 GHz: √(2 × 1.602 × 10⁻¹⁹ × 1.001 × 10⁻⁶ × 10⁹) = 17.9 nA (rms).",
+      "kw": "shot noise quantum noise dark current noise bandwidth"
+    },
+    "snr": {
+      "name": "Receiver SNR (shot and thermal noise)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "signal-to-noise power ratio",
+        "gain (1 for PIN)",
+        "unity-gain responsivity",
+        "optical power",
+        "elementary charge",
+        "excess noise factor (1 for PIN)",
+        "dark current (multiplied part)",
+        "bandwidth",
+        "Boltzmann constant",
+        "temperature of the load resistor",
+        "load resistance"
+      ],
+      "when": "Direct detection with only shot noise and thermal noise of the load (multiply the thermal term by the amplifier noise figure). Thermal noise dominates at low power, shot noise at high power.",
+      "miss": "Mixing current ratios (√) with power ratios (use 10 log for dB). Entering T in °C.",
+      "ex": "PIN (M = F = 1), ℛ = 1 A/W, P = 10 µW, Δf = 1 GHz, R_L = 50 Ω, 300 K, I_d neglected: shot 3.20 × 10⁻¹⁵ A², thermal 3.31 × 10⁻¹³ A², SNR = 299 (24.8 dB).",
+      "kw": "SNR signal-to-noise ratio thermal noise shot noise Johnson noise sensitivity"
+    },
+    "nep": {
+      "name": "NEP and specific detectivity D*",
+      "l": [
+        "noise-equivalent power",
+        "specific detectivity"
+      ],
+      "m": [
+        "noise-equivalent power (per 1 Hz bandwidth, the power giving SNR = 1)",
+        "noise current density (rms)",
+        "responsivity",
+        "specific detectivity (usually cm·Hz¹ᐟ²/W = Jones)",
+        "detector area"
+      ],
+      "when": "Where the noise grows with the square root of bandwidth (white). D* compares detectors of different areas, assuming the noise scales with the square root of area.",
+      "miss": "Giving NEP in W (it is W/√Hz). Mixing m and cm in D* (1 m·Hz¹ᐟ²/W = 100 cm·Hz¹ᐟ²/W).",
+      "ex": "Shot noise of a 1 nA dark current only, ℛ = 0.9 A/W: i_n = √(2q × 10⁻⁹) = 1.79 × 10⁻¹⁴ A/√Hz and NEP = 1.99 × 10⁻¹⁴ W/√Hz. For a 1 mm² detector, D* = 5.03 × 10¹² cm·Hz¹ᐟ²/W.",
+      "kw": "NEP noise equivalent power specific detectivity D* sensitivity"
+    },
+    "apd": {
+      "name": "APD gain and excess noise factor",
+      "l": [
+        "photocurrent",
+        "excess noise factor (McIntyre)"
+      ],
+      "m": [
+        "multiplied photocurrent",
+        "mean gain",
+        "unity-gain responsivity",
+        "optical power",
+        "excess noise factor",
+        "ionization coefficient ratio (k = β/α for electron-initiated multiplication)"
+      ],
+      "when": "An APD with a uniform multiplication region, injecting the carrier with the larger ionization coefficient. Smaller k means lower noise (about 0.02 for Si, 0.4–0.5 for InGaAs/InP). The optimum M balances against thermal noise.",
+      "miss": "Entering the inverse ratio (α/β) for k. Expecting F to scale with M (for small k it approaches 2).",
+      "ex": "Si APD (k = 0.02) at M = 100: F = 2.00 + 0.98 × 1.99 = 3.95. InGaAs APD (k = 0.5) at M = 10: F = 5.95.",
+      "kw": "APD avalanche photodiode gain excess noise ionization ratio"
+    },
+    "sensor-dr": {
+      "name": "Image sensor dynamic range and SNR",
+      "l": [
+        "dynamic range (dB)",
+        "SNR of one pixel"
+      ],
+      "m": [
+        "dynamic range",
+        "saturation electrons (full-well capacity)",
+        "read noise (rms electrons)",
+        "signal-to-noise ratio (amplitude)",
+        "signal electrons",
+        "dark current (electrons/s)",
+        "exposure time"
+      ],
+      "when": "Counted in electrons (after dividing by the conversion gain). Photon shot noise is Poissonian (√S). Pixel non-uniformity (PRNU) and quantization noise are not included. EMVA 1288 gives DR as a ratio; in dB it is 20 log₁₀.",
+      "miss": "Using 10 log for DR (an electron-count ratio is an amplitude ratio, 20 log). Leaving photon shot noise out of the SNR.",
+      "ex": "N_sat = 10000 e⁻, σ_r = 2 e⁻: DR = 20 log₁₀(5000) = 74.0 dB. With S = 10000 e⁻ (dark current neglected), SNR = 10000/√10004 = 99.98 (almost √S).",
+      "kw": "dynamic range full well read noise SNR image sensor pixel"
+    },
+    "shg-pm": {
+      "name": "SHG phase matching and coherence length",
+      "l": [
+        "phase mismatch",
+        "coherence length",
+        "quasi-phase-matching period"
+      ],
+      "m": [
+        "wave-vector mismatch",
+        "wave numbers of the second harmonic and the fundamental",
+        "vacuum wavelength of the fundamental",
+        "indices at the second harmonic and the fundamental",
+        "coherence length (length over which conversion builds up)",
+        "poling period (first order)"
+      ],
+      "when": "Weak conversion (undepleted fundamental), plane waves. The converted intensity scales as L² sinc²(ΔkL/2) and grows as L² when Δk = 0 (phase matched). Δk = 0 is reached with birefringence (angle or temperature) or quasi-phase matching.",
+      "miss": "Using the second-harmonic wavelength for λ (use the fundamental). Mixing the medium wavelength into k = 2πn/λ. Mixing L_c = π/Δk with 2π/Δk (definitions differ between books).",
+      "ex": "LiNbO₃ extraordinary wave (24.5 °C, Jundt equation: n_e(1064 nm) = 2.1558, n_e(532 nm) = 2.2342): L_c = 1.064/(4 × 0.0784) µm = 3.39 µm and Λ = 6.78 µm.",
+      "kw": "SHG second harmonic phase matching quasi-phase matching QPM PPLN coherence length"
+    },
+    "kerr": {
+      "name": "Optical Kerr effect (intensity-dependent index)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "refractive index",
+        "low-intensity index",
+        "nonlinear index",
+        "optical intensity"
+      ],
+      "when": "Fast (electronic) third-order nonlinearity at intensities where multiphoton absorption and ionization are small. n₂ relates to χ⁽³⁾ by n₂ = 3χ⁽³⁾/(4n₀²ε₀c) (SI, linear polarization).",
+      "miss": "Mixing cm²/W and m²/W (10⁻¹⁶ cm²/W = 10⁻²⁰ m²/W). Mixing with n₂ defined on the square of the field (esu).",
+      "ex": "Fused silica (n₂ ≈ 2.7 × 10⁻²⁰ m²/W) at 10 GW/cm² (10¹⁴ W/m²): Δn = 2.7 × 10⁻⁶.",
+      "kw": "optical Kerr effect nonlinear index n2 chi3 self-focusing"
+    },
+    "spm-b": {
+      "name": "Self-phase modulation and the B integral",
+      "l": [
+        "B integral",
+        "fiber nonlinear coefficient",
+        "fiber nonlinear phase",
+        "effective length"
+      ],
+      "m": [
+        "peak nonlinear phase (B integral)",
+        "vacuum wavelength",
+        "nonlinear index",
+        "intensity",
+        "position along the beam",
+        "fiber nonlinear coefficient",
+        "effective area",
+        "nonlinear phase",
+        "peak power",
+        "effective length",
+        "loss (natural log, power)",
+        "fiber length"
+      ],
+      "when": "Over lengths where dispersion is weak (L ≪ dispersion length) the pulse shape stays the same, only the phase changes and the spectrum broadens. In high-power amplifiers B ≳ 3–5 rad is a common warning level for self-focusing and pulse degradation.",
+      "miss": "Entering α in dB/km (divide by 4.343). Using the core area for A_eff (use the MFD).",
+      "ex": "SMF (n₂ = 2.6 × 10⁻²⁰ m²/W, A_eff = 80 µm², 1550 nm): γ = 1.32 W⁻¹·km⁻¹. With 0.2 dB/km (α = 0.0461 km⁻¹) and 80 km, L_eff = 21.2 km, and P = 10 mW gives φ_NL = 0.279 rad.",
+      "kw": "self-phase modulation SPM B integral nonlinear phase effective length nonlinear coefficient"
+    },
+    "pockels": {
+      "name": "Pockels effect and half-wave voltage",
+      "l": [
+        "phase change",
+        "half-wave voltage"
+      ],
+      "m": [
+        "phase change of the light due to the voltage",
+        "index for that polarization",
+        "electro-optic coefficient (r₃₃ of LiNbO₃ etc.)",
+        "voltage",
+        "electrode length",
+        "vacuum wavelength",
+        "electrode gap",
+        "voltage for a π phase change"
+      ],
+      "when": "Transverse geometry (field perpendicular to the light), uniform field and full overlap of field and optical mode. Real waveguide modulators divide by an overlap factor (0.3–0.7). Push–pull Mach–Zehnder designs halve it.",
+      "miss": "Entering r in pm/V. Mixing longitudinal (V_π = λ/(2n³r₆₃), independent of length) and transverse geometries.",
+      "ex": "LiNbO₃ (n_e = 2.138, r₃₃ = 30.8 pm/V), d = 10 µm, L = 2 cm, 1550 nm: V_π = 1.55 × 10⁻⁶ × 10⁻⁵/(2.138³ × 30.8 × 10⁻¹² × 0.02) = 2.57 V (about 5 V with an overlap of 0.5).",
+      "kw": "Pockels electro-optic effect half-wave voltage Vpi modulator LiNbO3"
+    },
+    "spdc": {
+      "name": "Energy conservation in parametric processes",
+      "l": [
+        "energy",
+        "in wavelengths",
+        "phase matching (momentum)"
+      ],
+      "m": [
+        "angular frequencies of pump, signal and idler",
+        "vacuum wavelengths of each wave",
+        "wave vectors of each wave"
+      ],
+      "when": "Common to optical parametric amplification, oscillation (OPO) and down-conversion (SPDC). Which pair of wavelengths appears is fixed by phase matching. In SPDC photon pairs are created simultaneously.",
+      "miss": "Adding wavelengths directly (add their inverses). Mixing medium and vacuum wavelengths.",
+      "ex": "405 nm pump with a 780 nm signal: 1/λ_i = 1/405 − 1/780 gives λ_i = 842.4 nm (810 nm when degenerate). OPO pumped at 1064 nm with a 1550 nm signal: λ_i = 3393 nm.",
+      "kw": "SPDC parametric down-conversion OPO signal idler energy conservation"
+    },
+    "tbp": {
+      "name": "Time–bandwidth product",
+      "l": [
+        ""
+      ],
+      "m": [
+        "spectral FWHM (frequency)",
+        "pulse intensity FWHM",
+        "value set by the pulse shape (0.441 Gaussian, 0.315 sech²)"
+      ],
+      "when": "The equality holds for chirp-free (transform-limited) pulses. In wavelength, Δλ = λ²Δν/c. K is for intensity FWHM widths and changes with other width definitions.",
+      "miss": "Mixing Δν with the angular frequency (Δω = 2πΔν). Using the wrong K for the pulse shape.",
+      "ex": "100 fs sech² pulse at 800 nm: Δν = 0.315/100 fs = 3.15 THz, Δλ = 6.72 nm. For a Gaussian: 4.41 THz, 9.41 nm.",
+      "kw": "time-bandwidth product TBP transform limit Fourier limit pulse duration spectral width"
+    },
+    "gdd": {
+      "name": "Pulse broadening by group-delay dispersion",
+      "l": [
+        "Gaussian",
+        "GDD"
+      ],
+      "m": [
+        "intensity FWHM of the output and input pulses",
+        "group-delay dispersion (GDD)",
+        "group-velocity dispersion (GVD)",
+        "material length"
+      ],
+      "when": "A chirp-free Gaussian input and second-order dispersion only (third-order dispersion and nonlinearity ignored). Shorter pulses broaden more (division by τ_in²).",
+      "miss": "Mixing fs² and fs²/mm. Using the Gaussian factor for sech² pulses.",
+      "ex": "10 mm of fused silica (36.1 fs²/mm at 800 nm, φ₂ = 361 fs²): 50 fs becomes 53.9 fs, and 20 fs also becomes 53.9 fs (4 ln2 × 361/20² = 2.50).",
+      "kw": "GDD GVD group delay dispersion pulse broadening chirp dispersion compensation"
+    },
+    "comb": {
+      "name": "Optical frequency comb",
+      "l": [
+        "comb line frequency",
+        "repetition rate"
+      ],
+      "m": [
+        "frequency of the n-th comb line",
+        "line number (a large integer)",
+        "pulse repetition rate",
+        "carrier–envelope offset frequency",
+        "pulse period (round-trip group delay)"
+      ],
+      "when": "A stable pulse train from a mode-locked laser. f_ceo is measured with an f-2f interferometer or similar. An unknown laser frequency follows from its beat f_b with the nearest line: f = n f_rep + f_ceo ± f_b.",
+      "miss": "Assuming f_ceo = 0. Fixing the line number n requires knowing the frequency first to better than f_rep (e.g. with a wavemeter).",
+      "ex": "f_rep = 250 MHz, f_ceo = 20 MHz, n = 776000: f_n = 194.000020 THz (1545.32 nm).",
+      "kw": "optical frequency comb f_rep f_ceo CEO mode locking frequency metrology"
+    },
+    "planck": {
+      "name": "Planck’s law",
+      "l": [
+        "spectral radiance"
+      ],
+      "m": [
+        "spectral radiance of a blackbody (per wavelength)",
+        "temperature",
+        "Planck constant",
+        "speed of light",
+        "vacuum wavelength",
+        "Boltzmann constant"
+      ],
+      "when": "A blackbody (emissivity 1). Real bodies are multiplied by the emissivity ε(λ). The per-frequency B_ν and the per-wavelength B_λ differ in shape and peak position (B_λ dλ = B_ν dν). Multiply by π for the hemispherical exitance.",
+      "miss": "Entering T in °C. Entering λ in µm so the units are off. Expecting the peaks of B_λ and B_ν at the same wavelength.",
+      "ex": "T = 3000 K, λ = 1 µm: B_λ = 9.92 × 10¹¹ W·m⁻³·sr⁻¹ (= 99.2 W/(cm²·sr·µm)).",
+      "kw": "Planck blackbody radiation spectral radiance radiation law"
+    },
+    "wien": {
+      "name": "Wien’s displacement law",
+      "l": [
+        ""
+      ],
+      "m": [
+        "wavelength where B_λ is largest",
+        "blackbody temperature",
+        "Wien displacement constant (2.897 771 955 × 10⁻³ m·K)"
+      ],
+      "when": "The peak of the per-wavelength distribution B_λ of a blackbody. The peak of the per-frequency distribution is ν_max = 5.879 × 10¹⁰ Hz/K × T, and c/ν_max does not equal λ_max.",
+      "miss": "Confusing it with the peak of B_ν. Entering T in °C.",
+      "ex": "Sun (5772 K): λ_max = 502.0 nm (the frequency peak, 339 THz, is at 883 nm). 300 K: 9.66 µm. A 3000 K lamp: 966 nm.",
+      "kw": "Wien displacement law peak wavelength blackbody colour temperature"
+    },
+    "stefan": {
+      "name": "Stefan–Boltzmann law",
+      "l": [
+        ""
+      ],
+      "m": [
+        "radiant exitance (total power into the hemisphere per area)",
+        "emissivity (1 for a blackbody, constant for a grey body)",
+        "Stefan–Boltzmann constant",
+        "temperature"
+      ],
+      "when": "Summed over all wavelengths and the hemisphere. Valid for grey bodies (ε independent of wavelength). The net exchange with the surroundings is εσ(T⁴ − T_s⁴) (for a body much smaller than its surroundings).",
+      "miss": "Entering T in °C. Confusing it with radiance (W·m⁻²·sr⁻¹, M/π).",
+      "ex": "Blackbody at 300 K: M = 5.670 × 10⁻⁸ × 300⁴ = 459 W/m². At 5772 K: 6.29 × 10⁷ W/m².",
+      "kw": "Stefan Boltzmann blackbody radiant exitance emissivity"
+    },
+    "lum-flux": {
+      "name": "Luminous flux (from radiant flux)",
+      "l": [
+        "",
+        "maximum luminous efficacy"
+      ],
+      "m": [
+        "luminous flux",
+        "maximum luminous efficacy (photopic)",
+        "standard photopic luminous efficiency (1 at 555 nm)",
+        "spectral radiant flux (per wavelength)",
+        "wavelength"
+      ],
+      "when": "Photopic (daylight) vision, luminance above roughly 5 cd/m². 683 lm/W is fixed by the SI at 540 × 10¹² Hz (555.0 nm in air). Scotopic vision uses V′(λ) and 1700 lm/W.",
+      "miss": "Multiplying by 683 lm/W at wavelengths other than 555 nm (multiply by V(λ)). Treating W and lm as the same quantity.",
+      "ex": "1 mW at 555 nm: Φ_v = 683 × 10⁻³ = 0.683 lm. 1 mW at 650 nm (V = 0.107): 0.0731 lm.",
+      "kw": "luminous flux lumen luminous efficiency V(λ) 683 lm/W photometry"
+    },
+    "illuminance": {
+      "name": "Illuminance (inverse-square and cosine law)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "illuminance",
+        "luminous intensity in that direction",
+        "angle between the surface normal and the light direction",
+        "distance to the source"
+      ],
+      "when": "For a source that can be treated as a point (smaller than about 1/5 of the distance). On a floor at horizontal offset from a lamp at height h, d = h/cosθ, so E = I cos³θ/h².",
+      "miss": "Keeping the lamp height as d for an oblique point. Mixing lx and lm (lx = lm/m²).",
+      "ex": "Source of 100 cd at 2 m, facing it: E = 100/4 = 25 lx. With the surface tilted by 45°: 17.7 lx.",
+      "kw": "illuminance luminous intensity inverse square cosine law lux candela"
+    },
+    "lambert": {
+      "name": "Perfectly diffuse (Lambertian) surface",
+      "l": [
+        "angular distribution of intensity",
+        "luminous exitance and luminance",
+        "illuminated white surface"
+      ],
+      "m": [
+        "luminous intensity in direction θ and normal to the surface",
+        "angle from the surface normal",
+        "luminous exitance (lm/m²)",
+        "luminance (the same in every direction)",
+        "reflectance",
+        "illuminance"
+      ],
+      "when": "An ideal diffuser (luminance independent of direction). Paper and walls roughly follow it; glossy surfaces do not. The π is the hemispherical integral ∫cosθ dΩ = π sr, which removes the sr from luminance (cd/m² = lm/(m²·sr)).",
+      "miss": "Writing M = 2πL (the cosine weighting gives π). Mixing the units of luminance and illuminance (cd/m² and lx = lm/m²).",
+      "ex": "White paper of reflectance 0.9 under 500 lx: L_v = 0.9 × 500/π = 143 cd/m².",
+      "kw": "Lambertian perfect diffuser luminance luminous exitance cosine law"
+    },
+    "chromaticity": {
+      "name": "CIE chromaticity coordinates",
+      "l": [
+        "",
+        "",
+        "tristimulus values (Y and Z likewise)"
+      ],
+      "m": [
+        "chromaticity coordinates (z = 1 − x − y)",
+        "tristimulus values (relative)",
+        "normalization constant (sets the scale of Y)",
+        "spectral distribution (relative)",
+        "colour-matching function",
+        "wavelength"
+      ],
+      "when": "CIE 1931 2° colour-matching functions (use the 1964 10° observer for fields larger than 4°). Chromaticity carries no brightness. To measure colour differences use a uniform colour space such as CIELAB.",
+      "miss": "Mixing the 2° and 10° colour-matching functions. Reading distances in the xy diagram as colour differences (it is not uniform).",
+      "ex": "D65 white (X = 95.047, Y = 100, Z = 108.883): x = 0.3127, y = 0.3290.",
+      "kw": "chromaticity coordinates xy tristimulus colour-matching functions CIE XYZ chromaticity diagram"
+    },
+    "photon-energy": {
+      "name": "Photon energy, frequency and wavenumber",
+      "l": [
+        "energy",
+        "frequency",
+        "wavenumber"
+      ],
+      "m": [
+        "energy of one photon",
+        "Planck constant",
+        "frequency",
+        "speed of light",
+        "vacuum wavelength",
+        "wavenumber (usually cm⁻¹)"
+      ],
+      "when": "Vacuum wavelengths. In a medium the wavelength becomes λ/n but the frequency and energy stay the same. Practical forms: E[eV] = 1239.84/λ[nm], ν[THz] = 299792.458/λ[nm], σ̃[cm⁻¹] = 10⁷/λ[nm].",
+      "miss": "Calculating with the wavelength in air or in a medium (precise spectroscopy distinguishes air and vacuum wavelengths). Confusing the wavenumber with the angular wavenumber 2π/λ.",
+      "ex": "1550 nm: E = 1.2816 × 10⁻¹⁹ J = 0.7999 eV, ν = 193.41 THz, σ̃ = 6451.6 cm⁻¹.",
+      "kw": "photon energy eV frequency wavenumber 1240 conversion"
+    },
+    "photon-flux": {
+      "name": "Photon number (photon flux)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "photons per second",
+        "optical power",
+        "Planck constant",
+        "frequency",
+        "vacuum wavelength",
+        "speed of light"
+      ],
+      "when": "Monochromatic light. For broadband light sum over wavelengths (∫P_λ λ/(hc) dλ). At the same power, longer wavelengths carry more photons.",
+      "miss": "Mixing mW and W. Confusing pulse energy with power (the photons in one pulse are E_pulse/(hν)).",
+      "ex": "1 mW at 1550 nm: Φ_p = 10⁻³/(1.2816 × 10⁻¹⁹) = 7.80 × 10¹⁵ s⁻¹. 1 W at 532 nm: 2.68 × 10¹⁸ s⁻¹.",
+      "kw": "photon number photon flux photon rate power"
+    },
+    "g2": {
+      "name": "Second-order correlation g⁽²⁾(0)",
+      "l": [
+        "definition",
+        "from an HBT measurement"
+      ],
+      "m": [
+        "second-order correlation at zero delay",
+        "photon number",
+        "coincidences at zero delay",
+        "count rates of the two detectors",
+        "coincidence window",
+        "measurement time"
+      ],
+      "when": "With a coincidence window suited to the coherence time of the light and the timing resolution of the detectors. Thermal light gives 2, coherent light (a laser) 1, and a single photon (number state n = 1) 0. g⁽²⁾(0) < 0.5 is the usual criterion for a single-photon source.",
+      "miss": "Computing the accidental coincidences R₁R₂τT without the window. Ignoring that dark counts and timing jitter raise g⁽²⁾(0).",
+      "ex": "With R₁ = R₂ = 100 kcps, τ = 1 ns and T = 10 s the accidental coincidences are 100. If the measured N_c = 5, g⁽²⁾(0) = 0.05.",
+      "kw": "g2 second-order correlation HBT antibunching single photon photon statistics"
+    },
+    "led-eqe": {
+      "name": "LED external quantum efficiency and light extraction efficiency",
+      "l": [
+        "external quantum efficiency",
+        "extraction through one flat face"
+      ],
+      "m": [
+        "external quantum efficiency",
+        "optical power emitted",
+        "Planck constant",
+        "optical frequency",
+        "current",
+        "elementary charge",
+        "internal quantum efficiency (injection × radiative efficiency)",
+        "light extraction efficiency",
+        "critical angle from the semiconductor to the outside",
+        "semiconductor index (air outside)"
+      ],
+      "when": "The extraction formula assumes an isotropic emitter below a flat face and ignores Fresnel reflection and photon recycling. Real LEDs multiply it several times with shaping, texturing and reflectors. The power efficiency (WPE) is P/(IV).",
+      "miss": "Confusing external quantum efficiency with power efficiency. Taking 1/(4n²) as the total over all faces (it is one face).",
+      "ex": "GaN (n = 2.5): θ_c = 23.58° and (1 − cosθ_c)/2 = 0.0417 (1/(4n²) = 0.040). An LED emitting 0.5 W at 450 nm with 0.35 A: η_ext = 0.518.",
+      "kw": "external quantum efficiency EQE light extraction efficiency LED internal quantum efficiency"
+    },
+    "solar-ff": {
+      "name": "Solar cell fill factor and efficiency",
+      "l": [
+        "fill factor",
+        "conversion efficiency"
+      ],
+      "m": [
+        "fill factor",
+        "voltage at the maximum power point",
+        "current density at the maximum power point",
+        "open-circuit voltage",
+        "short-circuit current density",
+        "conversion efficiency",
+        "incident irradiance (standard AM1.5G, 1000 W/m²)"
+      ],
+      "when": "Compare under standard test conditions (25 °C, AM1.5G, 1000 W/m²). Series and shunt resistance lower the FF. State whether the area is the aperture (active) area or the total area.",
+      "miss": "Forgetting to convert mA/cm² to A/m² (1 mA/cm² = 10 A/m²). Multiplying by FF in %.",
+      "ex": "V_oc = 0.70 V, J_sc = 40 mA/cm² (400 A/m²), FF = 0.80: η = 0.80 × 0.70 × 400/1000 = 22.4 %.",
+      "kw": "fill factor FF conversion efficiency open-circuit voltage short-circuit current solar cell"
+    },
+    "diode-voc": {
+      "name": "Solar cell diode equation and open-circuit voltage",
+      "l": [
+        "current–voltage",
+        "open-circuit voltage"
+      ],
+      "m": [
+        "output current density",
+        "short-circuit current density (photocurrent)",
+        "dark saturation current density",
+        "elementary charge",
+        "voltage",
+        "ideality factor (1–2)",
+        "Boltzmann constant",
+        "cell temperature",
+        "open-circuit voltage"
+      ],
+      "when": "A one-diode model ignoring series and shunt resistance, with a photocurrent independent of voltage. A tenfold J_sc raises V_oc by (n_id k_B T/q) ln10 (59.2 mV at 25 °C with n_id = 1), which is why concentration raises efficiency.",
+      "miss": "Entering T in °C. Mixing the units of J₀ (A/cm² and A/m²). V_oc falls with rising temperature (J₀ grows).",
+      "ex": "J_sc = 400 A/m², J₀ = 1 × 10⁻⁹ A/m², n_id = 1, 25 °C (k_B T/q = 25.69 mV): V_oc = 25.69 mV × ln(4 × 10¹¹) = 0.686 V.",
+      "kw": "open-circuit voltage diode equation saturation current ideality factor solar cell"
+    },
+    "sq": {
+      "name": "Shockley–Queisser ultimate efficiency and radiative limit",
+      "l": [
+        "ultimate efficiency (x = E/(k_B T_s))",
+        "radiative saturation current"
+      ],
+      "m": [
+        "ultimate efficiency (sun as a blackbody, each photon above E_g delivers E_g)",
+        "E_g/(k_B T_s)",
+        "E/(k_B T_s)",
+        "saturation current density with radiative recombination only (one face)",
+        "elementary charge",
+        "Planck constant",
+        "speed of light",
+        "photon energy",
+        "band gap",
+        "Boltzmann constant",
+        "cell temperature"
+      ],
+      "when": "A single junction absorbing everything above E_g and nothing below. The ultimate efficiency is the limit for a cell at 0 K; including the cell’s own emission (J_{0,rad}) gives the detailed-balance limit of about 33 % under AM1.5G (E_g ≈ 1.34 eV).",
+      "miss": "Confusing the ultimate efficiency (about 44 %) with the detailed-balance limit (about 33 %). Mixing T_s (sun, 6000 K) and T_c (cell, 300 K).",
+      "ex": "For a 6000 K blackbody sun the maximum of u is 43.9 % at x_g = 2.17 (E_g = 1.12 eV). With E_g = 1.34 eV and T_c = 300 K, J_{0,rad} = 2.36 × 10⁻¹⁶ A/m².",
+      "kw": "Shockley Queisser SQ limit detailed balance ultimate efficiency band gap"
+    }
+  }
+}
