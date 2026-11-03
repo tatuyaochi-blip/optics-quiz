@@ -2,6 +2,7 @@
 // ほかの入力は今の値のまま、その入力だけを変えたときの結果を描く。
 // calc(values) は入力の値 { 名前: 数値 } から結果 { data-out のキー: 数値 } を返す純粋な関数
 import { lineChart } from './chart.js';
+import { parseNum } from './eng.js';
 
 const text = sel => document.querySelector(sel)?.textContent.trim() ?? '';
 
@@ -40,7 +41,7 @@ export function initSweep({ form, calc, inputs, outputs, defaults = {}, ranges =
   if (defaults.x) xSel.value = defaults.x;
   if (defaults.y) ySel.value = defaults.y;
 
-  const read = () => Object.fromEntries([...form.elements].filter(el => el.name).map(el => [el.name, el.type === 'number' ? Number(el.value) : el.value]));
+  const read = () => Object.fromEntries([...form.elements].filter(el => el.name).map(el => [el.name, el.type === 'number' ? Number(el.value) : el.hasAttribute('data-num') ? parseNum(el.value) : el.value]));
 
   function draw() {
     const v = read(), x = xSel.value, y = ySel.value, el = form.elements[x];

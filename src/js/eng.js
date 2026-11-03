@@ -29,9 +29,23 @@ export const eUp = (x, series = E24) => (x > 0 ? values(x, series).find(v => v >
 export const eNear = (x, series = E24) => (x > 0 ? values(x, series).reduce((a, b) => (Math.abs(Math.log(b / x)) < Math.abs(Math.log(a / x)) ? b : a)) : NaN);
 
 // 入力欄の数値(空や数でないときは既定値)
+// 数の入力欄は type="text"(type="number" だと、ブラウザによって de の「1,45」が 145 と読まれ、誤りも出ない)。
+// 小数点は「.」か「,」の1つだけ。桁区切りは受け付けない(「1,234.5」は読めない入力)。
+// 桁区切りと紛れる形(「1,500」、de では「1.500」)も読めない入力にする(1.5 と 1500 のどちらか決められないため)
+const NUM_RE = /^[+-]?(?:\d+(?:[.,]\d*)?|[.,]\d+)(?:[eE][+-]?\d+)?$/;
+const GROUP_RE = /^de/.test(lang) ? /^[+-]?[1-9]\d{0,2}\.\d{3}$/ : /^[+-]?[1-9]\d{0,2},\d{3}$/;
+export const parseNum = x => {
+  const s = String(x ?? '').trim().replace(/^−/, '-');
+  return s === '' || !NUM_RE.test(s) || GROUP_RE.test(s) ? NaN : Number(s.replace(',', '.'));
+};
+// 入力欄に入れる値(de は小数のコンマ)
+export const inVal = x => (/^de/.test(lang) ? String(x).replace('.', ',') : String(x));
+// 空欄・読めない入力・下限より小さい値は既定値を使う。読めない入力と下限割れの欄には aria-invalid を立てる
 export const reader = form => (k, min = -Infinity) => {
-  const s = String(form.elements[k].value).trim(), v = s === '' ? NaN : Number(s); // Number('') は 0 になるので、空欄は既定値に
-  return Number.isFinite(v) && v >= min ? v : Number(form.elements[k].defaultValue);
+  const el = form.elements[k], s = String(el.value).trim(), v = parseNum(s);
+  const ok = Number.isFinite(v) && v >= min;
+  el.setAttribute('aria-invalid', String(s !== '' && !ok));
+  return ok ? v : parseNum(el.defaultValue);
 };
 
 // 指数表記(5.91 × 10⁻¹² のように上付きの指数で)。d は有効数字
