@@ -150,7 +150,7 @@
     },
     {
       "name": "Physical constants",
-      "text": "CODATA 2018 exact and recommended values (c = 299 792 458 m/s, h = 6.626 070 15 × 10⁻³⁴ J·s, q = 1.602 176 634 × 10⁻¹⁹ C, Wien’s displacement constant b = 2.897 772 × 10⁻³ m·K, hc = 1239.84 eV·nm)."
+      "text": "CODATA 2022 exact and recommended values (c = 299 792 458 m/s, h = 6.626 070 15 × 10⁻³⁴ J·s, q = 1.602 176 634 × 10⁻¹⁹ C, Wien’s displacement constant b = 2.897 772 × 10⁻³ m·K, hc = 1239.84 eV·nm)."
     },
     {
       "name": "Band gaps (room temperature)",
