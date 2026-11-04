@@ -466,6 +466,63 @@
           "a": "Em incidência oblíqua, a diferença de fase do caminho dentro da camada diminui, e o comprimento de onda de refletância mínima se desloca para comprimentos de onda menores. Além disso, a refletância é diferente para a polarização s e a polarização p. Esta ferramenta trata apenas a incidência normal, por isso, para aplicações com ângulos de incidência grandes, é necessário outro cálculo."
         }
       ]
+    },
+    "fr": {
+      "nav": "Traitement antireflet",
+      "card": "Calculer l'épaisseur λ/4, l'indice idéal de la couche et la réflectance en incidence normale d'un traitement antireflet monocouche",
+      "title": "Calculateur de traitement antireflet (épaisseur d'une couche λ/4, indice idéal, réflectance)",
+      "description": "Pour un traitement antireflet monocouche, calcule l'épaisseur physique de la couche λ/4 à la longueur d'onde de conception, l'indice idéal de la couche √(n₀nₛ) qui annule la réflexion, et la réflectance en incidence normale sans et avec la couche. Donne aussi la réflectance à une longueur d'onde différente de la longueur d'onde de conception.",
+      "h1": "Calculateur de traitement antireflet",
+      "lead": "Saisissez l'indice de réfraction du substrat et celui du matériau de la couche, ainsi que la longueur d'onde de conception : le calculateur donne l'épaisseur physique de la couche dont l'épaisseur optique vaut λ/4, et la réflectance pour une lumière en incidence normale. Les valeurs par défaut correspondent à du fluorure de magnésium (MgF₂, indice 1,38) déposé en couche λ/4 pour 550 nm sur un verre d'indice 1,52 (proche du BK7), observé en lumière bleue à 450 nm.",
+      "in_heading": "Entrées (incidence normale)",
+      "lambda0": "Longueur d'onde de conception λ₀ (nm, dans le vide)",
+      "n0": "Indice du milieu d'incidence n₀ (1 pour l'air)",
+      "ns": "Indice du substrat nₛ",
+      "n1": "Indice de la couche n₁",
+      "lambda": "Longueur d'onde pour la réflectance λ (nm)",
+      "out_heading": "Résultats",
+      "nideal": "Indice idéal de la couche √(n₀nₛ)",
+      "thick": "Épaisseur physique de la couche λ/4 d = λ₀/(4n₁)",
+      "r0": "Réflectance sans couche",
+      "coat_heading": "Réflectance avec la couche (une face)",
+      "rdes": "Réflectance à la longueur d'onde de conception λ₀",
+      "rlam": "Réflectance à la longueur d'onde λ",
+      "nideal_r": "Avec une couche d'indice idéal (à λ₀)",
+      "note": "Le calcul suppose une couche et un substrat non absorbants, d'indices indépendants de la longueur d'onde (sans dispersion), et donne la réflectance d'une seule face en incidence normale. La réflexion sur la face arrière du substrat et les effets de polarisation en incidence oblique ne sont pas pris en compte. La réflectance est un rapport d'intensités (de puissances).",
+      "practice": "Questions sur les interférences et la diffraction",
+      "related": "Termes associés",
+      "sections": [
+        {
+          "h": "Comment une couche λ/4 annule la réflexion",
+          "p": "Lorsqu'on dépose une couche mince sur un substrat, la lumière réfléchie par la surface de la couche se superpose à la lumière réfléchie par l'interface entre la couche et le substrat. Si n₀ < n₁ < nₛ, le déphasage à la réflexion est le même aux deux interfaces : en donnant à la couche une épaisseur optique (indice × épaisseur physique) de λ/4, la différence de marche de l'aller-retour dans la couche vaut λ/2, et les deux ondes réfléchies, déphasées d'une demi-période, s'annulent. Dans la couche, la longueur d'onde se réduit à λ/n₁ : l'épaisseur physique vaut donc d = λ₀/(4n₁). Avec les valeurs par défaut (MgF₂, n₁ = 1,38, λ₀ = 550 nm), on obtient d ≈ 99,6 nm, valeur différente de λ/4 = 137,5 nm sans division par l'indice. Une couche d'épaisseur optique λ/2 introduit une différence de marche d'une longueur d'onde à l'aller-retour : elle n'annule pas la réflexion et donne la même réflectance qu'en l'absence de couche."
+        },
+        {
+          "h": "L'indice idéal de la couche √(n₀nₛ)",
+          "p": "Pour annuler complètement les deux ondes réfléchies, il faut accorder non seulement leurs phases mais aussi leurs amplitudes. La condition d'égalité des amplitudes réfléchies aux deux interfaces en incidence normale donne l'indice idéal de la couche n₁ = √(n₀nₛ) ; la réflectance à la longueur d'onde de conception est alors nulle. Pour un verre dans l'air (nₛ = 1,52), on trouve √1,52 ≈ 1,23, mais peu de matériaux résistants ont un indice aussi bas ; en pratique, on utilise souvent le MgF₂ (1,38). Pour le silicium, d'indice 3,48 à la longueur d'onde de 1,55 µm, l'indice idéal est d'environ 1,87, proche de celui du nitrure de silicium (environ 2,0) ou de l'oxynitrure de silicium."
+        },
+        {
+          "h": "Réflectance en incidence normale",
+          "p": "D'après les formules de Fresnel, la réflectance d'une lumière arrivant en incidence normale sur l'interface entre des indices n₀ et nₛ vaut R = ((n₀ − nₛ)/(n₀ + nₛ))². Elle est d'environ 4,26 % pour le verre par défaut et d'environ 31 % pour le silicium (3,48 à 1,55 µm). Avec une couche λ/4, la réflectance à la longueur d'onde de conception devient R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))², soit environ 1,26 % seulement avec les valeurs par défaut (MgF₂ sur verre). Plus l'indice s'éloigne de l'indice idéal, plus la réflexion résiduelle est forte, et une couche d'indice supérieur à celui du substrat augmente au contraire la réflexion."
+        },
+        {
+          "h": "Longueurs d'onde éloignées de la conception et multicouches",
+          "p": "L'épaisseur de la couche étant fixée pour la longueur d'onde de conception, la condition de phase n'est plus respectée aux autres longueurs d'onde et la réflexion augmente. Avec les valeurs par défaut, la réflectance d'environ 1,26 % à 550 nm passe à environ 1,62 % à 450 nm et à environ 1,60 % à 700 nm (dispersion négligée). Même la monocouche par défaut maintient la réflectance en dessous d'environ 2,2 % dans tout le visible (400 à 700 nm ; maximum à l'extrémité de 400 nm), mais pour réduire encore la réflexion sur une large bande, on utilise des traitements multicouches qui associent des couches de haut et de bas indice. En empilant au contraire les mêmes couches λ/4 en alternant haut et bas indice, les réflexions se renforcent : on obtient un miroir diélectrique multicouche."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quelle est la différence entre épaisseur physique et épaisseur optique ?",
+          "a": "L'épaisseur optique est le produit de l'indice par l'épaisseur physique ; c'est elle qui fixe l'avance de phase de la lumière. Une couche λ/4 a une épaisseur optique de λ/4, et son épaisseur physique en est la fraction 1/n₁ : environ 99,6 nm pour du MgF₂ conçu pour 550 nm."
+        },
+        {
+          "q": "Les traitements antireflet des lunettes et des objectifs photo sont-ils monocouches ?",
+          "a": "Les modèles bon marché peuvent utiliser une monocouche de MgF₂, mais la plupart emploient des multicouches de quelques couches à plus d'une dizaine, qui maintiennent la réflectance en dessous de 1 % dans tout le visible, voire vers 0,5 % ou moins pour les traitements haut de gamme. La légère teinte du reflet résiduel (vert ou violet) vient de la variation de la réflectance avec la longueur d'onde."
+        },
+        {
+          "q": "Que se passe-t-il en incidence oblique ?",
+          "a": "En incidence oblique, le déphasage dans la couche diminue, et la longueur d'onde de réflectance minimale se décale vers les courtes longueurs d'onde. La réflectance diffère aussi entre les polarisations s et p. Ce calculateur ne traite que l'incidence normale ; pour les applications à grand angle d'incidence, un autre calcul est nécessaire."
+        }
+      ]
     }
   }
 }

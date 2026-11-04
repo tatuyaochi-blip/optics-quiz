@@ -1,0 +1,17 @@
+<!--
+{
+  "title": "{{brand_subject_title}} : glossaire",
+  "description": "Glossaire des termes de base couvrant {{brand_scope}}, chacun accompagné d'une courte explication. Recherche par mot-clé.",
+  "scripts": ["glossary.js"]
+}
+-->
+<h1>{{brand_subject_title}} : glossaire</h1>
+<p class="lead">Les termes de base qui reviennent souvent dans l'apprentissage en {{brand_subject}}, classés par thème. Saisissez un mot-clé pour filtrer la liste.</p>
+<div class="search">
+  <input id="glossary-q" type="search" placeholder="Rechercher un terme (ex. : {{brand_search_example}})" aria-label="Rechercher un terme">
+  <span id="glossary-count" class="muted" data-label="{{t_glossary_count}}"></span>
+</div>
+{{newsTermsLink}}
+{{dictLink}}
+{{glossaryList}}
+<div data-ad="glossary"></div>

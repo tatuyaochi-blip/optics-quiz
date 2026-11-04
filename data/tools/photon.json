@@ -450,6 +450,62 @@
       "js": {
         "per_s": "fótons/s"
       }
+    },
+    "fr": {
+      "nav": "Conversion longueur d'onde – énergie",
+      "card": "Convertir entre longueur d'onde, fréquence, énergie du photon (eV) et nombre d'onde",
+      "title": "Convertisseur longueur d'onde, fréquence et énergie du photon (nm ⇔ THz ⇔ eV ⇔ cm⁻¹)",
+      "description": "Convertit entre elles la longueur d'onde (nm), la fréquence (THz), l'énergie du photon (eV) et le nombre d'onde (cm⁻¹) de la lumière. À partir d'une puissance optique, calcule aussi le nombre de photons par seconde et la sensibilité spectrale d'un photodétecteur de rendement quantique 100 %.",
+      "h1": "Convertisseur longueur d'onde, fréquence et énergie du photon",
+      "lead": "Modifiez l'un des champs : les autres sont convertis. En saisissant une puissance optique, vous obtenez aussi le nombre de photons reçus par seconde et la sensibilité spectrale d'un photodétecteur idéal. La valeur par défaut est 1550 nm, dans la bande C des télécommunications optiques.",
+      "in_heading": "Entrées (modifiez n'importe quel champ)",
+      "nm": "Longueur d'onde λ (nm)",
+      "thz": "Fréquence ν (THz)",
+      "ev": "Énergie du photon E (eV)",
+      "kayser": "Nombre d'onde (cm⁻¹)",
+      "mw": "Puissance optique (mW)",
+      "out_heading": "Résultats",
+      "joule": "Énergie d'un photon",
+      "rate": "Photons par seconde",
+      "resp": "Sensibilité spectrale maximale (rendement quantique 100 %)",
+      "note": "Les longueurs d'onde sont considérées dans le vide (dans un matériau, la longueur d'onde est divisée par n, mais la fréquence et l'énergie du photon ne changent pas). Constantes : c = 299 792 458 m/s, h = 6,62607015 × 10⁻³⁴ J·s, e = 1,602176634 × 10⁻¹⁹ C.",
+      "practice": "Questions sur les photodétecteurs et la détection de la lumière",
+      "related": "Termes associés",
+      "sections": [
+        {
+          "h": "Longueur d'onde et énergie du photon",
+          "p": "L'énergie d'un photon vaut E = hν = hc/λ ; elle est d'autant plus grande que la longueur d'onde est courte. En électronvolts (eV) et en nanomètres (nm), E[eV] ≈ 1239,84/λ[nm] : il est commode de retenir que « 1240 divisé par la longueur d'onde en nanomètres donne des eV ». La valeur par défaut de 1550 nm correspond à environ 0,80 eV, le vert du visible (530 nm) à environ 2,34 eV, et l'ultraviolet à 365 nm à environ 3,40 eV. Pour les photodétecteurs et les sources à semi-conducteur, comparer la bande interdite à l'énergie du photon indique si cette longueur d'onde peut être absorbée ou émise."
+        },
+        {
+          "h": "Fréquence et nombre d'onde",
+          "p": "La fréquence vaut ν = c/λ ; 1550 nm correspond à environ 193,4 THz. En télécommunications optiques, le multiplexage en longueur d'onde dense (DWDM) définit ses canaux en fréquence plutôt qu'en longueur d'onde, avec un espacement de 50 GHz ou 100 GHz centré sur 193,1 THz. Vers 1550 nm, 100 GHz correspondent à environ 0,8 nm. Le nombre d'onde (cm⁻¹) est le nombre d'ondes par centimètre, c'est-à-dire 1/λ exprimé en cm⁻¹. C'est l'unité usuelle en spectroscopie infrarouge et Raman ; 1550 nm correspond à environ 6452 cm⁻¹."
+        },
+        {
+          "h": "Puissance optique et nombre de photons",
+          "p": "En divisant la puissance optique P par l'énergie d'un photon, on obtient le nombre de photons par seconde N = P/(hν). Pour 1 mW à 1550 nm, il vaut environ 7,80 × 10¹⁵ photons/s. À puissance égale, plus la longueur d'onde est grande, plus l'énergie par photon est faible, et plus les photons sont nombreux. Ce nombre de photons est le point de départ de toute réflexion sur le bruit de grenaille ou la détection de photons uniques."
+        },
+        {
+          "h": "La limite supérieure de la sensibilité spectrale",
+          "p": "La sensibilité spectrale d'un photodétecteur vaut R = η·qλ/(hc) ; pour un rendement quantique η de 100 %, R[A/W] ≈ λ[nm]/1239,84. La limite supérieure est d'environ 1,25 A/W à 1550 nm et d'environ 0,686 A/W à 850 nm. Les photodiodes InGaAs réelles ont une sensibilité d'environ 0,9 à 1,0 A/W à 1550 nm, ce qui correspond à un rendement quantique d'environ 70 à 80 %. La sensibilité est proportionnelle à la longueur d'onde parce qu'à puissance égale, les grandes longueurs d'onde transportent plus de photons."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Comment convertir des eV en nm ?",
+          "a": "Calculez λ[nm] ≈ 1239,84/E[eV]. Par exemple, la bande interdite du silicium, 1,12 eV, correspond à environ 1107 nm, et celle du GaN, 3,4 eV, à environ 365 nm."
+        },
+        {
+          "q": "L'énergie du photon change-t-elle dans un matériau ?",
+          "a": "Non. Dans un matériau d'indice de réfraction n, la vitesse et la longueur d'onde de la lumière sont divisées par n, mais la fréquence et l'énergie du photon restent les mêmes. Ce calculateur considère les longueurs d'onde dans le vide."
+        },
+        {
+          "q": "Quelles sont les énergies du photon à 1550 nm et à 1310 nm ?",
+          "a": "1550 nm correspond à environ 0,800 eV (environ 193,4 THz) et 1310 nm à environ 0,946 eV (environ 228,8 THz). Ces deux énergies étant inférieures à la bande interdite du silicium (environ 1,12 eV), le silicium ne les absorbe pas, et l'on utilise l'InGaAs ou le Ge pour la détection."
+        }
+      ],
+      "js": {
+        "per_s": "photons/s"
+      }
     }
   }
 }

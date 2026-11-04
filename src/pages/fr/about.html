@@ -1,0 +1,44 @@
+<!--
+{
+  "title": "À propos du site",
+  "description": "À propos de {{siteName}} : son objectif, les contenus proposés, la façon dont les questions sont élaborées, le mode d'emploi et la gestion du site."
+}
+-->
+<div class="prose">
+<h1>À propos de ce site</h1>
+
+<p>{{siteName}} est un site d'apprentissage qui permet d'acquérir facilement des connaissances en {{brand_subject}} grâce à des questions à trois choix. Il couvre {{brand_scope}}. Aucune inscription n'est nécessaire, et tout est gratuit.</p>
+
+<h2>Contenus proposés</h2>
+<ul>
+  <li><strong>Exercices</strong> : {{questionTotal}} questions réparties en {{categoryTotal}} thèmes, toutes accompagnées d'une explication.</li>
+  <li><strong><a href="{{home}}glossary/">Glossaire</a></strong> : de courtes définitions des termes en {{brand_subject}}, avec, pour les principaux, une explication détaillée et des questions fréquentes.</li>
+{{aboutCompare}}{{aboutFailure}}{{aboutAtlas}}{{aboutDrill}}{{aboutMaterials}}{{aboutFormulas}}{{aboutRindex}}{{aboutMethods}}{{aboutPrep}}{{aboutMeasure}}{{aboutPhrases}}{{aboutFigures}}{{#tools}}  <li><strong><a href="{{home}}tools/">Calculateurs</a></strong> : les formules couramment utilisées en conception et en évaluation, calculées directement dans le navigateur.</li>
+{{/tools}}</ul>
+
+<h2>À propos des questions</h2>
+<p>Toutes les questions et explications publiées sont des contenus originaux de ce site. Aucune n'est reprise d'autres sites, de livres ou d'examens de certification.</p>
+<p>Les questions sont rédigées selon les principes suivants : une seule réponse correcte, des valeurs numériques accompagnées de leurs conditions (température, édition de la norme, etc.) et des règles empiriques jamais présentées comme absolues. Le contenu continue d'être revu après sa publication, et les erreurs sont corrigées dès qu'elles sont découvertes.</p>
+<p>Le contenu en français est une traduction de l'original japonais. Nous veillons à son exactitude, mais il peut contenir des erreurs. Si vous en remarquez une, signalez-la-nous via la <a href="{{home}}contact/">page de contact</a>.</p>
+
+<h2>Élaboration et vérification des contenus</h2>
+<p>Les brouillons des questions, des explications et du glossaire sont rédigés à l'aide de l'IA (grands modèles de langage). Chaque brouillon est ensuite vérifié par une autre IA que celle qui l'a rédigé : avant publication, chaque question est résolue de nouveau pour confirmer qu'une seule réponse est correcte, les faits, les valeurs numériques, les unités et la terminologie sont contrôlés, et les questions de calcul sont vérifiées par un programme.</p>
+<p>Le contenu de ces pages en français a été traduit par IA à partir du contenu japonais, et une autre IA vérifie que les valeurs numériques et les formules concordent avec le japonais et que les termes standard du domaine sont employés.</p>
+<p>Des erreurs peuvent néanmoins subsister. Nous les corrigeons dès que nous les découvrons et continuons à revoir le contenu.</p>
+
+<h2>Mode d'emploi</h2>
+<ul>
+  <li><strong>Par thème</strong> : choisissez un thème sur la page d'accueil et répondez à ses questions.</li>
+  <li><strong>10 questions au hasard</strong> : dix questions tirées au hasard parmi tous les thèmes.</li>
+  <li><strong>Questions manquées</strong> : refaites uniquement les questions que vous avez manquées récemment.</li>
+  <li><strong>Examen blanc</strong> : 30 questions de tous les thèmes ; les explications s'affichent toutes à la fin.</li>
+  <li><strong>Diagnostic des points faibles</strong> : une question par thème, puis votre taux de réussite par domaine et les thèmes à étudier ensuite.</li>
+  <li><strong>Question du jour</strong> : une nouvelle question chaque jour. Répondez jour après jour pour prolonger votre série de jours d'affilée.</li>
+  <li><strong>Parcours d'apprentissage</strong> : des thèmes classés dans l'ordre d'étude conseillé pour chaque objectif, avec votre progression par thème et le prochain thème à étudier.</li>
+</ul>
+<p>Vos réponses sont enregistrées uniquement dans votre navigateur et peuvent être consultées sur la page <a href="{{home}}stats/">Progression</a>.</p>
+
+<h2>Gestion du site</h2>
+<p>Ce site est géré par un particulier. Ses frais de fonctionnement sont couverts par les revenus de la publicité et de l'affiliation (commissions d'apport). La présence de publicité et les commissions n'influencent jamais le contenu des questions ni des explications.</p>
+<p>Consultez la <a href="{{home}}privacy/">politique de confidentialité</a> pour le traitement des données personnelles et de la publicité, et l'<a href="{{home}}disclaimer/">avertissement</a> pour l'usage des contenus publiés. Vous pouvez contacter le responsable du site via la <a href="{{home}}contact/">page de contact</a>.</p>
+</div>

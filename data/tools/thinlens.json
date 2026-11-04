@@ -525,6 +525,72 @@
           "a": "Se as distâncias forem medidas a partir dos pontos principais anterior e posterior, a mesma equação vale na região paraxial. No entanto, a posição dos pontos principais deve ser obtida dos dados da lente, e, se forem digitadas distâncias medidas a partir das extremidades da lente, o resultado se desvia. Além disso, o desfoque da imagem por aberrações não está incluído neste cálculo."
         }
       ]
+    },
+    "fr": {
+      "nav": "Formation d'image par une lentille mince",
+      "card": "Calculer la distance image et le grandissement à partir de la focale et de la distance objet, ainsi que la focale équivalente de deux lentilles",
+      "title": "Calculateur de lentille mince (distance image, grandissement transversal, focale équivalente de deux lentilles)",
+      "description": "À partir de la formule des lentilles minces 1/a + 1/b = 1/f, détermine, pour une focale et une distance objet données, la distance image, le grandissement transversal et la nature réelle ou virtuelle de l'image. Calcule aussi la focale équivalente, la vergence et le tirage (distance focale arrière) de deux lentilles minces séparées d'une distance d.",
+      "h1": "Calculateur de lentille mince",
+      "lead": "Saisissez la focale f d'une lentille et la distance a de la lentille à l'objet : le calculateur donne la position b de l'image, le grandissement transversal m et la nature réelle ou virtuelle de l'image. En saisissant la focale et l'écartement d'une deuxième lentille, vous obtenez aussi la focale équivalente du doublet considéré comme une seule lentille. Les valeurs par défaut correspondent à un objet placé à 150 mm devant une lentille convergente de 50 mm de focale, avec une lentille de 100 mm de focale placée 30 mm derrière.",
+      "in_heading": "Entrées (dans l'air, approximation paraxiale)",
+      "f1": "Focale de la lentille 1 f₁ (mm, négative pour une lentille divergente)",
+      "a": "Distance de l'objet à la lentille 1 a (mm)",
+      "f2": "Focale de la lentille 2 f₂ (mm, négative pour une lentille divergente)",
+      "d": "Écartement des lentilles 1 et 2 d (mm)",
+      "out_heading": "Résultats",
+      "b": "Distance image b (image formée par la lentille 1)",
+      "m": "Grandissement transversal m = −b/a",
+      "kind": "Nature de l'image",
+      "p1": "Vergence de la lentille 1 1/f₁",
+      "two_heading": "Association de deux lentilles",
+      "fc": "Focale équivalente f",
+      "pc": "Vergence équivalente 1/f",
+      "bfd": "Tirage (de la lentille 2 au foyer image)",
+      "note": "Le calcul considère des lentilles minces dans l'air et des rayons proches de l'axe optique (rayons paraxiaux). Les distances sont comptées positivement côté objet pour l'objet (a > 0) et côté image pour l'image (b > 0) ; b < 0 désigne une image virtuelle située du côté de l'objet. Un grandissement négatif correspond à une image renversée. Les lentilles réelles ont une épaisseur et des aberrations : considérez la focale comme mesurée à partir des plans principaux.",
+      "practice": "Questions d'optique géométrique et de formation des images",
+      "related": "Termes associés",
+      "js": {
+        "real": "Réelle (renversée)",
+        "virtual": "Virtuelle (droite)",
+        "inf": "Image à l'infini (faisceau parallèle)",
+        "behind": "(derrière la lentille)",
+        "front": "(devant la lentille)",
+        "afocal": "Infinie (système afocal)",
+        "zero": "f doit être différente de 0"
+      },
+      "sections": [
+        {
+          "h": "Formule des lentilles minces et convention de signes",
+          "p": "Pour une lentille assez mince pour que son épaisseur soit négligeable, la distance objet a, la distance image b et la focale f vérifient 1/a + 1/b = 1/f (formule de conjugaison de Gauss). Dans ce calculateur, a > 0 lorsque l'objet est devant la lentille et b > 0 lorsque l'image se forme derrière elle (du côté où va la lumière) ; f > 0 pour une lentille convergente et f < 0 pour une lentille divergente. Avec les valeurs par défaut (f = 50 mm, a = 150 mm), 1/b = 1/50 − 1/150 = 2/150, d'où b = 75 mm. Certains manuels utilisent une convention où la distance objet est négative (1/b − 1/a = 1/f) : vérifiez la convention de signes avant de comparer avec d'autres documents."
+        },
+        {
+          "h": "Grandissement transversal et nature de l'image",
+          "p": "Le rapport de la taille de l'image à celle de l'objet est le grandissement transversal m = −b/a. Avec les valeurs par défaut, m = −75/150 = −0,5 : l'image est réelle, renversée et deux fois plus petite. Avec une lentille convergente, un objet placé au-delà du double de la focale (2f) donne une image réelle réduite, un objet entre f et 2f une image réelle agrandie, et un objet exactement à 2f une image de même taille (m = −1). Un objet placé en deçà du foyer donne un b négatif : une image virtuelle, droite et agrandie apparaît du côté de l'objet. C'est le principe de la loupe. Si l'objet est au foyer, la lumière ressort parallèle de la lentille et l'image se forme à l'infini."
+        },
+        {
+          "h": "Focale équivalente de deux lentilles",
+          "p": "Pour deux lentilles minces de focales f₁ et f₂ séparées d'une distance d, la focale équivalente f vérifie 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂). En vergence (inverse de la focale, en dioptries D lorsqu'elle est mesurée en mètres), cela s'écrit P = P₁ + P₂ − dP₁P₂. Lorsque les lentilles sont accolées (d = 0), les vergences s'additionnent simplement : des lentilles de 100 mm et 200 mm donnent 10 D + 5 D = 15 D, soit f ≈ 66,7 mm. Avec les valeurs par défaut (50 mm, 100 mm, d = 30 mm), 1/f = 0,02 + 0,01 − 0,006 = 0,024 mm⁻¹, d'où f ≈ 41,7 mm (24 D). Lorsque d = f₁ + f₂, la vergence s'annule et l'association forme un système afocal, comme un élargisseur de faisceau ou une lunette."
+        },
+        {
+          "h": "Tirage et plans principaux",
+          "p": "Lorsqu'un faisceau parallèle entre dans un système de deux lentilles, il converge au foyer image, situé à la distance BFD = f·(1 − d/f₁) de la deuxième lentille. Avec les valeurs par défaut, on trouve 41,7 × (1 − 30/50) ≈ 16,7 mm, moins que la focale équivalente de 41,7 mm. En effet, la focale équivalente se mesure à partir du plan principal image, qui se trouve ici 25 mm devant la lentille 2 (entre les deux lentilles). Le produit des matrices de transfert (matrices ABCD) des deux lentilles et de l'intervalle qui les sépare donne le même résultat. Pour les objectifs photo réels aussi, la focale et la distance entre la dernière lentille et le plan image (tirage) diffèrent en général."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Comment faire le calcul pour une lentille divergente ?",
+          "a": "Saisissez une focale négative. Par exemple, f = −50 mm et a = 100 mm donnent b ≈ −33,3 mm et m ≈ 0,33 : une image virtuelle, droite et réduite se forme devant la lentille. Une lentille divergente seule donne toujours une image virtuelle d'un objet réel."
+        },
+        {
+          "q": "Qu'est-ce que la vergence (en dioptries) ?",
+          "a": "C'est l'inverse de la focale exprimée en mètres ; elle s'exprime en dioptries (D = m⁻¹). Une lentille de 50 mm de focale a une vergence de 20 D, et un verre de lunettes de −2 D est une lentille divergente de −0,5 m de focale. Les vergences de lentilles minces accolées s'additionnent."
+        },
+        {
+          "q": "Peut-on l'utiliser pour des lentilles épaisses ou de vrais objectifs photo ?",
+          "a": "Si les distances sont mesurées à partir des plans principaux objet et image, la même formule reste valable dans le domaine paraxial. La position des plans principaux doit toutefois être déterminée à partir des données de l'objectif ; saisir des distances mesurées depuis les faces des lentilles fausse le résultat. Le flou de l'image dû aux aberrations n'est pas pris en compte dans ce calcul."
+        }
+      ]
     }
   }
 }

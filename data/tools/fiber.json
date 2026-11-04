@@ -497,6 +497,68 @@
           "a": "Modos de ordem superior, como o LP11, também se propagam, e a fibra funciona em regime multimodo, de modo que a interferência e a dispersão entre modos degradam o sinal. As fibras monomodo são usadas em comprimentos de onda maiores que o de corte (as bandas de 1310 nm e de 1550 nm)."
         }
       ]
+    },
+    "fr": {
+      "nav": "NA et fréquence V d'une fibre",
+      "card": "Calculer l'ouverture numérique, l'angle d'acceptance, la fréquence normalisée V et la longueur d'onde de coupure à partir des indices du cœur et de la gaine",
+      "title": "Calculateur de fibre optique (ouverture numérique NA, angle d'acceptance, fréquence V, condition monomode, longueur d'onde de coupure)",
+      "description": "À partir des indices du cœur et de la gaine, du rayon du cœur et de la longueur d'onde d'une fibre optique à saut d'indice, calcule l'ouverture numérique NA, l'angle d'acceptance maximal, la différence d'indice relative, la fréquence normalisée V, la condition monomode (V < 2,405) et la longueur d'onde de coupure.",
+      "h1": "Calculateur de NA et de fréquence V d'une fibre optique",
+      "lead": "À partir des indices du cœur et de la gaine, du rayon du cœur et de la longueur d'onde utilisée, le calculateur détermine l'angle sous lequel la fibre accepte la lumière et le nombre de modes guidés. Les valeurs par défaut sont proches d'une fibre monomode standard utilisée à 1550 nm (rayon du cœur 4,1 µm).",
+      "in_heading": "Entrées",
+      "n1": "Indice du cœur n1",
+      "n2": "Indice de la gaine n2",
+      "a": "Rayon du cœur a (µm)",
+      "lambda": "Longueur d'onde λ (nm)",
+      "out_heading": "Résultats",
+      "na": "Ouverture numérique NA",
+      "theta": "Angle d'acceptance maximal (dans l'air, demi-angle)",
+      "delta": "Différence d'indice relative Δ",
+      "mode_heading": "Modes",
+      "v": "Fréquence normalisée V",
+      "mode": "Régime",
+      "lc": "Longueur d'onde de coupure λc",
+      "modes": "Nombre de modes guidés (ordre de grandeur)",
+      "note": "Le calcul suppose une fibre à saut d'indice (indice du cœur uniforme). La fibre est monomode aux longueurs d'onde supérieures à la longueur d'onde de coupure. L'estimation V²/2 du nombre de modes est une approximation valable pour les fibres multimodes à V suffisamment grand.",
+      "practice": "Questions sur les fibres optiques",
+      "related": "Termes associés",
+      "js": {
+        "single": "Monomode (V < 2,405)",
+        "multi": "Multimode (V ≥ 2,405)",
+        "bad": "n1 doit être supérieur à n2"
+      },
+      "sections": [
+        {
+          "h": "Ouverture numérique et angle d'acceptance",
+          "p": "Une fibre optique entoure un cœur de fort indice (n1) d'une gaine d'indice plus faible (n2) et confine la lumière par réflexion totale à l'interface. La condition de réflexion totale fixe l'angle maximal θmax sous lequel la lumière injectée par la face d'entrée est guidée ; dans l'air, sinθmax = NA = √(n1² − n2²). Avec les valeurs par défaut, NA ≈ 0,124 et l'angle d'acceptance vaut environ 7,1° (demi-angle). La NA vaut généralement de 0,2 à 0,3 environ pour les fibres multimodes et de 0,1 à 0,14 environ pour les fibres monomodes ; une NA plus grande facilite l'injection de la lumière, mais augmente la dispersion intermodale."
+        },
+        {
+          "h": "Fréquence V et condition monomode",
+          "p": "Le nombre de modes guidés par une fibre est essentiellement fixé par la fréquence normalisée V = 2πa·NA/λ. Une fibre à saut d'indice est monomode, ne guidant que le mode fondamental (LP01), lorsque V < 2,405 ; 2,405 est le premier zéro de la fonction de Bessel d'ordre 0. À 1550 nm (valeur par défaut), V ≈ 2,06 : la fibre est monomode. Pour une même fibre, raccourcir la longueur d'onde augmente V, et en dessous d'une certaine longueur d'onde la fibre devient multimode. Cette limite est la longueur d'onde de coupure λc = 2πa·NA/2,405, d'environ 1327 nm avec les valeurs par défaut."
+        },
+        {
+          "h": "Différence d'indice relative",
+          "p": "La différence d'indice relative Δ = (n1² − n2²)/(2n1²) ≈ (n1 − n2)/n1 exprime en valeur relative l'écart d'indice entre le cœur et la gaine. Elle vaut environ 0,365 % avec les valeurs par défaut ; 0,3 à 0,4 % est courant pour les fibres monomodes en silice. La NA peut aussi s'écrire n1·√(2Δ). Augmenter Δ renforce le confinement de la lumière et réduit les pertes par courbure, mais il faut alors réduire le cœur pour rester monomode."
+        },
+        {
+          "h": "Nombre de modes d'une fibre multimode",
+          "p": "Dans une fibre à saut d'indice de grand V, le nombre de modes guidés vaut environ V²/2. Par exemple, avec un cœur de 50 µm de diamètre, une NA de 0,2 et une longueur d'onde de 850 nm, V ≈ 37, soit environ 680 modes. Comme chaque mode se propage à une vitesse différente, la dispersion modale élargit les impulsions et limite la distance et le débit de transmission. Un profil à gradient d'indice, où l'indice est plus élevé au centre, réduit fortement les écarts de vitesse entre modes."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Que représente 2,405 dans la condition monomode V < 2,405 ?",
+          "a": "C'est le premier zéro (environ 2,405) de la fonction de Bessel de première espèce d'ordre 0, J0. Lorsque V dépasse cette valeur, le deuxième mode (LP11) commence à se propager."
+        },
+        {
+          "q": "Quelle est la relation entre la NA et l'angle d'acceptance ?",
+          "a": "Dans l'air, NA = sinθmax. Lorsque la lumière est injectée depuis un liquide ou un autre milieu d'indice n0, n0·sinθmax = NA, et l'angle d'acceptance est plus petit."
+        },
+        {
+          "q": "Que se passe-t-il si l'on utilise la fibre en dessous de sa longueur d'onde de coupure ?",
+          "a": "Les modes d'ordre supérieur comme le LP11 se propagent aussi : la fibre fonctionne en multimode, et le signal est perturbé par les interférences et la dispersion entre modes. Les fibres monomodes s'utilisent à des longueurs d'onde supérieures à la longueur d'onde de coupure (bandes de 1310 nm et de 1550 nm)."
+        }
+      ]
     }
   }
 }

@@ -686,9 +686,9 @@ function buildLang(L) {
   const brand = loc(config.brand ?? {}, code) ?? {};
   const fillBrand = v => (typeof v === 'string' ? v.replace(/\{\{brand_(\w+)\}\}/g, (m, k) => brand[k] ?? m) : v);
   const S = Object.fromEntries(Object.entries({ ...readJSON(`src/i18n/${defLang}.json`), ...readOpt(`src/i18n/${code}.json`, {}) }).map(([k, v]) => [k, fillBrand(v)]));
-  // {n|question|questions} は n が 1 のとき前、それ以外は後ろの語にする(英語などの単数・複数)
+  // {n|question|questions} は n が 1 のとき前、それ以外は後ろの語にする(英語などの単数・複数。フランス語は 0 と 1 が単数)
   const t = (k, vars = {}) => (S[k] ?? k)
-    .replace(/\{(\w+)\|([^|}]*)\|([^}]*)\}/g, (m, x, one, many) => (x in vars ? (Number(vars[x]) === 1 ? one : many) : m))
+    .replace(/\{(\w+)\|([^|}]*)\|([^}]*)\}/g, (m, x, one, many) => (x in vars ? ((code === 'fr' ? Math.abs(Number(vars[x])) < 2 : Number(vars[x]) === 1) ? one : many) : m))
     .replace(/\{(\w+)\}/g, (m, x) => (x in vars ? vars[x] : m));
   const tr = kind => (isDef ? {} : readOpt(`data/i18n/${code}/${kind}.json`, {}));
   const exT = tr('exams');
@@ -1154,6 +1154,8 @@ function buildLang(L) {
     tools: toolsIn(code).length > 0, // この言語の計算ツールがあるか(訳のない言語では、サイトについてのリンクを出さない)
   };
   const itemSep = ['ja', 'zh-hant', 'zh'].includes(code) ? '：' : code === 'fr' ? '\u00a0: ' : ': ';
+  // 文の中のコロン(フランス語は前に改行しない空白)
+  const colon = code === 'fr' ? '\u00a0: ' : ': ';
   const common = {
     base, home, lang: code, htmlLang: L.htmlLang,
     siteName: esc(siteName),
@@ -5312,11 +5314,11 @@ ${nwFigs.map(x => figureHtml(x.svg, x.id)).join('\n')}` : '';
   <h1>${esc(t(tk('term_heading'), { term: g.term }))}</h1>
   ${g.reading ? `<p class="muted">${esc(g.reading)}</p>` : ''}
   <p class="lead">${esc(g.desc)}</p>
-  ${learnByTerm.has(g.key) ? `<p class="learn-link">${esc(LT.termLink)}: <a href="${home}learn/${learnByTerm.get(g.key).slug}/" data-track="term_learn">${esc(learnByTerm.get(g.key).title)}</a></p>` : ''}
-  ${isDef ? '' : `<p class="muted">${esc(t('term_ja_name'))}: <span lang="ja">${esc(g.key)}</span></p>`}
+  ${learnByTerm.has(g.key) ? `<p class="learn-link">${esc(LT.termLink)}${colon}<a href="${home}learn/${learnByTerm.get(g.key).slug}/" data-track="term_learn">${esc(learnByTerm.get(g.key).title)}</a></p>` : ''}
+  ${isDef ? '' : `<p class="muted">${esc(t('term_ja_name'))}${colon}<span lang="ja">${esc(g.key)}</span></p>`}
   ${termSummary}
   ${fig ? figureHtml(fig.figureSvg, fig.figureId) : ''}
-  ${c ? `<p>${esc(t('term_category'))}: <a href="${home}c/${c.id}/">${esc(c.name)}</a></p>` : ''}
+  ${c ? `<p>${esc(t('term_category'))}${colon}<a href="${home}c/${c.id}/">${esc(c.name)}</a></p>` : ''}
 </article>
 ${newsHtml ? `${newsHtml}\n` : ''}${aboutHtml}
 ${diffHtml ? `${diffHtml}\n` : ''}${practiceHtml}
