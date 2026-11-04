@@ -1,0 +1,306 @@
+{
+  "title": "Índices de refração: fórmulas de dispersão, índice de grupo, GVD e número de Abbe",
+  "description": "Índices de refração de 32 materiais (vidros ópticos, sílica fundida, cristais, materiais para infravermelho, água e ar) calculados com os coeficientes da equação de Sellmeier e de outras fórmulas das fontes originais. Digite um comprimento de onda para obter n, o índice de grupo, a GVD, o parâmetro de dispersão D, a refletância e o ângulo de Brewster; compare materiais e exporte os valores em CSV.",
+  "h1": "Índices de refração",
+  "lead": "Esta página calcula o índice de refração de materiais para lentes, janelas, fibras ópticas e cristais em qualquer comprimento de onda, compara de dois a quatro materiais lado a lado e exporta os valores em CSV com as fontes. Todos os coeficientes foram conferidos na folha de dados do fabricante ou no artigo original, e nada é calculado fora da faixa de validade de cada fórmula.",
+  "note": "Os valores são representativos das condições de cada fonte (temperatura, composição, meio de referência). Um mesmo material pode variar com o lote de fusão, a orientação do cristal, o fato de ser filme fino ou material maciço e a temperatura. Antes de usar um valor em um projeto, confira a fonte e a documentação mais recente do fabricante.",
+  "sources_h": "Fontes",
+  "groups": {
+    "glass": "Vidros ópticos (SCHOTT)",
+    "window": "Sílica fundida e cristais",
+    "ir": "Materiais para infravermelho e semicondutores",
+    "fluid": "Água e ar"
+  },
+  "ui": {
+    "noscript": "O cálculo, o gráfico, a comparação e o CSV precisam de JavaScript. A lista de materiais abaixo (fórmula, coeficientes, faixa, fonte, n_d e ν_d) pode ser lida sem ele.",
+    "toc": "Nesta página",
+    "calc_h": "Calcular em um comprimento de onda",
+    "list_h": "Materiais ({n})",
+    "add": "Adicionar um material (até 4)",
+    "add_ph": "Escolha um material…",
+    "empty": "Escolha um material para ver os valores aqui.",
+    "remove": "Remover {name}",
+    "max": "É possível comparar até {n} materiais. Remova um antes de adicionar outro.",
+    "lam": "Comprimento de onda",
+    "unit": "Unidade",
+    "quick": "Comprimentos de onda usuais",
+    "at": "Valores em λ = {lam}",
+    "col_mat": "Material",
+    "col_ng": "Índice de grupo n_g",
+    "col_r": "Refletância R",
+    "col_b": "Ângulo de Brewster",
+    "col_ray": "Raio",
+    "table_note": "n_g = n − λ dn/dλ. A GVD é β₂ = λ³/(2πc²)·d²n/dλ² e D = −(λ/c)·d²n/dλ² (ambas só da dispersão do material; a dispersão de guia de onda das fibras não está incluída). R é a refletância em incidência normal em uma interface com o ar (n = 1), ((n − 1)/(n + 1))², e o ângulo de Brewster é arctan n para luz que vem do ar. As derivadas são calculadas analiticamente a partir da fórmula.",
+    "out": "Fora da faixa de validade ({range}). Não calculado",
+    "out_warn": "{list}: este comprimento de onda está fora da faixa de validade da fórmula, por isso nenhum valor é calculado. Estender uma fórmula de dispersão para fora da sua faixa pode dar valores muito distantes dos reais.",
+    "tools_h": "Usar este valor em uma calculadora",
+    "tool_arcoat_sub": "Revestimento antirreflexo (substrato: {name}, nₛ = {n})",
+    "tool_arcoat_film": "Revestimento antirreflexo (camada: {name}, n₁ = {n})",
+    "tool_gauss": "Feixe gaussiano (meio: {name}, n = {n})",
+    "chart_h": "Gráfico de n(λ) e tabela por comprimento de onda",
+    "a": "Início (nm)",
+    "b": "Fim (nm)",
+    "s": "Passo (nm)",
+    "chart_none": "Nenhum dos materiais escolhidos tem fórmula válida nesta faixa de comprimentos de onda. Altere o início e o fim.",
+    "chart_out": "fórmula não válida nesta faixa",
+    "chart_label": "Gráfico do índice de refração n em função do comprimento de onda: {list}",
+    "axis_x_nm": "Comprimento de onda λ (nm)",
+    "axis_x_um": "Comprimento de onda λ (µm)",
+    "axis_y": "Índice de refração n",
+    "csv_copy": "Copiar CSV",
+    "csv_save": "Salvar CSV",
+    "share": "Copiar o link com esta configuração",
+    "csv_note": "O CSV é uma tabela do comprimento de onda inicial ao final, a cada passo, para todos os materiais escolhidos, sem as linhas fora da faixa de validade. Os números usam sempre o ponto como separador decimal, qualquer que seja o idioma. Colunas: material, ray, wavelength_nm, wavelength_um, n, group_index, dn_dlambda_per_um, gvd_fs2_per_mm, D_ps_per_nm_km, source (fonte). O link guarda os materiais escolhidos, o comprimento de onda, a unidade e a faixa da tabela, e abre a mesma tela.",
+    "csv_many": "Linhas demais (o limite é 5000). Use um passo maior ou uma faixa mais estreita.",
+    "csv_none": "Nesta faixa não há nenhuma linha dentro da faixa de validade de uma fórmula.",
+    "csv_copied": "CSV de {n} linhas copiado.",
+    "csv_saved": "CSV de {n} linhas salvo.",
+    "link_copied": "Link copiado.",
+    "ray_o": "raio ordinário o",
+    "ray_e": "raio extraordinário e",
+    "count": "{n} de {total} materiais",
+    "search": "Buscar um material",
+    "search_ph": "ex.: BK7, sílica fundida, CaF2, niobato de lítio",
+    "groups": "Tipo de material",
+    "all": "Todos",
+    "none": "Nenhum material corresponde.",
+    "pick": "Escolher",
+    "range": "Comprimentos de onda válidos",
+    "form_note": "A forma original da fórmula não pôde ser consultada na página da editora, por isso ela é mostrada na forma usada pelo refractiveindex.info. Foi conferido que os coeficientes coincidem com os da fonte e que os valores obtidos com esta fórmula coincidem com os valores calculados da tabela da fonte.",
+    "abbe_none": "n_d e ν_d não são dados porque a faixa de validade da fórmula não cobre da linha F à linha C (486–656 nm).",
+    "sheet_short": "folha",
+    "src": "Fonte",
+    "data_from": "Dados medidos aos quais a fórmula foi ajustada",
+    "sheet": "Folha de dados conferida",
+    "checked": "Página da fonte conferida",
+    "rii": "Coeficientes importados do refractiveindex.info",
+    "sources_note": "Os coeficientes foram importados do banco de dados refractiveindex.info (CC0) e comparados um a um com os das fontes acima (folhas de dados dos fabricantes e páginas das editoras dos artigos). Por enquanto, não estão incluídos os materiais que não puderam ser conferidos em uma fonte, como o quartzo cristalino, o BBO, o germânio, o GaAs, o PMMA e o policarbonato.",
+    "terms_h": "Termos relacionados",
+    "rel_cats": "Questões de prática de temas relacionados"
+  },
+  "guide": [
+    {
+      "h": "Como ler uma fórmula de dispersão",
+      "p": [
+        "Todas as fórmulas desta página recebem o comprimento de onda λ em µm e dão o índice de refração n; são ajustes a dados medidos. A mais comum é a equação de Sellmeier n² − 1 = Σ Bᵢλ²/(λ² − Cᵢ), em que n varia fortemente perto dos comprimentos de onda em que λ² − Cᵢ = 0, que correspondem às absorções no ultravioleta e no infravermelho.",
+        "Mesmo sendo a mesma equação de Sellmeier, cada fonte escreve as constantes de um jeito. As folhas de dados da SCHOTT dão Cᵢ em µm² (isto é, o próprio λᵢ²), enquanto os artigos de Malitson e de Dodge dão λᵢ em µm e o elevam ao quadrado dentro da fórmula. Esta página mostra os coeficientes com os símbolos e as unidades de cada fonte.",
+        "Os coeficientes são ajustados a dados medidos em uma faixa definida de comprimentos de onda. Fora dessa faixa a fórmula não tem significado físico garantido, por isso esta página não calcula ali e mostra um aviso."
+      ]
+    },
+    {
+      "h": "n_d e ν_d (número de Abbe)",
+      "p": [
+        "n_d é o índice na linha d do hélio (587,5618 nm). O número de Abbe ν_d = (n_d − 1)/(n_F − n_C) indica quão pequena é a dispersão a partir da diferença de índices entre a linha F (486,1327 nm) e a linha C (656,2725 nm) do hidrogênio. Quanto maior ν_d, menor a dispersão; os vidros ópticos com ν_d acima de cerca de 50 são chamados de crown, e os abaixo disso, de flint.",
+        "As normas europeias usam também n_e e ν_e, baseados na linha e do mercúrio (546,0740 nm) e nas linhas F′ e C′ do cádmio (479,9914 nm e 643,8469 nm). Esta página calcula os quatro valores a partir da fórmula e, quando existem, mostra ao lado os valores da folha de dados. Nos 18 vidros da SCHOTT, n_d, ν_d, n_e e ν_e obtidos com a fórmula coincidem com os das folhas de dados em todos os dígitos impressos.",
+        "Um dubleto acromático combina uma lente convergente de vidro crown de ν_d alto com uma lente divergente de vidro flint de ν_d baixo, de modo que as linhas F e C sejam focalizadas no mesmo ponto."
+      ]
+    },
+    {
+      "h": "Índice de grupo e dispersão da velocidade de grupo",
+      "p": [
+        "Um pulso ou um pacote de ondas se propaga com a velocidade de grupo c/n_g, em que o índice de grupo é n_g = n − λ dn/dλ. Na região de dispersão normal (n diminui quando o comprimento de onda aumenta), n_g é maior que n: para a sílica fundida em 1550 nm, n = 1,4440 e n_g = 1,4626.",
+        "A dispersão da velocidade de grupo, GVD β₂ = λ³/(2πc²)·d²n/dλ², mede quanto os tempos de chegada dos diferentes comprimentos de onda de um pulso se separam, e para pulsos ultracurtos é expressa em fs²/mm. Em fibras ópticas, a mesma grandeza é expressa pelo parâmetro de dispersão D = −(λ/c)·d²n/dλ², em ps/(nm·km), que tem o sinal oposto. A dispersão material da sílica fundida, pela fórmula de Malitson, se anula por volta de 1273 nm; em comprimentos de onda mais curtos a GVD é positiva (e D, negativo).",
+        "A fibra monomodo padrão de telecomunicações tem dispersão nula perto de 1310 nm porque a dispersão de guia de onda se soma à dispersão material. A GVD e o D desta página são só do material."
+      ]
+    },
+    {
+      "h": "Temperatura, faixa de validade e outras condições",
+      "p": [
+        "O índice de refração muda com a temperatura. Nos vidros ópticos dn/dT é da ordem de 10⁻⁶ /K, mas em semicondutores como o silício é cerca de duas ordens de grandeza maior, de modo que uma diferença de algumas dezenas de °C muda a terceira ou a quarta casa decimal. Confira a temperatura indicada para cada material.",
+        "O índice pode ser dado em relação ao ar (índice relativo) ou em relação ao vácuo (índice absoluto); o índice absoluto é o relativo multiplicado pelo índice do ar, por isso os dois diferem em n × (n_air − 1), cerca de 4×10⁻⁴ para um vidro (n ≈ 1,5). Da mesma forma, o comprimento de onda pode ser o comprimento de onda no ar ou no vácuo, conforme a fonte. Essas diferenças importam quando se comparam valores a partir da quarta casa decimal.",
+        "Filmes evaporados de MgF₂ ou de TiO₂ podem diferir em densidade e estrutura cristalina dos monocristais maciços, por isso o índice também pode ser diferente. Para os cristais birrefringentes são dados os índices principais do raio ordinário o e do raio extraordinário e. Quando a luz se propaga formando um ângulo θ com o eixo óptico, o índice do raio extraordinário é dado por 1/n(θ)² = cos²θ/n_o² + sin²θ/n_e²."
+      ]
+    },
+    {
+      "h": "Ao citar um valor",
+      "p": [
+        "Se você usar um valor em um artigo ou relatório, cite a fonte indicada para o material (o artigo ou a folha de dados do fabricante), e não esta página. Informar a fórmula, os coeficientes, a faixa de comprimentos de onda e a temperatura permite que os leitores reproduzam o valor.",
+        "O CSV tem uma coluna com a fonte. Os coeficientes são usados com os dígitos da fonte; as folhas de dados da SCHOTT às vezes imprimem os coeficientes arredondados para menos dígitos, e esta página calcula com os dígitos do arquivo de catálogo do fabricante (a diferença aparece na sétima casa decimal de n ou além)."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "N-BK7 e BK7 são o mesmo vidro?",
+      "O “N-” nos nomes dos vidros da SCHOTT indica vidros reformulados sem chumbo e sem arsênio. O N-BK7 substituiu o BK7 e tem n_d = 1,51680 e ν_d = 64,17. Os valores do BK7 na literatura antiga podem diferir ligeiramente nas últimas casas decimais."
+    ],
+    [
+      "Por que os comprimentos de onda fora da faixa não são calculados?",
+      "Uma fórmula de dispersão é ajustada a dados medidos em uma faixa definida. Estendida para fora dela, pode dar valores muito distantes perto das bandas de absorção ou valores sem nenhum sentido. Se você precisa de um valor fora da faixa, procure uma fonte que tenha medido esse comprimento de onda."
+    ],
+    [
+      "Até quantas casas decimais os valores são confiáveis?",
+      "Depende da fonte. As folhas de dados da SCHOTT dão n_d com cinco casas decimais, e os artigos costumam informar o resíduo do ajuste; por exemplo, a fórmula de Malitson para a sílica fundida tem resíduo médio de cerca de 1×10⁻⁵. Esta página mostra n com cinco casas decimais, mas as diferenças de temperatura, de composição ou de lote de fusão costumam ser maiores que isso."
+    ],
+    [
+      "Em que condições é dado o índice do ar?",
+      "Para o ar padrão de Ciddor: ar seco a 15 °C, 101 325 Pa e 450 ppm de CO₂, com comprimentos de onda no vácuo. Para outras temperaturas, pressões ou umidades, o valor precisa ser recalculado com o procedimento da fonte."
+    ],
+    [
+      "Se um material tem valores para o e para e, qual devo usar?",
+      "Depende da polarização da luz e da orientação do eixo óptico do cristal. A luz polarizada perpendicularmente ao eixo óptico (raio ordinário) tem o índice n_o; a luz polarizada na seção principal, o plano que contém o eixo óptico e a direção de propagação (raio extraordinário), tem um valor entre n_o e n_e que depende da direção de propagação. No gráfico, e é desenhado com linha tracejada."
+    ]
+  ],
+  "materials": {
+    "n-bk7": {
+      "name": "N-BK7",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown borossilicato vidro borossilicato"
+    },
+    "n-k5": {
+      "name": "N-K5",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown vidro crown"
+    },
+    "n-bak1": {
+      "name": "N-BAK1",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de bário"
+    },
+    "n-bak2": {
+      "name": "N-BAK2",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de bário"
+    },
+    "n-bak4": {
+      "name": "N-BAK4",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de bário prisma"
+    },
+    "n-sk16": {
+      "name": "N-SK16",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown denso"
+    },
+    "n-fk5": {
+      "name": "N-FK5",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de flúor baixa dispersão"
+    },
+    "n-fk51a": {
+      "name": "N-FK51A",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de flúor dispersão parcial anômala apocromático"
+    },
+    "n-lak22": {
+      "name": "N-LAK22",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "crown de lantânio"
+    },
+    "n-baf10": {
+      "name": "N-BAF10",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint de bário"
+    },
+    "n-f2": {
+      "name": "N-F2",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint vidro flint sem chumbo"
+    },
+    "f2": {
+      "name": "F2",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint vidro flint com chumbo"
+    },
+    "n-sf2": {
+      "name": "N-SF2",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf5": {
+      "name": "N-SF5",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf6": {
+      "name": "N-SF6",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso alto índice"
+    },
+    "n-sf10": {
+      "name": "N-SF10",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf11": {
+      "name": "N-SF11",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso alta dispersão"
+    },
+    "n-lasf9": {
+      "name": "N-LASF9",
+      "cond": "Valores da folha de dados da SCHOTT (a folha não indica as condições de medição, como a temperatura)",
+      "kw": "flint denso de lantânio alto índice"
+    },
+    "fused-silica": {
+      "name": "Sílica fundida (vidro de SiO₂)",
+      "cond": "20 °C",
+      "kw": "quartzo fundido sílica vítrea vidro de sílica sílica sintética"
+    },
+    "caf2": {
+      "name": "Fluoreto de cálcio (CaF₂, fluorita)",
+      "cond": "24 °C",
+      "kw": "fluorita"
+    },
+    "caf2-duv": {
+      "name": "Fluoreto de cálcio (CaF₂, do UV profundo ao IV próximo)",
+      "cond": "20 °C, medido em nitrogênio",
+      "kw": "fluorita ultravioleta profundo DUV 193 nm litografia"
+    },
+    "baf2": {
+      "name": "Fluoreto de bário (BaF₂)",
+      "cond": "25 °C",
+      "kw": ""
+    },
+    "mgf2": {
+      "name": "Fluoreto de magnésio (MgF₂, cristal)",
+      "cond": "19 °C, monocristal (filmes evaporados podem ter outro índice)",
+      "kw": "monocristal birrefringente revestimento antirreflexo"
+    },
+    "sapphire": {
+      "name": "Safira (Al₂O₃, só o raio ordinário)",
+      "cond": "24 °C, safira sintética, raio ordinário (o)",
+      "kw": "alumina monocristal coríndon"
+    },
+    "linbo3": {
+      "name": "Niobato de lítio (LiNbO₃, congruente)",
+      "cond": "Temperatura ambiente, composição congruente (sem dopagem com MgO)",
+      "kw": "LN CLN eletro-óptico não linear birrefringente"
+    },
+    "yag": {
+      "name": "YAG (Y₃Al₅O₁₂, não dopado)",
+      "cond": "Temperatura ambiente, não dopado",
+      "kw": "granada de ítrio e alumínio Nd:YAG matriz"
+    },
+    "tio2": {
+      "name": "Dióxido de titânio (TiO₂, monocristal de rutilo)",
+      "cond": "Temperatura ambiente, monocristal de rutilo (filmes de TiO₂ variam muito conforme o processo)",
+      "kw": "rutilo alto índice birrefringente"
+    },
+    "znse": {
+      "name": "Seleneto de zinco (ZnSe, CVD)",
+      "cond": "Policristal CVD (Raytran); a tabela da fonte não indica a temperatura",
+      "kw": "infravermelho laser de CO2 janela"
+    },
+    "si": {
+      "name": "Silício (Si, infravermelho)",
+      "cond": "26 °C, monocristal",
+      "kw": "infravermelho fotônica de silício 1550"
+    },
+    "zns": {
+      "name": "Sulfeto de zinco (ZnS, cúbico)",
+      "cond": "Temperatura ambiente, cúbico",
+      "kw": "Cleartran infravermelho janela"
+    },
+    "water": {
+      "name": "Água (destilada)",
+      "cond": "20,0 °C, em relação ao vácuo (índice absoluto)",
+      "kw": "H2O água pura imersão"
+    },
+    "air": {
+      "name": "Ar (ar padrão)",
+      "cond": "Ar padrão: seco, 15 °C, 101 325 Pa, 450 ppm de CO₂; comprimentos de onda no vácuo",
+      "kw": "atmosfera"
+    }
+  }
+}
