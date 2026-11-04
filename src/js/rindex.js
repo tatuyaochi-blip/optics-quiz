@@ -98,7 +98,7 @@ if (typeof document !== 'undefined') {
 }
 
 async function init(app) {
-  const { parseNum, inVal, num } = await import('./eng.js');
+  const { parseNum, parseUrlNum, inVal, num } = await import('./eng.js');
   const { lineChart } = await import('./chart.js');
   const D = JSON.parse(document.getElementById('ri-data').textContent);
   const T = D.ui;
@@ -137,7 +137,7 @@ async function init(app) {
   const P = new URLSearchParams(location.search);
   let picked = (P.get('m') || D.defaults.m.join(',')).split(',').filter(id => byId.has(id)).filter((v, i, a) => a.indexOf(v) === i).slice(0, MAX);
   if (P.get('u') === 'um' || P.get('u') === 'nm') unitIn.value = P.get('u');
-  const urlNum = (k, d) => { const v = parseNum(P.get(k) ?? ''); return Number.isFinite(v) && v > 0 ? v : d; };
+  const urlNum = (k, d) => { const v = parseUrlNum(P.get(k) ?? ''); return Number.isFinite(v) && v > 0 ? v : d; };
   const lamNm0 = urlNum('l', D.defaults.l); // URL の波長は nm で持つ
   lamIn.value = inVal(+fromNm(lamNm0).toPrecision(10));
   aIn.value = inVal(urlNum('a', D.defaults.a));

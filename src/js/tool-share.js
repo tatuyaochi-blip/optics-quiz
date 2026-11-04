@@ -1,7 +1,7 @@
 // 計算ツールの共通の機能: 入力をURLのクエリに残す(共有・ブックマーク用)、結果のコピー、お気に入りと最近使ったツール。
 // 各ツールの {id}.js より先に読み込み、URLの値を入力欄に入れてから計算させる
 import { isToolFav, toggleToolFav, useTool } from './store.js';
-import { parseNum, inVal } from './eng.js';
+import { parseNum, parseUrlNum, inVal } from './eng.js';
 
 const bar = document.querySelector('[data-tool-id]');
 const id = bar?.dataset.toolId;
@@ -17,7 +17,7 @@ const params = new URLSearchParams(location.search);
 for (const el of fields) {
   if (!params.has(el.name)) continue;
   const v = params.get(el.name).trim();
-  if (el.tagName === 'SELECT' ? [...el.options].some(o => o.value === v) : Number.isFinite(parseNum(v))) el.value = el.tagName === 'SELECT' ? v : inVal(parseNum(v));
+  if (el.tagName === 'SELECT' ? [...el.options].some(o => o.value === v) : Number.isFinite(parseUrlNum(v))) el.value = el.tagName === 'SELECT' ? v : inVal(parseUrlNum(v));
 }
 
 // 入力が変わるたびにURLを書き換える。既定値のままならクエリなし、1つでも変えたら全部の値を入れる(既定値が変わっても同じ結果になるように)
