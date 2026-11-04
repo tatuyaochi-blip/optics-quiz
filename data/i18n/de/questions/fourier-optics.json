@@ -178,5 +178,50 @@
       "Die Intensitätsverteilung bleibt gleich; der Amplitude wird lediglich eine lineare Phase hinzugefügt, deren Neigung proportional zur Verschiebung ist"
     ],
     "explanation": "Die Amplitudenverteilung t(x) in der objektseitigen Brennebene wird in der bildseitigen Brennebene zur Fourier-Transformierten T(ν) mit der Ortsfrequenz ν = x′/(λf). Die Fourier-Transformierte des um a verschobenen Objekts t(x − a) ist T(ν)exp(−i2πνa) (Verschiebungssatz); der Betrag bleibt gleich, und es kommt nur eine zu ν proportionale Phase hinzu. Die Intensität |T|² hängt daher nicht von der Lage des Objekts ab, und Raumfilter oder optische Korrelatoren in der Fourier-Ebene wirken gleich, wo auch immer das Objekt liegt. Eine parallele Verschiebung der Intensitätsverteilung tritt auf, wenn man das Beleuchtungslicht kippt; bei verschobenem Objekt bewegt sich das Bild in der Bildebene. Die Lage des Objekts ändert seine Ortsfrequenzanteile nicht, daher weitet sich die Verteilung auch nicht nach außen. Die hinzugekommene Phasenneigung zeigt sich bei einer erneuten Fourier-Transformation durch eine zweite Linse als Verschiebung der Bildlage."
+  },
+  "fourier-optics-021": {
+    "question": "Ein reiner Phasen-Lichtmodulator (SLM) wird vor einer Linse angeordnet, um in deren Brennebene eine gewünschte Intensitätsverteilung zu erzeugen. Welche Aussage über das Prinzip des Gerchberg-Saxton-Algorithmus, mit dem häufig die auf dem SLM darzustellende Phasenverteilung bestimmt wird, trifft zu?",
+    "choices": [
+      "Stellt man das Bild der Ziel-Intensitätsverteilung selbst als Phasenverteilung auf dem SLM dar, entsteht durch die Fourier-Transformation der Linse direkt eine gleich geformte Intensitätsverteilung in der Brennebene",
+      "Stellt man die durch inverse Fourier-Transformation der Zielamplitude erhaltene komplexe Amplitude mit Amplitude und Phase auf dem SLM dar, erhält man mit einer einzigen Rechnung die exakte Verteilung",
+      "Man wechselt mit Fourier-Transformation und Rücktransformation zwischen SLM-Ebene und Brennebene hin und her, ersetzt in jeder Ebene nur die Amplitude durch den bekannten Wert, behält die Phase und wiederholt dies"
+    ],
+    "explanation": "Die Amplitude in der Brennebene ist die Fourier-Transformierte der komplexen Amplitude in der SLM-Ebene. Der SLM ändert nur die Phase, und die Amplitude in der SLM-Ebene ist durch die Beleuchtung festgelegt, daher lässt sich die komplexe Amplitude, die man durch bloße Rücktransformation der Zielamplitude erhält, nicht darstellen. Der Gerchberg-Saxton-Algorithmus beginnt mit einer beliebigen Phase, ersetzt in der SLM-Ebene die Amplitude durch die Beleuchtungsamplitude und in der Brennebene durch die Zielamplitude, übernimmt jeweils nur die Phase und wiederholt die Transformationen. So erhält man eine Phasenverteilung (Kinoform), die eine dem Ziel nahe Intensität erzeugt. Auch die Amplitude darzustellen, missachtet die Bedingung eines reinen Phasenelements. Stellt man das Zielbild als Phase dar, hat seine Fourier-Transformierte nicht die Form des Ziels."
+  },
+  "fourier-optics-022": {
+    "question": "Die Helligkeitsverteilung (eindimensional) eines 10 mm breiten Objekts soll einschließlich der Anteile bis zur Ortsfrequenz 100 Perioden/mm numerisch aufgezeichnet werden. Welches ist die Mindestzahl der Abtastpunkte bei Abtastung nach der Nyquist-Bedingung (mindestens zwei Punkte je Periode der höchsten Ortsfrequenz)?",
+    "choices": [
+      "1000 Punkte",
+      "2000 Punkte",
+      "ca. 12600 Punkte"
+    ],
+    "explanation": "Um die höchste Ortsfrequenz ν_max = 100 Perioden/mm aufzuzeichnen, darf der Abtastabstand höchstens 1/(2ν_max) = 5 µm betragen. Bei 10 mm Breite sind das 10 mm/5 µm = 2000 Punkte. Diese Zahl „Breite × 2ν_max“ heißt Raum-Bandbreite-Produkt und gibt die Menge unabhängiger Information an, die ein optisches System oder Bauelement übertragen kann. 1000 Punkte entsprechen nur einem Abtastwert je Periode und führen zu Aliasing. Der Wert ca. 12600 Punkte enthält einen überzähligen Faktor 2π und verwechselt die Ortsfrequenz mit der Kreisortsfrequenz. Ein Bildsensor oder räumlicher Lichtmodulator mit nur 1000 Pixeln kann die Information dieses Objekts nicht auf einmal verarbeiten."
+  },
+  "fourier-optics-023": {
+    "question": "In der Fourier-Ebene eines 4f-Systems befindet sich ein Filter, in dem das konjugiert Komplexe der Fourier-Transformierten einer gesuchten Form (Referenzform) aufgezeichnet ist (VanderLugt-Filter); in der Eingangsebene sind mehrere Formen angeordnet und werden mit kohärentem Licht beleuchtet. Welche Aussage über die Ausgangsebene trifft zu?",
+    "choices": [
+      "In der Ausgangsebene erscheint die Kreuzkorrelation von Eingang und Referenz, und an der Stelle jeder Form, die der Referenz gleicht, entsteht ein heller, scharfer Korrelationspeak",
+      "Nur die mit der Referenz übereinstimmenden Formen bleiben in ihrer ursprünglichen Gestalt als Bild in der Ausgangsebene erhalten, alle anderen Formen entfernt das Filter vollständig",
+      "Wo auch immer die passende Form in der Eingangsebene liegt, entsteht nur ein einziger heller Punkt in der Mitte der Ausgangsebene (auf der Achse), und die Lageinformation geht verloren"
+    ],
+    "explanation": "Multipliziert man in der Fourier-Ebene das Eingangsspektrum G mit dem konjugiert Komplexen H* des Referenzspektrums und transformiert mit der zweiten Linse erneut, ist das Ergebnis die Kreuzkorrelation von Eingang und Referenz. Wo die Form mit der Referenz übereinstimmt, heben sich die Phasen auf, das Licht wird nahezu zu einer ebenen Welle und wird zu einem scharfen, hellen Peak fokussiert. Ist die Form im Eingang verschoben, erhält die Amplitude in der Fourier-Ebene eine lineare Phase, und der Peak verschiebt sich um denselben Betrag. Die Annahme eines einzigen Punktes in der Mitte unabhängig von der Lage ist daher falsch; aus der Lage des Peaks ergibt sich die Lage der Form. Der Ausgang ist eine Korrelationsverteilung, kein unverändertes Bild der übereinstimmenden Form."
+  },
+  "fourier-optics-024": {
+    "question": "Ein mit Objekt- und Referenzwelle aufgezeichnetes Transmissionshologramm wird mit Licht rekonstruiert, das genau entgegengesetzt zur Referenzwelle der Aufnahme läuft (konjugierte Referenzwelle). Welche Aussage über das entstehende Bild trifft zu?",
+    "choices": [
+      "Dasselbe virtuelle Bild wie bei der Aufnahme erscheint am selben Ort; die umgekehrte Richtung der Referenzwelle halbiert lediglich die Bildhelligkeit",
+      "Licht, das entgegengesetzt zur Referenzwelle läuft, wird an den Interferenzstreifen nicht gebeugt, daher tritt nur Licht nullter Ordnung geradlinig durch das Hologramm, und es erscheint kein Bild",
+      "Es entsteht eine zur Objektwelle entgegengesetzt laufende konjugierte Welle und am ursprünglichen Objektort ein auf einem Schirm auffangbares reelles Bild; seine Tiefe ist vertauscht"
+    ],
+    "explanation": "Der Transmissionsgrad des Hologramms enthält Terme proportional zur komplexen Amplitude O der Objektwelle und zu ihrem konjugiert Komplexen O*. Beleuchtet man mit der Referenzwelle R der Aufnahme, entsteht eine zu O proportionale Welle, und am Ort des Objekts erscheint ein virtuelles Bild. Beleuchtet man mit der konjugierten Welle R*, die entgegengesetzt zur Referenzwelle läuft, entsteht eine zu O* proportionale Welle, also eine Welle, die die Objektwelle zeitlich rückwärts durchläuft und am ursprünglichen Ort des Objekts zu einem reellen Bild konvergiert. Dieses Bild lässt sich auf einem Schirm auffangen, für den Betrachter sind aber vorn und hinten vertauscht (die Tiefe kehrt sich um). Auch Licht aus der Gegenrichtung wird an den Interferenzstreifen gebeugt, daher ist die Annahme, es erscheine kein Bild, falsch. Die Annahme, dasselbe virtuelle Bild erscheine, übersieht die Wirkung des konjugierten Terms."
+  },
+  "fourier-optics-025": {
+    "question": "Aus einem Bild mit dünnen waagerechten Linien, die sich in vertikaler Richtung mit der Periode p wiederholen (wie Fernseh-Abtastzeilen), sollen nur diese Linien mit einem Raumfilter im 4f-System entfernt werden. Welche Kombination aus der Lage der Linienanteile in der Fourier-Ebene von Linsen der Brennweite f und dem Filter zu ihrer Entfernung trifft zu (Wellenlänge λ)?",
+    "choices": [
+      "Die Linienanteile liegen auf der horizontalen Achse der Fourier-Ebene im Abstand λf/p, daher werden die Punkte auf der horizontalen Achse (außer der nullten Ordnung) mit kleinen Abdeckungen ausgeblendet",
+      "Die Linienanteile liegen auf der vertikalen Achse der Fourier-Ebene im Abstand λf/p, daher werden die Punkte auf der vertikalen Achse (außer der nullten Ordnung) mit kleinen Abdeckungen ausgeblendet",
+      "Die Linienanteile sammeln sich im zentralen Punkt nullter Ordnung der Fourier-Ebene, daher wird nur dieser Punkt mit einer kleinen Abdeckung ausgeblendet"
+    ],
+    "explanation": "Ein Muster, das sich in vertikaler Richtung mit der Periode p wiederholt, hat Anteile bei der vertikalen Ortsfrequenz 1/p und ihren ganzzahligen Vielfachen. In der Fourier-Ebene landet ein Anteil der Ortsfrequenz ν bei λfν, daher werden die Linienanteile zu Punkten auf der vertikalen Achse im Abstand λf/p. Lässt man die nullte Ordnung und das glatt verteilte Spektrum des Bildinhalts stehen und blendet nur diese Punkte aus, verschwinden die Linien, und das ursprüngliche Bild bleibt weitgehend erhalten. Die Annahme, sie lägen auf der horizontalen Achse, verwechselt die Richtung der Streifen mit der Richtung, in der sich die Spektralpunkte aufreihen (senkrecht zu den Streifen). Blendet man nur die nullte Ordnung aus, wird lediglich die mittlere Helligkeit entfernt und die Kanten werden betont; die Linien verschwinden nicht."
   }
 }

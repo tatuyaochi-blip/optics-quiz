@@ -178,5 +178,50 @@
       "Das Feld aus dem Dotierungsunterschied von p und p⁺ drängt die Elektronen (Minoritätsträger) von der Rückseite zurück, mindert die Rekombination am Rückkontakt und hebt Leerlaufspannung und Langwellenempfindlichkeit"
     ],
     "explanation": "Erreichen durch Licht im Substrat erzeugte Minoritätsladungsträger (Elektronen) den Rückkontakt, bevor sie am vorderseitigen Übergang gesammelt werden, rekombinieren sie und gehen verloren. Bringt man auf der Rückseite eine hochdotierte p⁺-Schicht an, entsteht an der Grenze zwischen p und p⁺ eine Energiestufe (ein Feld) im Leitungsband, die die Elektronen zum Substrat zurückdrängt. Die effektive Rekombinationsgeschwindigkeit an der Rückseite sinkt, daher nimmt der Sättigungsstrom ab und die Leerlaufspannung steigt, und auch der Strom aus langwelligem Licht, das nahe der Rückseite absorbiert wird, nimmt zu. p und p⁺ sind beide p-leitend und bilden keinen pn-Übergang; Spannungen addieren sich nicht. In der hochdotierten Schicht ist die Rekombination schnell, daher tragen dort durch Absorption erzeugte Ladungsträger kaum zum Strom bei."
+  },
+  "photovoltaics-021": {
+    "question": "Ein Solarmodul mit einer Nennbetriebstemperatur der Zelle (NOCT, Zelltemperatur bei 800 W/m² Bestrahlungsstärke und 20 °C Lufttemperatur) von 45 °C wird im Freien bei 30 °C Lufttemperatur und 1000 W/m² Bestrahlungsstärke betrieben. Die Zelltemperatur wird mit T_cell = T_air + (NOCT − 20) × G/800 abgeschätzt, der Temperaturkoeffizient der maximalen Leistung beträgt −0,40 %/K (bezogen auf 25 °C). Wie viel Prozent der Leistung bei gleicher Bestrahlungsstärke und 25 °C liefert das Modul ungefähr?",
+    "choices": [
+      "ca. 98 %",
+      "ca. 92 %",
+      "ca. 86 %"
+    ],
+    "explanation": "Die Zelltemperatur beträgt T_cell = 30 + (45 − 20) × 1000/800 = 30 + 31,25 ≈ 61 °C. Das sind etwa 36 K mehr als 25 °C, daher sinkt die Leistung um 0,40 %/K × 36,25 K ≈ 14,5 % auf ca. 86 %. Der Wert ca. 98 % setzt die Lufttemperatur von 30 °C als Zelltemperatur an, der Wert ca. 92 % die NOCT von 45 °C; beide übersehen, dass die Sonneneinstrahlung die Zelle deutlich über die Umgebungsluft erwärmt. Die NOCT gibt an, wie gut das Modul Wärme abgibt; wird es bündig auf ein Dach montiert und ist die Rückseite schlecht belüftet, steigt die Zelltemperatur weiter. An klaren Sommertagen liegt die Leistung daher trotz hoher Bestrahlungsstärke oft unter dem Nennwert."
+  },
+  "photovoltaics-022": {
+    "question": "Bei Zellen aus p-Silizium wird statt einer ganzflächigen Aluminium-Legierungsschicht auf der Rückseite (Al-BSF) die Rückseite mit einem dielektrischen Film wie Al₂O₃ bedeckt und der Metallkontakt nur über kleine Öffnungen im Film angeschlossen (PERC). Was ist der Hauptgrund dafür, dass dies den Wirkungsgrad erhöht?",
+    "choices": [
+      "In den kleinen Öffnungen des Films konzentriert sich der Strom, das Feld wird stärker und beschleunigt die Ladungsträger, sodass die Kontakte sie leichter sammeln und der Kurzschlussstrom steigt",
+      "Der dielektrische Film verringert die Rekombination an der Rückseite stark (die negative Festladung von Al₂O₃ hält zudem Elektronen fern), und die Kombination aus Film und Metall reflektiert langwelliges Licht gut",
+      "Der dielektrische Film absorbiert das Ultraviolett des Sonnenlichts, wandelt es in langwelliges Licht um, das Silizium gut absorbiert, und schickt es von der Rückseite in die Zelle zurück"
+    ],
+    "explanation": "Bei der Al-BSF-Zelle berührt die gesamte Rückseite die Metall- und Legierungsschicht; die Rekombination dort begrenzt die Leerlaufspannung, und die Aluminiumrückseite reflektiert langwelliges Licht nicht besonders gut. Bei PERC wird der größte Teil der Rückseite mit einem dielektrischen Film passiviert, was die Rekombination an offenen Bindungen (Dangling Bonds) verringert. Al₂O₃ trägt eine negative Festladung und bewirkt dadurch zusätzlich eine Feldeffektpassivierung, die die Minoritätsladungsträger, die Elektronen, von der p-Oberfläche fernhält. Außerdem bildet die Kombination aus dielektrischem Film und Metall einen guten Rückseitenspiegel, der schwach absorbiertes langwelliges Licht in die Zelle zurückwirft. Dadurch steigen die Leerlaufspannung und die Empfindlichkeit für lange Wellenlängen. An den Öffnungen konzentriert sich der Strom und erhöht sogar den Widerstand, daher wird der Abstand der Öffnungen als Kompromiss mit dem Widerstand gewählt. Eine Umwandlung von Ultraviolett in längere Wellenlängen leistet diese Struktur nicht."
+  },
+  "photovoltaics-023": {
+    "question": "Welche Aussage über den Idealitätsfaktor n trifft zu, wenn die Dunkelkennlinie einer Solarzelle als J ∝ exp[qV/(nkT)] geschrieben wird?",
+    "choices": [
+      "Bei dominierendem Diffusionsstrom in den neutralen Gebieten ist n ≈ 1, bei dominierender Rekombination über Defekte in der Raumladungszone nahe 2; größeres n senkt tendenziell den Füllfaktor",
+      "n gibt die Größe des Serienwiderstands an: Verdoppelt sich der Serienwiderstand, verdoppelt sich auch n, und eine ideale Zelle ohne Widerstand hat n = 0",
+      "Ein größeres n zeigt eine bessere Zelle mit weniger Rekombination an; eine ideale Zelle hat n = 2, und n = 1 deutet auf viele Defekte hin"
+    ],
+    "explanation": "Der Idealitätsfaktor beschreibt, wie schnell der Strom mit steigender Spannung zunimmt, und gibt einen Hinweis darauf, welche Rekombination den Strom bestimmt. Diffundieren die injizierten Minoritätsladungsträger in den neutralen Gebieten und rekombinieren dort (einschließlich strahlender Rekombination), ist n = 1; dominiert die Rekombination über Defektniveaus in der Raumladungszone, sind Elektronen und Löcher beteiligt, und n ≈ 2. Bei größerem n steigt der Strom mit der Spannung flacher an, die Ecke der I-V-Kennlinie wird runder, und der Füllfaktor sinkt. n beschreibt den exponentiellen Anstieg des Stroms und ist etwas anderes als der Serienwiderstand. Eine ideale Zelle hat n = 1; die Aussage, die gut und schlecht vertauscht, ist daher ebenfalls falsch."
+  },
+  "photovoltaics-024": {
+    "question": "Welche Kombination aus der Bandlücke, die den höchsten Wirkungsgrad ermöglicht, und dem Grund dafür trifft für eine Solarzelle zu, die unter weißer LED-Raumbeleuchtung betrieben wird (fast das gesamte Licht liegt zwischen etwa 400 und 700 nm, mit kaum Infrarot)?",
+    "choices": [
+      "Etwa 1,1 eV: Wie unter Sonnenlicht steigt der Strom, je weiter zu langen Wellenlängen absorbiert wird, daher sind Siliziumzellen unverändert am effizientesten",
+      "Etwa 3,0 eV: Eine größere Bandlücke erhöht die Spannung, daher steigt der Wirkungsgrad mit der Spannung weiter, auch wenn der größte Teil des sichtbaren Lichts durchgelassen wird",
+      "Etwa 1,9 eV: Jenseits der Absorptionskante (etwa 650 nm) gibt es wenig Licht, daher geht bei breiterer Bandlücke wenig Licht verloren, und die Spannung lässt sich erhöhen"
+    ],
+    "explanation": "Nach dem Ansatz von Shockley und Queisser ergibt sich die optimale Bandlücke aus dem Gleichgewicht zwischen der Transmission von Photonen unterhalb der Bandlücke und den Thermalisierungsverlusten von Photonen oberhalb. Das Licht weißer LEDs konzentriert sich auf das Sichtbare, und oberhalb von etwa 700 nm (etwa 1,8 eV) gibt es fast nichts; verbreitert man die Bandlücke auf etwa 1,9 eV, geht daher wenig Licht verloren, die Spannung steigt entsprechend, und die Obergrenze des Wirkungsgrads liegt höher als unter Sonnenlicht. Silizium mit 1,1 eV wählt eine niedrige Bandlücke für Infrarot, das gar nicht ankommt, daher sind die Thermalisierungsverluste groß. Bei 3,0 eV lässt sich der größte Teil des sichtbaren Lichts nicht absorbieren, und der Strom sinkt stark. Als kleine Energiequellen für den Innenraum werden Materialien mit großer Bandlücke erforscht."
+  },
+  "photovoltaics-025": {
+    "question": "Eine Solarzelle hat im Punkt maximaler Leistung die Stromdichte J_mp = 38 mA/cm² und die Spannung V_mp = 0,60 V. Welche Kombination aus dem Spannungsabfall J_mp R_s durch einen flächenbezogenen Serienwiderstand R_s = 1,0 Ω·cm² und dem Anteil der im Widerstand verlorenen Leistung J_mp²R_s an der maximalen Leistung J_mp V_mp kommt am nächsten?",
+    "choices": [
+      "Spannungsabfall 3,8 mV; Leistungsverlust ca. 0,63 %",
+      "Spannungsabfall 38 mV; Leistungsverlust ca. 6,3 %",
+      "Spannungsabfall 38 mV; Leistungsverlust ca. 1,4 %"
+    ],
+    "explanation": "Der Spannungsabfall beträgt J_mp R_s = 0,038 A/cm² × 1,0 Ω·cm² = 0,038 V = 38 mV. Die verlorene Leistung ist J_mp²R_s = 0,038² × 1,0 ≈ 1,44 mW/cm², die maximale Leistung 38 mA/cm² × 0,60 V = 22,8 mW/cm², der Anteil also 1,44/22,8 ≈ 6,3 % (= 38 mV/0,60 V). Der Wert ca. 1,4 % bezieht den Verlust auf die eingestrahlten 100 mW/cm² statt auf die maximale Leistung. 3,8 mV und ca. 0,63 % beruhen auf einem Fehler um eine Größenordnung bei der Umrechnung von mA in A. Der Verlust im Serienwiderstand wächst mit dem Quadrat des Stroms, daher sind die Auslegung der Kontaktfinger und die Verringerung des Widerstands bei Zellen mit hohem Strom und bei Konzentratorzellen besonders wichtig."
   }
 }

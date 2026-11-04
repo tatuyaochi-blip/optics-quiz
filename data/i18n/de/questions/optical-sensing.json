@@ -178,5 +178,50 @@
       "Der Entfernungsfehler ist proportional zu z und verdoppelt sich bei doppelter Entfernung; je kürzer die Basislänge, desto größer die Bildbewegung und desto besser die Auflösung"
     ],
     "explanation": "Leitet man x = bf/z nach z ab, erhält man dx/dz = −bf/z²; der Entfernungsfehler zum Bildlagefehler Δx ist also Δz = z²Δx/(bf). Bei doppelter Entfernung wird Δz für dasselbe Δx viermal so groß. Größere Basislänge b oder Brennweite f vergrößern die Bildbewegung und verbessern die Auflösung, machen das Gerät aber größer, und nahe Objekte fallen leichter aus dem Sehfeld. Die Antworten mit konstantem oder zu z proportionalem Fehler übersehen, dass x umgekehrt proportional zu z ist. Eine kürzere Basislänge verkleinert die Bildbewegung und verschlechtert daher die Auflösung. Wegen dieser Eigenschaft eignet sich die Triangulation für präzise Messungen auf kurze Entfernung, während man für große Entfernungen etwa das ToF-Verfahren verwendet."
+  },
+  "optical-sensing-021": {
+    "question": "Bei der OCT wird die axiale Auflösung (in der Tiefe) durch die spektrale Breite (Kohärenzlänge) der Lichtquelle bestimmt, die laterale Auflösung (in Abtastrichtung) durch die numerische Apertur der Linse, die das Licht auf die Probe fokussiert. Um die laterale Auflösung zu verfeinern, wird die numerische Apertur der Linse verdoppelt. Welche Änderung trifft zu? (Für einen fokussierten Gauß-Strahl sei die Fokustiefe proportional zum Quadrat der Fleckgröße.)",
+    "choices": [
+      "Laterale und axiale Auflösung verbessern sich beide auf etwa 1/2, und der scharf abgebildete Tiefenbereich bleibt unverändert",
+      "Die laterale Auflösung verbessert sich auf etwa 1/2, doch die Fokustiefe schrumpft auf etwa 1/4, und der scharf abgebildete Tiefenbereich wird schmaler",
+      "Die laterale Auflösung verbessert sich auf etwa 1/2, und auch die Fokustiefe verdoppelt sich etwa, sodass auch tiefe Bereiche scharf abgebildet werden"
+    ],
+    "explanation": "Bei der OCT wird die Tiefenlage durch Interferenz mit geringer Kohärenz getrennt, daher bestimmt die Kohärenzlänge die axiale Auflösung, und diese hängt nicht von der numerischen Apertur der Linse ab. Die laterale Auflösung ist die Größe des Fokusflecks und halbiert sich etwa, wenn die numerische Apertur verdoppelt wird. Die Fokustiefe (das Doppelte der Rayleigh-Länge) ist dagegen proportional zum Quadrat der Fleckgröße und schrumpft auf etwa 1/4, sodass die laterale Abbildung in Tiefen abseits des Fokus unscharf wird. Die Annahme, auch die axiale Auflösung verbessere sich, übersieht, dass beide Auflösungen von verschiedenen Faktoren bestimmt werden. Die Annahme einer größeren Fokustiefe kehrt die Richtung um. Bei der OCT etwa der Netzhaut wählt man die numerische Apertur daher oft eher klein, um einen Tiefenbereich von einigen mm zu sichern."
+  },
+  "optical-sensing-022": {
+    "question": "Ein interferometrischer Linearencoder überlagert die +1. und −1. Beugungsordnung eines Maßstabgitters mit 4 µm Periode zur Interferenz. Verschiebt sich der Maßstab um eine Periode, ändern sich die Phasen der +1. und −1. Ordnung um +2π bzw. −2π. Welche Kombination aus der Verschiebung für eine Periode des Interferenzsignals und der Auflösung bei elektrischer Unterteilung (Interpolation) dieser Periode in 1000 Schritte trifft zu?",
+    "choices": [
+      "Signalperiode 4 µm; Auflösung 4 nm",
+      "Signalperiode 1 µm; Auflösung 1 nm",
+      "Signalperiode 2 µm; Auflösung 2 nm"
+    ],
+    "explanation": "Verschiebt sich der Maßstab um Δx, ändern sich die Phasen der +1. und −1. Ordnung um ±2πΔx/p, ihre Phasendifferenz also um 4πΔx/p. Das Interferenzsignal durchläuft eine Periode, wenn sich die Phasendifferenz um 2π ändert, daher beträgt die Signalperiode p/2 = 2 µm. Bei Unterteilung in 1000 Schritte ergibt sich eine Auflösung von 2 µm/1000 = 2 nm. Eine Signalperiode von 4 µm berücksichtigt nur die Phasenänderung einer Ordnung. 1 µm zählt die Änderung der Phasendifferenz fälschlich doppelt. Gegenüber Verfahren, die das Hell-Dunkel des Gitterschattens zählen, erhält man eine feinere Signalperiode; das Verfahren wird daher für präzise Positionierung eingesetzt."
+  },
+  "optical-sensing-023": {
+    "question": "Ein faseroptischer Kreisel mit einer Faser der Länge L = 1000 m, die zu einer Spule mit dem Durchmesser D = 0,10 m gewickelt ist, misst die Erdrotation (Winkelgeschwindigkeit Ω = 7,3×10⁻⁵ rad/s). Die Phasendifferenz zwischen rechts und links umlaufendem Licht (Sagnac-Effekt) sei Δφ = 2πLDΩ/(λc) mit λ = 1,55 µm und c = 3,0×10⁸ m/s. Welcher Wert kommt Δφ am nächsten?",
+    "choices": [
+      "ca. 1,0×10⁻⁴ rad",
+      "ca. 4,9×10⁻⁵ rad",
+      "ca. 1,6×10⁻⁵ rad"
+    ],
+    "explanation": "Δφ = 2π × 1000 × 0,10 × 7,3×10⁻⁵ /(1,55×10⁻⁶ × 3,0×10⁸) = 4,59×10⁻²/465 ≈ 9,9×10⁻⁵ rad, also ca. 1,0×10⁻⁴ rad. Der Wert ca. 4,9×10⁻⁵ rad verwendet den Radius statt des Durchmessers, der Wert ca. 1,6×10⁻⁵ rad vergisst den Faktor 2π. Die Phasendifferenz ist proportional zum Produkt aus umschlossener Fläche und Windungszahl, daher steigt die Empfindlichkeit mit der Länge der gewickelten Faser; vom Brechungsindex der Faser hängt sie nicht ab. Da beide Lichtwellen denselben Weg in entgegengesetzter Richtung durchlaufen, heben sich Wegänderungen durch Temperatur und Vibration nahezu auf; um Phasen unter 10⁻⁴ rad zu messen, wird das Signal jedoch mithilfe einer Phasenmodulation gewonnen."
+  },
+  "optical-sensing-024": {
+    "question": "Ein langperiodisches Fasergitter (LPG) mit einer Periode von einigen hundert µm eignet sich, anders als ein FBG mit einer Periode knapp unter 1 µm, als Sensor für den Brechungsindex einer Flüssigkeit um die Faser. Weshalb?",
+    "choices": [
+      "Bei langer Periode wird die Bragg-Wellenlänge direkt durch den Brechungsindex des umgebenden Mediums bestimmt, daher ergibt die Messung der Wellenlänge des reflektierten Lichts direkt den Brechungsindex der Umgebung",
+      "Wegen der langen Periode ist es gegenüber Dehnung und Temperatur völlig unempfindlich, und seine Transmission reagiert nur auf den Brechungsindex der Umgebung, daher ist keine Temperaturkorrektur nötig",
+      "Es koppelt das Kernlicht in gleichsinnig laufende Mantelmoden, deren effektiver Brechungsindex vom Brechungsindex der Umgebung abhängt, sodass sich die Wellenlänge des Verlustminimums in der Transmission verschiebt"
+    ],
+    "explanation": "Ein FBG reflektiert, indem es das Kernlicht in die gegenläufige Kernmode koppelt. Das Licht der Kernmode bleibt im Kern und in dessen Nähe und berührt die Umgebung kaum, daher ist es für den äußeren Brechungsindex unempfindlich. Ein LPG koppelt wegen seiner langen Periode das Kernlicht in gleichsinnig laufende Mantelmoden, deren Licht bald verloren geht, sodass bei bestimmten Wellenlängen ein Verlustminimum in der Transmission erscheint. Die Mantelmoden reichen in das äußere Medium hinein, daher ändern sich ihr effektiver Brechungsindex und die Wellenlänge des Minimums mit dem Brechungsindex der Umgebung. Ein LPG ist auch gegenüber Dehnung und Temperatur stark empfindlich; die Annahme, es reagiere nur auf den Brechungsindex, ist daher falsch, und eine Temperaturkorrektur ist nötig."
+  },
+  "optical-sensing-025": {
+    "question": "Welche Aussage über ein Flash-LiDAR, das das gesamte Gesichtsfeld auf einmal mit einem Lichtpuls beleuchtet und in jedem Pixel eines zweidimensionalen Empfängerarrays die Laufzeit misst, im Vergleich zu einem LiDAR, das einen schmalen Strahl abtastet, trifft zu?",
+    "choices": [
+      "Das Aufweiten des Lichts auf das gesamte Gesichtsfeld wird durch das gleichzeitige Sammeln mit allen Pixeln ausgeglichen, daher ist das Rücklicht je Pixel so stark wie beim Abtasten, und die maximale Reichweite ändert sich nicht",
+      "Es hat keine beweglichen Teile und misst alle Pixel gleichzeitig, doch da das Licht auf das gesamte Gesichtsfeld aufgeweitet wird, ist das Rücklicht je Pixel schwach, und große Entfernungen sind schwer zu erreichen",
+      "Da die Szene auf einmal beleuchtet wird, bestimmt jedes Pixel die Entfernung nicht aus der Laufzeit, sondern aus der Bildgröße und den Abmessungen des Objekts, sodass keine Zeitmessung je Pixel nötig ist"
+    ],
+    "explanation": "Ein Flash-LiDAR hat keine beweglichen Teile wie Spiegel und erhält mit einem einzigen Lichtpuls die Entfernung in allen Pixeln gleichzeitig; es ist daher unempfindlich gegen Vibrationen, und auch bei schnellen Szenen wird das Bild nicht verzerrt. Dafür wird das Licht der Quelle auf das gesamte Gesichtsfeld aufgeweitet, sodass das Licht, das ein Objekt im Sichtbereich eines Pixels trifft, viel schwächer ist als bei einem schmalen Strahl in dieselbe Richtung. Da die Leistung der Lichtquelle zudem durch die Normen zur Augensicherheit begrenzt ist, lassen sich ferne oder schwach reflektierende Objekte schwer messen, und das Verfahren eignet sich für kurze Entfernungen. Die Stärke des Rücklichts wird durch die Beleuchtungsdichte bestimmt, daher steigt sie je Pixel nicht, auch wenn alle Pixel gleichzeitig sammeln. Die Entfernung ergibt sich aus der Laufzeit in jedem Pixel und wird nicht aus der Bildgröße geschätzt."
   }
 }

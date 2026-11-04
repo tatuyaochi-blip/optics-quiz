@@ -178,5 +178,50 @@
       "Die belegte Bandbreite Rs(1 + β) nähert sich 32 GHz, und die Kanäle lassen sich ohne Überlappung mit dem Nachbarn enger anordnen, doch das formende Filter wird länger und steiler"
     ],
     "explanation": "Ein Raised-Cosine-Spektrum erfüllt für jedes β die Nyquist-Bedingung, die Intersymbolinterferenz zu den Abtastzeitpunkten ist null. Die vom optischen Signal belegte Bandbreite ist Rs(1 + β), bei 32 GBd also ca. 35 GHz für β = 0,1 und 64 GHz für β = 1. Mit kleinerem β nähert sich die Bandbreite der Symbolrate, und die Kanäle überlappen sich auch bei engen Abständen wie 37,5 GHz nicht. Dafür werden die Ausläufer der zeitlichen Wellenform länger, die Zahl der Taps der digitalen Filter in Sender und Empfänger steigt, und das Signal wird empfindlicher gegenüber Zeitversatz. Die Bandbreite als 2Rs anzusetzen, verwechselt sie mit der Breite der Hauptkeule des Spektrums ungeformter Rechteckpulse. Frei von Intersymbolinterferenz ist das Signal nicht nur bei β = 1."
+  },
+  "comm-systems-021": {
+    "question": "Ein optisches Signal, das als polarisationsgemultiplextes 16QAM mit 64 GBd übertragen wird, hat eine Leitungsbitrate von 512 Gb/s. Der Overhead für Fehlerkorrekturcodes und Ähnliches beträgt 28 % der Informationsbitrate (Informationsbitrate × 1,28 = Leitungsbitrate). Welcher Wert kommt der Netto-Informationsbitrate am nächsten?",
+    "choices": [
+      "ca. 369 Gb/s",
+      "ca. 400 Gb/s",
+      "ca. 655 Gb/s"
+    ],
+    "explanation": "Da der Overhead 28 % der Informationsbitrate beträgt, ist die Informationsbitrate 512/1,28 = 400 Gb/s. Der Wert ca. 369 Gb/s ist 512 × (1 − 0,28); hier werden 28 % von der Leitungsbitrate abgezogen, was die Definition des Overheads missversteht. Der Wert ca. 655 Gb/s multipliziert fälschlich mit 1,28. Die bei kohärenter Übertragung eingesetzte Fehlerkorrektur mit Soft-Decision kann eine Bitfehlerrate von etwa 10⁻³ bis 10⁻² vor der Korrektur in einen nahezu fehlerfreien Zustand nach der Korrektur überführen und senkt das nötige OSNR deutlich. Dafür werden etwa 20 % redundante Bits mitgesendet, sodass die Leitungsbitrate höher ist als die Nettobitrate."
+  },
+  "comm-systems-022": {
+    "question": "In einem passiven optischen Netz (PON) wird eine Faser mit einem optischen Splitter auf 32 Fasern aufgeteilt, die einzelne Haushalte versorgen. Welcher Wert kommt bei einem idealen, verlustfreien 1:32-Splitter dem Aufteilungsverlust je Ausgang am nächsten?",
+    "choices": [
+      "ca. 32 dB",
+      "ca. 30 dB",
+      "ca. 15 dB"
+    ],
+    "explanation": "Ein idealer Splitter teilt die Leistung in 32 gleiche Teile, daher erreicht jeden Ausgang 1/32, und der Verlust beträgt 10 log₁₀32 ≈ 15 dB. Bei realen Splittern kommt ein Zusatzverlust von etwa 1 bis 2 dB hinzu. Der Wert ca. 30 dB verwendet 20 log₁₀ und wendet damit die Formel für Spannungs- oder Amplitudenverhältnisse auf ein Leistungsverhältnis an. Der Wert ca. 32 dB setzt die Zahl der Zweige direkt in dB an. Im PON erreicht das Abwärtssignal von der Vermittlungsstelle jeden Haushalt in gleicher Form, und das Gerät jedes Haushalts entnimmt den für ihn bestimmten Teil. In Aufwärtsrichtung senden die Haushalte nacheinander in zugeteilten Zeitschlitzen, daher muss der Empfänger in der Vermittlungsstelle burstartige Signale unterschiedlicher Stärke verarbeiten."
+  },
+  "comm-systems-023": {
+    "question": "In wellenlängenselektiven Schaltern von ROADMs wird statt eines festen 50-GHz-Rasters ein flexibles Raster (Flex Grid) verwendet, das die Kanalbandbreite in Vielfachen von 12,5 GHz zuteilt. Was ist der Hauptgrund dafür?",
+    "choices": [
+      "Jedes Signal erhält die benötigte Breite (z. B. 75 GHz), sodass auch Signale hoher Symbolrate, die nicht in 50 GHz passen, durchkommen und das Spektrum ohne Verschwendung genutzt wird",
+      "Mit einem 12,5-GHz-Raster lassen sich Signale jeder Symbolrate viermal so dicht anordnen, sodass sich die Kapazität einfach vervierfacht",
+      "Ein feineres Raster teilt das Verstärkungsband des EDFA in flache 12,5-GHz-Stücke, sodass auch über viele verstärkte Abschnitte keine Verstärkungsglättungsfilter mehr nötig sind"
+    ],
+    "explanation": "Ein Signal belegt etwa seine Symbolrate zuzüglich eines Roll-off-Anteils. Ein Signal mit 64 GBd belegt zum Beispiel einschließlich Roll-off etwa 70 GHz und passt nicht in einen 50-GHz-Platz, und selbst bei einem Signal von etwa 32 GBd bleibt an den Rändern des Platzes ungenutzter Raum. Beim flexiblen Raster werden Mitte und Breite jedes Durchlassbereichs des wellenlängenselektiven Schalters in feinen Schritten festgelegt und jedem Signal nur die benötigte Breite zugeteilt, sodass das Spektrum der Faser dicht genutzt wird. Mehr Kanäle passen nur dann hinein, wenn die Signale schmaler als die Plätze sind; die Kapazität vervierfacht sich nicht für jedes Signal. Der Rasterabstand betrifft die Art, wie der Schalter Bandbreite zuteilt, und hat mit dem Verlauf der EDFA-Verstärkung nichts zu tun."
+  },
+  "comm-systems-024": {
+    "question": "Welche Aussage über den Einfluss der Linienbreite (des Phasenrauschens) von Sendelaser und Lokaloszillatorlaser beim digitalen kohärenten Empfang trifft zu?",
+    "choices": [
+      "Phasenrauschen ist eine lineare Änderung, die die Amplitude nicht verändert, daher entfernt es ein festes inverses Filter wie bei der chromatischen Dispersion vollständig, und die Linienbreite spielt keine Rolle",
+      "Je niedriger die Symbolrate und je länger ein Symbol, desto stärker mittelt sich die Phasenschwankung innerhalb des Symbols heraus, sodass sich Laser größerer Linienbreite leichter einsetzen lassen",
+      "Die Phasenschwankung wird durch die Trägerphasenschätzung der DSP verfolgt, doch bei höherwertiger QAM liegen die Signalpunkte in der Phase enger, daher muss das Produkt aus Linienbreite und Symboldauer klein sein"
+    ],
+    "explanation": "Die Phasen beider Laser schwanken entsprechend ihrer Linienbreite zufällig. Im kohärenten Empfänger ändert sich die Phasendifferenz zum Lokaloszillator mit der Zeit, daher schätzt die digitale Signalverarbeitung die Trägerphase und macht die Drehung der Signalpunkte rückgängig. Je schneller die Phase schwankt, desto weniger kann die Schätzung folgen, und bei 16QAM oder 64QAM mit engem Phasenabstand der Signalpunkte führt schon ein kleiner Restfehler zu Fehlentscheidungen. Das Ausmaß des Einflusses wird durch das Produkt aus Linienbreite und Symboldauer bestimmt; senkt man die Symbolrate, um die Symboldauer zu verlängern, wird die Phasenänderung innerhalb dieser Zeit daher sogar größer. Phasenrauschen ändert sich zufällig mit der Zeit und lässt sich daher mit einem festen Filter nicht entfernen."
+  },
+  "comm-systems-025": {
+    "question": "Ist bei einem Sender mit Intensitätsmodulation und Direktempfang das Extinktionsverhältnis (Verhältnis der optischen Leistungen von 1- und 0-Pegel) nicht groß genug, verschlechtert sich die Empfängerempfindlichkeit, auch wenn die mittlere optische Leistung gleich bleibt. Weshalb?",
+    "choices": [
+      "Das Licht im 0-Pegel ist wie der Dunkelstrom des Empfängers konstant, daher beseitigt ein Abzug im Empfänger seinen Einfluss, und nur die Leistungsaufnahme des Senders leidet",
+      "Da im 0-Pegel Licht verbleibt, wird der Unterschied der Leistungen von 1 und 0 relativ zur mittleren Leistung kleiner, und für dieselbe Fehlerrate ist eine höhere mittlere Leistung nötig",
+      "Das Licht im 0-Pegel wird durch Selbstphasenmodulation und andere nichtlineare Effekte in der Faser in die Zeit der 1-Pegel verschoben und verursacht Intersymbolinterferenz mit benachbarten Bits"
+    ],
+    "explanation": "Für die Unterscheidung von 1 und 0 im Empfänger zählt der Unterschied der beiden Pegel. Mit der mittleren Leistung P und dem Extinktionsverhältnis r beträgt der Leistungsunterschied zwischen 1 und 0 nur 2P(r − 1)/(r + 1) und ist damit kleiner als 2P bei unendlichem Extinktionsverhältnis. Um denselben Unterschied zu erhalten, ist die (r + 1)/(r − 1)-fache mittlere Leistung nötig; bei einem Extinktionsverhältnis von 10 dB (r = 10) ergibt sich eine Verschlechterung um 10 log₁₀(11/9) ≈ 0,9 dB. Das Abziehen eines konstanten 0-Pegels öffnet das Auge nicht weiter, und Licht im 0-Pegel erhöht zudem das Schrotrauschen und das Schwebungsrauschen mit dem Rauschen optischer Verstärker. Bei üblichen Leistungen verschieben nichtlineare Effekte Licht des 0-Pegels nicht in andere Zeitabschnitte."
   }
 }

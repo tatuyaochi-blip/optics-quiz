@@ -178,5 +178,50 @@
       "ca. 50 MHz"
     ],
     "explanation": "Die optische Bandbreite B_opt wird im elektrischen Signal auf B_opt × Δf_rep/f_rep abgebildet. Dies muss höchstens f_rep/2 = 50 MHz betragen, daher B_opt ≤ (f_rep/2)(f_rep/Δf_rep) = 50 MHz × 10⁵ = 5×10¹² Hz, ca. 5 THz. Ca. 10 THz lässt den Faktor 1/2 in f_rep/2 weg, ca. 50 MHz vergisst den Verkleinerungsfaktor und setzt die elektrische Bandbreite unmittelbar als optische Bandbreite an. Mit kleinerem Δf_rep lassen sich breitere Bänder messen, doch die Zeit 1/Δf_rep für ein Spektrum (hier 1 ms) wird länger; Bandbreite und Messgeschwindigkeit stehen daher in einem Zielkonflikt. Das Verfahren lässt sich als Fourier-Transformations-Spektroskopie ohne bewegten Spiegel auffassen; kennzeichnend ist, dass die Frequenz jeder Mode mit der Genauigkeit des Kamms festgelegt ist."
+  },
+  "ultrafast-021": {
+    "question": "In einem Verstärker für gechirpte Pulse durchläuft ein Puls der Wellenlänge 800 nm 1 cm eines Kristalls mit dem nichtlinearen Brechungsindex n₂ = 3×10⁻²⁰ m²/W bei einer Spitzenintensität von 10 GW/cm². Welcher Wert kommt der durch Selbstphasenmodulation erzeugten nichtlinearen Phase (B-Integral) B = (2π/λ)n₂IL am nächsten? (Die Intensität sei entlang der Länge konstant.)",
+    "choices": [
+      "ca. 0,04 rad",
+      "ca. 0,24 rad",
+      "ca. 24 rad"
+    ],
+    "explanation": "Da 10 GW/cm² = 1×10¹⁴ W/m² ist, gilt B = (2π/8×10⁻⁷ m) × 3×10⁻²⁰ m²/W × 1×10¹⁴ W/m² × 0,01 m ≈ 0,24 rad. Der Wert ca. 0,04 rad vergisst den Faktor 2π, der Wert ca. 24 rad liegt wegen eines Fehlers bei der Umrechnung von W/cm² in W/m² (Faktor 10⁴) um den Faktor 100 daneben. Das B-Integral wird über den gesamten Verstärkerweg aufsummiert; überschreitet es etwa 1 rad, werden spektrale Verzerrungen durch Selbstphasenmodulation und das Anwachsen von Intensitätsschwankungen im Strahl durch Selbstfokussierung deutlich, sodass die Qualität des komprimierten Pulses sinkt oder optische Komponenten beschädigt werden. Dass bei der CPA der Puls gestreckt und seine Spitzenintensität gesenkt wird, dient dazu, B klein zu halten."
+  },
+  "ultrafast-022": {
+    "question": "Bohrt man Löcher in Metall mit Femtosekunden-Laserpulsen, schmilzt die Umgebung weniger als mit Nanosekundenpulsen, und die Bearbeitung ist mit geringeren Wärmeeinflüssen verbunden. Was ist der Hauptgrund dafür?",
+    "choices": [
+      "Der Puls ist kürzer als die Zeit für den Wärmeübertrag von den Elektronen auf das Gitter (etwa ps), daher wird nur der bestrahlte Bereich heiß und abgetragen, bevor sich die Wärme ausbreitet",
+      "Die Pulsenergie ist klein, daher erwärmt sich das Metall kaum, und die Bearbeitung beruht ausschließlich auf photochemischen Reaktionen, bei denen das Licht Atombindungen direkt aufbricht",
+      "Ein kurzer Puls hat ein breites Spektrum, das Metalle schlecht absorbieren, daher wird der größte Teil des Lichts an der Oberfläche reflektiert, und nur der kleine Rest bohrt das Loch"
+    ],
+    "explanation": "Im Metall absorbiertes Licht gibt seine Energie zunächst an die Elektronen ab, die sie über die Elektron-Phonon-Kopplung innerhalb von etwa einer ps an das Gitter weitergeben; danach breitet sie sich durch Wärmeleitung in die Umgebung aus. Bei Nanosekundenpulsen breitet sich die Wärme schon während der Bestrahlung aus, sodass eine große Schmelzschicht und Wärmeeinflusszone zurückbleiben. Bei Femtosekundenpulsen wird nur eine dünne bestrahlte Schicht extrem heiß und dicht und abgetragen, bevor sich die Energie ausbreitet; so ist eine Mikrobearbeitung mit sauberen Rändern möglich. Die Bearbeitung erfordert eine hohe Spitzenintensität; es trifft also nicht zu, dass die Temperatur kaum steigt. Ein breites Spektrum ändert die Absorption von Metallen kaum, und ein Lichtverlust durch Reflexion erklärt die geringen Wärmeeinflüsse nicht."
+  },
+  "ultrafast-023": {
+    "question": "In einem 4f-Pulsformer wird ein ultrakurzer Puls mit Gitter und Linse räumlich nach Wellenlängen aufgefächert, in der Brennebene der Linse befindet sich ein räumlicher Flüssigkristall-Lichtmodulator, und ein zweites Paar aus Linse und Gitter vereinigt das Licht wieder. Welche Aussage über die Funktion dieses Geräts trifft zu?",
+    "choices": [
+      "In der Brennebene entspricht der Ort einem Zeitpunkt innerhalb des Pulses, daher lässt sich durch Ändern des Transmissionsgrads je Pixel ein zeitlicher Teil des Pulses herausschneiden und der Puls verkürzen",
+      "Der räumliche Lichtmodulator fügt dem Spektrum neue Frequenzanteile hinzu und verbreitert es, daher lässt sich der Puls kürzer machen als das Fourier-Limit des einfallenden Pulses",
+      "In der Brennebene entspricht der Ort der optischen Frequenz, daher lässt sich durch Ändern von Phase (oder Amplitude) je Pixel eine beliebige spektrale Phase aufprägen, um Chirp zu kompensieren und gewünschte Zeitverläufe zu erzeugen"
+    ],
+    "explanation": "Das Gitter lenkt jede Frequenz in eine andere Richtung, und die Linse reiht sie in ihrer Brennebene auf, sodass der Ort in der Brennebene der optischen Frequenz entspricht. Ändert man dort die Phase in jedem Pixel des Flüssigkristall-Modulators, lässt sich jedem Spektralanteil eine beliebige Phase geben; so lassen sich Restdispersion kompensieren und gewünschte Zeitverläufe wie Pulsfolgen oder gechirpte Wellenformen synthetisieren. Das zweite Paar aus Linse und Gitter vereinigt das Licht wieder zu einem Strahl. Die Annahme, der Ort entspreche der Zeit, verwechselt die Spektralebene mit dem Zeitbereich. Phasen- oder Transmissionsänderungen im Flüssigkristall erzeugen keine neuen Frequenzen, daher verbreitert sich das Spektrum nicht, und der Puls lässt sich nicht unter das Fourier-Limit verkürzen."
+  },
+  "ultrafast-024": {
+    "question": "In einem BBO-Kristall wird aus einer Grundwelle von 800 nm die zweite Harmonische bei 400 nm erzeugt. Die Verzögerung zwischen beiden Wellen durch ihren Gruppengeschwindigkeitsunterschied (Gruppengeschwindigkeitsfehlanpassung) beträgt 0,2 ps je mm Kristall. Welcher Wert kommt bei einer Grundwelle mit 50 fs Pulsdauer der Kristalldicke am nächsten, bei der der Versatz der beiden Pulse am Ausgang gleich der Pulsdauer ist?",
+    "choices": [
+      "ca. 4 mm",
+      "ca. 2,5 mm",
+      "ca. 0,25 mm"
+    ],
+    "explanation": "Die Pulse verschieben sich je mm um 200 fs gegeneinander, daher ist für einen Versatz von 50 fs eine Dicke von 50/200 = 0,25 mm nötig. Der Wert ca. 4 mm teilt 0,2 ps durch 0,05 ps und kehrt damit das Verhältnis um. Der Wert ca. 2,5 mm beruht auf einem Fehler um eine Größenordnung bei der Umrechnung zwischen fs und ps. In einem dickeren Kristall laufen die Pulse von Grundwelle und zweiter Harmonischer während der Ausbreitung auseinander, daher verbreitert sich der Puls der zweiten Harmonischen zeitlich, und auch der Konversionswirkungsgrad stagniert. Anders betrachtet hat ein dicker Kristall eine schmale Phasenanpassungsbandbreite und kann das breite Spektrum eines kurzen Pulses nicht vollständig umsetzen. Für die Frequenzkonversion von fs-Pulsen verwendet man daher als Kompromiss zwischen Wirkungsgrad und Bandbreite dünne Kristalle."
+  },
+  "ultrafast-025": {
+    "question": "Fokussiert man intensive Femtosekundenpulse in ein Edelgas, entstehen ungeradzahlige Harmonische der Grundwelle bis zu Ordnungen von einigen zehn und darüber (Erzeugung hoher Harmonischer). Welche Erklärung dieses Phänomens trifft zu?",
+    "choices": [
+      "Sie stammen von Termen hoher Ordnung in der störungstheoretischen Entwicklung der nichtlinearen Polarisation des Atoms; die Intensität sinkt mit der Ordnung steil, und gerad- und ungeradzahlige Harmonische wechseln sich mit gleicher Stärke ab",
+      "Durch Tunnelionisation freigesetzte Elektronen kehren zum Mutterion zurück und rekombinieren unter Lichtemission; da dies jede halbe Periode geschieht, treten nur ungeradzahlige Harmonische auf, und es entsteht eine Quelle für Attosekundenpulse",
+      "Es handelt sich um stimulierte Raman-Streuung an Molekülschwingungen des Gases, bei der Stokes-Linien im Abstand der Raman-Verschiebung auftreten, und zwar unabhängig von der Pulsintensität mit gleicher Stärke bis zu einigen zehn Ordnungen"
+    ],
+    "explanation": "Hohe Harmonische entstehen, wenn das elektrische Feld vergleichbar mit dem atomaren Bindungsfeld ist. Das Elektron wird durch den Tunneleffekt ionisiert, beim Umkehren des Feldes zum Mutterion zurückgetrieben und rekombiniert; dabei sendet es ein Photon aus, dessen Energie die Summe aus gewonnener kinetischer Energie und Ionisierungsenergie ist. Dieser Vorgang wiederholt sich jede halbe Periode des Lichts mit wechselnder Richtung, daher treten im Spektrum nur ungeradzahlige Harmonische auf; auf einen flachen Bereich nahezu konstanter Stärke (Plateau) folgt bei einer bestimmten Ordnung ein abrupter Abbruch (Cutoff). Die kurzen Emissionen jede halbe Periode bilden eine Folge von Attosekundenpulsen, und mit Pulsen von etwa einer Periode Dauer lässt sich auch ein einzelner Attosekundenpuls erzeugen. Terme hoher Ordnung der Störungsrechnung fallen mit der Ordnung steil ab und können das Plateau nicht erklären, und symmetrische Atome liefern keine geradzahligen Harmonischen. Raman-Streuung verschiebt Licht um Schwingungsfrequenzen und erzeugt keine Harmonischen."
   }
 }

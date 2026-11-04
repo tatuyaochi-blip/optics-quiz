@@ -178,5 +178,50 @@
       "Die Energie grüner Photonen wird größer als die Bandlücke der aktiven Schicht, daher wird das Licht in der aktiven Schicht stark absorbiert und geht verloren, bevor es austritt"
     ],
     "explanation": "Um die Emission des für blaue LEDs verwendeten InGaN zu größeren Wellenlängen zu verschieben, erhöht man den In-Anteil. Bei hohem In-Gehalt wird die Verspannung groß, und das piezoelektrische Feld zieht Elektronen und Löcher zu entgegengesetzten Seiten des Quantentopfs (quantenbeschränkter Stark-Effekt, QCSE), sodass die Rekombinationswahrscheinlichkeit sinkt; hinzu kommen Einflüsse von Zusammensetzungsschwankungen und Defekten, und wie groß die einzelnen Beiträge sind, wird noch erforscht. Beim für rote LEDs verwendeten AlGaInP nähert sich bei höherem Al-Anteil für kürzere Wellenlängen das Minimum des Leitungsbands dem indirekten Tal, und Elektronen entweichen dorthin oder zur p-Seite, sodass die Effizienz sinkt. Deshalb fällt die Effizienz im Grünen zwischen den beiden Materialsystemen ab. Der spektrale Hellempfindlichkeitsgrad hat um 555 nm sein Maximum, die Begründung kehrt die Verhältnisse also um, und die externe Quanteneffizienz ist ein Verhältnis von Photonenzahlen und hängt nicht vom Hellempfindlichkeitsgrad ab. Die aktive Schicht sendet Photonen mit einer Energie nahe ihrer Bandlücke aus, daher entsteht kein Licht mit größerer Energie."
+  },
+  "led-display-021": {
+    "question": "Bei Mikro-LEDs mit Pixelgrößen von einigen µm bis einigen zehn µm sinkt die externe Quanteneffizienz tendenziell, je kleiner der Chip wird. Was ist der Hauptgrund dafür?",
+    "choices": [
+      "Ein kleinerer Chip senkt bei gleichem Strom die Stromdichte, wodurch der Effizienz-Droop stärker wird und die nichtstrahlende Auger-Rekombination zunimmt",
+      "Je kleiner der Chip, desto kleiner der Grenzwinkel vom Kristall zur Luft, sodass ein größerer Anteil des Lichts durch Totalreflexion im Kristall eingeschlossen und absorbiert wird",
+      "Die nichtstrahlende Oberflächenrekombination an Defekten der geätzten Seitenwände wird relativ größer, weil das Verhältnis von Umfang zu Fläche zunimmt"
+    ],
+    "explanation": "Beim Ätzen, das die Chips voneinander trennt, bleiben an den Seitenwänden Kristallschäden und offene Bindungen (Dangling Bonds) zurück, und Ladungsträger, die sie erreichen, rekombinieren ohne Lichtemission. Die Chipfläche skaliert mit dem Quadrat der Größe, der Umfang mit ihrer ersten Potenz; je kleiner der Chip, desto größer daher der relative Einfluss der Seitenwände, und besonders in Materialien mit großer Diffusionslänge der Ladungsträger sinkt die Effizienz stark. Deshalb ist die Passivierung der Seitenwände wichtig. Der Effizienz-Droop tritt bei hoher Stromdichte auf; eine sinkende Stromdichte als Ursache anzuführen, kehrt die Richtung um. Der Grenzwinkel wird durch das Verhältnis der Brechungsindizes bestimmt und hängt nicht von der Chipgröße ab."
+  },
+  "led-display-022": {
+    "question": "Bei manchen Flüssigkristallbildschirmen besteht die Hintergrundbeleuchtung aus Mini-LEDs, die in Hunderte bis Tausende Zonen unterteilt sind, und die LEDs der Zonen hinter dunklen Bildbereichen werden gedimmt (Local Dimming). Welche Kombination aus Wirkung und Nachteil dieses Verfahrens trifft zu?",
+    "choices": [
+      "Das Licht tritt aus, ohne Flüssigkristall und Polarisatoren zu durchlaufen, daher entfallen deren Verluste und die Leistungsaufnahme sinkt stark, doch die Reaktion des Flüssigkristalls wird proportional zur Zonenzahl langsamer",
+      "Durch schwarze Pixel dringt weniger Licht, daher steigt der Kontrast stark, doch auch die Zonen um helle Objekte leuchten, und auf dunklem Hintergrund entstehen leicht Lichthöfe (Halos)",
+      "Die LED-Farbe lässt sich je Zone ändern, daher können Farben ohne Farbfilter dargestellt werden, und die größere Pixelöffnung erhöht zudem die Auflösung"
+    ],
+    "explanation": "Ein Flüssigkristall sperrt Licht, indem er die Polarisation über die Spannung steuert, doch auch bei Schwarz dringt durch Polarisatoren und Flüssigkristall etwas Licht; bei gleichmäßig leuchtender Hintergrundbeleuchtung wirkt Schwarz daher gräulich, und das Kontrastverhältnis bleibt bei etwa 1000:1 bis einige 1000:1. Beim Local Dimming werden die LEDs dunkler Zonen gedimmt, sodass das durchdringende Licht selbst abnimmt, Schwarz tiefer wird und der Kontrast stark steigt. Die Zonen sind jedoch viel größer als die Pixel, daher leuchten eine Zone mit einem hellen Objekt und ihre Umgebung, und auf dunklem Hintergrund können Lichthöfe sichtbar werden. Flüssigkristall und Polarisatoren bleiben im Lichtweg, daher entfallen ihre Verluste nicht. Die Farben entstehen weiterhin durch die Farbfilter, daher erhöht eine Farbsteuerung je Zone auch nicht die Auflösung."
+  },
+  "led-display-023": {
+    "question": "Ein Bildschirm mit einer Leuchtdichte von 400 cd/m² für Weiß und 1 cd/m² für Schwarz wird in einem hellen Raum verwendet; durch Reflexion von Umgebungslicht an der Bildschirmoberfläche kommen zu Weiß und Schwarz je 4 cd/m² Leuchtdichte hinzu. Welcher Wert kommt dem Kontrastverhältnis (Leuchtdichte Weiß/Leuchtdichte Schwarz) unter dieser Bedingung am nächsten?",
+    "choices": [
+      "ca. 81:1",
+      "ca. 100:1",
+      "ca. 400:1"
+    ],
+    "explanation": "Das reflektierte Licht kommt zu Weiß und Schwarz in gleichem Maß hinzu, daher beträgt das Kontrastverhältnis (400 + 4)/(1 + 4) = 404/5 ≈ 81. Der Wert ca. 400:1 gilt für einen dunklen Raum und berücksichtigt die Reflexion nicht. Der Wert ca. 100:1 teilt die Leuchtdichte von Weiß nur durch die Leuchtdichte der Reflexion und lässt die Leuchtdichte von Schwarz selbst weg. Auch wenn man im dunklen Raum durch eine niedrige Schwarz-Leuchtdichte ein großes Kontrastverhältnis erreicht, bestimmt im hellen Raum die Reflexion das Schwarz, und das Verhältnis sinkt stark. Deshalb entscheiden Antireflexbehandlungen der Bildschirmoberfläche und Polarisatoren, die Umgebungslicht absorbieren, maßgeblich über die Ablesbarkeit an hellen Orten."
+  },
+  "led-display-024": {
+    "question": "Quantenpunkte (Halbleiterteilchen von einigen nm Durchmesser wie CdSe oder InP) werden als Farbkonversionsmaterial verwendet, das blaues Licht in grünes oder rotes umwandelt. Welche Aussage über den Zusammenhang zwischen Teilchengröße und Emissionsfarbe trifft zu?",
+    "choices": [
+      "Je kleiner das Teilchen, desto weiter breiten sich Elektron und Loch aus, desto enger liegen die Niveaus, und desto länger (röter) ist die Emissionswellenlänge",
+      "Die Emissionsfarbe wird allein durch die Bandlücke des Materials bestimmt; die Teilchengröße beeinflusst nur Helligkeit und Lebensdauer der Emission",
+      "Je kleiner das Teilchen, desto weiter liegen die Niveaus durch den Einschluss auseinander und desto kürzer (blauer) die Emission; dasselbe Material liefert je nach Größe Grün oder Rot"
+    ],
+    "explanation": "Schrumpft ein Teilchen auf etwa die Ausdehnung der Elektronen- und Löcherwellen (den Bohr-Radius), werden die Energieniveaus durch den Quanteneinschluss diskret, und die effektive Bandlücke wird größer als im Volumenmaterial. Je kleiner das Teilchen, desto stärker der Effekt und desto kürzer die Emissionswellenlänge. Bei CdSe leuchten zum Beispiel kleine Teilchen grün, größere rot. Teilchen einheitlicher Größe ergeben ein schmales Emissionsspektrum, was den Farbumfang eines Bildschirms erweitert. Die Annahme, kleinere Teilchen leuchteten röter, kehrt die Wirkung des Einschlusses um. Die Annahme, die Farbe hänge nur vom Material ab, übersieht die Änderung durch den Einschluss."
+  },
+  "led-display-025": {
+    "question": "Wird die Helligkeit einer grünen InGaN-LED über den Strom eingestellt, kann sich das Emissionsmaximum mit steigendem Strom zu kürzeren Wellenlängen verschieben. Welche Kombination aus Hauptgrund und einem Verfahren, die Helligkeit ohne Farbänderung einzustellen, trifft zu?",
+    "choices": [
+      "Mehr Strom senkt die Sperrschichttemperatur und vergrößert die Bandlücke; stufenloses Dimmen über den Strom hält die Sperrschichttemperatur konstant, sodass sich die Farbe nicht ändert",
+      "Injizierte Ladungsträger schirmen das innere Feld der Quantentöpfe ab und schwächen den quantenbeschränkten Stark-Effekt; man verwendet PWM-Dimmen, das bei konstantem Strom den Einschaltanteil ändert",
+      "Mehr Strom lässt hochenergetische Elektronen aus der Auger-Rekombination leuchten; ein Vorwiderstand, der den Strom begrenzt, verhindert eine Farbänderung"
+    ],
+    "explanation": "In InGaN-Quantentöpfen herrscht ein großes, durch Verspannung bedingtes piezoelektrisches Feld, das die Bänder neigt und die Emissionsenergie senkt (quantenbeschränkter Stark-Effekt, QCSE). Mit steigendem Strom schirmen die Ladungsträger in den Töpfen dieses Feld ab, die Neigung der Bänder nimmt ab, und zusammen mit der Bandfüllung verschiebt sich das Emissionsmaximum zu kürzeren Wellenlängen. Bei grünen LEDs mit hohem In-Anteil ist der Effekt groß. Um die Farbe bei veränderter Helligkeit zu halten, verwendet man PWM-Dimmen, bei dem die LED mit konstantem Strom schnell ein- und ausgeschaltet und der Einschaltanteil verändert wird. Mehr Strom erhöht die Sperrschichttemperatur sogar; das verkleinert die Bandlücke und verschiebt die Emission zu längeren Wellenlängen. Ein Vorwiderstand legt nur den Strom fest und kann die stromabhängige Farbverschiebung nicht verhindern."
   }
 }
