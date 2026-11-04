@@ -1533,7 +1533,7 @@ th[aria-sort] .md-sort-i { color: var(--accent); }
 .fm-d { margin-left: auto; font-size: .76rem; color: var(--muted); font-variant-numeric: tabular-nums; overflow-wrap: anywhere; }
 .fm-sym { width: 100%; border-collapse: collapse; font-size: .88rem; }
 .fm-sym th, .fm-sym td { padding: 5px 8px; border-bottom: 1px solid var(--border); text-align: left; vertical-align: top; overflow-wrap: anywhere; }
-.fm-sym thead th { font-size: .78rem; color: var(--muted); font-weight: 600; }
+.fm-sym thead th { font-size: .78rem; color: var(--muted); font-weight: 600; overflow-wrap: normal; hyphens: auto; } /* 見出しは語の途中で切らない(「Símbol/o」にしない)。長い語は言語のハイフネーションで */
 .fm-sym tbody tr:last-child > * { border-bottom: 0; }
 .fm-sym .fm-s { white-space: nowrap; font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif; font-size: 1rem; }
 .fm-sym .fm-u { white-space: nowrap; }
