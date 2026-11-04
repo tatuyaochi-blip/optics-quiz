@@ -8,7 +8,9 @@
 // ---- 数の書き方(言語の小数点。桁区切りは使わない) ----
 let LANG = typeof document !== 'undefined' ? document.documentElement.lang || 'en' : 'en';
 // 見出しのあとのコロンと、箇条書きの印(中国語は全角のコロン、日本語だけ中点)
-const colon = () => (/^zh/.test(LANG) ? '：' : ': ');
+const colon = () => (/^zh/.test(LANG) ? '：' : /^fr/.test(LANG) ? '\u00a0: ' : ': ');
+// 数値と単位の間(フランス語は改行しない空白)
+const usp = () => (/^fr/.test(LANG) ? '\u00a0' : ' ');
 const bullet = () => (/^ja/.test(LANG) ? '・' : '• ');
 export const setLang = l => { LANG = l; };
 const nf = o => new Intl.NumberFormat(LANG, { useGrouping: false, ...o });
@@ -880,11 +882,11 @@ function ui(D) {
     note(T.id, ok);
     if (set) set.results.push({ id: T.id, ok });
     // 判定
-    const ansTxt = `${fs(sol.ans, T.sig)}${sol.unit ? ` ${ulabel(sol.unit)}` : ''}`;
+    const ansTxt = `${fs(sol.ans, T.sig)}${sol.unit ? `${usp()}${ulabel(sol.unit)}` : ''}`;
     verdict.className = `dr-verdict ${ok ? 'ok' : 'ng'}`;
     verdict.replaceChildren(el('span', 'dr-mark', ok ? S.drill_correct : given ? S.drill_shown : S.drill_incorrect),
       el('span', 'dr-ans-line', fmtS('drill_answer_is', { a: ansTxt })),
-      ...(j ? [el('span', 'dr-you', fmtS('drill_you', { a: `${fs(x, 4)}${u ? ` ${ulabel(u)}` : ''}`, e: errTxt(j.err) }))] : []));
+      ...(j ? [el('span', 'dr-you', fmtS('drill_you', { a: `${fs(x, 4)}${u ? `${usp()}${ulabel(u)}` : ''}`, e: errTxt(j.err) }))] : []));
     // 間違いの指摘
     const H = j?.hint;
     let hint = '';
