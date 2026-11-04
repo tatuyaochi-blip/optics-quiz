@@ -268,5 +268,50 @@
       "Ce sont les couples dont le rapport des longueurs d'onde vaut exactement 2 : par exemple, un mélange de lumières à 400 nm et 800 nm interfère dans l'œil et paraît blanc"
     ],
     "explanation": "La chromaticité du mélange de deux lumières se trouve, sur le diagramme, sur le segment qui joint leurs deux points de chromaticité, à une position fixée par le rapport des intensités. Si ce segment passe par le point blanc, on peut choisir les intensités pour que le point du mélange coïncide avec le point blanc. Deux longueurs d'onde situées sur le lieu du spectre de part et d'autre du point blanc sont complémentaires ; le bleu d'environ 480 nm et le jaune d'environ 580 nm en sont un exemple. Le mélange n'est pas fixé par la moyenne ou le rapport des longueurs d'onde, mais par l'addition des composantes trichromatiques données par les fonctions colorimétriques : mélanger 530 nm et 580 nm ne donne qu'un vert-jaune. Des lumières de longueurs d'onde différentes n'interfèrent pas non plus dans l'œil pour produire une couleur. Le vert (environ 495 à 565 nm) n'a pas de complémentaire monochromatique : sa complémentaire est un pourpre."
+  },
+  "photometry-color-031": {
+    "question": "Une puce LED dont la surface émettrice est un carré de 1 mm × 1 mm présente, vue de face, une intensité lumineuse de 1 cd. Si la surface émettrice émet uniformément, quelle valeur est la plus proche de la luminance vue de face ?",
+    "choices": [
+      "Environ 1×10⁶ cd/m²",
+      "Environ 1 cd/m²",
+      "Environ 3,2×10⁵ cd/m²"
+    ],
+    "explanation": "La luminance est l'intensité lumineuse par unité de surface vue depuis la direction d'observation, L = I/A. La surface émettrice vaut A = 1 mm² = 1×10⁻⁶ m², donc L = 1 cd / 1×10⁻⁶ m² = 1×10⁶ cd/m². Environ 1 cd/m² divise par le nombre 1 tel quel, la valeur de la surface en mm². Environ 3,2×10⁵ cd/m² divise en plus par π, en confondant la relation M = πL entre l'exitance lumineuse et la luminance d'une surface parfaitement diffusante avec la relation entre intensité lumineuse et luminance. Alors que la luminance du blanc d'un écran d'ordinateur est de l'ordre de quelques centaines de cd/m², la puce LED est des milliers de fois plus lumineuse, si bien qu'elle éblouit quand on la regarde directement. Dans les luminaires, on agrandit la surface lumineuse avec des diffuseurs, ce qui abaisse la luminance et limite l'éblouissement."
+  },
+  "photometry-color-032": {
+    "question": "Une LED n'émet que dans l'hémisphère avant, avec une intensité lumineuse dans l'axe I₀ = 10 cd et une distribution où l'intensité dans la direction faisant l'angle θ avec l'axe vaut I₀ cosθ (distribution lambertienne). Quelle valeur est la plus proche de son flux lumineux total ?",
+    "choices": [
+      "Environ 126 lm",
+      "Environ 63 lm",
+      "Environ 31 lm"
+    ],
+    "explanation": "Le flux lumineux est l'intégrale de l'intensité lumineuse sur l'angle solide : Φ = ∫ I₀ cosθ dΩ = ∫₀^(π/2) I₀ cosθ · 2π sinθ dθ = πI₀. Pour I₀ = 10 cd, Φ ≈ 31,4 lm, environ 31 lm. Environ 63 lm multiplie par 2π sr, comme si les 10 cd de l'axe étaient émises dans toutes les directions de l'hémisphère, sans tenir compte de la diminution de l'intensité en cosθ dans les directions obliques. Environ 126 lm multiplie par les 4π sr de la sphère entière et ignore en plus que rien n'est émis vers l'arrière. La relation Φ = πI₀ pour une distribution lambertienne a la même forme que la relation M = πL entre l'exitance lumineuse et la luminance d'une surface parfaitement diffusante : toutes deux résultent de l'intégration sur un hémisphère avec la pondération cosθ."
+  },
+  "photometry-color-033": {
+    "question": "Lorsqu'on place côte à côte deux éclairages à LED ayant tous deux une température de couleur proximale de 4000 K, l'un peut paraître légèrement verdâtre et l'autre légèrement pourpre (rosé). Lequel des indicateurs suivants exprime correctement cette différence ?",
+    "choices": [
+      "La distance Duv au lieu des corps noirs sur le diagramme de chromaticité : positive, le point est au-dessus du lieu (vers le vert) ; négative, il est au-dessous (vers le pourpre)",
+      "La différence d'indice de rendu des couleurs Ra : plus Ra est élevé, plus la source paraît verdâtre, et plus il est bas, plus elle paraît pourpre",
+      "Une légère différence de température de couleur proximale : même avec la même indication de 4000 K, la source verdâtre a en réalité une température de couleur plus élevée"
+    ],
+    "explanation": "La température de couleur proximale exprime la chromaticité d'une lumière par la température du point le plus proche du lieu des corps noirs, et n'indique pas à quelle distance du lieu elle se trouve. Les chromaticités de même température de couleur proximale s'alignent sur une ligne d'isotempérature qui coupe le lieu des corps noirs, et peuvent se situer au-dessus (vers le vert) comme au-dessous (vers le pourpre) du lieu. On exprime cet écart par Duv, la distance signée au lieu des corps noirs sur un diagramme de chromaticité uniforme (le diagramme uv CIE 1960). L'indice de rendu des couleurs est un indicateur de la fidélité de reproduction des couleurs des objets éclairés, et n'exprime pas le sens de la teinte de la source elle-même. Une température de couleur plus haute ou plus basse correspond principalement à la direction bleu-rouge, et une différence dans la direction vert-pourpre ne peut pas s'exprimer par la température de couleur. Les spécifications d'éclairage indiquent donc ensemble la température de couleur proximale et Duv."
+  },
+  "photometry-color-034": {
+    "question": "On éclaire un objet qui paraît rouge en lumière blanche (il réfléchit surtout les grandes longueurs d'onde) avec une LED qui n'émet qu'une lumière verte autour de 530 nm. Laquelle des propositions suivantes décrit correctement l'aspect de cet objet ?",
+    "choices": [
+      "La couleur d'un objet est une propriété de l'objet lui-même ; il paraît donc rouge, comme en lumière blanche, quelle que soit la couleur de l'éclairage",
+      "L'objet ne réfléchit presque pas la lumière verte de l'éclairage, si bien qu'il paraît sombre, d'une couleur proche du noir",
+      "La lumière verte de l'éclairage et le rouge réfléchi par l'objet se mélangent par synthèse additive, si bien que l'objet paraît jaune"
+    ],
+    "explanation": "Le spectre de la lumière qui parvient à l'œil depuis un objet est le produit du spectre de l'éclairage par la réflectance spectrale de l'objet. Un objet rouge réfléchit bien les grandes longueurs d'onde et absorbe presque toute la lumière verte ; éclairé uniquement par une lumière autour de 530 nm, il ne réfléchit que très peu de lumière et paraît sombre, presque noir (la faible lumière réfléchie est verte). L'idée qu'il paraît rouge quelle que soit la couleur de l'éclairage suppose à tort que la couleur n'est fixée que par la réflectance ; s'il paraît rouge en lumière blanche, c'est parce que l'éclairage contient une composante rouge. La synthèse additive est la règle qui s'applique quand on superpose des lumières ; une lumière rouge absente de l'éclairage ne peut pas naître de la réflexion pour se mélanger au vert. Avec une source à spectre étroit, la couleur des objets paraît fortement changée : le rendu des couleurs est donc mauvais."
+  },
+  "photometry-color-035": {
+    "question": "Lorsqu'on mesure l'éclairement d'une LED bleue avec un luxmètre étalonné avec la lumière d'une lampe à incandescence (illuminant normalisé A, de température de couleur d'environ 2856 K), l'erreur tend à être plus grande qu'avec une lumière blanche. Laquelle des raisons suivantes l'explique correctement ?",
+    "choices": [
+      "Le luxmètre mesure directement la puissance rayonnée (W/m²) ; pour la lumière bleue de courte longueur d'onde, l'indication est donc plus faible à proportion du plus petit nombre de photons",
+      "La lumière bleue est fortement diffusée par le diffuseur de la tête de mesure du luxmètre et atteint difficilement le détecteur, si bien que l'éclairement affiché est toujours inférieur à la valeur réelle",
+      "La sensibilité spectrale du détecteur ne coïncide pas parfaitement avec V(λ), et l'écart dans la région du bleu, où V(λ) est faible et varie rapidement, devient directement une erreur"
+    ],
+    "explanation": "Le luxmètre rapproche, à l'aide de filtres, la sensibilité spectrale du détecteur de l'efficacité lumineuse relative V(λ), mais la coïncidence n'est pas parfaite. Avec une lumière à spectre large comme l'illuminant A utilisé pour l'étalonnage, les écarts aux différentes longueurs d'onde se moyennent et l'erreur est faible ; avec une lumière à spectre étroit, presque monochromatique, l'écart à cette longueur d'onde apparaît directement comme une erreur. En particulier dans les régions du bleu et du rouge profond, où V(λ) est faible et varie rapidement avec la longueur d'onde, un léger écart de sensibilité donne une grande erreur relative. C'est pourquoi, pour les LED colorées, on mesure le spectre avec un spectroradiomètre et on calcule l'éclairement en le pondérant par V(λ). Le luxmètre est un photomètre qui mesure une grandeur pondérée par V(λ), et non la puissance rayonnée ou le nombre de photons. La diffusion par le diffuseur n'empêche pas non plus le seul bleu d'atteindre le détecteur."
   }
 }

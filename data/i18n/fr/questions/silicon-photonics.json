@@ -268,5 +268,50 @@
       "C'est une structure de plusieurs résonateurs en anneau alignés, qui ne prélève vers le port de dépôt correspondant que la lumière à la longueur d'onde de résonance de chaque anneau"
     ],
     "explanation": "Dans un AWG, la lumière d'entrée est étalée par un guide plan (zone de propagation libre) et répartie entre de nombreux guides (le réseau) dont la longueur diffère d'une quantité constante ΔL. La phase de la lumière à la sortie de chaque guide se décale de 2πn_eff ΔL/λ d'un guide au suivant : dans le guide plan de sortie, le front d'onde s'incline d'un angle qui dépend de la longueur d'onde, et la position du foyer se déplace vers un guide de sortie différent pour chaque longueur d'onde. L'ensemble du réseau de guides agit comme un réseau de diffraction, si bien qu'un seul composant démultiplexe et multiplexe simultanément plusieurs dizaines de canaux. Le réseau de Bragg est un composant qui réfléchit une seule longueur d'onde, et un filtre à résonateurs en anneau alignés relève d'une autre méthode. En silicium, la grande différence d'indice permet de réaliser des AWG plus petits qu'en silice, mais ils sont plus sensibles aux erreurs de phase dues aux variations de largeur des guides."
+  },
+  "silicon-photonics-031": {
+    "question": "Pour un résonateur en anneau en silicium de 10 µm de rayon (indice effectif 2,4, indice de groupe 4,2), quelle valeur est la plus proche de l'ordre m de la résonance proche de 1550 nm (nombre de longueurs d'onde contenues dans le chemin optique d'un tour d'anneau, m = n_eff L/λ, où L est le périmètre) ?",
+    "choices": [
+      "Environ 31",
+      "Environ 170",
+      "Environ 97"
+    ],
+    "explanation": "Le périmètre vaut L = 2πR = 2π × 10 µm ≈ 62,8 µm. La condition de résonance est n_eff L = mλ, d'où m = 2,4 × 62,8 / 1,55 ≈ 97 : la résonance proche de 1550 nm est d'ordre 97 environ. Environ 170 est la valeur calculée avec l'indice de groupe. La longueur d'onde de résonance (la condition de phase) est fixée par l'indice effectif, tandis que l'écart avec la résonance voisine (ISL = λ²/(n_g L)) est fixé par l'indice de groupe, qui tient compte de la variation de l'indice effectif avec la longueur d'onde. Environ 31 utilise le diamètre de 20 µm au lieu du périmètre, qui n'est pas la longueur d'un tour parcouru par la lumière. L'ordre de résonance sert de numéro pour suivre quelle résonance s'est déplacée où quand on change les dimensions ou la température."
+  },
+  "silicon-photonics-032": {
+    "question": "À la longueur d'onde de 1,55 µm, on prend pour augmentation du coefficient d'absorption (en intensité) du silicium lorsque la densité d'électrons augmente de ΔN la valeur Δα ≈ 8,5×10⁻¹⁸ × ΔN cm⁻¹ (ΔN en cm⁻³). Pour ΔN = 1×10¹⁸ cm⁻³, quelle valeur est la plus proche de l'augmentation des pertes de propagation ? (La lumière recouvre uniformément les porteurs dans le guide d'onde.)",
+    "choices": [
+      "Environ 37 dB/cm",
+      "Environ 8,5 dB/cm",
+      "Environ 2,0 dB/cm"
+    ],
+    "explanation": "Δα = 8,5×10⁻¹⁸ × 1×10¹⁸ = 8,5 cm⁻¹. L'intensité décroissant en exp(−αL), la conversion en dB donne 10 log₁₀(e) × α ≈ 4,34 × 8,5 ≈ 37 dB/cm. Environ 8,5 dB/cm lit directement la valeur en cm⁻¹ comme des dB/cm, et environ 2,0 dB/cm divise par 4,34 au lieu de multiplier. Dans les modulateurs à dispersion par porteurs, les porteurs qui modifient l'indice entraînent aussi cette absorption par porteurs libres, si bien que les pertes augmentent en même temps que la variation de phase. C'est pourquoi on limite le dopage aux endroits nécessaires du trajet de la lumière, et l'on équilibre la longueur du modulateur et les pertes. Inversement, on fabrique aussi des atténuateurs optiques variables qui exploitent cette absorption en injectant des porteurs."
+  },
+  "silicon-photonics-033": {
+    "question": "On injecte dans une puce de réception en photonique sur silicium, depuis une fibre monomode ordinaire, un signal dont l'état de polarisation n'est pas défini. Dans un circuit à nanoguides dont les propriétés diffèrent fortement selon la polarisation, laquelle des architectures suivantes permet correctement de recevoir le signal indépendamment de la polarisation ?",
+    "choices": [
+      "On place un polariseur à l'entrée pour ne laisser passer que la polarisation TE ; même en rejetant la composante TM, la perte moyenne n'augmente que de 3 dB et la réception reste stable",
+      "On sépare TE et TM avec un séparateur-rotateur de polarisation, on convertit TM en TE, on traite les deux voies de la même façon et l'on combine les deux résultats à la fin",
+      "Si l'on donne au guide une section carrée de largeur égale à l'épaisseur, la différence de polarisation disparaît dans tous les composants, si bien qu'aucune mesure particulière n'est nécessaire"
+    ],
+    "explanation": "La polarisation de la lumière issue de la fibre varie lentement au cours de la propagation ; si l'on ne laisse passer qu'une polarisation fixe, la composante TE devient presque nulle à certains instants : on ne s'en tire pas avec une perte moyenne de 3 dB, et la puissance reçue fluctue fortement. On sépare donc l'entrée en deux polarisations orthogonales avec un séparateur-rotateur de polarisation (PSR) ou un coupleur à réseau bidimensionnel, on fait tourner l'une pour les amener toutes deux en polarisation TE, et on les traite dans deux voies de même conception (diversité de polarisation). Avec une section carrée, les indices effectifs des deux polarisations d'un guide droit sont égaux, mais les courbures, les coupleurs directionnels et les dispersions de dimensions laissent des différences selon la polarisation ; il est donc difficile de supprimer la dépendance à la polarisation dans tous les composants."
+  },
+  "silicon-photonics-034": {
+    "question": "Dans le spectre de transmission d'un résonateur en anneau en silicium à facteur Q élevé, une résonance apparaît parfois scindée en deux creux légèrement séparés. Laquelle des propositions suivantes donne correctement la cause principale de ce dédoublement ?",
+    "choices": [
+      "Les résonances en polarisation TE et TM se superposent avec un léger décalage ; si l'on fixe la polarisation incidente, le dédoublement disparaît toujours",
+      "L'effet thermique produit par une lumière intense entraîne la résonance vers les grandes longueurs d'onde, et le spectre est déformé en forme de deux creux",
+      "La rétrodiffusion due à la rugosité des parois latérales couple la lumière tournant dans le sens horaire et celle tournant dans le sens antihoraire, et l'on obtient deux modes stationnaires distincts"
+    ],
+    "explanation": "Un anneau possède deux modes progressifs, tournant dans le sens horaire et dans le sens antihoraire, de même longueur d'onde de résonance. Lorsque la rugosité des parois latérales, entre autres, rétrodiffuse une partie de la lumière, les deux modes se couplent et se séparent en modes stationnaires somme et différence, dont les longueurs d'onde de résonance sont légèrement décalées. Lorsque la force du couplage dépasse la largeur de raie de la résonance, le creux de transmission apparaît scindé en deux ; le phénomène est donc marqué dans les anneaux à Q élevé, de largeur de raie étroite. Les résonances TE et TM d'un nanoguide ont des indices effectifs très différents et apparaissent à des longueurs d'onde bien séparées, et non sous forme de deux creux voisins. L'effet thermique déforme la résonance en triangle lorsque la puissance incidente est grande (bistabilité thermo-optique) ; il ne crée pas deux creux et disparaît si l'on réduit la puissance."
+  },
+  "silicon-photonics-035": {
+    "question": "Pour faire fonctionner à plusieurs dizaines de GHz un modulateur de Mach-Zehnder en silicium dont le déphaseur mesure quelques mm de long, on utilise des électrodes à onde progressive. Laquelle des propositions suivantes décrit correctement le principe des électrodes à onde progressive ?",
+    "choices": [
+      "On utilise l'électrode comme ligne de transmission pour propager le signal électrique dans le même sens que la lumière, on accorde les vitesses du signal électrique et de la lumière, et l'on adapte la terminaison pour éviter les réflexions",
+      "On considère l'ensemble de l'électrode comme un seul condensateur et on augmente sa capacité pour stocker davantage de charge, ce qui donne une grande variation de phase en peu de temps",
+      "On propage le signal électrique en sens inverse de la lumière, et l'on modifie la phase deux fois, à l'aller et au retour, ce qui donne une variation de phase double pour la même longueur"
+    ],
+    "explanation": "La longueur d'onde d'un signal électrique de plusieurs dizaines de GHz est d'environ 1 cm dans l'air, comparable à la longueur de l'électrode ; on ne peut donc pas traiter l'électrode entière comme un seul condensateur (élément localisé) à une même tension. Dans le type à onde progressive, l'électrode est une ligne de transmission, et le signal électrique se propage dans le même sens que la lumière, de façon que la lumière continue à voir la même phase du signal électrique en avançant. La bande passante est fixée par la différence entre les vitesses de groupe du signal électrique et de la lumière, par les pertes de l'électrode et par l'adaptation de la terminaison (suppression des réflexions). Augmenter la capacité allonge la constante de temps RC et réduit au contraire la bande passante. Si le signal se propageait en sens inverse de la lumière, le signe de la tension vue par la lumière s'inverserait d'un endroit à l'autre et les effets se compenseraient : on n'obtiendrait presque aucune variation de phase aux hautes fréquences."
   }
 }
