@@ -69,3 +69,4 @@
 - 20:46 (JST) ポルトガル語(ブラジル)のサイトを /pt/ に公開(画面・分野・試験・用語集157語の名前と説明・ツール。サイト名 Sala de Óptica。訳の独立点検で第1段7か所・用語集10か所を直す)。問題・コースはこれから
 - 21:10 (JST) ポルトガル語の問題 第1部を公開(wave・geometric・polarization・laser・fiber・detectors の180問、訳の独立点検で12問を直す。問題ページは noindex)
 - 21:28 (JST) 用語「光束」(luminous flux)を optical-design・spectroscopy・wave の問題でリンクしない(光線の束の意味で11ページが誤ってリンクされていた)。「コヒーレンス長」を nonlinear でリンクしない(位相整合の Lc の意味、2ページ)。全言語に効く
+- 21:32 (JST) ポルトガル語の問題 第2部を公開(measurement・nonlinear・optical-design・photometry-color・silicon-photonics の150問、訳の独立点検で10問を直す)
