@@ -3025,7 +3025,39 @@
   },
   "正常分散": {
     "term": "Dispersión normal",
-    "desc": "Propiedad por la que el índice de refracción disminuye a medida que aumenta la longitud de onda. Se observa en la región de transmisión de los materiales transparentes; dentro de las bandas de absorción se invierte y pasa a ser dispersión anómala."
+    "desc": "Propiedad por la que el índice de refracción disminuye a medida que aumenta la longitud de onda. Se observa en la región de transmisión de los materiales transparentes; dentro de las bandas de absorción se invierte y pasa a ser dispersión anómala.",
+    "about": [
+      {
+        "h": "Mayor índice a longitudes de onda más cortas",
+        "p": "La dispersión normal es la propiedad por la que el índice de refracción disminuye a medida que aumenta la longitud de onda, es decir, dn/dλ < 0. La región de transmisión de un material transparente se sitúa entre las resonancias electrónicas del ultravioleta y las resonancias de las vibraciones reticulares del infrarrojo, y a longitudes de onda más cortas, más cerca de las resonancias del ultravioleta, el índice es mayor y varía más deprisa. En el N-BK7, dn/dλ es de unos −0,050 µm⁻¹ a 550 nm y de unos −0,014 µm⁻¹ a 1 µm. Que un prisma separe la luz blanca y desvíe más el azul, así como la aberración cromática de una lente simple, se deben a esta dispersión normal."
+      },
+      {
+        "h": "Dispersión anómala dentro de las bandas de absorción",
+        "p": "Dentro de una banda de absorción se produce dispersión anómala, en la que el índice de refracción aumenta con la longitud de onda. El índice de refracción y la absorción están ligados por las relaciones de Kramers-Kronig, que se derivan de la causalidad, de modo que una absorción intensa va acompañada de grandes cambios del índice a ambos lados. Dispersión normal es un nombre histórico que refleja lo que se observa habitualmente en los materiales transparentes, y no significa que la dispersión anómala sea un fenómeno físicamente excepcional. Cerca de una banda de absorción la velocidad de grupo puede superar c o incluso hacerse negativa, pero eso no significa que una señal se propague más rápido que c."
+      },
+      {
+        "h": "Otro uso en la dispersión de pulsos",
+        "p": "En el campo de los pulsos ultracortos y de las fibras ópticas, «dispersión normal» se usa con el sentido de dispersión de la velocidad de grupo β₂ > 0 (D < 0 con el parámetro de dispersión de la fibra), es decir, el estado en que las longitudes de onda más largas tienen mayor velocidad de grupo. Es una condición distinta de dn/dλ < 0 y corresponde a la segunda derivada d²n/dλ² > 0. La sílice fundida tiene dn/dλ < 0 en toda su región transparente, pero a longitudes de onda mayores que unos 1,27 µm su dispersión de la velocidad de grupo se vuelve negativa, y la banda de 1,55 µm se denomina de «dispersión anómala». Hay que distinguir por el contexto a cuál de los dos sentidos se refiere."
+      },
+      {
+        "h": "Cómo se trata la dispersión normal en el diseño",
+        "p": "Como la dispersión normal en sí es inevitable, los sistemas ópticos la corrigen con combinaciones que se compensan entre sí. Una lente acromática combina una lente convergente de vidrio crown, de baja dispersión, con una lente divergente de vidrio flint, de alta dispersión, para hacer coincidir el foco de dos longitudes de onda. En los láseres de femtosegundos, los pulsos ensanchados por la dispersión de la velocidad de grupo positiva del vidrio se comprimen aplicando dispersión negativa con pares de prismas, pares de redes o espejos con chirp. En las fibras ópticas, se añade la dispersión de guía de onda para desplazar la longitud de onda de dispersión nula, y se han fabricado fibras con dispersión reducida en la banda de comunicaciones."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la dispersión normal y la anómala?",
+        "a": "La dispersión normal es la propiedad por la que el índice de refracción disminuye al aumentar la longitud de onda, y se observa en la región transparente. La dispersión anómala es lo contrario, el índice aumenta con la longitud de onda, y se produce dentro de las bandas de absorción."
+      },
+      {
+        "q": "¿Qué ocurre con el índice de grupo en la dispersión normal?",
+        "a": "Como dn/dλ < 0, el índice de grupo ng = n − λ dn/dλ es mayor que el índice de refracción n. La envolvente de un pulso o de una modulación avanza a c/ng, más despacio que la velocidad de fase c/n."
+      },
+      {
+        "q": "¿La banda de 1,55 µm de la fibra es de dispersión normal?",
+        "a": "Atendiendo al índice de refracción, es dispersión normal con dn/dλ < 0, pero atendiendo a la dispersión de la velocidad de grupo, la fibra monomodo estándar tiene allí D > 0 y se habla de dispersión anómala. Al tratar la dispersión, conviene comprobar cuál de las dos definiciones se usa."
+      }
+    ]
   },
   "誘電体多層膜ミラー": {
     "term": "Espejo dieléctrico multicapa",
@@ -3034,6 +3066,34 @@
       "espejos dieléctricos multicapa",
       "espejo dieléctrico",
       "espejos dieléctricos"
+    ],
+    "about": [
+      {
+        "h": "Principio del apilamiento λ/4",
+        "p": "Si se apilan de forma alterna capas de índice alto nH y de índice bajo nL, cada una con un espesor óptico de λ₀/4, la luz reflejada en las sucesivas fronteras se desfasa media onda en el recorrido de ida y vuelta, y junto con la inversión de fase en las reflexiones todas se suman en fase. Para una estructura (HL)ᴺH, la reflectancia es R = [(1 − Y)/(1 + Y)]², con Y = (nH/nL)^(2N)·nH²/ns, y cada par adicional multiplica Y por (nH/nL)². Con 11 capas de TiO₂ (2,35) y SiO₂ (1,45) se obtiene alrededor del 99,1 %."
+      },
+      {
+        "h": "Anchura de la banda de alta reflectancia y bandas de orden superior",
+        "p": "La anchura relativa de la banda en la que se obtiene alta reflectancia es Δλ/λ₀ ≈ (4/π) arcsin[(nH − nL)/(nH + nL)], que depende solo de la razón de índices; para TiO₂ y SiO₂ es de unos 0,30. Añadir pares casi no la ensancha, pero aumenta la reflectancia y hace más abruptos los bordes de la banda. También aparecen bandas de alta reflectancia a λ₀/3 y λ₀/5, donde cada capa es un múltiplo impar de λ/4, mientras que a λ₀/2 cada capa se convierte en una capa ausente de media onda y la reflexión casi desaparece."
+      },
+      {
+        "h": "Diferencias con los espejos metálicos y usos",
+        "p": "Los espejos metálicos de aluminio o plata reflejan en un intervalo amplio de longitudes de onda, pero como absorben, su reflectancia se queda en torno al 90-98 % y se calientan a potencias altas. Los espejos dieléctricos multicapa casi no absorben, por lo que se usan como espejos de resonadores láser y en cavidades de alta fineza con reflectancias superiores al 99,99 %. A cambio, la banda de reflexión es limitada, y con incidencia oblicua la banda se desplaza hacia longitudes de onda más cortas y sus características se separan según la polarización, de modo que se diseñan para un ángulo y una polarización de uso determinados."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo cambia la reflectancia al aumentar el número de pares?",
+        "a": "Cada par adicional multiplica Y por (nH/nL)², y la reflectancia se acerca al 100 %. Con TiO₂ y SiO₂, el factor es de unos 2,6 por par. Sin embargo, la anchura de la banda casi no cambia, y la tensión de las capas y las pérdidas por dispersión (scattering) aumentan con el número de capas."
+      },
+      {
+        "q": "¿Qué ocurre con incidencia oblicua?",
+        "a": "El espesor de fase dentro de las capas se reduce en el factor cosθ, por lo que la banda de reflexión se desplaza hacia longitudes de onda más cortas. Además, los índices efectivos difieren para la polarización s y la p, y la banda de la polarización p es más estrecha. Los espejos que se usan a 45° se diseñan para ese ángulo."
+      },
+      {
+        "q": "¿Puede un espejo reflejar dos longitudes de onda a la vez?",
+        "a": "Un apilamiento λ/4 simple solo tiene bandas de alta reflectancia en las fracciones impares de la longitud de onda de diseño, por lo que no puede reflejar a la vez 1064 nm y 532 nm. Esto se consigue con diseños cuyos espesores se apartan de λ/4 o combinando dos apilamientos."
+      }
     ]
   },
   "フッ化カルシウム": {
@@ -3041,6 +3101,38 @@
     "desc": "Cristal de CaF₂. Transmite desde unos 0,13 µm en el ultravioleta de vacío hasta unos 10 µm en el infrarrojo y tiene baja dispersión. Se usa en sistemas ópticos para láseres ultravioleta, en ventanas para el infrarrojo y en objetivos apocromáticos.",
     "aliases": [
       "CaF₂"
+    ],
+    "about": [
+      {
+        "h": "Un cristal transparente desde el ultravioleta de vacío hasta el infrarrojo",
+        "p": "El fluoruro de calcio (CaF₂) es un cristal cúbico que se encuentra en la naturaleza como fluorita; en óptica se usan monocristales crecidos artificialmente. Su gran banda prohibida sitúa el borde de absorción ultravioleta en longitudes de onda cortas, y la absorción de las vibraciones reticulares está en longitudes de onda largas, por lo que transmite desde unos 0,13 µm hasta unos 10 µm. Al ser cúbico, casi no tiene birrefringencia en el visible ni en el infrarrojo, y altera poco la polarización. Su índice de refracción es bajo, de unos 1,434 en la línea d, de modo que la reflexión en una superficie con incidencia normal es de alrededor del 3,2 %, menor que el 4,2 % aproximado del BK7."
+      },
+      {
+        "h": "Baja dispersión y dispersión parcial singular",
+        "p": "El número de Abbe del CaF₂ es grande, de unos 95, por lo que su dispersión es pequeña, y además su razón de dispersión parcial se aparta de la línea que siguen los vidrios ópticos ordinarios. Por ello, combinado con vidrios, facilita hacer coincidir el foco no solo de dos longitudes de onda sino también de una tercera, y se usa en objetivos de microscopio apocromáticos y en las lentes de fluorita que reducen las franjas de color de los teleobjetivos. Los vidrios especiales de baja dispersión que contienen flúor tienen propiedades parecidas y se usan mucho porque son más fáciles de trabajar que el CaF₂, pero sigue habiendo casos en los que el CaF₂ cristalino es ventajoso para corregir la aberración cromática."
+      },
+      {
+        "h": "Láseres ultravioleta y equipos de litografía",
+        "p": "El CaF₂ tiene una alta transmisión en el ultravioleta profundo y su absorción aumenta poco al recibir luz ultravioleta intensa, por lo que se ha usado, junto con la sílice fundida, en los sistemas ópticos de los láseres de excímero de ArF (193 nm) y en las lentes de proyección de los equipos de litografía de semiconductores. Para el láser de F₂ de 157 nm, la sílice fundida ordinaria no transmite lo suficiente, por lo que se estudió el CaF₂ como material principal. Sin embargo, se descubrió que a longitudes de onda tan cortas incluso un cristal cúbico presenta una ligera birrefringencia que depende de la dirección de propagación (birrefringencia intrínseca), y se hicieron necesarios diseños que la compensan combinando orientaciones del cristal."
+      },
+      {
+        "h": "Precauciones de manipulación",
+        "p": "El CaF₂ es blando, con una dureza Knoop de una fracción de la del BK7, por lo que se raya con facilidad y su pulido es laborioso. Su coeficiente de dilatación térmica es de unos 19×10⁻⁶/K, más de 30 veces el de la sílice fundida, de modo que se agrieta fácilmente con los cambios bruscos de temperatura, y además se exfolia con facilidad según los planos {111}. Es ligeramente soluble en agua, pero en un ambiente normal apenas supone un problema. En el infrarrojo se usa en ventanas y lentes de termografía de la banda de 3-5 µm, pero en la banda de 8-12 µm la absorción aumenta, por lo que en esa banda se usan el germanio o el seleniuro de zinc."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿En qué longitudes de onda puede usarse el fluoruro de calcio?",
+        "a": "Con unos pocos mm de espesor, transmite desde unos 0,13 µm en el ultravioleta de vacío hasta unos 10 µm en el infrarrojo. Un solo material cubre los sistemas ópticos para láseres ultravioleta, las ventanas y lentes infrarrojas de la banda de 3-5 µm y los sistemas ópticos acromáticos del visible."
+      },
+      {
+        "q": "¿Qué es una lente de fluorita?",
+        "a": "Es una lente de cristal de fluoruro de calcio. Como su número de Abbe es grande, de unos 95, y su dispersión parcial es singular, corrige bien la aberración cromática. Se usa en objetivos de microscopio y en teleobjetivos para reducir las franjas de color."
+      },
+      {
+        "q": "¿Qué precauciones hay que tener al manipular el fluoruro de calcio?",
+        "a": "Es un material blando que se raya con facilidad y, por su gran dilatación térmica, tiende a agrietarse con los cambios bruscos de temperatura. Al limpiarlo, pegarlo o calentarlo en equipos de vacío, se cambia la temperatura lentamente y se evita frotarlo con fuerza."
+      }
     ]
   },
   "レーザー損傷しきい値": {
@@ -3049,6 +3141,38 @@
     "aliases": [
       "umbral de daño por láser",
       "LIDT"
+    ],
+    "about": [
+      {
+        "h": "Un valor que solo tiene sentido con sus condiciones",
+        "p": "El umbral de daño inducido por láser (LIDT) es la fluencia (J/cm²) o la intensidad a la que un componente óptico o un recubrimiento empieza a dañarse, y varía mucho con la longitud de onda, la duración del pulso, la frecuencia de repetición, el tamaño del haz y el número de disparos. Normalmente, cuanto más corto es el pulso, más bajo es el umbral expresado en fluencia. Por ello, el LIDT se indica junto con sus condiciones, como «tantos J/cm² a 1064 nm, 10 ns y 10 Hz», y los valores obtenidos en condiciones distintas no pueden compararse directamente. Con luz continua, en la que predomina el daño térmico, también se expresa en W/cm (potencia por diámetro del haz) además de en W/cm²."
+      },
+      {
+        "h": "Mecanismos de daño y duración del pulso",
+        "p": "El mecanismo de daño cambia con la duración del pulso. Con luz continua o pulsos largos predomina el daño térmico: los defectos y la suciedad de los recubrimientos o de la superficie absorben la luz, se calientan y se funden o se agrietan. Con pulsos de ns, la distancia que recorre el calor durante el pulso es proporcional a la raíz cuadrada de la duración del pulso, de modo que, como referencia, la fluencia umbral también es proporcional a la raíz cuadrada de la duración del pulso y disminuye cuanto más corto es el pulso. Con pulsos más cortos que un ps, pasan a predominar los mecanismos en los que el propio material se ioniza por absorción multifotónica e ionización por avalancha, y el daño se acerca a un proceso determinista que depende poco de los defectos. Por ello, con pulsos cortos son ventajosos los materiales de banda prohibida grande."
+      },
+      {
+        "h": "Confusión entre fluencia de pico y fluencia media",
+        "p": "Un error frecuente al comparar valores es el tratamiento del tamaño del haz. En un haz gaussiano de radio w a 1/e², la fluencia en el centro es 2E/(πw²), el doble del valor medio que se obtiene dividiendo la energía del pulso E por el área πw². Un pulso de 10 mJ con w = 1 mm da una media de unos 0,32 J/cm² y un valor central de unos 0,64 J/cm². Además, con un haz pequeño disminuye la probabilidad de que la zona iluminada contenga un defecto débil, por lo que el umbral tiende a salir más alto, y lo seguro es usar valores medidos con un haz del mismo tamaño que el de la aplicación o mayor."
+      },
+      {
+        "h": "Métodos de ensayo y margen de diseño",
+        "p": "Los métodos de ensayo del LIDT están definidos en la norma ISO 21254, entre ellos el 1-on-1, con un disparo por punto, y el S-on-1, con muchos disparos en el mismo punto. Se irradian muchos puntos con fluencias distintas, se representa la fracción de puntos dañados frente a la fluencia y se toma como umbral el valor extrapolado a una fracción nula. Con irradiación repetida, el daño suele producirse con valores más bajos que con un solo disparo, y la suciedad de la superficie también reduce mucho el umbral. En el diseño, los valores de catálogo se convierten a las condiciones de uso y, además, se deja un margen de seguridad."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿En qué unidades se expresa el umbral de daño inducido por láser?",
+        "a": "Con luz pulsada se expresa como fluencia (J/cm²), y con luz continua como intensidad (W/cm²) o como potencia por diámetro (W/cm). En todos los casos se indica junto con las condiciones del ensayo, como la longitud de onda y la duración del pulso."
+      },
+      {
+        "q": "¿Cómo se convierten los umbrales entre distintas duraciones de pulso?",
+        "a": "En el intervalo de los ns, en el que el calentamiento es la causa principal, se usa como referencia que la fluencia es proporcional a la raíz cuadrada de la duración del pulso. No sirve para pulsos más cortos que un ps ni para duraciones muy alejadas, por lo que en esas condiciones hay que comprobar valores medidos."
+      },
+      {
+        "q": "¿Por qué cambia el umbral con el tamaño del haz?",
+        "a": "Porque la mayor parte del daño empieza en defectos de los recubrimientos o de la superficie, y si el área iluminada es pequeña disminuye la probabilidad de alcanzar un defecto, con lo que el umbral sale más alto. Los valores medidos con un haz más pequeño que el del uso real tienden a ser optimistas."
+      }
     ]
   },
   "応力複屈折": {
@@ -3057,6 +3181,38 @@
     "aliases": [
       "birrefringencia por tensión",
       "birrefringencia por tensiones"
+    ],
+    "about": [
+      {
+        "h": "La tensión vuelve anisótropo un material isótropo",
+        "p": "Incluso los materiales isótropos, como el vidrio o el plástico, presentan bajo tensión una ligera diferencia de índice de refracción entre la dirección de la tensión y la dirección perpendicular a ella. Esto es la birrefringencia inducida por tensión (fotoelasticidad): la diferencia de índice entre las dos polarizaciones es Δn = Kσ, y la diferencia de camino óptico tras atravesar un espesor d es Δ = Kσd. K es el coeficiente fotoelástico, que se expresa en Pa⁻¹, y 10⁻¹² Pa⁻¹ se denomina 1 brewster. La mayoría de los vidrios ópticos tienen unos pocos brewsters; en un vidrio con K = 2,8×10⁻¹² Pa⁻¹, una tensión de unos 0,18 MPa produce una diferencia de camino óptico de 5 nm por cada cm de espesor."
+      },
+      {
+        "h": "Tensión residual y recocido",
+        "p": "Al enfriarse el vidrio, la diferencia de enfriamiento entre la superficie y el interior deja tensiones. Para reducirlas, el vidrio óptico se somete a un recocido, enfriándolo lentamente desde las proximidades del punto de recocido, y en las especificaciones la birrefringencia debida a la tensión residual se indica como diferencia de camino óptico por cm de espesor (nm/cm). En la notación de los planos de la norma ISO 10110, el valor máximo admitido se especifica en nm/cm, como en 0/5. En los instrumentos que usan la polarización y en los interferómetros se eligen vidrios con un recocido de precisión de unos pocos nm/cm o menos, mientras que en los sistemas de iluminación normalmente no se exige tanto. Como el valor suele diferir entre el centro y el borde de una pieza en bruto, se comprueba en la parte que se va a usar."
+      },
+      {
+        "h": "Cuándo la birrefringencia no deseada es un problema",
+        "p": "La birrefringencia inducida por tensión también aparece durante el uso. Si se aprieta demasiado una lente en su montura o el adhesivo se contrae al curar, las tensiones locales alteran la polarización. En los láseres de alta potencia, la distribución de temperatura causada por la absorción genera tensiones térmicas y se produce birrefringencia inducida térmicamente, que degrada la polarización al mismo tiempo que aparece la lente térmica. Las lentes y los recipientes de plástico moldeados por inyección pueden tener una gran birrefringencia por las tensiones del moldeo y la orientación de las moléculas. En cambio, algunos vidrios flint con mucho plomo (como el SF57) tienen un K casi nulo y se usan en elementos en los que se quiere conservar la polarización."
+      },
+      {
+        "h": "Ver la tensión con luz polarizada",
+        "p": "La birrefringencia inducida por tensión también sirve para ver las tensiones. Si se coloca una muestra entre dos polarizadores cruzados, solo se iluminan las zonas con birrefringencia, y con luz blanca aparecen franjas de colores de interferencia según la diferencia de camino óptico. Los ensayos fotoelásticos aprovechan esto: se aplican cargas a modelos de resina transparente para estudiar la distribución de tensiones dentro de las estructuras. En la inspección del vidrio, la diferencia de camino óptico se mide en nm con métodos de compensación como el de Sénarmont. El patrón de manchas que se ve al mirar una ventana de vidrio templado con gafas de sol polarizadas también es birrefringencia debida a las tensiones que deja el templado."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la diferencia de camino óptico de la birrefringencia inducida por tensión?",
+        "a": "Se obtiene como Δ = Kσd a partir del coeficiente fotoelástico K, la tensión σ y el espesor d. Con K = 2,8×10⁻¹² Pa⁻¹, una tensión de 1 MPa y un espesor de 10 mm, es de unos 28 nm."
+      },
+      {
+        "q": "¿Qué expresa la unidad nm/cm?",
+        "a": "Es la diferencia de camino óptico entre las dos polarizaciones por cm de espesor, y expresa la magnitud de la birrefringencia debida a la tensión residual del vidrio. Una diferencia de camino óptico de 25 nm en un espesor de 5 cm equivale a 5 nm/cm."
+      },
+      {
+        "q": "¿Cómo puede reducirse la birrefringencia inducida por tensión?",
+        "a": "Reduciendo las tensiones: eligiendo vidrio bien recocido, no apretando en exceso las monturas y usando adhesivos que se contraigan poco al curar o sujeciones elásticas. En los elementos en los que la polarización es importante, también se puede elegir un vidrio con un coeficiente fotoelástico pequeño."
+      }
     ]
   },
   "ファイバブラッググレーティング": {
@@ -3064,6 +3220,34 @@
     "desc": "Elemento formado por una estructura periódica del índice de refracción inscrita en el núcleo de una fibra, que refleja solo la luz de la longitud de onda de Bragg λB = 2n_effΛ. Se usa como sensor de deformación y de temperatura y como filtro de longitud de onda.",
     "aliases": [
       "redes de Bragg en fibra"
+    ],
+    "about": [
+      {
+        "h": "Cómo refleja y cómo se inscribe",
+        "p": "En una FBG, el índice de refracción del núcleo varía ligeramente con un periodo Λ, y las débiles reflexiones en cada plano se refuerzan en fase a la longitud de onda para la que la diferencia de camino de ida y vuelta 2n_effΛ es exactamente una longitud de onda. Con n_eff = 1,447 y Λ = 535,6 nm, λB ≈ 1550 nm. El ancho de banda de reflexión es de unos 0,1-1 nm, y las demás longitudes de onda pasan casi sin alterarse. Para inscribirla se usa a menudo luz láser ultravioleta que se hace interferir con una máscara de fase, lo que cambia el índice de refracción del núcleo dopado con germanio."
+      },
+      {
+        "h": "Sensibilidad a la deformación y a la temperatura",
+        "p": "Al estirar la fibra, el periodo se alarga y el efecto fotoelástico reduce ligeramente el índice efectivo, de modo que la longitud de onda de Bragg aumenta en ΔλB = (1 − pe)ελB. Como pe ≈ 0,22, en la banda de 1550 nm esto equivale a unos 1,2 pm/µε. Cuando sube la temperatura, la longitud de onda aumenta unos 10 pm/K por el efecto termoóptico y la dilatación térmica. Como un cambio de 1 K equivale a unos 8 µε, al medir deformaciones se resta la contribución de la temperatura con una FBG de referencia que no está sometida a deformación."
+      },
+      {
+        "h": "Uso como sensor",
+        "p": "Como la FBG mide a través de cambios de longitud de onda, se ve poco afectada por las fluctuaciones de la intensidad de la luz y por las pérdidas de conexión, y además resiste bien el ruido electromagnético. Si se colocan decenas de FBG con distintas longitudes de onda de Bragg en una misma fibra y se leen distinguiéndolas por su longitud de onda de reflexión, pueden medirse simultáneamente deformaciones o temperaturas en muchos puntos. Se usan en la vigilancia de puentes, túneles, alas de aviones e instalaciones eléctricas, y en las comunicaciones ópticas sirven también como filtros de longitud de onda, compensadores de dispersión y espejos de resonador de láseres de fibra."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué sensibilidad a la deformación tiene una FBG?",
+        "a": "En la banda de 1550 nm es de unos 1,2 pm/µε. Una deformación de 500 µε cambia la longitud de onda en unos 0,60 nm. Si la resolución en longitud de onda del equipo de lectura es de 1 pm, pueden detectarse deformaciones de alrededor de 1 µε."
+      },
+      {
+        "q": "¿Cómo se distinguen la temperatura y la deformación?",
+        "a": "Lo básico es colocar cerca una FBG de referencia fijada de modo que no reciba deformación y restar su cambio de longitud de onda como la contribución de la temperatura. También pueden combinarse dos tipos de FBG con sensibilidades a la temperatura distintas y resolver las dos ecuaciones para obtener ambas magnitudes."
+      },
+      {
+        "q": "¿En qué se diferencian las FBG de los sensores distribuidos?",
+        "a": "Una FBG es un sensor puntual que solo mide donde está inscrita (cuasidistribuido si se colocan muchas en fila). Los sensores distribuidos de Raman o de Brillouin pueden medir de forma continua toda la longitud de una fibra sin ningún procesado especial, pero son inferiores a las FBG en resolución espacial y en tiempo de medida."
+      }
     ]
   },
   "分布型光ファイバセンサ": {
@@ -3073,6 +3257,34 @@
       "sensores de fibra óptica distribuidos",
       "sensor distribuido de fibra óptica",
       "sensores distribuidos de fibra óptica"
+    ],
+    "about": [
+      {
+        "h": "Cómo se determina la posición",
+        "p": "En un sensor distribuido se introduce un pulso de luz en la fibra y se registra en función del tiempo la luz dispersada que vuelve. La luz que vuelve un tiempo t después de la entrada se dispersó en la posición z = ct/(2n) (n es el índice de grupo), de modo que se obtiene información de cada posición con la misma idea que en un OTDR. La resolución espacial la fija la anchura del pulso, y es de aproximadamente 1 m para 10 ns. Un solo equipo puede vigilar decenas de km de fibra, y la parte sensora no necesita electricidad."
+      },
+      {
+        "h": "Uso de los tres tipos de dispersión",
+        "p": "En la dispersión Raman, la intensidad de la luz anti-Stokes depende mucho de la temperatura, por lo que la temperatura se mide a partir de su cociente con la luz Stokes (DTS). En la dispersión de Brillouin, el desplazamiento de frecuencia de unos 10,8 GHz en la banda de 1550 nm cambia con la deformación y la temperatura, por lo que se mide la distribución de deformaciones en estructuras (BOTDR y BOTDA). La dispersión de Rayleigh es una dispersión elástica sin cambio de frecuencia, y con un láser de anchura de línea estrecha la fase de la luz dispersada permite captar vibraciones y sonidos (DAS)."
+      },
+      {
+        "h": "Compromiso entre velocidad y distancia",
+        "p": "Cada pulso debe emitirse después de que la luz dispersada del anterior haya vuelto desde el extremo de la fibra, por lo que la frecuencia de repetición está limitada a c/(2nL), unos 2 kHz para 50 km. Como la luz dispersada es débil, obtener con precisión la temperatura o la deformación requiere promediar muchas veces, y la medida tarda más cuanto mayor es la distancia y cuanto más fina es la resolución espacial. Por eso, la anchura del pulso, el número de promedios y el método se eligen según la aplicación."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué distancias pueden medirse?",
+        "a": "Depende del método, pero lo habitual son de 10 a varias decenas de km en el DTS de tipo Raman y decenas de km en los métodos de Brillouin. Las pérdidas de la fibra debilitan la luz dispersada, de modo que, cuanto mayor es la distancia, menor es la precisión de la temperatura o de la deformación."
+      },
+      {
+        "q": "¿Puede usarse una fibra de telecomunicaciones ordinaria?",
+        "a": "Sí. Los métodos de Brillouin y el DAS pueden usar a menudo tal cual la fibra monomodo de telecomunicaciones ya instalada, y en el DTS de tipo Raman se usa con frecuencia fibra multimodo. La forma de fijar la fibra cambia el modo en que le llegan la deformación y las vibraciones."
+      },
+      {
+        "q": "¿Qué es mejor, el método distribuido o una serie de FBG?",
+        "a": "Para medir puntos fijos con gran precisión y rapidez son adecuadas las FBG, y para encontrar en tramos largos anomalías que no se sabe dónde van a ocurrir es adecuado el método distribuido. También se usan ambos combinados."
+      }
     ]
   },
   "分布型温度センサ": {
@@ -3081,6 +3293,38 @@
     "aliases": [
       "sensores distribuidos de temperatura",
       "medición distribuida de temperatura"
+    ],
+    "about": [
+      {
+        "h": "Medir la temperatura con un cociente de intensidades Raman",
+        "p": "El sensor distribuido de temperatura (DTS) introduce pulsos de luz en una fibra y obtiene la temperatura a partir de la luz de dispersión Raman que vuelve hacia atrás. La dispersión Raman de la sílice aparece separada unos 13 THz (unos 440 cm⁻¹) de la luz incidente; en el lado de longitudes de onda largas está la luz Stokes, y en el de cortas, la luz anti-Stokes. La luz anti-Stokes procede de moléculas cuya vibración ya está excitada, por lo que depende mucho de la temperatura a través del factor de Boltzmann exp(−hΔν/kT), que expresa su número. Al tomar el cociente entre ambas se compensan en cierta medida los cambios de la potencia de la fuente y de las pérdidas por curvatura de la fibra."
+      },
+      {
+        "h": "Sensibilidad y resolución espacial típicas",
+        "p": "El coeficiente de temperatura del cociente de intensidades es hΔν/(kT²); con Δν = 13,2 THz es de alrededor del 0,7 %/K a 300 K y de alrededor del 0,45 %/K a 100 °C, y disminuye a temperaturas altas. La luz de dispersión Raman es mucho más débil que la de dispersión de Rayleigh, por lo que se promedian muchas medidas para reducir el ruido, y es frecuente que una medida lleve de segundos a minutos. La posición se determina, como en el OTDR, a partir del tiempo de ida y vuelta, y con una anchura de pulso de 10 ns la resolución en distancia es de aproximadamente 1 m. Para distancias relativamente cortas se usa mucho la fibra multimodo, que recoge más luz, y para distancias largas, la fibra monomodo, de menores pérdidas."
+      },
+      {
+        "h": "Diferencias con el método de Brillouin",
+        "p": "La temperatura distribuida también puede medirse con el desplazamiento de frecuencia de la dispersión de Brillouin. El método de Brillouin es adecuado para distancias largas y también puede medir deformaciones, pero como la frecuencia cambia tanto con la deformación como con la temperatura, cuando solo se quiere conocer la temperatura hay que separar el efecto de la deformación. El DTS de tipo Raman tiene la ventaja de medir la temperatura casi sin influencia de la deformación. Por otra parte, la luz Stokes y la anti-Stokes tienen longitudes de onda muy separadas (unos 200 nm con excitación a 1550 nm) y sufren pérdidas distintas en la fibra, por lo que, para corregir los cambios de esa diferencia, se usa un método en el que la fibra forma un lazo y se mide desde ambos extremos."
+      },
+      {
+        "h": "Dónde se usa",
+        "p": "Como el DTS puede medir de forma continua la distribución de temperatura a lo largo de varios km a decenas de km con una sola fibra, se usa en lugares donde es difícil instalar muchos termómetros puntuales. En los cables eléctricos subterráneos, la temperatura sirve para juzgar el margen de corriente que puede transportarse, y en túneles y edificios grandes se usa para detectar incendios. En los pozos petroleros y geotérmicos, la distribución de temperatura en profundidad permite estudiar la entrada y salida de fluidos, y en presas y diques se buscan los cambios de temperatura debidos a filtraciones. Otra ventaja es que la fibra no conduce la electricidad, por lo que puede usarse en lugares con alta tensión o con riesgo de explosión."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué usa el DTS el cociente entre la luz anti-Stokes y la luz Stokes?",
+        "a": "Porque la luz anti-Stokes depende mucho de la temperatura y la luz Stokes depende poco, de modo que el cociente conserva la información de la temperatura y compensa las fluctuaciones de la potencia de la fuente y de las pérdidas de la fibra."
+      },
+      {
+        "q": "¿Qué determina la resolución espacial del DTS?",
+        "a": "La determinan principalmente la anchura del pulso y el ancho de banda del receptor, y la resolución en distancia es de aproximadamente cτ/(2ng). Con una anchura de pulso de 10 ns y un índice de grupo de 1,468 es de alrededor de 1 m; acortar el pulso mejora la resolución, pero disminuye la luz que vuelve."
+      },
+      {
+        "q": "¿Cómo puede mejorarse la precisión de la temperatura del DTS?",
+        "a": "Lo básico es aumentar el número de promedios: el ruido es inversamente proporcional a la raíz cuadrada del número de promedios, de modo que multiplicar por 4 el tiempo de medida lo reduce aproximadamente a la mitad. También puede hacerse menos fina la resolución espacial para reunir más luz por punto."
+      }
     ]
   },
   "ブリルアン散乱": {
@@ -3088,15 +3332,111 @@
     "desc": "Dispersión de la luz por las ondas acústicas del medio. El desplazamiento de frecuencia es 2nVa/λ, de unos 11 GHz en fibra de sílice en la banda de 1550 nm, y varía con la deformación y la temperatura.",
     "aliases": [
       "dispersión Brillouin"
+    ],
+    "about": [
+      {
+        "h": "Dispersión por ondas acústicas",
+        "p": "La dispersión de Brillouin es la dispersión de la luz por las ondas acústicas (fonones acústicos) que se propagan por un material. La onda acústica crea una variación periódica del índice de refracción que refleja la luz como una red de difracción en movimiento, y como esa red se mueve a la velocidad del sonido, la luz dispersada sufre un desplazamiento de frecuencia por efecto Doppler. El desplazamiento es 2nVa sin(θ/2)/λ, con el ángulo de dispersión θ, y alcanza su máximo, 2nVa/λ, en la retrodispersión (θ = 180°). En la fibra de sílice en la banda de 1550 nm es de unos 11 GHz, un valor mucho menor que el desplazamiento de la dispersión Raman por fonones ópticos (unos 13 THz)."
+      },
+      {
+        "h": "Dispersión de Brillouin estimulada en fibra",
+        "p": "Cuando la luz es intensa, el batido entre la luz incidente y la retrodispersada refuerza la onda acústica por electrostricción, y esa onda acústica dispersa aún más luz, lo que forma una realimentación positiva. Es la dispersión de Brillouin estimulada (SBS). El ancho de banda de ganancia de la fibra de sílice es estrecho, de decenas de MHz, por lo que se produce con facilidad con luz de anchura de línea estrecha. Si en la estimación del umbral 21A_eff/(g_B L_eff) se introducen A_eff = 80 µm², g_B = 5×10⁻¹¹ m/W y una longitud efectiva L_eff ≈ 20 km para 50 km de fibra, se obtienen unos 1,7 mW. En la práctica el umbral puede ser mayor, según el estado de polarización y otros factores, y cuando se supera, la luz retrodispersada aumenta bruscamente y la potencia que llega al otro extremo deja de crecer."
+      },
+      {
+        "h": "Como sensor de deformación y de temperatura",
+        "p": "El desplazamiento de frecuencia lo determinan la velocidad del sonido y el índice de refracción, y ambos cambian con la deformación y la temperatura, de modo que en la fibra de sílice en la banda de 1550 nm varía unos 0,05 MHz/µε con la deformación y alrededor de 1 MHz/K con la temperatura. Es decir, un cambio de temperatura de 1 K desplaza la frecuencia tanto como una deformación de unos 20 µε. Hay métodos como el BOTDR, que mide la dispersión espontánea, y el BOTDA, que introduce luz por ambos extremos y usa la dispersión estimulada, y con ellos puede medirse la distribución de deformaciones a lo largo de decenas de km. Para separar la contribución de la temperatura se usan en paralelo una fibra tendida de modo que no reciba deformación o un sensor de temperatura de tipo Raman."
+      },
+      {
+        "h": "También para caracterizar materiales y como fuente de luz",
+        "p": "Como el desplazamiento de frecuencia de Brillouin refleja directamente la velocidad del sonido, la espectroscopia Brillouin se usa como método óptico y sin contacto para medir los módulos elásticos de los materiales, y avanzan las investigaciones que la usan en microscopios para estudiar la rigidez de células y tejidos biológicos. En las comunicaciones ópticas, la SBS es un fenómeno molesto que limita la potencia que puede transmitirse, y se suprime modulando la fase o la frecuencia de la luz transmitida para ensanchar su anchura de línea. A la inversa, el estrecho ancho de banda de ganancia se aprovecha en láseres de Brillouin de anchura de línea muy estrecha y en filtros de banda estrecha que procesan ópticamente señales de microondas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la dispersión de Brillouin y la dispersión Raman?",
+        "a": "La dispersión de Brillouin se debe a las ondas acústicas (fonones acústicos), con un desplazamiento de unos 11 GHz en la fibra de sílice en la banda de 1550 nm. La dispersión Raman se debe a las vibraciones de las moléculas o de los cristales (fonones ópticos), con un desplazamiento de unos 13 THz en la sílice, más de 1000 veces mayor."
+      },
+      {
+        "q": "¿Cómo se suprime la dispersión de Brillouin estimulada?",
+        "a": "Aplicando al láser una modulación de fase o de frecuencia que ensanche su anchura de línea por encima del ancho de banda de ganancia Brillouin, acortando la fibra o reduciendo la potencia inyectada. En los transmisores de comunicaciones ópticas se usa mucho el ensanchamiento de la anchura de línea por modulación."
+      },
+      {
+        "q": "¿Cómo se separan la deformación y la temperatura en un sensor de Brillouin?",
+        "a": "Como el mismo desplazamiento de frecuencia puede deberse tanto a la deformación como a la temperatura, una sola medida no basta para separarlas. Se separan tendiendo en paralelo una fibra que no reciba deformación para medir solo la parte de la temperatura, o usando además un DTS de tipo Raman."
+      }
     ]
   },
   "分布型音響センシング": {
     "term": "Detección acústica distribuida (DAS)",
-    "desc": "Sistema que detecta vibraciones y sonidos a lo largo de la fibra, posición por posición, a partir de los cambios de fase de la luz retrodispersada por Rayleigh de pulsos de luz de anchura de línea estrecha. Se usa en la observación sísmica y la detección de intrusos."
+    "desc": "Sistema que detecta vibraciones y sonidos a lo largo de la fibra, posición por posición, a partir de los cambios de fase de la luz retrodispersada por Rayleigh de pulsos de luz de anchura de línea estrecha. Se usa en la observación sísmica y la detección de intrusos.",
+    "about": [
+      {
+        "h": "Convertir una fibra en una fila de sensores de vibración",
+        "p": "La detección acústica distribuida (DAS) es un método que introduce en una fibra pulsos de un láser de anchura de línea estrecha y detecta vibraciones y sonidos posición por posición a partir de los cambios de fase de la luz de dispersión de Rayleigh que vuelve hacia atrás. La luz de los muchos puntos de dispersión contenidos en el pulso interfiere entre sí y forma una señal con un patrón fijo para cada posición. Cuando la fibra se estira o se contrae ligeramente, cambia la longitud del camino óptico de ese tramo y, con ella, la fase; así, si se envían pulsos de forma repetida y se sigue la fase en cada posición, decenas de km de fibra funcionan como miles de sensores de vibración. Una gran ventaja es que puede usarse tal cual la fibra tendida para telecomunicaciones."
+      },
+      {
+        "h": "Sensibilidad y frecuencias medibles",
+        "p": "Como la fase lee los cambios de longitud del camino óptico en unidades de la longitud de onda, es extremadamente sensible. Con una longitud del tramo en el que se comparan las fases (longitud de galga, gauge length) de 10 m y una longitud de onda de 1550 nm, una deformación de 1 nε (10⁻⁹) cambia la fase unos 0,09 rad, incluida la corrección fotoelástica. La frecuencia de vibración que puede medirse la fija la repetición de los pulsos. Como cada pulso se envía después de que haya vuelto la luz dispersada del anterior, con 10 km de fibra (índice de grupo 1,468) la repetición es como máximo de unos 10 kHz, y pueden medirse vibraciones hasta la mitad, unos 5 kHz. Cuanto más larga es la fibra, más bajo es el límite superior de la frecuencia medible."
+      },
+      {
+        "h": "Diferencias con un micrófono",
+        "p": "Lo que detecta el DAS es la deformación a lo largo del eje de la fibra (o su variación temporal), no la presión acústica del aire en sí. Por ello es sensible a las ondas que estiran y contraen la fibra a lo largo de su longitud, pero apenas responde a las ondas longitudinales que llegan en dirección perpendicular a la fibra. Además, la intensidad de la luz de dispersión de Rayleigh se debilita al azar en algunas posiciones (desvanecimiento o fading), donde la fase no puede leerse correctamente, por lo que se recurre a soluciones como usar varios pulsos de frecuencias distintas. Alargar la longitud de galga aumenta la sensibilidad, pero empeora la resolución espacial."
+      },
+      {
+        "h": "Dónde se usa",
+        "p": "El DAS se usa en la observación sísmica y en la exploración de la estructura del subsuelo mediante pozos (VSP), y avanzan las investigaciones que usan cables submarinos de telecomunicaciones para observar terremotos y olas en el fondo marino. En tierra, también se usa para detectar intrusiones o excavaciones alrededor de oleoductos e instalaciones y para vigilar el tráfico de carreteras y ferrocarriles. Mientras que el DTS de tipo Raman mide la temperatura y los métodos de Brillouin miden distribuciones de deformación y temperatura que varían lentamente, el DAS mide vibraciones que cambian deprisa, y a veces se combinan estos métodos en una misma fibra."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el DAS y el DTS?",
+        "a": "El DAS mide a lo largo de la fibra vibraciones y sonidos a partir de los cambios de fase de la luz de dispersión de Rayleigh, y el DTS mide la temperatura a partir del cociente de intensidades de la luz de dispersión Raman. El DAS es adecuado para cambios rápidos, de Hz a kHz, y el DTS, para temperaturas que varían lentamente, en escalas de segundos a minutos."
+      },
+      {
+        "q": "¿Qué longitud de fibra puede medir el DAS?",
+        "a": "Lo habitual son unas decenas de km, y en investigación se han medido distancias de más de 100 km con amplificación óptica. Cuanto más larga es la fibra, más lenta es la repetición de los pulsos y más bajo es el límite superior de la frecuencia de vibración medible."
+      },
+      {
+        "q": "¿Qué determina la resolución espacial del DAS?",
+        "a": "La determinan la anchura del pulso y la longitud del tramo en el que se comparan las fases (la longitud de galga), y suele ir de unos pocos m a decenas de m. Alargar la longitud de galga aumenta la sensibilidad, pero dificulta distinguir diferencias finas de posición."
+      }
+    ]
   },
   "FMCW": {
     "term": "FMCW",
-    "desc": "Método que emite luz continua con un barrido lineal de frecuencia y obtiene la distancia a partir de la frecuencia de batido con la luz que regresa, y la velocidad a partir del desplazamiento Doppler. La resolución en distancia es c/(2B)."
+    "desc": "Método que emite luz continua con un barrido lineal de frecuencia y obtiene la distancia a partir de la frecuencia de batido con la luz que regresa, y la velocidad a partir del desplazamiento Doppler. La resolución en distancia es c/(2B).",
+    "about": [
+      {
+        "h": "Convertir el tiempo en frecuencia mediante el barrido",
+        "p": "El FMCW (onda continua modulada en frecuencia) es un método que emite luz continua cuya frecuencia se barre linealmente en el tiempo y hace interferir la luz que regresa con una parte de la luz emitida. La luz que regresa tiene la frecuencia que se emitía un tiempo de ida y vuelta τ = 2R/c antes, de modo que, si la pendiente del barrido es S, la frecuencia de batido es f_b = Sτ, proporcional a la distancia R. Por ejemplo, si se barren 4 GHz en 20 µs, el batido procedente de un objeto situado a 150 m es de unos 200 MHz. Su ventaja es que la distancia se obtiene midiendo una frecuencia de batido del orden de los MHz, sin necesidad de medir tiempos del orden de los ps."
+      },
+      {
+        "h": "Resolución y límites de la distancia medible",
+        "p": "La resolución en distancia la fija el ancho de banda del barrido B, y es ΔR = c/(2B). Con un barrido de 4 GHz es de unos 3,7 cm, y no depende del tiempo de barrido. En la práctica, si el barrido se aparta de la linealidad, la frecuencia de batido se ensancha y la resolución empeora, por lo que son importantes las técnicas que corrigen la linealidad del barrido. Además, cuando el tiempo de ida y vuelta se acerca al tiempo de coherencia del láser, la anchura de línea del batido se ensancha, de modo que la distancia medible también está limitada por la anchura de línea del láser. Con un láser de anchura de línea lorentziana de 100 kHz, la longitud de coherencia c/(πΔν) es de unos 950 m."
+      },
+      {
+        "h": "Medir también la velocidad",
+        "p": "Si el objeto se mueve, a la luz que regresa se le suma un desplazamiento Doppler f_D = 2v/λ (v es la velocidad en la dirección de la línea de visión), que a 1550 nm es de unos 12,9 MHz para 10 m/s. Un método frecuente alterna barridos de frecuencia ascendente y descendente, y separa la distancia a partir de la media de las dos frecuencias de batido y la velocidad a partir de su diferencia. Para conocer la velocidad con el método ToF, que mide el tiempo de ida y vuelta de los pulsos, hay que derivar respecto al tiempo el cambio de posición, mientras que con el FMCW la velocidad en la línea de visión se conoce directamente en una sola medida, lo que ayuda al LiDAR de la conducción autónoma a distinguir los objetos en movimiento."
+      },
+      {
+        "h": "El mismo principio fuera del LiDAR",
+        "p": "La idea de barrer la frecuencia y obtener la distancia a partir del batido se ha usado ampliamente desde hace tiempo en el radar; con luz es más fácil disponer de un ancho de banda de barrido grande, lo que da una resolución alta. En la inspección de fibras ópticas y componentes ópticos, el OFDR (reflectometría óptica en el dominio de la frecuencia), basado en el mismo principio, mide la posición de las reflexiones con una resolución inferior al mm. La OCT con fuentes de barrido de longitud de onda también tiene el mismo mecanismo que el FMCW, en el sentido de que obtiene la profundidad a partir de la interferencia de la luz barrida. El FMCW óptico usa detección coherente, por lo que resiste bien la luz de fondo, pero necesita una fuente de anchura de línea estrecha y un barrido preciso."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la resolución en distancia del FMCW?",
+        "a": "Se obtiene a partir del ancho de banda del barrido B como ΔR = c/(2B). Con B = 4 GHz es de unos 3,7 cm, y si se duplica el ancho de banda se reduce a la mitad. No depende del tiempo que dura el barrido."
+      },
+      {
+        "q": "¿Qué diferencia hay entre el FMCW y el ToF?",
+        "a": "El ToF emite pulsos y mide directamente el tiempo de ida y vuelta, mientras que el FMCW obtiene la distancia a partir de la frecuencia de batido de luz continua con barrido de frecuencia. El FMCW detecta por interferencia, por lo que resiste bien la luz de fondo y también mide la velocidad, pero necesita un láser de anchura de línea estrecha que pueda barrerse."
+      },
+      {
+        "q": "¿Cómo se obtiene la distancia a partir de la frecuencia de batido?",
+        "a": "Si la pendiente del barrido es S (ancho de banda dividido por el tiempo de barrido), R = c f_b/(2S). Cuando se barren 4 GHz en 20 µs, un batido de 200 MHz corresponde a una distancia de unos 150 m."
+      }
+    ]
   },
   "光学式エンコーダ": {
     "term": "Codificador óptico",
@@ -3105,6 +3445,38 @@
       "codificadores ópticos",
       "encoder óptico",
       "encoders ópticos"
+    ],
+    "about": [
+      {
+        "h": "Contar con luz una escala graduada",
+        "p": "Un codificador óptico es un sensor que lee con una fuente de luz y fotodetectores una escala o un disco con graduaciones claras y oscuras, y obtiene a partir de ese patrón la posición o el ángulo de giro. Los de tipo transmisivo reciben la luz que atraviesa las graduaciones, y los de tipo reflexivo, la luz que se refleja en ellas. Los incrementales cuentan una señal periódica producida por el movimiento para obtener la posición relativa, y los absolutos llevan escrito en la escala un código que representa la posición, de modo que la posición absoluta se conoce nada más encender el equipo. Se usan mucho en máquinas herramienta, en equipos de fabricación de semiconductores y en el control del giro de motores."
+      },
+      {
+        "h": "Fases A y B e interpolación",
+        "p": "En un codificador incremental, dos zonas de detección desplazadas un cuarto de periodo dan las señales de fase A y fase B, desfasadas 90°. Cuál de las dos cambia primero indica el sentido, y si se cuentan los flancos de subida y de bajada de ambas, cada periodo se divide en cuatro (cuadruplicación, ×4). En los codificadores que dan señales casi sinusoidales, las fases A y B se tratan como seno y coseno, se obtiene la fase con el arco tangente y se interpola para subdividir finamente cada periodo. Si un periodo de 20 µm se divide en 1000, la resolución es de 20 nm. Sin embargo, la precisión de la interpolación depende de los errores de amplitud, de offset y de diferencia de fase de las señales."
+      },
+      {
+        "h": "Resolución y exactitud no son lo mismo",
+        "p": "La resolución del catálogo es el tamaño de una cuenta, y no es lo mismo que la exactitud, que expresa lo correcta que es la posición. En la exactitud influyen los errores de separación de las graduaciones, la inclinación y la excentricidad del montaje y los errores de interpolación, y los cambios de temperatura también tienen un gran efecto. Por ejemplo, si el coeficiente de dilatación térmica de una escala de vidrio es de 8×10⁻⁶/K, una longitud de 1 m se alarga unos 8 µm por cada 1 K de cambio. Por ello, en los equipos de precisión se eligen escalas de un material cuyo coeficiente de dilatación coincida con el de la máquina, o se controla la temperatura. En los de tipo rotatorio, la excentricidad del disco es una causa importante de error angular."
+      },
+      {
+        "h": "Velocidad de respuesta y formas de medir aún más fino",
+        "p": "La frecuencia de la señal la fija el producto del número de graduaciones por la velocidad del movimiento. Un disco de 2500 líneas por vuelta que gira a 3000 rpm da una fase A de 125 kHz, y los fotodetectores y los circuitos necesitan un ancho de banda suficiente para seguirla. Para medir aún más fino existen los codificadores interferométricos, que hacen interferir entre sí los haces difractados por la red y combinan redes de periodo del orden del µm con la interpolación para alcanzar resoluciones inferiores al nm. Como el camino óptico es corto y apenas lo afectan las fluctuaciones del aire, también se usan en lugar de los interferómetros láser, por ejemplo para posicionar las platinas de los equipos de litografía."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre un codificador incremental y uno absoluto?",
+        "a": "El incremental cuenta los pulsos producidos por el movimiento para obtener la posición relativa respecto a un origen, por lo que al encender el equipo hay que volver a establecer el origen. El absoluto lee la posición directamente del código de la escala, por lo que la posición se conoce nada más encenderlo."
+      },
+      {
+        "q": "¿Qué es la cuadruplicación (×4) en un codificador?",
+        "a": "Consiste en contar todos los flancos de subida y de bajada de las fases A y B, desfasadas 90°, y dividir cada periodo en cuatro cuentas. Con un disco de 1000 líneas por vuelta se obtienen 4000 cuentas por vuelta, es decir, 0,09° por cuenta."
+      },
+      {
+        "q": "¿Qué es la fase Z?",
+        "a": "Es una señal de origen que se emite una sola vez por vuelta, o una sola vez en una posición determinada. En los codificadores incrementales se usa para establecer el origen después de encender el equipo y para comprobar que no se han perdido cuentas."
+      }
     ]
   },
   "レーザードップラー速度計": {
@@ -3113,6 +3485,38 @@
     "aliases": [
       "velocimetría láser Doppler",
       "anemometría láser Doppler"
+    ],
+    "about": [
+      {
+        "h": "Partículas que parpadean al cruzar las franjas",
+        "p": "El velocímetro láser Doppler (LDV) de tipo diferencial divide un haz láser en dos y los cruza con un ángulo θ, de modo que en la zona de cruce se forman franjas de interferencia con una separación d = λ/(2 sin(θ/2)). Cuando una partícula arrastrada por el flujo cruza las franjas, la intensidad de la luz que dispersa sube y baja de forma repetida, y a partir de esa frecuencia f = v/d se obtiene la componente de la velocidad perpendicular a las franjas. Con una longitud de onda de 633 nm y un ángulo de cruce de 6°, la separación de las franjas es de unos 6,05 µm, y una partícula a 10 m/s da una señal de unos 1,65 MHz. Si se calcula como la diferencia entre los desplazamientos Doppler de los dos haces, se obtiene el mismo resultado."
+      },
+      {
+        "h": "Volumen de medida y señal",
+        "p": "Solo se mide la pequeña región en la que se cruzan los dos haces (el volumen de medida). Su tamaño lo determinan el diámetro de los haces enfocados y el ángulo de cruce; una región de 100 µm de anchura con una separación de franjas de 6 µm contiene unas 16 franjas. Cada vez que pasa una partícula se obtiene una señal corta (una ráfaga, burst) con envolvente gaussiana, cuya frecuencia se obtiene con la FFT u otros métodos. En la medida de flujos se añaden al fluido partículas pequeñas, del orden del µm, y se supone que siguen bien el flujo. Si las partículas son demasiado grandes, se retrasan respecto a los flujos que cambian deprisa."
+      },
+      {
+        "h": "Determinación del sentido y varias componentes",
+        "p": "En una disposición sin desplazamiento de frecuencia, la frecuencia de la señal depende solo del módulo de la velocidad, y no se conoce el sentido. Por ello, se desplaza la frecuencia de uno de los haces unas decenas de MHz con un dispositivo acustoóptico para que las franjas se muevan, y así pueden medirse el sentido y también la velocidad de partículas casi inmóviles. Un par de haces solo mide una componente de la velocidad, por lo que para medir dos o tres componentes se cruzan varios pares de haces de distintas longitudes de onda en orientaciones distintas. También existe la anemometría de fase Doppler (PDA), que mide al mismo tiempo el tamaño de las partículas a partir de la diferencia de fase de la luz dispersada."
+      },
+      {
+        "h": "De la medida de flujos a la medida de vibraciones",
+        "p": "Como el LDV mide sin perturbar el flujo, se usa para medir velocidades en lugares donde no pueden introducirse sondas, como en experimentos en túneles de viento y tanques de agua, en cámaras de combustión de motores o en flujos dentro de tuberías. Como la velocidad se obtiene de la separación de las franjas, determinada por la longitud de onda y el ángulo de cruce, puede medirse sin calibración un intervalo amplio, desde flujos lentos hasta supersónicos. El vibrómetro láser, que mide la vibración de la superficie de un objeto, es una disposición distinta que dirige un solo haz a la superficie y mide por interferencia el desplazamiento Doppler 2v/λ de la luz reflejada, y se distingue del velocímetro diferencial. En medicina también hay métodos que evalúan el flujo sanguíneo de la piel a partir del ensanchamiento en frecuencia de la luz dispersada."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la velocidad con un LDV?",
+        "a": "Se multiplica la separación de las franjas d = λ/(2 sin(θ/2)) por la frecuencia de la señal f, de modo que v = fd. Con una separación de franjas de 6,05 µm y una señal de 1,65 MHz, la velocidad es de unos 10 m/s."
+      },
+      {
+        "q": "¿Necesita calibración el LDV?",
+        "a": "Como la velocidad se obtiene de la separación de las franjas, que depende solo de la longitud de onda y del ángulo de cruce, en principio no requiere una calibración de velocidad como la de un anemómetro de hilo caliente. Sin embargo, hay que medir con exactitud el ángulo de cruce y comprobar que los dos haces se superponen bien en el volumen de medida."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un LDV y un vibrómetro láser?",
+        "a": "El LDV diferencial mide la velocidad de un flujo a partir de la frecuencia con la que las partículas cruzan las franjas de interferencia de dos haces. El vibrómetro láser dirige un solo haz a un objeto y mide el desplazamiento Doppler de la luz reflejada por interferencia con un haz de referencia, para obtener la velocidad de vibración de la superficie."
+      }
     ]
   },
   "空間周波数": {
@@ -3120,6 +3524,38 @@
     "desc": "Número de veces que se repiten las franjas claras y oscuras por unidad de longitud; es la inversa del periodo. Se expresa en ciclos/mm y sirve para comparar el nivel de detalle de las imágenes y el rendimiento de las lentes.",
     "aliases": [
       "frecuencias espaciales"
+    ],
+    "about": [
+      {
+        "h": "Considerar las imágenes como sumas de franjas",
+        "p": "La frecuencia espacial es el número de veces que se repiten las franjas claras y oscuras por unidad de longitud, y es la inversa del periodo. La óptica de Fourier trata cualquier imagen como una superposición de franjas sinusoidales de distintas frecuencias espaciales y orientaciones. Las frecuencias espaciales bajas llevan la distribución general de la luminosidad y las formas grandes, y las frecuencias espaciales altas, los contornos y los detalles finos. Con la misma idea con la que se descompone una señal temporal en componentes de frecuencia, las lentes y los sensores de imagen pueden evaluarse como filtros, según cuánto dejan pasar de cada frecuencia espacial."
+      },
+      {
+        "h": "Unidades y conversiones",
+        "p": "La frecuencia espacial se expresa en ciclos/mm, y lp/mm (pares de líneas por mm), que cuenta una línea clara y una oscura como un ciclo, significa lo mismo. En cambio, las líneas de TV que se usan en vídeo cuentan por separado las líneas claras y las oscuras y se expresan por altura de imagen, por lo que es fácil confundirlas. Cuando se piensa en ángulos, como en el rendimiento del ojo, se usan ciclos/grado: las franjas de 1 minuto de arco de anchura que distingue un ojo con agudeza visual 1,0 tienen un periodo de 2 minutos de arco y corresponden, por tanto, a 30 ciclos/grado. También es importante no confundirla con la frecuencia espacial angular (rad/mm), multiplicada por 2π."
+      },
+      {
+        "h": "Ángulos de difracción y posiciones en el plano de Fourier",
+        "p": "Cuando una luz coherente colimada incide sobre una red sinusoidal de frecuencia espacial ν, la luz se difracta en la dirección sinθ = λν. Cuanto más fina es la estructura, mayor es el ángulo al que desvía la luz, por lo que el intervalo de ángulos que puede recoger una lente, es decir, su apertura numérica, determina hasta qué frecuencia espacial puede llevarse a la imagen. En el plano focal posterior de una lente de distancia focal f, la componente ν se concentra a una distancia λfν del eje; con f = 100 mm, una longitud de onda de 633 nm y 50 ciclos/mm, es de unos 3,2 mm. Seleccionando o bloqueando componentes en este plano pueden manipularse directamente las frecuencias espaciales de la imagen."
+      },
+      {
+        "h": "Evaluación de lentes y sensores de imagen",
+        "p": "La MTF, que expresa el rendimiento de una lente, describe cómo se transmite el contraste en cada frecuencia espacial. Con iluminación incoherente, el contraste de una lente sin aberraciones se anula en el lado de la imagen a 1/(λN) (N es el número f), que para F2,8 y una longitud de onda de 0,55 µm es de unos 650 ciclos/mm. Un sensor de imagen no puede representar las componentes por encima de la frecuencia de Nyquist 1/(2p), fijada por el paso de píxel p, y las que la superan se pliegan y aparecen como moiré. Al comparar la resolución de cámaras, se consideran la MTF de la lente y la frecuencia de Nyquist del sensor sobre el mismo eje de frecuencia espacial."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿En qué unidades se expresa la frecuencia espacial?",
+        "a": "Se usan mucho los ciclos/mm (lp/mm). Unas franjas de 10 µm de periodo tienen 100 ciclos/mm. Para el rendimiento del ojo o en sistemas de campo amplio se usan ciclos/grado, y en las fórmulas de la óptica de Fourier también se expresa en mm⁻¹ o µm⁻¹."
+      },
+      {
+        "q": "¿Qué diferencia hay entre lp/mm y las líneas de TV?",
+        "a": "Los lp/mm cuentan como una unidad un par formado por una línea clara y una oscura, mientras que las líneas de TV cuentan por separado las líneas claras y las oscuras. Por ello, para las mismas franjas el valor en líneas de TV es aproximadamente el doble, y además se diferencian en que se cuentan por altura de imagen."
+      },
+      {
+        "q": "¿Qué relación hay entre la frecuencia espacial y la resolución?",
+        "a": "La resolución la determina la frecuencia espacial más alta que puede transmitirse a la imagen. Un sistema óptico no puede transmitir frecuencias por encima del corte fijado por su apertura numérica, por lo que las estructuras más finas no aparecen en la imagen."
+      }
     ]
   },
   "4f系": {
@@ -3127,6 +3563,38 @@
     "desc": "Sistema de formación de imagen con dos lentes de distancias focales f₁ y f₂ separadas f₁ + f₂, con una longitud total de 2f₁ + 2f₂. Entre ellas se forma un plano de Fourier, y el aumento es −f₂/f₁.",
     "aliases": [
       "sistemas 4f"
+    ],
+    "about": [
+      {
+        "h": "Formación de imagen mediante dos transformadas de Fourier",
+        "p": "Un sistema 4f coloca el objeto en el plano focal anterior de una lente de distancia focal f₁ y, a una separación f₁ + f₂, una lente de distancia focal f₂. La primera lente forma la transformada de Fourier del objeto en su plano focal posterior, y la segunda la vuelve a transformar y forma la imagen en su propio plano focal posterior. Dos transformadas de Fourier invierten las coordenadas, por lo que la imagen es invertida y el aumento es −f₂/f₁. El nombre se debe a que, cuando f₁ = f₂ = f, la longitud total del objeto a la imagen es 4f."
+      },
+      {
+        "h": "Una propiedad: telecentricidad en ambos lados",
+        "p": "Si se coloca un diafragma en el plano focal común de las dos lentes, ese diafragma queda en el infinito tanto visto desde el lado del objeto como desde el de la imagen, y el sistema es telecéntrico en ambos lados, con los rayos principales paralelos al eje a uno y otro lado. Por ello, el aumento no cambia aunque el plano del objeto o el de la imagen se desplacen ligeramente hacia delante o hacia atrás, y es la forma básica de las lentes para medir dimensiones mediante imágenes. Este sistema es además afocal, de modo que si entra luz colimada sale luz colimada; tiene la misma disposición que un expansor de haz de tipo Kepler y multiplica el diámetro del haz por f₂/f₁."
+      },
+      {
+        "h": "La abertura en el plano de Fourier fija la resolución",
+        "p": "En el plano focal común (el plano de Fourier), la componente de frecuencia espacial ν del objeto se sitúa a una distancia λf₁ν del eje. Si aquí se coloca un diafragma de radio r, la frecuencia espacial más alta que pasa es r/(λf₁), que con f₁ = 100 mm, una longitud de onda de 633 nm y r = 1 mm es de unos 16 ciclos/mm. Es decir, el tamaño de la abertura en el plano de Fourier fija directamente el límite superior del detalle de la imagen. Con iluminación coherente, las componentes de frecuencia de la imagen son la amplitud en el plano de Fourier multiplicada por la transmitancia del filtro, de modo que con diafragmas, máscaras opacas y placas de fase puede procesarse la imagen según lo diseñado."
+      },
+      {
+        "h": "Dónde se usan los sistemas 4f",
+        "p": "Los sistemas 4f se han usado para procesar imágenes con filtros espaciales y en correladores ópticos que colocan un filtro de referencia en el plano de Fourier para comprobar si las formas coinciden. En los microscopios de barrido se usan como sistemas de relé que forman la imagen del espejo galvanométrico sobre la pupila del objetivo, de modo que el haz no se aparta del centro de la pupila aunque el espejo oscile. En la conformación de pulsos ultracortos, una red de difracción y una lente extienden las componentes de cada longitud de onda sobre el plano de Fourier, un modulador espacial de luz colocado allí cambia su fase o su amplitud, y luego se vuelven a reunir."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se determina el aumento de un sistema 4f?",
+        "a": "El aumento lateral es −f₂/f₁, y el signo negativo indica que la imagen es invertida. Con f₁ = 50 mm y f₂ = 150 mm, el aumento es −3 y la longitud total es 2f₁ + 2f₂ = 400 mm."
+      },
+      {
+        "q": "¿Por qué en un sistema 4f se coloca el objeto en el plano focal anterior?",
+        "a": "Porque así se forma en el plano focal posterior de la primera lente una transformada de Fourier exacta, sin factores de fase adicionales. Esto facilita manipular las componentes de frecuencia espacial, y la imagen se forma en el plano focal posterior de la segunda lente."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un sistema 4f y un expansor de haz?",
+        "a": "La disposición es la misma: dos lentes convergentes con los focos coincidentes. El sistema 4f coloca un objeto en el plano focal anterior y usa la imagen y el plano de Fourier, mientras que el expansor de haz se usa para multiplicar por f₂/f₁ el diámetro de un haz colimado."
+      }
     ]
   },
   "空間フィルタ": {
@@ -3135,23 +3603,179 @@
     "aliases": [
       "filtros espaciales",
       "filtrado espacial"
+    ],
+    "about": [
+      {
+        "h": "Seleccionar componentes en el plano de Fourier",
+        "p": "Un filtro espacial es un método que coloca en el plano de Fourier de una lente una pantalla opaca, un pinhole, una rendija, una placa de fase u otro elemento para seleccionar qué componentes de frecuencia espacial del objeto pasan. Si solo se dejan pasar las frecuencias bajas del centro, se eliminan las estructuras finas y se obtiene una imagen suave; si se bloquea el centro, resaltan los contornos y los arañazos finos. Si solo se bloquean las componentes de un patrón periódico, pueden eliminarse de la imagen patrones regulares como los puntos de trama de la impresión o las líneas de barrido. Con iluminación coherente, las componentes de la imagen son la amplitud en el plano de Fourier multiplicada por la transmitancia del filtro, por lo que el efecto puede predecirse por cálculo."
+      },
+      {
+        "h": "Limpieza de haces láser",
+        "p": "El uso más frecuente es el filtro espacial de pinhole, que elimina las irregularidades de un haz láser. Alrededor del punto que se forma en el foco de una lente de enfoque se extienden las componentes perturbadas debidas a la suciedad o a los arañazos de las lentes, y un pinhole algo mayor que el punto las bloquea. En un haz gaussiano, si el diámetro del pinhole es igual al diámetro a 1/e² del punto pasa alrededor del 86 % de la luz, y si es 1,5 veces mayor, alrededor del 99 %. Con una distancia focal de 25 mm, un diámetro de haz de 1 mm y una longitud de onda de 633 nm, el diámetro a 1/e² del punto es de unos 20 µm."
+      },
+      {
+        "h": "Diferencias con el procesado digital de imágenes",
+        "p": "En el software de procesado de imágenes también se llama filtrado espacial al suavizado y al realce de contornos, pero el filtro espacial óptico se diferencia en que usa la transformada de Fourier que realiza una lente para procesar toda la imagen de una vez, como luz. Matemáticamente, ambos son una multiplicación en el dominio de la frecuencia, es decir, una convolución de la imagen, pero un sistema óptico coherente actúa sobre la amplitud, por lo que también puede tratar valores negativos y cambios de fase. En cambio, con iluminación incoherente, lo que actúa sobre la imagen de intensidad es la OTF, determinada por la autocorrelación de la pupila, de modo que el efecto de lo que se coloca en el plano de Fourier no es tan simple como en el caso coherente."
+      },
+      {
+        "h": "Usos en medida y microscopía",
+        "p": "La idea del filtrado espacial es la base de muchos métodos de observación. En el método de Schlieren se coloca un filo de cuchilla en el plano de Fourier para convertir en diferencias de luminosidad la luz desviada por los gradientes de índice de refracción debidos a corrientes de aire o al calor. La iluminación de campo oscuro del microscopio equivale a eliminar la luz de orden cero, y el microscopio de contraste de fase, a desplazar su fase. En la inspección de obleas y máscaras de semiconductores se usan métodos que bloquean en el plano de Fourier la luz difractada por los patrones repetitivos y extraen solo la luz dispersada por partículas extrañas o defectos que rompen la regularidad."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se elige el tamaño del pinhole?",
+        "a": "Como referencia, se calcula el diámetro a 1/e² del punto enfocado (unos 4λf/(πD)) y se toma alrededor de 1,5 veces ese valor. Si es demasiado pequeño, recorta también la luz central y la potencia de salida disminuye; si es demasiado grande, dejan de bloquearse las componentes perturbadas."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un filtro espacial paso bajo y uno paso alto?",
+        "a": "El paso bajo solo deja pasar el centro del plano de Fourier y elimina las componentes finas, con lo que da una imagen suave. El paso alto bloquea el centro y elimina la componente uniforme, con lo que realza los bordes y las estructuras finas."
+      },
+      {
+        "q": "¿Cómo se alinea el pinhole?",
+        "a": "Se monta el pinhole en una platina de desplazamiento de tres ejes, se ajustan las dos direcciones perpendiculares al eje óptico observando la intensidad transmitida y luego se lleva al foco a lo largo del eje. A medida que se alinea, la luz transmitida aumenta y desaparecen las irregularidades y los anillos de difracción del haz de salida."
+      }
     ]
   },
   "フラウンホーファー回折": {
     "term": "Difracción de Fraunhofer",
-    "desc": "Difracción observada lo bastante lejos de una abertura o en el plano focal de una lente. La amplitud del patrón de difracción es la transformada de Fourier de la distribución de amplitud en la abertura."
+    "desc": "Difracción observada lo bastante lejos de una abertura o en el plano focal de una lente. La amplitud del patrón de difracción es la transformada de Fourier de la distribución de amplitud en la abertura.",
+    "about": [
+      {
+        "h": "La difracción vista a gran distancia",
+        "p": "Cuando la distancia L a una abertura es suficientemente grande, la diferencia de distancias desde cada punto de la abertura hasta el punto de observación puede aproximarse por una expresión lineal en la posición dentro de la abertura, y el patrón de difracción pasa a depender solo de la dirección de observación. Esto es la difracción de Fraunhofer, en la que la amplitud del patrón de difracción es la transformada de Fourier de la distribución de amplitud en la abertura. Como referencia, la condición es que el número de Fresnel a²/(λL), con a el radio de la abertura, sea mucho menor que 1. En esta región, la forma del patrón no cambia con la distancia; solo su tamaño crece en proporción a ella."
+      },
+      {
+        "h": "Patrones de difracción típicos",
+        "p": "La intensidad del patrón de difracción de una rendija simple de anchura a tiene forma de sinc², y la primera franja oscura aparece en la dirección sinθ = λ/a. Con una anchura de 0,1 mm, una longitud de onda de 633 nm y una distancia de 1 m, la primera franja oscura está a unos 6,3 mm del centro y la banda clara central tiene unos 12,7 mm de anchura. Una abertura circular de diámetro D da un patrón de Airy, con el primer anillo oscuro a un radio angular de 1,22λ/D. Que el patrón se extienda más cuanto menor es la abertura es justamente la relación por la que la transformada de Fourier de una función estrecha es ancha. Las aberturas periódicas dan picos agudos en las direcciones fijadas por la ecuación de la red."
+      },
+      {
+        "h": "Observarla en el plano focal de una lente",
+        "p": "Disponer en el laboratorio de una distancia de varios metros o más es incómodo, pero con una lente la luz que avanza en una misma dirección se concentra en un punto del plano focal, de modo que el patrón de difracción en el infinito puede verse en el plano focal. Con una lente de distancia focal f, la luz difractada con un ángulo θ se concentra, en la aproximación paraxial, a una distancia fθ en el plano focal. Que la imagen de un punto dada por una lente sin aberraciones sea un disco de Airy también es difracción de Fraunhofer por la abertura de la lente. El límite de resolución de telescopios y microscopios y el tamaño del punto de un láser enfocado los determina esta difracción."
+      },
+      {
+        "h": "Aplicaciones que leen la forma a partir del patrón",
+        "p": "Que el patrón de difracción sea la transformada de Fourier de la abertura o del objeto se aprovecha para deducir, a partir del patrón, la forma y el tamaño del objeto. Los analizadores de tamaño de partícula por difracción láser miden la distribución angular de la dispersión hacia delante de un conjunto de partículas y obtienen la distribución de tamaños con la aproximación de Fraunhofer para las partículas grandes y con la teoría de la dispersión de Mie para las pequeñas. El análisis de estructuras cristalinas por rayos X también se basa en que la intensidad difractada es el cuadrado del módulo de la transformada de Fourier de la densidad electrónica. Sin embargo, como solo puede medirse la intensidad, se pierde la información de fase, y hacen falta métodos para suplirla."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la difracción de Fraunhofer y la difracción de Fresnel?",
+        "a": "La difracción de Fraunhofer es la que se observa suficientemente lejos de la abertura: el patrón es la transformada de Fourier de la abertura y su forma no cambia con la distancia. La difracción de Fresnel se observa más cerca, donde influye un término de fase proporcional al cuadrado de la posición dentro de la abertura, por lo que la forma del patrón cambia con la distancia."
+      },
+      {
+        "q": "¿A qué distancia hay que estar para que la difracción sea de Fraunhofer?",
+        "a": "Como referencia, con a el radio de la abertura, L debe ser mucho mayor que a²/λ. Con un radio de 0,5 mm y una longitud de onda de 500 nm, a²/λ = 0,5 m, por lo que hay que alejarse varios metros o más, u observar en el plano focal de una lente."
+      },
+      {
+        "q": "¿Por qué el patrón de difracción lejano es la transformada de Fourier de la abertura?",
+        "a": "Porque, a gran distancia, la diferencia de camino desde cada punto de la abertura hasta el punto de observación se reduce a un término lineal en la posición dentro de la abertura. La integral que suma la luz de todos los puntos toma entonces la forma de la distribución de la abertura multiplicada por una fase proporcional a la posición e integrada, es decir, una transformada de Fourier."
+      }
+    ]
   },
   "フレネル数": {
     "term": "Número de Fresnel",
-    "desc": "Número NF = a²/(λL) formado por el radio de la abertura a, la distancia L y la longitud de onda λ. Si es mucho menor que 1, la difracción se trata como de Fraunhofer, y si es del orden de 1, como difracción de Fresnel."
+    "desc": "Número NF = a²/(λL) formado por el radio de la abertura a, la distancia L y la longitud de onda λ. Si es mucho menor que 1, la difracción se trata como de Fraunhofer, y si es del orden de 1, como difracción de Fresnel.",
+    "about": [
+      {
+        "h": "Número de zonas de Fresnel en la abertura",
+        "p": "El número de Fresnel NF = a²/(λL) expresa cuántas zonas de Fresnel (bandas concéntricas cuyas distancias al punto de observación difieren en pasos de media longitud de onda) caben en la abertura vista desde el punto de observación. Cuando NF es mucho menor que 1, la fase casi no cambia dentro de la abertura y la difracción es de Fraunhofer. Con NF del orden de 1 a unas decenas, se tiene difracción de Fresnel, en la que las contribuciones de las zonas se refuerzan o se cancelan entre sí, y con NF aún mayores el resultado se acerca a la óptica geométrica, con solo unas franjas finas en el borde de la sombra."
+      },
+      {
+        "h": "Luminosidad en el centro tras una abertura circular",
+        "p": "Cuando una onda plana incide sobre una abertura circular de radio a, la intensidad sobre el eje central es 4I₀ sin²(πNF/2) (I₀ es la intensidad sin abertura). Con NF = 1 es cuatro veces más intensa que sin la abertura, con NF = 2 queda completamente oscura, y al cambiar la distancia se alternan la luz y la oscuridad. Esto se debe a que, si la abertura contiene un número impar de zonas de Fresnel, sus contribuciones se refuerzan, y si contiene un número par, las zonas vecinas se cancelan. La placa zonal de Fresnel, que bloquea una zona de cada dos, aprovecha esta propiedad para concentrar la luz como una lente, y se usa también para enfocar rayos X."
+      },
+      {
+        "h": "Convenios de definición y su carácter de referencia",
+        "p": "El número de Fresnel suele definirse con el radio de la abertura, pero en algunos textos se escribe con el diámetro o la longitud del lado, y si se usa el diámetro el valor es 4 veces mayor, por lo que al citar valores hay que comprobar la definición. Además, NF es una referencia para decidir qué aproximación puede usarse, no un límite definido con rigor, y el aspecto real de la difracción depende también de qué parte del plano de observación se mire y de si la luz de iluminación es convergente. En los haces gaussianos se hace un juicio parecido con el radio del haz y la longitud de Rayleigh, y las posiciones mucho más alejadas que la longitud de Rayleigh corresponden al campo lejano."
+      },
+      {
+        "h": "Significado en los resonadores láser",
+        "p": "En un resonador láser se considera NF = a²/(λL) con el radio de los espejos a y la separación entre ellos L. En un resonador con NF pequeño, las pérdidas por la luz que escapa por difracción fuera de los espejos en cada ida y vuelta son grandes, y como los modos transversales de orden superior pierden más, se favorecen los modos de orden bajo. Con NF grande, las pérdidas por difracción son pequeñas, pero oscilan con facilidad muchos modos transversales. Un resonador con espejos de 1 mm de radio, separados 0,5 m, a una longitud de onda de 1064 nm, tiene NF ≈ 1,9. El tamaño del diafragma para seleccionar modos transversales también se decide con este razonamiento."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula el número de Fresnel?",
+        "a": "Se obtiene como NF = a²/(λL) a partir del radio de la abertura a, la distancia al plano de observación L y la longitud de onda λ. Con un radio de 1 mm, una longitud de onda de 633 nm y una distancia de 1 m, es de unos 1,6."
+      },
+      {
+        "q": "¿Qué ocurre cuando el número de Fresnel es mayor que 1?",
+        "a": "Es la región que se trata como difracción de Fresnel: en la abertura caben varias zonas de Fresnel, por lo que la luminosidad del centro y la forma de las franjas cambian mucho con la distancia. Con valores aún mayores, la imagen se acerca a la sombra de la óptica geométrica."
+      },
+      {
+        "q": "¿Qué relación hay entre el número de Fresnel y la condición de la difracción de Fraunhofer?",
+        "a": "La difracción de Fraunhofer se cumple cuando NF ≪ 1. Esta condición se satisface haciendo la distancia mucho mayor que a²/λ u observando en el plano focal de una lente."
+      }
+    ]
   },
   "タルボ効果": {
     "term": "Efecto Talbot",
-    "desc": "Fenómeno por el que una red de periodo d iluminada con luz coherente produce, sin lentes, imágenes idénticas a la red cada distancia 2d²/λ. También se llama autoimagen."
+    "desc": "Fenómeno por el que una red de periodo d iluminada con luz coherente produce, sin lentes, imágenes idénticas a la red cada distancia 2d²/λ. También se llama autoimagen.",
+    "about": [
+      {
+        "h": "Imágenes de la red que aparecen sin lentes",
+        "p": "Cuando una red de periodo d se ilumina con luz coherente colimada, aparecen sin lentes, a intervalos de zT = 2d²/λ a partir de la red, imágenes con el mismo patrón claro y oscuro que la red. Este es el efecto Talbot (autoimagen), y zT se llama distancia de Talbot. Talbot lo observó en 1836, y en 1881 Rayleigh dedujo la distancia y lo explicó. Si se ilumina una red de 100 µm de periodo a 633 nm, zT ≈ 32 mm, y al mover un papel blanco o una cámara detrás de la red se ve cómo la imagen de la red aparece y se deshace."
+      },
+      {
+        "h": "Desfase entre órdenes",
+        "p": "La luz que atraviesa la red se divide en un conjunto de haces difractados que avanzan con ángulos determinados. Al propagarse, cada orden sufre un retardo de fase que, en la aproximación paraxial, es proporcional al cuadrado del número de orden. A la distancia zT, los desfases de todos los órdenes son múltiplos enteros de 2π, y la distribución vuelve a ser la misma que justo detrás de la red. A zT/2, los órdenes impares se desfasan π y se obtiene una imagen desplazada lateralmente medio periodo, y a las distancias fraccionarias intermedias aparecen imágenes de periodo más fino, entre otras (efecto Talbot fraccionario). La misma relación existe en el dominio del tiempo, donde se conoce el fenómeno por el que un tren de pulsos equiespaciados recupera su forma original por efecto de la dispersión."
+      },
+      {
+        "h": "Condiciones para que se vea con claridad",
+        "p": "El efecto Talbot aparece con claridad cuando el periodo de la red es bastante mayor que la longitud de onda, de modo que vale la aproximación paraxial, y se ilumina con luz monocromática y espacialmente coherente. Si el espectro es ancho, zT varía con la longitud de onda, y las imágenes más lejanas se difuminan. Además, si la red tiene un tamaño finito, los haces difractados avanzan inclinados y el solapamiento disminuye desde los bordes, de modo que la imagen se conserva nítida solo en la parte central de la red, que se estrecha a mayor distancia. Cuando el periodo se reduce hasta unos pocos µm, las desviaciones respecto a la aproximación paraxial hacen que la distancia a la que aparecen las imágenes se aparte ligeramente de 2d²/λ."
+      },
+      {
+        "h": "Aplicaciones",
+        "p": "Como el efecto Talbot forma imágenes de estructuras periódicas sin lentes, se usa en varios campos. En la imagen de fase por rayos X, los interferómetros de Talbot leen la autoimagen de una red con una segunda red para detectar la ligera curvatura del frente de onda causada por la muestra. En litografía se estudian métodos que imprimen patrones periódicos con la autoimagen de una máscara. En la inspección de sistemas ópticos se usa la interferometría de Talbot, que mide el grado de colimación de un haz o la distancia focal de una lente a partir de las franjas de moiré que se producen al colocar dos redes separadas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la distancia de Talbot?",
+        "a": "Se obtiene como zT = 2d²/λ a partir del periodo de la red d y la longitud de onda λ. Con un periodo de 50 µm y una longitud de onda de 500 nm, es de 10 mm. A la mitad de esa distancia también aparece una imagen de la red desplazada medio periodo."
+      },
+      {
+        "q": "¿Se produce el efecto Talbot con luz blanca?",
+        "a": "Como la distancia de Talbot varía con la longitud de onda, con luz blanca las imágenes de cada color aparecen en posiciones distintas y se superponen, de modo que, salvo cerca de la red, no se forma una imagen nítida. Aparece con claridad al iluminar con luz monocromática y espacialmente coherente."
+      },
+      {
+        "q": "¿Qué relación hay entre el efecto Talbot y las franjas de moiré?",
+        "a": "Si se superpone una segunda red a la autoimagen de la red producida por el efecto Talbot, las pequeñas diferencias de periodo u orientación entre ambas se ven amplificadas como franjas de moiré. Esta combinación se usa para medir la inclinación y la curvatura de los frentes de onda."
+      }
+    ]
   },
   "ホログラフィ": {
     "term": "Holografía",
-    "desc": "Técnica que registra las franjas de interferencia entre la onda objeto y la onda de referencia y, difractando la onda de referencia en ellas, reconstruye el frente de onda de la onda objeto. Como registra tanto la amplitud como la fase, da imágenes tridimensionales."
+    "desc": "Técnica que registra las franjas de interferencia entre la onda objeto y la onda de referencia y, difractando la onda de referencia en ellas, reconstruye el frente de onda de la onda objeto. Como registra tanto la amplitud como la fase, da imágenes tridimensionales.",
+    "about": [
+      {
+        "h": "Registrar la amplitud y la fase como franjas de interferencia",
+        "p": "Los materiales fotosensibles y los sensores de imagen solo pueden registrar la intensidad de la luz, y en una fotografía ordinaria se pierde la información de fase. En holografía, a la onda objeto O dispersada por el objeto se le superpone una onda de referencia coherente R, obtenida de la misma fuente, y se registra la intensidad |O + R|². Los términos OR* y O*R de esa expresión forman franjas de interferencia, de modo que la fase de la onda objeto queda escrita en la posición de las franjas y su amplitud en su contraste. Para el registro, la longitud de coherencia de la fuente debe ser mayor que la diferencia de camino óptico entre las dos ondas, y el montaje debe ser lo bastante estable como para que las franjas no se muevan durante la exposición."
+      },
+      {
+        "h": "Reconstrucción e imagen gemela",
+        "p": "Cuando el holograma registrado se ilumina con la onda de referencia R, la difracción en las franjas hace aparecer en la luz transmitida una componente proporcional a la onda objeto O, y se reproduce tal cual el frente de onda de la luz que venía del objeto original. Por eso se ve una imagen tridimensional con profundidad, cuyo aspecto cambia al cambiar la posición de observación. Al mismo tiempo aparecen una imagen conjugada con la fase invertida (imagen gemela) y la luz de orden cero. En el tipo en línea de Gabor estas imágenes se superponían sobre el mismo eje, pero Leith y Upatnieks, con el tipo fuera de eje, en el que la onda de referencia entra inclinada, permitieron separarlas y observarlas."
+      },
+      {
+        "h": "Hologramas de volumen y holografía digital",
+        "p": "En un holograma de volumen registrado en un material grueso, las franjas forman capas dentro del material, y solo se difractan con intensidad las longitudes de onda y los ángulos que cumplen la condición de Bragg. Los hologramas de volumen de reflexión pueden reconstruir imágenes con poco emborronamiento de color incluso con luz blanca. Por otra parte, los que más se usan contra la falsificación de billetes y tarjetas son los hologramas estampados, cuyas franjas se fabrican en serie como relieve superficial por estampación. En la holografía digital, que registra el holograma con un sensor de imagen y lo reconstruye calculando la difracción, la distribución de fase de la onda objeto se obtiene en forma numérica, por lo que se usa para medir el espesor de células transparentes y la forma de superficies. Como los píxeles son grandes, el ángulo de la onda de referencia se limita a unos pocos grados o menos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre un holograma y una fotografía ordinaria?",
+        "a": "La fotografía solo registra la distribución de intensidad de la luz enfocada por una lente. El holograma registra tanto la amplitud como la fase de la luz en forma de franjas de interferencia con una onda de referencia, por lo que en la reconstrucción se reproduce el propio frente de onda procedente del objeto y se obtiene una imagen tridimensional cuyo aspecto cambia según la dirección de observación."
+      },
+      {
+        "q": "¿Por qué hace falta un láser para registrar un holograma?",
+        "a": "Porque, para que la onda objeto y la onda de referencia formen franjas de interferencia estables, hace falta una longitud de coherencia mayor que la diferencia de camino óptico. La longitud de coherencia de la luz blanca es solo del orden del µm, por lo que las franjas dejan de verse enseguida. Los hologramas de volumen de reflexión pueden reconstruirse con luz blanca, pero su registro requiere luz coherente."
+      },
+      {
+        "q": "¿Qué separación tienen las franjas de interferencia?",
+        "a": "Si dos ondas se cruzan con un ángulo θ, la separación es λ/(2 sin(θ/2)). Con una longitud de onda de 633 nm y 30° es de unos 1,22 µm (unos 820 ciclos/mm), por lo que para el registro se usan placas especiales de alta resolución o fotopolímeros, y se suprimen las vibraciones."
+      }
+    ]
   },
   "計算機ホログラム": {
     "term": "Holograma generado numéricamente (CGH)",
@@ -3162,17 +3786,113 @@
       "hologramas generados por computadora",
       "holograma generado por ordenador",
       "hologramas generados por ordenador"
+    ],
+    "about": [
+      {
+        "h": "Crear las franjas por cálculo",
+        "p": "Un holograma ordinario se fabrica registrando en un material fotosensible las franjas de interferencia entre la onda objeto y la onda de referencia. El holograma generado numéricamente (CGH) se fabrica directamente calculando, a partir del frente de onda o de la distribución de luz deseados, la distribución de amplitud o de fase que los produce, de modo que puede crear frentes de onda de objetos que no existen o distribuciones de luz definidas por ecuaciones. Un ejemplo temprano representativo es el holograma binario de fase por desvío (detour phase) que presentaron Brown y Lohmann en 1966, que representaba la fase desplazando la posición de las aberturas. Los tipos que solo cambian la fase sin cambiar la amplitud también se llaman kinoformes."
+      },
+      {
+        "h": "Número de niveles de fase y eficiencia de difracción",
+        "p": "Los CGH suelen fabricarse cuantificando la fase en varios niveles en lugar de hacerlo de forma continua, y el número de niveles determina la eficiencia. Cuando una fase en diente de sierra se aproxima con una escalera de N niveles, la eficiencia de difracción en el primer orden es sinc²(1/N): alrededor del 40,5 % con 2 niveles, del 81 % con 4, del 95 % con 8 y del 99 % con 16. Con una fase de 2 niveles, la luz se reparte por igual entre los órdenes +1 y −1, lo que es una desventaja en los usos que solo necesitan uno de ellos. En la microfabricación, cada máscara adicional duplica el número de niveles, a 2, 4 y 8."
+      },
+      {
+        "h": "Cálculo de la distribución de fase",
+        "p": "Cuando solo está fijada la intensidad de la imagen deseada, la distribución de fase que la produce no es única, por lo que se obtiene mediante cálculo iterativo. Un método representativo es el algoritmo de Gerchberg-Saxton, que va y viene entre el plano del holograma y el plano de la imagen mediante transformadas de Fourier, sustituye en cada plano solo la amplitud para ajustarla a la condición y va actualizando la fase. Con decenas a cientos de iteraciones, a menudo se obtiene una imagen cercana a la deseada. Sin embargo, un holograma solo de fase no puede producir a la perfección una intensidad arbitraria, y en la imagen pueden quedar irregularidades similares al speckle."
+      },
+      {
+        "h": "Moduladores espaciales de luz y aplicaciones",
+        "p": "Con un modulador espacial de luz (SLM) de cristal líquido, el CGH puede reescribirse como una pantalla. El periodo más fino que puede representarse con un paso de píxel p es 2p, por lo que el ángulo de difracción máximo es de aproximadamente λ/(2p): unos 3,8° con un paso de 8 µm a 1064 nm. Como la luz de orden cero que queda sin difractar se superpone a la imagen, lo habitual es añadir una fase de red para desplazar la posición de la imagen. Los CGH se usan para conformar haces y procesar varios puntos a la vez en el mecanizado láser, en pinzas ópticas que manipulan simultáneamente muchas micropartículas y en pantallas de realidad aumentada."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre un holograma generado numéricamente y un holograma ordinario?",
+        "a": "Un holograma ordinario registra la interferencia entre la luz de un objeto real y una onda de referencia, mientras que un holograma generado numéricamente se fabrica calculando la amplitud o la fase necesarias a partir del frente de onda deseado. También puede reconstruir objetos que no existen o distribuciones de luz definidas por ecuaciones."
+      },
+      {
+        "q": "¿Qué eficiencia de difracción tiene un holograma generado numéricamente?",
+        "a": "Depende del número de niveles de fase: alrededor del 40 % en el primer orden con 2 niveles y alrededor del 95 % con 8. En los moduladores espaciales de luz de cristal líquido hay perturbaciones en los bordes entre píxeles y fugas de luz de orden cero, por lo que la eficiencia real es menor."
+      },
+      {
+        "q": "¿Qué es un kinoform?",
+        "a": "Es un holograma generado numéricamente que solo cambia la fase, sin cambiar la amplitud; como no absorbe luz, su eficiencia es alta. Se materializa como una distribución de fase plegada en el intervalo de 0 a 2π, mediante el mecanizado de escalones en la superficie o con un modulador espacial de luz."
+      }
     ]
   },
   "ケーラー照明": {
     "term": "Iluminación de Köhler",
-    "desc": "Método de iluminación que forma la imagen de la fuente de luz en el diafragma de apertura del condensador y la imagen del diafragma de campo en el plano de la muestra. Ilumina el campo de forma uniforme aunque la fuente no lo sea y permite ajustar la NA de la iluminación."
+    "desc": "Método de iluminación que forma la imagen de la fuente de luz en el diafragma de apertura del condensador y la imagen del diafragma de campo en el plano de la muestra. Ilumina el campo de forma uniforme aunque la fuente no lo sea y permite ajustar la NA de la iluminación.",
+    "about": [
+      {
+        "h": "Dos series conjugadas",
+        "p": "La iluminación de Köhler es un método de iluminación del microscopio ideado por Köhler en 1893 que forma la imagen de la fuente de luz en el diafragma de apertura del condensador (su plano focal anterior) y la imagen del diafragma de campo en el plano de la muestra. Así, en el microscopio aparecen dos series conjugadas: la del diafragma de campo, la muestra, la imagen intermedia y el plano del sensor (o la retina), que lleva la forma de la imagen, y la de la fuente de luz, el diafragma de apertura, el plano focal posterior del objetivo y el punto ocular, que lleva los ángulos de la luz. Como la forma de la fuente no se proyecta sobre la muestra, el campo se ilumina de manera uniforme aunque el filamento o el LED sean irregulares."
+      },
+      {
+        "h": "El papel de los dos diafragmas",
+        "p": "El diafragma de campo fija la zona iluminada, y se abre hasta justo fuera del campo que se observa. Limitar la iluminación a donde hace falta reduce la luz parásita y los destellos debidos a la luz sobrante y, en la observación de fluorescencia, también evita el fotoblanqueo fuera del campo. El diafragma de apertura fija el intervalo de ángulos de la luz de iluminación, es decir, la apertura numérica del condensador. Cerrarlo aumenta el contraste de la imagen y la profundidad de foco, pero reduce la resolución. Como referencia, se dice que a menudo se ajusta a alrededor del 70-80 % de la apertura numérica del objetivo, pero se regula según la muestra."
+      },
+      {
+        "h": "No regular la luminosidad con el diafragma de apertura",
+        "p": "Un error frecuente es regular la luminosidad de la imagen con el diafragma de apertura. Al cerrarlo, la imagen se oscurece, efectivamente, pero al mismo tiempo disminuye la apertura numérica de la iluminación, empeora la resolución y la imagen muestra franjas de difracción marcadas. La luminosidad se cambia con la potencia de la fuente o con filtros ND, y el diafragma de apertura se ajusta buscando el equilibrio entre resolución y contraste. Con la estimación de la resolución 1,22λ/(NA_obj + NA_cond), con λ = 550 nm y NA 0,65 tanto en el objetivo como en el condensador, se obtienen unos 0,52 µm, pero si se cierra el condensador hasta NA 0,3 empeora a unos 0,71 µm."
+      },
+      {
+        "h": "Cómo se ajusta y usos fuera del microscopio",
+        "p": "Para ajustarla, primero se enfoca la muestra, se cierra el diafragma de campo y se ajusta la altura del condensador hasta que su borde se vea nítido, se centra en la imagen y luego se abre hasta justo fuera del campo. Por último, se ajusta el diafragma de apertura observando el plano focal posterior, quitando el ocular o con un telescopio de centrado. Esta iluminación es también la base del microscopio de contraste de fase y del microscopio de contraste de interferencia diferencial. Además, la idea de separar la imagen de la fuente y el plano iluminado se usa mucho en los sistemas ópticos de iluminación de proyectores y de equipos de litografía de semiconductores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la iluminación de Köhler y la iluminación crítica?",
+        "a": "La iluminación crítica forma la imagen de la fuente directamente en el plano de la muestra, por lo que las irregularidades de la fuente se superponen a la imagen. La iluminación de Köhler forma la imagen de la fuente en el diafragma de apertura y la del diafragma de campo en el plano de la muestra, por lo que da una iluminación uniforme, sin irregularidades."
+      },
+      {
+        "q": "¿Cuánto hay que cerrar el diafragma de apertura?",
+        "a": "Se suele dar como referencia alrededor del 70-80 % de la apertura numérica del objetivo, pero depende de la muestra. Cuanto más se cierra, más aumentan el contraste y la profundidad de foco, pero menor es la resolución, por lo que para observar estructuras finas se deja más bien abierto."
+      },
+      {
+        "q": "¿Por qué se ve borroso el borde del diafragma de campo?",
+        "a": "Porque la altura del condensador no está bien ajustada y la imagen del diafragma de campo no se forma en el plano de la muestra, es decir, no se tiene iluminación de Köhler. Se sube o se baja el condensador hasta que el borde se vea nítido y se centra en el campo con los tornillos de centrado."
+      }
+    ]
   },
   "暗視野照明": {
     "term": "Iluminación de campo oscuro",
     "desc": "Método que ilumina con ángulos mayores que la NA del objetivo para que la luz directa no entre en él, y forma la imagen solo con la luz dispersada o difractada por la muestra. El fondo se ve oscuro y las partículas finas brillan.",
     "aliases": [
       "campo oscuro"
+    ],
+    "about": [
+      {
+        "h": "Que la luz directa no entre en el objetivo",
+        "p": "La iluminación de campo oscuro ilumina la muestra solo con ángulos mayores que la apertura numérica del objetivo. Con luz transmitida se usa luz anular, bloqueando el centro del condensador, o un condensador específico con una superficie reflectante paraboloidal o cardioide. La luz directa pasa de largo sin entrar en el objetivo, por lo que el fondo es oscuro y solo la luz dispersada o difractada por la muestra forma la imagen. Desde el punto de vista de la óptica de Fourier, equivale a la imagen de la que se ha eliminado toda la luz de orden cero que llegaría al plano focal posterior del objetivo, de modo que solo brillan los bordes y las estructuras finas de la muestra."
+      },
+      {
+        "h": "Por qué se ven objetos más pequeños que la resolución",
+        "p": "Como la luz dispersada brilla sobre un fondo oscuro, incluso las partículas más pequeñas que la resolución pueden detectarse como puntos luminosos si su luz dispersada tiene una intensidad detectable. Sin embargo, lo que se registra es la imagen de un punto ensanchada por la difracción, por lo que el tamaño y la forma de las partículas no pueden medirse correctamente. La dispersión de partículas mucho más pequeñas que la longitud de onda es proporcional a la sexta potencia del diámetro, de modo que, si el diámetro se reduce a la mitad, la dispersión baja a 1/64, y las partículas demasiado pequeñas dejan de verse de forma brusca. Las partículas que dispersan con intensidad por resonancia de plasmones, como las nanopartículas de oro, se ven brillantes incluso con tamaños de unas decenas de nm."
+      },
+      {
+        "h": "Condiciones y precauciones",
+        "p": "La condición para el campo oscuro es que la apertura numérica interior de la iluminación sea mayor que la del objetivo. Por ello, los objetivos de inmersión en aceite de apertura numérica alta se usan con un diafragma de iris incorporado en el objetivo para reducir su apertura numérica. El polvo y las burbujas de la muestra y los arañazos del portaobjetos también brillan, por lo que son imprescindibles una muestra y unos sistemas ópticos limpios. En muestras gruesas o muy dispersivas, la luz dispersada desde fuera del foco aclara el fondo y reduce el contraste. Además, como la imagen se forma solo con luz dispersada, tiende a ser oscura, y hace falta una fuente de luz intensa."
+      },
+      {
+        "h": "Dónde se usa",
+        "p": "La iluminación de campo oscuro se usa para ver sin teñir bacterias y sus flagelos o partículas diminutas, y la observación del agente causal de la sífilis es un ejemplo clásico. En la inspección de metales y semiconductores, el campo oscuro con iluminación incidente hace brillar arañazos, polvo y escalones de las superficies para localizarlos, y los equipos de inspección de obleas cuentan partículas a partir de la dispersión de luz láser incidente en ángulo oblicuo. La iluminación de Rheinberg, que combina filtros de color para que el fondo y la muestra aparezcan de colores distintos, es una variante del campo oscuro. En la investigación de nanopartículas se mide en campo oscuro el espectro de dispersión de una sola partícula."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la iluminación de campo oscuro y la de campo claro?",
+        "a": "En campo claro, la luz de iluminación directa también entra en la imagen, y las diferencias de absorción de la muestra se convierten en diferencias de luminosidad. En campo oscuro, la luz directa no entra en el objetivo y la imagen se forma solo con la luz dispersada por la muestra, por lo que el fondo es oscuro y las partículas transparentes y las estructuras finas brillan."
+      },
+      {
+        "q": "¿Qué tamaño mínimo de partícula puede verse en campo oscuro?",
+        "a": "Depende de la intensidad de la luz dispersada y de la sensibilidad de detección, y pueden verse como puntos luminosos incluso partículas más pequeñas que la resolución. Como la dispersión se debilita con la sexta potencia del diámetro, el límite depende mucho del material de la partícula y de la intensidad de la fuente."
+      },
+      {
+        "q": "¿Por qué es difícil el campo oscuro con objetivos de apertura numérica grande?",
+        "a": "Porque el ángulo de iluminación tiene que ser mayor que la apertura numérica del objetivo, y si la apertura numérica del objetivo se acerca a la del condensador, entra la luz directa. Se usan objetivos con diafragma de iris incorporado para reducir su apertura numérica."
+      }
     ]
   },
   "位相差顕微鏡": {
@@ -3182,6 +3902,38 @@
       "microscopios de contraste de fase",
       "microscopía de contraste de fase",
       "contraste de fase"
+    ],
+    "about": [
+      {
+        "h": "Convertir en luminosidad una fase invisible",
+        "p": "Las muestras transparentes, como las células vivas, casi no absorben la luz y solo retrasan ligeramente su fase. Cuando el retardo de fase φ es pequeño, la luz transmitida es la suma de una luz directa intensa y una luz difractada débil desfasada unos π/2, y en campo claro el cambio de intensidad es solo del orden de φ². Con φ = 0,1 rad es de alrededor del 1 %, casi invisible. Zernike ideó un método que desfasa λ/4 la luz directa para ponerla en fase o en oposición de fase con la luz difractada, con lo que el cambio de intensidad aumenta a unos 2φ, es decir, alrededor del 20 %, y recibió por ello el Premio Nobel de Física de 1953."
+      },
+      {
+        "h": "Diafragma anular y placa de fase",
+        "p": "En el microscopio de contraste de fase se coloca un diafragma anular en el plano focal anterior del condensador y se ilumina la muestra con un cono hueco de luz. La luz directa se concentra en forma de anillo en el plano focal posterior del objetivo, y allí se coloca una placa de fase que cambia el camino óptico solo en la zona del anillo. La luz difractada se extiende por todo el plano focal posterior, por lo que en su mayor parte pasa fuera del anillo. El anillo de la placa de fase lleva además una capa que atenúa la luz directa, lo que acerca las intensidades de la luz directa y la difractada y aumenta el contraste. El anillo del condensador se elige según el tamaño del anillo de cada objetivo (Ph1, Ph2, etc.)."
+      },
+      {
+        "h": "Halos y muestras adecuadas e inadecuadas",
+        "p": "En las imágenes de contraste de fase aparecen halos brillantes en los bordes de las estructuras, y el centro de las estructuras grandes y uniformes se acerca a la luminosidad del fondo (efecto shade-off). Esto se debe a que el anillo tiene una anchura finita, de modo que parte de la luz difractada de baja frecuencia espacial pasa por el mismo anillo que la luz directa. Además, la aproximación de fase solo vale cuando el desfase es pequeño, y en muestras gruesas o con grandes diferencias de índice de refracción el contraste puede invertirse o la imagen puede alterarse. Las muestras más adecuadas son las delgadas, como las monocapas de células cultivadas, y el método no es apropiado para cortes de tejido gruesos."
+      },
+      {
+        "h": "Cuándo usarlo y cuándo usar DIC",
+        "p": "El microscopio de contraste de fase no usa la polarización, por lo que permite observar directamente en placas de cultivo de plástico con birrefringencia. Por ello, para la comprobación rutinaria de células cultivadas se usan mucho los microscopios invertidos de contraste de fase. En cambio, el microscopio de contraste de interferencia diferencial no tiene halos y puede usar una apertura numérica grande en el condensador, por lo que su profundidad de foco es pequeña, con la ventaja de que facilita observar un solo plano dentro de una muestra gruesa. Ambos convierten las diferencias de camino óptico en luminosidad, y pueden distinguirse pensando que el contraste de fase ve la propia diferencia de camino óptico y el DIC, su gradiente."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué se ven las células transparentes con un microscopio de contraste de fase?",
+        "a": "La luz que atraviesa una célula se retrasa ligeramente en fase respecto a la de su entorno. Si una placa de fase desfasa λ/4 la luz directa, la interferencia con la luz difractada convierte la diferencia de fase en una diferencia de intensidad, y la célula se ve más oscura (o más clara) que el fondo."
+      },
+      {
+        "q": "¿Qué diferencia hay entre el contraste de fase positivo y el negativo?",
+        "a": "En el positivo (contraste oscuro), las estructuras de mayor índice de refracción se ven más oscuras que el fondo, y en el negativo (contraste claro), más claras. Depende de si la placa de fase adelanta o retrasa la fase de la luz directa."
+      },
+      {
+        "q": "¿Qué es el halo de las imágenes de contraste de fase?",
+        "a": "Es un contorno brillante (u oscuro) que aparece a lo largo de los bordes de las estructuras, y se debe a que parte de la luz difractada también pasa por el anillo de la placa de fase. Es una alteración de la imagen propia del contraste de fase, por lo que hay que tenerla en cuenta al interpretar los límites de las formas."
+      }
     ]
   },
   "微分干渉顕微鏡": {
@@ -3191,11 +3943,75 @@
       "DIC",
       "contraste de interferencia diferencial",
       "microscopía de contraste de interferencia diferencial"
+    ],
+    "about": [
+      {
+        "h": "Ver la diferencia de fase entre dos haces",
+        "p": "En el microscopio de contraste de interferencia diferencial (DIC), la luz polarizada linealmente por un polarizador se divide en dos haces de polarizaciones ortogonales con un prisma de Nomarski, una variante del prisma de Wollaston. Los dos haces están ligeramente desplazados lateralmente en la muestra (el desplazamiento o shear) y cada uno atraviesa puntos vecinos. Un segundo prisma situado detrás del objetivo los vuelve a superponer y un analizador los hace interferir, de modo que la diferencia de camino óptico entre los dos puntos, es decir, el gradiente de la diferencia de camino óptico en la dirección del desplazamiento, se convierte en luminosidad. El desplazamiento suele elegirse menor que la resolución del objetivo, por lo que la resolución apenas se pierde."
+      },
+      {
+        "h": "Por qué parece tridimensional y su trampa",
+        "p": "Si se añade un desfase constante (sesgo) entre los dos haces con la posición del segundo prisma o con un compensador, un lado se ve claro y el contrario oscuro según el signo del gradiente, y la imagen tiene un sombreado como si se iluminara de forma oblicua. Sin embargo, este sombreado representa el gradiente de la diferencia de camino óptico, no la altura, por lo que una parte que parece elevada no es necesariamente más alta. Además, los gradientes perpendiculares a la dirección del desplazamiento no producen contraste, de modo que las estructuras alargadas se ven de forma distinta según su orientación, y a veces se gira la muestra para comprobarlo."
+      },
+      {
+        "h": "Poca profundidad de foco, ventaja en muestras gruesas",
+        "p": "El microscopio de contraste de interferencia diferencial puede usar una apertura numérica grande en el condensador, por lo que su profundidad de foco es pequeña y permite ver con nitidez un solo plano dentro de una muestra gruesa. No presenta halos como el contraste de fase, y los bordes finos y los gránulos aparecen limpios incluso dentro de estructuras grandes. Por ello se usa mucho para observar embriones y tejidos gruesos, y como imagen de luz transmitida superpuesta a la de fluorescencia para mostrar el contorno de las células. En cambio, como usa la polarización, el fondo de los recipientes de plástico con birrefringencia por las tensiones del moldeo dificulta la observación, y se recomiendan recipientes con fondo de vidrio."
+      },
+      {
+        "h": "DIC por reflexión e inspección de superficies",
+        "p": "El microscopio de contraste de interferencia diferencial por reflexión observa la diferencia de camino óptico entre dos haces reflejados en una superficie, por lo que resalta los pequeños escalones e inclinaciones de la superficie como imágenes con sombreado. En reflexión, un escalón de altura h da una diferencia de camino óptico de 2h en la ida y vuelta, de modo que a veces pueden distinguirse escalones del orden del nm, y se usa en la inspección de obleas de semiconductores, superficies pulidas y microestructuras metálicas. Sin embargo, obtener la altura en forma numérica a partir de la luminosidad requiere calibración, y cuando se necesita una altura exacta se usan instrumentos como interferómetros de luz blanca o perfilómetros de palpador."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el microscopio de contraste de interferencia diferencial y el de contraste de fase?",
+        "a": "Ambos convierten en luminosidad las diferencias de fase de las muestras transparentes. El de contraste de fase ve la propia diferencia de fase y tiende a producir halos; el de contraste de interferencia diferencial ve el gradiente de fase como sombreado, no tiene halos y su profundidad de foco es pequeña, pero es difícil de usar con recipientes que alteran la polarización."
+      },
+      {
+        "q": "¿Qué es un prisma de Nomarski?",
+        "a": "Es una variante del prisma de Wollaston, formado por dos cristales birrefringentes pegados, en la que el plano en el que se separan los dos haces queda fuera del prisma. Por ello puede hacerse coincidir con el plano focal posterior del objetivo incluso cuando ese plano está dentro de la lente y no es accesible."
+      },
+      {
+        "q": "¿Representa la altura el sombreado de una imagen DIC?",
+        "a": "No. El sombreado es el gradiente de la diferencia de camino óptico en la dirección del desplazamiento, e incluye también las diferencias de índice de refracción. Algo que parece elevado no es necesariamente más alto, por lo que, para juzgar las formas, se comprueban también con otros métodos."
+      }
     ]
   },
   "ストークスシフト": {
     "term": "Desplazamiento de Stokes",
-    "desc": "Desplazamiento de la longitud de onda de la fluorescencia hacia valores mayores que la de la luz de excitación. Se produce porque la molécula excitada pierde energía por relajación vibracional antes de emitir, y permite separar con filtros la luz de excitación y la fluorescencia."
+    "desc": "Desplazamiento de la longitud de onda de la fluorescencia hacia valores mayores que la de la luz de excitación. Se produce porque la molécula excitada pierde energía por relajación vibracional antes de emitir, y permite separar con filtros la luz de excitación y la fluorescencia.",
+    "about": [
+      {
+        "h": "Por qué la fluorescencia sale a longitudes de onda más largas",
+        "p": "Una molécula que absorbe luz sube a un nivel vibracional alto de un estado electrónico excitado, pero en un tiempo corto, del orden de los ps, sufre relajación vibracional hasta el nivel vibracional más bajo, y solo entonces emite fluorescencia con un tiempo de vida del orden de los ns. Además, la fluorescencia suele devolver la molécula a un nivel vibracional alto del estado fundamental, y en ambas etapas parte de la energía se pierde como calor. Por ello, el fotón de fluorescencia tiene menos energía que el fotón absorbido, y su longitud de onda es mayor. El nombre procede de la observación de Stokes con una disolución de quinina en 1852."
+      },
+      {
+        "h": "Comparar en número de onda y no en longitud de onda",
+        "p": "El desplazamiento de Stokes se expresa como la diferencia entre los máximos de los espectros de absorción y de fluorescencia; a menudo se escribe en nm, pero para comparar diferencias de energía es más adecuado el número de onda (cm⁻¹). En un colorante como la fluoresceína, que absorbe a unos 490 nm y emite fluorescencia a unos 520 nm, la diferencia es de 30 nm, unos 1180 cm⁻¹ en número de onda o unos 0,15 eV en energía. Con el mismo desplazamiento de 1180 cm⁻¹, si se excita a 700 nm la fluorescencia queda en unos 763 nm, y la diferencia en nm supera los 60 nm. Hay que tener en cuenta que, cuanto mayor es la longitud de onda del colorante, mayor parece la diferencia en nm."
+      },
+      {
+        "h": "Diferencia con las líneas Stokes de Raman",
+        "p": "El mismo nombre de Stokes se usa para las líneas Stokes de la dispersión Raman, pero con otro significado. En la dispersión Raman, el desplazamiento es la propia energía de vibración de la molécula, y el desplazamiento en número de onda no cambia aunque cambie la longitud de onda de excitación. El desplazamiento de Stokes de la fluorescencia es la diferencia entre los máximos de los espectros de absorción y de emisión, y cambia también con factores como la polaridad del disolvente. Por otra parte, en la excitación de dos fotones y en la conversión ascendente (upconversion) se emite luz de longitud de onda más corta que la de excitación, pero como se aprovecha la energía sumada de dos o más fotones, no se viola la conservación de la energía."
+      },
+      {
+        "h": "Su papel en la observación de fluorescencia",
+        "p": "En la microscopía y en las medidas de fluorescencia, el desplazamiento de Stokes es lo que permite separar por longitud de onda la luz de excitación y la fluorescencia. El filtro de excitación, el espejo dicroico y el filtro de emisión reparten la luz dentro de este desplazamiento, de modo que con un colorante de desplazamiento pequeño hay que estrechar las bandas de los filtros y desechar parte de la fluorescencia. A la inversa, los colorantes con un desplazamiento grande facilitan eliminar las fugas y la dispersión de la luz de excitación, y también son adecuados para la observación multicolor que combina colorantes que, excitados a una misma longitud de onda, emiten fluorescencia de colores distintos. Los puntos cuánticos absorben en un intervalo amplio que se extiende hacia longitudes de onda cortas, por lo que una sola fuente puede excitar varios colores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué se produce el desplazamiento de Stokes?",
+        "a": "Porque la molécula excitada pierde parte de su energía como calor por relajación vibracional antes de emitir la fluorescencia, y además suele volver a un nivel vibracional alto del estado fundamental. En la misma medida, el fotón de fluorescencia tiene menos energía y una longitud de onda mayor."
+      },
+      {
+        "q": "¿Cómo se expresa el desplazamiento de Stokes?",
+        "a": "Como la diferencia entre los máximos de los espectros de absorción y de fluorescencia. También se escribe en nm, pero para compararlo como diferencia de energía se calcula en número de onda (cm⁻¹) la diferencia entre los inversos de las longitudes de onda de absorción y de fluorescencia."
+      },
+      {
+        "q": "¿Qué ventajas tienen los colorantes con un desplazamiento de Stokes grande?",
+        "a": "Como las longitudes de onda de excitación y de fluorescencia están muy separadas, es fácil separarlas con filtros y se reduce el fondo debido a las fugas o a la dispersión de la luz de excitación. También son adecuados para la observación multicolor que usa a la vez, con una sola longitud de onda de excitación, colorantes que emiten fluorescencia de colores distintos."
+      }
+    ]
   },
   "共焦点顕微鏡": {
     "term": "Microscopio confocal",
@@ -3203,6 +4019,34 @@
     "aliases": [
       "microscopios confocales",
       "microscopía confocal"
+    ],
+    "about": [
+      {
+        "h": "Seleccionar el plano focal con un pinhole",
+        "p": "En un microscopio confocal, el objetivo enfoca la luz láser en un solo punto de la muestra, y la fluorescencia o la luz reflejada que sale de allí se recoge con el mismo objetivo y se detecta a través de un pinhole colocado en una posición conjugada del foco. La luz que viene del plano focal se concentra en el pinhole y lo atraviesa, pero la que viene de encima o de debajo del plano focal está extendida en la posición del pinhole y queda bloqueada en su mayor parte. Por ello, incluso en muestras gruesas hay poco desenfoque procedente de fuera del plano focal, y se obtienen secciones ópticas que muestran solo una capa delgada en la dirección del eje óptico. Si se apilan secciones desplazando poco a poco el foco, puede construirse una imagen tridimensional."
+      },
+      {
+        "h": "Tamaño del pinhole y resolución",
+        "p": "El diámetro del pinhole se expresa en unidades Airy, siendo 1 unidad Airy el diámetro del disco de Airy en el plano de detección (1,22λ/NA en el plano de la muestra multiplicado por el aumento). Con alrededor de 1 unidad Airy, el pinhole elimina bien la luz desenfocada y deja pasar la mayor parte de la luz del foco. Si se reduce más, la resolución lateral mejora hasta unas 1,4 veces, porque la imagen la determina el producto de las imágenes de un punto de la iluminación y de la detección, pero la luz que pasa disminuye bruscamente y baja la relación señal-ruido. La resolución en la dirección del eje óptico es varias veces peor que la lateral y es inversamente proporcional al cuadrado de la NA, por lo que, cuanto mayor es la NA del objetivo, más delgadas son las secciones."
+      },
+      {
+        "h": "Métodos de barrido y diferencias con otras técnicas",
+        "p": "La imagen se construye ordenando mediante el barrido las señales de cada punto, y lo más habitual es desviar el haz con espejos galvanométricos. El tipo de disco giratorio, que usa un disco con muchos pinholes (disco de Nipkow), barre muchos puntos a la vez y toma imágenes deprisa, por lo que es adecuado para observar movimientos rápidos en células vivas. El microscopio de excitación de dos fotones obtiene secciones ópticas sin pinhole, porque fuera del foco no se emite fluorescencia. La diferencia es que el confocal selecciona el plano focal en el lado de la detección y el de dos fotones en el de la excitación, y en tejidos profundos con mucha dispersión es ventajoso el de dos fotones."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre un microscopio confocal y un microscopio de fluorescencia ordinario?",
+        "a": "El microscopio de fluorescencia ordinario (de campo amplio) ilumina todo el campo y registra tal cual también la fluorescencia desenfocada, por lo que en muestras gruesas se acumula el desenfoque. El microscopio confocal ilumina y barre con un punto y bloquea con un pinhole la luz de fuera del plano focal, por lo que da imágenes nítidas de solo una capa delgada."
+      },
+      {
+        "q": "¿De qué tamaño debe ser el pinhole?",
+        "a": "Se usa mucho alrededor de 1 unidad Airy. Con un aumento de 63×, NA 1,4 y una longitud de onda de fluorescencia de 520 nm, es de unos 28,5 µm. Si se reduce, la sección es más delgada pero la imagen más oscura; si se agranda, la imagen es más clara a cambio de que se mezcle luz desenfocada."
+      },
+      {
+        "q": "¿Por qué la resolución en profundidad es peor que la lateral?",
+        "a": "Porque el objetivo solo recoge luz en un intervalo limitado de ángulos y desde un lado de la muestra, de modo que el intervalo de frecuencias espaciales que puede captar en la dirección del eje óptico es más estrecho que en la dirección lateral. La resolución en la dirección del eje óptico es inversamente proporcional al cuadrado de la NA, por lo que mejora al usar objetivos de mayor NA."
+      }
     ]
   },
   "二光子励起顕微鏡": {
@@ -3213,6 +4057,38 @@
       "microscopía de excitación de dos fotones",
       "microscopio de dos fotones",
       "microscopía de dos fotones"
+    ],
+    "about": [
+      {
+        "h": "Excitar solo el foco gracias al cuadrado de la intensidad",
+        "p": "En la excitación de dos fotones, una molécula absorbe dos fotones casi a la vez y se excita con la suma de sus energías. Göppert-Mayer la predijo teóricamente en 1931, y Denk y colaboradores la demostraron como microscopio en 1990. Como la probabilidad de absorción es proporcional al cuadrado de la intensidad, la excitación solo es intensa cerca del foco y se debilita enseguida al alejarse de él. Por ello, casi no hay fluorescencia ni fotoblanqueo fuera del foco, y se obtienen secciones ópticas sin pinhole. Para una excitación equivalente a 488 nm con un fotón se usa luz de alrededor de 976 nm, aproximadamente el doble de longitud de onda."
+      },
+      {
+        "h": "Por qué se usan pulsos de femtosegundos",
+        "p": "La absorción de dos fotones es muy poco probable, por lo que se usan pulsos de femtosegundos que concentran la intensidad en el tiempo. Con la misma potencia media, una señal proporcional al cuadrado de la intensidad aumenta en la inversa de la fracción del tiempo durante la que los pulsos están encendidos (el ciclo de trabajo). Con pulsos de 80 MHz de frecuencia de repetición y 100 fs de duración, el ciclo de trabajo es de unos 8×10⁻⁶, lo que da unas 10⁵ veces la señal de la luz continua (sin contar un factor que depende de la forma del pulso). Por ello puede observarse con potencias medias en la muestra de unos pocos mW a decenas de mW, y como fuentes se usan láseres de titanio-zafiro y láseres de fibra."
+      },
+      {
+        "h": "Por qué es ventajoso en tejidos profundos",
+        "p": "La luz del infrarrojo cercano se dispersa menos en los tejidos biológicos que la luz visible y llega más profundo. Además, como la excitación solo se produce en el foco, la fluorescencia que se dispersa en el camino de vuelta puede aprovecharse toda como señal, como procedente del foco. Por eso se usa un método en el que detectores de gran área situados cerca de la muestra recogen la fluorescencia sin hacerla volver por el sistema de barrido (detección no desescaneada). En un microscopio confocal, la fluorescencia dispersada queda bloqueada por el pinhole, por lo que, cuanto más profunda es la zona, más ventajosa es la excitación de dos fotones. En el cerebro de ratón se han observado profundidades de alrededor de 1 mm bajo la superficie."
+      },
+      {
+        "h": "Precauciones sobre la resolución y el daño",
+        "p": "Como la longitud de onda de excitación es aproximadamente el doble, la resolución lateral es algo peor que la de un microscopio confocal que excita el mismo colorante con un fotón. El cuadrado de la intensidad estrecha la distribución de la excitación, pero no lo suficiente para compensar el efecto de la mayor longitud de onda. Además, la intensidad en el foco es muy alta, por lo que, si se sube demasiado la potencia, aumentan bruscamente el fotoblanqueo en el foco y el daño por absorción de orden superior. Para observar aún más profundo, también se estudia la excitación de tres fotones con luz de alrededor de 1300 nm o 1700 nm."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el microscopio de excitación de dos fotones y el microscopio confocal?",
+        "a": "El microscopio confocal obtiene las secciones bloqueando la luz desenfocada con un pinhole en el lado de la detección, mientras que el de excitación de dos fotones las obtiene limitando la propia excitación al foco. En tejidos profundos con mucha dispersión es ventajosa la excitación de dos fotones, porque también puede aprovecharse la fluorescencia dispersada."
+      },
+      {
+        "q": "¿Qué longitudes de onda se usan en la excitación de dos fotones?",
+        "a": "Se usa luz del infrarrojo cercano de aproximadamente el doble de la longitud de onda de excitación con un fotón. Por ejemplo, la proteína verde fluorescente (GFP) se excita a menudo con luz de alrededor de 920 nm."
+      },
+      {
+        "q": "¿Por qué hace falta un láser de femtosegundos?",
+        "a": "Porque la absorción de dos fotones es proporcional al cuadrado de la intensidad, de modo que, incluso con la misma potencia media, la señal es mayor cuanto más se concentra la luz en pulsos cortos. Con pulsos de 80 MHz y 100 fs, la excitación es unas 10⁵ veces más eficiente que con luz continua."
+      }
     ]
   },
   "STED顕微鏡": {
@@ -3220,21 +4096,145 @@
     "desc": "Microscopio de superresolución que, con emisión estimulada mediante un haz en forma de rosquilla, apaga la fluorescencia alrededor del punto excitado y reduce la región que emite por debajo del límite de difracción.",
     "aliases": [
       "microscopía STED"
+    ],
+    "about": [
+      {
+        "h": "Estrechar la zona que emite por debajo del límite de difracción",
+        "p": "El microscopio STED (agotamiento por emisión estimulada) excita las moléculas fluorescentes con un haz de excitación e inmediatamente después superpone un haz en forma de rosquilla con intensidad nula en el centro (el haz STED), que devuelve las moléculas de alrededor al estado fundamental por emisión estimulada para que no emitan fluorescencia. Solo pueden emitir fluorescencia las moléculas de una región muy pequeña en el centro de la rosquilla, de modo que, aunque el enfoque de la luz sigue limitado por difracción, la región que emite es menor que el límite de difracción. Lo propusieron Hell y colaboradores en 1994, y Hell recibió en 2014 el Premio Nobel de Química junto con investigadores de los métodos de molécula individual."
+      },
+      {
+        "h": "La resolución mejora con la raíz cuadrada de la intensidad",
+        "p": "Una estimación de la resolución es d ≈ d₀/√(1 + I/Is), donde d₀ es la resolución limitada por difracción, I la intensidad del haz STED e Is una intensidad de saturación de referencia a partir de la cual empieza a actuar la supresión de la fluorescencia. Con d₀ = 214 nm (longitud de onda de 600 nm, NA 1,4), I/Is = 99 da unos 21 nm, y para llegar a 30 nm hace falta I/Is ≈ 50. Como la resolución solo mejora con la raíz cuadrada de la intensidad, se necesita luz intensa. En las muestras biológicas, buscando el equilibrio con el fotoblanqueo y el daño por la luz, se usa a menudo con resoluciones de unas decenas de nm."
+      },
+      {
+        "h": "El haz en forma de rosquilla y la elección de la longitud de onda",
+        "p": "El haz en forma de rosquilla se obtiene enfocando luz que ha atravesado una placa de fase en vórtice, cuya fase varía de 0 a 2π alrededor del eje óptico. Lo cerca de cero que esté la intensidad central influye en la resolución, por lo que es importante controlar la polarización y las aberraciones. La longitud de onda del haz STED se elige en la cola de longitudes de onda largas del espectro de fluorescencia, para que no excite por sí misma las moléculas, y se usan mucho fuentes de 592 nm o 775 nm, entre otras. Para mejorar también la resolución en profundidad, se añade otro haz con una forma que encierra el foco por arriba y por abajo."
+      },
+      {
+        "h": "Diferencias con otros métodos de superresolución",
+        "p": "Los métodos de localización de moléculas individuales, como PALM y STORM, hacen emitir solo unas pocas moléculas cada vez, estiman su posición y construyen la imagen a partir de muchas imágenes, por lo que alcanzan una resolución alta a cambio de que la adquisición lleve tiempo y requiera reconstrucción por cálculo. El STED estrecha la propia región que emite mientras barre, por lo que la imagen se obtiene directamente tal como se mide, y las zonas pequeñas pueden registrarse deprisa. En cambio, como usa luz intensa, hay que elegir colorantes resistentes al fotoblanqueo. También existe un método llamado RESOLFT, que aplica la misma idea con menor intensidad de luz usando moléculas que pueden conmutarse con luz débil."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué resolución tiene un microscopio STED?",
+        "a": "Depende de la intensidad del haz STED, y en las muestras biológicas se usa a menudo del orden de unas decenas de nm. Según la estimación d ≈ d₀/√(1 + I/Is), cuanto mayor es I/Is, más fina es la resolución, pero también aumentan el fotoblanqueo y el daño."
+      },
+      {
+        "q": "¿Qué relación hay entre el STED y el microscopio confocal?",
+        "a": "El STED es un microscopio confocal de barrido al que se superpone un haz STED en forma de rosquilla. Al apagar el haz STED se obtiene una imagen confocal ordinaria, por lo que puede compararse la resolución en el mismo campo de visión."
+      },
+      {
+        "q": "¿Por qué el STED usa un haz en forma de rosquilla?",
+        "a": "Porque su intensidad es nula en el centro, de modo que solo las moléculas del centro no se apagan por emisión estimulada y pueden emitir fluorescencia. Apagando solo las moléculas de alrededor, la región que emite puede hacerse más estrecha que el límite de difracción."
+      }
     ]
   },
   "外部量子効率": {
     "term": "Eficiencia cuántica externa (EQE)",
-    "desc": "En un LED o dispositivo similar, número de fotones que salen del dispositivo por cada electrón inyectado. Es el producto de la eficiencia de inyección, la eficiencia cuántica interna y la eficiencia de extracción de luz."
+    "desc": "En un LED o dispositivo similar, número de fotones que salen del dispositivo por cada electrón inyectado. Es el producto de la eficiencia de inyección, la eficiencia cuántica interna y la eficiencia de extracción de luz.",
+    "about": [
+      {
+        "h": "Cuántos fotones salen por cada electrón",
+        "p": "Al hacer pasar una corriente I por un LED se inyectan I/q electrones por segundo. La eficiencia cuántica externa (EQE) es la fracción de ellos que sale del dispositivo como fotones, y se obtiene a partir de la potencia óptica P y la longitud de onda λ como EQE = (Pλ/hc)/(I/q). Con la longitud de onda en nm, la corriente en A y la potencia óptica en W, EQE ≈ Pλ/(1240 I). Es una magnitud distinta de la eficiencia de conversión de potencia (potencia óptica/potencia eléctrica de entrada), que es un cociente de potencias; como la tensión de funcionamiento es mayor que la energía del fotón, la eficiencia de conversión de potencia es menor que la eficiencia cuántica externa en esa proporción."
+      },
+      {
+        "h": "El producto de tres eficiencias",
+        "p": "La eficiencia cuántica externa es el producto de la eficiencia de inyección, con la que los electrones y los huecos inyectados llegan a la capa activa, la eficiencia cuántica interna, que es la fracción de las recombinaciones en la capa activa que producen fotones, y la eficiencia de extracción de luz, que es la fracción de los fotones generados que logra salir. En los LED azules de InGaN, la eficiencia cuántica interna llega a ser alta, y el problema que queda es la extracción. Desde un cristal de índice de refracción de unos 2,5, solo alrededor del 4 % de la luz puede salir al aire por cada cara plana, por lo que se combinan superficies texturizadas, sustratos con patrón, encapsulado con resina y electrodos reflectantes para aumentar la extracción."
+      },
+      {
+        "h": "Variación con la corriente y la temperatura",
+        "p": "La eficiencia cuántica externa cambia con la corriente: con corrientes bajas, la recombinación no radiativa a través de defectos es relativamente grande, y al aumentar la corriente la eficiencia sube. Si se aumenta aún más la densidad de corriente, crecen la recombinación Auger y las fugas de portadores, y la eficiencia baja, lo que se llama caída de eficiencia (droop). Si la temperatura de la capa activa sube, también aumenta la recombinación no radiativa y la eficiencia baja, por lo que en los LED de iluminación agrandar el chip para reducir la densidad de corriente y diseñar bien la disipación del calor son claves para mantener la eficiencia. En los OLED se usa la eficiencia cuántica externa con la misma definición."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la eficiencia cuántica externa y la eficacia luminosa (lm/W)?",
+        "a": "La eficiencia cuántica externa es el cociente entre los números de fotones y de electrones, una eficiencia física que no depende del color de la luz. La eficacia luminosa es el flujo luminoso (lm) por vatio de potencia y está ponderada por la sensibilidad del ojo, por lo que, con la misma eficiencia cuántica externa, es mayor cuanto más cerca está la luz del verde, donde el ojo es más sensible."
+      },
+      {
+        "q": "¿Cómo se obtiene la potencia óptica a partir de la eficiencia cuántica externa?",
+        "a": "La potencia óptica es P = EQE × (I/q) × (hc/λ). Por ejemplo, con 350 mA, 450 nm y una eficiencia cuántica externa del 52 %, usando una energía del fotón de unos 2,76 eV se obtienen unos 0,5 W."
+      },
+      {
+        "q": "¿Cómo se mide la eficiencia cuántica interna?",
+        "a": "Como es difícil de medir directamente, se estima tomando el cociente entre la intensidad de emisión a temperatura ambiente y a baja temperatura, suponiendo que a baja temperatura la recombinación no radiativa se detiene, o analizando la relación entre la corriente y la potencia óptica con un modelo de recombinación. La eficiencia de extracción de luz se estima con cálculos como el trazado de rayos."
+      }
+    ]
   },
   "光取り出し効率": {
     "term": "Eficiencia de extracción de luz",
-    "desc": "Fracción de los fotones generados en la capa activa que pueden salir del dispositivo. Dentro de un semiconductor de índice de refracción alto, la luz queda atrapada por reflexión total interna, por lo que se aumenta con rugosidades en la superficie y medios similares."
+    "desc": "Fracción de los fotones generados en la capa activa que pueden salir del dispositivo. Dentro de un semiconductor de índice de refracción alto, la luz queda atrapada por reflexión total interna, por lo que se aumenta con rugosidades en la superficie y medios similares.",
+    "about": [
+      {
+        "h": "Por qué a la luz le cuesta salir",
+        "p": "Un fotón generado en la capa activa de un LED que incide en la frontera entre el semiconductor y el aire con un ángulo mayor que el ángulo crítico sufre reflexión total interna y vuelve al interior del cristal. Solo puede salir la luz que entra en el cono delimitado por el ángulo crítico (el cono de escape), de modo que por una cara plana de un cristal de índice de refracción n solo sale alrededor de 1/(4n²) de la luz emitida en todas las direcciones. La luz atrapada se refleja una y otra vez hasta que la absorben la capa activa, los electrodos o el sustrato, y se convierte en calor. Por ello, aunque la eficiencia cuántica interna sea alta, la eficiencia cuántica externa queda muy limitada por la eficiencia de extracción de luz."
+      },
+      {
+        "h": "Estimaciones fijadas por el índice de refracción",
+        "p": "La fracción que entra en el cono de escape es (1 − cosθc)/2, con θc = arcsin(1/n). En el GaN (n ≈ 2,5), θc ≈ 23,6° y sale alrededor del 4,2 % por cara; en los cristales de tipo GaAs (n ≈ 3,5), θc ≈ 16,6° y alrededor del 2,1 %, es decir, cuanto mayor es el índice, menor es la fracción. Incluso la luz con incidencia normal sufre reflexión de Fresnel, y la transmitancia de un cristal de n = 2,5 al aire es de alrededor del 82 %. Si se encapsula el chip en una resina de índice de unos 1,5, el ángulo crítico en la frontera entre el cristal y la resina se amplía a unos 36,9°, y la fracción por cara pasa a ser de alrededor del 10 %."
+      },
+      {
+        "h": "El valor de una cara no es el del dispositivo entero",
+        "p": "La eficiencia de extracción de luz es una fracción que incluye también la luz que sale después de recorrer muchas veces el interior del dispositivo. Por ello, en los dispositivos con sustrato transparente, en los que la luz puede salir por cualquiera de las 6 caras, o con un electrodo reflectante en la cara posterior que devuelve la luz hacia la cara frontal, es mucho mayor que el valor del cono de escape de una sola cara. A la inversa, si hay muchas capas que absorben la luz atrapada, en cada recorrido se pierde luz. Además, la luz que vuelve a la capa activa puede reabsorberse y emitirse de nuevo (reciclaje de fotones), por lo que en un dispositivo real no es sencillo separar limpiamente la eficiencia cuántica interna de la eficiencia de extracción de luz."
+      },
+      {
+        "h": "Diseños que mejoran la extracción",
+        "p": "La idea básica es cambiar la dirección de la luz para darle más ocasiones de entrar en el cono de escape. En los LED azules de nitruros se combinan sustratos de zafiro con patrón, superficies texturizadas por grabado, estructuras flip-chip con electrodos de alta reflectancia, como los de plata, y estructuras de película delgada en las que se retira el sustrato, y se considera que la eficiencia de extracción de luz alcanza el 80 % o más. En los OLED, la luz queda atrapada en las capas orgánicas de alto índice, en el electrodo transparente y en el vidrio, de modo que la extracción se queda en alrededor del 20 %, y se mejora con capas dispersoras o láminas de microlentes."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué relación hay entre la eficiencia de extracción de luz y la eficiencia cuántica externa?",
+        "a": "La eficiencia cuántica externa es el producto de la eficiencia de inyección, la eficiencia cuántica interna y la eficiencia de extracción de luz. Por ejemplo, con una eficiencia de inyección de 1, una eficiencia cuántica interna del 80 % y una eficiencia de extracción de luz del 70 %, la eficiencia cuántica externa es del 56 %."
+      },
+      {
+        "q": "¿Por qué un LED es más luminoso si se encapsula en resina?",
+        "a": "Porque la diferencia de índice de refracción entre el cristal y el medio exterior se reduce y el ángulo crítico se amplía. Del GaN (n ≈ 2,5) al aire es de unos 23,6°, pero a una resina de índice 1,5 es de unos 36,9°, de modo que la luz que entra en el cono de escape de una cara aumenta unas 2,4 veces."
+      },
+      {
+        "q": "¿Por qué ayuda a salir a la luz texturizar la superficie?",
+        "a": "En una cara plana, la luz que ha sufrido una vez reflexión total interna se sigue reflejando con el mismo ángulo y nunca entra en el cono de escape. Si las rugosidades cambian su dirección, en cada reflexión tiene una nueva ocasión de entrar en el cono de escape, y aumenta la luz que sale antes de ser absorbida."
+      }
+    ]
   },
   "効率ドループ": {
     "term": "Caída de eficiencia (droop)",
     "desc": "Fenómeno por el que la eficiencia cuántica externa de un LED, tras alcanzar su máximo a cierta corriente, disminuye a corrientes altas. Se considera que las causas principales son la recombinación Auger y la fuga de portadores.",
     "aliases": [
       "efficiency droop"
+    ],
+    "about": [
+      {
+        "h": "Una eficiencia que baja a corrientes altas",
+        "p": "Cuando se aumenta la densidad de corriente de un LED azul de InGaN, su eficiencia cuántica externa alcanza primero un máximo y después disminuye al seguir aumentando la corriente. Esto es la caída de eficiencia (droop). La densidad de corriente del máximo varía de un dispositivo a otro, pero en la mayoría está en torno a 10 A/cm² o por debajo, de modo que con las decenas de A/cm² con que se alimentan los LED de iluminación (35 A/cm² para 350 mA en un chip de 1 mm de lado) la eficiencia ya está por debajo de su máximo. La potencia óptica sigue aumentando con la corriente, pero la luz por unidad de corriente disminuye, por lo que las corrientes altas son desfavorables en eficiencia y en generación de calor."
+      },
+      {
+        "h": "El mecanismo según el modelo ABC",
+        "p": "Si la densidad de portadores en la capa activa es n, la tasa de recombinación se escribe An + Bn² + Cn³, y la eficiencia cuántica interna es Bn²/(An + Bn² + Cn³). A es el coeficiente de la recombinación no radiativa a través de defectos, B el de la recombinación radiativa y C el de la recombinación Auger. Con esta fórmula, la eficiencia es máxima para n = √(A/C), y a densidades mayores el término Cn³ hace que disminuya. Sobre la causa se ha debatido durante mucho tiempo; además de la recombinación Auger, se han propuesto procesos como la fuga de electrones que atraviesan la capa activa hacia el lado p. También hay un trabajo que informa de la medida directa de los electrones de alta energía producidos por la recombinación Auger."
+      },
+      {
+        "h": "Un fenómeno distinto de la pérdida térmica",
+        "p": "A corrientes altas también sube la temperatura del chip, y la eficiencia baja porque la temperatura aumenta la recombinación no radiativa. Sin embargo, la caída de eficiencia persiste aunque se mida con pulsos lo bastante cortos y ciclos de trabajo lo bastante bajos como para que no se acumule calor, por lo que se considera un fenómeno debido a la propia densidad de corriente. La disminución de la eficiencia con la temperatura se distingue a veces con el nombre de caída térmica (thermal droop). Además, en los microLED de unas decenas de µm o menos, la recombinación en los defectos de las paredes laterales reduce la eficiencia en el lado de corrientes bajas y desplaza el máximo hacia densidades de corriente mayores, pero también este es un problema distinto de la caída en el lado de corrientes altas."
+      },
+      {
+        "h": "Diseño y uso para limitar la caída",
+        "p": "En el modelo ABC, si se reduce la densidad de portadores con la misma corriente, disminuye la proporción de recombinación Auger. Por ello se adoptan diseños que amplían el volumen emisor aumentando el número o el espesor de los pozos cuánticos, o que perfeccionan la capa de bloqueo de electrones para que los electrones se fuguen menos hacia el lado p. En cuanto al uso, la eficiencia aumenta si se reduce la densidad de corriente usando chips más grandes o repartiendo la corriente entre muchos chips. Sin embargo, más área de chip también supone más coste, por lo que en los LED de iluminación la densidad de corriente de funcionamiento se elige buscando el equilibrio entre la eficiencia y el coste por lumen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué se usan los LED con corrientes altas a pesar de la caída de eficiencia?",
+        "a": "Porque, aunque la eficiencia baje, el flujo luminoso que se obtiene de un chip sigue aumentando con la corriente. Si se puede reducir el número de chips, se contiene el coste de los componentes, de modo que la corriente de funcionamiento se decide buscando el equilibrio entre eficiencia y coste."
+      },
+      {
+        "q": "¿Qué determina la corriente a la que la eficiencia es máxima?",
+        "a": "En el modelo ABC, la eficiencia cuántica interna es máxima cuando la densidad de portadores es √(A/C). Cuantos más defectos tiene el dispositivo y, por tanto, mayor es A, más alta es la densidad de corriente del máximo y menor es la propia eficiencia máxima."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la caída de eficiencia y la caída térmica?",
+        "a": "La caída de eficiencia es la disminución de la eficiencia debida a una densidad de corriente alta, y aparece aunque se mida con alimentación pulsada sin que se caliente el chip. La caída térmica es la disminución de la eficiencia que se produce, con la misma corriente, porque al subir la temperatura del chip aumenta la recombinación no radiativa."
+      }
     ]
   },
   "白色LED": {
@@ -3242,6 +4242,38 @@
     "desc": "LED que convierte parte de la luz de un LED azul en amarillo u otros colores mediante un fósforo y las mezcla para obtener blanco. Añadir un fósforo rojo mejora la reproducción cromática, pero tiende a reducir la eficacia luminosa.",
     "aliases": [
       "LED blancos"
+    ],
+    "about": [
+      {
+        "h": "Obtener blanco con luz azul y un fósforo",
+        "p": "La mayoría de los LED blancos que se usan en iluminación combinan un LED azul de InGaN que emite hacia los 450 nm con un fósforo. Parte de la luz azul la absorbe el fósforo y la convierte en luz de longitud de onda mayor, como el amarillo, que se mezcla con la luz azul restante de modo que el conjunto se ve blanco. El fósforo amarillo típico es el granate de itrio y aluminio dopado con cerio (YAG:Ce), que emite una banda ancha que abarca de 500 a 700 nm. La proporción entre azul y amarillo cambia con la cantidad y la concentración del fósforo, y con ella se fija la temperatura de color del blanco."
+      },
+      {
+        "h": "Energía perdida en la conversión de longitud de onda",
+        "p": "Un fósforo absorbe un fotón azul y emite un fotón de longitud de onda mayor, por lo que la energía por fotón disminuye en la razón entre las longitudes de onda. Esta diferencia se llama pérdida de Stokes y se convierte en calor. Por ejemplo, al convertir un fotón de 450 nm en uno de 600 nm, la energía se multiplica por 450/600 = 0,75 y se pierde un 25 %. Esta pérdida es mayor cuanto más roja es la luz, y además ahí el ojo es menos sensible, por lo que añadir un fósforo rojo para mejorar la reproducción cromática tiende a reducir la eficacia luminosa (lm/W). Los fósforos sufren también extinción térmica, por la que la emisión se debilita al calentarse, de modo que la disipación del calor del fósforo también es importante."
+      },
+      {
+        "h": "Temperatura de color y reproducción cromática son índices distintos",
+        "p": "En las especificaciones de los LED blancos suelen figurar la temperatura de color correlacionada y el índice general de reproducción cromática Ra. La temperatura de color indica a qué temperatura de la radiación del cuerpo negro se parece más el color de la luz; es más alta (blanco azulado) cuanto más componente azul hay, y más baja (color más cálido) cuanto más componente roja. El índice de reproducción cromática expresa lo parecidos que se ven los colores de los objetos iluminados con esa luz a como se ven con una luz de referencia. Aun con la misma temperatura de color, si el espectro es distinto la reproducción cromática difiere, y un blanco formado solo por azul y amarillo reproduce mal los objetos rojos, con un Ra que suele quedar en torno a 70-80."
+      },
+      {
+        "h": "Otros métodos y cuándo se usan",
+        "p": "Hay otros métodos para obtener blanco. Combinar LED rojos, verdes y azules evita la pérdida de Stokes del fósforo y permite cambiar libremente el color, pero cada color tiene un comportamiento distinto con la temperatura y el envejecimiento, por lo que hace falta un control que evite que el color se desplace. Excitar fósforos rojos, verdes y azules con LED violetas o del ultravioleta cercano facilita obtener un espectro suave cercano al de la luz solar y permite una reproducción cromática alta. En la retroiluminación de las pantallas de cristal líquido, cuyo objetivo es distinto del de la iluminación, se usa un blanco que combina fósforos verdes y rojos de banda estrecha o puntos cuánticos para ampliar la gama de colores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se cambia la temperatura de color de un LED blanco?",
+        "a": "Principalmente con la cantidad y el tipo de fósforo. Si se aumenta el fósforo para convertir más luz azul y se añade un fósforo rojo, la temperatura de color baja y se obtiene un color cálido cercano al de una bombilla incandescente. Si se deja más componente azul, se obtiene un blanco de temperatura de color alta, cercano a la luz diurna."
+      },
+      {
+        "q": "¿Cómo se define la vida útil de un LED blanco?",
+        "a": "Los LED de iluminación rara vez se apagan de golpe; su flujo luminoso disminuye poco a poco. Por ello, la vida útil se expresa con medidas como el tiempo que tarda el flujo en bajar al 70 % del inicial (L70), y se estima a partir de ensayos de larga duración a distintas temperaturas."
+      },
+      {
+        "q": "¿Qué forma tiene el espectro de un LED blanco?",
+        "a": "Está formado por 2 picos: uno estrecho hacia los 450 nm, debido al LED azul, y otro ancho que abarca de 500 a 700 nm, debido al fósforo. Entre ambos hay un valle hacia los 480 nm, por lo que su forma es distinta de los espectros suaves de la luz solar o de las bombillas incandescentes."
+      }
     ]
   },
   "有機EL": {
@@ -3250,6 +4282,38 @@
     "aliases": [
       "diodo orgánico emisor de luz",
       "diodos orgánicos emisores de luz"
+    ],
+    "about": [
+      {
+        "h": "Cómo emite luz un apilamiento de películas delgadas",
+        "p": "El OLED es un dispositivo formado sobre un sustrato por un ánodo transparente (como el ITO), una capa de transporte de huecos, una capa emisora, una capa de transporte de electrones y un cátodo; incluso todas las capas orgánicas juntas tienen un espesor de unos pocos cientos de nm o menos. Al aplicar una tensión de unos pocos V, se inyectan huecos desde el ánodo y electrones desde el cátodo, que se encuentran en la capa emisora y forman excitones. Cuando un excitón vuelve al estado fundamental, emite luz de un color determinado por la molécula del material emisor. En los materiales orgánicos las cargas se mueven con más dificultad que en los semiconductores inorgánicos, por lo que las películas se hacen delgadas para que la corriente circule con una tensión baja. Como es un diodo que emite luz con la corriente, se llama también diodo orgánico emisor de luz."
+      },
+      {
+        "h": "Singletes y tripletes",
+        "p": "Por la forma en que se combinan los espines del electrón y del hueco, los excitones se forman en una proporción del 25 % de singletes y el 75 % de tripletes. En los materiales fluorescentes ordinarios solo los singletes pueden emitir luz, por lo que la eficiencia cuántica interna está limitada al 25 %. Los materiales fosforescentes, complejos que contienen átomos pesados como el iridio, pueden emitir también desde los tripletes gracias al acoplamiento espín-órbita, con lo que el límite sube al 100 %. También se han desarrollado materiales de fluorescencia retardada activada térmicamente (TADF), que reducen la diferencia de energía entre singletes y tripletes para que el calor devuelva los tripletes a singletes. Sin embargo, los materiales fosforescentes azules tienen una vida corta, y se dice que para el azul se usan a menudo materiales fluorescentes."
+      },
+      {
+        "h": "Ventajas de la emisión propia y problemas de las pantallas",
+        "p": "En una pantalla OLED los píxeles emiten luz por sí mismos, de modo que un píxel negro se apaga al cortar su corriente, y es más fácil obtener negros profundos que en un cristal líquido con retroiluminación. Además responde deprisa y permite fabricar paneles flexibles. En cambio, la luz exterior que se refleja en el cátodo metálico hace que el negro se aclare, por lo que muchos paneles suprimen la reflexión con un polarizador circular, que a cambio absorbe más de la mitad de la luz propia del panel. Los materiales se degradan según el tiempo que circula la corriente, a velocidades distintas para cada color, por lo que mostrar la misma imagen durante mucho tiempo produce quemado de pantalla. La corriente de cada píxel se controla individualmente con transistores."
+      },
+      {
+        "h": "Emisores separados por color y filtros de color",
+        "p": "Hay 2 métodos principales para obtener los colores. En la mayoría de los teléfonos inteligentes se depositan por evaporación en vacío los materiales emisores rojo, verde y azul a través de una máscara metálica con aberturas finas, separándolos píxel a píxel. En los televisores grandes, en los que es difícil mantener la precisión de la máscara sobre sustratos grandes, se usan un OLED que emite blanco en toda la superficie con filtros de color para separar los colores, o un OLED que emite azul combinado con la conversión de color por puntos cuánticos. Para la extracción de la luz también se usan estructuras de emisión superior en las que el espacio entre los electrodos forma una microcavidad, lo que mejora la extracción y la pureza del color."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué consume menos potencia, un OLED o un LCD?",
+        "a": "Depende de la imagen que se muestre. El OLED consume menos cuanto más oscuro es el píxel, por lo que es ventajoso en imágenes con mucho negro, pero en una imagen totalmente blanca puede consumir más que un LCD. El LCD mantiene encendida la retroiluminación, por lo que su consumo varía relativamente poco con la imagen."
+      },
+      {
+        "q": "¿Cómo se evita el quemado de pantalla?",
+        "a": "Lo básico es no mostrar la misma imagen durante mucho tiempo. Los paneles también aplican medidas como desplazar poco a poco la posición de la imagen, compensar la corriente de los píxeles degradados y limitar la luminosidad máxima. También continúa la investigación para alargar la vida de los materiales."
+      },
+      {
+        "q": "¿Por qué los OLED pueden ser flexibles?",
+        "a": "Porque las capas orgánicas que emiten tienen un espesor de unos pocos cientos de nm o menos y pueden formarse sobre un sustrato de resina, como la poliimida, en lugar de vidrio. Como se degradan con facilidad con la humedad y el oxígeno, se sellan con películas delgadas para aislarlos del aire."
+      }
     ]
   },
   "液晶ディスプレイ": {
@@ -3257,6 +4321,38 @@
     "desc": "Pantalla que deja pasar o bloquea, píxel a píxel, la luz de la retroiluminación mediante dos polarizadores y un cristal líquido cuyas moléculas cambian de orientación con la tensión aplicada.",
     "aliases": [
       "pantallas de cristal líquido"
+    ],
+    "about": [
+      {
+        "h": "El cristal líquido como obturador de luz",
+        "p": "En una pantalla de cristal líquido, el cristal líquido en sí no emite luz, sino que muestra la imagen cambiando la cantidad de luz de la retroiluminación posterior que deja pasar en cada píxel. Los cristales líquidos nemáticos, cuyas moléculas en forma de varilla se alinean en una dirección común, tienen birrefringencia y cambian el estado de polarización de la luz que los atraviesa. Como la permitividad de las moléculas es anisótropa, al aplicar una tensión las moléculas cambian de orientación según el campo eléctrico, y cambia también la forma en que alteran la polarización. Si se coloca el cristal líquido entre 2 polarizadores, este cambio de polarización se convierte en un cambio de la cantidad de luz transmitida. El color y la luminosidad se expresan cambiando la transmitancia de cada subpíxel, cada uno con un filtro de color rojo, verde o azul."
+      },
+      {
+        "h": "Los tipos TN, VA e IPS",
+        "p": "Hay varios tipos, según cómo se alinean y cómo se mueven las moléculas. El tipo TN alinea las moléculas con una torsión de 90° y, con la tensión, las levanta y deshace la torsión. El tipo VA mantiene las moléculas perpendiculares al sustrato cuando no hay tensión y muestra el negro entre polarizadores cruzados, por lo que se fuga poca luz y la relación de contraste alcanza varios miles a 1. El tipo IPS gira las moléculas dentro del plano manteniéndolas paralelas al sustrato, por lo que el color y la luminosidad cambian poco al mirar de forma oblicua, y el ángulo de visión es amplio. En todos los tipos, el producto de la birrefringencia y el espesor de la capa de cristal líquido (el retardo) se diseña según la longitud de onda de la luz."
+      },
+      {
+        "h": "Por qué el aprovechamiento de la luz es bajo",
+        "p": "Incluso al mostrar blanco, solo sale de la pantalla un pequeño porcentaje de la luz de la retroiluminación, de unos pocos %. La luz no polarizada pierde más de la mitad en un polarizador de absorción, el filtro de color de cada subpíxel deja pasar como mucho alrededor de un tercio de la luz blanca, y además el cableado y los transistores tapan parte del píxel. Por ello se usan películas que reflejan hacia la retroiluminación la polarización que el polarizador desecharía, para cambiar su polarización y reutilizarla, y diseños de píxel con mayor relación de apertura. La retroiluminación de puntos cuánticos concentra la luz en las longitudes de onda que dejan pasar los filtros de color, con lo que amplía la gama de colores y reduce el desperdicio de luz."
+      },
+      {
+        "h": "Negro aclarado y control de la retroiluminación",
+        "p": "El cristal líquido no puede bloquear del todo la luz ni siquiera al mostrar negro, por lo que en una habitación oscura el negro se ve ligeramente claro. Lo compensa la atenuación local (local dimming), que divide la retroiluminación en muchas zonas y atenúa solo las zonas de las partes oscuras. Con la retroiluminación miniLED, que dispone muchos LED pequeños y se divide en cientos de zonas, o en algunos casos en más de 10 000, el contraste puede acercarse al de los OLED. Sin embargo, las zonas son mayores que los píxeles, por lo que la luz puede extenderse alrededor de los objetos brillantes sobre fondos oscuros. En vídeo, la lentitud de respuesta del cristal líquido emborrona los contornos, por lo que también se usan esquemas de control que aplican brevemente una tensión mayor para acelerar la respuesta."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué las pantallas de cristal líquido tienen ángulos de visión estrechos?",
+        "a": "Porque el cambio de polarización debido a la birrefringencia del cristal líquido depende del ángulo con el que la luz atraviesa la capa. Al mirar de forma oblicua, el negro se aclara y los colores cambian. Se mejora con el tipo IPS o con diseños que usan películas de compensación para cancelar el cambio de polarización de la luz oblicua."
+      },
+      {
+        "q": "¿Qué diferencia hay entre normalmente negro y normalmente blanco?",
+        "a": "Normalmente negro significa que el píxel está negro cuando no se aplica tensión, y normalmente blanco, que está blanco. La mayoría de los tipos VA e IPS son normalmente negros, con lo que al mostrar negro se fuga poca luz y es más fácil obtener un contraste alto."
+      },
+      {
+        "q": "¿Qué relación de contraste tiene una pantalla de cristal líquido?",
+        "a": "Depende del tipo: como referencia, varios miles a 1 en el tipo VA y alrededor de 1000 a 1 en los tipos IPS y TN. Con la atenuación local, el contraste puede aumentar aún más cuando hay a la vez zonas claras y oscuras en la pantalla."
+      }
     ]
   },
   "色域": {
@@ -3266,6 +4362,34 @@
       "gamas de colores",
       "gamut",
       "gama cromática"
+    ],
+    "about": [
+      {
+        "h": "El triángulo de los tres primarios",
+        "p": "Una pantalla forma los colores variando la intensidad de la luz de tres primarios: rojo, verde y azul. La cromaticidad de la luz obtenida por mezcla aditiva es una media ponderada de las cromaticidades de los primarios, por lo que los colores reproducibles se limitan al interior del triángulo del diagrama de cromaticidad xy cuyos vértices son las cromaticidades de los tres primarios. Esta es la gama de colores. La cromaticidad de la luz monocromática se encuentra sobre el lugar espectral en forma de herradura, y fuera de él no existen colores, de modo que, sean cuales sean los tres primarios elegidos, no pueden reproducirse todos los colores visibles. El triángulo se dibuja en cromaticidad, que no depende de la luminosidad, por lo que una luminancia alta no tiene que ver con la amplitud de la gama de colores."
+      },
+      {
+        "h": "Normas de gama de colores y cómo compararlas",
+        "p": "Normas como sRGB, el estándar de la informática y la web, Adobe RGB, que se usa en fotografía e impresión, DCI-P3, del cine, y BT.2020, de la televisión de ultra alta definición, fijan cada una las cromaticidades de sus primarios y su punto blanco. Los primarios de BT.2020 son luz monocromática situada sobre el lugar espectral, y forman un triángulo mucho mayor que el de sRGB. La gama de colores de una pantalla se expresa como la razón entre su área y la del triángulo de una norma, o como la fracción del triángulo de la norma que cubre (cobertura). Las distancias en el diagrama xy no son proporcionales a las diferencias de color percibidas, por lo que también se compara en el diagrama u′v′, y hay que comprobar en qué diagrama se ha calculado un valor."
+      },
+      {
+        "h": "Técnicas para ampliar la gama y gestión del color",
+        "p": "Cuanto más estrecho es el espectro de la luz de los primarios, más se acercan sus cromaticidades al lugar espectral y más amplia es la gama de colores. Con una retroiluminación de LED blancos y filtros de color, los primarios tienden a ser anchos, por lo que se convierte el color con puntos cuánticos o fósforos de banda estrecha, o se estrecha el espectro de emisión de los OLED con microcavidades. Sin embargo, incluso en una pantalla de gama amplia, si no se convierten los valores del espacio de color de la imagen al de la pantalla, las imágenes sRGB se muestran con una saturación excesiva. Esta conversión la realiza la gestión del color del sistema operativo y de las aplicaciones."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Es mejor una pantalla cuanto más amplia es su gama de colores?",
+        "a": "Es ventajoso en cuanto a que puede mostrar más colores, pero para ver los colores correctos hace falta gestión del color. Si se muestra una imagen sRGB en un entorno sin gestión del color, se ve demasiado viva y poco natural, por lo que también es importante poder cambiar a un modo sRGB según el uso."
+      },
+      {
+        "q": "¿Qué significa «72 % NTSC»?",
+        "a": "Es un valor que suele expresar la razón entre el área del triángulo de la pantalla y la del triángulo de los primarios de NTSC, una antigua norma de televisión. El triángulo de sRGB tiene en el diagrama xy alrededor del 71 % del área de NTSC, por lo que «72 % NTSC» indica una gama de colores de aproximadamente el tamaño de sRGB."
+      },
+      {
+        "q": "¿Cómo se muestran los colores que quedan fuera de la gama?",
+        "a": "Como la pantalla no puede producir colores fuera de su triángulo, la gestión del color los sustituye por colores cercanos del interior (mapeo de gama, gamut mapping). Hay métodos que solo reducen la saturación y otros que comprimen el conjunto para conservar las relaciones entre los colores, y se eligen según el propósito."
+      }
     ]
   },
   "量子ドット": {
@@ -3273,6 +4397,38 @@
     "desc": "Nanopartícula semiconductora de pocos nm de tamaño. La longitud de onda de emisión cambia con el tamaño y el espectro es estrecho, por lo que se usa en la conversión de color que amplía la gama de colores de las pantallas.",
     "aliases": [
       "puntos cuánticos"
+    ],
+    "about": [
+      {
+        "h": "Por qué el color cambia con el tamaño",
+        "p": "Los puntos cuánticos son cristales semiconductores de unos pocos nm de diámetro. Cuando el cristal se hace tan pequeño como la extensión del par electrón-hueco (el radio de Bohr del excitón), los portadores quedan confinados en una región pequeña, los niveles de energía se vuelven discretos y la banda prohibida efectiva se hace mayor que en el material masivo. El aumento de energía por el confinamiento es aproximadamente inversamente proporcional al cuadrado del diámetro, por lo que, cuanto más pequeña es la partícula, más corta es la longitud de onda de emisión. Por ejemplo, el CdSe masivo tiene una banda prohibida de unos 1,74 eV (una longitud de onda de unos 710 nm), pero en forma de puntos cuánticos puede emitir desde el azul hasta el rojo según el diámetro."
+      },
+      {
+        "h": "Pureza del color y rendimiento cuántico",
+        "p": "La ventaja que más se valora en las pantallas es la estrechez del espectro de emisión. Se considera que la anchura a media altura es de unos 20-30 nm en los de tipo CdSe y de unos 35-45 nm en los de tipo InP, sin cadmio, por lo que emiten una luz más estrecha que los fósforos ordinarios. Si los tamaños de las partículas no son uniformes, se superpone luz de longitudes de onda distintas y el espectro se ensancha, por lo que es importante estrechar la distribución de tamaños en la síntesis. Los defectos de la superficie atrapan portadores y provocan recombinación no radiativa, por lo que se recubren con una envoltura de un material de banda prohibida mayor, como el ZnS, formando una estructura núcleo-envoltura que aumenta el rendimiento cuántico."
+      },
+      {
+        "h": "Diferencias con los fósforos y los materiales de los OLED",
+        "p": "Los puntos cuánticos se diferencian de los fósforos y de los materiales emisores de los OLED, cuyo color lo fija la composición, en que con un mismo material puede elegirse la longitud de onda de emisión solo cambiando el tamaño. Además, su absorción se extiende ampliamente hacia longitudes de onda cortas, de modo que una sola fuente azul puede excitar a la vez puntos cuánticos verdes y rojos. En cambio, el estado de la superficie influye mucho en las prestaciones, y se degradan con facilidad con el calor, la humedad y el oxígeno, por lo que se usan encapsulados en resina o vidrio. Como el uso del cadmio está restringido por ser una sustancia peligrosa, en las pantallas avanza la sustitución por materiales sin cadmio, como los de tipo InP."
+      },
+      {
+        "h": "Cómo se usan en las pantallas",
+        "p": "El uso principal actual es la conversión de color, que transforma parte de la luz azul en verde y rojo. En las pantallas de cristal líquido se coloca una película de puntos cuánticos sobre una retroiluminación de LED azules para obtener una luz blanca con componentes verde y roja estrechas, lo que amplía la gama de colores. También hay paneles que colocan, píxel a píxel, capas de puntos cuánticos que convierten a rojo y verde sobre un OLED que emite azul. También se investigan dispositivos electroluminiscentes en los que la corriente pasa por los propios puntos cuánticos, pero se considera que sus problemas son la eficiencia y la vida útil, sobre todo en el azul. El Premio Nobel de Química de 2023 se concedió a las investigaciones sobre el descubrimiento y la síntesis de los puntos cuánticos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué relación hay entre el tamaño de un punto cuántico y su color?",
+        "a": "Cuanto más pequeño es, mayor es la banda prohibida y más corta es la longitud de onda de la luz que emite. Como referencia, en el CdSe, los diámetros de unos 2-3 nm dan emisión del azul verdoso al verde, y los de 5-6 nm, del naranja al rojo, aunque también influyen la estructura de la envoltura y el estado de la superficie."
+      },
+      {
+        "q": "¿Qué diferencia hay entre una pantalla de puntos cuánticos y una pantalla OLED?",
+        "a": "La mayoría de los productos llamados pantallas de puntos cuánticos son pantallas de cristal líquido con una retroiluminación cuyo color se convierte con puntos cuánticos, y sus píxeles no emiten luz propia. En un OLED, los píxeles emiten luz por sí mismos. Los paneles que combinan OLED azules con conversión de color por puntos cuánticos tienen características de ambos."
+      },
+      {
+        "q": "¿Por qué se llaman «cuánticos»?",
+        "a": "Porque, cuando los electrones quedan confinados en una región de unos pocos nm, su energía toma valores discretos según la mecánica cuántica, y que la separación entre ellos cambie con el tamaño es precisamente el mecanismo que fija el color. Como tienen niveles discretos parecidos a los de un átomo, a veces se les llama átomos artificiales."
+      }
     ]
   },
   "CMOSイメージセンサ": {
@@ -3281,6 +4437,34 @@
     "aliases": [
       "sensores de imagen CMOS",
       "CIS"
+    ],
+    "about": [
+      {
+        "h": "Estructura del píxel",
+        "p": "Un píxel típico de cuatro transistores consta de un fotodiodo que convierte la luz en electrones y los almacena, una puerta de transferencia que lleva la carga a la difusión flotante, un transistor de reinicio que inicializa la difusión flotante, un transistor amplificador (seguidor de fuente) que convierte la carga en tensión y un transistor de selección de fila. La capacidad C de la difusión flotante fija la tensión por electrón q/C (ganancia de conversión), que es de unas decenas de µV por electrón para unos pocos fF. El doble muestreo correlacionado, que toma la diferencia entre la tensión justo después del reinicio y la tensión tras transferir la carga, cancela el ruido kTC, que cambia en cada reinicio, y mantiene el ruido de lectura en unos pocos electrones o menos."
+      },
+      {
+        "h": "Proceso de lectura y diferencias con el CCD",
+        "p": "El sensor de imagen CMOS selecciona las filas de una en una, amplifica en paralelo las tensiones de los píxeles de esa fila con circuitos de cada columna, realiza la conversión AD y entrega valores digitales. Como no transfiere la carga a lo largo de grandes distancias como el CCD, no necesita tensiones de transferencia altas, consume poca potencia y lee deprisa. Además, puede integrar en el mismo proceso de semiconductores incluso los circuitos de control de tiempos, de conversión AD y de procesado de imagen. Al principio tenía el problema de una variación entre píxeles y un ruido mayores que los del CCD, pero el fotodiodo enterrado y el doble muestreo correlacionado lo superaron, y hoy se usa en la mayoría de las cámaras."
+      },
+      {
+        "h": "Iluminación posterior y apilamiento",
+        "p": "Al reducirse los píxeles, el cableado situado sobre el fotodiodo tapa la luz, por lo que se usan mucho los sensores de iluminación posterior, que adelgazan la oblea y hacen entrar la luz por la cara posterior. Además, en los sensores apilados, que fabrican en obleas separadas la capa de píxeles y la capa de circuitos de procesado de señal y luego las unen, el área del píxel puede dedicarse a recibir luz y los circuitos pueden usar un proceso de lógica rápida. El modo básico es el obturador rodante, que expone las filas en secuencia, pero también hay sensores de obturador global, con una zona en cada píxel que retiene temporalmente la carga, que se usan para fotografiar y medir objetos que se mueven deprisa."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué da mejor calidad de imagen, un sensor de imagen CMOS o un CCD?",
+        "a": "Hoy, en la mayoría de los usos, el sensor de imagen CMOS iguala o supera al CCD, y su ruido de lectura ha bajado hasta 1 o 2 electrones. El CCD se ha usado en algunas medidas científicas que aprovechan su pequeña variación entre píxeles y el agrupamiento (binning) en forma de carga, pero está siendo sustituido por los sensores de imagen CMOS científicos."
+      },
+      {
+        "q": "¿Qué desventajas tiene un paso de píxel pequeño?",
+        "a": "Cada píxel recibe menos fotones, por lo que baja la S/N limitada por el ruido de disparo, y la capacidad de pozo lleno también se reduce, lo que tiende a estrechar el rango dinámico. Además, el desenfoque por difracción supera con facilidad el tamaño del píxel, por lo que con números f grandes se pierde detalle."
+      },
+      {
+        "q": "¿Qué es la ganancia de conversión?",
+        "a": "Es el valor que indica cuántos µV de tensión produce un electrón en el píxel, q/C con C la capacidad de la difusión flotante. Cuanto mayor es, menor es el efecto del ruido de las etapas posteriores, pero disminuye el número de electrones que caben en el mismo intervalo de tensión."
+      }
     ]
   },
   "CCDイメージセンサ": {
@@ -3289,6 +4473,38 @@
     "aliases": [
       "sensores de imagen CCD",
       "CCD"
+    ],
+    "about": [
+      {
+        "h": "Transportar la carga como en una cadena de cubos",
+        "p": "El CCD (dispositivo de carga acoplada) es un dispositivo ideado en 1969 por Boyle y Smith en los Laboratorios Bell, que recibieron por ello el Premio Nobel de Física de 2009. Al aplicar una tensión a electrodos dispuestos sobre el silicio con una película aislante intermedia, se forma bajo ellos un pozo de potencial que almacena electrones, y al conmutar en secuencia las tensiones de los electrodos vecinos el pozo se desplaza, y con él la carga, a la posición siguiente. En un sensor de imagen, la carga acumulada en cada píxel se transporta de este modo a lo largo de las columnas, después por un registro de transferencia horizontal hasta la salida, y unos pocos amplificadores de salida la convierten en tensión. Como todos los píxeles pasan por el mismo amplificador, la variación entre píxeles es pequeña."
+      },
+      {
+        "h": "El peso de la eficiencia de transferencia",
+        "p": "La carga se transfiere miles de veces, por lo que es importante la fracción que se transporta sin dejar restos en cada transferencia (la eficiencia de transferencia de carga). Incluso con una eficiencia de transferencia de 0,99999, la carga que llega después de 2000 transferencias es 0,99999²⁰⁰⁰ ≈ 0,98, y alrededor del 2 % se queda por el camino. Con 0,9999 solo llega alrededor del 82 %, y los píxeles más alejados de la salida se ven más oscuros y la imagen deja estela. Por ello, en los CCD científicos se exigen un diseño y una fabricación que mantengan la eficiencia de transferencia en 0,99999 o más. Además, la transferencia requiere pulsos de control de tensión relativamente alta, lo que eleva el consumo de potencia y dificulta aumentar la velocidad, y esta es una de las razones por las que el CCD fue sustituido por el sensor de imagen CMOS."
+      },
+      {
+        "h": "Arquitecturas de transferencia y fenómenos característicos",
+        "p": "Hay CCD de fotograma completo (full frame), que usan la propia zona sensible como camino de transferencia; de transferencia de fotograma (frame transfer), con una zona de almacenamiento protegida de la luz separada de la zona sensible, y de transferencia interlínea, con un camino de transferencia vertical protegido de la luz junto a cada columna de zonas sensibles. Los de fotograma completo necesitan un obturador mecánico, pero tienen una apertura grande y una sensibilidad alta. Los de transferencia interlínea pueden pasar a la vez la carga de todos los píxeles a los caminos de transferencia, lo que da un obturador global electrónico. Con luz intensa, la luz que se suma a la carga en tránsito produce rayas verticales (smear), y la carga que desborda se extiende a su alrededor (blooming), fenómenos que se suprimen con estructuras que evacúan la carga sobrante, entre otras medidas."
+      },
+      {
+        "h": "Uso en las medidas científicas",
+        "p": "El CCD se ha usado mucho tiempo en astronomía y espectroscopia por su pequeña variación entre píxeles y porque el agrupamiento (binning), que suma como carga los píxeles vecinos, aumenta la sensibilidad sin añadir ruido de lectura. Si se enfría hasta unos −100 °C con nitrógeno líquido u otros medios, la corriente de oscuridad apenas es un problema incluso en exposiciones largas. Los CCD adelgazados que reciben la luz por la cara posterior son sensibles también al ultravioleta y a los rayos X blandos. El CCD de multiplicación de electrones (EMCCD), con un registro de multiplicación de electrones antes de la salida, multiplica la carga antes de leerla, de modo que el ruido de lectura efectivo puede ser inferior a 1 electrón, y se usa en tareas como la observación de la fluorescencia de moléculas individuales."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Se siguen usando los CCD?",
+        "a": "En las cámaras de consumo han sido sustituidos casi por completo por los sensores de imagen CMOS, y muchos de los grandes fabricantes se han retirado; por ejemplo, Sony anunció en 2015 el fin de su producción de CCD. Se siguen usando en algunas medidas científicas en las que se aprovechan la pequeña variación y el agrupamiento de carga, como la astronomía, la espectroscopia y la imagen de rayos X, pero también avanza la transición a los CMOS científicos."
+      },
+      {
+        "q": "¿Por qué se enfrían los CCD?",
+        "a": "Porque la corriente de oscuridad varía de forma exponencial con la temperatura y disminuye al enfriar. En las exposiciones largas, los electrones acumulados por la corriente de oscuridad y su ruido de disparo dejan de ser despreciables, por lo que los CCD astronómicos y similares se enfrían hasta que el ruido de la corriente de oscuridad sea bastante menor que el ruido de lectura."
+      },
+      {
+        "q": "¿Por qué el agrupamiento aumenta la sensibilidad?",
+        "a": "Porque el CCD puede reunir en una sola la carga de varios píxeles durante la transferencia y leerla una sola vez. La señal aumenta en proporción al número de píxeles reunidos, pero el ruido de lectura solo se añade una vez. A cambio, la resolución disminuye."
+      }
     ]
   },
   "フルウェル容量": {
@@ -3297,6 +4513,38 @@
     "aliases": [
       "capacidad de pozo completo",
       "full well"
+    ],
+    "about": [
+      {
+        "h": "El límite de electrones que puede almacenar un píxel",
+        "p": "El fotodiodo de un píxel es como un pequeño condensador que almacena los electrones generados por la luz. La capacidad de pozo lleno es el número máximo de electrones que puede almacenar; por encima de él, los electrones desbordan, la señal deja de aumentar y la imagen se satura en blanco. La capacidad de pozo lleno la determinan principalmente la capacidad, fijada por el área y la concentración de impurezas del fotodiodo, y el intervalo de potencial en el que puede almacenarse la carga; en los sensores de imagen CMOS también puede estar limitada por el número de electrones que puede manejar la difusión flotante que convierte la carga en tensión. Como referencia, es de varios miles de electrones en los píxeles de teléfonos inteligentes con un paso de alrededor de 1 µm, y de algunas decenas de miles en los píxeles de unos pocos µm."
+      },
+      {
+        "h": "Relación con la S/N máxima",
+        "p": "El ruido de disparo de los fotones es la raíz cuadrada del número de electrones, por lo que la S/N cuando el píxel se llena hasta su capacidad de pozo lleno N_FW es como máximo √N_FW. Con una capacidad de pozo lleno de 10000 electrones, la S/N máxima es de 100 (40 dB), y en una sola exposición no puede obtenerse una calidad de imagen mejor. Multiplicar por 4 la capacidad de pozo lleno solo duplica la S/N máxima. En cambio, el rango dinámico es la razón entre la capacidad de pozo lleno y el ruido del lado oscuro, por lo que aumenta en proporción a la capacidad de pozo lleno. Es decir, la capacidad de pozo lleno determina tanto el límite superior de la calidad de imagen en las zonas claras como el extremo claro del rango dinámico."
+      },
+      {
+        "h": "La saturación no siempre se produce en el píxel",
+        "p": "En una cámara real, el nivel de señal al que se saturan las luces altas no siempre lo fija solo la capacidad de pozo lleno del píxel. Al subir la sensibilidad ISO aumenta la ganancia aplicada a la señal del píxel, y el número de electrones con el que se alcanza el valor máximo del convertidor AD disminuye en proporción inversa. Si se duplica la sensibilidad ISO, el valor digital llega a su tope con la mitad de electrones, aunque el píxel todavía no esté saturado. Además, cerca de la capacidad de pozo lleno puede aparecer una no linealidad por la que la tensión crece cada vez menos al aumentar la carga, de modo que, para usar el sensor en medidas, se comprueba el intervalo en el que se mantiene la linealidad y se toma su límite superior como nivel de saturación práctico."
+      },
+      {
+        "h": "Cómo se mide y cómo se aumenta",
+        "p": "La capacidad de pozo lleno suele obtenerse representando la relación entre la media y la varianza de la señal (la curva de transferencia de fotones) a partir de imágenes uniformes tomadas con distintas cantidades de luz. En el intervalo en el que domina el ruido de disparo, la varianza es proporcional a la media, por lo que su pendiente da la ganancia de conversión, y al convertir a electrones la señal en la que la varianza cae bruscamente por la saturación se obtiene la capacidad de pozo lleno. Como la capacidad de pozo lleno disminuye al reducirse los píxeles, se recurre a medidas como formar fotodiodos más profundos o añadir dentro del píxel una capacidad de almacenamiento de carga para conservar el rango dinámico."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Es mejor un sensor cuanto mayor es su capacidad de pozo lleno?",
+        "a": "Es ventajoso en cuanto a que aumentan el límite superior de la S/N en escenas claras y el rango dinámico. Sin embargo, manejar cargas grandes exige una ganancia de conversión menor, lo que tiende a aumentar el ruido de lectura en escenas oscuras, por lo que compaginar ambas cosas requiere soluciones como la conmutación de ganancia."
+      },
+      {
+        "q": "¿En qué unidades se expresa la capacidad de pozo lleno?",
+        "a": "Lo habitual es expresarla como número de electrones (e⁻). A veces se compara como densidad de electrones, dividida por el área del píxel. Las especificaciones dadas en valores digitales (DN) se convierten a electrones con la ganancia de conversión antes de compararlas."
+      },
+      {
+        "q": "¿Por qué se extiende la luz alrededor de los píxeles saturados?",
+        "a": "Por el blooming, en el que los electrones que desbordan por encima de la capacidad de pozo lleno pasan a los píxeles vecinos. Los sensores de imagen CMOS lo suprimen dotando a cada píxel de un camino que evacúa la carga sobrante. La luz que se extiende alrededor de fuentes intensas también puede deberse a los destellos (flare) o a las imágenes fantasma de la lente."
+      }
     ]
   },
   "読み出し雑音": {
