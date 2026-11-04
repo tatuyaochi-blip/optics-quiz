@@ -361,7 +361,9 @@ async function init(app) {
   render();
 }
 
-// 検索の文字をそろえる(全角・半角、下付き・上付きの数字、大文字・小文字、空白と記号の違いを消す)
+// 検索の文字をそろえる(全角・半角、下付き・上付きの数字、大文字・小文字、空白と記号の違い、ラテン文字のアクセントを消す)
 export function norm(s) {
-  return String(s).normalize('NFKC').toLowerCase().replace(/[\s_{}^·・,、。()()[\]「」:：/'’"\-‐–]/g, '');
+  return String(s).normalize('NFKC').toLowerCase()
+    .replace(/[\u00c0-\u024f]/g, ch => ch.normalize('NFD').replace(/[\u0300-\u036f]/g, ''))
+    .replace(/[\s_{}^·・,、。()()[\]「」:：/'’"\-‐–]/g, '');
 }
