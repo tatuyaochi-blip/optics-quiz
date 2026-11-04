@@ -465,6 +465,63 @@
           "a": "É a distância até a qual o raio do feixe chega a √2 vezes o da cintura e a área da seção dobra. Nesse trecho o feixe é quase colimado e a sua intensidade não diminui muito, por isso, no processamento de materiais a laser, ele serve de referência para a margem de trabalho (profundidade de foco)."
         }
       ]
+    },
+    "fr": {
+      "nav": "Faisceau gaussien",
+      "card": "Calculer la longueur de Rayleigh, la divergence et la taille du faisceau à la distance z du col",
+      "title": "Calculateur de faisceau gaussien (longueur de Rayleigh, divergence, diamètre du faisceau, M²)",
+      "description": "À partir de la longueur d'onde du laser et du rayon au col w0, calcule la longueur de Rayleigh zR, la profondeur de foyer et la divergence, ainsi que le rayon du faisceau w(z) et le rayon de courbure du front d'onde R(z) à la distance z. Prend aussi en compte la qualité de faisceau M².",
+      "h1": "Calculateur de faisceau gaussien",
+      "lead": "À partir du rayon w0 à l'endroit le plus étroit du faisceau (le col) et de la longueur d'onde, le calculateur indique sur quelle distance et de combien le faisceau s'élargit. Les valeurs par défaut correspondent à un faisceau idéal (M² = 1) à 1064 nm avec w0 = 500 µm, observé à 1000 mm du col.",
+      "in_heading": "Entrées",
+      "lambda": "Longueur d'onde λ (nm, dans le vide)",
+      "w0": "Rayon au col w0 (µm, à 1/e²)",
+      "m2": "Qualité de faisceau M²",
+      "n": "Indice de réfraction du milieu n",
+      "z": "Distance au col z (mm)",
+      "out_heading": "Résultats",
+      "zr": "Longueur de Rayleigh zR",
+      "dof": "Profondeur de foyer 2zR",
+      "theta": "Divergence (demi-angle) θ",
+      "z_heading": "Valeurs à la distance z",
+      "wz": "Rayon du faisceau w(z)",
+      "dz": "Diamètre du faisceau 2w(z)",
+      "rz": "Rayon de courbure du front d'onde R(z)",
+      "note": "Le rayon du faisceau est la distance jusqu'au point où l'intensité tombe à 1/e² (environ 13,5 %) de sa valeur au centre. La divergence est la valeur loin du col (z ≫ zR). Pour un faisceau de M² supérieur à 1, le calcul suppose qu'à w0 égal, il diverge M² fois plus vite qu'un faisceau gaussien idéal.",
+      "practice": "Questions sur les lasers et les faisceaux gaussiens",
+      "related": "Termes associés",
+      "sections": [
+        {
+          "h": "Faisceau gaussien et longueur de Rayleigh",
+          "p": "La plupart des lasers émettent un faisceau gaussien (mode TEM00), dont l'intensité en section suit une distribution de Gauss. Le faisceau est le plus étroit au col et s'élargit en s'en éloignant selon w(z) = w0·√(1 + (z/zR)²). La longueur de Rayleigh zR = πw0²/λ est la distance à laquelle la section du faisceau a doublé (le rayon a été multiplié par √2) ; en deçà, le faisceau peut être considéré comme presque parallèle. Avec les valeurs par défaut (λ = 1064 nm, w0 = 500 µm), zR = π × (0,5 mm)² / 1,064 µm ≈ 738 mm. La profondeur de foyer est souvent donnée par le double, 2zR, soit environ 1,48 m."
+        },
+        {
+          "h": "Divergence et produit paramètre de faisceau",
+          "p": "Suffisamment loin du col, le faisceau diverge sous un angle constant, de demi-angle θ = λ/(πw0), soit environ 0,677 mrad avec les valeurs par défaut. Le produit w0·θ = λ/π ne dépend que de la longueur d'onde et traduit un compromis : plus on resserre le faisceau, plus il diverge vite. Ce produit s'appelle le produit paramètre de faisceau (BPP) ; pour un faisceau réel, il vaut M²·λ/π. Pour focaliser un faisceau sur une petite tache avec une lentille, on élargit le faisceau incident ou l'on utilise une longueur d'onde plus courte."
+        },
+        {
+          "h": "M² : un indicateur de la qualité du faisceau",
+          "p": "Le M² (« M carré ») exprime combien de fois plus vite un faisceau réel diverge qu'un faisceau gaussien idéal ; il vaut 1 pour un faisceau idéal. Les lasers à fibre monomodes et les lasers He-Ne sont en dessous de 1,1, tandis que les lasers à solide multimodes et l'axe lent des lasers à semi-conducteur vont de quelques unités à quelques dizaines. Avec un M² élevé, à col égal, la divergence est M² fois plus grande et la longueur de Rayleigh M² fois plus courte : le faisceau ne reste pas étroit sur une longue distance et sa tache focale est plus grande."
+        },
+        {
+          "h": "Courbure du front d'onde et calcul en fonction de la position",
+          "p": "Le front d'onde d'un faisceau gaussien est plan au col et se courbe en s'en éloignant ; son rayon de courbure vaut R(z) = z·(1 + (zR/z)²). R est minimal en z = zR, où il vaut 2zR. Loin du col, R ≈ z et l'onde se rapproche d'une onde sphérique centrée sur le col. À z = 1000 mm (valeur par défaut), w(z) ≈ 842 µm et R(z) ≈ 1545 mm. En conception de cavité, faire coïncider les rayons de courbure des miroirs avec ce R(z) crée un mode stable dans la cavité."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Quelle est la différence entre le diamètre à 1/e² et la largeur à mi-hauteur ?",
+          "a": "Le diamètre à 1/e² se mesure là où l'intensité tombe à environ 13,5 % de sa valeur au centre ; il est couramment utilisé dans les caractéristiques des lasers. La largeur à mi-hauteur (FWHM) est la largeur là où l'intensité vaut 50 % ; pour un faisceau gaussien, elle vaut environ 0,589 fois le diamètre à 1/e² (√(2 ln 2)/2 fois)."
+        },
+        {
+          "q": "Quelle taille de tache obtient-on en focalisant avec une lentille ?",
+          "a": "Si un faisceau large de rayon au col W entre dans une lentille de focale f, le rayon au col au foyer vaut environ w0 ≈ M²·λf/(πW). Par exemple, avec λ = 1064 nm, f = 100 mm, W = 5 mm et M² = 1, on obtient environ 6,8 µm."
+        },
+        {
+          "q": "Que représente la longueur de Rayleigh ?",
+          "a": "C'est la distance sur laquelle le rayon du faisceau atteint √2 fois celui du col et la section du faisceau double. Dans ce domaine, le faisceau est presque parallèle et son intensité baisse peu ; en usinage laser, elle donne donc un ordre de grandeur de la tolérance de travail (profondeur de foyer)."
+        }
+      ]
     }
   }
 }

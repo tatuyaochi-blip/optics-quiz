@@ -1,0 +1,42 @@
+<!--
+{
+  "title": "Politique de confidentialité",
+  "description": "Règles de {{siteName}} concernant les données personnelles, les données enregistrées dans le navigateur, les cookies, les outils de publicité et de mesure d'audience, et la transmission d'informations à des tiers."
+}
+-->
+<div class="prose">
+<h1>Politique de confidentialité</h1>
+
+<p>{{siteName}} (ci-après « ce site ») traite les informations relatives à ses utilisateurs comme suit.</p>
+
+<h2>Collecte des données personnelles</h2>
+<p>Ce site ne dispose d'aucun système d'inscription et ne collecte aucune donnée personnelle, comme le nom ou l'adresse e-mail, lors de la consultation des pages ou de la réponse aux questions.</p>
+
+<h2>Données enregistrées dans le navigateur</h2>
+<p>Ce site enregistre dans le localStorage de votre navigateur l'historique de vos réponses (bonne ou mauvaise réponse, date et heure de réponse, historique des sessions) ainsi que des réglages tels que la langue d'affichage choisie. Ces données sont conservées uniquement sur votre appareil et ne sont jamais envoyées au serveur de ce site. Vous pouvez les effacer avec le bouton de réinitialisation de la page <a href="{{home}}stats/">Progression</a> ou en supprimant les données du site dans votre navigateur.</p>
+
+<h2>Cookies</h2>
+{{#thirdParty}}<p>Les cookies sont de petits fichiers qu'un site consulté enregistre dans votre navigateur. Ce site lui-même n'utilise pas de cookies, mais les services décrits ci-dessous ({{#adsense}}service de diffusion publicitaire{{/adsense}}{{#ga4}}{{#adsense}} et {{/adsense}}outil de mesure d'audience{{/ga4}}) en utilisent. Vous pouvez désactiver ou supprimer les cookies dans les paramètres de votre navigateur. Même si vous les désactivez, vous pouvez toujours répondre aux questions de ce site, mais l'affichage des publicités, entre autres, peut changer.</p>{{/thirdParty}}{{^thirdParty}}<p>Les cookies sont de petits fichiers qu'un site consulté enregistre dans votre navigateur. Ce site n'utilise actuellement aucun cookie. Si des services de diffusion publicitaire ou des outils de mesure d'audience sont mis en place à l'avenir, ces services pourront utiliser des cookies, et cette page en fera mention. Vous pouvez désactiver ou supprimer les cookies dans les paramètres de votre navigateur.</p>{{/thirdParty}}
+
+<h2>Publicité et mesure d'audience</h2>
+{{adsPolicy}}
+{{#amazon}}<p>En tant que Partenaire Amazon, ce site réalise un bénéfice sur les achats remplissant les conditions requises.</p>{{/amazon}}
+
+<h2>Transmission d'informations à des tiers</h2>
+{{#thirdParty}}<p>Lorsque vous ouvrez une page de ce site, des informations vous concernant peuvent être transmises aux entreprises suivantes.</p>
+<ul>
+{{#adsense}}  <li><strong>Google AdSense (Google LLC)</strong> : URL de la page consultée, adresse IP, type de navigateur, identifiants de cookies, etc. Ces informations servent à la diffusion des publicités et à la mesure de leur efficacité. (<a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener">Règles de confidentialité de Google</a>)</li>
+{{/adsense}}{{#ga4}}  <li><strong>Google Analytics (Google LLC)</strong> : URL de la page consultée, page de provenance, type de navigateur et d'appareil, région approximative, identifiants de cookies, etc. Ces informations servent à connaître et à améliorer l'utilisation de ce site. (<a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener">Règles de confidentialité de Google</a>)</li>
+{{/ga4}}</ul>{{/thirdParty}}{{^thirdParty}}<p>Actuellement, le simple fait d'ouvrir une page de ce site n'entraîne aucune transmission d'informations vous concernant à des entreprises de diffusion publicitaire ou de mesure d'audience.</p>{{/thirdParty}}
+<p>Par ailleurs, lorsque vous ouvrez le formulaire de contact{{#amazon}} ou un lien vers un ouvrage de référence{{/amazon}}, des informations sont transmises au service de destination, Google Forms{{#amazon}} ou Amazon{{/amazon}}, conformément aux conditions de ce service.</p>
+
+<h2>Contact</h2>
+<p>Ce site utilise un service externe (Google Forms) pour les demandes de contact. Les informations que vous saisissez lors d'une demande sont utilisées uniquement pour vous répondre et pour améliorer ce site, et ne sont pas communiquées à des tiers, sauf dans les cas prévus par la loi.</p>
+
+<h2>Hébergement</h2>
+<p>Ce site est hébergé sur GitHub Pages. Les informations telles que l'adresse IP au moment de l'accès sont traitées par GitHub conformément à ses propres règles.</p>
+
+<h2>Modifications</h2>
+<p>Cette politique peut être modifiée si nécessaire. La version modifiée prend effet dès sa publication sur cette page. Si cette version française diffère de la version japonaise, la version japonaise prévaut. Pour toute question concernant cette politique, utilisez la <a href="{{home}}contact/">page de contact</a>.</p>
+<p class="muted">Dernière révision : 29 octobre 2026</p>
+</div>

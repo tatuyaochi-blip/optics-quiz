@@ -1,0 +1,26 @@
+<!--
+{
+  "title": "Contact",
+  "description": "Pour contacter {{siteName}} ou signaler une erreur dans une question, utilisez ce formulaire.",
+  "scripts": ["contact.js"]
+}
+-->
+<div class="prose">
+<h1>Contact</h1>
+<p>Pour signaler une erreur dans une question ou une explication, nous faire part de vos remarques et suggestions, ou pour toute autre demande concernant ce site, utilisez le formulaire ci-dessous.</p>
+<p>Si vous signalez une erreur dans une question, indiquez aussi <strong>le thème et le début de l'énoncé</strong> (ou le nom de la page pour le glossaire{{#compare}}, les comparaisons{{/compare}}{{#figures}}, les schémas{{/figures}} et les calculateurs) : la vérification n'en sera que plus rapide. Les erreurs confirmées après vérification sont corrigées au fur et à mesure.</p>
+<div class="report-box" id="report-box" hidden data-site="{{siteName}}" data-template="[{site}] Signalement d'une erreur
+ID de la question : {id}
+URL : {url}
+Erreur constatée : ">
+<h2>La question à signaler</h2>
+<p>Copiez le texte ci-dessous, collez-le dans le champ de message du formulaire, puis décrivez l'erreur. Nous saurons ainsi de quel site et de quelle question il s'agit.</p>
+<textarea readonly rows="5" aria-label="Texte du signalement"></textarea>
+<p class="report-actions"><button type="button" class="btn btn-ghost">Copier</button><span class="muted report-copied" hidden>Copié</span></p>
+</div>
+<p><a class="btn btn-primary" href="{{contactFormUrl}}" target="_blank" rel="noopener">Ouvrir le formulaire de contact</a></p>
+<p class="muted">Ce formulaire est commun aux autres sites d'apprentissage du même responsable. Pour que nous sachions de quel site il s'agit, mentionnez « {{siteName}} » dans votre message.</p>
+<p class="muted">Le formulaire Google s'ouvre dans un nouvel onglet. Nous ne pouvons pas garantir une réponse à chaque message. Merci de votre compréhension.</p>
+<p class="muted">Nous ne pouvons pas répondre aux questions portant sur les examens de certification eux-mêmes.</p>
+<p class="muted">Consultez la <a href="{{home}}privacy/">politique de confidentialité</a> pour savoir comment sont traitées les informations que vous saisissez.</p>
+</div>

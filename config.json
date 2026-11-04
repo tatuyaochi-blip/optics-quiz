@@ -7,7 +7,8 @@
     "ko": "광학 교실",
     "de": "Lernraum Optik",
     "es": "Aula de Óptica",
-    "pt": "Sala de Óptica"
+    "pt": "Sala de Óptica",
+    "fr": "Salle d'optique"
   },
   "languages": [
     {
@@ -58,6 +59,13 @@
       "htmlLang": "pt-BR",
       "locale": "pt-BR",
       "label": "Português"
+    },
+    {
+      "code": "fr",
+      "path": "fr/",
+      "htmlLang": "fr",
+      "locale": "fr-FR",
+      "label": "Français"
     }
   ],
   "mainLang": "ja",
@@ -165,6 +173,19 @@
       "hero": "Aprenda óptica e fotônica com quizzes rápidos",
       "hero_lead": "Das lentes e da interferência aos lasers, às fibras ópticas e à fotônica de silício. Todas as questões vêm com explicação.",
       "tools_lead": "Calculadoras gratuitas no navegador para o dia a dia da óptica: conversão entre comprimento de onda e energia do fóton, feixes gaussianos, e NA e número V de fibras ópticas."
+    },
+    "fr": {
+      "subject": "optique et photonique",
+      "subject_title": "Optique et photonique",
+      "site": "Salle d'optique",
+      "site_en": "Optics Room",
+      "search_example": "ouverture numérique",
+      "tools_example": "le diamètre d'un faisceau et la NA d'une fibre",
+      "full_title": "Salle d'optique | Exercices corrigés sur les lasers, les fibres optiques et la photonique sur silicium",
+      "scope": "l'optique géométrique, les interférences et la polarisation, les lasers et les faisceaux gaussiens, les fibres optiques, les photodétecteurs, la photonique sur silicium et la métrologie optique",
+      "hero": "Apprenez l'optique et la photonique avec des quiz à trois choix",
+      "hero_lead": "Des bases des lentilles et des interférences jusqu'aux lasers, aux fibres optiques et à la photonique sur silicium. Chaque question est accompagnée d'une explication.",
+      "tools_lead": "Des calculateurs gratuits pour vérifier dans le navigateur les calculs courants de l'optique : conversion entre longueur d'onde et énergie du photon, faisceaux gaussiens, ouverture numérique (NA) et fréquence normalisée V des fibres optiques, etc."
     }
   },
   "icon": {
