@@ -352,6 +352,63 @@
           "a": "Bei schrägem Einfall wird die Phasendifferenz des Lichtwegs in der Schicht kleiner, und die Wellenlänge mit dem kleinsten Reflexionsgrad verschiebt sich zu kürzeren Wellenlängen. Außerdem unterscheiden sich die Reflexionsgrade für s- und p-Polarisation. Dieser Rechner behandelt nur den senkrechten Einfall; für Anwendungen mit großen Einfallswinkeln ist eine andere Rechnung nötig."
         }
       ]
+    },
+    "es": {
+      "nav": "Recubrimiento antirreflectante",
+      "card": "Calcule el espesor λ/4, el índice de refracción ideal y la reflectancia en incidencia normal de un recubrimiento antirreflectante de una capa",
+      "title": "Calculadora de recubrimientos antirreflectantes (espesor de la capa λ/4, índice de refracción ideal y reflectancia)",
+      "description": "Para un recubrimiento antirreflectante de una sola capa, calcula el espesor físico de la capa λ/4 a la longitud de onda de diseño, el índice de refracción ideal de la capa √(n₀nₛ), que anula la reflexión, y la reflectancia en incidencia normal sin capa y con capa. También obtiene la reflectancia a longitudes de onda distintas de la de diseño.",
+      "h1": "Calculadora de recubrimientos antirreflectantes",
+      "lead": "Introduzca los índices de refracción del sustrato y del material de la capa y la longitud de onda de diseño para calcular el espesor físico de una capa cuyo espesor óptico es λ/4 y la reflectancia de la luz en incidencia normal. Los valores predeterminados corresponden a un vidrio de índice 1,52 (similar al BK7) con una capa λ/4 para 550 nm de fluoruro de magnesio (MgF₂) de índice 1,38, observado con luz azul de 450 nm.",
+      "in_heading": "Datos (incidencia normal)",
+      "lambda0": "Longitud de onda de diseño λ₀ (nm, en el vacío)",
+      "n0": "Índice de refracción del medio de incidencia n₀ (1 para el aire)",
+      "ns": "Índice de refracción del sustrato nₛ",
+      "n1": "Índice de refracción de la capa n₁",
+      "lambda": "Longitud de onda para la reflectancia λ (nm)",
+      "out_heading": "Resultados",
+      "nideal": "Índice de refracción ideal de la capa √(n₀nₛ)",
+      "thick": "Espesor físico de la capa λ/4, d = λ₀/(4n₁)",
+      "r0": "Reflectancia sin capa",
+      "coat_heading": "Reflectancia con la capa (una superficie)",
+      "rdes": "Reflectancia a la longitud de onda de diseño λ₀",
+      "rlam": "Reflectancia a la longitud de onda λ",
+      "nideal_r": "Con una capa de índice ideal (a λ₀)",
+      "note": "El cálculo supone una capa y un sustrato sin absorción, con índices de refracción que no dependen de la longitud de onda (sin dispersión), y da la reflectancia de una superficie en incidencia normal. No incluye la reflexión en la cara posterior del sustrato ni las diferencias por polarización en incidencia oblicua. La reflectancia es el cociente de intensidades (potencias).",
+      "practice": "Resolver preguntas de interferencia y difracción",
+      "related": "Términos relacionados",
+      "sections": [
+        {
+          "h": "Cómo anula la reflexión una capa λ/4",
+          "p": "Cuando se deposita una capa delgada sobre un sustrato, la luz reflejada en la superficie de la capa se superpone a la reflejada en la frontera entre la capa y el sustrato. Si n₀ < n₁ < nₛ, el cambio de fase en la reflexión es el mismo en las dos fronteras, de modo que, si el espesor óptico de la capa (índice de refracción × espesor físico) es λ/4, la diferencia de camino de ida y vuelta dentro de la capa es λ/2, las dos luces reflejadas quedan desfasadas medio periodo y se anulan. Dentro de la capa la longitud de onda se reduce a λ/n₁, por lo que el espesor físico es d = λ₀/(4n₁). Con los valores predeterminados (MgF₂, n₁ = 1,38, λ₀ = 550 nm), d ≈ 99,6 nm, distinto de λ/4 = 137,5 nm sin dividir por el índice. Una capa de espesor óptico λ/2 tiene una diferencia de camino de ida y vuelta de una longitud de onda, no anula la reflexión y da la misma reflectancia que sin capa."
+        },
+        {
+          "h": "El índice de refracción ideal de la capa √(n₀nₛ)",
+          "p": "Para anular por completo las dos luces reflejadas no basta con ajustar la fase: también hay que igualar las amplitudes. De la condición de que, en incidencia normal, las amplitudes de reflexión en las dos fronteras sean iguales, resulta que el índice ideal de la capa es n₁ = √(n₀nₛ), con el que la reflectancia a la longitud de onda de diseño es 0. Para un vidrio (nₛ = 1,52) en aire es √1,52 ≈ 1,23, pero hay pocos materiales resistentes con un índice tan bajo, por lo que en la práctica se usa mucho el MgF₂ (1,38). Para el silicio, de índice 3,48 a 1,55 µm, el ideal es de unos 1,87, y el nitruro de silicio (unos 2,0) o el oxinitruro de silicio tienen valores cercanos."
+        },
+        {
+          "h": "Reflectancia en incidencia normal",
+          "p": "Según las ecuaciones de Fresnel, la reflectancia de la luz que incide normalmente sobre la frontera entre índices n₀ y nₛ es R = ((n₀ − nₛ)/(n₀ + nₛ))². Para el vidrio de los valores predeterminados es de aproximadamente el 4,26 %, y para el silicio (3,48 a 1,55 µm), de aproximadamente el 31 %. Con una capa λ/4, la reflectancia a la longitud de onda de diseño pasa a ser R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))², y con el MgF₂ sobre vidrio de los valores predeterminados baja hasta aproximadamente el 1,26 %. Cuanto más se aleja el índice del ideal, más reflexión queda, y si el índice de la capa es mayor que el del sustrato, la reflexión incluso aumenta."
+        },
+        {
+          "h": "Longitudes de onda distintas de la de diseño y recubrimientos multicapa",
+          "p": "Como el espesor de la capa se fija para la longitud de onda de diseño, a otras longitudes de onda la condición de fase deja de cumplirse y la reflexión aumenta. Con los valores predeterminados, la reflectancia de aproximadamente el 1,26 % a 550 nm pasa a ser de aproximadamente el 1,62 % a 450 nm y el 1,60 % a 700 nm (sin tener en cuenta la dispersión). Incluso con la capa única predeterminada, la reflectancia en el visible (400 a 700 nm) se mantiene por debajo de aproximadamente el 2,2 % (el valor más alto está en el extremo de 400 nm), pero para reducirla aún más en un intervalo amplio de longitudes de onda se usan recubrimientos multicapa que combinan capas de índice alto y bajo. Si se apilan las mismas capas λ/4 alternando índice alto y bajo, las reflexiones se refuerzan y se obtiene un espejo dieléctrico multicapa."
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Qué diferencia hay entre el espesor físico y el espesor óptico?",
+          "a": "El espesor óptico es el índice de refracción × el espesor físico y determina cuánto avanza la fase de la luz. Una capa λ/4 tiene un espesor óptico de λ/4, y su espesor físico es 1/n₁ de ese valor: para MgF₂ diseñado para 550 nm, unos 99,6 nm."
+        },
+        {
+          "q": "¿Los recubrimientos antirreflectantes de las gafas y de los objetivos de cámara son de una sola capa?",
+          "a": "Los más económicos pueden ser de una sola capa de MgF₂, pero la mayoría son multicapa, de varias a más de diez capas, y mantienen la reflectancia por debajo del 1 % en todo el visible, o en torno al 0,5 % o menos en los de alto rendimiento. El ligero color de la reflexión residual (verde o violeta) se debe a que la reflectancia varía con la longitud de onda."
+        },
+        {
+          "q": "¿Qué ocurre si la luz incide de forma oblicua?",
+          "a": "En incidencia oblicua, la diferencia de fase del camino dentro de la capa disminuye y la longitud de onda de reflectancia mínima se desplaza hacia longitudes de onda más cortas. Además, la reflectancia es distinta para la polarización s y la polarización p. Esta herramienta solo trata la incidencia normal, por lo que para aplicaciones con ángulos de incidencia grandes se necesita otro cálculo."
+        }
+      ]
     }
   }
 }

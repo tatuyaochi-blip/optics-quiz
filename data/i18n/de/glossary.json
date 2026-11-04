@@ -2049,7 +2049,7 @@
   },
   "F値": {
     "term": "Blendenzahl",
-    "desc": "Brennweite geteilt durch den Durchmesser der Eintrittspupille, N = f/D. Die Beleuchtungsstärke in der Bildebene ist umgekehrt proportional zu N²; mit jeder Blendenstufe (Faktor √2) halbiert sich die Lichtmenge.",
+    "desc": "Brennweite geteilt durch den Durchmesser der Eintrittspupille, N = f/D. Die Beleuchtungsstärke in der Bildebene ist umgekehrt proportional zu N²; mit jeder Blendenstufe (Faktor √2 in N) halbiert sich die Lichtmenge.",
     "aliases": [
       "Blendenzahlen"
     ],
@@ -3039,7 +3039,7 @@
   },
   "フッ化カルシウム": {
     "term": "Calciumfluorid",
-    "desc": "Kristallines CaF₂. Es ist von etwa 0,13 µm im Vakuum-Ultraviolett bis etwa 10 µm im Infraroten durchlässig und hat eine geringe Dispersion. Verwendet wird es in UV-Laseroptiken, als Infrarotfenster und in farbkorrigierten Objektiven.",
+    "desc": "Kristallines CaF₂. Es ist von etwa 0,13 µm im Vakuum-Ultraviolett bis etwa 10 µm im Infraroten durchlässig und hat eine geringe Dispersion. Verwendet wird es in UV-Laseroptiken, als Infrarotfenster und in apochromatischen Objektiven.",
     "aliases": [
       "CaF₂"
     ],

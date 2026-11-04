@@ -351,6 +351,63 @@
           "a": "Den Abstand, bis zu dem der Strahlradius auf das √2-Fache des Taillenradius und die Querschnittsfläche auf das Doppelte anwächst. In diesem Bereich ist der Strahl nahezu parallel und seine Intensität sinkt kaum; in der Lasermaterialbearbeitung dient sie daher als Anhaltspunkt für den Bearbeitungsspielraum (die Fokustiefe)."
         }
       ]
+    },
+    "es": {
+      "nav": "Haz gaussiano",
+      "card": "Calcule la longitud de Rayleigh, la divergencia y el diámetro del haz a una distancia z a partir de la cintura del haz",
+      "title": "Calculadora de haces gaussianos (longitud de Rayleigh, divergencia, diámetro del haz y M²)",
+      "description": "A partir de la longitud de onda del láser y el radio de la cintura del haz w0, calcula la longitud de Rayleigh zR, la profundidad de foco y la divergencia, y obtiene el radio del haz w(z) y el radio de curvatura del frente de onda R(z) a una distancia z. También admite el factor de calidad del haz M².",
+      "h1": "Calculadora de haces gaussianos",
+      "lead": "A partir del radio w0 en el punto más estrecho del haz (la cintura) y de la longitud de onda, calcula a qué distancia y cuánto se ensancha el haz. Los valores predeterminados corresponden a un haz ideal (M² = 1) de 1064 nm con w0 = 500 µm, observado a 1000 mm de la cintura.",
+      "in_heading": "Datos",
+      "lambda": "Longitud de onda λ (nm, en el vacío)",
+      "w0": "Radio de la cintura del haz w0 (µm, 1/e²)",
+      "m2": "Factor de calidad del haz M²",
+      "n": "Índice de refracción del medio n",
+      "z": "Distancia desde la cintura z (mm)",
+      "out_heading": "Resultados",
+      "zr": "Longitud de Rayleigh zR",
+      "dof": "Profundidad de foco 2zR",
+      "theta": "Divergencia (semiángulo) θ",
+      "z_heading": "Valores a la distancia z",
+      "wz": "Radio del haz w(z)",
+      "dz": "Diámetro del haz 2w(z)",
+      "rz": "Radio de curvatura del frente de onda R(z)",
+      "note": "El radio del haz es la distancia hasta el punto en que la intensidad cae a 1/e² (aproximadamente el 13,5 %) del valor central. La divergencia es el valor lejos de la cintura (z ≫ zR). Para haces con M² mayor que 1, el cálculo supone que, con el mismo w0, el haz se ensancha M² veces más deprisa que un haz gaussiano ideal.",
+      "practice": "Resolver preguntas de láseres y haces gaussianos",
+      "related": "Términos relacionados",
+      "sections": [
+        {
+          "h": "El haz gaussiano y la longitud de Rayleigh",
+          "p": "La salida de la mayoría de los láseres es un haz gaussiano (modo TEM00), cuya intensidad en la sección transversal sigue una distribución gaussiana. El haz es más estrecho en la cintura y, al alejarse de ella, se ensancha según w(z) = w0·√(1 + (z/zR)²). La longitud de Rayleigh zR = πw0²/λ es la distancia a la que el área de la sección del haz se ha duplicado (el radio se ha multiplicado por √2), y dentro de ese tramo el haz puede considerarse casi colimado. Con los valores predeterminados (λ = 1064 nm, w0 = 500 µm), zR = π × (0,5 mm)² / 1,064 µm ≈ 738 mm. La profundidad de foco suele expresarse como el doble, 2zR, unos 1,48 m."
+        },
+        {
+          "h": "Divergencia y producto de parámetros del haz",
+          "p": "Lo bastante lejos de la cintura, el haz se abre con un ángulo constante cuyo semiángulo es θ = λ/(πw0); con los valores predeterminados es de unos 0,677 mrad. El producto w0·θ = λ/π depende solo de la longitud de onda y expresa el compromiso de que, cuanto más se estrecha un haz, más deprisa se ensancha. Este producto se llama producto de parámetros del haz (BPP), y en un haz real pasa a ser M²·λ/π. Para enfocar un haz en un punto pequeño con una lente, hay que ensanchar el haz de entrada o usar una longitud de onda más corta."
+        },
+        {
+          "h": "M²: indicador de la calidad del haz",
+          "p": "El M² (M cuadrado) expresa cuántas veces más deprisa se ensancha un haz real que un haz gaussiano ideal; para un haz ideal vale 1. Los láseres de fibra monomodo y los láseres de He-Ne están por debajo de 1,1, mientras que los láseres de estado sólido multimodo y el eje lento de los láseres de semiconductor van de unos pocos a varias decenas. Con un M² grande, para la misma cintura la divergencia es M² veces mayor y la longitud de Rayleigh es 1/M² veces más corta, de modo que el haz no se mantiene estrecho a grandes distancias y el punto enfocado también es mayor."
+        },
+        {
+          "h": "Curvatura del frente de onda y cálculo de la posición",
+          "p": "El frente de onda de un haz gaussiano es plano en la cintura y se curva al alejarse de ella, con un radio de curvatura R(z) = z·(1 + (zR/z)²). R es mínimo en z = zR, donde vale 2zR. Lejos de la cintura, R ≈ z, y el haz se aproxima a una onda esférica centrada en la cintura. Con el valor predeterminado z = 1000 mm, w(z) ≈ 842 µm y R(z) ≈ 1545 mm. En el diseño de resonadores, haciendo coincidir el radio de curvatura de los espejos con este R(z) se obtiene un modo estable dentro del resonador."
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Qué diferencia hay entre el diámetro del haz a 1/e² y la FWHM?",
+          "a": "El diámetro a 1/e² se mide donde la intensidad cae a aproximadamente el 13,5 % del valor central y es el que suelen usar las especificaciones de los láseres. La FWHM (anchura a media altura) es la anchura donde la intensidad es el 50 %; en un haz gaussiano es aproximadamente 0,589 veces el diámetro a 1/e² (√(2 ln 2)/2 veces)."
+        },
+        {
+          "q": "¿Qué tamaño tiene el punto al enfocar con una lente?",
+          "a": "Si un haz ancho con radio de cintura W entra en una lente de distancia focal f, el radio de la cintura en el foco es aproximadamente w0 ≈ M²·λf/(πW). Por ejemplo, con λ = 1064 nm, f = 100 mm, W = 5 mm y M² = 1, es de unos 6,8 µm."
+        },
+        {
+          "q": "¿Qué representa la longitud de Rayleigh?",
+          "a": "Es la distancia hasta la que el radio del haz llega a √2 veces el de la cintura y el área de la sección se duplica. En este tramo el haz es casi colimado y su intensidad no disminuye mucho, por lo que en el procesado de materiales con láser sirve como referencia del margen de trabajo (profundidad de foco)."
+        }
+      ]
     }
   }
 }
