@@ -268,5 +268,50 @@
       "L'aberration sphérique : la lumière qui passe près du bord sépare plus fortement les couleurs, si bien que fermer pour arrêter cette lumière ne change pas le décalage coloré"
     ],
     "explanation": "L'aberration chromatique latérale est une aberration où le grandissement (la hauteur d'image) dépend de la longueur d'onde : la position même du rayon principal se décale latéralement d'une couleur à l'autre. Le rayon principal passant par le centre du diaphragme, l'amplitude du décalage ne change pas quand on ferme ; elle est nulle au centre de l'image et augmente vers le bord. L'aberration chromatique axiale est un décalage du foyer en avant ou en arrière ; elle existe aussi au centre de l'image, et fermer affine le faisceau et augmente la profondeur de foyer, si bien que le flou coloré diminue. L'aberration sphérique existe même en lumière monochromatique ; elle ne sépare pas les couleurs et diminue quand on ferme. L'aberration chromatique latérale peut aussi être en grande partie corrigée par un traitement qui réajuste le grandissement de chaque couleur dans l'image enregistrée."
+  },
+  "optical-design-031": {
+    "question": "Avec un objectif présentant de la distorsion, on a mesuré à 19,2 mm la hauteur de l'image d'un point situé dans un coin du champ. La hauteur d'image paraxiale, en l'absence de distorsion, vaut 20,0 mm. Laquelle des combinaisons suivantes de la distorsion en ce point (rapportée à la hauteur d'image paraxiale) et de son type est correcte ?",
+    "choices": [
+      "Environ +4,0 % ; en coussinet",
+      "Environ −0,8 % ; en barillet",
+      "Environ −4,0 % ; en barillet"
+    ],
+    "explanation": "La distorsion s'exprime par (hauteur d'image réelle − hauteur d'image paraxiale)/hauteur d'image paraxiale, soit (19,2 − 20,0)/20,0 = −0,04, environ −4,0 %. L'image du bord est ramenée vers l'intérieur par rapport à la position paraxiale : le grandissement diminue vers le bord, c'est la distorsion en barillet, où un quadrillage carré est imagé bombé vers l'extérieur comme un tonneau. Environ +4,0 %, en coussinet, inverse le signe et correspond au cas où l'image du bord est étirée vers l'extérieur. Environ −0,8 % lit directement la différence de hauteur d'image de 0,8 mm comme un pourcentage. La distorsion ne rendant pas floue l'image d'un point, elle peut être corrigée par traitement d'image après la prise de vue ; une distorsion en barillet de quelques % est courante dans les objectifs grand-angle. Dans les applications de mesure de dimensions, le résidu de cette correction devient une erreur de mesure."
+  },
+  "optical-design-032": {
+    "question": "En imagerie incohérente par un objectif sans aberration à ouverture circulaire, quelle valeur est la plus proche de la FTM à une fréquence spatiale égale exactement à la moitié de la fréquence de coupure νc ? (On prend FTM = (2/π)(φ − cosφ sinφ), φ = arccos(ν/νc).)",
+    "choices": [
+      "Environ 0,50",
+      "Environ 0,39",
+      "Environ 0,25"
+    ],
+    "explanation": "Pour ν/νc = 0,5, φ = arccos0,5 = π/3 ≈ 1,047 rad et cosφ sinφ = 0,5 × 0,866 ≈ 0,433, d'où FTM = (2/π)(1,047 − 0,433) ≈ 0,39. La FTM limitée par la diffraction est fixée par l'autocorrélation de la pupille (l'aire de recouvrement de deux cercles décalés) ; elle diminue plus vite qu'une droite dès les basses fréquences et s'annule à la coupure. Environ 0,50 suppose que la FTM diminue linéairement avec la fréquence, ce qui est le cas d'une ouverture en fente, de largeur limitée dans une seule direction. Environ 0,25 multiplie cette valeur linéaire de 0,5 pour les deux directions, horizontale et verticale ; or la FTM d'une ouverture circulaire ne s'exprime pas comme un produit sur deux directions. En présence d'aberrations, la FTM tombe encore en dessous de cette valeur limitée par la diffraction."
+  },
+  "optical-design-033": {
+    "question": "Si l'objectif placé devant un capteur d'images est « télécentrique côté image », les rayons principaux arrivent perpendiculairement au plan image. Laquelle des propositions suivantes décrit correctement une propriété de cet objectif ?",
+    "choices": [
+      "La pupille de sortie est à l'infini ; même si la position du plan image se décale un peu, la taille de l'image ne change presque pas, et même au bord du champ la lumière arrive perpendiculairement au capteur",
+      "La pupille d'entrée est à l'infini ; le grandissement ne change pas même si l'objet se déplace le long de l'axe optique, ce qui convient à la mesure des dimensions d'objets posés",
+      "Le diaphragme d'ouverture est placé à la position du plan image ; les faisceaux s'amincissent vers les pixels du bord, et le vignettage qui assombrit le bord de l'image disparaît"
+    ],
+    "explanation": "Le rayon principal passe par le centre du diaphragme d'ouverture ; les rayons principaux côté image sont donc parallèles à l'axe optique lorsque la pupille de sortie (l'image du diaphragme vue du côté image) est à l'infini. Comme les rayons principaux arrivent perpendiculairement au plan image, un décalage avant-arrière du plan image ne fait que rendre l'image floue, sans presque changer sa position ni sa taille. Pour les microlentilles, les filtres colorés et les filtres interférentiels placés sur les pixels, la baisse de sensibilité et les décalages de couleur dus à la lumière oblique au bord du champ sont aussi moins probables. Une pupille d'entrée à l'infini correspond à la télécentricité côté objet, et c'est cette dernière qui limite la variation du grandissement avec la position de l'objet. Placé au plan image, le diaphragme d'ouverture ne pourrait pas limiter la largeur des faisceaux et ne jouerait pas son rôle de diaphragme. Pour rendre un objectif télécentrique côté image, il faut que le dernier groupe de lentilles soit au moins aussi grand que l'image."
+  },
+  "optical-design-034": {
+    "question": "Dans un appareil photo reflex, il faut derrière l'objectif un espace où le miroir peut se déplacer, et même pour un objectif grand-angle, il faut parfois que la distance entre la dernière surface de l'objectif et le plan image (tirage arrière) soit plus longue que la distance focale. Laquelle des formules optiques suivantes est utilisée dans ce but ?",
+    "choices": [
+      "Le type téléobjectif, avec un groupe positif à l'avant et un groupe négatif à l'arrière : le point principal passe en avant de l'objectif, et la longueur totale devient plus courte que la distance focale",
+      "Une formule où un seul groupe positif est épaissi pour avancer le point principal : le tirage arrière s'allonge d'autant que l'objectif s'épaissit",
+      "Le type rétrofocus, avec un groupe négatif à l'avant et un groupe positif à l'arrière : le point principal arrière passe derrière l'objectif"
+    ],
+    "explanation": "La distance focale se mesure du point principal arrière au foyer ; pour que le tirage arrière dépasse la distance focale, il faut donc que le point principal arrière se trouve derrière la dernière surface du système (côté image). Dans le type rétrofocus (téléobjectif inversé), avec un groupe négatif à l'avant et un groupe positif à l'arrière, la lumière élargie par le groupe négatif est ensuite rassemblée par le groupe positif : le point principal arrière passe derrière le système, et l'on obtient un long tirage arrière même avec une courte distance focale. Le type téléobjectif, avec un groupe positif à l'avant et un groupe négatif à l'arrière, fait l'inverse : il avance le point principal pour rendre la longueur totale plus courte que la distance focale, et sert pour les téléobjectifs. Épaissir un groupe positif pour avancer le point principal rapproche le foyer de l'objectif et raccourcit au contraire le tirage arrière."
+  },
+  "optical-design-035": {
+    "question": "Avec un objectif de prise de vue qui conserve un certain niveau d'aberrations, lorsqu'on ferme le diaphragme à partir de la pleine ouverture, la résolution au centre de l'image s'améliore d'abord, puis se dégrade de nouveau si l'on ferme davantage. Laquelle des propositions suivantes explique correctement ce comportement ?",
+    "choices": [
+      "Plus on ferme, plus la profondeur de champ devient faible et plus la zone nette se rétrécit, si bien qu'au-delà d'une certaine ouverture l'image du centre devient elle aussi floue",
+      "Fermer réduit le flou dû aux aberrations, mais le flou dû à la diffraction augmente proportionnellement au nombre d'ouverture ; il existe donc entre les deux une ouverture optimale",
+      "Fermer abaisse l'éclairement du plan image et augmente le bruit du capteur, si bien que la résolution se dégrade à partir de l'ouverture où la luminosité devient insuffisante"
+    ],
+    "explanation": "Le flou dû aux aberrations comme l'aberration sphérique diminue rapidement quand on réduit l'ouverture (le flou transversal de l'aberration sphérique du troisième ordre est proportionnel au cube du rayon de l'ouverture). En revanche, le diamètre de la tache d'Airy due à la diffraction vaut 2,44λN et augmente proportionnellement au nombre d'ouverture N. Près de la pleine ouverture, ce sont les aberrations qui fixent le flou ; diaphragme très fermé, c'est la diffraction ; la résolution est donc la meilleure à une ouverture intermédiaire où les deux s'équilibrent. Plus les aberrations de l'objectif sont faibles, plus cette ouverture optimale est proche de la pleine ouverture. Fermer le diaphragme augmente la profondeur de champ : l'explication selon laquelle elle diminue inverse le sens. Même si l'éclairement baisse, on peut réduire l'effet du bruit en allongeant le temps d'exposition ; la baisse d'éclairement n'est donc pas la raison principale de la dégradation de la résolution."
   }
 }

@@ -268,5 +268,50 @@
       "Le mouvement du miroir est mesuré comme une variation de phase d'un signal de battement de quelques MHz, ce qui rend la mesure robuste aux fluctuations d'intensité et aux dérives du niveau continu et permet de connaître le sens du mouvement"
     ],
     "explanation": "Dans le type hétérodyne, on répartit deux composantes de fréquences f₁ et f₂ (différant de quelques MHz) entre le bras de mesure et le bras de référence, puis on les superpose et l'on détecte le signal de battement à la différence de fréquence. Si le miroir se déplace à la vitesse v, l'effet Doppler augmente ou diminue la fréquence du battement de 2v/λ ; en comparant sa phase à un signal de référence et en la comptant, on connaît le déplacement et son sens. Le signal étant alternatif, il est peu sensible aux variations d'intensité lumineuse et aux dérives du niveau continu du détecteur. Toutefois, ce que l'on mesure est un déplacement relatif obtenu en cumulant les variations de phase : après une remise sous tension, il faut redéfinir l'origine. Les deux composantes interfèrent sur le détecteur pour produire le battement ; elles ne sont donc pas sans interférence, et la différence de longueur des bras doit rester dans les limites de la longueur de cohérence."
+  },
+  "measurement-031": {
+    "question": "On mesure la pureté de polarisation d'un faisceau laser polarisé rectilignement par le taux d'extinction, rapport entre les puissances transmises minimale et maximale lorsqu'on tourne un analyseur (supposé idéal). Même si la lumière est parfaitement polarisée rectilignement, si l'on lit la valeur avec l'analyseur décalé de 1,0° par rapport à l'angle de transmission minimale, quelle valeur est la plus proche du rapport, en dB, entre cette puissance transmise et la puissance maximale ? (La transmission suit la loi de Malus I = I₀cos²θ.)",
+    "choices": [
+      "Environ −35 dB",
+      "Environ −18 dB",
+      "Environ −70 dB"
+    ],
+    "explanation": "L'angle de transmission minimale est situé à 90° de celui du maximum ; un décalage de 1,0° donne θ = 91°, et le rapport de transmission vaut cos²91° = sin²1,0° ≈ (0,01745)² ≈ 3,0×10⁻⁴. En dB, cela fait 10 log₁₀(3,0×10⁻⁴) ≈ −35 dB : même avec une lumière parfaitement polarisée rectilignement, on ne mesure qu'un taux d'extinction d'environ 35 dB. Environ −18 dB oublie le carré et prend sin1,0° lui-même pour le rapport. Environ −70 dB applique à tort 20 log₁₀ à un rapport de puissances ; un rapport de puissances s'exprime avec 10 log₁₀. Près du minimum, la transmission augmente comme le carré de l'angle de décalage ; pour mesurer 40 dB ou plus, il faut donc régler la position du minimum à mieux que 0,5°, et le taux d'extinction de l'analyseur lui-même fixe aussi la limite mesurable."
+  },
+  "measurement-032": {
+    "question": "Dans un interféromètre de Michelson utilisant un laser He-Ne de longueur d'onde dans le vide 632,8 nm, on obtient le déplacement du miroir mobile en multipliant le nombre de franges comptées par la moitié de la longueur d'onde dans le vide. Si l'on ne corrige pas l'indice de l'air, 1,00028, quelle valeur est la plus proche de l'erreur commise pour un déplacement de 1 m ?",
+    "choices": [
+      "Environ 0,28 µm",
+      "Environ 2,8 mm",
+      "Environ 0,28 mm"
+    ],
+    "explanation": "La longueur d'onde dans l'air vaut λ₀/n ; le nombre de franges comptées pour un déplacement L est donc N = 2nL/λ₀. En le multipliant par λ₀/2, on obtient nL, qui dépasse le déplacement réel de (n − 1)L = 2,8×10⁻⁴ × 1 m ≈ 0,28 mm. L'erreur relative de 2,8×10⁻⁴ est bien plus grande que la résolution de l'interféromètre (de l'ordre du nm) ; dans les mesures de longueur de précision, on calcule donc l'indice de l'air à partir de la température, de la pression et de l'humidité pour corriger. Environ 0,28 µm confond mm et µm, et environ 2,8 mm lit n − 1 comme 2,8×10⁻³, un ordre de grandeur trop grand. L'indice de l'air varie d'environ 10⁻⁶ pour 1 °C et d'environ 3×10⁻⁷ pour 1 hPa ; même après correction, les erreurs de mesure de l'environnement laissent une erreur de l'ordre du µm par mètre."
+  },
+  "measurement-033": {
+    "question": "On enregistre avec une caméra la distribution d'intensité d'un faisceau laser et on détermine le diamètre du faisceau par la méthode D4σ, qui le définit à partir du moment d'ordre deux (le diamètre est quatre fois l'écart-type σ de la distribution d'intensité). Laquelle des propositions suivantes concernant cette méthode est correcte ?",
+    "choices": [
+      "D4σ est le diamètre du cercle contenant exactement la moitié de la puissance et, pour un faisceau gaussien, il coïncide avec la largeur totale à mi-hauteur (FWHM) de l'intensité",
+      "Pour un faisceau gaussien, il coïncide avec le diamètre où l'intensité tombe à 1/e² ; comme il est sensible au bruit de fond et à la lumière des ailes, la soustraction du fond est indispensable",
+      "D4σ se calcule à partir de la seule position et de la seule hauteur du pic ; il n'est donc pas affecté par le bruit de fond ni par la lumière parasite au bord de l'image, et s'utilise sans correction"
+    ],
+    "explanation": "Si σ est l'écart-type obtenu à partir du moment d'ordre deux de la distribution d'intensité, on a σ = w/2 pour un faisceau gaussien exp(−2x²/w²) ; D4σ = 4σ = 2w coïncide donc avec le diamètre à 1/e². La méthode est définie pour des faisceaux de forme quelconque et sert aussi dans les normes de mesure du M². Cependant, le moment d'ordre deux pondère d'autant plus un pixel qu'il est éloigné du centre : le bruit de fond ou la lumière parasite des ailes font paraître le diamètre plus grand. On soustrait donc le fond et l'on limite la zone de calcul avant de le déterminer. La largeur totale à mi-hauteur vaut environ 0,59 fois le diamètre à 1/e² et ne coïncide pas avec D4σ. Le diamètre du cercle contenant la moitié de la puissance est lui aussi une grandeur différente du diamètre à 1/e². La position et la hauteur du pic seules ne fixent pas l'étalement de la distribution."
+  },
+  "measurement-034": {
+    "question": "En mesurant à l'OTDR une fibre qui comporte un raccord par connecteur fortement réfléchissant à 2 km de l'extrémité d'injection, on a vu apparaître plus loin, à 4 km, un petit pic de réflexion sans marche de perte. Laquelle des propositions suivantes explique correctement ce pic ?",
+    "choices": [
+      "C'est un fantôme dû à des réflexions multiples, la lumière de la forte réflexion ayant fait un aller-retour supplémentaire avec le connecteur de l'extrémité d'injection ; ce n'est pas un événement réel",
+      "C'est le signe d'une rupture de la fibre à 4 km ; l'absence de marche de perte vient de ce que la surface de rupture n'est encore que partiellement ouverte",
+      "C'est la réflexion de la lumière rétrodiffusée produite par diffusion Brillouin stimulée, qui grandit à la même position à mesure qu'on augmente la puissance des impulsions"
+    ],
+    "explanation": "L'OTDR détermine la distance à partir du temps aller-retour. Si la lumière renvoyée par la forte réflexion à 2 km est de nouveau réfléchie par le connecteur de l'extrémité d'injection, puis encore une fois au point situé à 2 km avant de revenir, elle parcourt 8 km en tout et arrive au même instant qu'un événement situé à 4 km. C'est pourquoi un pic sans marche de perte (fantôme) apparaît exactement au double de la distance d'une forte réflexion. On le distingue d'un événement réel parce que le niveau de rétrodiffusion est le même avant et après le pic ; on peut le réduire avec des connecteurs APC peu réfléchissants ou un gel d'adaptation d'indice. Une rupture interromprait ou abaisserait fortement la rétrodiffusion à cet endroit, et ne donnerait donc pas un pic sans marche. La diffusion Brillouin stimulée est un phénomène qui produit une lumière décalée en fréquence sur toute la fibre et ne crée pas de pic à une position fixe."
+  },
+  "measurement-035": {
+    "question": "On veut observer la suite des modes longitudinaux d'un laser He-Ne dont l'écart entre modes longitudinaux est de 150 MHz et la largeur de gain d'environ 1,5 GHz, avec un interféromètre de Fabry-Pérot à balayage de l'écartement des miroirs. Lequel des interféromètres suivants convient le mieux ? (La résolution vaut ISL/finesse.)",
+    "choices": [
+      "Interféromètre d'ISL 300 MHz et de finesse 1000 (résolution 0,3 MHz)",
+      "Interféromètre d'ISL 100 GHz et de finesse 100 (résolution 1 GHz)",
+      "Interféromètre d'ISL 2 GHz et de finesse 200 (résolution 10 MHz)"
+    ],
+    "explanation": "Dans un interféromètre de Fabry-Pérot à balayage, les pics de transmission se répètent à chaque ISL ; si l'ISL n'est pas plus large que la largeur totale du spectre à mesurer, les pics des ordres voisins se chevauchent et la suite des modes devient illisible. De plus, pour séparer les modes longitudinaux, la résolution ISL/finesse doit être nettement plus fine que l'écart entre modes de 150 MHz. L'interféromètre d'ISL 2 GHz et de finesse 200 fait tenir l'ensemble des 1,5 GHz dans un seul ISL et sépare les modes avec une résolution de 10 MHz. L'interféromètre d'ISL 300 MHz a une haute résolution, mais la largeur de 1,5 GHz s'y replie sur cinq ordres. L'interféromètre d'ISL 100 GHz et de finesse 100 a une résolution de 1 GHz et ne peut pas séparer des modes espacés de 150 MHz."
   }
 }
