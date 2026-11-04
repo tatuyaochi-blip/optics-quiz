@@ -95,7 +95,7 @@
       "h": "Algarismos significativos e correção",
       "p": [
         "Os valores de cada problema são arredondados para os algarismos mostrados, e a resposta de referência é calculada a partir desses valores arredondados. Se você usar os valores como dados, o arredondamento nunca tornará a sua resposta errada.",
-        "A correção usa o erro relativo. A maioria dos tipos aceita respostas dentro de ±1 %. Os tipos com resposta em ângulo (ângulos de refração, crítico, de Brewster, de difração e de aceitação) e os tipos com resposta em índice de refração aceitam ±0,5 %. Os tipos com resposta em dBm ou dB também usam o erro relativo, então −16,0 dBm admite ±0,16 dB. A tolerância é mostrada em cada problema.",
+        "A correção usa o erro relativo. A maioria dos tipos aceita respostas dentro de ±1 %. Os tipos com resposta em ângulo (ângulos de refração, crítico, de Brewster, de difração e de aceitação) e os tipos com resposta em índice de refração aceitam ±0,5 %. A temperatura obtida pela lei de Wien também admite ±0,5 %. Os tipos com resposta em dBm ou dB também usam o erro relativo, então −16,0 dBm admite ±0,16 dB. A tolerância é mostrada em cada problema.",
         "Basta dar a resposta com o número de algarismos usado no problema (em geral, três algarismos significativos). Mais algarismos também servem.",
         "Se você ficar um pouco fora da tolerância (dentro de 5 %), aparece “Quase”. A fórmula costuma estar certa; verifique se você arredondou demais os valores intermediários ou usou uma constante (c, h, q etc.) diferente da do enunciado."
       ]

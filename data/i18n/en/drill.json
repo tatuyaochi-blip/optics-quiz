@@ -95,7 +95,7 @@
       "h": "Significant figures and marking",
       "p": [
         "The numbers in each problem are rounded to the digits shown, and the reference answer is computed from those rounded numbers. If you use the numbers as given, rounding will never make your answer wrong.",
-        "Marking uses relative error. Most types accept answers within ±1 %. Types answered as an angle (refraction, critical, Brewster, diffraction and acceptance angles) and types answered as a refractive index accept ±0.5 %. Types answered in dBm or dB also use relative error, so −16.0 dBm allows ±0.16 dB. The tolerance is shown with each problem.",
+        "Marking uses relative error. Most types accept answers within ±1 %. Types answered as an angle (refraction, critical, Brewster, diffraction and acceptance angles) and types answered as a refractive index accept ±0.5 %. Temperatures from Wien's law also accept ±0.5 %. Types answered in dBm or dB also use relative error, so −16.0 dBm allows ±0.16 dB. The tolerance is shown with each problem.",
         "Giving the answer to the number of digits used in the problem (usually three significant figures) is enough. More digits are fine too.",
         "If you are just outside the tolerance (within 5 %), the drill says “Close”. The formula is usually right, so check whether you rounded intermediate values too much or used a constant (c, h, q and so on) different from the one in the problem."
       ]
