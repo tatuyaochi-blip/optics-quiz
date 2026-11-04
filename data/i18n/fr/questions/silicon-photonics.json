@@ -1,0 +1,272 @@
+{
+  "silicon-photonics-001": {
+    "question": "Quelle valeur est la plus proche de la différence d'indice relative Δ = (n₁² − n₂²)/(2n₁²) d'un guide d'onde dont le cœur en silicium (indice 3,48) est entouré d'oxyde (indice 1,44) ?",
+    "choices": [
+      "Environ 0,4 %",
+      "Environ 83 %",
+      "Environ 41 %"
+    ],
+    "explanation": "Δ = (3,48² − 1,44²) / (2 × 3,48²) = (12,11 − 2,07) / 24,2 ≈ 0,41, soit environ 41 %. La valeur d'environ 0,4 % est celle d'une fibre monomode standard (Δ ≈ 0,3 à 0,4 %) ; un guide en silicium présente une différence d'indice environ 100 fois plus grande. Celle d'environ 83 % omet le 2 du dénominateur. Une grande différence d'indice confine fortement la lumière : on peut réduire le rayon de courbure jusqu'à quelques µm, et la section, de quelques centaines de nm de côté, permet d'intégrer les composants à haute densité. En contrepartie, les pertes par diffusion dues à la rugosité des flancs et la variation des caractéristiques sous l'effet de faibles écarts de dimensions deviennent importantes."
+  },
+  "silicon-photonics-002": {
+    "question": "Quelle valeur est la plus proche de la largeur d'un guide d'onde en silicium standard (nanoguide) qui propage en régime monomode la polarisation TE dans la bande de 1550 nm, sur un SOI de 220 nm d'épaisseur ?",
+    "choices": [
+      "Environ 450 à 500 nm",
+      "Environ 8 à 10 µm",
+      "Environ 50 nm"
+    ],
+    "explanation": "Dans un nanoguide en silicium à forte différence d'indice, on choisit généralement, pour une épaisseur de 220 nm, une largeur d'environ 450 à 500 nm afin que les modes d'ordre supérieur ne se propagent pas. Plus large, le guide propage aussi des modes TE d'ordre supérieur ; trop étroit, la lumière déborde largement dans l'oxyde, et la diffusion par les flancs ainsi que les fuites vers le substrat augmentent. La valeur d'environ 8 à 10 µm correspond aux dimensions du cœur d'une fibre optique, de faible différence d'indice ; un guide en silicium de cette largeur propagerait de nombreux modes. À environ 50 nm, la lumière n'est presque plus confinée. C'est le fait que les dimensions du guide ne soient qu'une fraction de la longueur d'onde qui permet la miniaturisation de la photonique sur silicium."
+  },
+  "silicon-photonics-003": {
+    "question": "Laquelle des relations suivantes entre l'indice effectif n_eff et l'indice de groupe n_g d'un nanoguide en silicium est correcte ? (λ est la longueur d'onde dans le vide.)",
+    "choices": [
+      "Dans un guide, la vitesse de phase et la vitesse de groupe sont égales, si bien que n_g et n_eff sont toujours égaux",
+      "n_g = n_eff − λ dn_eff/dλ, et dans un nanoguide en silicium, n_g est supérieur à n_eff",
+      "n_g = n_eff + λ dn_eff/dλ, et la vitesse de groupe étant supérieure à la vitesse de phase, n_g est toujours inférieur à n_eff"
+    ],
+    "explanation": "L'indice effectif traduit la vitesse de phase du mode guidé, et l'indice de groupe la vitesse de groupe (vitesse de l'énergie) à laquelle avancent une impulsion ou une enveloppe ; ils sont liés par n_g = n_eff − λ dn_eff/dλ. Dans un nanoguide en silicium, plus la longueur d'onde est grande, plus la lumière déborde dans l'oxyde et plus n_eff diminue (dn_eff/dλ < 0) : l'indice de groupe est donc supérieur à l'indice effectif, autour de 4. Les deux ne sont égaux que dans un milieu sans dispersion. La formule de signe inversé est fausse. Point important pour la conception : c'est l'indice de groupe qu'il faut utiliser pour l'ISL d'un résonateur en anneau, la période spectrale d'un interféromètre de Mach-Zehnder et le retard d'une ligne à retard."
+  },
+  "silicon-photonics-004": {
+    "question": "Quelle valeur est la plus proche de l'intervalle spectral libre (ISL) au voisinage de 1550 nm d'un résonateur en anneau en silicium de rayon 10 µm (indice de groupe 4,2, indice effectif 2,4) ? (ISL = λ²/(n_g L), L étant la circonférence.)",
+    "choices": [
+      "Environ 16 nm",
+      "Environ 9,1 nm",
+      "Environ 57 nm"
+    ],
+    "explanation": "La circonférence vaut L = 2π × 10 µm ≈ 62,8 µm, et ISL = λ²/(n_gL) = (1,55×10⁻⁶)² / (4,2 × 62,8×10⁻⁶) ≈ 9,1×10⁻⁹ m, soit environ 9,1 nm. La valeur d'environ 16 nm utilise par erreur l'indice effectif 2,4 au lieu de l'indice de groupe, ce qui fait une grande différence dans un nanoguide en silicium très dispersif. Celle d'environ 57 nm utilise par erreur le rayon au lieu de la circonférence. L'ISL fixe la plage de longueurs d'onde utilisable dans un circuit de multiplexage en longueur d'onde : pour placer de nombreux canaux, on réduit la taille de l'anneau afin d'élargir l'ISL. Mais un rayon plus petit augmente les pertes par courbure et abaisse le facteur Q, si bien que les dimensions résultent d'un compromis entre les deux."
+  },
+  "silicon-photonics-005": {
+    "question": "Quelle valeur est la plus proche du facteur Q (Q en charge) d'un résonateur en anneau dont la résonance du spectre de transmission a une largeur totale à mi-hauteur de 0,05 nm à 1550 nm ?",
+    "choices": [
+      "Environ 3,1×10⁴",
+      "Environ 3,2×10⁻⁵",
+      "Environ 1,6×10⁴"
+    ],
+    "explanation": "Le facteur Q est la longueur d'onde de résonance divisée par la largeur totale à mi-hauteur : Q = λ/Δλ = 1550 / 0,05 = 3,1×10⁴. La valeur d'environ 3,2×10⁻⁵ en est l'inverse. Celle d'environ 1,6×10⁴ résulte d'une erreur d'un facteur 2, comme si l'on avait pris une largeur de raie double (0,1 nm). Le facteur Q correspond aussi au temps de séjour de la lumière dans le résonateur (durée de vie des photons τ = Q/ω = Qλ/(2πc)), ici d'environ 25 ps. Plus Q est élevé, plus le filtre est sélectif et plus le modulateur fonctionne à faible puissance ; mais la durée de vie des photons limite la bande passante de modulation, et la tolérance aux décalages de la résonance dus à la température ou aux dispersions de fabrication se resserre."
+  },
+  "silicon-photonics-006": {
+    "question": "Pour un résonateur en anneau couplé à un guide bus, quel état de couplage rend la transmission au port direct (through) presque nulle à la longueur d'onde de résonance ?",
+    "choices": [
+      "Le surcouplage (taux de couplage bien supérieur aux pertes sur un tour, résonance large)",
+      "Le sous-couplage (taux de couplage bien inférieur aux pertes sur un tour, facteur Q élevé)",
+      "Le couplage critique (taux de couplage avec l'anneau égal aux pertes sur un tour)"
+    ],
+    "explanation": "La sortie du port direct résulte de l'interférence entre la lumière qui passe sans entrer dans l'anneau et celle qui revient après avoir circulé dans l'anneau. Au couplage critique, où le taux de couplage est égal aux pertes sur un tour, les deux ondes ont à la résonance la même amplitude et des phases opposées : elles s'annulent complètement et la transmission est nulle. Toute la lumière entrée dans l'anneau y est perdue. En surcouplage, la lumière qui revient est trop forte, et en sous-couplage trop faible : dans les deux cas, l'annulation est incomplète et une transmission subsiste. Le surcouplage élargit la résonance et convient aux modulateurs rapides et aux filtres à large bande passante. Les modulateurs en anneau, qui visent un taux d'extinction maximal, sont conçus au voisinage du couplage critique."
+  },
+  "silicon-photonics-007": {
+    "question": "Le coefficient de température de l'indice effectif d'un guide en silicium vaut environ 1,8×10⁻⁴ /K, et l'indice de groupe 4,2. Quelle valeur est la plus proche de la variation de la longueur d'onde de résonance d'un résonateur en anneau à 1550 nm avec la température (Δλ/ΔT = λ (dn_eff/dT) / n_g) ?",
+    "choices": [
+      "Environ 0,066 nm/K",
+      "Environ 0,28 nm/K",
+      "Environ 0,12 nm/K"
+    ],
+    "explanation": "Δλ/ΔT = 1550 nm × 1,8×10⁻⁴ / 4,2 ≈ 0,066 nm/K, soit environ 0,07 nm/K. La valeur d'environ 0,28 nm/K oublie de diviser par l'indice de groupe, et celle d'environ 0,12 nm/K divise par l'indice effectif (environ 2,4) au lieu de l'indice de groupe. Une variation de température de seulement 10 K décale la résonance d'environ 0,7 nm, bien au-delà de la largeur de raie (quelques dizaines de pm) d'un anneau dont le facteur Q vaut quelques dizaines de milliers. C'est pourquoi un élément chauffant et un asservissement en température sont presque indispensables pour les anneaux en silicium. À l'inverse, ce fort effet thermo-optique permet d'accorder la longueur d'onde d'un filtre avec peu de puissance."
+  },
+  "silicon-photonics-008": {
+    "question": "Dans un déphaseur thermo-optique qui chauffe un guide en silicium de 100 µm de long, quelle valeur est la plus proche de l'élévation de température nécessaire pour changer de π la phase d'une lumière de 1,55 µm ? (Coefficient de température de l'indice 1,8×10⁻⁴ /K ; la lumière est supposée entièrement confinée dans le guide.)",
+    "choices": [
+      "Environ 86 K",
+      "Environ 4,3 K",
+      "Environ 43 K"
+    ],
+    "explanation": "La variation de phase vaut Δφ = (2π/λ) × (dn/dT) × ΔT × L. En posant Δφ = π, on obtient ΔT = λ / (2L × dn/dT) = 1,55×10⁻⁶ / (2 × 100×10⁻⁶ × 1,8×10⁻⁴) ≈ 43 K. La valeur d'environ 86 K est la température nécessaire pour un déphasage de 2π (une longueur d'onde), et celle d'environ 4,3 K correspond à une longueur de 1 mm, une erreur d'ordre de grandeur. Allonger le déphaseur réduit l'élévation de température nécessaire, mais le volume chauffé augmente, si bien que la puissance consommée (Pπ, typiquement quelques dizaines de mW) ne diminue guère. En retirant par gravure l'oxyde ou le substrat autour du guide pour que la chaleur s'échappe moins, on réduit fortement Pπ."
+  },
+  "silicon-photonics-009": {
+    "question": "Dans un coupleur directionnel formé de deux guides rapprochés, on note Lc la longueur sur laquelle la lumière injectée dans un guide passe entièrement dans l'autre (longueur de couplage total). Quelle longueur faut-il donner à la zone de couplage pour répartir la lumière moitié-moitié entre les deux sorties (coupleur 3 dB) ? (Les deux guides sont identiques et en accord de phase.)",
+    "choices": [
+      "Lc/4",
+      "Lc/2",
+      "Lc"
+    ],
+    "explanation": "Dans un coupleur directionnel en accord de phase, la fraction de puissance transférée dans l'autre guide varie comme sin²(κL) (κ étant le coefficient de couplage), et le transfert est total pour κLc = π/2. Pour obtenir moitié-moitié, il faut sin²(κL) = 1/2, soit κL = π/4, d'où L = Lc/2. Avec Lc/4, seuls sin²(π/8) ≈ 15 % sont transférés. Avec Lc, toute la lumière passe dans l'autre guide. Le coupleur directionnel a peu de pertes et est simple, mais son coefficient de couplage est sensible à l'écartement des guides et à la longueur d'onde : le rapport de division dérive facilement avec les dispersions de fabrication, et il est difficile de garder le même rapport sur une large plage de longueurs d'onde."
+  },
+  "silicon-photonics-010": {
+    "question": "Laquelle des raisons suivantes explique correctement pourquoi on utilise souvent des coupleurs à interférence multimode (MMI) pour diviser la lumière en photonique sur silicium ?",
+    "choices": [
+      "C'est un guide étroit qui ne propage qu'un seul mode, si bien qu'aucune conversion de mode ne se produit et que la division se fait sans aucune perte",
+      "Dans un guide large, les longueurs d'auto-imagerie des modes TE et TM sont égales, ce qui aligne automatiquement la polarisation de la lumière",
+      "Il exploite l'interférence (auto-imagerie) de nombreux modes dans un guide large, si bien que le rapport de division reste stable face aux écarts de dimensions et à la longueur d'onde"
+    ],
+    "explanation": "Le coupleur MMI injecte la lumière dans un guide large (zone multimode) et exploite l'effet d'auto-imagerie, par lequel l'interférence de nombreux modes reproduit périodiquement l'image de l'entrée. En plaçant les guides de sortie à l'endroit où, pour une longueur convenable, l'image se dédouble, on obtient une division 1×2 ou 2×2. Sa tolérance aux erreurs de dimensions est grande et sa dépendance en longueur d'onde plus faible que celle d'un coupleur directionnel : on l'utilise donc souvent pour la division et la recombinaison dans les modulateurs de Mach-Zehnder. Comme son nom l'indique, le MMI est un composant qui exploite une zone multimode, et ses pertes en excès, faibles, ne sont pas nulles. Il n'aligne pas non plus la polarisation, et les longueurs d'auto-imagerie diffèrent entre TE et TM."
+  },
+  "silicon-photonics-011": {
+    "question": "Lorsqu'on utilise un modulateur de Mach-Zehnder (MZM) en silicium pour émettre des signaux numériques à modulation d'intensité (NRZ) ou en PAM4, quel point de fonctionnement fixe-t-on généralement avec la tension de polarisation continue ?",
+    "choices": [
+      "Le point de transmission maximale (déphasage nul), qui donne la plus grande puissance optique de sortie",
+      "Le point de quadrature, où la transmission vaut à peu près la moitié du maximum (déphasage de π/2 entre les bras)",
+      "Le point de transmission minimale (déphasage π), qui donne le plus grand taux d'extinction"
+    ],
+    "explanation": "La transmission d'un MZM varie comme cos²(Δφ/2) en fonction du déphasage Δφ entre les deux bras. Au point de quadrature, pour un déphasage de π/2, la transmission vaut la moitié du maximum, la pente de la courbe est maximale et la réponse presque linéaire : on obtient une variation d'intensité proportionnelle à l'amplitude du signal électrique, avec peu de distorsion même lorsqu'on utilise plusieurs niveaux d'amplitude, comme en PAM4. Aux points de transmission maximale ou minimale, la pente de la courbe est nulle : un petit signal ne change presque pas l'intensité, et la fréquence de modulation est en outre doublée. Notons qu'en communication cohérente, dans les modulateurs IQ qui modulent la phase et l'amplitude, chaque MZM est polarisé au point de transmission minimale pour inverser le signe du champ électrique."
+  },
+  "silicon-photonics-012": {
+    "question": "Dans un modulateur en silicium dont le VπL (produit de la tension nécessaire pour un déphasage de π par la longueur du déphaseur) vaut 2 V·cm, la longueur du déphaseur est de 3 mm. Quelle valeur est la plus proche de Vπ ?",
+    "choices": [
+      "Environ 6,7 V",
+      "Environ 0,67 V",
+      "Environ 67 V"
+    ],
+    "explanation": "Vπ = VπL / L = 2 V·cm / 0,3 cm ≈ 6,7 V. La valeur d'environ 0,67 V vient d'une erreur d'unité qui prend une longueur de 3 cm, et celle d'environ 67 V prend par erreur 0,03 cm. L'effet de dispersion par porteurs du silicium étant faible, Vπ atteint plusieurs volts ; avec l'amplitude de sortie d'un circuit d'attaque CMOS (environ 1 V), l'excursion de phase est faible et la profondeur de modulation tend à être insuffisante. Allonger le déphaseur réduit Vπ, mais des électrodes longues diminuent la bande passante, à cause des pertes hyperfréquences et du désaccord de vitesse avec la lumière, et augmentent aussi les pertes optiques. On recourt à une commande push-pull, à des électrodes à ondes progressives, à des modulateurs en anneau, ou à l'association d'autres matériaux comme le niobate de lithium en couche mince."
+  },
+  "silicon-photonics-013": {
+    "question": "On veut coupler une lumière de longueur d'onde 1,55 µm venant de l'air, inclinée de 10° par rapport à la normale, avec un coupleur à réseau en silicium. Si l'indice effectif de la lumière guidée sous le réseau vaut 2,8, quelle valeur est la plus proche de la période de réseau nécessaire ? (Condition d'accord de phase Λ = λ/(n_eff − sinθ).)",
+    "choices": [
+      "Environ 554 nm",
+      "Environ 590 nm",
+      "Environ 521 nm"
+    ],
+    "explanation": "La condition d'accord de phase exprime que le vecteur d'onde fixé par la période du réseau comble l'écart entre les vecteurs d'onde de la lumière guidée et de la lumière incidente oblique. Λ = 1,55 / (2,8 − sin10°) = 1,55 / (2,8 − 0,174) ≈ 0,590 µm, soit environ 590 nm. La valeur d'environ 554 nm prend un angle d'incidence de 0° et ignore le terme en sinθ, et celle d'environ 521 nm inverse le signe de sinθ. On évite de coupler exactement à la verticale (θ = 0°) parce que, dans cette condition, la lumière renvoyée dans le guide par réflexion de Bragg devient forte et l'efficacité diminue : on incline généralement de 8 à 10° environ. La période fixant la longueur d'onde couplée, la bande passante d'un coupleur à réseau est limitée à quelques dizaines de nm."
+  },
+  "silicon-photonics-014": {
+    "question": "Lorsqu'on injecte dans un guide en silicium une lumière intense de 1,55 µm (quelques centaines de mW ou plus), les pertes augmentent avec l'intensité lumineuse. Laquelle des causes principales suivantes est correcte ?",
+    "choices": [
+      "L'absorption à deux photons (TPA) et l'absorption par les porteurs libres qu'elle crée",
+      "L'énergie d'un photon à 1,55 µm dépasse la bande interdite du silicium, si bien qu'il est absorbé par un seul photon",
+      "Le cristal de silicium fond sous la lumière intense et devient amorphe"
+    ],
+    "explanation": "L'énergie d'un photon à 1,55 µm (environ 0,8 eV) est inférieure à la bande interdite du silicium (environ 1,12 eV), et un photon seul n'est pas absorbé. Mais deux photons réunis font 1,6 eV et franchissent la bande interdite : dans un guide étroit à forte intensité, il se produit une absorption simultanée de deux photons, l'absorption à deux photons. Sa probabilité est proportionnelle au carré de l'intensité, et les électrons et trous ainsi créés provoquent en outre une absorption par porteurs libres qui augmente les pertes. On peut la réduire en partie en évacuant les porteurs à l'aide d'une jonction pin sous tension inverse. À cause de cet effet, le silicium est limité pour l'optique non linéaire et la transmission de fortes puissances, et l'on utilise parfois le nitrure de silicium, qui ne présente pas d'absorption à deux photons. La fusion ne se produit pas aux intensités habituelles en régime continu."
+  },
+  "silicon-photonics-015": {
+    "question": "Laquelle des propositions suivantes décrit correctement les caractéristiques d'un modulateur utilisant un résonateur en anneau (modulateur en anneau) par rapport à un modulateur de Mach-Zehnder (MZM) ?",
+    "choices": [
+      "Il est grand et consomme beaucoup, puisque la résonance fait circuler la lumière de nombreuses fois, mais ses caractéristiques ne varient absolument pas avec la température",
+      "Il ne modifie que la phase sans utiliser de résonance, si bien qu'il a les mêmes caractéristiques sur une large plage de longueurs d'onde et qu'aucun accord en longueur d'onde n'est nécessaire",
+      "Petit et de faible capacité, il fonctionne à basse puissance, mais sa longueur d'onde de résonance varie facilement avec la température et les dispersions de fabrication, et il faut l'accorder en longueur d'onde"
+    ],
+    "explanation": "Un modulateur en anneau est petit, de quelques µm à une quinzaine de µm de diamètre, et la résonance renforce la variation de phase, si bien qu'un déphaseur court suffit pour une forte variation d'intensité. Sa faible capacité réduit la puissance de commande, et l'on peut aligner sur un seul guide bus plusieurs anneaux de longueurs d'onde de résonance différentes pour réaliser un émetteur compact à multiplexage en longueur d'onde. En revanche, fonctionnant par résonance, il n'est utilisable que sur une plage étroite de longueurs d'onde, et une variation de température de seulement 1 K décale la résonance d'environ 0,07 nm : l'accord et l'asservissement de la longueur d'onde par un élément chauffant sont indispensables. Il présente aussi une limitation de bande passante due à la durée de vie des photons, et une dérive de fréquence (chirp) accompagnant la variation d'intensité. Le MZM, plus long et plus grand, fonctionne sur une large plage de longueurs d'onde et résiste relativement bien aux variations de température."
+  },
+  "silicon-photonics-016": {
+    "question": "Laquelle des raisons suivantes explique correctement pourquoi les modulateurs optiques rapides en silicium exploitent la variation d'indice due à la densité de porteurs (effet de dispersion par porteurs) plutôt que l'effet Pockels, comme le niobate de lithium ?",
+    "choices": [
+      "Le silicium a une petite bande interdite et absorbe fortement la lumière à 1,55 µm, si bien qu'un champ électrique y change l'absorption mais pas l'indice",
+      "Le cristal de silicium possède une symétrie d'inversion, si bien que l'effet Pockels, qui change l'indice proportionnellement au champ, y est presque inexistant",
+      "L'effet Pockels du silicium est plus grand que celui du niobate de lithium, mais il exige une tension élevée, si bien qu'on utilise une méthode qui se contente d'une basse tension"
+    ],
+    "explanation": "L'effet Pockels est dû à la susceptibilité non linéaire du deuxième ordre χ⁽²⁾, qui s'annule dans les cristaux possédant une symétrie d'inversion. Le silicium, de structure diamant, possède une symétrie d'inversion : à moins de lui appliquer une contrainte par exemple, cet effet y est presque inexistant. On fait donc varier la densité d'électrons ou de trous, avec une jonction pn par exemple, et l'on exploite la baisse d'indice due aux porteurs libres (effet de dispersion plasma). Cet effet est faible et s'accompagne d'une variation de l'absorption, si bien que VπL est grand, de l'ordre de quelques V·cm. La bande interdite du silicium (environ 1,12 eV) est supérieure à l'énergie des photons à 1,55 µm (environ 0,8 eV), et le silicium est transparent à cette longueur d'onde."
+  },
+  "silicon-photonics-017": {
+    "question": "Laquelle des raisons suivantes explique correctement pourquoi on utilise souvent, pour les photodétecteurs de la photonique sur silicium, du germanium (Ge) épitaxié sur le silicium ?",
+    "choices": [
+      "Le Ge a une bande interdite directe d'environ 0,8 eV et absorbe la lumière jusqu'à la bande de 1,55 µm, et il s'intègre facilement aux procédés de fabrication du silicium",
+      "Le Ge n'absorbe pas la lumière à 1,55 µm, mais agit comme un miroir qui renvoie la lumière du guide en silicium vers la zone de détection, ce qui augmente l'efficacité",
+      "Le Ge est un semi-conducteur composé III-V comme l'InGaAs ; il croît en accord de maille sur le silicium, et aucun courant d'obscurité ne circule"
+    ],
+    "explanation": "Le Ge a une bande interdite indirecte d'environ 0,66 eV et une bande interdite directe d'environ 0,80 eV : il absorbe fortement jusqu'à la bande de 1,55 µm (énergie des photons d'environ 0,8 eV). Le silicium n'absorbant pas au-delà d'environ 1,1 µm, il est commode de faire croître sélectivement du Ge pour détecter la lumière sur la même plaquette. Le Ge, élément du groupe IV, s'intègre facilement aux procédés CMOS ; mais son paramètre de maille diffère d'environ 4 % de celui du silicium, et le courant d'obscurité dû aux défauts tend à être plus grand qu'avec l'InGaAs. Ce n'est pas un composé III-V, et il n'est pas en accord de maille. Avec une structure qui absorbe latéralement la lumière du guide, une longueur de quelques dizaines de µm suffit pour obtenir une absorption suffisante et une large bande passante."
+  },
+  "silicon-photonics-018": {
+    "question": "Dans un coupleur par la tranche (edge coupler), qui couple un nanoguide en silicium à une fibre optique par la face d'extrémité de la puce, on utilise une structure en taper inverse dont la largeur diminue vers l'extrémité du guide (jusqu'à environ 100 à 200 nm par exemple). Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "Plus le guide s'amincit, plus le mode est fortement confiné dans le silicium et plus il devient petit, ce qui permet de concentrer la lumière au centre du cœur de la fibre",
+      "En s'amincissant, l'extrémité agit comme un réseau de diffraction qui diffracte la lumière vers le haut, si bien qu'on peut coupler la fibre en l'approchant en biais par le dessus",
+      "En s'amincissant, le mode s'étale largement hors du guide jusqu'à une taille proche de celle de la fibre, ce qui améliore le recouvrement des modes"
+    ],
+    "explanation": "Le mode d'un nanoguide en silicium ne mesure qu'environ 0,5 µm de côté et recouvre mal celui d'une fibre de diamètre du champ de mode d'environ 10 µm : un raccord direct entraîne de fortes pertes. Si l'on réduit lentement la largeur du guide, la lumière n'est plus confinée dans le silicium et s'étale largement dans la gaine environnante, pour atteindre un mode de quelques µm à l'extrémité. Si cette transformation est assez lente (adiabatique), on change la taille du mode presque sans pertes, avec une faible dépendance en longueur d'onde. Dire que l'amincissement renforce le confinement est l'inverse de la réalité. La diffraction de la lumière vers le haut est le principe du coupleur à réseau."
+  },
+  "silicon-photonics-019": {
+    "question": "Laquelle des propositions suivantes concernant les polarisations TE et TM d'un nanoguide en silicium d'environ 220 nm d'épaisseur et 500 nm de largeur est correcte ? (Longueur d'onde 1550 nm.)",
+    "choices": [
+      "La section est presque carrée et les indices effectifs des deux polarisations sont presque égaux, si bien que la plupart des composants sont indépendants de la polarisation",
+      "La section est allongée horizontalement et les indices effectifs des deux polarisations diffèrent beaucoup, si bien que les caractéristiques de nombreux composants dépendent de la polarisation",
+      "Le silicium étant un cristal isotrope, les indices effectifs des deux polarisations sont toujours égaux, quelle que soit la forme de la section du guide"
+    ],
+    "explanation": "Pour une section allongée horizontalement, de 500 nm de large pour 220 nm d'épaisseur, le confinement diffère fortement entre la polarisation TE, au champ électrique horizontal, et la polarisation TM, au champ vertical : les indices effectifs (pour un guide entouré de SiO₂) valent environ 2,4 en TE et 1,8 en TM, très éloignés. La longueur d'onde de résonance des résonateurs en anneau, la longueur de couplage des coupleurs directionnels, l'angle de couplage des coupleurs à réseau, etc., dépendent donc de la polarisation, et de nombreux composants sont conçus pour la seule polarisation TE. La polarisation de la lumière venant d'une fibre n'étant pas fixée, on recourt côté réception à la diversité de polarisation : un séparateur-rotateur de polarisation ramène les deux polarisations en TE, et l'on utilise deux exemplaires du même circuit. Même si le silicium est isotrope, une forte biréfringence de forme due à la géométrie du guide subsiste."
+  },
+  "silicon-photonics-020": {
+    "question": "À 1,55 µm, la variation d'indice du silicium lorsqu'on augmente la densité d'électrons de ΔN vaut Δn ≈ −8,8×10⁻²² × ΔN (ΔN en cm⁻³). Pour ΔN = 1×10¹⁸ cm⁻³, quelle valeur est la plus proche de la longueur de déphaseur nécessaire pour changer de π la phase de la lumière ? (La lumière est entièrement confinée dans le guide et l'absorption est négligée.)",
+    "choices": [
+      "Environ 1,8 mm",
+      "Environ 0,88 µm",
+      "Environ 0,88 mm"
+    ],
+    "explanation": "Δn = −8,8×10⁻²² × 1×10¹⁸ = −8,8×10⁻⁴. La variation de phase sur une longueur L vaut Δφ = 2π|Δn|L/λ ; pour obtenir π, il faut L = λ/(2|Δn|) = 1,55×10⁻⁶ / (2 × 8,8×10⁻⁴) ≈ 0,88 mm. La valeur d'environ 1,8 mm est la longueur qui change la phase de 2π, et celle d'environ 0,88 µm résulte d'une erreur d'unité. Cette variation d'indice ne correspond, par l'effet thermo-optique (environ 1,8×10⁻⁴ /K), qu'à une variation de température d'environ 5 K. L'effet de dispersion par porteurs est rapide mais faible, si bien que les déphaseurs des modulateurs mesurent de l'ordre du mm. Qu'il s'agisse d'électrons ou de trous, une augmentation des porteurs abaisse l'indice."
+  },
+  "silicon-photonics-021": {
+    "question": "Un résonateur en anneau en silicium a un facteur Q en charge de 2,0×10⁴ à 1550 nm. Quelle valeur est la plus proche de la durée de vie des photons dans la cavité, τ = Qλ/(2πc) ? (c = 3,0×10⁸ m/s)",
+    "choices": [
+      "Environ 103 ps",
+      "Environ 16 ps",
+      "Environ 33 ps"
+    ],
+    "explanation": "τ = Qλ/(2πc) = 2,0×10⁴ × 1,55×10⁻⁶ / (2π × 3,0×10⁸) ≈ 1,6×10⁻¹¹ s, soit environ 16 ps. C'est le temps au bout duquel l'énergie lumineuse stockée dans la cavité est divisée par e. La valeur d'environ 103 ps est Qλ/c, sans la division par 2π, et celle d'environ 33 ps confond avec le temps 2τ au bout duquel l'amplitude du champ électrique est divisée par e. La durée de vie des photons correspond à la largeur totale à mi-hauteur de la résonance Δν = 1/(2πτ) ≈ 9,7 GHz : plus la lumière reste longtemps stockée dans la cavité, plus il est difficile de faire varier rapidement son intensité. Dans un modulateur en anneau, augmenter Q affine la résonance et permet de moduler avec une faible tension, mais allonge la durée de vie des photons et rétrécit la bande passante de modulation : on choisit Q selon la vitesse visée."
+  },
+  "silicon-photonics-022": {
+    "question": "Laquelle des causes principales suivantes des pertes de propagation d'un nanoguide en silicium (de l'ordre de quelques dB/cm) est correcte ? (Longueur d'onde 1550 nm, faible puissance optique.)",
+    "choices": [
+      "La diffusion par la rugosité des flancs créée lors de la fabrication, d'autant plus forte que la différence d'indice entre cœur et gaine est grande",
+      "L'absorption interbande du silicium, qui se produit parce que l'énergie des photons à 1550 nm dépasse la bande interdite",
+      "L'absorption du matériau de la gaine d'oxyde, la silice absorbant davantage que le silicium à 1550 nm"
+    ],
+    "explanation": "Les pertes d'un nanoguide en silicium sont surtout fixées par la diffusion sur la rugosité des flancs, de quelques nm, créée par la gravure. L'intensité de cette diffusion est à peu près proportionnelle au carré de la différence d'indice entre cœur et gaine et à l'intensité lumineuse au niveau des flancs : dans un nanoguide en silicium, à grande différence d'indice (environ 2) et petite section, les pertes sont donc bien plus grandes que dans une fibre optique ou un guide en silice. On les réduit par des procédés qui lissent les flancs, ou en élargissant le guide pour diminuer la lumière présente aux flancs. L'énergie des photons à 1550 nm (environ 0,8 eV) étant inférieure à la bande interdite du silicium (environ 1,12 eV), il n'y a presque pas d'absorption interbande. La silice est l'un des matériaux de plus faibles pertes à 1550 nm."
+  },
+  "silicon-photonics-023": {
+    "question": "Pour doter une puce de photonique sur silicium d'une source laser, on ne fait pas émettre le silicium lui-même : on reporte par collage des semi-conducteurs composés III-V comme l'InP, ou l'on utilise une source extérieure à la puce. Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "Le silicium a une grande bande interdite, d'environ 3,4 eV, si bien que la tension nécessaire pour émettre aux longueurs d'onde des télécommunications serait trop élevée",
+      "L'indice du silicium est trop élevé, si bien que la lumière émise reste piégée dans la puce et ne peut pas en sortir",
+      "Le silicium est un semi-conducteur à bande interdite indirecte, où la probabilité d'émission de lumière par recombinaison des électrons et des trous est extrêmement faible"
+    ],
+    "explanation": "Dans le silicium, à bande interdite indirecte, le bas de la bande de conduction et le haut de la bande de valence correspondent à des quantités de mouvement cristallines différentes : l'émission d'un photon par recombinaison exige l'aide d'un phonon, la probabilité d'émission est très faible, et presque toute l'énergie se transforme en chaleur. On utilise donc l'intégration hétérogène, qui reporte par collage des matériaux à bande interdite directe à base d'InP sur la plaquette de silicium, ou l'on couple un laser extérieur à la puce par une fibre ou de petits composants optiques. La bande interdite du silicium vaut environ 1,12 eV ; environ 3,4 eV est la valeur du GaN. Un indice élevé est plutôt un avantage pour les guides qui confinent la lumière, et ce n'est pas la raison de l'impossibilité d'émettre."
+  },
+  "silicon-photonics-024": {
+    "question": "Laquelle des propositions suivantes décrit correctement les caractéristiques d'un guide en nitrure de silicium (SiN, indice d'environ 2,0) par rapport à un nanoguide en silicium (Si) ? (Gaine d'oxyde dans les deux cas.)",
+    "choices": [
+      "La différence d'indice étant encore plus grande, le rayon de courbure peut être plus petit, et son coefficient thermo-optique, également grand, facilite l'ajustement de la phase",
+      "La différence d'indice étant plus petite, le rayon de courbure est plus grand, mais les pertes de propagation sont faibles, il est transparent jusqu'au visible et ne présente presque pas d'absorption à deux photons",
+      "La différence d'indice étant presque la même, la taille des composants ne change pas, mais il conduit l'électricité, ce qui permet une modulation rapide par l'effet de dispersion par porteurs"
+    ],
+    "explanation": "L'indice du nitrure de silicium vaut environ 2,0 ; son écart avec l'oxyde (environ 1,44) est plus petit que pour le silicium (3,48), si bien que le confinement est plus faible et qu'il faut des rayons de courbure de plusieurs dizaines de µm ou plus. En revanche, la diffusion par les flancs est faible et les pertes de propagation peuvent être réduites ; sa bande interdite, grande (environ 5 eV), le rend transparent jusqu'au visible, et l'absorption à deux photons n'existe pas aux longueurs d'onde des télécommunications. Son coefficient thermo-optique est petit, environ 1/7 de celui du silicium (environ 2,5×10⁻⁵ /K) : il est stable en température, mais l'ajustement par élément chauffant est peu efficace. Comme c'est un isolant, la modulation par effet de dispersion par porteurs est impossible, et l'on associe d'autres matériaux, comme le silicium, pour la modulation rapide."
+  },
+  "silicon-photonics-025": {
+    "question": "Parmi les modulateurs optiques en silicium à dispersion par porteurs, laquelle des comparaisons suivantes entre le type à déplétion, qui fait varier la largeur de la zone de déplétion d'une jonction pn sous tension inverse, et le type à injection, qui injecte des porteurs dans une jonction pin sous tension directe, est correcte ?",
+    "choices": [
+      "Le type à déplétion donne une faible variation d'indice et exige un long déphaseur, mais il n'est pas limité par la durée de vie des porteurs et fonctionne à plusieurs dizaines de Gb/s ou plus",
+      "Le type à déplétion a une réponse limitée par la durée de vie des porteurs (de l'ordre de la ns), mais change davantage l'indice que le type à injection et permet un déphaseur plus court",
+      "Le type à injection ne fait presque pas circuler de courant et consomme peu ; il n'est pas non plus limité par la durée de vie des porteurs et fonctionne plus vite que le type à déplétion"
+    ],
+    "explanation": "Dans le type à déplétion, la tension inverse ne fait qu'ajouter ou retirer des porteurs majoritaires au bord de la zone de déplétion : la réponse est fixée par la constante de temps RC, et l'on peut moduler à plusieurs dizaines de Gb/s ou plus. Mais la quantité de porteurs qui varie est faible, si bien que VπL est grand, de quelques V·cm, et qu'il faut un déphaseur de quelques mm. Le type à injection, qui introduit sous tension directe une grande quantité de porteurs dans la zone i, change fortement l'indice et permet un composant court ; mais la durée de vie (de l'ordre de la ns) nécessaire à la disparition des porteurs injectés ralentit la réponse, et le courant qui circule consomme de la puissance. La limitation de la réponse par la durée de vie est une propriété du type à injection, pas du type à déplétion. Pour utiliser le type à injection à haute vitesse, il faut des techniques de commande comme la préaccentuation."
+  },
+  "silicon-photonics-026": {
+    "question": "On réalise avec des nanoguides en silicium un interféromètre de Mach-Zehnder dissymétrique, dont les deux bras diffèrent de ΔL = 100 µm, utilisé comme filtre en longueur d'onde. Quelle valeur est la plus proche de la période du spectre de transmission au voisinage de 1550 nm (ISL = λ²/(n_g ΔL)) ? (Indice de groupe n_g = 4,2, indice effectif n_eff = 2,4.)",
+    "choices": [
+      "Environ 5,7 nm",
+      "Environ 10 nm",
+      "Environ 2,9 nm"
+    ],
+    "explanation": "ISL = λ²/(n_g ΔL) = (1,55 µm)² / (4,2 × 100 µm) ≈ 5,7×10⁻³ µm, soit environ 5,7 nm. Le déphasage entre les bras vaut 2πn_eff ΔL/λ, mais sa variation avec la longueur d'onde inclut aussi la dépendance de n_eff en longueur d'onde : la période est donc fixée par l'indice de groupe. La valeur d'environ 10 nm utilise par erreur l'indice effectif 2,4 au lieu de l'indice de groupe, écart marqué dans un nanoguide en silicium où n_g et n_eff diffèrent beaucoup. Celle d'environ 2,9 nm prend par erreur une différence de chemin de 2ΔL, comme dans un interféromètre en réflexion. En changeant ΔL, on choisit la période : les interféromètres de Mach-Zehnder dissymétriques servent au démultiplexage en longueur d'onde et comme entrelaceurs (interleavers), qui séparent un canal sur deux."
+  },
+  "silicon-photonics-027": {
+    "question": "Quelle valeur est la plus proche du retard (retard de groupe τ = n_g L / c) d'une impulsion lumineuse qui parcourt 1,0 cm dans un nanoguide en silicium d'indice de groupe 4,2 ? (c = 3,0×10⁸ m/s ; l'indice effectif vaut 2,4.)",
+    "choices": [
+      "Environ 80 ps",
+      "Environ 140 ps",
+      "Environ 33 ps"
+    ],
+    "explanation": "τ = n_g L / c = 4,2 × 0,010 m / (3,0×10⁸ m/s) = 1,4×10⁻¹⁰ s, soit environ 140 ps. L'enveloppe de l'impulsion avance à la vitesse de groupe c/n_g : le retard est donc fixé par l'indice de groupe. La valeur d'environ 80 ps est calculée avec l'indice effectif 2,4 ; elle correspond à la vitesse de propagation de la phase et diffère du retard de l'impulsion. Celle d'environ 33 ps est le temps L/c mis pour parcourir 1,0 cm dans le vide. Avec leur grand indice de groupe et leur petit rayon de courbure, les nanoguides en silicium permettent d'enrouler des lignes à retard de l'ordre du cm sur une petite surface. On les utilise comme tampons optiques ou comme lignes à retard pour orienter le faisceau d'un réseau à commande de phase indépendamment de la fréquence ; mais leurs pertes atteignant quelques dB/cm, on utilise pour les longs retards des guides à faibles pertes, en nitrure de silicium par exemple."
+  },
+  "silicon-photonics-028": {
+    "question": "Pour le couplage entre une puce de photonique sur silicium et une fibre optique, laquelle des comparaisons suivantes entre le coupleur à réseau et le coupleur par la tranche (taper inverse) est correcte ?",
+    "choices": [
+      "Le coupleur à réseau exige un polissage de la tranche, mais couple toutes les polarisations avec la même efficacité ; le coupleur par la tranche peut être placé n'importe où à la surface de la puce et testé avant découpe",
+      "Le coupleur à réseau, qui n'utilise pas la diffraction, couple indépendamment de la longueur d'onde ; le coupleur par la tranche, qui utilise un réseau de diffraction, a une bande étroite et dépend fortement de la polarisation",
+      "Le coupleur à réseau peut être placé n'importe où à la surface et testé avant découpe, mais sa bande est étroite et il dépend de la polarisation ; le coupleur par la tranche est à large bande, mais exige une préparation de la tranche"
+    ],
+    "explanation": "Le coupleur à réseau fait entrer et sortir la lumière en biais par le dessus de la surface grâce à un réseau gravé sur le guide : on peut le placer n'importe où à la surface de la puce et tester la plaquette avant découpe en y approchant une fibre. En revanche, la condition d'accord de phase dépendant de la longueur d'onde et de la polarisation, sa bande à 1 dB est étroite, de quelques dizaines de nm, et ses caractéristiques diffèrent fortement entre TE et TM. Le coupleur par la tranche élargit le mode par un taper inverse et raccorde la fibre bout à bout sur la tranche de la puce ; n'utilisant pas la diffraction, il fonctionne sur une large plage de longueurs d'onde avec une faible dépendance en polarisation, mais il exige la découpe ou le polissage de la tranche et un alignement précis. Les descriptions qui intervertissent les propriétés des deux méthodes sont fausses."
+  },
+  "silicon-photonics-029": {
+    "question": "Dans un guide à fente (slot waveguide), formé de deux nanoguides en silicium séparés par une fente étroite d'environ 100 nm, le champ électrique de la lumière en polarisation TE (champ traversant la fente) se concentre fortement dans la fente, de faible indice. Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "La lumière se propage plus vite dans les régions de faible indice, et elle a tendance à se concentrer là où l'énergie peut avancer vite, si bien que le champ se concentre particulièrement dans la fente",
+      "Perpendiculairement à l'interface, l'induction électrique εE est continue, si bien que le champ dans la fente, de faible permittivité, est plus grand dans le rapport des permittivités (environ n²)",
+      "Une réflexion totale a lieu sur les deux faces de la fente, si bien que la lumière ne peut pas entrer dans le silicium et se propage uniquement dans la fente par réflexions totales"
+    ],
+    "explanation": "Pour la composante du champ électrique perpendiculaire à l'interface, l'induction électrique D = εE est continue de part et d'autre de l'interface. Le silicium (n ≈ 3,48) et l'air de la fente ayant des permittivités très différentes, le champ dans la fente bondit à (n_Si/n_gap)² fois celui du silicium, soit environ 12 fois pour l'air. Si la fente est bien plus étroite que la longueur d'onde, ce champ intense remplit toute la fente, ce qui permet de concentrer l'énergie lumineuse dans un matériau de faible indice. En remplissant la fente d'un liquide ou d'un polymère électro-optique, on l'utilise pour des capteurs ou des modulateurs. La lumière se propage comme mode guidé de toute la structure, y compris les deux guides en silicium, et ne progresse pas uniquement dans la fente par réflexions totales. Il n'existe pas non plus de tendance de la lumière à se concentrer là où elle va vite."
+  },
+  "silicon-photonics-030": {
+    "question": "Laquelle des descriptions suivantes du fonctionnement d'un réseau de guides d'onde (AWG, arrayed waveguide grating), utilisé pour le démultiplexage en longueur d'onde, est correcte ?",
+    "choices": [
+      "On aligne des guides dont la longueur diffère d'une quantité constante ; l'inclinaison du front d'onde à la sortie dépend de la longueur d'onde, si bien que chaque longueur d'onde est focalisée vers un guide de sortie différent",
+      "C'est un réseau de Bragg à corrugation périodique des flancs du guide, qui ne réfléchit vers l'entrée qu'une seule longueur d'onde satisfaisant la condition de Bragg",
+      "C'est une structure de plusieurs résonateurs en anneau alignés, qui ne prélève vers le port de dépôt correspondant que la lumière à la longueur d'onde de résonance de chaque anneau"
+    ],
+    "explanation": "Dans un AWG, la lumière d'entrée est étalée par un guide plan (zone de propagation libre) et répartie entre de nombreux guides (le réseau) dont la longueur diffère d'une quantité constante ΔL. La phase de la lumière à la sortie de chaque guide se décale de 2πn_eff ΔL/λ d'un guide au suivant : dans le guide plan de sortie, le front d'onde s'incline d'un angle qui dépend de la longueur d'onde, et la position du foyer se déplace vers un guide de sortie différent pour chaque longueur d'onde. L'ensemble du réseau de guides agit comme un réseau de diffraction, si bien qu'un seul composant démultiplexe et multiplexe simultanément plusieurs dizaines de canaux. Le réseau de Bragg est un composant qui réfléchit une seule longueur d'onde, et un filtre à résonateurs en anneau alignés relève d'une autre méthode. En silicium, la grande différence d'indice permet de réaliser des AWG plus petits qu'en silice, mais ils sont plus sensibles aux erreurs de phase dues aux variations de largeur des guides."
+  }
+}

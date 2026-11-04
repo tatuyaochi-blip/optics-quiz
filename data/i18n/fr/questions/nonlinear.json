@@ -1,0 +1,272 @@
+{
+  "nonlinear-001": {
+    "question": "La polarisation P d'un milieu s'écrit comme une série de puissances du champ électrique E : P = ε₀(χ⁽¹⁾E + χ⁽²⁾E² + χ⁽³⁾E³ + …). Laquelle des raisons suivantes explique correctement pourquoi les effets d'optique non linéaire comme la génération de second harmonique ne s'observent presque jamais avec la lumière d'une lampe et ne deviennent marqués qu'avec la lumière intense d'un laser impulsionnel focalisé ?",
+    "choices": [
+      "Les effets non linéaires ne peuvent en principe se produire qu'avec une lumière cohérente aux phases alignées, et les phases désordonnées de la lumière d'une lampe se compensent",
+      "χ⁽²⁾ et χ⁽³⁾ sont extrêmement petits, et les termes en E² et E³ ne deviennent non négligeables que lorsque le champ électrique de la lumière est très intense",
+      "Les termes d'ordre supérieur n'apparaissent que si l'énergie des photons dépasse la bande interdite, si bien qu'il faut une lumière intense contenant une composante ultraviolette"
+    ],
+    "explanation": "Le rapport entre les termes d'ordre supérieur et le terme du premier ordre est de l'ordre de (champ électrique de la lumière)/(champ électrique interne de l'atome, environ 5×10¹¹ V/m), ce qui est infime pour le champ d'une lumière ordinaire. Avec un laser impulsionnel focalisé, le champ électrique atteint environ 10⁸ V/m (environ 1 GW/cm² en intensité), et les termes en E² et E³ prennent une valeur observable. Les effets non linéaires dépendent de l'intensité du champ électrique : ils se produisent aussi avec une lumière incohérente suffisamment intense (le laser est seulement avantagé pour l'accord de phase et la facilité de focalisation). De plus, la conversion de longueur d'onde s'effectue en principe dans un domaine transparent, sans absorption : l'énergie des photons n'a pas à dépasser la bande interdite, et une absorption rendrait même le cristal plus facile à endommager."
+  },
+  "nonlinear-002": {
+    "question": "On fait traverser un cristal d'optique non linéaire par la lumière d'un laser Nd:YAG de longueur d'onde 1064 nm pour générer son second harmonique. Laquelle des combinaisons suivantes de la longueur d'onde obtenue et de la relation entre photons est correcte ?",
+    "choices": [
+      "Longueur d'onde 532 nm ; deux photons de l'onde fondamentale donnent naissance à un photon",
+      "Longueur d'onde 2128 nm ; un photon de l'onde fondamentale se divise en deux photons",
+      "Environ 752 nm (1/√2 de 1064 nm) ; l'intensité étant élevée au carré, la fréquence est multipliée par √2"
+    ],
+    "explanation": "Dans la génération de second harmonique (SHG), deux photons de fréquence ω disparaissent et un photon de fréquence 2ω apparaît. La conservation de l'énergie ħω + ħω = ħ(2ω) double la fréquence et divise la longueur d'onde par deux : 1064/2 = 532 nm, une lumière verte. 2128 nm est la longueur d'onde du processus inverse, où un photon se divise en deux (génération paramétrique optique dégénérée). Le fait que l'intensité du second harmonique soit proportionnelle au carré de l'intensité fondamentale est une autre question que la fréquence : celle-ci est exactement doublée, et non multipliée par √2. Le cristal non linéaire n'absorbe pas la lumière pour la réémettre ; il reste transparent et sert d'intermédiaire aux échanges d'énergie entre les ondes lumineuses."
+  },
+  "nonlinear-003": {
+    "question": "Dans la silice massive ou les fibres optiques, la génération de second harmonique ne se produit presque pas, même avec une lumière intense. Quelle en est la raison principale ?",
+    "choices": [
+      "Dans le verre, la susceptibilité non linéaire du troisième ordre χ⁽³⁾ est elle aussi nulle, si bien qu'aucun effet non linéaire ne se produit",
+      "Le verre absorbe fortement la lumière verte à 532 nm, si bien que le second harmonique généré est aussitôt perdu",
+      "Le verre est un milieu isotrope possédant une symétrie d'inversion, si bien que sa susceptibilité non linéaire du deuxième ordre χ⁽²⁾ est nulle"
+    ],
+    "explanation": "Dans un milieu possédant une symétrie d'inversion, l'inversion du sens du champ électrique doit inverser aussi la polarisation induite ; or le terme en E² ne change pas de signe, d'où χ⁽²⁾ = 0. C'est le cas des matériaux amorphes comme le verre et des cristaux centrosymétriques comme le silicium ; pour la SHG et l'effet Pockels, on utilise des cristaux sans symétrie d'inversion comme LiNbO₃, KTP ou BBO. En revanche, χ⁽³⁾ n'est nul dans aucun milieu : dans les fibres, l'effet Kerr, l'automodulation de phase et le mélange à quatre ondes posent de vrais problèmes, et le choix qui annule aussi χ⁽³⁾ est faux. La silice est presque transparente à 532 nm, et l'absorption n'est pas la raison."
+  },
+  "nonlinear-004": {
+    "question": "On génère un second harmonique dans un cristal non linéaire en accord de phase. Dans le régime où l'efficacité de conversion est faible et où l'onde fondamentale ne diminue presque pas (approximation de non-déplétion), par quel facteur la puissance du second harmonique est-elle multipliée si l'on double la puissance fondamentale ? (Même forme de faisceau et même cristal.)",
+    "choices": [
+      "Par 2",
+      "Par 4",
+      "Par 8"
+    ],
+    "explanation": "Le second harmonique est rayonné par la polarisation non linéaire P(2ω) ∝ χ⁽²⁾E(ω)² : le champ du second harmonique est proportionnel au carré du champ fondamental, et sa puissance au carré de la puissance fondamentale (P₂ω ∝ d²L²P_ω²/A, A étant la section du faisceau). Doubler la puissance fondamentale multiplie le second harmonique par 2² = 4, et l'efficacité de conversion P₂ω/P_ω double. Le facteur 2 suppose à tort une réponse linéaire, et le facteur 8 confond avec la génération de troisième harmonique par χ⁽³⁾, proportionnelle au cube. C'est à cause de cette dépendance quadratique que, pour une même puissance moyenne, des impulsions de forte puissance crête ou une lumière fortement focalisée donnent une meilleure efficacité. Quand l'efficacité devient élevée, l'onde fondamentale diminue et la relation s'écarte de la loi quadratique."
+  },
+  "nonlinear-005": {
+    "question": "En génération de second harmonique, la dispersion du cristal rend différents les indices de l'onde fondamentale et du second harmonique, et l'accord de phase n'est pas réalisé (Δk ≠ 0). Laquelle des propositions suivantes décrit correctement l'évolution de l'intensité du second harmonique lorsqu'on allonge le cristal de longueur L ?",
+    "choices": [
+      "Elle croît indéfiniment comme le carré de L ; le désaccord de phase, quelle que soit la longueur du cristal, ne fait que réduire l'efficacité de conversion d'une proportion constante",
+      "Le désaccord de phase compensant peu à peu l'amplitude, elle croît indéfiniment non pas comme le carré de L mais proportionnellement à L, moins vite qu'avec l'accord de phase",
+      "Elle est maximale à la longueur de cohérence Lc = π/Δk, puis diminue et oscille, et allonger le cristal au-delà de Lc ne la rend pas plus intense"
+    ],
+    "explanation": "En présence d'un désaccord de phase Δk = k₂ω − 2kω, la phase du second harmonique généré en chaque point du cristal se décale progressivement. L'intensité du second harmonique est proportionnelle à sin²(ΔkL/2)/(Δk/2)² : elle est maximale pour L = π/Δk (la longueur de cohérence Lc), puis les composantes en opposition de phase générées au-delà la font diminuer, et elle revient à zéro à 2Lc. Elle oscille ainsi, et son maximum reste limité à (2/Δk)². La croissance indéfinie en L² ne vaut que pour Δk = 0, c'est-à-dire avec l'accord de phase, et une croissance indéfinie proportionnelle à L n'existe pas non plus. Lc étant généralement courte, de quelques µm à quelques dizaines de µm, l'accord de phase est indispensable pour une conversion efficace."
+  },
+  "nonlinear-006": {
+    "question": "On génère par quasi-accord de phase, dans du niobate de lithium à inversion périodique de polarisation (PPLN), le second harmonique (0,775 µm) d'une lumière de longueur d'onde 1,55 µm. La différence d'indice vaut n(0,775 µm) − n(1,55 µm) = 0,0408 et la longueur de cohérence est Lc = λω/(4Δn) (λω étant la longueur d'onde fondamentale). Quelle valeur est la plus proche de la période d'inversion Λ nécessaire au quasi-accord de phase du premier ordre ?",
+    "choices": [
+      "Environ 19,0 µm",
+      "Environ 9,50 µm",
+      "Environ 38,0 µm"
+    ],
+    "explanation": "La longueur de cohérence vaut Lc = 1,55/(4 × 0,0408) ≈ 9,50 µm. Dans le quasi-accord de phase, on inverse la polarisation ferroélectrique (le signe de χ⁽²⁾) à chaque longueur Lc, là où le second harmonique commencerait à diminuer, afin de compenser le désaccord de phase et de continuer à faire croître l'intensité. Une période, qui contient un domaine orienté vers le haut et un domaine orienté vers le bas, vaut 2Lc, d'où Λ = 2Lc = λω/(2Δn) ≈ 19,0 µm. La valeur d'environ 9,50 µm prend par erreur Lc elle-même comme période, et celle d'environ 38,0 µm utilise un mauvais facteur, λω/Δn. Le quasi-accord de phase permet d'utiliser des ondes de même polarisation et le plus grand coefficient non linéaire d₃₃, sans walk-off : il est donc largement employé pour la conversion de longueur d'onde. En changeant la période, on choisit par conception la longueur d'onde en accord de phase."
+  },
+  "nonlinear-007": {
+    "question": "On génère un second harmonique par accord de phase par biréfringence de type I dans un cristal uniaxe négatif (ne < no), le BBO. Lequel des choix suivants des polarisations et de la direction de propagation est correct ?",
+    "choices": [
+      "L'onde fondamentale et le second harmonique sont tous deux ordinaires, et l'on fait propager la lumière le long de l'axe optique du cristal pour supprimer le décalage latéral dû à la biréfringence (walk-off)",
+      "L'onde fondamentale est ordinaire et le second harmonique extraordinaire, et l'on choisit l'angle θ avec l'axe optique tel que no(ω) = ne(2ω, θ)",
+      "L'onde fondamentale est extraordinaire et le second harmonique ordinaire, et l'on fait propager la lumière perpendiculairement à l'axe optique pour avoir ne(ω) = no(2ω)"
+    ],
+    "explanation": "Dans un milieu à dispersion normale, l'indice est d'autant plus grand que la longueur d'onde est courte : pour une même polarisation, n(2ω) > n(ω) et l'accord de phase est impossible. Dans un cristal uniaxe négatif, l'indice extraordinaire est inférieur à l'indice ordinaire, et ne(2ω, θ) varie de no(2ω) à ne(2ω) selon l'angle θ entre la direction de propagation et l'axe optique. On prend donc l'onde fondamentale ordinaire et le second harmonique extraordinaire, et l'on règle l'angle pour avoir ne(2ω, θ) = no(ω) : c'est l'accord de phase de type I (o + o → e). Si les deux ondes sont ordinaires, la dispersion subsiste telle quelle, et le long de l'axe optique la biréfringence n'intervient pas non plus. La combinaison avec une onde fondamentale extraordinaire donne ne(ω) < no(2ω) dans un cristal négatif et ne peut pas satisfaire la condition."
+  },
+  "nonlinear-008": {
+    "question": "On produit le troisième harmonique d'un laser Nd:YAG par génération de fréquence somme, dans un cristal non linéaire, entre l'onde fondamentale (1064 nm) et son second harmonique (532 nm). Quelle valeur est la plus proche de la longueur d'onde obtenue ?",
+    "choices": [
+      "Environ 798 nm",
+      "Environ 1596 nm",
+      "Environ 355 nm"
+    ],
+    "explanation": "En génération de fréquence somme, les fréquences s'additionnent : ω₃ = ω₁ + ω₂, soit en longueurs d'onde 1/λ₃ = 1/λ₁ + 1/λ₂. De 1/λ₃ = 1/1064 + 1/532 = 3/1064, on tire λ₃ = 1064/3 ≈ 354,7 nm, soit une lumière ultraviolette d'environ 355 nm. C'est exactement trois fois la fréquence fondamentale : le troisième harmonique, utilisé notamment pour l'usinage laser dans l'ultraviolet. La valeur d'environ 798 nm prend par erreur la moyenne des deux longueurs d'onde, et celle d'environ 1596 nm additionne directement les longueurs d'onde (1064 + 532), erreur typique qui additionne des longueurs d'onde au lieu de fréquences. On obtient le troisième harmonique plus efficacement en deux étapes, SHG puis fréquence somme dans des cristaux à χ⁽²⁾, qu'en triplant directement la fréquence par χ⁽³⁾."
+  },
+  "nonlinear-009": {
+    "question": "Un oscillateur paramétrique optique (OPO) pompé à 532 nm fournit une onde signal de longueur d'onde 800 nm. Quelle valeur est la plus proche de la longueur d'onde de l'onde complémentaire (idler) générée simultanément ?",
+    "choices": [
+      "Environ 1588 nm",
+      "Environ 320 nm",
+      "Environ 268 nm"
+    ],
+    "explanation": "Dans le processus paramétrique optique, un photon de pompe se divise en deux photons, signal et complémentaire, et la conservation de l'énergie ωp = ωs + ωi est satisfaite. En longueurs d'onde, 1/λi = 1/λp − 1/λs = 1/532 − 1/800, d'où λi ≈ 1588 nm. La valeur d'environ 320 nm est la longueur d'onde de la fréquence somme, obtenue en additionnant les fréquences, 1/532 + 1/800 : c'est le processus inverse de l'OPO, où un photon se divise. Celle d'environ 268 nm soustrait par erreur les longueurs d'onde (800 − 532). Le signal et le complémentaire ont tous deux une longueur d'onde plus grande que la pompe ; en changeant les conditions d'accord de phase (angle ou température du cristal, période d'inversion de polarisation), on modifie leur répartition tout en conservant l'énergie, ce qui permet de faire varier continûment la longueur d'onde."
+  },
+  "nonlinear-010": {
+    "question": "Laquelle des propositions suivantes concernant les caractéristiques d'un oscillateur paramétrique optique (OPO) est correcte ?",
+    "choices": [
+      "Il crée une inversion de population dans un milieu amplificateur et amplifie par émission stimulée, si bien que la longueur d'onde d'émission est fixée par les niveaux d'énergie du milieu",
+      "Son usage principal est de générer une lumière de longueur d'onde plus courte que celle de la pompe",
+      "Le gain naît d'un processus instantané qui ne stocke pas d'énergie dans le milieu, et la longueur d'onde de sortie se règle sur un large domaine en changeant les conditions d'accord de phase"
+    ],
+    "explanation": "Le gain d'un OPO est l'amplification paramétrique optique par χ⁽²⁾ : l'énergie passe directement de la pompe aux ondes signal et complémentaire. Aucune excitation n'est stockée dans des niveaux atomiques ou moléculaires, si bien qu'il n'est pas besoin d'inversion de population, et le gain n'existe que pendant que la pompe est présente. La longueur d'onde de sortie n'est pas fixée par des niveaux particuliers mais par la conservation de l'énergie et les conditions d'accord de phase : en changeant l'angle ou la température du cristal, ou la période d'inversion de polarisation du PPLN, on la fait varier largement, du visible à l'infrarouge moyen. En cela, son principe diffère de celui d'un laser, dont la longueur d'onde est fixée par des niveaux d'énergie. Par conservation de l'énergie, le signal et le complémentaire ont toujours une longueur d'onde plus grande que la pompe ; ce sont la génération de second harmonique et celle de fréquence somme qui produisent des longueurs d'onde plus courtes."
+  },
+  "nonlinear-011": {
+    "question": "L'indice non linéaire de la silice vaut n₂ = 2,6×10⁻²⁰ m²/W. Quelle valeur est la plus proche de la variation d'indice Δn = n₂I due à l'effet Kerr optique lorsqu'une lumière d'intensité 1 GW/cm² la traverse ?",
+    "choices": [
+      "Environ 2,6×10⁻¹¹",
+      "Environ 2,6×10⁻⁷",
+      "Environ 2,6×10⁻¹⁵"
+    ],
+    "explanation": "L'essentiel est d'harmoniser les unités. Comme 1 GW/cm² = 10⁹ W / 10⁻⁴ m² = 10¹³ W/m², on a Δn = n₂I = 2,6×10⁻²⁰ × 10¹³ = 2,6×10⁻⁷. La valeur d'environ 2,6×10⁻¹¹ multiplie par erreur par 10⁹, la valeur numérique de l'intensité restée en W/cm², et celle d'environ 2,6×10⁻¹⁵ applique à l'envers la conversion 1 cm² = 10⁻⁴ m² et prend une intensité de 10⁵ W/m². Δn paraît très petit, mais sur 1 m de longueur à 1,55 µm, la variation de phase 2πΔnL/λ atteint environ 1 rad. Pour une propagation sur une longue distance, comme dans une fibre, ou dans l'autofocalisation, où l'indice augmente au centre du faisceau qui se comporte alors comme une lentille, cette petite variation produit de grands effets."
+  },
+  "nonlinear-012": {
+    "question": "Parmi les effets électro-optiques, qui modifient l'indice de réfraction sous l'action d'un champ électrique, laquelle des propositions suivantes décrit correctement la différence entre l'effet Pockels et l'effet Kerr ?",
+    "choices": [
+      "L'effet Pockels est proportionnel au champ et ne se produit que dans les cristaux sans symétrie d'inversion ; l'effet Kerr est proportionnel au carré du champ et se produit dans tout milieu",
+      "Dans l'effet Pockels, la variation d'indice est proportionnelle au carré du champ et se produit dans tout milieu ; l'effet Kerr est proportionnel au champ et ne se produit que dans les cristaux",
+      "Tous deux sont dus à χ⁽³⁾ ; la seule différence est que le champ appliqué est continu (effet Pockels) ou est le champ de la lumière (effet Kerr)"
+    ],
+    "explanation": "L'effet Pockels (effet électro-optique linéaire) provient de χ⁽²⁾ : la variation d'indice est proportionnelle au champ électrique appliqué E. Comme il faut un χ⁽²⁾, il ne se produit que dans les cristaux sans symétrie d'inversion comme LiNbO₃, et le signe du champ inverse l'augmentation ou la diminution de l'indice. Les modulateurs LN des télécommunications optiques et le déclenchement électro-optique (Q-switch) l'exploitent. L'effet Kerr (effet électro-optique quadratique) provient de χ⁽³⁾, avec Δn ∝ E², et se produit dans tous les milieux, y compris les verres et les liquides. Celui que produit le champ de la lumière elle-même est l'effet Kerr optique, proportionnel à l'intensité : Δn = n₂I. Le choix qui inverse les relations de proportionnalité est faux, et comme l'effet Pockels est dû à χ⁽²⁾ et non à χ⁽³⁾, le choix qui attribue les deux effets à χ⁽³⁾ est faux lui aussi."
+  },
+  "nonlinear-013": {
+    "question": "On injecte une lumière de puissance crête 100 mW dans une fibre monomode de coefficient non linéaire γ = 1,3 /(W·km). Si la longueur effective de la fibre est de 20 km, quelle valeur est la plus proche du déphasage non linéaire maximal φNL = γPLeff dû à l'automodulation de phase ?",
+    "choices": [
+      "Environ 0,13 rad",
+      "Environ 2600 rad",
+      "Environ 2,6 rad"
+    ],
+    "explanation": "φNL = γPLeff = 1,3 W⁻¹km⁻¹ × 0,1 W × 20 km = 2,6 rad. En multipliant par 100 sans convertir la puissance en W, on obtient environ 2600 rad ; en oubliant la longueur effective, on obtient la valeur par kilomètre, environ 0,13 rad. φNL est maximal au centre de l'impulsion, où l'intensité est la plus forte ; la phase variant avec l'intensité au cours du temps, la fréquence instantanée se décale et le spectre s'élargit. L'élargissement devient sensible à partir d'environ 1 rad, et pour une impulsion gaussienne, vers 1,5π, le centre du spectre se creuse et le spectre se divise en deux pics. En transmission WDM, cette variation de phase, combinée à la dispersion, dégrade la forme des signaux, ce qui limite la puissance par canal."
+  },
+  "nonlinear-014": {
+    "question": "Une impulsion lumineuse intense sans dérive de fréquence se propage dans une fibre courte où la dispersion est négligeable. Laquelle des propositions suivantes décrit correctement le changement produit par l'automodulation de phase (n₂ > 0) ?",
+    "choices": [
+      "Le centre de l'impulsion, plus intense, voit son indice augmenter et prend du retard, si bien que la forme temporelle se comprime et raccourcit, sans changement de la largeur spectrale",
+      "La forme temporelle ne change pas ; il apparaît un chirp qui décale l'avant de l'impulsion vers les grandes longueurs d'onde et l'arrière vers les courtes, et le spectre s'élargit",
+      "L'avant de l'impulsion se décale vers les courtes longueurs d'onde et l'arrière vers les grandes ; les fréquences des deux extrémités sont attirées vers la fréquence centrale et le spectre se rétrécit"
+    ],
+    "explanation": "En automodulation de phase, l'indice varie selon l'évolution temporelle de l'intensité, n = n₀ + n₂I(t), et la phase devient φNL(t) ∝ I(t). Le décalage de fréquence instantanée vaut δω = −dφNL/dt : sur l'avant de l'impulsion, où l'intensité croît, la fréquence diminue (côté grandes longueurs d'onde), et sur l'arrière, où elle décroît, elle augmente (côté courtes longueurs d'onde). De nouvelles composantes de fréquence apparaissent et le spectre s'élargit, mais seule la phase change : sans dispersion, la forme temporelle de l'intensité ne change pas. Elle ne se modifie que lorsque cette dérive de fréquence se combine avec la dispersion. Le choix qui décale l'avant vers les courtes longueurs d'onde inverse l'avant et l'arrière, et le spectre ne se rétrécit pas non plus pour une impulsion incidente sans chirp."
+  },
+  "nonlinear-015": {
+    "question": "Laquelle des conditions suivantes permet l'existence, dans une fibre optique, d'un soliton optique (soliton fondamental) qui se propage en conservant la forme de l'impulsion ?",
+    "choices": [
+      "Le chirp dû à l'automodulation de phase et l'effet de la dispersion anormale (D > 0), où les composantes de courte longueur d'onde vont plus vite, s'équilibrent",
+      "Le chirp dû à l'automodulation de phase et l'effet de la dispersion normale (D < 0), où les composantes de grande longueur d'onde vont plus vite, s'équilibrent",
+      "Les pertes de la fibre et le gain dû à l'automodulation de phase s'équilibrent"
+    ],
+    "explanation": "L'automodulation de phase décale l'avant de l'impulsion vers les grandes longueurs d'onde et l'arrière vers les courtes. En dispersion anormale (β₂ < 0, D > 0), la vitesse de groupe est d'autant plus grande que la longueur d'onde est courte : les composantes de courte longueur d'onde de l'arrière avancent et celles de grande longueur d'onde de l'avant reculent, si bien que l'élargissement dû à la dispersion et le chirp de la SPM se compensent. Lorsque la puissance crête et la durée d'impulsion s'équilibrent exactement (N = 1), on obtient un soliton fondamental qui conserve sa forme. Dans une fibre monomode standard, la bande de 1,55 µm est en dispersion anormale. En dispersion normale, les composantes de grande longueur d'onde avancent encore davantage, et l'impulsion ne fait que s'élargir. La SPM ne fait que modifier la phase et ne produit aucun gain ; avec des pertes, le soliton se dégrade peu à peu : le choix d'un équilibre entre pertes et gain est donc faux lui aussi."
+  },
+  "nonlinear-016": {
+    "question": "Lorsqu'un faisceau intense traverse un milieu présentant un effet Kerr (n = n₀ + n₂I, n₂ > 0), il se resserre de lui-même : c'est l'autofocalisation. Laquelle des grandeurs suivantes détermine correctement si l'autofocalisation l'emporte sur l'élargissement par diffraction ?",
+    "choices": [
+      "La puissance totale du faisceau : quel que soit son diamètre, la focalisation l'emporte sur la diffraction au-delà d'une certaine puissance critique",
+      "L'intensité du faisceau (W/m²) : en élargissant le faisceau pour réduire l'intensité, le phénomène ne se produit pas, aussi grande que soit la puissance totale",
+      "La répartition de l'échauffement dû à l'absorption : dans un milieu transparent sans absorption, le phénomène ne se produit pas, aussi intense que soit le faisceau"
+    ],
+    "explanation": "L'indice augmente au centre du faisceau, là où l'intensité est forte, et le milieu se comporte comme une lentille convergente. Rétrécir le faisceau augmente l'intensité et renforce cette lentille, mais renforce aussi l'élargissement par diffraction ; le rapport des deux ne dépend pas du diamètre du faisceau et est fixé par la puissance totale P. L'autofocalisation se produit donc lorsque P dépasse une puissance critique (proportionnelle à λ²/(n₀n₂), de l'ordre de quelques MW dans la silice vers 1 µm), et l'on ne peut pas l'éviter en élargissant le faisceau pour réduire l'intensité. La lentille thermique due à l'absorption est un phénomène distinct ; l'autofocalisation par effet Kerr se produit aussi dans un milieu transparent sans absorption. C'est l'une des causes de l'endommagement des composants optiques par les lasers impulsionnels de forte puissance."
+  },
+  "nonlinear-017": {
+    "question": "Une lumière intense de longueur d'onde 1064 nm envoyée dans un cristal de diamant produit, par diffusion Raman stimulée, une onde Stokes du premier ordre dont le nombre d'onde est inférieur du décalage Raman de la vibration du réseau, 1332 cm⁻¹. Quelle valeur est la plus proche de la longueur d'onde de l'onde Stokes ?",
+    "choices": [
+      "Environ 932 nm",
+      "Environ 1240 nm",
+      "Environ 2396 nm"
+    ],
+    "explanation": "En nombres d'onde, la pompe est à 1/(1064 nm) ≈ 9398 cm⁻¹ et l'onde Stokes à 9398 − 1332 = 8066 cm⁻¹, soit une longueur d'onde de 1/(8066 cm⁻¹) ≈ 1240 nm. Une partie de l'énergie du photon est cédée à la vibration du réseau (phonon optique), si bien que l'onde Stokes apparaît toujours côté grandes longueurs d'onde. La valeur d'environ 932 nm est la longueur d'onde de l'onde anti-Stokes, obtenue en ajoutant les nombres d'onde. Celle d'environ 2396 nm prend par erreur la valeur en cm⁻¹ pour des nm et l'ajoute à la longueur d'onde. Le décalage Raman est fixé par la vibration du matériau et ne dépend pas de la longueur d'onde de pompe : les lasers Raman servent ainsi de sources qui décalent d'une quantité fixe la longueur d'onde d'un laser existant."
+  },
+  "nonlinear-018": {
+    "question": "Dans une fibre de faible dispersion, on transmet deux lumières intenses (canaux d'un multiplexage en longueur d'onde) de fréquences 193,1 THz et 193,2 THz. Laquelle des combinaisons suivantes des principales fréquences nouvellement générées par mélange à quatre ondes est correcte ?",
+    "choices": [
+      "193,15 THz (entre les deux)",
+      "386,3 THz (somme des deux)",
+      "193,0 THz et 193,3 THz"
+    ],
+    "explanation": "Le mélange à quatre ondes est un processus dû à la susceptibilité non linéaire du troisième ordre χ⁽³⁾ : à partir de deux ondes de fréquences f₁ et f₂, il produit des ondes à 2f₁ − f₂ et 2f₂ − f₁. On obtient 2 × 193,1 − 193,2 = 193,0 THz et 2 × 193,2 − 193,1 = 193,3 THz, qui apparaissent toutes deux à l'extérieur, avec le même espacement de 100 GHz que les canaux d'origine. Dans un multiplexage à canaux régulièrement espacés, ces ondes tombent sur les fréquences d'autres canaux et créent de la diaphonie. Une faible dispersion aligne les phases et augmente l'efficacité : on utilise donc des fibres dont la longueur d'onde de dispersion nulle est placée hors de la bande des signaux. La fréquence somme à 386,3 THz relève d'un processus en χ⁽²⁾, qui ne se produit presque pas dans le verre, doté d'une symétrie d'inversion, et aucune nouvelle onde n'apparaît non plus à la fréquence intermédiaire."
+  },
+  "nonlinear-019": {
+    "question": "On génère un second harmonique dans un cristal non linéaire en accord de phase. Laquelle des combinaisons suivantes de l'évolution de l'efficacité de conversion et de la plage de longueurs d'onde fondamentales en accord de phase (bande d'acceptance) lorsqu'on allonge le cristal est correcte ? (Approximation de non-déplétion.)",
+    "choices": [
+      "L'efficacité croît comme le carré de la longueur, et la bande d'acceptance s'élargit elle aussi proportionnellement à la longueur",
+      "L'efficacité croît comme le carré de la longueur, mais la bande d'acceptance se rétrécit en raison inverse de la longueur",
+      "L'efficacité est constante quelle que soit la longueur, et seule la bande d'acceptance se rétrécit en raison inverse de la longueur"
+    ],
+    "explanation": "Avec l'accord de phase, l'amplitude du second harmonique s'accumule proportionnellement à la longueur L du cristal, et l'efficacité est proportionnelle à L². En revanche, un léger écart de longueur d'onde crée un désaccord de phase Δk, et l'efficacité diminue selon sinc²(ΔkL/2). Plus L est grand, plus le déphasage ΔkL devient important même pour un petit Δk : la largeur en longueur d'onde sur laquelle l'efficacité tombe à la moitié (de même pour les largeurs en angle et en température) se rétrécit comme 1/L. C'est pourquoi on utilise des cristaux minces pour convertir les impulsions ultracourtes, au spectre large, en équilibrant efficacité et bande. La bande d'acceptance ne s'élargit pas avec la longueur, et l'efficacité en accord de phase n'est pas indépendante de la longueur."
+  },
+  "nonlinear-020": {
+    "question": "Laquelle des propositions suivantes décrit correctement un avantage de l'accord de phase non critique (accord de phase en température), où la lumière se propage selon un axe diélectrique principal du cristal (perpendiculairement à l'axe optique pour un cristal uniaxe) et où l'on exploite la variation de l'indice avec la température ?",
+    "choices": [
+      "Changer la température du cristal augmente la susceptibilité non linéaire χ⁽²⁾ elle-même, si bien que l'efficacité de conversion gagne plusieurs ordres de grandeur sur l'accord de phase angulaire",
+      "Les indices étant accordés par la température, aucune biréfringence n'est nécessaire, et l'on peut générer un second harmonique même dans un verre possédant une symétrie d'inversion",
+      "Il n'y a pas de walk-off, c'est-à-dire d'écart entre la direction de l'énergie et celle de la lumière, et la tolérance aux erreurs d'angle d'incidence est grande, si bien qu'on peut utiliser un cristal long"
+    ],
+    "explanation": "Dans l'accord de phase angulaire, la lumière se propage en biais par rapport à l'axe optique : la direction de propagation de l'énergie de l'onde extraordinaire (le vecteur de Poynting) s'écarte de la direction de propagation de l'onde, c'est le walk-off ; avec un faisceau étroit, les deux ondes se séparent et la longueur utile est limitée. De plus, un léger écart d'angle suffit à détruire l'accord de phase (accord de phase critique). Selon un axe principal, il n'y a pas de walk-off et la variation de Δk avec l'écart d'angle n'est que du second ordre : on peut utiliser un cristal long et un faisceau fortement focalisé. L'accord s'obtient en ajustant les indices par la température, mais celle-ci n'augmente pas χ⁽²⁾, et elle ne permet pas non plus de générer un second harmonique dans un verre où χ⁽²⁾ est nul."
+  },
+  "nonlinear-021": {
+    "question": "Dans un modulateur de phase en niobate de lithium, l'espacement des électrodes vaut d = 10 µm, leur longueur L = 20 mm, l'indice pour une lumière de 1,55 µm n = 2,14 et le coefficient électro-optique r = 30,8 pm/V. En prenant pour la variation d'indice sous un champ E la relation Δn = (1/2)n³rE, quelle valeur est la plus proche de la tension Vπ qui change la phase de π ? (Le champ est uniforme et vaut V/d, et le recouvrement entre la lumière et le champ est parfait.)",
+    "choices": [
+      "Environ 2,6 V",
+      "Environ 1,3 V",
+      "Environ 25 V"
+    ],
+    "explanation": "La variation de phase vaut Δφ = (2π/λ)ΔnL = (π/λ)n³r(V/d)L, d'où Vπ = λd/(n³rL) = 1,55×10⁻⁶ × 10×10⁻⁶ / (2,14³ × 30,8×10⁻¹² × 0,020) ≈ 2,6 V. La valeur d'environ 1,3 V omet le facteur 1/2 de Δn, et celle d'environ 25 V oublie de multiplier par n³ ≈ 9,8. Avec l'effet Pockels, la variation d'indice est proportionnelle au champ : Vπ diminue si l'on allonge les électrodes ou si l'on réduit leur espacement. Comme le cube de l'indice intervient, le niobate de lithium, dont l'indice et le coefficient électro-optique sont grands, est un excellent matériau pour les modulateurs. Dans un composant réel, le recouvrement entre la lumière et le champ est imparfait, et Vπ est plus grand que cette valeur."
+  },
+  "nonlinear-022": {
+    "question": "Dans le verrouillage de modes par lentille de Kerr, utilisé notamment dans les lasers titane-saphir, laquelle des propositions suivantes décrit correctement le mécanisme par lequel les impulsions courtes sont sélectionnées et amplifiées ?",
+    "choices": [
+      "Dans le milieu amplificateur, l'absorption et donc les pertes augmentent là où l'intensité est forte, si bien que les pics sont écrêtés et que seules des impulsions plates et courtes sont sélectionnées et amplifiées",
+      "On fait varier électriquement et périodiquement la longueur de la cavité pour faire osciller les modes longitudinaux un par un, puis on superpose ces lumières pour former une impulsion",
+      "Là où l'intensité est forte, l'effet Kerr optique fait agir le milieu amplificateur comme une lentille qui resserre le faisceau, et les pertes diminuent grâce à une ouverture ou au recouvrement avec la pompe"
+    ],
+    "explanation": "L'indice du milieu amplificateur varie avec l'intensité, n = n₀ + n₂I : il est plus élevé dans la partie centrale intense du faisceau, et le milieu se comporte comme une lentille convergente (lentille de Kerr). Si la cavité est réglée de façon qu'un faisceau plus étroit passe mieux une ouverture, ou recouvre mieux le faisceau de pompe, les impulsions de forte crête subissent moins de pertes et ont plus de gain ; elles sont favorisées par rapport au régime continu, et les impulsions courtes croissent. L'effet Kerr optique répondant en quelques fs, il agit comme un absorbant saturable extrêmement rapide, et l'on obtient même des impulsions de moins de 10 fs. Dans un milieu dont les pertes augmentent avec l'intensité, les impulsions seraient au contraire supprimées. Le verrouillage de modes est un phénomène qui fixe simultanément les phases de nombreux modes longitudinaux ; il ne fait pas osciller les modes l'un après l'autre."
+  },
+  "nonlinear-023": {
+    "question": "On génère le second harmonique d'une lumière continue dans un cristal non linéaire de 20 mm de long (accord de phase réalisé, approximation de non-déplétion). Laquelle des façons suivantes d'envisager la focalisation de l'onde fondamentale par une lentille est correcte ?",
+    "choices": [
+      "L'efficacité augmentant avec l'intensité, on utilise une lentille de distance focale aussi courte que possible pour former une tache aussi petite que possible à l'entrée du cristal",
+      "Resserrer le faisceau augmente l'intensité, mais si la longueur de Rayleigh est plus courte que le cristal, le faisceau diverge et l'efficacité baisse : on prend 2zR du même ordre que la longueur du cristal",
+      "L'efficacité du second harmonique ne dépend que de la longueur du cristal et non de la focalisation : il vaut mieux injecter l'onde fondamentale en faisceau parallèle, sans lentille"
+    ],
+    "explanation": "L'intensité du second harmonique est proportionnelle au carré de l'intensité fondamentale, et l'efficacité augmente quand on resserre le faisceau. Mais plus le faisceau est étroit, plus la longueur de Rayleigh zR = πw₀²n/λ est courte ; si elle est inférieure à la longueur du cristal, le faisceau diverge loin du foyer et l'intensité y baisse. On place donc le col au centre du cristal et l'on focalise de façon que le paramètre confocal 2zR soit du même ordre que la longueur du cristal : l'efficacité est alors presque maximale. Selon l'analyse de Boyd et Kleinman, l'optimum correspond à une longueur L égale à environ 2,84 fois 2zR (ici 2zR ≈ 7 mm), et la focalisation confocale 2zR = L donne encore environ 70 % de l'efficacité maximale. Avec une petite tache à l'entrée, le faisceau est divergent dans la plus grande partie du cristal. En faisceau parallèle, l'intensité est faible, et l'efficacité dépend fortement de la façon de focaliser."
+  },
+  "nonlinear-024": {
+    "question": "Lorsqu'on fait traverser à des impulsions ultracourtes du proche infrarouge, d'une durée d'environ 100 fs, un cristal d'optique non linéaire du deuxième ordre comme le ZnTe ou le niobate de lithium, des ondes térahertz (THz) sont générées. Laquelle des propositions suivantes décrit correctement le mécanisme de cette génération ?",
+    "choices": [
+      "Par génération de fréquence différence (redressement optique) entre composantes de fréquences voisines contenues dans l'impulsion, la polarisation qui suit l'enveloppe de l'intensité rayonne une onde THz",
+      "Par génération de second harmonique due à la non-linéarité du deuxième ordre, la fréquence de la lumière proche infrarouge double, et il en résulte une onde THz de grande longueur d'onde",
+      "Les électrons du cristal, excités par la lumière, émettent spontanément dans la bande THz une onde électromagnétique de fréquence correspondant à la bande interdite"
+    ],
+    "explanation": "Une impulsion ultracourte possède un spectre large, et la fréquence différence ω₁ − ω₂ entre ses composantes de fréquences ω₁ et ω₂ tombe dans la bande THz (1 THz correspond à une longueur d'onde de 300 µm). La polarisation non linéaire du deuxième ordre contient une composante qui varie lentement, proportionnellement à l'enveloppe de l'intensité de l'impulsion (redressement optique), et cette polarisation, qui varie sur une durée de l'ordre de celle de l'impulsion, rayonne l'onde THz. Pour augmenter l'efficacité, il faut un accord de phase qui égalise la vitesse de groupe de l'impulsion lumineuse et la vitesse de phase de l'onde THz. La génération de second harmonique augmente la fréquence et ne produit pas de fréquences basses comme celles des ondes THz. La bande interdite du ZnTe vaut environ 2,3 eV, sans commune mesure avec l'énergie des photons THz (quelques meV) : une émission interbande ne peut pas l'expliquer."
+  },
+  "nonlinear-025": {
+    "question": "On génère un second harmonique avec une onde fondamentale de même puissance moyenne. Si l'on remplace la lumière continue par des impulsions à modes verrouillés de cadence 80 MHz et de durée 100 fs (considérées comme rectangulaires), par quel facteur la puissance moyenne du second harmonique est-elle approximativement multipliée ? (Approximation de non-déplétion, même forme de faisceau et même cristal ; on néglige la limitation de l'accord de phase due à la largeur spectrale des impulsions.)",
+    "choices": [
+      "Environ 350",
+      "Environ 1,6×10¹⁰",
+      "Environ 1,3×10⁵"
+    ],
+    "explanation": "Le rapport cyclique vaut D = 100×10⁻¹⁵ × 80×10⁶ = 8×10⁻⁶, et la puissance pendant l'impulsion vaut 1/D = 1,25×10⁵ fois la puissance moyenne. La puissance instantanée du second harmonique étant proportionnelle au carré de la puissance fondamentale, elle vaut pendant l'impulsion (1/D)² fois celle obtenue en continu, mais seulement pendant la fraction D du temps : en moyenne, le facteur est 1/D ≈ 1,3×10⁵. La valeur d'environ 1,6×10¹⁰ est (1/D)², sans la multiplication par la fraction de temps D, et celle d'environ 350 est la racine carrée de 1/D. C'est pourquoi la génération de second harmonique, peu efficace en continu, atteint une efficacité élevée avec des impulsions ultracourtes à puissance moyenne égale."
+  },
+  "nonlinear-026": {
+    "question": "Dans une fibre de silice (indice 1,444), une lumière de longueur d'onde 1,55 µm est rétrodiffusée par une onde acoustique (longitudinale) de vitesse 5960 m/s. Quelle valeur est la plus proche du décalage en fréquence ν_B = 2nv_a/λ de l'onde Stokes de la diffusion Brillouin stimulée ?",
+    "choices": [
+      "Environ 7,7 GHz",
+      "Environ 11 GHz",
+      "Environ 5,6 GHz"
+    ],
+    "explanation": "ν_B = 2 × 1,444 × 5960 m/s / (1,55×10⁻⁶ m) ≈ 1,11×10¹⁰ Hz, soit environ 11 GHz. En rétrodiffusion, la variation du vecteur d'onde de la lumière est maximale et vaut 2nk₀ ; la lumière est diffusée par l'onde acoustique de longueur d'onde λ/(2n) correspondante, ce qui produit une onde Stokes de fréquence inférieure de 2nv_a/λ. La valeur d'environ 7,7 GHz oublie l'indice, et celle d'environ 5,6 GHz omet le facteur 2 de la rétrodiffusion. Dans une fibre réelle, le germanium ajouté au cœur abaisse la vitesse du son, et le décalage est d'environ 10,8 GHz. C'est un décalage bien plus petit que celui de la diffusion Raman (environ 13 THz), et la bande de gain, de quelques dizaines de MHz, est étroite : le phénomène est fort pour une lumière continue à raie étroite et limite la puissance que l'on peut injecter dans la fibre."
+  },
+  "nonlinear-027": {
+    "question": "Dans une fibre de dispersion de vitesse de groupe β₂ = −21,7 ps²/km et de coefficient non linéaire γ = 1,3 /(W·km) à 1,55 µm, on veut former un soliton fondamental (N = 1) de paramètre de durée T₀ = 10 ps. Quelle valeur est la plus proche de la puissance crête nécessaire P₀ = |β₂|/(γT₀²) ?",
+    "choices": [
+      "Environ 17 W",
+      "Environ 1,7 W",
+      "Environ 0,17 W"
+    ],
+    "explanation": "P₀ = |β₂|/(γT₀²) = 21,7 ps²/km / (1,3 /(W·km) × (10 ps)²) = 21,7/130 W ≈ 0,17 W. C'est la puissance pour laquelle l'élargissement dû à la dispersion et l'effet de l'automodulation de phase s'équilibrent exactement ; à des puissances plus grandes, comme quatre fois cette valeur (N = 2), on obtient des solitons d'ordre supérieur dont la forme varie périodiquement au cours de la propagation. La valeur d'environ 1,7 W oublie d'élever T₀ au carré, et celle d'environ 17 W prend T₀ = 1 ps. La puissance nécessaire est inversement proportionnelle à T₀² : plus l'impulsion est courte, plus il faut de puissance. Ce n'est qu'aux longueurs d'onde où β₂ est négatif (dispersion anormale, D > 0) que le chirp de l'automodulation de phase et la dispersion s'équilibrent pour former un soliton."
+  },
+  "nonlinear-028": {
+    "question": "Dans un verre, qui possède une symétrie d'inversion, il n'y a pas de génération de second harmonique (χ⁽²⁾ = 0), mais en focalisant des impulsions ultracourtes intenses, on génère un troisième harmonique, de fréquence triple. Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "Le troisième harmonique est un processus dû à la susceptibilité non linéaire du troisième ordre χ⁽³⁾, qui ne s'annule pas en présence d'une symétrie d'inversion et existe dans tous les milieux",
+      "Un second harmonique apparaît d'abord dans le verre, puis se mélange aussitôt à l'onde fondamentale par fréquence somme pour donner le troisième harmonique, si bien que le processus a lieu même sans χ⁽²⁾",
+      "La lumière intense réarrange les atomes du verre en cristal, ce qui brise localement la symétrie d'inversion et fait apparaître un χ⁽²⁾, d'où le troisième harmonique"
+    ],
+    "explanation": "Dans un milieu possédant une symétrie d'inversion, inverser le champ électrique inverse la polarisation induite : les termes d'ordre pair, proportionnels à E², s'annulent et χ⁽²⁾ = 0. En revanche, le terme en E³ change de signe avec le champ et est permis : χ⁽³⁾ existe dans tous les milieux, verres, gaz et liquides compris. Par ce χ⁽³⁾, trois photons donnent naissance à un photon de fréquence triple. Le processus en deux étapes qui forme le troisième harmonique par fréquence somme exige un second harmonique ; il ne se produit donc pas dans un verre sans χ⁽²⁾. Le verre n'a pas non plus à se transformer en cristal. La génération est forte aux interfaces où l'indice ou d'autres propriétés changent près du foyer, propriété exploitée en microscopie par génération de troisième harmonique."
+  },
+  "nonlinear-029": {
+    "question": "Dans une fibre optique, deux lumières intenses de même polarisation et de longueurs d'onde différentes se propagent ensemble. Laquelle des propositions suivantes concernant l'amplitude de la modulation de phase croisée (XPM), par laquelle l'une modifie la phase de l'autre, est correcte ? (Recouvrement parfait des deux lumières.)",
+    "choices": [
+      "La variation de phase due à la puissance de l'autre lumière vaut exactement la moitié de l'automodulation de phase que produit la lumière elle-même à puissance égale",
+      "La variation de phase due à la puissance de l'autre lumière vaut le double de l'automodulation de phase que produit la lumière elle-même à puissance égale",
+      "Des lumières de longueurs d'onde différentes n'interfèrent pas, si bien que la puissance de l'autre lumière ne change pas la phase et que seule l'automodulation de phase se produit"
+    ],
+    "explanation": "La variation d'indice par effet Kerr vaut n₂I pour la part qu'une lumière ressent d'elle-même, alors qu'une lumière de même polarisation mais de fréquence différente impose à l'autre 2n₂I. En effet, dans le développement de la polarisation non linéaire du troisième ordre, le nombre de combinaisons des termes dus à l'autre lumière est deux fois plus grand. La variation de phase s'écrit donc φ = γL_eff(P₁ + 2P₂) : la puissance de l'autre lumière compte avec un poids double. L'indice variant avec l'intensité lumineuse, la phase change même si les longueurs d'onde diffèrent, et en transmission par multiplexage en longueur d'onde, les fluctuations de puissance des autres canaux deviennent un bruit de phase. En présence de dispersion, les deux impulsions ont des vitesses différentes et se croisent, si bien que l'effet réel est réduit à la durée pendant laquelle elles se recouvrent."
+  },
+  "nonlinear-030": {
+    "question": "Avec le quasi-accord de phase dans le niobate de lithium (PPLN), on peut aligner l'onde fondamentale et le second harmonique sur une polarisation parallèle à l'axe z du cristal (onde extraordinaire) et utiliser le plus grand coefficient non linéaire, d₃₃. Laquelle des raisons suivantes explique correctement pourquoi cette combinaison est inutilisable avec l'accord de phase par biréfringence ?",
+    "choices": [
+      "d₃₃ n'agit que sur une lumière polarisée perpendiculairement à l'axe z, si bien qu'en alignant toutes les ondes parallèlement à l'axe z, aucune polarisation non linéaire n'apparaît",
+      "Entre ondes polarisées parallèlement à l'axe z, l'écart entre la direction de la lumière et celle de l'énergie (walk-off) est grand, et les faisceaux se séparent rapidement",
+      "Pour une même polarisation, la dispersion normale rend l'indice du second harmonique toujours supérieur à celui de l'onde fondamentale, et la biréfringence n'offre aucun moyen d'égaliser les deux indices"
+    ],
+    "explanation": "Dans l'accord de phase par biréfringence, on donne à l'onde fondamentale et au second harmonique des polarisations différentes (ordinaire et extraordinaire), et la biréfringence compense l'écart d'indice dû à la dispersion normale. Si toutes les ondes ont la même polarisation, le second harmonique, de plus courte longueur d'onde, a toujours un indice plus grand dans le domaine transparent, et rien ne permet de compenser cet écart. Dans le quasi-accord de phase, on inverse périodiquement le sens de la polarisation ferroélectrique pour remettre à zéro le déphasage : on peut choisir librement les polarisations des ondes et utiliser d₃₃, plusieurs fois plus grand que le d₃₁ employé en accord de phase par biréfringence. L'efficacité de conversion étant proportionnelle à d², l'avantage est considérable. d₃₃ est le coefficient qui crée une polarisation non linéaire selon z à partir de champs selon z : il agit justement sur une lumière polarisée parallèlement à l'axe z. Pour une lumière qui se propage perpendiculairement à l'axe z, il n'y a pas non plus de walk-off."
+  }
+}
