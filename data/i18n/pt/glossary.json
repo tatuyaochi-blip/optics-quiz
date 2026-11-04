@@ -2,6 +2,38 @@
   "スネルの法則": {
     "term": "Lei de Snell",
     "desc": "Relação n₁ senθ₁ = n₂ senθ₂ entre os ângulos com que a luz se desvia na interface entre meios de índices de refração diferentes. Os ângulos são medidos a partir da normal à interface.",
+    "about": [
+      {
+        "h": "O que a lei descreve",
+        "p": "Quando a luz atravessa a interface entre meios de índices de refração diferentes, o ângulo de incidência θ₁ e o ângulo de refração θ₂ obedecem a n₁ senθ₁ = n₂ senθ₂. Dentro de um meio, a velocidade da luz cai para c/n enquanto a frequência não muda, de modo que o comprimento de onda se reduz a λ₀/n. A equação decorre da condição de que as cristas e os vales das frentes de onda se encaixem sem defasagem ao longo da interface. É fácil de lembrar lendo-a como a igualdade do produto n senθ dos dois lados da interface. Snell a descobriu por volta de 1621 e Descartes a publicou em 1637, razão pela qual nos países de língua francesa ela também é chamada de lei de Descartes."
+      },
+      {
+        "h": "Ângulos típicos e ângulo crítico",
+        "p": "A luz que passa do ar para um vidro de índice 1,5 com incidência de 45° satisfaz senθ₂ = sen45°/1,5 ≈ 0,471, e o ângulo de refração é de cerca de 28,1°; na água (n = 1,33), é de cerca de 32,1°. A luz que passa para o lado de índice maior se aproxima da normal, e a que passa para o lado de índice menor se afasta dela. Neste segundo caso, quando n₁ senθ₁/n₂ ultrapassa 1, não há solução para o ângulo de refração e ocorre a reflexão interna total; o limite entre os dois casos é o ângulo crítico. Além disso, como n senθ se conserva através de qualquer número de superfícies paralelas, o ângulo final de saída depende apenas do primeiro e do último meio, e as camadas intermediárias apenas deslocam o feixe lateralmente."
+      },
+      {
+        "h": "Dependência da cor e casos em que não se aplica",
+        "p": "O índice de refração varia com o comprimento de onda (há dispersão), de modo que cada cor é refratada com um ângulo diferente, mesmo para o mesmo ângulo de incidência. O vidro óptico BK7 tem índice 1,5224 em 486 nm e 1,5143 em 656 nm, e com incidência de 45° os ângulos de refração do azul e do vermelho diferem em cerca de 0,16°. É por isso que um prisma separa a luz branca e as lentes apresentam aberração cromática. Já o raio extraordinário em um cristal anisotrópico como a calcita se propaga em uma direção diferente da prevista por essa fórmula simples. Note também que medir os ângulos a partir da interface, e não da normal, troca o seno pelo cosseno e leva a resultados errados."
+      },
+      {
+        "h": "Uso em projeto óptico",
+        "p": "O traçado de raios no projeto de lentes calcula exatamente a refração em cada superfície com a lei de Snell. Na aproximação paraxial, senθ ≈ θ, não aparecem aberrações, e a diferença entre o cálculo exato e o paraxial é justamente a aberração. A abertura numérica de uma fibra óptica, NA = √(n₁² − n₂²), também é obtida aplicando a lei de Snell à condição de reflexão interna total na interface núcleo–casca e à refração na face da fibra. Mais recentemente, têm sido estudadas metassuperfícies, que adicionam um gradiente de fase ao longo da interface com arranjos de estruturas finas para desviar a luz em direções incomuns; seu comportamento é descrito por uma lei de Snell generalizada."
+      }
+    ],
+    "faq": [
+      {
+        "q": "A partir de onde se medem os ângulos na lei de Snell?",
+        "a": "A partir da normal à interface. Usar ângulos medidos a partir da própria interface troca o seno pelo cosseno e dá um resultado errado. A incidência normal corresponde a 0°, e nesse caso a luz não se desvia, quaisquer que sejam os índices de refração."
+      },
+      {
+        "q": "Como se calcula a refração quando a luz sai de um meio de índice maior?",
+        "a": "Use a mesma equação, n₁ senθ₁ = n₂ senθ₂, tomando n₁ como o índice do lado de onde a luz vem. O ângulo de refração é maior que o ângulo de incidência, e para ângulos em que senθ₂ passaria de 1 (acima do ângulo crítico) não há luz refratada e ocorre a reflexão interna total."
+      },
+      {
+        "q": "Por que o ângulo de refração depende da cor da luz?",
+        "a": "Por causa da dispersão, a variação do índice de refração com o comprimento de onda. O vidro comum tem índice maior para comprimentos de onda mais curtos, de modo que a luz azul é desviada com mais força. É pelo mesmo motivo que um prisma separa a luz nas cores do arco-íris e que uma lente simples apresenta aberração cromática."
+      }
+    ],
     "aliases": [
       "lei de Snell-Descartes",
       "Snell's law"
@@ -10,6 +42,34 @@
   "全反射": {
     "term": "Reflexão interna total",
     "desc": "Fenômeno em que, quando a luz passa de um meio de maior índice de refração para um de menor índice com ângulo de incidência maior que o ângulo crítico, não há luz transmitida e toda a luz é refletida.",
+    "about": [
+      {
+        "h": "Quando ocorre a reflexão interna total",
+        "p": "Na lei de Snell, n₁ senθ₁ = n₂ senθ₂, quando n₁ > n₂, ao aumentar o ângulo de incidência θ₁ o ângulo de refração chega primeiro a 90°. O ângulo de incidência nesse ponto é o ângulo crítico θc, com senθc = n₂/n₁. Ele vale cerca de 41,8° do vidro (n = 1,5) para o ar, e cerca de 24° do silício (n ≈ 3,48) para o óxido (n ≈ 1,44). Para ângulos de incidência maiores que θc, não há solução para o raio refratado, e toda a energia é refletida. Por outro lado, para luz incidente do lado de índice menor, a reflexão interna total não ocorre em nenhum ângulo."
+      },
+      {
+        "h": "A onda evanescente e a mudança de fase",
+        "p": "Mesmo na reflexão interna total, o campo do lado de fora da interface não é exatamente nulo. Uma onda evanescente penetra além da interface, decaindo exponencialmente, com uma profundidade de penetração da ordem do comprimento de onda. Essa onda não leva energia embora, mas, se outro meio for aproximado, a luz pode passar para ele (reflexão interna total frustrada, frustrated TIR). Os acopladores direcionais e os acopladores a prisma aproveitam esse efeito. Além disso, na reflexão interna total a mudança de fase na reflexão é diferente para a polarização s e para a polarização p, e essa diferença de fase permite construir lâminas de onda de banda larga, como o rombo de Fresnel."
+      },
+      {
+        "h": "Dispositivos que usam a reflexão interna total",
+        "p": "As fibras ópticas e os guias de onda confinam a luz por reflexão interna total, com o núcleo de índice maior que a casca. A reflexão interna total ideal não tem perdas, o que permite a transmissão por distâncias da ordem de quilômetros. Os prismas retos desviam o caminho óptico em 90° ou 180° por reflexão interna total na hipotenusa; refletem mais que espelhos metálicos e se degradam menos, por isso são usados em binóculos e em caminhos de feixes de laser. A microscopia de fluorescência por reflexão interna total (TIRF) ilumina com a onda evanescente apenas a região próxima à superfície da amostra. Sensores de impressão digital e sensores de chuva também aproveitam o fato de que objetos que tocam a superfície perturbam a reflexão interna total."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o ângulo crítico da reflexão interna total?",
+        "a": "Tomando n₁ como o índice do lado de índice maior e n₂ como o do lado de índice menor, use senθc = n₂/n₁. Do vidro (1,5) para o ar (1,0), senθc ≈ 0,667, e o ângulo crítico é de cerca de 41,8°. O ângulo é medido a partir da normal, e não da interface."
+      },
+      {
+        "q": "A reflexão interna total reflete mesmo 100 %?",
+        "a": "Em uma interface ideal, sem absorção nem espalhamento, sim, 100 %. Uma onda evanescente penetra além da interface, mas não transporta energia. No entanto, a luz pode escapar se houver outro meio por perto, e sujeira ou rugosidade na superfície causam perdas."
+      },
+      {
+        "q": "Por que não há reflexão interna total quando a luz entra pelo lado de índice menor?",
+        "a": "A luz que passa de um meio de índice menor para um de índice maior se desvia aproximando-se da normal, e o ângulo de refração é sempre menor que o ângulo de incidência. Como ele nunca chega a 90°, sempre existe um raio refratado, e a reflexão interna total não ocorre."
+      }
+    ],
     "aliases": [
       "reflexão total",
       "total internal reflection"
@@ -18,6 +78,34 @@
   "開口数": {
     "term": "Abertura numérica (NA)",
     "desc": "Grandeza NA = n senθ que expressa a faixa de ângulos dentro da qual uma lente ou uma fibra aceita a luz. Quanto maior, mais clara a imagem e maior a resolução.",
+    "about": [
+      {
+        "h": "Definição da abertura numérica",
+        "p": "A abertura numérica (NA) é definida como NA = n senθ, usando o índice de refração n do meio do lado do objeto (ou da imagem) e o semiângulo θ entre o eixo óptico e o raio marginal. No ar ela não pode passar de 1, mas com imersão em óleo de índice cerca de 1,5 pode chegar a cerca de 1,4. Como n senθ se conserva através das interfaces (lei de Snell), a NA tem o mesmo valor qualquer que seja o meio em que é medida, o que faz dela uma medida comum da capacidade de captação de luz de um sistema óptico. Em um sistema que satisfaz a condição dos senos, ela se relaciona com o número f usado nas lentes de câmeras por F ≈ 1/(2NA)."
+      },
+      {
+        "h": "Resolução e profundidade de foco",
+        "p": "Em um microscópio, a menor separação em que dois pontos podem ser distinguidos é de cerca de 0,61λ/NA (critério de Rayleigh), de modo que uma NA maior revela detalhes mais finos. A resolução dos equipamentos de litografia de semicondutores também é escrita como k₁λ/NA, e a imersão elevou a NA até 1,35. O diâmetro de um ponto focalizado também é aproximadamente proporcional a λ/NA. Já a profundidade de foco diminui em proporção a λ/NA², de modo que aumentar a NA estreita bruscamente a faixa que permanece em foco. Além disso, quanto maior a NA, mais difícil é corrigir as aberrações, e por isso as lentes de NA alta são compostas de muitos elementos."
+      },
+      {
+        "h": "Abertura numérica das fibras ópticas",
+        "p": "Em uma fibra óptica, a NA é obtida a partir dos índices do núcleo e da casca, n₁ e n₂, como NA = √(n₁² − n₂²), e o ângulo de incidência máximo θ, a partir do ar, para que a luz seja guiada no núcleo é dado por senθ = NA. A fibra monomodo padrão tem NA de cerca de 0,12, com semiângulo de aceitação de cerca de 7°; a fibra multimodo tem 0,2 a 0,3. Ao acoplar luz de uma fonte ou de outra fibra, escolha as lentes de modo que a divergência angular da luz incidente fique dentro dessa NA. No caso da fibra monomodo, casar o diâmetro do campo modal é mais importante que a NA para determinar a eficiência de acoplamento."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se converte entre abertura numérica e número f?",
+        "a": "Para a formação da imagem de um objeto no infinito, no ar, vale F ≈ 1/(2NA). Por exemplo, NA 0,25 corresponde a f/2. O número f é usado em fotografia como indicação de luminosidade, enquanto a NA é comum em microscopia e em fibras ópticas."
+      },
+      {
+        "q": "A abertura numérica pode passar de 1?",
+        "a": "Sim. Como NA = n senθ, as lentes de imersão, que preenchem o espaço entre a amostra e a lente com óleo ou água de índice alto, podem passar de 1. As objetivas de microscópio de imersão em óleo chegam a cerca de 1,4, e a litografia de semicondutores por imersão, a cerca de 1,35."
+      },
+      {
+        "q": "Uma NA maior é sempre melhor?",
+        "a": "A resolução e a luminosidade aumentam, mas a profundidade de foco diminui em proporção a λ/NA² e as aberrações ficam mais difíceis de corrigir. A distância de trabalho também tende a diminuir, por isso a NA deve ser escolhida conforme a aplicação."
+      }
+    ],
     "aliases": [
       "numerical aperture"
     ]
@@ -25,6 +113,38 @@
   "収差": {
     "term": "Aberração",
     "desc": "Desvio em relação à formação de imagem ideal. Há aberrações monocromáticas, como a aberração esférica, o coma e o astigmatismo, e a aberração cromática, causada pela dependência do índice de refração com o comprimento de onda.",
+    "about": [
+      {
+        "h": "O que são as aberrações",
+        "p": "Em um sistema óptico ideal, a luz que sai de um ponto do objeto converge para um ponto da imagem. Em lentes reais, a forma esférica das superfícies e a dispersão do material impedem que os raios se encontrem em um único ponto, e a imagem fica borrada ou deformada. Esses desvios são as aberrações. As aberrações monocromáticas, que ocorrem mesmo com um único comprimento de onda, incluem as cinco aberrações de Seidel: aberração esférica, coma, astigmatismo, curvatura de campo e distorção. A elas se somam a aberração cromática axial e a aberração cromática lateral, causadas pela dependência do índice de refração com o comprimento de onda. A magnitude das aberrações determina a qualidade da imagem em câmeras, microscópios e equipamentos de litografia."
+      },
+      {
+        "h": "Dependência da abertura e do campo",
+        "p": "As aberrações surgem como desvios da aproximação paraxial senθ ≈ θ, e os primeiros termos que importam são os de terceira ordem (aberrações de Seidel). O desvio transversal dos raios na imagem cresce com a altura ρ na pupila e a altura y da imagem como ρ³ para a aberração esférica, ρ²y para a coma, ρy² para o astigmatismo e a curvatura de campo, e y³ para a distorção. Assim, quanto mais luminosa a lente (menor número f), mais rapidamente crescem a aberração esférica e a coma, e quanto maior o campo de visão, mais crescem o astigmatismo e a distorção. É por isso que é difícil conciliar uma lente luminosa com um campo amplo."
+      },
+      {
+        "h": "Diferença em relação à difração e equívocos comuns",
+        "p": "Mesmo eliminando todas as aberrações, a imagem de um ponto não é um ponto: a difração a espalha até aproximadamente o tamanho do disco de Airy. As aberrações são desvios que o projeto e a fabricação podem reduzir, enquanto a difração é um limite fundamental fixado pelo tamanho da abertura; são coisas diferentes. Fechar o diafragma reduz a aberração esférica, mas aumenta o espalhamento por difração, de modo que a imagem mais nítida ocorre em um número f intermediário. A distorção, por sua vez, deforma apenas o formato da imagem, sem borrá-la. Os espelhos não usam refração, por isso não têm aberração cromática e são usados em telescópios e espectrômetros que cobrem faixas amplas de comprimento de onda."
+      },
+      {
+        "h": "Correção e avaliação",
+        "p": "As aberrações são compensadas umas pelas outras combinando várias lentes de curvaturas e materiais diferentes. A lente acromática, que cola uma lente convergente e uma divergente com números de Abbe diferentes, corrige a aberração cromática, e as lentes asféricas são eficazes contra a aberração esférica. Um sistema pronto é avaliado medindo a frente de onda transmitida com um interferômetro e decompondo-a em termos dos polinômios de Zernike, ou medindo a MTF. Pelo critério de Maréchal, um erro de frente de onda RMS de cerca de λ/14 ou menos dá uma razão de Strehl de cerca de 0,8 ou mais, referência usual para considerar o sistema limitado por difração. A óptica adaptativa em astronomia corrige em tempo real, com um espelho deformável, as aberrações causadas pela turbulência atmosférica."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre aberração monocromática e aberração cromática?",
+        "a": "As aberrações monocromáticas são desvios na formação da imagem causados pela forma e pela disposição das lentes, e ocorrem mesmo com um único comprimento de onda (aberração esférica, coma etc.). A aberração cromática surge porque o índice de refração varia com o comprimento de onda, de modo que a posição do foco ou o tamanho da imagem mudam com a cor; ela é um problema com luz branca."
+      },
+      {
+        "q": "O que acontece com as aberrações quando se fecha o diafragma?",
+        "a": "As aberrações que dependem fortemente da abertura, como a aberração esférica e a coma, diminuem. No entanto, o espalhamento da imagem por difração aumenta à medida que a abertura diminui, de modo que fechar demais o diafragma volta a borrar a imagem. A distorção não muda com o tamanho do diafragma."
+      },
+      {
+        "q": "Se as aberrações forem nulas, a imagem será um ponto?",
+        "a": "Não. Mesmo uma lente ideal, sem aberrações, espalha a imagem de um ponto em um disco de Airy de tamanho finito por causa da difração. Isso se chama limite de difração, e uma resolução melhor exige uma abertura numérica maior ou um comprimento de onda mais curto."
+      }
+    ],
     "aliases": [
       "aberrações",
       "aberration"
@@ -33,6 +153,38 @@
   "ABCD行列": {
     "term": "Matriz ABCD",
     "desc": "Método que representa a variação da altura e do ângulo de um raio paraxial com uma matriz 2×2. Multiplicando as matrizes dos elementos, analisa-se o sistema inteiro, e o método também se aplica à propagação de feixes gaussianos.",
+    "about": [
+      {
+        "h": "Um raio descrito por dois números",
+        "p": "Na aproximação paraxial, o estado de um raio em um dado plano pode ser descrito por dois números: sua altura y em relação ao eixo óptico e seu ângulo θ com o eixo. Depois de um elemento óptico, o (y, θ) de saída é uma função linear dos valores de entrada, de modo que o elemento pode ser representado por uma matriz 2×2 [[A, B], [C, D]]. O espaço livre de comprimento d é [[1, d], [0, 1]], e uma lente delgada de distância focal f é [[1, 0], [−1/f, 1]]. Multiplicando as matrizes da direita para a esquerda na ordem em que a luz passa, um sistema com qualquer número de lentes se reduz a uma única matriz, cujos quatro números resumem as propriedades do sistema inteiro."
+      },
+      {
+        "h": "O significado dos elementos",
+        "p": "O elemento C da matriz do sistema é −1/f e dá a distância focal combinada. Por exemplo, lentes de distâncias focais de 100 mm e 200 mm separadas por 50 mm dão, após a multiplicação das matrizes, C = −1/80 mm⁻¹, e a distância focal combinada é de 80 mm. Quando B = 0, a altura de saída não depende do ângulo de entrada, de modo que os planos de entrada e de saída são conjugados (relação de formação de imagem), e A é então a ampliação lateral. Quando A = 0, a luz que entra paralela ao eixo converge para um único ponto na saída. Se a entrada e a saída estão em meios de mesmo índice, o determinante AD − BC é sempre 1, o que serve para conferir os cálculos."
+      },
+      {
+        "h": "Limitações e diferenças de convenção",
+        "p": "As matrizes ABCD se baseiam na aproximação paraxial, por isso não descrevem aberrações. Para estudar ângulos grandes ou o efeito de superfícies asféricas, é preciso o traçado de raios, que aplica exatamente a lei de Snell em cada superfície. Além disso, a definição do ângulo varia de livro para livro: na convenção que usa nθ, o ângulo multiplicado pelo índice de refração, o determinante é sempre 1, mesmo entre meios de índices diferentes. A matriz de refração em uma superfície curva e a convenção de sinais para espelhos côncavos também mudam de um livro-texto para outro, por isso, ao combinar matrizes de fontes diferentes, é importante uniformizar as definições. Multiplicar na ordem inversa também é um erro comum."
+      },
+      {
+        "h": "Aplicação a feixes gaussianos e ressonadores",
+        "p": "As matrizes ABCD se aplicam não só a raios, mas diretamente à propagação de feixes gaussianos. O parâmetro complexo do feixe q, que reúne o raio do feixe e a curvatura da frente de onda, se transforma como q₂ = (Aq₁ + B)/(Cq₁ + D), o que permite calcular a posição e o tamanho da cintura depois da focalização por uma lente. Em um ressonador laser, quando a matriz de uma volta completa satisfaz −1 ≤ (A + D)/2 ≤ 1, os raios não se afastam do eixo por mais voltas que façam, e o ressonador é estável. Essa é a mesma condição 0 ≤ g₁g₂ ≤ 1 escrita com os parâmetros g dos dois espelhos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Em que ordem se multiplicam as matrizes ABCD?",
+        "a": "Coloque a matriz do primeiro elemento que a luz atravessa na extrema direita e multiplique para a esquerda na ordem em que a luz passa. Isso porque a matriz do primeiro elemento é a primeira a atuar sobre o vetor do raio incidente. Inverter a ordem em geral dá outro resultado."
+      },
+      {
+        "q": "Quando o determinante de uma matriz ABCD não é 1?",
+        "a": "Na convenção que usa o ângulo θ diretamente, quando os meios de entrada e de saída têm índices de refração diferentes. O determinante é então n₁/n₂. Usando o ângulo multiplicado pelo índice, nθ, ele é sempre 1."
+      },
+      {
+        "q": "É possível calcular aberrações com matrizes ABCD?",
+        "a": "Não. As matrizes ABCD são uma relação de primeira ordem baseada na aproximação paraxial senθ ≈ θ, por isso descrevem a formação de imagem ideal, sem aberrações. Para estudar as aberrações, use o traçado de raios, que calcula exatamente cada superfície com a lei de Snell."
+      }
+    ],
     "aliases": [
       "matrizes ABCD",
       "ABCD matrix"
@@ -41,6 +193,38 @@
   "コヒーレンス長": {
     "term": "Comprimento de coerência",
     "desc": "Medida aproximada da diferença de caminho óptico dentro da qual a luz ainda consegue interferir, cerca de λ²/Δλ. Quanto mais estreito o espectro, maior ele é: da ordem de km em lasers de largura de linha estreita e de µm na luz branca.",
+    "about": [
+      {
+        "h": "Uma medida da coerência temporal",
+        "p": "Dois feixes separados de uma mesma fonte interferem quando são superpostos, mas, à medida que a diferença de caminho óptico aumenta, as franjas ficam menos visíveis e acabam desaparecendo. O comprimento de coerência é a diferença de caminho até a qual as franjas são visíveis. Como a luz tem uma largura espectral finita Δν, sua fase se mantém bem definida apenas durante cerca do tempo de coerência τc ≈ 1/Δν. A distância que a luz percorre nesse tempo é lc = cτc ≈ c/Δν, ou λ²/Δλ em termos da largura em comprimento de onda. Dependendo da forma do espectro e da convenção usada, o fator numérico pode ser menor que 1, de modo que se trata apenas de uma estimativa."
+      },
+      {
+        "h": "Valores para diferentes fontes",
+        "p": "Escrito em frequência, lc ≈ c/Δν não depende do comprimento de onda: cerca de 300 m para um laser com largura de linha de 1 MHz e cerca de 3 km para 100 kHz. Em 1550 nm, 1 MHz corresponde a uma largura em comprimento de onda de apenas cerca de 8 fm, de modo que comprimentos de coerência longos exigem larguras de linha extremamente estreitas. As fontes de banda larga têm comprimentos de coerência curtos: cerca de 14 µm para um SLD centrado em 850 nm com largura de 50 nm, e cerca de 1 µm para a luz branca visível (centrada em 550 nm, com cerca de 300 nm de largura). Em um laser que oscila em muitos modos longitudinais, a largura espectral total determina a faixa em que as franjas são visíveis, e as franjas reaparecem a cada múltiplo do dobro do caminho óptico da cavidade."
+      },
+      {
+        "h": "Diferença em relação à coerência espacial",
+        "p": "O comprimento de coerência descreve a coerência temporal, ao longo da direção de propagação. Separadamente, a coerência espacial descreve se a luz em dois pontos da seção transversal do feixe pode interferir, e é determinada pelo tamanho aparente da fonte. Uma fonte pontual pequena ou um laser de modo transversal único têm coerência espacial alta, o que não tem relação com a largura espectral. Além disso, o comprimento de coerência não é a distância que a luz consegue percorrer, mas a tolerância na diferença de caminho entre os dois braços que se fazem interferir. Em um meio, a diferença de comprimento geométrico permitida é lc dividido pelo índice de grupo."
+      },
+      {
+        "h": "Quando é melhor longo e quando é melhor curto",
+        "p": "A holografia, os interferômetros com grandes diferenças de caminho, o LiDAR do tipo FMCW e os sensores a fibra precisam de fontes cujo comprimento de coerência seja bem maior que a diferença de caminho a medir, e por isso usam lasers de largura de linha estreita. Já a OCT (tomografia de coerência óptica) usa uma fonte de banda larga com comprimento de coerência curto e aproveita a faixa estreita de diferenças de caminho em que ocorre interferência para localizar a profundidade. Quanto mais larga a banda, maior a resolução em profundidade. Na iluminação de microscópios e nas medições baseadas em imagens, coerência alta demais produz speckle e franjas de interferência indesejadas, por isso às vezes a coerência é reduzida de propósito."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o comprimento de coerência?",
+        "a": "Estime-o como lc ≈ λ²/Δλ a partir do comprimento de onda central λ e da largura espectral Δλ, ou como lc ≈ c/Δν a partir da largura de linha em frequência Δν. Por exemplo, uma largura de linha de 1 MHz dá cerca de 300 m. O fator numérico muda um pouco com a forma do espectro, por isso o valor deve ser usado como estimativa."
+      },
+      {
+        "q": "Qual é a relação entre comprimento de coerência e largura de linha?",
+        "a": "São inversamente proporcionais. Quanto mais estreita a largura de linha (largura espectral), maior o comprimento de coerência; reduzir a largura de linha a um décimo o torna dez vezes maior. Os lasers de largura de linha estreita que oscilam em um único modo longitudinal chegam à ordem de quilômetros, enquanto LEDs e SLDs ficam na faixa de micrômetros a dezenas de micrômetros."
+      },
+      {
+        "q": "Qual é a diferença em relação à coerência espacial?",
+        "a": "O comprimento de coerência (coerência temporal) descreve a facilidade com que a luz interfere para diferenças de caminho ao longo da direção de propagação, e é determinado pela largura espectral. A coerência espacial descreve a facilidade com que a luz em dois pontos da seção transversal do feixe interfere, e é determinada pelo tamanho da fonte."
+      }
+    ],
     "aliases": [
       "comprimentos de coerência",
       "coherence length"
@@ -49,6 +233,38 @@
   "反射防止膜": {
     "term": "Revestimento antirreflexo",
     "desc": "Filme fino que cancela por interferência a reflexão na superfície. Em uma camada única, o ideal é uma espessura óptica de λ/4 e um índice de refração de √(n₀ns). Com várias camadas, funciona em uma banda larga.",
+    "about": [
+      {
+        "h": "Por que são necessários revestimentos antirreflexo",
+        "p": "Na incidência normal, cerca de 4 % da luz é refletida na superfície de um vidro de índice 1,5. Pode parecer pouco para uma superfície, mas em um sistema de lentes com 10 superfícies a reflexão sozinha reduz a transmissão a cerca de 66 %, e a luz refletida se torna luz espúria que forma imagens fantasmas e flare. No silício, de índice 3,48, a reflexão chega a cerca de 31 % por face. Um revestimento antirreflexo é um filme fino aplicado à superfície que faz as reflexões nas suas interfaces superior e inferior se cancelarem por interferência. A reflexão cancelada não é absorvida: segue adiante como luz transmitida, aumentando a transmitância."
+      },
+      {
+        "h": "Condições para uma camada única e valores práticos",
+        "p": "Uma camada única dá reflexão nula no comprimento de onda de projeto quando sua espessura óptica (índice × espessura) é λ/4, o que põe as duas reflexões em oposição de fase, e seu índice é √(n₀ns), o que iguala suas amplitudes. Para vidro, há poucos materiais densos próximos do ideal de cerca de 1,22, e o MgF₂ (n = 1,38) sobre BK7 (n = 1,52) deixa uma refletância de cerca de 1,3 %. A espessura física de uma camada de MgF₂ para 1064 nm é de cerca de 193 nm. Para o silício (3,48), o índice ideal é de cerca de 1,87, e um filme de nitreto de silício com n ≈ 2,0 reduz a refletância a cerca de 0,5 %."
+      },
+      {
+        "h": "Multicamadas e dependência do comprimento de onda e do ângulo",
+        "p": "Uma camada única reduz bem a reflexão apenas perto do comprimento de onda de projeto. Combinando várias camadas de índice alto e baixo, obtêm-se revestimentos de banda larga que mantêm a refletância em cerca de 0,5 % ou menos em toda a faixa visível. Já os revestimentos com resposta em forma de V, que minimizam a reflexão em um único comprimento de onda, são comuns em óptica de lasers. Com ângulos de incidência maiores, as camadas se comportam como se fossem mais finas, deslocando a resposta para comprimentos de onda mais curtos, e surgem diferenças entre a polarização s e a polarização p. O tom roxo ou verde de uma lente revestida é a reflexão residual nos comprimentos de onda que não são totalmente cancelados."
+      },
+      {
+        "h": "Onde são usados",
+        "p": "Os revestimentos antirreflexo são amplamente usados em lentes de câmeras e microscópios, óculos, superfícies de telas e células solares. Nas células solares, o aprisionamento de luz pela texturização da superfície é combinado com um filme de nitreto de silício para reduzir as perdas por reflexão. Nos componentes ópticos para lasers, um limiar de dano alto o bastante para suportar potências elevadas também é um critério na escolha do revestimento. Onde mesmo reflexões mínimas são um problema, como nas faces dos amplificadores ópticos semicondutores, os revestimentos são combinados com faces inclinadas. As estruturas olho de mariposa (moth-eye), arranjos de saliências menores que o comprimento de onda que variam suavemente o índice de refração, também são usadas no lugar de filmes finos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se escolhe a espessura de um revestimento antirreflexo?",
+        "a": "Para uma camada única, use um quarto do comprimento de onda dentro do filme, isto é, uma espessura física d = λ/(4n). Para MgF₂ (n = 1,38) projetado para 1064 nm, isso dá cerca de 193 nm. Usar λ/4 sem dividir pelo índice resulta em um revestimento que funciona em um comprimento de onda diferente do pretendido."
+      },
+      {
+        "q": "Para onde vai a luz cancelada por um revestimento antirreflexo?",
+        "a": "Em um filme sem absorção nem espalhamento, a luz transmitida aumenta exatamente o quanto a reflexão diminui. A interferência não destrói a energia da luz; apenas muda a divisão entre reflexão e transmissão. Por isso um revestimento antirreflexo aumenta a quantidade de luz que atravessa uma lente."
+      },
+      {
+        "q": "Por que as lentes com revestimento antirreflexo parecem coloridas?",
+        "a": "A reflexão só é bem cancelada perto do comprimento de onda de projeto, e uma pequena reflexão permanece nos outros comprimentos de onda. Um revestimento de camada única otimizado para o meio da faixa visível deixa alguma reflexão no violeta-azulado e no vermelho, nas duas extremidades, e por isso muitas vezes parece arroxeado."
+      }
+    ],
     "aliases": [
       "revestimentos antirreflexo",
       "revestimento antirrefletor",
@@ -60,6 +276,38 @@
   "マイケルソン干渉計": {
     "term": "Interferômetro de Michelson",
     "desc": "Interferômetro que divide a luz em duas, reflete cada parte em um espelho e as superpõe de novo. A cada λ/2 de deslocamento do espelho, o padrão de franjas se desloca de uma franja, o que permite medir com precisão comprimentos e índices de refração.",
+    "about": [
+      {
+        "h": "Funcionamento e história",
+        "p": "O interferômetro de Michelson divide a luz em dois braços com um divisor de feixe, reflete cada feixe em um espelho no fim do seu braço e os recombina no mesmo divisor de feixe. Quando a diferença de caminho óptico entre os braços é um número inteiro de comprimentos de onda, os feixes se reforçam, e quando ela se afasta disso em meio comprimento de onda, eles se cancelam. Como a luz vai até cada espelho e volta, deslocar um espelho de d muda a diferença de caminho em 2d, e o padrão de franjas se desloca de uma franja a cada λ/2 de deslocamento do espelho. Michelson o concebeu no fim do século XIX, e o fato de o experimento de Michelson-Morley, em 1887, não ter detectado o movimento da Terra em relação ao éter se tornou parte do contexto da relatividade especial."
+      },
+      {
+        "h": "Contar franjas para medir comprimentos e índices de refração",
+        "p": "Com um laser de He-Ne de 632,8 nm, deslocar um espelho de 1 mm faz passar cerca de 3160 franjas. Basta contar as franjas para medir comprimentos usando o comprimento de onda como régua. Para medir o índice de refração, coloca-se em um dos braços uma célula de comprimento L e retira-se ou introduz-se o gás em seu interior; contando o número N de franjas que passam, obtém-se a variação do índice como Δn = Nλ/(2L). Passar uma célula de 10 cm do vácuo para o ar (n − 1 ≈ 2,7×10⁻⁴ à temperatura ambiente e 1 atm) dá cerca de 85 franjas. Como o índice do ar varia com a temperatura, a pressão e a umidade, as medições de comprimento de precisão precisam corrigi-lo."
+      },
+      {
+        "h": "Diferenças em relação a outros interferômetros",
+        "p": "O interferômetro de Mach-Zehnder envia os feixes divididos por caminhos separados e os recombina em um segundo divisor de feixe, de modo que a luz não faz o caminho de volta e atravessa a amostra uma única vez. Ele é adequado para moduladores em guia de onda e para observar a distribuição do índice de refração em objetos transparentes. O ressonador de Fabry-Pérot superpõe muitas reflexões em uma interferência de múltiplos feixes e pode produzir picos de transmissão estreitos. O interferômetro de Michelson usa interferência de dois feixes, e suas franjas são senoidais. Além disso, sua saída se divide em duas portas: quando a porta do detector está escura, a luz que volta para a fonte está clara, de modo que a energia total se conserva."
+      },
+      {
+        "h": "Usos atuais",
+        "p": "A configuração de Michelson continua sendo a base de muitos instrumentos atuais. Os interferômetros laser de medição de deslocamento medem a posição de máquinas-ferramenta e mesas de posicionamento com resolução da ordem de nanômetros, e os espectrômetros de infravermelho por transformada de Fourier (FTIR) calculam espectros a partir do interferograma registrado enquanto um espelho é varrido. A OCT (tomografia de coerência óptica) é a mesma configuração com o espelho de um dos braços substituído pela amostra. O detector de ondas gravitacionais LIGO tem braços de 4 km com ressonadores de Fabry-Pérot incorporados em cada braço; medindo variações minúsculas no comprimento dos braços, fez em 2015 a primeira detecção direta de ondas gravitacionais."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quanto se desloca o espelho quando uma franja passa em um interferômetro de Michelson?",
+        "a": "Meio comprimento de onda (λ/2). A luz vai até o espelho e volta, de modo que a diferença de caminho muda o dobro do deslocamento d do espelho, e uma franja passa cada vez que 2d muda de um comprimento de onda. Em 1550 nm, uma franja corresponde a 775 nm."
+      },
+      {
+        "q": "Qual é a diferença entre os interferômetros de Michelson e de Mach-Zehnder?",
+        "a": "O interferômetro de Michelson faz a luz voltar com espelhos e a recombina no mesmo divisor de feixe, de modo que a luz percorre cada braço duas vezes, na ida e na volta. O interferômetro de Mach-Zehnder usa dois divisores de feixe, e a luz passa por cada caminho uma única vez. A escolha depende da aplicação e da facilidade de montagem."
+      },
+      {
+        "q": "Por que o contraste das franjas é ruim em um interferômetro de Michelson?",
+        "a": "As principais causas são a diferença de potência entre os dois braços, polarizações que não coincidem, uma diferença de caminho maior que o comprimento de coerência e o descasamento das frentes de onda por espelhos inclinados. Igualar a potência e a polarização dos braços e manter a diferença de caminho bem menor que o comprimento de coerência melhora o contraste."
+      }
+    ],
     "aliases": [
       "interferômetros de Michelson",
       "Michelson interferometer"
@@ -68,6 +316,34 @@
   "ファブリ・ペロー共振器": {
     "term": "Ressonador de Fabry-Pérot",
     "desc": "Ressonador em que a luz vai e volta muitas vezes entre dois espelhos paralelos. Transmite de forma aguda quando o caminho óptico de ida e volta é um múltiplo inteiro do comprimento de onda, e o FSR é c/(2nL).",
+    "about": [
+      {
+        "h": "Condição de ressonância e intervalo espectral livre",
+        "p": "Quando a luz vai e volta entre dois espelhos separados por L em um meio de índice n, nos comprimentos de onda em que o caminho óptico de ida e volta 2nL é um número inteiro de comprimentos de onda, todos os feixes refletidos múltiplas vezes se somam em fase e se reforçam. A transmissão apresenta então um pico estreito, e o espaçamento em frequência até o pico seguinte é chamado de intervalo espectral livre (FSR): FSR = c/(2nL). Ele vale 15 GHz para um espaçamento de 10 mm no ar e cerca de 139 GHz para um chip de laser semicondutor de 300 µm de comprimento com índice 3,6. Em comprimento de onda, Δλ = λ²/(2nL) (a rigor, usa-se o índice de grupo, que inclui a dispersão)."
+      },
+      {
+        "h": "Finesse e largura de linha",
+        "p": "Quanto maior a refletância R dos espelhos, mais voltas a luz dá antes de sair, e mais estreitos ficam os picos de transmissão. A estreiteza é expressa pela finesse F = FSR/δν (δν é a largura total a meia altura); para espelhos sem perdas, F ≈ π√R/(1 − R). Ela vale cerca de 61 para R = 0,95 e cerca de 310 para R = 0,99. O fator Q do ressonador é a frequência de ressonância dividida pela largura de linha, e é proporcional ao tempo que os fótons permanecem no ressonador. Em um ressonador simétrico sem absorção nem espalhamento, a transmissão na ressonância é de 100 %, qualquer que seja a refletância, mas a absorção dos espelhos, erros de paralelismo e a divergência do feixe reduzem o pico e alargam a linha."
+      },
+      {
+        "h": "Onde é usado",
+        "p": "Os ressonadores de Fabry-Pérot são usados como o próprio ressonador de lasers e como filtros de comprimento de onda com banda passante estreita. As faces clivadas de um laser semicondutor também formam um ressonador de Fabry-Pérot, e o espaçamento entre seus modos longitudinais determina o espaçamento em comprimento de onda da oscilação multimodo. Um interferômetro de Fabry-Pérot de varredura, cujo espaçamento é variado com um piezo, funciona como espectrômetro para observar os modos de um laser. Ressonadores de finesse alta também são usados na estabilização da frequência de lasers (método PDH) e em detectores de ondas gravitacionais. Por outro lado, reflexões não intencionais, por exemplo nas faces de um chip, formam ressonâncias parasitas que fazem a transmissão ondular periodicamente; elas são suprimidas com revestimentos antirreflexo."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se obtém o FSR de um ressonador de Fabry-Pérot?",
+        "a": "Em frequência, FSR = c/(2nL); em comprimento de onda, λ²/(2nL). Aqui n é o índice de refração do meio entre os espelhos (o índice de grupo, se houver dispersão), e L é o espaçamento entre os espelhos. Quanto menor o espaçamento, maior o FSR."
+      },
+      {
+        "q": "O que é a finesse?",
+        "a": "É a razão entre o espaçamento dos picos de transmissão (FSR) e a largura total a meia altura de um pico, e expressa a estreiteza da ressonância. Sem perdas, ela é obtida a partir da refletância R dos espelhos como F ≈ π√R/(1 − R), e aumenta com a refletância."
+      },
+      {
+        "q": "Por que a transmissão pode chegar a 100 % com espelhos de refletância 99 %?",
+        "a": "Na ressonância, a luz que deu muitas voltas dentro do ressonador se reforça e forma um campo intenso, e a luz que escapa dele cancela a reflexão no lado de entrada. Como resultado, sem perdas, toda a luz incidente é transmitida. Fora da ressonância, quase nada é transmitido."
+      }
+    ],
     "aliases": [
       "ressonadores de Fabry-Pérot",
       "cavidade de Fabry-Pérot",
@@ -79,6 +355,38 @@
   "回折格子": {
     "term": "Rede de difração",
     "desc": "Elemento com sulcos periódicos que difrata a luz nas direções dadas por d senθ = mλ, separando-a por comprimento de onda. É usada em espectrômetros e na seleção do comprimento de onda de lasers.",
+    "about": [
+      {
+        "h": "A equação da rede",
+        "p": "Uma rede de difração é um elemento com sulcos ou degraus dispostos com período d. A luz que sai dos sulcos se reforça apenas nas direções em que a diferença de caminho entre sulcos vizinhos é um número inteiro de comprimentos de onda. Na incidência normal, isso dá d senθ = mλ (m é a ordem de difração), e na incidência oblíqua acrescenta-se um termo com o ângulo de incidência. Uma rede de 1200 linhas por milímetro tem período de cerca de 833 nm. Dentro de uma mesma ordem, cada comprimento de onda é difratado em um ângulo diferente, de modo que a rede separa a luz por comprimento de onda. A ordem zero (m = 0) apenas reflete como um espelho (ou passa direto) e não separa os comprimentos de onda."
+      },
+      {
+        "h": "Dispersão e poder de resolução",
+        "p": "A variação do ângulo com o comprimento de onda (dispersão angular) é dθ/dλ = m/(d cosθ), maior para sulcos mais finos e ordens mais altas. Por exemplo, luz de 500 nm incidindo normalmente em uma rede de 600 linhas por milímetro sai na primeira ordem a cerca de 17,5°. O poder de resolução para distinguir dois comprimentos de onda próximos é λ/Δλ = mN, em que N é o número de sulcos iluminados; iluminar 50 mm de largura de uma rede de 1200 linhas/mm dá 60000 na primeira ordem, o que separa comprimentos de onda distantes cerca de 0,008 nm em 500 nm. No entanto, a luz da ordem m e a luz de outro comprimento de onda na ordem m+1 podem sair no mesmo ângulo, por isso usam-se filtros para separar as ordens."
+      },
+      {
+        "h": "Diferenças em relação ao prisma e eficiência",
+        "p": "Um prisma desvia mais os comprimentos de onda curtos, enquanto uma rede difrata os comprimentos de onda longos em ângulos maiores. A dispersão da rede depende quase apenas do período, e não da dispersão do material, por isso a relação entre comprimento de onda e ângulo é fácil de calcular. A difração só é possível quando mλ/d é no máximo 2 (no máximo 1 na incidência normal), de modo que, se os sulcos forem finos demais, os comprimentos de onda longos não são difratados. A rede de difração blazed, cujos sulcos têm perfil em dente de serra, concentra a luz em uma ordem e um comprimento de onda específicos para aumentar a eficiência. A eficiência de difração também depende da polarização."
+      },
+      {
+        "h": "Uso em espectrômetros e lasers",
+        "p": "Em um espectrômetro, a luz separada pela rede é coletada por um espelho côncavo e medida por comprimento de onda em uma fenda de saída ou em um arranjo de detectores. Nos lasers semicondutores de cavidade externa, a configuração Littrow, 2d senθ = mλ, devolve a primeira ordem na direção do feixe incidente, e girar a rede seleciona o comprimento de onda de oscilação. Para uma rede de 1200 linhas/mm em 1550 nm, o ângulo é de cerca de 68°. Na amplificação de pulsos com chirp (CPA) de pulsos ultracurtos, pares de redes tornam o caminho óptico dependente do comprimento de onda para alargar ou comprimir os pulsos. As redes de Bragg em fibra, estruturas periódicas gravadas no interior de uma fibra, baseiam-se no mesmo princípio de difração."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a relação entre o número de linhas por milímetro e o período?",
+        "a": "O período d é 1 mm dividido pelo número de linhas: cerca de 833 nm para 1200 linhas/mm e cerca de 1667 nm para 600 linhas/mm. Mais linhas dão maior dispersão angular, mas reduzem o comprimento de onda máximo que pode ser difratado (λ < d/m na incidência normal)."
+      },
+      {
+        "q": "Quando uma rede de difração não produz luz de segunda ordem?",
+        "a": "Quando senθ em d senθ = 2λ passaria de 1. Na incidência normal, não há segunda ordem se o comprimento de onda for maior que metade do período. Por outro lado, uma rede cujo período é bem maior que o comprimento de onda produz muitas ordens ao mesmo tempo."
+      },
+      {
+        "q": "O que determina o poder de resolução de uma rede de difração?",
+        "a": "O poder de resolução λ/Δλ é o produto mN da ordem de difração m pelo número N de sulcos iluminados. Ele aumenta não só com a densidade de sulcos, mas também iluminando uma largura maior. Nos espectrômetros reais, a largura da fenda e os pixels do detector também o limitam."
+      }
+    ],
     "aliases": [
       "redes de difração",
       "grade de difração",
@@ -88,6 +396,38 @@
   "エアリーディスク": {
     "term": "Disco de Airy",
     "desc": "Disco central brilhante que se forma quando a luz é focalizada através de uma abertura circular. O primeiro anel escuro fica no ângulo 1,22λ/D, que determina o limite de resolução de uma lente.",
+    "about": [
+      {
+        "h": "O padrão de difração de uma abertura circular",
+        "p": "Quando a luz que atravessa uma abertura circular iluminada uniformemente é focalizada por uma lente e observada no plano focal, forma-se um ponto central brilhante cercado por anéis escuros e claros alternados. O ponto central é o disco de Airy, assim chamado em homenagem a Airy, que calculou esse padrão em 1835. A intensidade é [2J₁(x)/x]², escrita com a função de Bessel de primeira ordem, e o primeiro anel escuro aparece no ângulo senθ ≈ 1,22λ/D, em que D é o diâmetro da abertura. Cerca de 84 % da energia total fica dentro do disco central, e o restante se distribui pelos anéis externos."
+      },
+      {
+        "h": "Tamanhos típicos",
+        "p": "No plano focal, o raio do primeiro anel escuro é r ≈ 1,22λf/D = 1,22λN, em que N é o número f. Em 550 nm e F8, ele é de cerca de 5,4 µm, ou seja, um diâmetro de cerca de 11 µm, o que mostra por que uma câmera com pixels de alguns micrômetros produz imagens borradas pela difração quando o diafragma é fechado demais. Para objetivas de microscópio, escreve-se r ≈ 0,61λ/NA, cerca de 0,22 µm para NA 1,4 em 500 nm. A resolução angular de um telescópio também é dada por 1,22λ/D: para o Telescópio Espacial Hubble, com abertura de 2,4 m, ela é de cerca de 0,05 segundo de arco em 500 nm."
+      },
+      {
+        "h": "Diferentes definições de tamanho",
+        "p": "O tamanho de um ponto tem várias definições, por isso é preciso cuidado. O raio angular do primeiro anel escuro é 1,22λ/D, mas a largura total a meia altura é de cerca de 1,03λ/D, menos da metade do diâmetro do anel escuro. O critério de Rayleigh toma como limite de resolução a separação em que o centro da imagem de um ponto cai sobre o primeiro anel escuro da imagem do outro. Um feixe gaussiano de laser focalizado quase não tem anéis externos e é descrito pelo raio em que a intensidade cai a 1/e², por isso sua fórmula tem um coeficiente diferente da do disco de Airy. Uma obstrução central, como o espelho secundário de um telescópio, faz mais energia passar para os anéis."
+      },
+      {
+        "h": "Uso na avaliação de sistemas ópticos",
+        "p": "Mesmo um sistema óptico ideal, sem aberrações, não forma a imagem de um ponto menor que o disco de Airy. Essa condição é chamada de limite de difração, e comparar uma imagem real com o disco de Airy permite julgar a qualidade de um sistema óptico. As aberrações reduzem a intensidade central e empurram energia para os anéis, e a razão entre a intensidade central real e a ideal é a razão de Strehl. O teste da estrela, que observa a imagem de uma estrela desfocada antes e depois do foco, identifica o tipo de aberração pelas deformações do padrão de anéis. No projeto de câmeras, comparar o diâmetro do disco de Airy com o tamanho do pixel serve de referência para a menor abertura utilizável."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o tamanho do disco de Airy?",
+        "a": "O primeiro anel escuro está no ângulo senθ ≈ 1,22λ/D (D é o diâmetro da abertura), e seu raio no plano focal é 1,22λ × o número f. Em microscopia, escreve-se 0,61λ/NA. Ele fica menor com comprimentos de onda mais curtos e aberturas maiores."
+      },
+      {
+        "q": "Qual é a relação entre o disco de Airy e a resolução de Rayleigh?",
+        "a": "O critério de Rayleigh toma como limite para distinguir dois pontos a separação em que o centro da imagem de um ponto fica sobre o primeiro anel escuro da imagem do outro. Por isso o ângulo resolvível é 1,22λ/D, igual ao raio do disco de Airy."
+      },
+      {
+        "q": "Como o disco de Airy muda quando se fecha o diafragma?",
+        "a": "Uma abertura menor torna o disco de Airy maior. Seu raio é proporcional ao número f, de modo que passar de F8 para F16 o dobra. Embora as aberrações diminuam, o espalhamento por difração aumenta, por isso fechar demais o diafragma volta a borrar a imagem."
+      }
+    ],
     "aliases": [
       "discos de Airy",
       "Airy disk"
@@ -96,6 +436,34 @@
   "偏光": {
     "term": "Polarização",
     "desc": "Direção em que o campo elétrico da luz oscila e o modo como ela varia. Conforme as amplitudes e a diferença de fase de duas componentes ortogonais, a luz tem polarização linear, circular ou elíptica.",
+    "about": [
+      {
+        "h": "Tipos de polarização",
+        "p": "A luz é uma onda transversal cujo campo elétrico oscila perpendicularmente à direção de propagação, e esse campo é considerado como a soma de componentes x e y ortogonais. Se a diferença de fase entre elas é 0 ou π, o campo oscila em uma direção fixa: é a polarização linear. Se as amplitudes são iguais e a diferença de fase é π/2, a ponta do campo descreve um círculo: é a polarização circular. Nos demais casos, em geral, a polarização é elíptica. A luz cuja polarização muda aleatoriamente em tempos curtos, como a luz do sol ou de uma lâmpada, é chamada de não polarizada (luz natural), e uma mistura de componentes polarizada e não polarizada é parcialmente polarizada. Grande parte da luz de lasers é linearmente polarizada por causa das janelas de Brewster no ressonador ou das propriedades do cristal."
+      },
+      {
+        "h": "Elementos que mudam a polarização",
+        "p": "Um polarizador deixa passar apenas a componente do campo em uma direção específica, e a intensidade transmitida segue a lei de Malus, I = I₀cos²θ. Uma lâmina de onda é um cristal birrefringente que cria uma diferença de fase entre seus dois eixos: a lâmina λ/4 transforma polarização linear em circular, e a lâmina λ/2 gira a direção da polarização linear pelo dobro do ângulo do eixo. Um divisor de feixe polarizador separa a luz em duas, transmitindo a polarização p e refletindo a polarização s. O rotador de Faraday, que gira a polarização com um campo magnético, é um elemento não recíproco cuja rotação não se cancela em uma ida e volta, e combinado com polarizadores forma um isolador óptico. A ação dos elementos é calculada com matrizes de Jones, ou com matrizes de Mueller quando se inclui a polarização parcial."
+      },
+      {
+        "h": "A polarização nas tecnologias ópticas",
+        "p": "A polarização tem um papel importante em muitas tecnologias ópticas. A refletância é diferente para as polarizações s e p, e no ângulo de Brewster a reflexão da polarização p se anula, o que é usado em janelas de lasers e na seleção de polarizações. Os guias de onda de silício guiam os modos TE e TM de maneiras muito diferentes, por isso tratar a luz de polarização indefinida que chega de uma fibra exige elementos de separação e rotação de polarização. A comunicação óptica coerente dobra a capacidade com a multiplexação por polarização, que transporta sinais separados em duas polarizações ortogonais, e acompanha as flutuações de polarização com processamento de sinais no receptor. A polarização também é usada em telas de cristal líquido, no cinema 3D, na visualização de tensões (fotoelasticidade) e em câmeras de polarização."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre polarização linear e polarização circular?",
+        "a": "Na polarização linear, o campo oscila em uma direção fixa, e as duas componentes ortogonais têm diferença de fase de 0 ou π. Na polarização circular, duas componentes de amplitudes iguais se superpõem defasadas de π/2, e a direção do campo gira a uma taxa constante. Uma lâmina λ/4 converte uma na outra."
+      },
+      {
+        "q": "A luz natural é não polarizada?",
+        "a": "A luz do sol e a de lâmpadas mudam de polarização aleatoriamente em tempos muito curtos e, em média, não têm uma polarização específica: são não polarizadas. Ao passar por um polarizador, sua intensidade cai exatamente à metade, qualquer que seja a orientação do polarizador."
+      },
+      {
+        "q": "Como se representa a polarização?",
+        "a": "A luz totalmente polarizada é representada por um vetor de Jones, que reúne as amplitudes complexas das componentes x e y, e a ação dos elementos é calculada com matrizes de Jones 2×2. Quando se inclui a polarização parcial, usam-se os parâmetros de Stokes e as matrizes de Mueller, e os estados podem ser representados na esfera de Poincaré."
+      }
+    ],
     "aliases": [
       "polarizações",
       "polarização da luz",
@@ -113,11 +481,75 @@
     "aliases": [
       "Brewster's angle",
       "Brewster angle"
+    ],
+    "about": [
+      {
+        "h": "O ângulo em que a reflexão da polarização p se anula",
+        "p": "Quando a luz incide obliquamente em uma interface, o ângulo de incidência em que a refletância da polarização p, que oscila no plano de incidência, se torna exatamente nula é o ângulo de Brewster θB, com tanθB = n₂/n₁. Nesse ângulo, o raio refletido e o raio refratado são perpendiculares entre si. Os elétrons do meio do lado refratado oscilam exatamente na direção em que o raio refletido se propagaria, e como não há radiação eletromagnética na direção da oscilação, não se produz reflexão da polarização p. O nome vem de Brewster, que encontrou essa relação por volta de 1815."
+      },
+      {
+        "h": "Valores principais",
+        "p": "O ângulo de Brewster é de cerca de 56,3° do ar para o vidro (n = 1,5), cerca de 53,1° para a água (n = 1,33) e cerca de 74° para o silício em 1550 nm (n ≈ 3,48). No sentido inverso, do vidro para o ar, ele é de cerca de 33,7°, menor que o ângulo crítico de cerca de 41,8°; o ângulo de Brewster sempre vem antes do ângulo crítico. No ângulo de Brewster do ar para o vidro, a refletância da polarização s não é nula, mas de cerca de 15 %. Por isso, com luz não polarizada, a luz refletida tem apenas polarização s, enquanto a luz transmitida é parcialmente polarizada e ainda contém bastante polarização s."
+      },
+      {
+        "h": "Equívocos comuns",
+        "p": "O ângulo de Brewster é diferente do ângulo crítico da reflexão interna total. A reflexão interna total ocorre apenas para luz incidente do lado de índice maior, mas o ângulo de Brewster existe para incidência de qualquer um dos lados. Além disso, apenas a reflexão da polarização p se anula; nos dielétricos comuns não há ângulo em que a refletância da polarização s seja nula. Em materiais com absorção forte, como os metais, a refletância da polarização p fica pequena mas nunca chega a zero, e o ângulo do mínimo é chamado de ângulo de pseudo-Brewster. A afirmação de que no ângulo de Brewster toda a luz é transmitida só é correta para a polarização p."
+      },
+      {
+        "h": "Usos em lasers e em polarização",
+        "p": "Inclinando as janelas do tubo de descarga de um laser a gás no ângulo de Brewster, a polarização p faz as idas e voltas sem perdas, enquanto a polarização s perde potência por reflexão em cada janela, de modo que a saída é linearmente polarizada. Cristais como o de titânio-safira são cortados com faces no ângulo de Brewster pelo mesmo motivo: manter as perdas baixas sem revestimentos antirreflexo. O reflexo da água e das estradas tem polarização predominantemente s (oscilação horizontal), por isso óculos de sol polarizados, com eixo de transmissão vertical, o reduzem. Empilhar várias placas de vidro no ângulo de Brewster dá um polarizador simples, que aumenta o grau de polarização da luz transmitida."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o ângulo de Brewster?",
+        "a": "Tomando n₁ como o índice do lado de incidência e n₂ como o do outro lado, use tanθB = n₂/n₁. Do ar para o vidro (1,5), tanθB = 1,5, o que dá cerca de 56,3°. O ângulo é medido a partir da normal, e não da interface."
+      },
+      {
+        "q": "Qual é a diferença entre o ângulo de Brewster e o ângulo crítico?",
+        "a": "O ângulo de Brewster é aquele em que a refletância da polarização p se anula, tanθB = n₂/n₁; o ângulo crítico é aquele em que começa a reflexão interna total, senθc = n₂/n₁. O ângulo crítico só existe para incidência do lado de índice maior, enquanto o ângulo de Brewster existe para incidência de qualquer lado."
+      },
+      {
+        "q": "Qual é a polarização da luz refletida no ângulo de Brewster?",
+        "a": "Como a reflexão da polarização p se anula, só se reflete a polarização s, que oscila perpendicularmente ao plano de incidência. A luz transmitida, porém, é parcialmente polarizada e ainda contém polarização s, por isso, para obter luz transmitida com grau de polarização alto, é preciso empilhar muitas placas."
+      }
     ]
   },
   "波長板": {
     "term": "Lâmina de onda",
     "desc": "Lâmina que usa a birrefringência para criar uma diferença de fase entre duas polarizações ortogonais. A lâmina λ/4 transforma polarização linear em circular, e a lâmina λ/2 gira a direção da polarização.",
+    "about": [
+      {
+        "h": "Como se produz a diferença de fase",
+        "p": "Uma lâmina de onda é uma placa birrefringente em que as componentes de polarização ao longo de dois eixos ortogonais (o eixo lento e o eixo rápido) veem índices de refração diferentes, de modo que saem com uma diferença de fase. Uma placa de espessura d e birrefringência Δn produz um retardo Γ = 2πΔn·d/λ. Γ = π/2 corresponde à lâmina λ/4 e π à lâmina λ/2, o que equivale a diferenças de caminho de um quarto e de meio comprimento de onda entre as duas componentes. Os materiais usados incluem quartzo, mica, MgF₂ e filmes poliméricos estirados. Idealmente, a lâmina de onda não absorve luz e muda apenas o estado de polarização."
+      },
+      {
+        "h": "O que fazem as lâminas λ/4 e λ/2",
+        "p": "A lâmina λ/2 transforma a polarização linear a um ângulo θ do seu eixo em polarização linear a θ do outro lado do eixo, girando a polarização de 2θ. Como a direção da polarização pode ser escolhida livremente apenas girando a lâmina, ela é indispensável para ajustar a potência em combinação com um divisor de feixe polarizador. A lâmina λ/4 transforma a polarização linear a 45° do seu eixo em polarização circular, e a polarização circular em linear. Em ângulos diferentes de 45°, a saída é elíptica, e a polarização paralela a um eixo passa sem alteração. Passar duas vezes por uma lâmina λ/4 equivale a uma lâmina λ/2 e gira de 90° a polarização de um feixe que vai e volta."
+      },
+      {
+        "h": "Lâminas de ordem zero e de ordem múltipla, e dependência do comprimento de onda",
+        "p": "O retardo é inversamente proporcional ao comprimento de onda, por isso uma placa funciona como lâmina λ/4 ou λ/2 apenas perto do comprimento de onda de projeto. As lâminas de ordem múltipla, placas espessas com vários comprimentos de onda de retardo a mais, são fáceis de fabricar, mas sensíveis a variações de comprimento de onda e de temperatura. Desprezando a dispersão, uma placa com cerca de 10 comprimentos de onda de retardo muda seu retardo em cerca de 36° para um deslocamento de 1 % no comprimento de onda, enquanto uma lâmina λ/4 de ordem zero muda apenas cerca de 0,9°. Para faixas amplas de comprimento de onda, usam-se lâminas de onda acromáticas, que combinam dois materiais, ou rombos de Fresnel, que usam a diferença de fase da reflexão interna total."
+      },
+      {
+        "h": "Uso em sistemas ópticos",
+        "p": "Nas cabeças de leitura de discos ópticos, um divisor de feixe polarizador e uma lâmina λ/4 giram de 90°, na ida e volta, a polarização da luz refletida pelo disco, dirigindo-a ao detector em vez de devolvê-la ao laser. Os controladores de polarização para fibras usam laços de fibra enrolada como lâminas de onda. Os óculos de polarização circular do cinema 3D e os filmes de compensação que melhoram o ângulo de visão das telas de cristal líquido também são aplicações de lâminas retardadoras. A orientação do eixo pode ser verificada girando a lâmina entre dois polarizadores cruzados e encontrando o ângulo em que a luz transmitida fica mais escura."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre uma lâmina λ/4 e uma lâmina λ/2?",
+        "a": "O retardo que impõem é diferente. A lâmina λ/4 dá um quarto de onda (π/2) e transforma a polarização linear a 45° em polarização circular. A lâmina λ/2 dá meia onda (π) e gira a polarização linear mantendo-a linear; girar a lâmina de θ gira a polarização de 2θ."
+      },
+      {
+        "q": "Qual é a diferença entre lâminas de onda de ordem zero e de ordem múltipla?",
+        "a": "Uma lâmina de ordem zero tem exatamente o retardo de projeto (exatamente um quarto de onda para uma lâmina λ/4), por isso seu retardo muda pouco com variações de comprimento de onda, temperatura ou ângulo de incidência. Uma lâmina de ordem múltipla é mais espessa, com vários comprimentos de onda de retardo a mais; é mais barata, mas mais sensível a essas variações."
+      },
+      {
+        "q": "Uma lâmina de onda pode ser usada em qualquer comprimento de onda?",
+        "a": "Não. O retardo Γ = 2πΔn·d/λ é inversamente proporcional ao comprimento de onda, de modo que, longe do comprimento de onda de projeto, ele não dá mais a diferença de fase pretendida. Para faixas amplas de comprimento de onda, escolha uma lâmina de onda acromática ou um rombo de Fresnel."
+      }
+    ],
     "aliases": [
       "lâminas de onda",
       "placa de onda",
@@ -135,6 +567,38 @@
   "複屈折": {
     "term": "Birrefringência",
     "desc": "Propriedade de ter um índice de refração que depende da direção da polarização. Apresentada por cristais como a calcita e o quartzo, separa a luz em raio ordinário e raio extraordinário e é o princípio das lâminas de onda.",
+    "about": [
+      {
+        "h": "Um índice de refração que depende da polarização",
+        "p": "A birrefringência é a propriedade de um material cujo índice de refração depende da polarização da luz que o atravessa; ela aparece em cristais cujo arranjo atômico tem uma direção preferencial. No caso mais simples, o do cristal uniaxial, o raio ordinário, que oscila perpendicularmente ao eixo óptico, vê o índice no, enquanto o raio extraordinário, que oscila em um plano que contém o eixo óptico, vê um índice entre no e ne, dependendo da sua direção de propagação. A birrefringência é escrita como Δn = ne − no; os cristais com ne > no são uniaxiais positivos, e os com ne < no, uniaxiais negativos. Os cristais com dois eixos ópticos são biaxiais."
+      },
+      {
+        "h": "Valores típicos e separação dos feixes",
+        "p": "Em 589 nm, a calcita tem no ≈ 1,658 e ne ≈ 1,486, um Δn ≈ −0,17 muito grande, enquanto o quartzo tem no ≈ 1,544 e ne ≈ 1,553, Δn ≈ +0,009. Quando a luz entra na calcita obliquamente em relação ao eixo óptico, o fluxo de energia do raio extraordinário se desvia do raio ordinário (walk-off) em até cerca de 6°. Um cristal de 10 mm de comprimento produz, assim, dois feixes separados de cerca de 1 mm, o que é usado em deslocadores de feixe que separam as polarizações espacialmente. O quartzo, de birrefringência pequena, é adequado para lâminas de onda cujo retardo precisa ser ajustado com precisão."
+      },
+      {
+        "h": "Diferenças em relação a fenômenos semelhantes",
+        "p": "A birrefringência é uma diferença de índice de refração e é distinta do dicroísmo, que é uma diferença de absorção. O dicroísmo é usado em polarizadores como os filmes polarizadores. Não há birrefringência para a luz que se propaga ao longo do eixo óptico, nem em meios isotrópicos como o vidro. Mesmo os materiais isotrópicos, porém, se tornam birrefringentes sob tensão (fotoelasticidade), o que perturba a polarização em lentes moldadas e janelas fixadas. As fibras ópticas também têm uma birrefringência fraca causada por uma leve elipticidade do núcleo e por curvaturas. Uma diferença de índice entre as polarizações circulares esquerda e direita é chamada de birrefringência circular, e está na origem da atividade óptica e da rotação de Faraday."
+      },
+      {
+        "h": "Tecnologias que usam a birrefringência",
+        "p": "As lâminas de onda, os prismas polarizadores como os de Glan-Taylor e de Wollaston e os deslocadores de feixe usam diretamente a birrefringência. Em óptica não linear, a birrefringência é usada para o casamento de fase, igualando os índices de refração da onda fundamental e do harmônico. As telas de cristal líquido comutam o brilho reorientando as moléculas do cristal líquido com uma tensão elétrica e controlando assim a diferença de fase produzida pela birrefringência. As fibras mantenedoras de polarização preservam a polarização incorporando, com elementos de aplicação de tensão, uma birrefringência grande, da ordem de 10⁻⁴. Observar uma peça moldada transparente entre polarizadores revela, como franjas coloridas, a birrefringência causada pela tensão residual, o que também é usado na inspeção de qualidade."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre o raio ordinário e o raio extraordinário?",
+        "a": "O raio ordinário é a componente que oscila perpendicularmente ao eixo óptico; ele vê o mesmo índice no em qualquer direção e obedece à lei de Snell. O raio extraordinário oscila em um plano que contém o eixo óptico; seu índice depende da direção, e ele pode se propagar em uma direção que se afasta da lei de Snell."
+      },
+      {
+        "q": "Qual é a diferença entre cristais uniaxiais positivos e negativos?",
+        "a": "Um cristal é positivo se o índice extraordinário ne for maior que o índice ordinário no, e negativo se for menor. O quartzo é um cristal uniaxial positivo (Δn ≈ +0,009), e a calcita, negativo (Δn ≈ −0,17). A distinção importa no projeto de lâminas de onda, porque determina qual eixo é o eixo lento."
+      },
+      {
+        "q": "Como se expressa a intensidade da birrefringência?",
+        "a": "Pela diferença de índices Δn, um número adimensional. Depois de uma placa de espessura d, a diferença de caminho é Δn·d, e dividindo-a pelo comprimento de onda obtém-se o retardo em número de comprimentos de onda. Para a birrefringência induzida por tensão em vidros, a diferença de caminho às vezes é dada em nm/cm."
+      }
+    ],
     "aliases": [
       "dupla refração",
       "birefringence"
@@ -143,6 +607,38 @@
   "ジョーンズ行列": {
     "term": "Matriz de Jones",
     "desc": "Método que representa a polarização pelas amplitudes complexas das componentes x e y (o vetor de Jones) e calcula a ação dos elementos polarizadores com matrizes 2×2. Trata a luz totalmente polarizada.",
+    "about": [
+      {
+        "h": "Uma ferramenta para calcular a polarização",
+        "p": "O cálculo de Jones é um método para calcular a polarização proposto por R. C. Jones em 1941. As componentes x e y do campo elétrico são representadas por um par de números complexos que contêm amplitude e fase (o vetor de Jones), e elementos como polarizadores e lâminas de onda são representados por matrizes complexas 2×2. Por exemplo, a polarização linear horizontal é (1, 0), e a polarização linear a 45° é (1, 1)/√2. Multiplicando as matrizes da direita para a esquerda na ordem em que a luz atravessa os elementos, obtém-se a polarização da luz de saída. A intensidade é a soma dos quadrados dos módulos das duas componentes."
+      },
+      {
+        "h": "Matrizes comuns e um exemplo de cálculo",
+        "p": "Um polarizador horizontal é [[1, 0], [0, 0]], e um polarizador com eixo de transmissão no ângulo θ é [[cos²θ, senθcosθ], [senθcosθ, sen²θ]]. Passar a polarização horizontal (1, 0) por um polarizador a 30° dá uma intensidade de cos²30° = 0,75, de acordo com a lei de Malus. Uma lâmina λ/4 com eixo rápido horizontal é [[1, 0], [0, i]], desprezando um fator de fase global, e aplicá-la duas vezes dá [[1, 0], [0, −1]], uma lâmina λ/2. A matriz de um elemento girado de θ é obtida colocando sua matriz entre matrizes de rotação, como R(−θ)·M·R(θ)."
+      },
+      {
+        "h": "Diferença em relação às matrizes de Mueller",
+        "p": "O cálculo de Jones só trata luz totalmente polarizada, com relação de fase definida. A luz não polarizada ou parcialmente polarizada exige os parâmetros de Stokes, definidos por intensidades médias, e as matrizes de Mueller reais 4×4. Por outro lado, como o cálculo de Jones preserva a fase do campo, ele permite cálculos como a superposição de dois feixes dentro de um interferômetro. É preciso atenção às diferenças de convenção: escrever a fase da onda como exp(i(kz − ωt)) ou como exp(i(ωt − kz)) inverte o sinal de i, e isso troca a identificação da polarização circular direita e esquerda."
+      },
+      {
+        "h": "Usos em comunicações ópticas e projeto óptico",
+        "p": "As mudanças de polarização em uma fibra óptica podem ser representadas como o produto de muitas matrizes de trechos curtos cujo eixo e intensidade de birrefringência variam aleatoriamente, e isso é usado para analisar a dispersão dos modos de polarização. Um método de medição, a análise de autovalores da matriz de Jones, obtém o atraso diferencial de grupo a partir dos autovalores de matrizes de Jones medidas em dois comprimentos de onda próximos. Os receptores coerentes digitais separam os sinais multiplexados por polarização, que transportam dados independentes em duas polarizações, estimando no receptor a inversa da matriz de Jones da fibra. O cálculo de Jones também é usado para acompanhar a polarização no projeto de telas de cristal líquido e de câmeras de polarização."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre as matrizes de Jones e as matrizes de Mueller?",
+        "a": "As matrizes de Jones são matrizes complexas 2×2 que atuam sobre o campo elétrico da luz totalmente polarizada, com relação de fase definida. As matrizes de Mueller são matrizes reais 4×4 que atuam sobre os parâmetros de Stokes; elas tratam também a luz não polarizada e parcialmente polarizada, mas não contêm informação sobre a fase do campo."
+      },
+      {
+        "q": "Em que ordem se multiplicam as matrizes de Jones?",
+        "a": "Coloque a matriz do primeiro elemento que a luz atravessa imediatamente à esquerda do vetor de Jones e multiplique para a esquerda na ordem em que a luz passa. As matrizes dos elementos de polarização em geral não comutam, de modo que mudar a ordem muda o resultado."
+      },
+      {
+        "q": "Como se obtém a matriz de uma lâmina de onda ou de um polarizador girado?",
+        "a": "Coloque a matriz M do elemento com eixo ao longo de x entre matrizes de rotação R(θ), como R(−θ)·M·R(θ). Isso significa girar as coordenadas para alinhá-las com o eixo do elemento, aplicá-lo e voltar à orientação original. A convenção de sinal da rotação varia de uma fonte para outra, por isso convém verificá-la."
+      }
+    ],
     "aliases": [
       "matrizes de Jones",
       "cálculo de Jones",
@@ -154,6 +650,38 @@
   "ファラデー回転子": {
     "term": "Rotador de Faraday",
     "desc": "Elemento que gira a polarização em um material magneto-óptico dentro de um campo magnético. É não recíproco: o sentido da rotação não depende do sentido de propagação da luz, por isso a rotação dobra na ida e volta.",
+    "about": [
+      {
+        "h": "O efeito Faraday e a não reciprocidade",
+        "p": "O efeito Faraday, descoberto por Faraday em 1845, é a rotação da direção de polarização da luz linearmente polarizada que se propaga paralelamente a um campo magnético aplicado a um material. O campo magnético torna ligeiramente diferentes os índices de refração para as polarizações circulares direita e esquerda, de modo que a polarização linear formada pela combinação das duas gira. O sentido da rotação é determinado pela direção do campo magnético, e não pela direção de propagação da luz. Por isso, a luz refletida de volta por um espelho é girada ainda mais no mesmo sentido que na ida, e a rotação dobra na ida e volta. Essa não reciprocidade é a característica principal do rotador de Faraday."
+      },
+      {
+        "h": "Ângulo de rotação e materiais",
+        "p": "O ângulo de rotação é θ = VBL, em que V é a constante de Verdet, B é a densidade de fluxo magnético na direção de propagação e L é o comprimento do material. A constante de Verdet varia muito com o material e o comprimento de onda e, em geral, é maior para comprimentos de onda mais curtos. Quando V é dado em rad/(T·m), converta 45° em cerca de 0,785 rad para o cálculo. Do visível até a banda de 1 µm, usam-se cristais de granada de térbio e gálio (TGG), cuja constante de Verdet é grande, sob o campo intenso de ímãs permanentes. Nas bandas de telecomunicações de 1,3 a 1,55 µm, filmes de granada magnética dopada com bismuto atingem 45° de rotação com espessura de algumas centenas de micrômetros, com a magnetização saturada."
+      },
+      {
+        "h": "Diferenças em relação à atividade óptica e às lâminas de onda",
+        "p": "A atividade óptica do quartzo ou de uma solução de açúcar também gira a polarização, mas é um fenômeno recíproco: a luz refletida que atravessa o material no sentido inverso tem sua rotação desfeita e volta à polarização original. A rotação da polarização por uma lâmina λ/2 também é recíproca. Apenas o rotador de Faraday soma as rotações das duas passagens, e por isso permite distinguir o sentido de ida do de volta. Um equívoco comum é pensar na rotação como, por exemplo, horária em relação à direção de propagação da luz; na verdade, o sentido da rotação de Faraday é fixado em relação ao campo magnético no referencial do laboratório. Invertendo o campo, a rotação também se inverte."
+      },
+      {
+        "h": "Onde é usado",
+        "p": "As principais aplicações dos rotadores de Faraday são os isoladores ópticos, em combinação com polarizadores, e os circuladores ópticos, que encaminham a luz que entra por cada porta para uma porta de saída determinada. O espelho rotador de Faraday, que combina um rotador de 45° com um espelho, devolve a luz com polarização ortogonal à de entrada, o que cancela o efeito da birrefringência da fibra percorrida nos dois sentidos; ele é usado em sensores a fibra e em interferômetros. Os sensores de corrente a fibra óptica, que enrolam a fibra em torno de um condutor e medem a rotação de Faraday causada pelo campo magnético da corrente, são usados em medições em subestações elétricas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre a rotação de Faraday e a atividade óptica?",
+        "a": "A rotação de Faraday é causada por um campo magnético e é não recíproca, com sentido determinado pelo campo, de modo que a rotação dobra na ida e volta. A atividade óptica vem da própria estrutura do material e é recíproca, de modo que a ida e volta desfaz a rotação e restaura a polarização original."
+      },
+      {
+        "q": "Como se calcula o ângulo de rotação de um rotador de Faraday?",
+        "a": "Use θ = VBL (constante de Verdet V, densidade de fluxo magnético B, comprimento L). Quando V está em rad/(T·m), trabalhe com ângulos em radianos, e não em graus; 45°, por exemplo, são cerca de 0,785 rad. A constante de Verdet muda muito com o comprimento de onda, por isso use seu valor no comprimento de onda de operação."
+      },
+      {
+        "q": "O que é um espelho rotador de Faraday?",
+        "a": "É um elemento com um espelho colocado atrás de um rotador de Faraday de 45°. A polarização gira 90° na ida e volta, de modo que a luz que retorna tem polarização ortogonal à de entrada. A birrefringência da fibra no caminho se cancela entre a ida e a volta, o que permite construir interferômetros estáveis mesmo quando a polarização flutua."
+      }
+    ],
     "aliases": [
       "rotadores de Faraday",
       "Faraday rotator"
@@ -162,6 +690,38 @@
   "光アイソレータ": {
     "term": "Isolador óptico",
     "desc": "Elemento que deixa a luz passar em um só sentido. Combina polarizadores com um rotador de Faraday de 45°, bloqueia a luz que volta por reflexão e mantém o laser estável.",
+    "about": [
+      {
+        "h": "Por que são necessários",
+        "p": "O isolador óptico é um elemento que deixa a luz passar em um único sentido e bloqueia a luz que se propaga no sentido oposto. Quando parte da saída de um laser é refletida na face de uma fibra ou em uma lente e volta para a cavidade, a oscilação se torna instável, causando ruído de intensidade, aumento da largura de linha e saltos de modo. Os lasers semicondutores são especialmente sensíveis à luz de retorno, e mesmo uma pequena reflexão pode afetá-los. Nos amplificadores ópticos, os isoladores impedem que a luz de retorno amplificada cause oscilações indesejadas. Por isso, há isoladores incorporados em lasers de largura de linha estreita, transmissores de comunicações ópticas, lasers a fibra e EDFAs."
+      },
+      {
+        "h": "Funcionamento e isolamento",
+        "p": "A configuração básica é um polarizador de entrada, um rotador de Faraday que gira a polarização de 45° e um polarizador de saída inclinado a 45°. A luz no sentido direto é girada e atravessa diretamente o polarizador de saída. A luz no sentido inverso passa pelo polarizador de saída e é então girada mais 45° no mesmo sentido pelo rotador de Faraday, de modo que na entrada fica ortogonal ao polarizador e é bloqueada. O isolamento é expresso em dB; 30 dB reduzem a luz de retorno a 1/1000. Se a rotação se desviar de 45° em apenas 1°, o isolamento fica limitado a cerca de 35 dB, de modo que as variações da rotação com a temperatura e o comprimento de onda limitam o desempenho, e quando é preciso um isolamento maior usam-se dois estágios em cascata."
+      },
+      {
+        "h": "Tipos dependente e independente da polarização",
+        "p": "A configuração acima é o tipo dependente da polarização, para luz de entrada com polarização linear definida, e é usada com lasers em espaço livre. Como a polarização da luz em uma fibra não é fixa, os isoladores para fibra usam o tipo independente da polarização. Nele, em vez de polarizadores, cunhas birrefringentes ou placas deslocadoras dividem a luz em duas polarizações, cada uma é girada pelo rotador de Faraday, e as duas são recombinadas; a luz no sentido inverso é desviada para fora do núcleo da fibra de entrada e não se acopla a ela. Uma lâmina λ/4 com um divisor de feixe polarizador também pode separar a luz de retorno, mas não bloqueia reflexões que alteram a polarização e não é um verdadeiro isolador."
+      },
+      {
+        "h": "Circuladores ópticos e integração",
+        "p": "O elemento que, em vez de descartar a luz de retorno bloqueada, a envia para outra porta de saída é o circulador óptico, usado para separar transmissão e recepção em uma única fibra ou para extrair a luz refletida por uma rede de Bragg em fibra. O desempenho de um isolador é descrito pelo isolamento e também pela perda de inserção no sentido direto, pela faixa de comprimentos de onda utilizável e pela potência suportada. Nos chips de fotônica de silício, é difícil construir materiais magneto-ópticos no mesmo substrato, por isso a integração de isoladores continua sendo um grande desafio, e abordagens como a colagem de granada magnética estão sendo estudadas."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que os lasers precisam de isoladores ópticos?",
+        "a": "Porque a luz de retorno que entra em um laser perturba as condições da cavidade e causa ruído de intensidade, aumento da largura de linha e saltos de comprimento de onda. Os lasers semicondutores e os lasers de largura de linha estreita são especialmente sensíveis, por isso um isolador é colocado logo após a saída para bloquear a luz de retorno."
+      },
+      {
+        "q": "O que significa um isolamento de 30 dB em um isolador óptico?",
+        "a": "Significa que a potência da luz que entra no sentido inverso é reduzida a 1/1000; 40 dB significam 1/10000. Quando é preciso um isolamento maior, usam-se dois isoladores em cascata. Ao mesmo tempo, exige-se uma perda de inserção baixa no sentido direto."
+      },
+      {
+        "q": "Qual é a diferença entre um isolador óptico e um circulador óptico?",
+        "a": "O isolador bloqueia e descarta a luz que se propaga no sentido inverso, enquanto o circulador encaminha essa luz para outra porta, onde ela pode ser usada. Ambos se baseiam na não reciprocidade do rotador de Faraday, e os circuladores são usados, por exemplo, para separar sinais transmitidos e recebidos."
+      }
+    ],
     "aliases": [
       "isoladores ópticos",
       "optical isolator"
@@ -170,6 +730,38 @@
   "誘導放出": {
     "term": "Emissão estimulada",
     "desc": "Fenômeno em que um fóton que chega a um átomo excitado faz com que ele emita um fóton com a mesma frequência, fase, direção e polarização. É o princípio da amplificação nos lasers.",
+    "about": [
+      {
+        "h": "A origem da palavra laser",
+        "p": "A emissão estimulada ocorre quando um fóton cuja energia é igual à diferença entre dois níveis encontra um átomo ou molécula no nível superior: estimulado por esse fóton, o átomo passa para o nível inferior e emite um fóton com a mesma frequência, fase, direção e polarização que o fóton incidente. Einstein previu sua existência em 1917 a partir das condições de equilíbrio entre a matéria e a radiação térmica. Como um fóton se torna dois, a luz é amplificada, e essa é a origem do nome laser (Light Amplification by Stimulated Emission of Radiation, amplificação da luz por emissão estimulada de radiação)."
+      },
+      {
+        "h": "Relação com a absorção e a emissão espontânea",
+        "p": "A probabilidade de emissão estimulada é proporcional à intensidade da luz incidente e é descrita pelo coeficiente B de Einstein. Desprezando a degenerescência, os coeficientes de absorção e de emissão estimulada são iguais, de modo que o que prevalece é decidido pelas populações dos níveis superior e inferior. Já a razão entre o coeficiente de emissão espontânea A e B é proporcional ao cubo da frequência. Na radiação em equilíbrio térmico, a razão entre emissão estimulada e emissão espontânea é 1/(exp(hν/kT) − 1): cerca de 10⁻²¹ a 300 K para luz de 1 µm, mas cerca de 6000 para micro-ondas de 1 GHz, invertendo a relação. Como a emissão espontânea fica mais forte para comprimentos de onda mais curtos, isso foi uma das razões de o maser ter sido realizado antes do laser."
+      },
+      {
+        "h": "Equívocos comuns",
+        "p": "Na emissão estimulada, o fóton incidente não é absorvido e dividido em dois; ele permanece como está, e um fóton a mais, no mesmo estado, é acrescentado. Além disso, a emissão estimulada nem sempre aumenta a luz. Os átomos no nível inferior absorvem luz com a mesma probabilidade, de modo que só há amplificação líquida com uma inversão de população, em que há mais átomos no nível superior. A emissão espontânea continua a ocorrer mesmo com inversão. Essa luz de emissão espontânea dá início à oscilação laser, mas, quando amplificada, torna-se ruído (ASE) e determina a figura de ruído dos amplificadores ópticos."
+      },
+      {
+        "h": "Projeto do ganho e usos além dos lasers",
+        "p": "A amplificação é expressa pelo coeficiente de ganho g = σΔN, o produto da seção de choque de emissão estimulada σ pela inversão de população ΔN. Essa relação é a base do projeto de lasers de estado sólido, amplificadores a fibra e amplificadores ópticos semicondutores. A emissão estimulada também é usada em microscopia: no microscópio STED, um feixe em forma de rosca leva as moléculas fluorescentes excitadas na periferia do foco à emissão estimulada, apagando sua fluorescência, de modo que apenas uma região menor que o limite de difração brilha. Os EDFAs das comunicações ópticas também amplificam os sinais por emissão estimulada dos íons de érbio."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre emissão estimulada e emissão espontânea?",
+        "a": "A emissão espontânea é a emissão de um fóton por um átomo no nível superior sem nenhum estímulo, com direção e fase aleatórias. A emissão estimulada é provocada por um fóton incidente, e o fóton emitido tem a mesma frequência, fase, direção e polarização que o incidente. A luz dos LEDs vem principalmente da emissão espontânea."
+      },
+      {
+        "q": "A emissão estimulada sozinha amplifica a luz?",
+        "a": "Não. A absorção pelos átomos no nível inferior ocorre com a mesma probabilidade, por isso é necessária uma inversão de população, com mais átomos no nível superior que no inferior. Em equilíbrio térmico, o nível inferior é mais populado, por isso a inversão é criada por bombeamento."
+      },
+      {
+        "q": "Quem previu a emissão estimulada?",
+        "a": "Einstein a previu em 1917, considerando o equilíbrio entre a matéria e a radiação térmica. A absorção e a emissão espontânea sozinhas não reproduziam a lei de radiação de Planck, e foi preciso acrescentar a emissão estimulada. O laser foi realizado em 1960."
+      }
+    ],
     "aliases": [
       "stimulated emission"
     ]
@@ -177,6 +769,38 @@
   "反転分布": {
     "term": "Inversão de população",
     "desc": "Estado em que há mais átomos no nível superior do que no inferior. Não ocorre em equilíbrio térmico e é criada pelo bombeamento. É a condição para que a luz seja amplificada pela emissão estimulada em vez de absorvida.",
+    "about": [
+      {
+        "h": "Uma inversão do equilíbrio térmico",
+        "p": "A inversão de população é o estado em que o número de átomos N₂ no nível superior de dois níveis é maior que o número N₁ no nível inferior (N₂/g₂ > N₁/g₁, considerando a degenerescência). Em equilíbrio térmico, as populações seguem a distribuição de Boltzmann N₂/N₁ = exp(−ΔE/kT), de modo que o nível inferior é sempre mais populado e a luz é absorvida e enfraquece. Com a inversão, a emissão estimulada supera a absorção, e a luz que passa é amplificada. Formalmente, isso corresponde a uma distribuição de Boltzmann com temperatura negativa, por isso às vezes se fala em estado de temperatura negativa."
+      },
+      {
+        "h": "Número de níveis e bombeamento",
+        "p": "Em um sistema com apenas dois níveis, a excitação óptica equilibra a absorção com a emissão estimulada e apenas aproxima N₂ de N₁. Por isso os lasers usam sistemas de três ou quatro níveis, em que os átomos excitados para um nível mais alto decaem rapidamente para o nível superior do laser. Em um sistema de três níveis como o rubi, o estado fundamental é o nível inferior do laser, de modo que é preciso bombear mais da metade dos átomos. Em um sistema de quatro níveis como o Nd:YAG, o nível inferior se esvazia rapidamente, de modo que a inversão se forma com pouca excitação. Materiais com tempo de vida longo no nível superior armazenam energia com mais facilidade: cerca de 230 µs no Nd:YAG e cerca de 10 ms no érbio em sílica."
+      },
+      {
+        "h": "Limiar de oscilação e grampeamento do ganho",
+        "p": "Ter uma inversão não basta para que um laser oscile. O ganho em uma volta completa na cavidade precisa superar as perdas por transmissão nos espelhos e as perdas internas, e a inversão nesse ponto é chamada de inversão de limiar. Mesmo que o bombeamento aumente acima do limiar, em regime estacionário a inversão permanece praticamente fixa no valor de limiar (grampeamento do ganho, gain clamping), e o bombeamento extra é convertido em luz de saída. O chaveamento Q mantém as perdas altas para impedir a oscilação, acumula uma inversão muito acima do limiar e então a libera de uma só vez."
+      },
+      {
+        "h": "Inversão em semicondutores e amplificadores ópticos",
+        "p": "Nos lasers semicondutores, a inversão não se dá entre níveis atômicos, mas com os elétrons da banda de condução e as lacunas da banda de valência. Quando a corrente injetada torna a separação entre os quase-níveis de Fermi dos elétrons e das lacunas maior que a banda proibida, a luz com energias entre eles é amplificada (condição de Bernard-Duraffourg). Nos amplificadores ópticos, uma inversão incompleta afeta a quantidade de ruído; a figura de ruído de um EDFA só se aproxima do limite quântico de cerca de 3 dB quando a inversão é quase completa. Os métodos de bombeamento incluem lâmpadas de flash, lasers semicondutores, descargas elétricas e injeção de corrente."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que não pode haver inversão de população em equilíbrio térmico?",
+        "a": "Porque em equilíbrio térmico as populações seguem a distribuição de Boltzmann N₂/N₁ = exp(−ΔE/kT), de modo que os níveis de energia mais alta são sempre menos populados. Por mais que a temperatura aumente, N₂ apenas se aproxima de N₁; o nível superior nunca fica mais populado."
+      },
+      {
+        "q": "Qual é a diferença entre lasers de três níveis e de quatro níveis?",
+        "a": "Em um sistema de três níveis, o nível inferior do laser é o estado fundamental, por isso é preciso excitar mais da metade dos átomos para chegar à inversão. Em um sistema de quatro níveis, o nível inferior fica acima do estado fundamental e se esvazia rapidamente, por isso a inversão se forma com pouca excitação e é mais fácil manter o limiar baixo."
+      },
+      {
+        "q": "Como se cria a inversão de população em um laser semicondutor?",
+        "a": "Uma corrente no sentido direto através da junção pn injeta elétrons e lacunas na camada ativa. Quando a separação entre os quase-níveis de Fermi passa da banda proibida, o meio tem ganho para a luz, e a corrente em que esse ganho supera as perdas da cavidade é a corrente de limiar."
+      }
+    ],
     "aliases": [
       "inversão de populações",
       "population inversion"
@@ -185,6 +809,38 @@
   "縦モード": {
     "term": "Modo longitudinal",
     "desc": "Frequência de oscilação em que o caminho óptico de ida e volta no ressonador é um múltiplo inteiro do comprimento de onda. O espaçamento é c/(2nL) e é maior quanto mais curto o ressonador.",
+    "about": [
+      {
+        "h": "Ondas estacionárias no ressonador",
+        "p": "Em um ressonador laser, apenas a luz para a qual o caminho óptico de ida e volta 2nL é um número inteiro de comprimentos de onda volta em fase a cada ida e volta e se reforça. As frequências que satisfazem essa condição, νq = qc/(2nL), com q inteiro, são os modos longitudinais. O inteiro q é muito grande: cerca de 950000 para um laser de He-Ne de 30 cm em 632,8 nm. O espaçamento entre modos longitudinais adjacentes é c/(2nL), e fica mais estreito à medida que a cavidade se alonga. Quando o meio tem dispersão, usa-se o índice de grupo no lugar de n."
+      },
+      {
+        "h": "Quantos modos longitudinais",
+        "p": "O número de modos longitudinais que de fato oscilam depende de quantos cabem dentro da banda de ganho. Um laser de He-Ne de 30 cm tem espaçamento entre modos de cerca de 500 MHz, de modo que cerca de três modos cabem na largura do ganho do neônio (cerca de 1,5 GHz). Um laser a fibra de 10 m (n = 1,45) tem um espaçamento de apenas cerca de 10 MHz, de modo que um número muito grande de modos pode oscilar. Por outro lado, em um laser de emissão pela superfície (VCSEL), com cavidade de apenas alguns micrômetros, o espaçamento entre modos é maior que a largura do ganho, e há um único modo longitudinal."
+      },
+      {
+        "h": "Diferença em relação aos modos transversais",
+        "p": "Os modos longitudinais são ondas estacionárias ao longo da direção de propagação e determinam as frequências de oscilação. Já os modos transversais (TEMmn) descrevem a forma da distribuição de intensidade na seção transversal do feixe. A expressão laser monomodo é usada tanto para um único modo transversal (TEM00) quanto para um único modo longitudinal (frequência única), por isso é preciso atenção ao sentido. Com vários modos longitudinais, um detector vê batimentos na frequência do espaçamento entre modos, ocorrem saltos de modo quando a temperatura troca bruscamente o modo de oscilação, e o comprimento de coerência fica mais curto."
+      },
+      {
+        "h": "Como obter um único modo longitudinal, e o uso de muitos modos",
+        "p": "As aplicações que precisam de uma única frequência limitam a oscilação a um único modo longitudinal. Os métodos usados incluem os lasers DFB e DBR, com redes incorporadas à cavidade, um étalon dentro da cavidade que só transmite um modo específico, e ressonadores em anel, que evitam a queima espacial de buraco. O conteúdo de modos longitudinais pode ser examinado com um interferômetro de Fabry-Pérot de varredura ou pelas frequências de batimento vistas em um fotodetector rápido. Por outro lado, travar as fases de muitos modos longitudinais produz pulsos ultracurtos por travamento de modos, e o espectro resultante forma um pente de frequências óptico de espaçamento uniforme."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o espaçamento entre modos longitudinais?",
+        "a": "O espaçamento em frequência é Δν = c/(2nL), em que L é o comprimento da cavidade e n é o índice de refração (o índice de grupo, se o meio tiver dispersão). Para converter em espaçamento em comprimento de onda, use Δλ = λ²Δν/c. Para uma cavidade de 30 cm no ar, por exemplo, o espaçamento é de cerca de 500 MHz."
+      },
+      {
+        "q": "Qual é a diferença entre modos longitudinais e modos transversais?",
+        "a": "Os modos longitudinais são ondas estacionárias ao longo do eixo da cavidade e determinam as frequências de oscilação e seu espaçamento. Os modos transversais são as formas da distribuição de intensidade na seção transversal do feixe (TEM00, TEM01 etc.) e determinam como o feixe diverge e quão bem ele pode ser focalizado. Os dois precisam ser selecionados separadamente."
+      },
+      {
+        "q": "Como fazer um laser oscilar em um único modo longitudinal?",
+        "a": "Os métodos incluem encurtar a cavidade para que o espaçamento entre modos supere a largura do ganho, selecionar o comprimento de onda com uma rede, como nos lasers DFB e DBR, e inserir um étalon que deixe passar apenas um modo. Esses lasers são usados em medições e comunicações que exigem largura de linha estreita e comprimento de coerência longo."
+      }
+    ],
     "aliases": [
       "modos longitudinais",
       "longitudinal mode"
@@ -193,6 +849,34 @@
   "ガウシアンビーム": {
     "term": "Feixe gaussiano",
     "desc": "Forma básica da luz laser, cuja intensidade na seção transversal segue uma distribuição gaussiana. Sua propagação é determinada pelo raio da cintura w₀ e pelo comprimento de Rayleigh πw₀²/λ.",
+    "about": [
+      {
+        "h": "A forma de um feixe gaussiano",
+        "p": "O modo transversal fundamental (TEM00) de muitos lasers tem uma distribuição de intensidade gaussiana, I(r) = I₀ exp(−2r²/w²). Aqui w é o raio do feixe, no qual a intensidade cai a 1/e² (cerca de 13,5 %) do valor central. O raio muda com a propagação como w(z) = w₀√(1 + (z/zR)²), e o ponto mais estreito é chamado de cintura do feixe (raio w₀). zR = πw₀²/λ é o comprimento de Rayleigh; a uma distância zR da cintura, o raio aumentou por um fator √2. O feixe gaussiano é uma solução especial que se alarga por difração sem mudar de forma, e depois de atravessar uma lente continua sendo um feixe gaussiano, com outra cintura."
+      },
+      {
+        "h": "Divergência e frente de onda",
+        "p": "Suficientemente longe da cintura, o raio do feixe cresce proporcionalmente à distância, com semiângulo θ = λ/(πw₀). Quanto mais estreita a cintura, maior a divergência, de modo que w₀θ = λ/π permanece constante. Por exemplo, em 1064 nm com w₀ = 0,5 mm, ela é de cerca de 0,68 mrad. A frente de onda é plana na cintura e se aproxima de uma esfera longe dela, com raio de curvatura mínimo de 2zR em z = zR. Além disso, ao passar pela cintura, o feixe adquire uma fase extra de π em relação a uma onda plana, a fase de Gouy. Essas propriedades se resumem no parâmetro complexo do feixe q = z + izR, cujas mudanças podem ser calculadas com matrizes ABCD."
+      },
+      {
+        "h": "Focalização e feixes reais",
+        "p": "Quando um feixe colimado de raio w é focalizado por uma lente de distância focal f, o raio da cintura é de cerca de λf/(πw). Em 1,064 µm, com w = 5 mm e f = 100 mm, ele é de cerca de 6,8 µm. Para reduzir o ponto focal, use uma distância focal menor ou amplie o feixe de entrada com um expansor de feixe. A profundidade de foco 2zR, porém, diminui em proporção ao quadrado do raio do ponto. Os feixes reais se afastam da gaussiana ideal, e o produto do raio da cintura pela divergência é M² vezes o valor ideal. Na usinagem a laser, os feixes com M² próximo de 1, como os dos lasers a fibra, conseguem conciliar um ponto pequeno com uma profundidade de foco longa."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Onde se mede o raio de um feixe gaussiano?",
+        "a": "Em geral usa-se o raio em que a intensidade cai a 1/e² (cerca de 13,5 %) do valor central. Cerca de 86 % da potência total fica dentro desse círculo. A largura total a meia altura (FWHM) também é usada, com FWHM ≈ 1,18w."
+      },
+      {
+        "q": "Como se obtém a divergência de um feixe gaussiano?",
+        "a": "O semiângulo no campo distante é θ = λ/(πw₀). Quanto menor o raio da cintura w₀, mais o feixe diverge. Para feixes reais, multiplique por M²: θ = M²λ/(πw₀)."
+      },
+      {
+        "q": "Qual é o tamanho do ponto quando um feixe é focalizado por uma lente?",
+        "a": "Quando um feixe gaussiano colimado (raio w) é focalizado por uma lente de distância focal f, o raio da cintura é de cerca de λf/(πw). Ampliar o feixe de entrada ou encurtar a distância focal o torna menor."
+      }
+    ],
     "aliases": [
       "feixes gaussianos",
       "Gaussian beam"
@@ -201,6 +885,34 @@
   "レイリー長": {
     "term": "Comprimento de Rayleigh",
     "desc": "Distância zR = πw₀²/λ desde a cintura de um feixe gaussiano até o ponto em que o raio do feixe aumenta √2 vezes. Indica aproximadamente a região em que o feixe pode ser considerado colimado.",
+    "about": [
+      {
+        "h": "O que significa o comprimento de Rayleigh",
+        "p": "O comprimento de Rayleigh zR = πw₀²/λ expressa até que distância da cintura um feixe gaussiano permanece estreito. Em z = zR, o raio do feixe aumentou por um fator √2, a área da seção transversal dobrou, a intensidade central caiu à metade, e o raio de curvatura da frente de onda está no seu mínimo de 2zR. A faixa ±zR em torno da cintura (comprimento 2zR) é chamada de parâmetro confocal e serve de referência para a região em que o feixe pode ser considerado praticamente colimado, isto é, para a profundidade de foco. Além de zR, o feixe se alarga linearmente com o ângulo de divergência λ/(πw₀) e pode ser considerado no campo distante."
+      },
+      {
+        "h": "Uma ideia dos valores",
+        "p": "O comprimento de Rayleigh é proporcional ao quadrado do raio da cintura e inversamente proporcional ao comprimento de onda. Em 1064 nm, com w₀ = 0,5 mm, zR ≈ 0,74 m, mas focalizar até w₀ = 10 µm o reduz a cerca de 0,3 mm. Reduzir a cintura à metade reduz o comprimento de Rayleigh a 1/4, de modo que a profundidade de foco diminui bruscamente para pontos menores. Para o mesmo raio de cintura, a luz de comprimento de onda mais curto tem comprimento de Rayleigh maior: o dobro para o verde (532 nm) em relação a 1064 nm. Para feixes reais com M² maior que 1, zR = πw₀²/(M²λ), menor por um fator M²."
+      },
+      {
+        "h": "Uso no projeto",
+        "p": "Na usinagem a laser, cortar materiais espessos exige profundidade de foco, e um ponto pequeno demais deixa o comprimento de Rayleigh curto demais. O compromisso entre o tamanho do ponto e o comprimento de Rayleigh é definido pela distância focal da lente e pelo diâmetro do feixe. No acoplamento a uma fibra óptica, coloca-se na face da fibra uma cintura igual à do modo da fibra. No projeto de ressonadores, a cintura e o comprimento de Rayleigh também decorrem da condição de que as curvaturas dos espelhos coincidam com a curvatura da frente de onda do feixe. Na comunicação óptica em espaço livre e no LiDAR, o feixe transmitido é ampliado para aumentar o comprimento de Rayleigh e limitar o alargamento a grandes distâncias."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a fórmula do comprimento de Rayleigh?",
+        "a": "zR = πw₀²/λ (w₀ é o raio da cintura do feixe e λ é o comprimento de onda no meio). Para feixes reais, divida por M²: zR = πw₀²/(M²λ)."
+      },
+      {
+        "q": "Qual é a relação entre o comprimento de Rayleigh e a profundidade de foco?",
+        "a": "Dentro de ±zR em torno da cintura, o raio do feixe fica dentro de √2 vezes o seu mínimo. Esse comprimento, 2zR (o parâmetro confocal), é muito usado como referência para a profundidade de foco."
+      },
+      {
+        "q": "O que acontece com o comprimento de Rayleigh quando o ponto focal é reduzido?",
+        "a": "Ele diminui em proporção ao quadrado do raio da cintura: reduzir o raio à metade reduz o comprimento de Rayleigh a 1/4. Um ponto pequeno e uma profundidade de foco longa são difíceis de conciliar."
+      }
+    ],
     "aliases": [
       "distância de Rayleigh",
       "Rayleigh range",
@@ -210,6 +922,38 @@
   "M²": {
     "term": "Fator de qualidade do feixe (M²)",
     "desc": "Indica a qualidade do feixe: quantas vezes o produto do raio da cintura pelo ângulo de divergência de um feixe real é maior que o de um feixe gaussiano ideal. Quanto mais próximo de 1, melhor.",
+    "about": [
+      {
+        "h": "A qualidade do feixe em um único número",
+        "p": "O M² expressa quão próximo um feixe laser real está de um feixe gaussiano ideal (TEM00) de mesmo comprimento de onda. O produto do raio da cintura w₀ pelo semiângulo de divergência no campo distante θ, chamado de produto de parâmetros do feixe (BPP), tem seu valor mínimo λ/π para um feixe gaussiano ideal e é igual a M²λ/π para um feixe real. Por isso o M² é sempre maior ou igual a 1. Em 1,064 µm, o BPP para M² = 1 é de cerca de 0,34 mm·mrad. Quanto maior o M², maior o ponto focalizado a partir de um feixe de mesmo diâmetro."
+      },
+      {
+        "h": "Como é medido",
+        "p": "O M² não pode ser obtido medindo o diâmetro do feixe em uma única posição. Segundo a norma internacional ISO 11146, mede-se o diâmetro de um feixe focalizado por uma lente em pelo menos 10 posições, incluindo pontos perto da cintura (dentro do comprimento de Rayleigh) e pontos afastados dela (além do dobro do comprimento de Rayleigh), e ajusta-se uma curva da forma w(z)² = w₀² + (M²λ/(πw₀))²(z − z₀)². O diâmetro usado é o diâmetro D4σ, calculado a partir dos momentos de segunda ordem da distribuição de intensidade. Os diâmetros medidos pelos métodos de lâmina (knife-edge) ou de fenda podem diferir do diâmetro D4σ, dependendo da forma da distribuição."
+      },
+      {
+        "h": "Equívocos comuns",
+        "p": "Apenas um feixe gaussiano puro tem M² = 1; os modos transversais de ordem superior têm valores de M² definidos. Para os modos de Hermite-Gauss TEMmn, por exemplo, o M² na direção x é 2m + 1, de modo que o TEM10 tem 3. Alguns feixes, como os dos lasers semicondutores, têm M² muito diferentes nas duas direções transversais e são especificados separadamente para cada uma. Lentes e espelhos ideais não alteram o M², mas lentes com aberrações, a lente térmica e o acoplamento desalinhado a fibras o pioram. A menos que se use um filtro espacial com perdas, nenhum sistema óptico pode reduzir o M²."
+      },
+      {
+        "h": "Uso em usinagem e acoplamento",
+        "p": "O raio de um ponto focalizado é proporcional ao M², e, para o mesmo tamanho de ponto, a profundidade de foco diminui em proporção inversa ao M². Por isso, a usinagem fina e a propagação a longas distâncias exigem feixes com M² pequeno, e o acoplamento a uma fibra monomodo só é eficiente para feixes com M² próximo de 1. O brilho (radiância), a potência por unidade de área e por unidade de ângulo sólido, é aproximadamente proporcional a P/(M²λ)², de modo que, para a mesma potência de saída, dobrar o M² reduz o brilho a cerca de um quarto. As especificações de lasers indicam a capacidade de focalização pelo M² ou pelo BPP."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a relação entre M² e BPP?",
+        "a": "O produto de parâmetros do feixe (raio da cintura × semiângulo de divergência) é igual a M²λ/π. O M² é uma grandeza adimensional, normalizada pelo comprimento de onda, enquanto o BPP tem unidades como mm·mrad; o BPP é conveniente para comparar a capacidade de focalização de lasers de comprimentos de onda diferentes."
+      },
+      {
+        "q": "Como se mede o M²?",
+        "a": "Focalize o feixe com uma lente, meça o diâmetro do feixe (o diâmetro D4σ, de momentos de segunda ordem) em pelo menos 10 posições antes e depois da cintura e ajuste a equação de propagação. O procedimento é definido na norma ISO 11146. O diâmetro em uma única posição não basta."
+      },
+      {
+        "q": "O M² pode ser menor que 1?",
+        "a": "Não. O produto do raio da cintura pela divergência de um feixe gaussiano ideal, λ/π, é o mínimo permitido pela difração. Se uma medição der menos que 1, pode haver um problema na definição do diâmetro do feixe, nas posições de medição ou no tratamento da luz de fundo."
+      }
+    ],
     "aliases": [
       "fator M²",
       "M-squared",
@@ -219,6 +963,38 @@
   "Qスイッチ": {
     "term": "Chaveamento Q (Q-switching)",
     "desc": "Método que mantém alta a perda do ressonador para acumular energia no meio de ganho e depois reduz a perda de repente para liberá-la, obtendo pulsos da ordem de ns com alta potência de pico.",
+    "about": [
+      {
+        "h": "Acumular energia e liberá-la de uma só vez",
+        "p": "O chaveamento Q produz pulsos intensos comutando no tempo o fator Q da cavidade (o quão baixas são suas perdas). Se o bombeamento continua enquanto perdas altas impedem a oscilação, a energia se acumula no meio de ganho como inversão de população. Quando as perdas são então reduzidas bruscamente, a luz é amplificada de forma explosiva com um ganho muito acima do limiar, e a energia acumulada sai como um pulso curto. O chaveamento Q foi realizado no início da década de 1960 e fornece potências de pico da ordem de megawatts com larguras de pulso da ordem de nanossegundos. Um pulso de 10 mJ e 10 ns, por exemplo, tem potência de pico de cerca de 1 MW."
+      },
+      {
+        "h": "Chaveamento Q ativo e passivo",
+        "p": "No chaveamento Q ativo, as perdas são comutadas por um sinal externo. Os chaveadores Q eletro-ópticos, que usam uma célula de Pockels, comutam rapidamente e são adequados para pulsos de alta energia. Os dispositivos acusto-ópticos são muito usados para produzir trens de pulsos com taxas de repetição de quilohertz a dezenas de quilohertz em lasers bombeados continuamente. No chaveamento Q passivo, coloca-se na cavidade um absorvedor saturável como o Cr:YAG; quando a luz fica intensa o bastante para saturar a absorção, as perdas caem automaticamente. Ele exige poucos componentes e pode ser compacto, mas o instante do pulso não pode ser sincronizado com precisão a um sinal externo."
+      },
+      {
+        "h": "O que determina a largura e a energia do pulso",
+        "p": "A largura do pulso de um laser com chaveamento Q é determinada pelo tempo de ida e volta na cavidade e pela intensidade do ganho, e diminui à medida que a cavidade fica mais curta. Os lasers de microchip, com cavidades de alguns milímetros, podem produzir pulsos menores que um nanossegundo. A energia do pulso é determinada pela energia que pode ser armazenada no nível superior, por isso são adequados materiais com tempo de vida longo no nível superior, como o Nd:YAG (cerca de 230 µs). Aumentar a taxa de repetição acima do inverso do tempo de vida reduz a energia acumulada por pulso, tornando os pulsos mais fracos e mais longos. Os lasers semicondutores, de tempo de vida curto, não são adequados ao chaveamento Q."
+      },
+      {
+        "h": "Diferenças em relação a outros métodos de geração de pulsos, e aplicações",
+        "p": "O chaveamento Q libera um pulso grande de cada vez comutando as perdas da cavidade, com larguras de pulso da ordem de nanossegundos. O travamento de modos trava as fases de muitos modos longitudinais e fornece pulsos curtos, de picossegundos a femtossegundos, com taxas de repetição altas. O chaveamento de ganho, que modula a corrente de um laser semicondutor, é outro método distinto. Aproveitando sua alta potência de pico, os lasers com chaveamento Q são usados em marcação e microusinagem, espectroscopia de ruptura induzida por laser, telêmetros, remoção de tatuagens e geração de luz verde de 532 nm por geração de segundo harmônico."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se estima a potência de pico de um pulso com chaveamento Q?",
+        "a": "Dividir a energia do pulso pela largura do pulso dá uma estimativa; 10 mJ em 10 ns dão cerca de 1 MW. O valor exato depende da forma temporal do pulso, que muda o fator numérico. A potência média é a energia do pulso multiplicada pela taxa de repetição."
+      },
+      {
+        "q": "Qual é a diferença entre chaveamento Q ativo e passivo?",
+        "a": "O chaveamento Q ativo comuta uma célula de Pockels ou um dispositivo acusto-óptico com um sinal externo, de modo que o instante do pulso pode ser controlado. O chaveamento Q passivo usa um absorvedor saturável que reduz as perdas automaticamente à medida que a luz se intensifica; é simples e compacto, mas o instante do pulso flutua (jitter)."
+      },
+      {
+        "q": "Quais materiais laser são adequados ao chaveamento Q?",
+        "a": "Materiais com tempo de vida longo no nível superior, capazes de armazenar energia. São comuns o Nd:YAG (cerca de 230 µs), o Nd:YVO₄ e os lasers de estado sólido e a fibra à base de Yb ou Er. Os lasers semicondutores, com tempos de vida dos portadores da ordem de nanossegundos, não são adequados ao chaveamento Q e usam o chaveamento de ganho."
+      }
+    ],
     "aliases": [
       "Q-switch",
       "comutação Q"
@@ -227,6 +1003,38 @@
   "モード同期": {
     "term": "Travamento de modos (mode-locking)",
     "desc": "Método que sincroniza as fases de muitos modos longitudinais para obter pulsos ultracurtos, de ps a fs. A frequência de repetição é o inverso do tempo de ida e volta no ressonador, c/(2L).",
+    "about": [
+      {
+        "h": "Travar as fases dos modos longitudinais",
+        "p": "O travamento de modos produz pulsos curtos travando as fases dos muitos modos longitudinais que oscilam simultaneamente em uma cavidade, de modo que interfiram entre si. Quando modos de espaçamento uniforme se somam em fase, eles se reforçam em um instante a cada ida e volta na cavidade e quase se cancelam no intervalo. O resultado é um único pulso que circula na cavidade, com uma parte extraída cada vez que ele chega ao espelho de saída. A largura do pulso é aproximadamente o inverso da largura espectral total, de modo que, quanto mais modos travados, mais curto o pulso."
+      },
+      {
+        "h": "Taxa de repetição e potência de pico",
+        "p": "A taxa de repetição é o inverso do tempo de ida e volta: c/(2L) para uma cavidade linear, e c dividido pelo caminho óptico de uma volta para uma cavidade em anel. Um anel de fibra de 2 m (n = 1,47) dá cerca de 100 MHz. A largura do pulso é determinada pela largura espectral; para pulsos de forma sech², o produto tempo-largura de banda é de cerca de 0,315, de modo que um pulso de 100 fs precisa de cerca de 3,2 THz de banda. Um laser com potência média de 1 W e taxa de repetição de 80 MHz fornece 12,5 nJ por pulso, e com 100 fs a potência de pico chega a cerca de 125 kW (estimativa aproximada que trata o pulso como retangular)."
+      },
+      {
+        "h": "Travamento de modos ativo e passivo",
+        "p": "No travamento de modos ativo, um modulador dentro da cavidade é acionado em uma frequência igual ao espaçamento entre modos, forçando as fases dos modos a se alinharem. No travamento de modos passivo, usa-se um mecanismo em que a luz mais intensa sofre menos perdas, de modo que um pulso curto se forma espontaneamente. Exemplos típicos são os espelhos absorvedores saturáveis semicondutores (SESAM) e o travamento de modos por lente Kerr, em que o efeito Kerr focaliza bem apenas a luz intensa; em lasers de titânio-safira, foram relatados pulsos menores que 10 fs. Pulsos mais curtos são mais afetados pela dispersão da cavidade, que é compensada com pares de prismas ou espelhos com chirp."
+      },
+      {
+        "h": "Equívocos comuns e aplicações",
+        "p": "O período de repetição e a largura do pulso são coisas diferentes: uma taxa de repetição de 100 MHz apenas significa que chega um pulso a cada 10 ns, enquanto a largura do pulso é de femtossegundos a picossegundos. Enquanto o chaveamento Q acumula e libera energia, o travamento de modos apenas alinha as fases, por isso a energia de cada pulso é pequena e, quando necessário, é aumentada por amplificação de pulsos com chirp (CPA). Os lasers com travamento de modos são usados na microscopia de excitação por dois fótons, na microusinagem com efeitos térmicos reduzidos e na espectroscopia com resolução temporal, e seus modos longitudinais igualmente espaçados servem como pentes de frequências ópticos para a medição precisa de frequências."
+      }
+    ],
+    "faq": [
+      {
+        "q": "O que determina a taxa de repetição de um laser com travamento de modos?",
+        "a": "O inverso do tempo que a luz leva para dar uma volta completa (ida e volta) na cavidade: c/(2L) para uma cavidade linear no ar, em que L é o comprimento da cavidade. Ela é igual ao espaçamento entre modos longitudinais. Para a mesma potência média, alongar a cavidade para reduzir a taxa de repetição aumenta a energia por pulso."
+      },
+      {
+        "q": "O que determina a largura do pulso no travamento de modos?",
+        "a": "A largura do espectro com fases travadas; quanto mais largo, mais curto o pulso. O produto tempo-largura de banda (cerca de 0,315 para pulsos sech²) dá o limite inferior. Materiais com banda de ganho larga, como o titânio-safira, dão pulsos mais curtos, e também é preciso compensar a dispersão."
+      },
+      {
+        "q": "Qual é a diferença entre travamento de modos e chaveamento Q?",
+        "a": "O chaveamento Q comuta as perdas para liberar de uma só vez a energia acumulada na inversão de população, produzindo pulsos da ordem de nanossegundos. O travamento de modos trava as fases dos modos longitudinais e fornece pulsos de picossegundos a femtossegundos com taxas de repetição altas (aproximadamente de megahertz a gigahertz)."
+      }
+    ],
     "aliases": [
       "mode locking",
       "bloqueio de modos"
@@ -235,6 +1043,34 @@
   "シングルモードファイバ": {
     "term": "Fibra monomodo",
     "desc": "Fibra óptica em que só se propaga o modo fundamental; em uma fibra de índice degrau, a condição é um número V menor que 2,405. Como não tem dispersão modal, é usada em comunicações de longa distância e alta velocidade.",
+    "about": [
+      {
+        "h": "A condição monomodo",
+        "p": "O número de modos guiados em uma fibra óptica é determinado pela frequência normalizada V = 2πaNA/λ (a é o raio do núcleo). Em uma fibra de índice degrau, quando V < 2,405 apenas o modo fundamental (LP01) se propaga, e a fibra é monomodo. A fibra monomodo padrão tem diâmetro do núcleo de cerca de 8 µm e NA de cerca de 0,12, com comprimento de onda de corte projetado para ser de 1,26 µm ou menos, de modo que é monomodo nas bandas de 1,31 µm e de 1,55 µm. Em comprimentos de onda mais curtos, como 850 nm, modos de ordem superior também se propagam. O modo fundamental não tem corte, de modo que é guiado mesmo com V pequeno, mas a luz se espalha para a casca e o guiamento fica sensível a curvaturas."
+      },
+      {
+        "h": "Diferença em relação à fibra multimodo",
+        "p": "Na fibra multimodo (diâmetro do núcleo de 50 µm ou 62,5 µm), muitos modos se propagam, cada um com velocidade diferente, o que causa dispersão modal e alarga os pulsos. Por isso o produto da distância pela taxa de bits é limitado, e a fibra multimodo é usada principalmente em distâncias curtas, de algumas centenas de metros ou menos. A fibra monomodo não tem dispersão modal; restam apenas a dispersão cromática e a dispersão dos modos de polarização, o que permite transmissão por dezenas a milhares de quilômetros. Por outro lado, seu núcleo pequeno exige alinhamento da ordem de micrômetros no acoplamento a fontes e a outras fibras, o que eleva o custo dos componentes e da montagem."
+      },
+      {
+        "h": "Valores característicos",
+        "p": "As principais características da fibra monomodo padrão são uma perda de cerca de 0,2 dB/km em 1,55 µm e de cerca de 0,35 dB/km em 1,31 µm, e uma dispersão cromática quase nula perto de 1,31 µm e de cerca de 17 ps/(nm·km) em 1,55 µm. O diâmetro do campo modal é de cerca de 9,2 µm em 1,31 µm e de cerca de 10,4 µm em 1,55 µm, maior que o diâmetro do núcleo. Conforme a aplicação, há variantes como a fibra de dispersão deslocada, com o zero de dispersão deslocado para 1,55 µm, a fibra de dispersão deslocada não nula, que mantém um pouco de dispersão, a fibra resistente a curvaturas, a fibra de núcleo grande e baixa não linearidade e a fibra mantenedora de polarização."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre fibra monomodo e fibra multimodo?",
+        "a": "A fibra monomodo guia apenas o modo fundamental e não tem dispersão modal, por isso é usada em comunicações de longa distância e alta velocidade. A fibra multimodo tem um núcleo grosso que guia muitos modos, o que facilita as conexões, mas a dispersão modal limita a distância."
+      },
+      {
+        "q": "Qual é a condição para operação monomodo?",
+        "a": "Para uma fibra de índice degrau, V = 2πaNA/λ < 2,405. O menor comprimento de onda que satisfaz essa condição é o comprimento de onda de corte, e a fibra é monomodo em comprimentos de onda maiores."
+      },
+      {
+        "q": "É possível usar luz de 850 nm em fibra monomodo?",
+        "a": "Na fibra monomodo padrão, 850 nm é menor que o comprimento de onda de corte, de modo que modos de ordem superior também se propagam e a fibra não é estritamente monomodo. Ela pode ser usada em distâncias curtas, mas surgem problemas como o ruído modal."
+      }
+    ],
     "aliases": [
       "fibra óptica monomodo",
       "fibras monomodo",
@@ -245,6 +1081,38 @@
   "V値": {
     "term": "Número V",
     "desc": "Frequência normalizada de uma fibra óptica, V = 2πaNA/λ. Indica aproximadamente quantos modos se propagam; uma fibra de índice degrau é monomodo quando V é menor que 2,405.",
+    "about": [
+      {
+        "h": "As propriedades da fibra em um único número",
+        "p": "O número V (frequência normalizada) é um número adimensional definido para fibras ópticas de índice degrau como V = 2πaNA/λ = (2πa/λ)√(n₁² − n₂²), em que a é o raio do núcleo. Ele reúne em um só três condições, o tamanho do núcleo, a diferença de índices e o comprimento de onda, de modo que fibras com o mesmo V têm modos guiados de mesma forma e mesmo número, mesmo que suas dimensões ou comprimentos de onda sejam diferentes. Muitas propriedades da fibra, como a intensidade do confinamento, o número de modos guiados, o diâmetro do campo modal e a sensibilidade a curvaturas, podem ser organizadas em termos de V."
+      },
+      {
+        "h": "Condição monomodo e número de modos",
+        "p": "Em uma fibra de índice degrau, apenas o modo fundamental (LP01) se propaga quando V < 2,405. O valor 2,405 é o primeiro zero da função de Bessel de ordem zero e é o corte do modo seguinte, o LP11. À medida que V cresce, os modos LP21 e LP02 começam a se propagar em 3,832. Em fibras multimodo com V grande, o número de modos é aproximadamente V²/2. Por exemplo, enviar luz de 850 nm por uma fibra de índice degrau com núcleo de 50 µm de diâmetro e NA 0,2 dá V ≈ 37 e cerca de 680 modos. A fibra de índice gradual, com perfil parabólico, tem aproximadamente a metade."
+      },
+      {
+        "h": "O problema de um V pequeno demais",
+        "p": "O modo fundamental não tem corte, de modo que a luz é guiada por menor que seja V. No entanto, se V for pequeno demais, a luz se espalha muito para a casca, o confinamento enfraquece e mesmo curvaturas leves aumentam as perdas. Por isso a fibra monomodo padrão é projetada para ter V em torno de 2 no comprimento de onda de operação. Como V é inversamente proporcional ao comprimento de onda, a mesma fibra se torna multimodo em comprimentos de onda mais curtos, em que V passa de 2,405. O comprimento de onda em que V = 2,405 é o comprimento de onda de corte, e a fibra é monomodo em comprimentos de onda maiores que ele."
+      },
+      {
+        "h": "Uso em projeto",
+        "p": "O número V também facilita a estimativa do diâmetro do campo modal. A fórmula de Marcuse, baseada na aproximação gaussiana, w/a ≈ 0,65 + 1,619V^(−1,5) + 2,879V^(−6), em que w é o raio do campo modal, se ajusta bem na faixa monomodo (V de aproximadamente 1,2 a 2,4) e é usada para estimar perdas de emenda. Uma frequência normalizada semelhante é definida para guias de onda planares e dá uma referência da espessura ou da largura para operação monomodo. Algumas fibras de cristal fotônico, com arranjos de furos de ar, mantêm um V efetivo quase constante, independentemente do comprimento de onda, e permanecem monomodo em uma faixa ampla de comprimentos de onda."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o número V?",
+        "a": "V = 2πaNA/λ, em que a é o raio do núcleo (e não o diâmetro), NA é a abertura numérica e λ é o comprimento de onda no vácuo. Como NA = √(n₁² − n₂²), ele também pode ser calculado diretamente a partir dos índices de refração. Usar o diâmetro do núcleo dá um valor duas vezes maior, o que é um erro."
+      },
+      {
+        "q": "O que significa o valor 2,405 do número V?",
+        "a": "É o valor de V em que o segundo modo (LP11) começa a se propagar em uma fibra de índice degrau, e corresponde ao primeiro zero da função de Bessel de ordem zero J₀. Abaixo dele, apenas o modo fundamental se propaga, e a fibra é monomodo."
+      },
+      {
+        "q": "Qual é a relação entre o número V e o número de modos?",
+        "a": "Abaixo de 2,405 há apenas o modo fundamental, e à medida que V cresce mais modos se propagam. Em uma fibra de índice degrau com V suficientemente grande, o número de modos é aproximadamente V²/2, de modo que dobrar V dá cerca de quatro vezes mais modos."
+      }
+    ],
     "aliases": [
       "parâmetro V",
       "frequência normalizada",
@@ -254,6 +1122,38 @@
   "モードフィールド径": {
     "term": "Diâmetro do campo modal (MFD)",
     "desc": "Diâmetro em que a intensidade da luz guiada em uma fibra monomodo cai a 1/e². É maior que o diâmetro do núcleo, aumenta com o comprimento de onda e determina as perdas de emenda.",
+    "about": [
+      {
+        "h": "Até onde a luz realmente se espalha",
+        "p": "O modo fundamental de uma fibra monomodo não fica confinado apenas no núcleo; ele penetra também na casca. O diâmetro do campo modal (MFD) expressa a extensão em que a luz de fato se espalha e é definido, quando a distribuição de intensidade é aproximada por uma gaussiana, como o diâmetro em que a intensidade cai a 1/e² do valor central. Na fibra monomodo padrão, com diâmetro do núcleo de cerca de 8 µm, o MFD é de cerca de 9,2 µm em 1310 nm e de cerca de 10,4 µm em 1550 nm, maior que o núcleo. As perdas de emenda e de acoplamento são determinadas pelo MFD, e não pelo diâmetro do núcleo."
+      },
+      {
+        "h": "Variação com o comprimento de onda e o número V",
+        "p": "À medida que o comprimento de onda aumenta, o número V diminui, o confinamento da luz enfraquece e o MFD cresce. A aproximação de Marcuse, w/a ≈ 0,65 + 1,619V^(−1,5) + 2,879V^(−6), em que w é o raio do campo modal e a é o raio do núcleo, estima que uma fibra com raio do núcleo de 4,1 µm e NA 0,12 tem MFD de cerca de 9,1 µm em 1310 nm (V ≈ 2,36) e de cerca de 10,4 µm em 1550 nm (V ≈ 1,99). Quanto menor V, mais rapidamente o MFD cresce, e mais facilmente a luz escapa para fora da casca quando a fibra é curvada."
+      },
+      {
+        "h": "Perda de emenda e efeitos não lineares",
+        "p": "Duas fibras com MFDs diferentes perdem luz mesmo quando encostadas com os eixos alinhados, porque os tamanhos dos modos não coincidem. Na aproximação gaussiana, a eficiência de acoplamento é (2w₁w₂/(w₁² + w₂²))², o que dá cerca de 0,3 dB para fibras com MFDs de 10,4 µm e 8,0 µm. Quando uma emenda desse tipo é medida com um OTDR, a perda pode parecer negativa vista de um dos sentidos (um ganho aparente), por isso mede-se nos dois sentidos e calcula-se a média. Além disso, um MFD maior aumenta a área efetiva da luz e reduz sua intensidade, tornando os efeitos não lineares menos prováveis."
+      },
+      {
+        "h": "Uso na prática",
+        "p": "O MFD é uma grandeza básica na emenda por fusão entre fibras, no acoplamento a lasers e guias de onda e no projeto de conectores. Os modos dos guias de onda de silício são pequenos, menores que 1 µm, por isso usam-se conversores de tamanho de modo (spot-size converters) e fibras com ponta em lente para cobrir a diferença em relação ao MFD da fibra. Os sistemas de longa distância que precisam suprimir efeitos não lineares usam fibras de área efetiva ampliada, enquanto as fibras resistentes a curvaturas têm MFD um pouco menor. O MFD é avaliado por métodos como medir a distribuição de intensidade no campo distante da luz que sai da fibra e calculá-lo a partir dela."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre o diâmetro do campo modal e o diâmetro do núcleo?",
+        "a": "O diâmetro do núcleo é o diâmetro da região de índice alto, enquanto o diâmetro do campo modal é o diâmetro em que a intensidade da luz cai a 1/e² do valor central. Como a luz penetra também na casca, o MFD de uma fibra monomodo é maior que o núcleo, e a perda de emenda é determinada pelo MFD."
+      },
+      {
+        "q": "Qual é a perda ao emendar fibras com diâmetros do campo modal diferentes?",
+        "a": "Estime-a com a eficiência de acoplamento gaussiana (2w₁w₂/(w₁² + w₂²))². Para MFDs de 10,4 µm e 8,0 µm, a perda é de cerca de 0,3 dB. Qualquer deslocamento lateral ou desalinhamento angular acrescenta sua própria perda."
+      },
+      {
+        "q": "Por que o diâmetro do campo modal aumenta com o comprimento de onda?",
+        "a": "Um comprimento de onda maior reduz o número V (2πaNA/λ), o que enfraquece o confinamento da luz no núcleo e faz uma parte maior dela penetrar na casca. Na fibra padrão, o MFD aumenta cerca de 1 µm de 1310 nm para 1550 nm."
+      }
+    ],
     "aliases": [
       "diâmetro de campo modal",
       "mode field diameter"
@@ -262,6 +1162,34 @@
   "波長分散": {
     "term": "Dispersão cromática",
     "desc": "Fenômeno em que a velocidade de grupo da luz depende do comprimento de onda, de modo que os pulsos ópticos se alargam ao se propagar. É a soma da dispersão material e da dispersão de guia de onda e é expressa em ps/(nm·km).",
+    "about": [
+      {
+        "h": "Como surge a dispersão cromática",
+        "p": "Um pulso óptico tem largura espectral finita e contém componentes em muitos comprimentos de onda. Se a velocidade de grupo na fibra depende do comprimento de onda, as componentes chegam em instantes diferentes e o pulso se alarga. Essa é a dispersão cromática. Sua magnitude é expressa pelo parâmetro de dispersão D, e o alargamento do pulso é Δτ = D × L × Δλ. Por exemplo, D = 17 ps/(nm·km), 50 km e largura espectral de 0,1 nm dão 85 ps. A dispersão é a soma da dispersão do material, causada pela dependência do índice de refração da sílica com o comprimento de onda, e da dispersão de guia de onda, causada pela variação com o comprimento de onda do modo como a luz fica confinada no núcleo; na fibra monomodo padrão, as duas se cancelam perto de 1,31 µm, dando dispersão nula."
+      },
+      {
+        "h": "Efeitos nas comunicações",
+        "p": "Os pulsos alargados pela dispersão cromática se sobrepõem aos bits vizinhos e causam erros por interferência intersimbólica. A limitação por dispersão fica mais severa aproximadamente em proporção inversa ao quadrado da taxa de bits, de modo que passar de 10 Gb/s para 40 Gb/s reduz a distância permitida a cerca de 1/16. As fontes com espectro mais largo (lasers multimodo ou o chirp da modulação direta) são mais afetadas, por isso os sistemas de longa distância combinam lasers DFB de largura de linha estreita com moduladores externos. Os sistemas de curto alcance com modulação de intensidade e detecção direta usam a banda de 1,31 µm (banda O), em que a dispersão é quase nula, para dispensar a compensação de dispersão."
+      },
+      {
+        "h": "Compensação e aproveitamento da dispersão",
+        "p": "As formas de suprimir os efeitos da dispersão incluem a fibra compensadora de dispersão, com dispersão grande de sinal oposto, as redes de Bragg em fibra com chirp e a compensação eletrônica por processamento digital de sinais no receptor. Na comunicação coerente, como também se mede a fase do campo recebido, a dispersão de milhares de quilômetros pode ser compensada com filtros digitais. A dispersão não é só prejudicial: na transmissão com multiplexação por comprimento de onda, a dispersão nula mantém alinhadas as fases dos comprimentos de onda e intensifica a mistura de quatro ondas, por isso usa-se a fibra de dispersão deslocada não nula, que mantém um pouco de dispersão. Nos lasers de pulsos ultracurtos, pares de prismas e espelhos com chirp compensam a dispersão para encurtar os pulsos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o alargamento do pulso por dispersão cromática?",
+        "a": "Δτ = D × L × Δλ, em que D é o parâmetro de dispersão (ps/(nm·km)), L é a distância (km) e Δλ é a largura espectral da luz (nm). Para a fibra monomodo padrão em 1,55 µm, D ≈ 17 ps/(nm·km)."
+      },
+      {
+        "q": "Por que se usa 1,31 µm nas comunicações ópticas de curto alcance?",
+        "a": "Porque a dispersão cromática da fibra monomodo padrão é quase nula perto de 1,31 µm, de modo que mesmo sinais de alta velocidade quase não se alargam. A perda é maior que em 1,55 µm, mas isso não é problema em distâncias curtas."
+      },
+      {
+        "q": "Qual é a diferença entre dispersão cromática e dispersão dos modos de polarização?",
+        "a": "A dispersão cromática é o alargamento causado pela dependência da velocidade de grupo com o comprimento de onda; ela cresce em proporção à distância e é uma grandeza fixa, fácil de compensar. A dispersão dos modos de polarização vem da diferença de velocidade de grupo entre duas polarizações; ela cresce com a raiz quadrada da distância e varia no tempo com a temperatura e as vibrações."
+      }
+    ],
     "aliases": [
       "chromatic dispersion"
     ]
@@ -269,6 +1197,38 @@
   "偏波モード分散": {
     "term": "Dispersão dos modos de polarização (PMD)",
     "desc": "Fenômeno em que uma leve birrefringência da fibra faz com que os dois modos de polarização tenham velocidades de grupo diferentes. A diferença de atraso cresce com a raiz quadrada da distância e flutua no tempo.",
+    "about": [
+      {
+        "h": "Uma diferença no tempo de chegada entre duas polarizações",
+        "p": "Em uma fibra monomodo com núcleo perfeitamente circular, as duas polarizações ortogonais se propagam com a mesma velocidade. Na prática, porém, uma leve elipticidade do núcleo, tensões internas, curvaturas e torções criam uma birrefringência fraca, e as velocidades de grupo das duas polarizações diferem. Como resultado, as duas componentes de polarização de um pulso óptico chegam em instantes diferentes (atraso diferencial de grupo, DGD), e o pulso se alarga. Essa é a dispersão dos modos de polarização (PMD), e as duas polarizações com o menor e o maior atraso são chamadas de estados principais de polarização."
+      },
+      {
+        "h": "Por que é proporcional à raiz quadrada da distância",
+        "p": "Em fibras longas, a orientação e a magnitude da birrefringência mudam aleatoriamente ao longo do comprimento, e a energia continua a se trocar entre as duas polarizações. Por isso a diferença de atraso se soma e se subtrai trecho a trecho em um passeio aleatório, e o DGD médio cresce com a raiz quadrada da distância. É por isso que o coeficiente de PMD tem unidade ps/√km. Já em fibras curtas com eixos fixos, ou na fibra mantenedora de polarização, a diferença de atraso cresce em proporção à distância. O DGD flutua no tempo segundo uma distribuição de Maxwell, e a probabilidade de passar de três vezes a média é de cerca de 4×10⁻⁵."
+      },
+      {
+        "h": "Impacto na transmissão e regras práticas",
+        "p": "Para sinais com modulação de intensidade, uma regra prática comum é que o efeito é pequeno se o DGD médio ficar dentro de cerca de 10 % do período de bit. Em 10 Gb/s, isso significa 10 % de 100 ps, ou 10 ps, de modo que, para uma fibra com coeficiente de PMD de 0,5 ps/√km, o limite é de aproximadamente (10/0,5)² = 400 km. As normas para fibra monomodo padrão (como a ITU-T G.652.D) exigem um valor de projeto de enlace de 0,2 ps/√km ou menos. A PMD muda de instante a instante com a temperatura, as vibrações e o balanço dos cabos aéreos pelo vento, o que a diferencia muito da dispersão cromática, de valor fixo; ela não pode ser cancelada por um compensador fixo."
+      },
+      {
+        "h": "Medição e compensação",
+        "p": "Os métodos de medição da PMD incluem obter o atraso a partir de matrizes de Jones medidas em dois comprimentos de onda próximos e métodos que usam interferômetros. Na PMD de ordem superior, os próprios estados principais de polarização variam com o comprimento de onda e se combinam com a dispersão cromática para deformar ainda mais as formas de onda. Medidas de mitigação são indispensáveis a 40 Gb/s ou mais, e na transmissão coerente digital atual o processamento digital de sinais no receptor acompanha e compensa de forma adaptativa a rotação da polarização e o DGD. A perda dependente da polarização (PDL), uma diferença de perda entre polarizações, é um fenômeno distinto da PMD."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que o coeficiente de PMD é dado em ps/√km?",
+        "a": "Em fibras longas, os eixos de birrefringência mudam aleatoriamente, de modo que a diferença de atraso se soma e se subtrai trecho a trecho em um passeio aleatório, e o atraso médio cresce com a raiz quadrada da distância. Multiplicando o coeficiente pela raiz quadrada da distância em quilômetros, obtém-se o DGD médio."
+      },
+      {
+        "q": "Qual é a diferença entre dispersão dos modos de polarização e dispersão cromática?",
+        "a": "A dispersão cromática surge porque a velocidade de grupo depende do comprimento de onda; seu valor é fixo, por isso pode ser cancelada com fibra compensadora de dispersão e meios semelhantes. A dispersão dos modos de polarização vem da diferença de velocidade de grupo entre duas polarizações e varia no tempo com a temperatura e as vibrações, por isso exige compensação adaptativa."
+      },
+      {
+        "q": "Como se compensa a PMD?",
+        "a": "Os receptores coerentes atuais estimam com processamento digital de sinais a mistura das duas polarizações e o atraso entre elas, e os cancelam de forma adaptativa. Nos sistemas anteriores, com modulação de intensidade, usavam-se fibras de PMD baixa e compensadores ópticos."
+      }
+    ],
     "aliases": [
       "dispersão do modo de polarização",
       "dispersão por modo de polarização",
@@ -278,6 +1238,38 @@
   "EDFA": {
     "term": "EDFA (amplificador a fibra dopada com érbio)",
     "desc": "Amplificador a fibra dopada com érbio. Bombeado em 980 nm ou 1480 nm, amplifica de uma só vez muitos comprimentos de onda da banda de 1,55 µm, sem converter a luz de volta em sinal elétrico.",
+    "about": [
+      {
+        "h": "Um amplificador que atua diretamente sobre a luz",
+        "p": "O EDFA é um dispositivo que injeta, junto com o sinal, a luz de um laser semicondutor de bombeamento em uma fibra de alguns metros a algumas dezenas de metros cujo núcleo é dopado com íons de érbio (Er³⁺); o bombeamento cria uma inversão de população que amplifica sinais de 1,55 µm por emissão estimulada. Formas práticas foram demonstradas no fim da década de 1980 e substituíram os repetidores que convertiam a luz de volta em sinais elétricos para regenerá-la. Como amplifica de uma só vez muitos comprimentos de onda dentro da sua banda, é a tecnologia central que tornou possível a transmissão de alta capacidade a longas distâncias com multiplexação por divisão de comprimento de onda (WDM)."
+      },
+      {
+        "h": "Comprimentos de onda de bombeamento e bandas",
+        "p": "O bombeamento usa 980 nm ou 1480 nm. O bombeamento em 980 nm excita um nível acima dos níveis do sinal, o que facilita uma inversão quase completa e permite uma figura de ruído baixa. O bombeamento em 1480 nm excita diretamente a parte superior da mesma banda de níveis do sinal e perde pouca energia do fóton, de modo que sua eficiência de conversão no limite quântico para um sinal de 1550 nm é de cerca de 95 %, maior que os cerca de 63 % do bombeamento em 980 nm. A banda básica de amplificação é a banda C (cerca de 1530 a 1565 nm), e também há EDFAs para a banda L (cerca de 1565 a 1625 nm), que usam fibras mais longas."
+      },
+      {
+        "h": "Desempenho típico e cuidados",
+        "p": "O ganho é de cerca de 20 a 40 dB, conforme a aplicação, e a figura de ruído prática é de cerca de 4 a 6 dB, maior que o limite quântico de cerca de 3 dB. A emissão espontânea também é amplificada e se torna ruído (ASE), que se acumula em amplificadores em cascata e reduz a relação sinal-ruído óptica. O ganho não é plano em comprimento de onda, por isso os sistemas WDM o corrigem com filtros de aplainamento de ganho. O tempo de vida do nível superior do érbio é longo, cerca de 10 ms, de modo que o ganho não acompanha as variações de sinais de Gb/s e a diafonia entre comprimentos de onda é pequena; mas uma mudança brusca no número de canais altera a potência dos canais restantes, por isso é necessário o controle automático de ganho."
+      },
+      {
+        "h": "Uso em sistemas",
+        "p": "Conforme a posição, os EDFAs são classificados em amplificadores de potência (booster), que elevam a potência logo após o transmissor, amplificadores de linha, que compensam as perdas no meio do enlace, e pré-amplificadores, que melhoram a sensibilidade logo antes do receptor. Nos sistemas terrestres e submarinos de longa distância, há EDFAs a cada algumas dezenas de quilômetros até cerca de 100 km. Em seu interior há acopladores WDM, que combinam o bombeamento e o sinal, e isoladores ópticos, que impedem oscilações causadas pela luz de retorno. A banda de 1,3 µm não pode ser amplificada pelo érbio, por isso nela se usam amplificadores a fibra dopada com praseodímio ou amplificadores ópticos semicondutores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que se usam 980 nm e 1480 nm para bombear os EDFAs?",
+        "a": "Porque ambos são comprimentos de onda absorvidos pelos íons de érbio. O bombeamento em 980 nm facilita uma inversão completa e dá uma figura de ruído menor, enquanto o bombeamento em 1480 nm tem uma diferença de energia de fóton menor em relação ao sinal e, por isso, eficiência de conversão maior; a escolha depende da aplicação."
+      },
+      {
+        "q": "Quais bandas de comprimento de onda os EDFAs amplificam?",
+        "a": "Principalmente a banda C (cerca de 1530 a 1565 nm) e, com uma fibra dopada com érbio mais longa, também a banda L (cerca de 1565 a 1625 nm). A banda de 1,3 µm não pode ser amplificada, por isso nela se usam outros tipos de amplificadores."
+      },
+      {
+        "q": "O que é a figura de ruído de um EDFA?",
+        "a": "É a razão entre a relação sinal-ruído na entrada e a na saída, expressa em dB, e mostra quanto ruído a amplificação acrescenta. O limite quântico, com ganho alto e inversão completa, é de cerca de 3 dB, e os EDFAs reais ficam em torno de 4 a 6 dB."
+      }
+    ],
     "aliases": [
       "amplificador de fibra dopada com érbio",
       "amplificadores a fibra dopada com érbio",
@@ -288,6 +1280,34 @@
   "応答度": {
     "term": "Responsividade",
     "desc": "Fotocorrente (A/W) gerada quando 1 W de luz incide em um fotodetector. É determinada pelo comprimento de onda e pela eficiência quântica: R = ηqλ/(hc) ≈ η × λ[µm]/1,24.",
+    "about": [
+      {
+        "h": "Responsividade e eficiência quântica",
+        "p": "A responsividade R é a razão entre a fotocorrente I e a potência óptica P, R = I/P, em A/W. Usando a eficiência quântica η (o número de elétrons gerados e coletados por fóton incidente), R = ηqλ/(hc). Na prática, R ≈ η × λ[µm] / 1,24, de modo que mesmo um detector ideal com eficiência quântica de 100 % fica limitado a cerca de 0,69 A/W em 850 nm, cerca de 1,06 A/W em 1310 nm e cerca de 1,25 A/W em 1550 nm. A eficiência quântica é uma razão entre números de partículas e pode ser comparada entre comprimentos de onda, enquanto a responsividade é o fator de conversão em corrente usado no projeto de circuitos."
+      },
+      {
+        "h": "Variação com o comprimento de onda",
+        "p": "Com eficiência quântica constante, a responsividade aumenta em proporção ao comprimento de onda, porque o mesmo 1 W de luz em um comprimento de onda maior tem menos energia por fóton e, portanto, mais fótons. Uma curva de responsividade real cai nos comprimentos de onda curtos, em que a luz é absorvida perto da superfície e se perde por recombinação, e cai bruscamente nos comprimentos de onda longos, perto do corte determinado pela banda proibida, onde a absorção enfraquece. O silício tem máximo em torno de 0,9 µm e quase não detecta comprimentos de onda acima de 1,1 µm. O InGaAs é sensível até cerca de 1,65 µm, e o Ge até cerca de 1,8 µm (a sensibilidade do Ge cai bruscamente acima de 1,6 µm)."
+      },
+      {
+        "h": "Formas de aumentar a responsividade",
+        "p": "A eficiência quântica é o produto da fração de luz que passa pela superfície (sem ser refletida), da fração absorvida na camada de absorção e da eficiência com que os portadores gerados são coletados nos eletrodos. Um revestimento antirreflexo suprime a reflexão superficial de dezenas de por cento, uma camada de absorção espessa absorve toda a luz, e uma camada de depleção de campo alto coleta os portadores antes que se recombinem. Uma camada de absorção espessa, porém, aumenta o tempo de trânsito e reduz a largura de banda, por isso os detectores de alta velocidade usam estruturas em guia de onda ou reflexão na face traseira para garantir um comprimento de absorção longo com uma camada de absorção fina. Em um APD, a multiplicação interna aumenta a responsividade aparente pelo fator de multiplicação M, mas a eficiência quântica em si não aumenta."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a fórmula da responsividade?",
+        "a": "R = ηqλ/(hc) ≈ η × λ[µm] / 1,24 [A/W]. Por exemplo, uma eficiência quântica de 80 % dá cerca de 1,0 A/W em 1,55 µm e cerca de 0,55 A/W em 850 nm."
+      },
+      {
+        "q": "Qual é a diferença entre responsividade e eficiência quântica?",
+        "a": "A eficiência quântica é o número de elétrons por fóton, uma razão adimensional. A responsividade é a corrente por watt de potência óptica (A/W); como a energia do fóton depende do comprimento de onda, a mesma eficiência quântica dá uma responsividade maior em comprimentos de onda maiores."
+      },
+      {
+        "q": "A responsividade pode passar de 1 A/W?",
+        "a": "Mesmo com eficiência quântica de 100 %, ela passa de 1 A/W para comprimentos de onda maiores que 1,24 µm (cerca de 1,25 A/W em 1,55 µm). Além disso, dispositivos com multiplicação interna, como os APDs, podem multiplicar várias vezes a responsividade aparente."
+      }
+    ],
     "aliases": [
       "responsivity"
     ]
@@ -295,6 +1315,38 @@
   "APD": {
     "term": "APD (fotodiodo de avalanche)",
     "desc": "Fotodiodo de avalanche: fotodetector que multiplica internamente a fotocorrente por multiplicação em avalanche sob alta tensão de polarização reversa. É acompanhado de ruído em excesso.",
+    "about": [
+      {
+        "h": "Um fotodetector com ganho interno de corrente",
+        "p": "O APD (fotodiodo de avalanche) é um fotodetector operado com uma tensão reversa alta, próxima da ruptura, na qual os portadores gerados pela luz são acelerados pelo campo intenso e causam ionização por impacto, multiplicando os pares elétron-lacuna em avalanche. Como a fotocorrente é multiplicada internamente por um fator M (o fator de multiplicação), o sinal fica grande em relação ao ruído térmico do amplificador seguinte, o que facilita a recepção de luz fraca. Os ganhos vão de algumas unidades a várias centenas, e alguns APDs de silício passam de 100. Os APDs são usados em receptores de comunicações ópticas, LiDAR e detecção de radiação."
+      },
+      {
+        "h": "Ruído em excesso",
+        "p": "A multiplicação por avalanche é um processo aleatório, de modo que o ganho flutua e o ruído de disparo cresce ainda mais que M². Esse acréscimo é o fator de ruído em excesso F, dado pela fórmula de McIntyre F = kM + (1 − k)(2 − 1/M). Aqui k é a razão entre as taxas de ionização por impacto de elétrons e lacunas, e quanto menor ele for, menor o ruído. Com M = 10, F ≈ 2 para o silício, com k ≈ 0,02, e F ≈ 6 para o InP, com k ≈ 0,5. É por isso que os APDs de silício têm baixo ruído, enquanto os APDs de InGaAs/InP costumam operar com ganho em torno de 10."
+      },
+      {
+        "h": "Ganho ótimo e estrutura",
+        "p": "Aumentar o ganho aumenta o sinal, mas também o ruído em excesso, de modo que o ganho ótimo é determinado pelo equilíbrio entre o ruído térmico e o ruído de multiplicação. Quando o ruído de disparo é dominante, a multiplicação não melhora a SNR e, na verdade, a piora pelo ruído em excesso. Os APDs de InGaAs/InP para comunicações separam a camada de InGaAs, que absorve a luz, da camada de InP, que faz a multiplicação (estrutura SAM), evitando campos altos na camada de banda proibida estreita, que aumentariam a corrente de tunelamento. A velocidade é limitada pelo tempo necessário para a avalanche se formar, e o produto do ganho pela largura de banda tende a permanecer aproximadamente constante."
+      },
+      {
+        "h": "Diferenças em relação aos fotodiodos PIN e aos SPADs, e uso prático",
+        "p": "Um fotodiodo PIN não tem ganho interno (ganho 1), de modo que, em receptores dominados pelo ruído térmico, sua sensibilidade é limitada. Um APD pode melhorar a sensibilidade do receptor em alguns dB em relação a um PIN. O diodo de avalanche de fóton único (SPAD) é operado acima da ruptura, de modo que até um único fóton produz um pulso grande, um regime de operação diferente do de um APD. A tensão de ruptura de um APD muda com a temperatura, e o ganho a uma tensão fixa muda então muito, por isso são necessários circuitos que ajustem a tensão de polarização conforme a temperatura."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre um APD e um fotodiodo PIN?",
+        "a": "O APD produz multiplicação por avalanche sob tensão reversa alta e multiplica internamente a fotocorrente; o PIN não tem multiplicação. O APD pode aumentar a sensibilidade em receptores dominados pelo ruído térmico, mas tem ruído em excesso e exige tensão alta e controle de temperatura."
+      },
+      {
+        "q": "Com que ganho se deve operar um APD?",
+        "a": "Com o valor ótimo determinado pelo equilíbrio entre ruído térmico e ruído em excesso. Os APDs de InGaAs/InP costumam operar em torno de 10, e os APDs de silício, com seu baixo ruído em excesso, muitas vezes de algumas dezenas até cerca de 100. Um ganho alto demais aumenta o ruído e acaba piorando a sensibilidade."
+      },
+      {
+        "q": "O que é o fator de ruído em excesso?",
+        "a": "É o fator pelo qual as flutuações do ganho de avalanche fazem o ruído de disparo crescer além do quadrado do ganho. Ele é dado pela fórmula de McIntyre F = kM + (1 − k)(2 − 1/M) e é menor para materiais com razão k menor entre as taxas de ionização de elétrons e lacunas."
+      }
+    ],
     "aliases": [
       "fotodiodos de avalanche",
       "APDs",
@@ -304,6 +1356,38 @@
   "ショット雑音": {
     "term": "Ruído de disparo",
     "desc": "Ruído causado pela chegada aleatória da carga em partículas discretas. O valor eficaz da corrente é √(2qIB), proporcional à raiz quadrada da corrente média I e da largura de banda B.",
+    "about": [
+      {
+        "h": "Ruído causado pela natureza granular da carga",
+        "p": "O ruído de disparo é a flutuação de corrente que surge porque os elétrons que a transportam chegam um a um em instantes aleatórios. Schottky o analisou em tubos de vácuo em 1918. Quando as chegadas seguem a distribuição de Poisson, a corrente de ruído eficaz é i = √(2qIB), em que q é a carga elementar, I é a corrente média e B é a largura de banda, e o ruído é branco, independente da frequência. Na fotodetecção, a própria chegada dos fótons é aleatória, de modo que esse ruído não pode ser evitado nem com um detector ideal; ele também é chamado de ruído quântico."
+      },
+      {
+        "h": "Valores típicos e relação sinal-ruído",
+        "p": "Para uma corrente média de 1 µA e largura de banda de 1 MHz, a corrente de ruído é √(2 × 1,6×10⁻¹⁹ × 10⁻⁶ × 10⁶) ≈ 0,57 nA. A relação sinal-ruído (em potência) é I²/(2qIB) = I/(2qB), cerca de 65 dB neste exemplo. Como o ruído de disparo cresce com a raiz quadrada da corrente, sua proporção em relação ao sinal diminui à medida que a corrente aumenta, e em um receptor dominado pelo ruído de disparo a SNR cresce em proporção à potência óptica. Em termos de fótons, contar em média N fótons dá uma flutuação de √N."
+      },
+      {
+        "h": "Diferença em relação ao ruído térmico",
+        "p": "O ruído térmico de um resistor é determinado pela temperatura T e pela resistência R, mesmo sem corrente, com corrente de ruído √(4kTB/R). O ruído de disparo só aparece quando há corrente e não depende da temperatura. Com uma carga de 50 Ω a 300 K, os dois se igualam quando a fotocorrente é 2kT/(qR) ≈ 1 mA, e abaixo dessa corrente o ruído térmico domina. Além disso, para a corrente em um resistor metálico comum, o ruído de disparo é fortemente suprimido; o ruído dado por essa fórmula aparece quando os portadores atravessam uma barreira de forma independente, como em uma junção pn ou em um tubo de vácuo."
+      },
+      {
+        "h": "Medições que buscam o limite de ruído de disparo",
+        "p": "As medições ópticas de precisão buscam uma condição em que o ruído térmico e o ruído de intensidade do laser são suprimidos e resta apenas o ruído de disparo (o limite de ruído de disparo). A detecção balanceada, que toma a diferença entre dois fotodetectores, é uma forma típica de cancelar o ruído de intensidade do laser e se aproximar do limite de ruído de disparo. Na recepção coerente, a mistura com um oscilador local intenso amplifica o sinal, de modo que o ruído de disparo do oscilador local domine o ruído térmico do receptor. Para obter um ruído abaixo do ruído de disparo, são necessários estados quânticos da luz, como a luz comprimida."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o ruído de disparo?",
+        "a": "A corrente de ruído eficaz é √(2qIB), com q = 1,6×10⁻¹⁹ C, I a corrente média e B a largura de banda do receptor. Para 1 µA e 1 MHz, por exemplo, ela é de cerca de 0,57 nA. A corrente de escuro também produz ruído de disparo, por isso inclua em I a soma da fotocorrente com a corrente de escuro."
+      },
+      {
+        "q": "Qual é a diferença entre ruído de disparo e ruído térmico?",
+        "a": "O ruído de disparo surge da passagem de corrente e cresce com a raiz quadrada da corrente. O ruído térmico vem do movimento térmico dos elétrons em um resistor e é determinado pela temperatura e pela resistência, independentemente da corrente. O ruído térmico domina com fotocorrentes pequenas, e o ruído de disparo, com fotocorrentes grandes."
+      },
+      {
+        "q": "Como a SNR depende da potência óptica no limite de ruído de disparo?",
+        "a": "A SNR é proporcional à potência óptica, porque a potência do sinal é proporcional ao quadrado da corrente, enquanto a potência do ruído de disparo é proporcional à corrente. Dobrar a potência óptica dobra a SNR (cerca de 3 dB). Quando o ruído térmico domina, ela aumenta quatro vezes (cerca de 6 dB)."
+      }
+    ],
     "aliases": [
       "ruído shot",
       "ruído balístico",
@@ -313,6 +1397,38 @@
   "NEP": {
     "term": "NEP (potência equivalente de ruído)",
     "desc": "Potência equivalente de ruído: potência da luz incidente para a qual o sinal se iguala ao ruído, em W/√Hz. Quanto menor, mais fraca é a luz que se consegue detectar.",
+    "about": [
+      {
+        "h": "Quão fraco pode ser o sinal detectado",
+        "p": "A NEP (potência equivalente de ruído) é a potência óptica incidente na qual o sinal e o ruído na saída do detector são exatamente iguais (SNR igual a 1), expressa por 1 Hz de largura de banda, em W/√Hz. Ela é obtida dividindo a densidade de corrente de ruído (A/√Hz) pela responsividade (A/W). Quanto menor a NEP, mais fraca a luz que pode ser detectada. Uma estimativa da potência mínima detectável em uma largura de banda B é NEP × √B, que piora em proporção a √B à medida que a banda se alarga. É o indicador básico para comparar a sensibilidade nas folhas de dados de fotodetectores."
+      },
+      {
+        "h": "Um exemplo de cálculo",
+        "p": "Para um fotodiodo com corrente de escuro de 10 pA, se o único ruído for o ruído de disparo dessa corrente de escuro, a densidade de corrente de ruído é √(2qId) ≈ 1,8×10⁻¹⁵ A/√Hz. Dividindo por uma responsividade de 0,6 A/W, obtém-se uma NEP de cerca de 3×10⁻¹⁵ W/√Hz. Em uma largura de banda de 1 kHz, a potência mínima detectável é então de cerca de 3×10⁻¹⁵ × √1000, ou aproximadamente 1×10⁻¹³ W. Em um circuito real, porém, o resistor de realimentação e o amplificador acrescentam ruído, e a NEP do sistema muitas vezes é maior que isso, por isso ela deve ser distinguida da NEP do próprio dispositivo."
+      },
+      {
+        "h": "Diferença em relação à D* e pontos de atenção",
+        "p": "A NEP depende do tamanho da área receptora, por isso detectores de áreas diferentes são comparados pela detectividade específica D* = √(AB)/NEP, em que A é a área receptora. Sua unidade é cm·√Hz/W, também chamada de Jones, e, ao contrário da NEP, quanto maior, melhor. A NEP depende do comprimento de onda por meio da responsividade e, conforme o espectro de frequência do ruído, também da frequência de medição. Quando uma folha de dados dá a NEP em W, e não em W/√Hz, trata-se de um valor para uma largura de banda específica, por isso é preciso verificar bem as unidades."
+      },
+      {
+        "h": "Uso na escolha de detectores",
+        "p": "Para medir luz fraca, escolha um detector com NEP pequena e limite a largura de banda ao necessário. Fazer a média de uma medição durante um tempo T dá uma largura de banda equivalente de ruído de cerca de 1/(2T), de modo que uma média de 0,5 segundo corresponde a uma banda de 1 Hz, e o próprio valor da NEP se torna a estimativa da potência mínima detectável. Os detectores de infravermelho são resfriados para reduzir a corrente de escuro e a radiação de fundo e, com isso, baixar sua NEP. Mas a NEP não é o único fator: também é preciso considerar a potência máxima mensurável (faixa dinâmica), a velocidade de resposta e a área receptora."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que a NEP é dada em W/√Hz?",
+        "a": "A corrente de ruído cresce com a raiz quadrada da largura de banda, √B, por isso a NEP é expressa por √Hz, como um valor independente da largura de banda. A potência mínima detectável em uma largura de banda B é obtida multiplicando a NEP por √B."
+      },
+      {
+        "q": "Qual é a diferença entre NEP e D*?",
+        "a": "A NEP é a potência óptica em que o sinal se iguala ao ruído, e quanto menor, melhor. A D* (detectividade específica) é normalizada pela área receptora e pela largura de banda como √(AB)/NEP, e quanto maior, melhor. A D* é adequada para comparar detectores de áreas diferentes."
+      },
+      {
+        "q": "Como se determina a NEP?",
+        "a": "Divida a densidade de corrente de ruído do detector (A/√Hz) pela sua responsividade (A/W) no comprimento de onda de interesse. Se o único ruído for o ruído de disparo da corrente de escuro, NEP = √(2qId)/R. Quando houver ruído térmico ou do amplificador, use o ruído total combinado como raiz da soma dos quadrados."
+      }
+    ],
     "aliases": [
       "potência equivalente ao ruído",
       "noise-equivalent power"
@@ -321,6 +1437,38 @@
   "暗電流": {
     "term": "Corrente de escuro",
     "desc": "Corrente que circula em um fotodetector quando não há luz incidente. Causada pela geração térmica e por fugas, aumenta com a temperatura e é uma fonte de ruído.",
+    "about": [
+      {
+        "h": "Uma corrente que circula mesmo sem luz",
+        "p": "A corrente de escuro é a corrente que circula em um fotodetector quando nenhuma luz incide sobre ele. Suas principais componentes são a corrente de geração, de pares elétron-lacuna criados termicamente na camada de depleção; a corrente de difusão, de portadores que se difundem a partir das regiões neutras fora dela; a corrente de fuga superficial, ao longo das superfícies e das laterais do dispositivo; e a corrente de tunelamento, de portadores que atravessam a banda proibida sob campos intensos. A corrente de escuro não apenas acrescenta um erro ao sinal: seu ruído de disparo determina o limite de detecção de luz fraca, o que a torna uma característica importante de um fotodetector. Ela tem grande influência sobretudo na detecção no infravermelho e em exposições longas, em que a fotocorrente do sinal é pequena."
+      },
+      {
+        "h": "Dependência da temperatura e do material",
+        "p": "As correntes de geração e de difusão vêm da excitação térmica através da banda proibida, por isso aumentam bruscamente com a temperatura. A corrente de geração é aproximadamente proporcional a exp(−Eg/2kT), e a corrente de difusão a exp(−Eg/kT), e no silício, ao passar de 25 °C para 35 °C, elas aumentam, pelo cálculo, cerca de 2 e cerca de 4 vezes, respectivamente. Dobrar a cada 10 °C é uma regra prática comum para fotodiodos de silício. Materiais com banda proibida menor têm correntes de escuro maiores, de modo que, para a mesma área, a corrente de escuro tende a crescer na ordem Si, InGaAs, Ge."
+      },
+      {
+        "h": "Equívocos comuns",
+        "p": "É comum pensar que basta subtrair a corrente de escuro do valor medido. Uma corrente de escuro constante pode ser subtraída, mas seu ruído de disparo, √(2qIdB), é uma flutuação aleatória que não pode ser subtraída e permanece sobreposta ao sinal. Além disso, a corrente de escuro muda muito com a temperatura, de modo que, se a temperatura flutuar, o valor a subtrair também muda. As componentes também dependem do tamanho de formas diferentes: as correntes de geração e de difusão são aproximadamente proporcionais à área receptora, e a fuga superficial, ao perímetro, de modo que comparar dispositivos de tamanhos diferentes revela qual componente domina."
+      },
+      {
+        "h": "Como reduzir a corrente de escuro",
+        "p": "As bases para reduzir a corrente de escuro são o resfriamento e a escolha da polarização. Os detectores de infravermelho e os sensores de imagem científicos resfriados com elementos Peltier operam com correntes de escuro muito menores que à temperatura ambiente. Reduzir a tensão reversa estreita a camada de depleção e diminui a corrente de escuro, e com polarização zero a corrente de escuro é quase nula, o que é adequado para medições precisas de potência óptica em baixa frequência. Melhorar a camada de passivação da superfície também é eficaz. Nos sensores de imagem, a parcela da corrente de escuro é corrigida usando pixels protegidos da luz ou quadros obtidos no escuro."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Por que a corrente de escuro aumenta com a temperatura?",
+        "a": "Porque suas principais componentes vêm de elétrons excitados termicamente através da banda proibida. A probabilidade disso cresce exponencialmente com a temperatura, e para fotodiodos de silício uma regra prática comum é que a corrente de escuro aproximadamente dobra a cada 10 °C de aumento."
+      },
+      {
+        "q": "Como se pode reduzir a corrente de escuro?",
+        "a": "Os métodos incluem resfriar o dispositivo, reduzir a tensão reversa apenas ao necessário, diminuir a área receptora e melhorar a passivação da superfície. Com polarização zero, a corrente de escuro é quase nula, mas a capacitância de junção aumenta e a resposta fica mais lenta."
+      },
+      {
+        "q": "A corrente de escuro e o ruído da corrente de escuro são diferentes?",
+        "a": "Sim. A própria corrente de escuro pode ser subtraída se for constante, mas o ruído de disparo que ela produz, √(2qIdB), é uma flutuação aleatória e não pode ser subtraído. Na detecção de luz fraca, esse ruído de disparo determina a NEP. Os valores das folhas de dados devem ser lidos junto com as condições de polarização e de temperatura."
+      }
+    ],
     "aliases": [
       "corrente escura",
       "dark current"
@@ -329,6 +1477,34 @@
   "リング共振器": {
     "term": "Ressonador em anel",
     "desc": "Dispositivo em que a luz que circula em um guia de onda em forma de anel ressoa quando o caminho óptico de uma volta é um múltiplo inteiro do comprimento de onda. O FSR é λ²/(n_g L). É usado em filtros e moduladores.",
+    "about": [
+      {
+        "h": "Condição de ressonância e FSR",
+        "p": "Um ressonador em anel coloca um guia de barramento ao lado de um guia de onda fechado em laço, de modo que parte da luz passa para o anel por acoplamento evanescente. Nos comprimentos de onda em que a fase acumulada em uma volta é um múltiplo inteiro de 2π, isto é, n_eff × L = mλ (L é o perímetro), a luz que circula se reforça e ressoa. O espaçamento em comprimento de onda até a ressonância seguinte (o FSR) usa o índice de grupo n_g, que inclui a dispersão: FSR = λ²/(n_gL). Para um anel de silício com raio de 10 µm e índice de grupo 4,2, ele é de cerca de 9,1 nm em 1550 nm. O FSR aumenta ao diminuir o anel, mas as perdas por curvatura aumentam, por isso um raio de alguns micrômetros é aproximadamente o limite inferior no silício."
+      },
+      {
+        "h": "Fator Q e regimes de acoplamento",
+        "p": "A estreiteza da ressonância é expressa por Q = λ/Δλ (Δλ é a largura total a meia altura), que depende tanto das perdas dentro do anel quanto da intensidade do acoplamento com o guia de barramento. Uma largura de linha de 0,05 nm em 1550 nm dá um Q de cerca de 3,1×10⁴. No acoplamento crítico, em que o acoplamento é igual às perdas de uma volta, a transmissão na porta de passagem no comprimento de onda de ressonância é nula, o que dá uma extinção profunda. No sobreacoplamento a largura de linha se alarga, e no subacoplamento a extinção é rasa. Acrescentar um segundo guia de onda como porta drop forma um demultiplexador de comprimentos de onda (filtro add-drop) que extrai apenas o comprimento de onda ressonante."
+      },
+      {
+        "h": "Usos e cuidados",
+        "p": "Os ressonadores em anel são usados como filtros de multiplexação e demultiplexação por comprimento de onda, como moduladores em anel, como sensores e para gerar pentes de frequências ópticos por óptica não linear. Os moduladores em anel são pequenos e têm baixa capacitância, por isso operam rápido com baixa potência, e anéis com comprimentos de onda de ressonância diferentes podem ser dispostos ao longo de um mesmo guia de barramento para construir transmissores de vários comprimentos de onda. Por outro lado, o coeficiente termo-óptico do silício é grande, cerca de 1,8×10⁻⁴ /K, e a ressonância se desloca cerca de 0,07 nm/K, por isso o ajuste do comprimento de onda com aquecedores e o controle de temperatura com realimentação são indispensáveis. Mesmo variações da ordem de nanômetros na largura e na espessura do guia deslocam o comprimento de onda de ressonância, por isso os projetos pressupõem um ajuste após a fabricação."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Como se calcula o FSR de um ressonador em anel?",
+        "a": "FSR = λ²/(n_gL), em que L é o perímetro do anel (2πR) e n_g é o índice de grupo. Usar o índice efetivo no lugar dele dá erros grandes em guias de onda muito dispersivos, como os guias de onda de silício do tipo fio, por isso é preciso cuidado."
+      },
+      {
+        "q": "O que é o fator Q de um ressonador em anel?",
+        "a": "É o comprimento de onda de ressonância dividido pela largura total a meia altura da ressonância, e expressa a estreiteza da ressonância. Ele também corresponde ao tempo que os fótons permanecem no anel, τ = Qλ/(2πc); um Q mais alto dá um filtro mais estreito, mas maior sensibilidade às variações de temperatura."
+      },
+      {
+        "q": "Por que os ressonadores em anel precisam de aquecedores?",
+        "a": "Porque o índice de refração do silício muda muito com a temperatura, deslocando o comprimento de onda de ressonância em cerca de 0,07 nm/K. Aquecedores e controle são usados para ajustar a ressonância ao comprimento de onda de operação, incluindo os desvios causados pela variação de fabricação, e para mantê-la quando a temperatura muda."
+      }
+    ],
     "aliases": [
       "ressonadores em anel",
       "anel ressonante",
@@ -338,6 +1514,38 @@
   "群屈折率": {
     "term": "Índice de grupo",
     "desc": "Índice de refração que descreve a velocidade com que os pulsos de luz e a energia se propagam (a velocidade de grupo), n_g = n_eff − λ dn_eff/dλ. É usado para calcular o FSR e os tempos de atraso.",
+    "about": [
+      {
+        "h": "Velocidade da fase e velocidade da envoltória",
+        "p": "O índice de refração n determina a velocidade de fase c/n com que as cristas da onda avançam, mas a envoltória de um pulso ou de uma modulação, que transporta o sinal e a energia, se propaga com a velocidade de grupo v_g = c/n_g. O índice de grupo é n_g = n − λ dn/dλ, e só difere de n quando o índice varia com o comprimento de onda, isto é, quando há dispersão. Na dispersão normal dos materiais transparentes, dn/dλ < 0, de modo que n_g > n. Em um guia de onda, além da dispersão do material, atua também a dispersão de guia de onda, a mudança na extensão do modo à medida que o comprimento de onda muda, por isso aplica-se a mesma fórmula ao índice efetivo n_eff."
+      },
+      {
+        "h": "Por que os dois diferem tanto nos guias de onda de silício do tipo fio",
+        "p": "Em um guia de onda de silício do tipo fio com cerca de 220 nm de espessura e 500 nm de largura, n_eff é de cerca de 2,4 na banda de 1550 nm, enquanto n_g é de cerca de 4,2, bem distantes. A causa é a forte dispersão de guia de onda: à medida que o comprimento de onda aumenta, mais luz penetra no óxido ao redor e n_eff diminui. O atraso é determinado por n_g/c, de modo que n_g = 4,2 dá cerca de 14 ps por milímetro. Já na fibra monomodo padrão, n_g ≈ 1,468 em 1550 nm, o que dá cerca de 4,9 µs por quilômetro. Nos dois casos, usar o valor do índice de refração diretamente distorce os cálculos de tempo e de distância."
+      },
+      {
+        "h": "Onde se usa o índice de grupo",
+        "p": "O período em comprimento de onda de uma ressonância ou de uma interferência é determinado pela diferença de fase entre ordens vizinhas, por isso entra o índice de grupo. São exemplos o FSR de um ressonador em anel, λ²/(n_gL), o período λ²/(n_gΔL) de um interferômetro de Mach-Zehnder com diferença de comprimento ΔL entre os braços, o espaçamento entre modos longitudinais de um laser de Fabry-Pérot e a conversão para distância no OTDR e no ToF. Com ΔL = 100 µm e n_g = 4,2, o período é de cerca de 5,7 nm, mas usar n_eff = 2,4 dá cerca de 10 nm, muito longe do correto. Já o próprio comprimento de onda de ressonância e a condição de fase (n_eff L = mλ) usam o índice efetivo."
+      },
+      {
+        "h": "Como medir o índice de grupo, e a luz lenta",
+        "p": "A forma mais simples de obter o índice de grupo é ler o FSR no espectro de transmissão de um ressonador em anel ou de um interferômetro de Mach-Zehnder assimétrico fabricado e usar n_g = λ²/(FSR × L). Ele também serve de indicador das variações de dimensão do guia de onda. Em estruturas com dispersão fortemente projetada, como os guias de onda de cristal fotônico, é possível obter luz lenta com n_g de várias dezenas ou mais, o que dá grandes atrasos e forte interação entre luz e matéria em dispositivos curtos. Em geral, porém, quanto maior n_g, mais sensível a estrutura fica às perdas por espalhamento e aos erros de fabricação."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qual é a diferença entre o índice de grupo e o índice efetivo?",
+        "a": "O índice efetivo descreve a velocidade de fase de um modo guiado; o índice de grupo descreve a velocidade de grupo com que os pulsos e a energia se propagam. Eles se relacionam por n_g = n_eff − λ dn_eff/dλ e só coincidem sem dispersão. Nos guias de onda de silício do tipo fio, eles diferem muito, cerca de 2,4 contra cerca de 4,2."
+      },
+      {
+        "q": "Qual é o índice de grupo de uma fibra óptica?",
+        "a": "Para a fibra monomodo padrão, é de cerca de 1,468 em 1550 nm, de modo que a luz leva cerca de 4,9 µs para percorrer 1 km. Quando um OTDR mostra distâncias, esse valor (também chamado de IOR) é configurado de acordo com a especificação do cabo."
+      },
+      {
+        "q": "Como se mede o índice de grupo?",
+        "a": "Leia o período em comprimento de onda (FSR) no espectro de transmissão de um ressonador em anel ou de um interferômetro de Mach-Zehnder com braços de comprimentos diferentes e use n_g = λ²/(FSR × L), em que L é o perímetro do anel ou a diferença entre os comprimentos dos dois braços."
+      }
+    ],
     "aliases": [
       "índice de refração de grupo",
       "group index"
@@ -346,6 +1554,38 @@
   "方向性結合器": {
     "term": "Acoplador direcional",
     "desc": "Divisor que aproxima dois guias de onda e transfere a luz entre eles por acoplamento evanescente. O comprimento de acoplamento determina a razão de divisão, e metade do comprimento de acoplamento completo dá uma divisão de 3 dB.",
+    "about": [
+      {
+        "h": "Como a luz vai e volta entre dois guias",
+        "p": "Um acoplador direcional faz dois guias de onda correrem paralelos, a algumas centenas de nanômetros um do outro, de modo que o campo evanescente de um modo transfira luz para o outro guia. A estrutura combinada tem dois modos, simétrico e antissimétrico (supermodos), com velocidades de fase ligeiramente diferentes, e o batimento entre eles faz a luz ir e voltar entre os guias. Se a diferença entre seus índices efetivos é Δn, o comprimento para transferência completa é Lc = λ/(2Δn); com Δn = 0,05 e λ = 1,55 µm, ele é de cerca de 15,5 µm."
+      },
+      {
+        "h": "O que determina a razão de divisão",
+        "p": "Se os dois guias são idênticos e estão em casamento de fase, a fração de potência transferida é sen²(κL), em que κ é o coeficiente de acoplamento: L = Lc/2 dá uma divisão igual de 3 dB, e Lc transfere tudo. κ diminui quase exponencialmente à medida que o espaçamento aumenta e cresce em comprimentos de onda maiores, à medida que o campo penetra mais para fora. Por isso, uma mudança de 10 nm no espaçamento ou uma mudança de comprimento de onda altera a razão de divisão. Se os dois guias têm larguras diferentes e não estão em casamento de fase, a fração máxima transferida é menor que 1, e a transferência nunca é completa."
+      },
+      {
+        "h": "Escolha entre ele e o acoplador MMI",
+        "p": "O acoplador direcional tem perda em excesso baixa, e qualquer razão de divisão, de um tap de 1 % até 3 dB, pode ser obtida apenas escolhendo o comprimento. Em contrapartida, a razão é sensível à variação de fabricação e ao comprimento de onda. O acoplador MMI tem razão de divisão estável, mas em geral fica limitado a razões fixas, como 50:50. Em ambos os dispositivos 2×2, as duas saídas têm uma diferença de fase de π/2. Quando a razão precisa se manter em uma faixa ampla de comprimentos de onda, escolhem-se acopladores direcionais de banda larga, com seções de acoplamento curvas ou guias de larguras diferentes, ou MMIs."
+      },
+      {
+        "h": "Usos em fotônica de silício e em fibras",
+        "p": "Na fotônica de silício, os acopladores direcionais formam a seção de acoplamento entre um ressonador em anel e seu guia de barramento, os divisores e combinadores dos interferômetros de Mach-Zehnder e os taps que retiram um pouco de luz para monitoramento. A intensidade do acoplamento de um anel (acoplamento crítico ou sobreacoplamento) também é projetada com o espaçamento e o comprimento desse elemento. Casando a fase de modos de polarizações ou ordens diferentes entre guias de larguras diferentes, ele se torna um divisor de polarização ou um dispositivo de multiplexação de modos. Nas fibras ópticas, os acopladores de fibra fundidos e estirados, feitos fundindo e esticando duas fibras, funcionam pelo mesmo princípio."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que comprimento dá uma divisão de 3 dB em um acoplador direcional?",
+        "a": "Metade do comprimento de acoplamento completo Lc, no qual a luz passa totalmente para o outro guia. A fração transferida é sen²(κL), que é igual a metade quando κL = π/4. Em Lc/4, apenas cerca de 15 % é transferido."
+      },
+      {
+        "q": "Por que a razão de divisão de um acoplador direcional muda com o comprimento de onda?",
+        "a": "Em comprimentos de onda maiores, o modo se espalha mais para fora, de modo que o coeficiente de acoplamento κ com o guia vizinho aumenta e o comprimento de acoplamento completo diminui. Mesmo com o mesmo comprimento, a fração transferida sen²(κL) muda, e uma diferença de algumas dezenas de nanômetros no comprimento de onda pode alterar bastante a razão."
+      },
+      {
+        "q": "Devo usar um acoplador direcional ou um acoplador MMI?",
+        "a": "Use um acoplador direcional quando precisar de uma razão de divisão arbitrária ou de perda baixa, e um acoplador MMI quando precisar de uma divisão 50:50 estável diante da variação de fabricação e do comprimento de onda. Os acopladores direcionais são comuns nas seções de acoplamento de anéis, e os MMIs, nos divisores de moduladores."
+      }
+    ],
     "aliases": [
       "acopladores direcionais",
       "directional coupler"
