@@ -51,7 +51,8 @@ const KATA = /[ァ-ヶー]/;
 const kataBounded = (text, start, end) => !KATA_ONLY.test(text.slice(start, end))
   || !(KATA.test(text[start - 1] ?? '') || KATA.test(text[end] ?? ''));
 
-const ALNUM = /[A-Za-z0-9]/;
+// ラテン文字のアクセント付きの字も語の一部とみる(fr の « chirpés » の中の « chirp » などを切り出さない)
+const ALNUM = /[A-Za-z0-9\u00c0-\u00d6\u00d8-\u00f6\u00f8-\u024f]/;
 const bounded = (text, start, end) => !(ALNUM.test(text[start] ?? '') && ALNUM.test(text[start - 1] ?? ''))
   && !(ALNUM.test(text[end - 1] ?? '') && ALNUM.test(text[end] ?? ''));
 
