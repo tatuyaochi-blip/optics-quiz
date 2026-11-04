@@ -409,6 +409,63 @@
           "a": "En incidencia oblicua, la diferencia de fase del camino dentro de la capa disminuye y la longitud de onda de reflectancia mínima se desplaza hacia longitudes de onda más cortas. Además, la reflectancia es distinta para la polarización s y la polarización p. Esta herramienta solo trata la incidencia normal, por lo que para aplicaciones con ángulos de incidencia grandes se necesita otro cálculo."
         }
       ]
+    },
+    "pt": {
+      "nav": "Revestimento antirreflexo",
+      "card": "Calcule a espessura λ/4, o índice de refração ideal e a refletância em incidência normal de um revestimento antirreflexo de camada única",
+      "title": "Calculadora de revestimentos antirreflexo (espessura da camada λ/4, índice de refração ideal e refletância)",
+      "description": "Para um revestimento antirreflexo de camada única, calcula a espessura física da camada λ/4 no comprimento de onda de projeto, o índice de refração ideal da camada √(n₀nₛ), que anula a reflexão, e a refletância em incidência normal sem e com a camada. Também calcula a refletância em comprimentos de onda diferentes do de projeto.",
+      "h1": "Calculadora de revestimentos antirreflexo",
+      "lead": "Digite os índices de refração do substrato e do material da camada e o comprimento de onda de projeto para calcular a espessura física de uma camada cuja espessura óptica é λ/4 e a refletância da luz em incidência normal. Os valores padrão correspondem a um vidro de índice 1,52 (semelhante ao BK7) com uma camada λ/4 para 550 nm de fluoreto de magnésio (MgF₂) de índice 1,38, observado com luz azul de 450 nm.",
+      "in_heading": "Dados (incidência normal)",
+      "lambda0": "Comprimento de onda de projeto λ₀ (nm, no vácuo)",
+      "n0": "Índice de refração do meio de incidência n₀ (1 para o ar)",
+      "ns": "Índice de refração do substrato nₛ",
+      "n1": "Índice de refração da camada n₁",
+      "lambda": "Comprimento de onda para a refletância λ (nm)",
+      "out_heading": "Resultados",
+      "nideal": "Índice de refração ideal da camada √(n₀nₛ)",
+      "thick": "Espessura física da camada λ/4, d = λ₀/(4n₁)",
+      "r0": "Refletância sem camada",
+      "coat_heading": "Refletância com a camada (uma superfície)",
+      "rdes": "Refletância no comprimento de onda de projeto λ₀",
+      "rlam": "Refletância no comprimento de onda λ",
+      "nideal_r": "Com uma camada de índice ideal (em λ₀)",
+      "note": "O cálculo supõe uma camada e um substrato sem absorção, com índices de refração que não dependem do comprimento de onda (sem dispersão), e dá a refletância de uma superfície em incidência normal. Não inclui a reflexão na face traseira do substrato nem as diferenças por polarização em incidência oblíqua. A refletância é a razão entre intensidades (potências).",
+      "practice": "Resolver questões de interferência e difração",
+      "related": "Termos relacionados",
+      "sections": [
+        {
+          "h": "Como uma camada λ/4 anula a reflexão",
+          "p": "Quando se deposita uma camada fina sobre um substrato, a luz refletida na superfície da camada se superpõe à refletida na interface entre a camada e o substrato. Se n₀ < n₁ < nₛ, a mudança de fase na reflexão é a mesma nas duas interfaces; assim, se a espessura óptica da camada (índice de refração × espessura física) for λ/4, a diferença de caminho de ida e volta dentro da camada é λ/2, as duas luzes refletidas ficam defasadas de meio período e se anulam. Dentro da camada o comprimento de onda se reduz a λ/n₁, por isso a espessura física é d = λ₀/(4n₁). Com os valores padrão (MgF₂, n₁ = 1,38, λ₀ = 550 nm), d ≈ 99,6 nm, diferente de λ/4 = 137,5 nm sem dividir pelo índice. Uma camada de espessura óptica λ/2 tem uma diferença de caminho de ida e volta de um comprimento de onda, não anula a reflexão e dá a mesma refletância que sem camada."
+        },
+        {
+          "h": "O índice de refração ideal da camada √(n₀nₛ)",
+          "p": "Para anular completamente as duas luzes refletidas, não basta ajustar a fase: também é preciso igualar as amplitudes. Da condição de que, em incidência normal, as amplitudes de reflexão nas duas interfaces sejam iguais, resulta que o índice ideal da camada é n₁ = √(n₀nₛ), com o qual a refletância no comprimento de onda de projeto é 0. Para um vidro (nₛ = 1,52) no ar, é √1,52 ≈ 1,23, mas há poucos materiais resistentes com um índice tão baixo, por isso na prática se usa muito o MgF₂ (1,38). Para o silício, de índice 3,48 em 1,55 µm, o ideal é de cerca de 1,87, e o nitreto de silício (cerca de 2,0) ou o oxinitreto de silício têm valores próximos."
+        },
+        {
+          "h": "Refletância em incidência normal",
+          "p": "Pelas equações de Fresnel, a refletância da luz que incide normalmente na interface entre índices n₀ e nₛ é R = ((n₀ − nₛ)/(n₀ + nₛ))². Para o vidro dos valores padrão, é de aproximadamente 4,26 %, e para o silício (3,48 em 1,55 µm), de aproximadamente 31 %. Com uma camada λ/4, a refletância no comprimento de onda de projeto passa a ser R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))², e com o MgF₂ sobre o vidro dos valores padrão cai para aproximadamente 1,26 %. Quanto mais o índice se afasta do ideal, mais reflexão resta, e, se o índice da camada for maior que o do substrato, a reflexão chega a aumentar."
+        },
+        {
+          "h": "Comprimentos de onda diferentes do de projeto e revestimentos multicamadas",
+          "p": "Como a espessura da camada é fixada para o comprimento de onda de projeto, em outros comprimentos de onda a condição de fase deixa de ser satisfeita e a reflexão aumenta. Com os valores padrão, a refletância de aproximadamente 1,26 % em 550 nm passa a ser de aproximadamente 1,62 % em 450 nm e 1,60 % em 700 nm (sem levar em conta a dispersão). Mesmo com a camada única padrão, a refletância no visível (400 a 700 nm) fica abaixo de aproximadamente 2,2 % (o valor mais alto está no extremo de 400 nm), mas, para reduzi-la ainda mais em uma faixa larga de comprimentos de onda, usam-se revestimentos multicamadas que combinam camadas de índice alto e baixo. Se as mesmas camadas λ/4 forem empilhadas alternando índice alto e baixo, as reflexões se reforçam e obtém-se um espelho dielétrico multicamadas."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Qual é a diferença entre a espessura física e a espessura óptica?",
+          "a": "A espessura óptica é o índice de refração × a espessura física e determina quanto a fase da luz avança. Uma camada λ/4 tem espessura óptica de λ/4, e a sua espessura física é 1/n₁ desse valor: para MgF₂ projetado para 550 nm, cerca de 99,6 nm."
+        },
+        {
+          "q": "Os revestimentos antirreflexo de óculos e de objetivas de câmera são de camada única?",
+          "a": "Os mais baratos podem ser de uma única camada de MgF₂, mas a maioria é multicamadas, de várias a mais de dez camadas, e mantém a refletância abaixo de 1 % em todo o visível, ou em torno de 0,5 % ou menos nos de alto desempenho. A leve cor da reflexão residual (verde ou violeta) se deve ao fato de que a refletância varia com o comprimento de onda."
+        },
+        {
+          "q": "O que acontece se a luz incidir obliquamente?",
+          "a": "Em incidência oblíqua, a diferença de fase do caminho dentro da camada diminui, e o comprimento de onda de refletância mínima se desloca para comprimentos de onda menores. Além disso, a refletância é diferente para a polarização s e a polarização p. Esta ferramenta trata apenas a incidência normal, por isso, para aplicações com ângulos de incidência grandes, é necessário outro cálculo."
+        }
+      ]
     }
   }
 }

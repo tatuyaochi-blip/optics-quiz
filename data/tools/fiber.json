@@ -435,6 +435,68 @@
           "a": "También se propagan modos de orden superior como el LP11, y la fibra funciona en régimen multimodo, con lo que la interferencia y la dispersión entre modos degradan la señal. Las fibras monomodo se usan a longitudes de onda mayores que la de corte (las bandas de 1310 nm y de 1550 nm)."
         }
       ]
+    },
+    "pt": {
+      "nav": "NA e número V de fibras ópticas",
+      "card": "Calcule a abertura numérica, o ângulo de aceitação, o número V e o comprimento de onda de corte a partir dos índices de refração do núcleo e da casca",
+      "title": "Calculadora de fibras ópticas (abertura numérica NA, ângulo de aceitação, número V, condição monomodo e comprimento de onda de corte)",
+      "description": "A partir dos índices de refração do núcleo e da casca, do raio do núcleo e do comprimento de onda de uma fibra óptica de índice degrau, calcula a abertura numérica NA, o ângulo de aceitação máximo, a diferença relativa de índices, a frequência normalizada V, a condição monomodo (V < 2,405) e o comprimento de onda de corte.",
+      "h1": "Calculadora de NA e número V de fibras ópticas",
+      "lead": "A partir dos índices de refração do núcleo e da casca, do raio do núcleo e do comprimento de onda de operação, determina o ângulo com que a fibra aceita a luz e quantos modos se propagam. Os valores padrão se aproximam dos de uma fibra monomodo padrão usada em 1550 nm (raio do núcleo de 4,1 µm).",
+      "in_heading": "Dados",
+      "n1": "Índice de refração do núcleo n1",
+      "n2": "Índice de refração da casca n2",
+      "a": "Raio do núcleo a (µm)",
+      "lambda": "Comprimento de onda λ (nm)",
+      "out_heading": "Resultados",
+      "na": "Abertura numérica NA",
+      "theta": "Ângulo de aceitação máximo (no ar, semiângulo)",
+      "delta": "Diferença relativa de índices Δ",
+      "mode_heading": "Modos",
+      "v": "Frequência normalizada V",
+      "mode": "Regime",
+      "lc": "Comprimento de onda de corte λc",
+      "modes": "Número de modos que se propagam (aproximado)",
+      "note": "O cálculo supõe uma fibra de índice degrau (índice de refração uniforme no núcleo). Em comprimentos de onda maiores que o de corte, a fibra é monomodo. A estimativa do número de modos V²/2 é uma aproximação para fibras multimodo com V suficientemente grande.",
+      "practice": "Resolver questões de fibras ópticas",
+      "related": "Termos relacionados",
+      "js": {
+        "single": "Monomodo (V < 2,405)",
+        "multi": "Multimodo (V ≥ 2,405)",
+        "bad": "n1 deve ser maior que n2"
+      },
+      "sections": [
+        {
+          "h": "Abertura numérica e ângulo de aceitação",
+          "p": "Uma fibra óptica envolve um núcleo de índice de refração alto (n1) com uma casca de índice menor (n2) e confina a luz por reflexão interna total na interface. A condição de reflexão interna total fixa o ângulo máximo θmax com que a luz que entra pela extremidade da fibra se propaga; no ar, senθmax = NA = √(n1² − n2²). Com os valores padrão, NA ≈ 0,124 e o ângulo de aceitação é de cerca de 7,1° (semiângulo). A NA das fibras multimodo costuma ser de 0,2 a 0,3, e a das fibras monomodo, de 0,1 a 0,14; quanto maior a NA, mais fácil é acoplar a luz, mas maior é a dispersão entre modos."
+        },
+        {
+          "h": "Número V e condição monomodo",
+          "p": "O número de modos que se propagam em uma fibra é determinado basicamente pela frequência normalizada V = 2πa·NA/λ. Uma fibra de índice degrau é monomodo, isto é, só se propaga o modo fundamental (LP01), quando V < 2,405. O valor 2,405 é o primeiro zero da função de Bessel de ordem 0. Em 1550 nm, com os valores padrão, V ≈ 2,06 e a fibra é monomodo. Na mesma fibra, ao encurtar o comprimento de onda, V aumenta, e abaixo de certo comprimento de onda a fibra passa a ser multimodo. Esse limite é o comprimento de onda de corte λc = 2πa·NA/2,405, de cerca de 1327 nm com os valores padrão."
+        },
+        {
+          "h": "Diferença relativa de índices",
+          "p": "A diferença relativa de índices Δ = (n1² − n2²)/(2n1²) ≈ (n1 − n2)/n1 expressa em termos relativos a diferença entre os índices de refração do núcleo e da casca. Com os valores padrão, é de aproximadamente 0,365 %, e nas fibras monomodo de sílica o usual é entre 0,3 % e 0,4 %. A NA também pode ser escrita como n1·√(2Δ). Aumentando Δ, a luz fica mais confinada e as perdas por curvatura diminuem, mas, para manter a fibra monomodo, é preciso reduzir o núcleo."
+        },
+        {
+          "h": "Número de modos em fibras multimodo",
+          "p": "Em uma fibra de índice degrau com V grande, o número de modos que se propagam é aproximadamente V²/2. Por exemplo, com um núcleo de 50 µm de diâmetro, NA de 0,2 e comprimento de onda de 850 nm, V ≈ 37 e há cerca de 680 modos. Como cada modo se propaga com uma velocidade diferente, ocorre a dispersão modal, que alarga os pulsos e limita a distância e a taxa de transmissão. Com um perfil de índice gradual, em que o índice é maior no centro, as diferenças de velocidade entre os modos diminuem muito."
+        }
+      ],
+      "faq": [
+        {
+          "q": "O que é o 2,405 da condição monomodo V < 2,405?",
+          "a": "É o primeiro zero (aproximadamente 2,405) da função de Bessel de primeira espécie e ordem 0, J0. Quando V passa desse valor, o segundo modo (LP11) começa a se propagar."
+        },
+        {
+          "q": "Qual é a relação entre a NA e o ângulo de aceitação?",
+          "a": "No ar, NA = senθmax. Se a luz entra a partir de um líquido ou de outro meio de índice de refração n0, n0·senθmax = NA, e o ângulo de aceitação é menor."
+        },
+        {
+          "q": "O que acontece se a fibra for usada em um comprimento de onda menor que o de corte?",
+          "a": "Modos de ordem superior, como o LP11, também se propagam, e a fibra funciona em regime multimodo, de modo que a interferência e a dispersão entre modos degradam o sinal. As fibras monomodo são usadas em comprimentos de onda maiores que o de corte (as bandas de 1310 nm e de 1550 nm)."
+        }
+      ]
     }
   }
 }
