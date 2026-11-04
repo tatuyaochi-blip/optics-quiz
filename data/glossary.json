@@ -186,6 +186,7 @@
  "reading": "こひーれんすちょう",
  "desc": "光が干渉できる光路差の目安で、約 λ²/Δλ。スペクトル幅が狭いほど長い。狭線幅レーザーではkm級、白色光ではµm程度。",
  "cat": "wave",
+ "noLinkIn": ["nonlinear"],
  "about": [
   {
    "h": "時間的コヒーレンスの目安",
@@ -2390,6 +2391,7 @@
  "reading": "こうそく",
  "desc": "光源から出る、または面を通る光の量を、比視感度で重みづけして表した測光量。単位はルーメン(lm)。放射量では放射束(W)に対応する。",
  "cat": "photometry-color",
+ "noLinkIn": ["optical-design", "spectroscopy", "wave"],
  "about": [
   {
    "h": "目の感度で重みづけした光の量",
