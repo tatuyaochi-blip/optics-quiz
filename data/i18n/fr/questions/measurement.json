@@ -1,0 +1,272 @@
+{
+  "measurement-001": {
+    "question": "Quelle valeur est la plus proche d'une puissance optique de 5 mW exprimée en dBm ?",
+    "choices": [
+      "Environ 14 dBm",
+      "Environ 7,0 dBm",
+      "Environ 0,7 dBm"
+    ],
+    "explanation": "Le dBm est une unité logarithmique dont la référence est 1 mW : P[dBm] = 10 log₁₀(P / 1 mW). Pour 5 mW, on obtient 10 log₁₀5 ≈ 10 × 0,699 ≈ 7,0 dBm. La valeur d'environ 14 dBm vient de l'erreur qui applique à une puissance le 20 log₁₀ réservé aux rapports de tensions ou d'amplitudes. Celle d'environ 0,7 dBm oublie de multiplier par 10. De tête, un facteur 2 correspond à environ 3 dB et un facteur 10 à 10 dB, donc 5 mW = 10 mW / 2 → 10 − 3 = 7 dBm. La différence de deux valeurs en dBm est un rapport (en dB) : par exemple, si une lumière émise à +7 dBm arrive à −13 dBm, les pertes valent 20 dB."
+  },
+  "measurement-002": {
+    "question": "Lors d'une mesure avec un puissancemètre optique à photodiode, pourquoi faut-il régler correctement la longueur d'onde ? Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "Parce que le réglage de la longueur d'onde fait passer un filtre accordable interne sur cette seule longueur d'onde, qui élimine entièrement la lumière parasite des autres longueurs d'onde avant la mesure",
+      "Parce que la sensibilité spectrale (A/W) de la photodiode varie fortement avec la longueur d'onde, si bien que le coefficient qui convertit le courant en puissance dépend de la longueur d'onde",
+      "Parce qu'une photodiode mesure l'énergie et non le nombre de photons : la puissance est proportionnelle au courant quelle que soit la longueur d'onde, et le réglage ne sert qu'à l'affichage"
+    ],
+    "explanation": "Un capteur à photodiode mesure le photocourant et affiche la puissance optique en le divisant par la sensibilité spectrale R(λ). Celle-ci est proportionnelle à la longueur d'onde, R = ηqλ/(hc), et le rendement quantique varie lui aussi avec la longueur d'onde : un mauvais réglage entraîne donc une erreur importante sur la valeur affichée. Le réglage de longueur d'onde du puissancemètre sélectionne un coefficient de conversion ; ce n'est pas un filtre qui élimine les autres longueurs d'onde. Une lumière d'une autre longueur d'onde présente dans le faisceau est détectée elle aussi. Les capteurs thermiques (thermopiles), qui mesurent un échauffement, dépendent peu de la longueur d'onde, car le coefficient d'absorption de leur absorbeur est presque constant sur un large domaine spectral ; ils conviennent aux fortes puissances, mais sont moins sensibles et plus lents que les capteurs à photodiode."
+  },
+  "measurement-003": {
+    "question": "On éclaire sur une largeur de 50 mm un réseau de diffraction de 1200 traits par millimètre et l'on utilise le premier ordre de diffraction. Quelle valeur est la plus proche du plus petit écart de longueur d'onde séparable à 600 nm ? (Pouvoir de résolution λ/Δλ = mN.)",
+    "choices": [
+      "Environ 0,01 nm",
+      "Environ 0,5 nm",
+      "Environ 0,1 nm"
+    ],
+    "explanation": "Le nombre de traits éclairés vaut N = 1200 traits/mm × 50 mm = 60000, et le pouvoir de résolution au premier ordre est λ/Δλ = mN = 60 000. On a donc Δλ = 600 nm / 60 000 = 0,01 nm. La valeur d'environ 0,5 nm vient de l'erreur qui prend pour N les 1200 traits d'un seul millimètre, en oubliant que c'est le nombre de traits sur toute la largeur éclairée qui compte. Celle d'environ 0,1 nm est une erreur d'ordre de grandeur. Utiliser un ordre de diffraction plus élevé augmente le pouvoir de résolution. Dans un spectromètre réel, la largeur de la fente d'entrée, la taille des pixels du détecteur et les aberrations du système optique rendent presque toujours la résolution plus grossière que cette valeur théorique."
+  },
+  "measurement-004": {
+    "question": "On mesure avec un analyseur de spectre optique (OSA) à réseau le spectre d'un laser à raie étroite dont la largeur de raie est de l'ordre de 100 kHz, et la largeur de raie affichée vaut environ 0,02 nm (environ 2,5 GHz). Laquelle des explications suivantes est la plus appropriée ?",
+    "choices": [
+      "La largeur de raie du laser est réellement de 2,5 GHz, et la valeur de l'appareil est correcte",
+      "Un analyseur de spectre ne mesure que la puissance optique et ne peut pas afficher une largeur en longueur d'onde : la largeur affichée n'est que celle d'une graduation de l'écran",
+      "La largeur affichée est fixée par la bande passante de résolution de l'appareil : la véritable largeur de raie du laser, bien plus étroite, n'est pas mesurée"
+    ],
+    "explanation": "La résolution d'un analyseur de spectre optique à réseau est fixée par le réseau et les fentes ; elle vaut typiquement de 0,01 à 0,1 nm. Si la largeur de raie de la lumière mesurée est bien plus étroite que cette bande passante de résolution, l'écran montre la forme et la largeur de la fonction de réponse de l'appareil lui-même. Dans la bande de 1,55 µm, 0,02 nm correspondent à environ 2,5 GHz, soit plus de quatre ordres de grandeur au-dessus d'une largeur de raie de 100 kHz : la largeur de raie du laser n'est donc pas mesurée. Pour mesurer une raie étroite, on utilise la méthode hétérodyne, qui mélange la lumière à celle d'un autre laser et observe le signal de battement avec un analyseur de spectre électrique, ou la méthode auto-hétérodyne retardée, qui fait interférer la lumière avec elle-même après un retard dans une longue fibre. L'OSA est un appareil qui affiche la répartition de la puissance en fonction de la longueur d'onde."
+  },
+  "measurement-005": {
+    "question": "On injecte une impulsion d'OTDR dans une fibre d'indice de groupe 1,468, et un pic de réflexion est observé 100 µs après l'injection. Quelle valeur est la plus proche de la distance jusqu'au point de réflexion ? (c = 3,0×10⁸ m/s)",
+    "choices": [
+      "Environ 10,2 km",
+      "Environ 20,4 km",
+      "Environ 15 km"
+    ],
+    "explanation": "L'OTDR déduit la distance du temps d'aller-retour de l'impulsion lumineuse dans la fibre. La vitesse de la lumière dans la fibre vaut c/n, donc la distance est z = ct/(2n) = 3,0×10⁸ × 100×10⁻⁶ / (2 × 1,468) ≈ 1,02×10⁴ m, soit environ 10,2 km. La valeur d'environ 20,4 km oublie qu'il s'agit d'un aller-retour et ne divise pas par 2. Celle d'environ 15 km ignore l'indice de groupe de la fibre et utilise la vitesse de la lumière dans le vide. Les OTDR réels comportent un paramètre d'indice de groupe (IOR) ; si cette valeur est fausse, la distance affichée l'est d'autant, et on la règle donc d'après les spécifications du câble."
+  },
+  "measurement-006": {
+    "question": "Quelle valeur est la plus proche de la résolution en distance d'un OTDR (ordre de grandeur de la distance à laquelle deux événements peuvent être séparés, Δz = cτ/(2n)) utilisant des impulsions de 10 ns ? (Indice de groupe 1,468, c = 3,0×10⁸ m/s.)",
+    "choices": [
+      "Environ 2,0 m",
+      "Environ 1,5 m",
+      "Environ 1,0 m"
+    ],
+    "explanation": "Pendant la durée d'impulsion τ, la lumière parcourt cτ/n ; mais comme le temps est mesuré sur un aller-retour, la résolution en distance en vaut la moitié : Δz = cτ/(2n) = 3,0×10⁸ × 10×10⁻⁹ / (2 × 1,468) ≈ 1,0 m. La valeur d'environ 2,0 m ne divise pas par le 2 de l'aller-retour, et celle d'environ 1,5 m ignore l'indice de groupe. Des impulsions plus courtes améliorent la résolution, mais l'énergie de l'impulsion diminue, le signal rétrodiffusé s'affaiblit et la distance mesurable (plage dynamique) se réduit. On utilise donc des impulsions courtes pour les fibres courtes à l'intérieur des bâtiments et des impulsions longues pour les liaisons principales de plusieurs dizaines de kilomètres, selon l'usage."
+  },
+  "measurement-007": {
+    "question": "Laquelle des propositions suivantes décrit correctement l'aspect d'une trace d'OTDR (intensité de la lumière rétrodiffusée en fonction de la distance) ?",
+    "choices": [
+      "Une épissure par fusion apparaît comme un pic de réflexion aigu, et un raccord par connecteur comme une droite sans marche",
+      "Une épissure par fusion apparaît comme une marche sur une ligne régulière, et un raccord par connecteur ou une extrémité de fibre comme un pic de réflexion aigu",
+      "Plus une section de fibre présente de pertes, plus la trace y est montante vers la droite"
+    ],
+    "explanation": "La trace d'un OTDR représente en dB, en fonction de la distance, l'intensité de la lumière rétrodiffusée par diffusion Rayleigh en chaque point de la fibre ; elle forme une droite descendante selon les pertes (la pente est l'atténuation en simple passage, en dB/km). À une épissure par fusion, il n'y a presque aucune discontinuité d'indice, donc la réflexion est minime et la ligne présente une marche descendante égale aux pertes. À un raccord par connecteur ou à l'extrémité d'une fibre coupée ou rompue, la différence d'indice provoque une réflexion de Fresnel et un pic aigu apparaît. Juste après une forte réflexion, le récepteur reste saturé un certain temps et ne peut pas mesurer : c'est la zone morte. Une section à pertes ne donne jamais une trace montante vers la droite."
+  },
+  "measurement-008": {
+    "question": "Dans un LiDAR à temps de vol (ToF), qui mesure le temps d'aller-retour d'une impulsion lumineuse, la résolution de la mesure du temps est de 1 ns. Quelle valeur est la plus proche de la résolution en distance ? (Dans l'air, c = 3,0×10⁸ m/s.)",
+    "choices": [
+      "Environ 30 cm",
+      "Environ 7,5 cm",
+      "Environ 15 cm"
+    ],
+    "explanation": "En ToF, la distance s'obtient par d = ct/2, donc pour une résolution temporelle Δt, la résolution en distance vaut Δd = cΔt/2 = 3,0×10⁸ × 1×10⁻⁹ / 2 = 0,15 m, soit environ 15 cm. La valeur d'environ 30 cm prend ct sans tenir compte de l'aller-retour, et celle d'environ 7,5 cm divise par 4 par erreur. Pour un objet à 150 m, le temps d'aller-retour est de 1 µs. En pratique, le comptage de photons uniques corrélé en temps (TCSPC), qui fait la statistique de nombreuses impulsions, ou l'ajustement de la forme de l'impulsion permettent de déterminer la distance plus finement que cette résolution. La portée de la mesure dépend de la puissance du laser, du diamètre de l'optique de réception, de la réflectance de l'objet et de la lumière ambiante."
+  },
+  "measurement-009": {
+    "question": "Un LiDAR FMCW balaie linéairement une plage de fréquence de 1 GHz en 10 µs. Quelle valeur est la plus proche de la fréquence de battement entre la lumière émise et la lumière réfléchie par un objet immobile situé à 100 m ? (c = 3,0×10⁸ m/s)",
+    "choices": [
+      "Environ 33 MHz",
+      "Environ 67 MHz",
+      "Environ 6,7 MHz"
+    ],
+    "explanation": "La pente du balayage vaut S = 1 GHz / 10 µs = 1×10¹⁴ Hz/s. Le retard d'aller-retour est τ = 2R/c = 2 × 100 / 3,0×10⁸ ≈ 0,667 µs ; pendant ce temps, la fréquence de la lumière émise varie de S × τ, si bien que la fréquence de battement vaut f_b = 1×10¹⁴ × 0,667×10⁻⁶ ≈ 67 MHz. La valeur d'environ 33 MHz est calculée avec le retard d'un seul trajet, sans tenir compte de l'aller-retour, et celle d'environ 6,7 MHz est une erreur d'ordre de grandeur. La résolution en distance est fixée par la largeur B du balayage : c/(2B) = 15 cm. Si l'objet se déplace, un décalage Doppler s'ajoute ; on combine alors des balayages montant et descendant pour séparer la distance et la vitesse."
+  },
+  "measurement-010": {
+    "question": "Laquelle des propositions suivantes décrit correctement une caractéristique du LiDAR FMCW par rapport au LiDAR à temps de vol (ToF) à impulsions ?",
+    "choices": [
+      "Grâce à la détection cohérente, il résiste bien à la lumière ambiante et mesure directement la vitesse radiale par le décalage Doppler, mais il exige un laser à raie étroite dont la fréquence peut être balayée linéairement",
+      "Il ne compare que les intensités des lumières émise et reçue, si bien que la cohérence du laser est totalement inutile et qu'une LED offre les mêmes performances en distance et en vitesse",
+      "La distance s'obtient en mesurant directement le temps d'aller-retour de l'impulsion lumineuse, si bien qu'aucun traitement du signal de battement n'est nécessaire, et la vitesse se déduit de l'écart entre plusieurs distances"
+    ],
+    "explanation": "Le LiDAR FMCW utilise une partie de la lumière émise, balayée en fréquence, comme oscillateur local et la fait interférer avec la lumière qui revient. Seule une lumière dont la fréquence correspond à celle de l'oscillateur local produit un signal de battement : le système est donc peu sensible à la lumière du soleil ou à celle des autres LiDAR, et l'amplification par l'oscillateur local permet de détecter même une très faible lumière réfléchie. Si l'objet se déplace, un décalage Doppler s'ajoute, et la vitesse est connue pour chaque pixel. En contrepartie, il faut un laser à raie étroite dont la longueur de cohérence dépasse la différence de chemin optique de l'aller-retour, ainsi qu'une technique de balayage linéaire de la fréquence. C'est le LiDAR ToF qui n'a pas besoin de cohérence ; en FMCW, l'analyse de la fréquence de battement (par FFT, etc.) constitue précisément le traitement qui donne la distance."
+  },
+  "measurement-011": {
+    "question": "Laquelle des propositions suivantes décrit correctement un avantage de l'utilisation, comme source d'un LiDAR, d'une longueur d'onde proche de 1550 nm plutôt que de 905 nm ?",
+    "choices": [
+      "La lumière est détectée directement par les photodétecteurs en silicium et les SPAD, si bien que les détecteurs sont moins chers qu'à 905 nm et que le rendement quantique est bien plus élevé",
+      "Elle est presque entièrement absorbée par la cornée et le cristallin et atteint difficilement la rétine, ce qui permet plus facilement d'utiliser une forte puissance optique tout en préservant la sécurité oculaire",
+      "L'absorption par la vapeur d'eau atmosphérique y est bien plus faible qu'à 905 nm, si bien que la lumière s'atténue peu sous la pluie ou dans le brouillard et que la mesure à grande distance est plus facile"
+    ],
+    "explanation": "La lumière de longueur d'onde supérieure à 1,4 µm est absorbée par l'eau de la partie antérieure de l'œil (cornée et cristallin) et se focalise difficilement sur la rétine ; les normes de sécurité laser y autorisent donc une exposition bien plus grande que dans le proche infrarouge à 905 nm. L'avantage de 1550 nm est ainsi de permettre plus facilement une forte puissance pour mesurer loin. En revanche, les photodétecteurs en silicium ne détectent pas 1550 nm à cause de leur longueur d'onde de coupure (environ 1,1 µm), et il faut des détecteurs plus coûteux, en InGaAs par exemple. La possibilité d'utiliser des détecteurs en silicium et des SPAD est un avantage de 905 nm. L'absorption par l'eau est plus forte à 1550 nm, qui est aussi plus sensible à la pluie et au brouillard."
+  },
+  "measurement-012": {
+    "question": "Quelle valeur est la plus proche de la résolution en profondeur, dans l'air, d'un système d'OCT (tomographie par cohérence optique) utilisant une source de spectre gaussien de longueur d'onde centrale 1310 nm et de largeur spectrale (largeur totale à mi-hauteur) 100 nm ? (Δz = (2 ln2/π) λ²/Δλ)",
+    "choices": [
+      "Environ 7,6 µm",
+      "Environ 17 µm",
+      "Environ 3,8 µm"
+    ],
+    "explanation": "La résolution en profondeur de l'OCT est fixée par la longueur de cohérence de la source : Δz = (2 ln2/π) × λ²/Δλ ≈ 0,44 × (1,31 µm)² / 0,1 µm ≈ 7,6 µm. La valeur d'environ 17 µm est λ²/Δλ, sans le facteur 0,44, et celle d'environ 3,8 µm divise en plus le facteur par deux. Dans un tissu biologique, on divise par l'indice de réfraction (environ 1,38), ce qui donne une résolution encore plus fine, d'environ 5,5 µm. Plus la bande est large, meilleure est la résolution : en ophtalmologie, on utilise des diodes superluminescentes (SLD) à large bande ou des sources à balayage en longueur d'onde. La résolution latérale, elle, est fixée par la taille de la tache de focalisation de l'objectif et ne dépend pas de la résolution en profondeur."
+  },
+  "measurement-013": {
+    "question": "En OCT (tomographie par cohérence optique), laquelle des combinaisons suivantes des principaux facteurs qui fixent la résolution en profondeur et la résolution latérale est correcte ?",
+    "choices": [
+      "En profondeur, l'ouverture numérique de l'objectif, comme en microscopie ; latéralement, la largeur spectrale (longueur de cohérence) de la source",
+      "Toutes deux sont fixées uniquement par la puissance de sortie de la source",
+      "En profondeur, la largeur spectrale de la source ; latéralement, la tache de focalisation de l'objectif (son ouverture numérique)"
+    ],
+    "explanation": "L'OCT exploite l'interférence en faible cohérence : seule la lumière réfléchie dont la différence de chemin optique avec le faisceau de référence est inférieure à la longueur de cohérence interfère, ce qui permet de sélectionner une position en profondeur. La résolution en profondeur est donc fixée par la largeur spectrale de la source (plus elle est large, plus la résolution est fine). La résolution latérale dépend de la taille à laquelle la lumière peut être focalisée sur l'échantillon ; elle est d'autant plus fine que l'ouverture numérique de la lentille est grande. Mais une grande ouverture numérique réduit la profondeur de foyer, et l'on ne peut plus observer une grande profondeur d'un seul coup : c'est un compromis. Le choix qui inverse les deux facteurs est faux. La puissance de sortie influe sur la sensibilité (rapport signal sur bruit), mais ne fixe pas la résolution."
+  },
+  "measurement-014": {
+    "question": "On éclaire avec un laser de longueur d'onde 632,8 nm un objet qui se déplace à 10 mm/s dans le sens de propagation de la lumière. Quelle valeur est la plus proche de l'amplitude du décalage Doppler de la lumière réfléchie (qui revient vers l'arrière) ? (f_D = 2v/λ)",
+    "choices": [
+      "Environ 16 kHz",
+      "Environ 63 kHz",
+      "Environ 32 kHz"
+    ],
+    "explanation": "Lorsque la lumière se réfléchit sur un objet en mouvement et revient, l'effet Doppler intervient à la fois pour la lumière qui arrive sur l'objet et pour celle qui en repart ; le décalage vaut donc f_D = 2v/λ = 2 × 10×10⁻³ / 632,8×10⁻⁹ ≈ 3,16×10⁴ Hz, soit environ 32 kHz. La valeur d'environ 16 kHz omet le facteur 2 et ne considère l'effet Doppler que sur un seul trajet. Celle d'environ 63 kHz prend par erreur un facteur 4. C'est une variation infime par rapport à la fréquence de la lumière (environ 474 THz), mais en faisant interférer la lumière réfléchie avec la lumière d'origine, on la mesure directement sous forme de signal de battement. Ce principe sert dans les vélocimètres laser Doppler (LDV), les vibromètres et la mesure de vitesse des LiDAR FMCW."
+  },
+  "measurement-015": {
+    "question": "Quel est le principal avantage de la détection d'un faible signal lumineux par un amplificateur à détection synchrone, la lumière étant hachée à fréquence fixe par un hacheur optique (chopper) ?",
+    "choices": [
+      "Il n'extrait que la composante de même fréquence et de même phase que le signal de référence, ce qui réduit fortement l'effet de la lumière ambiante, du bruit en 1/f et des dérives",
+      "L'amplificateur amplifie par résonance l'intensité lumineuse elle-même, si bien que le nombre de photons atteignant le détecteur augmente et que le bruit de grenaille diminue en valeur relative",
+      "Le hachage décale la longueur d'onde de la lumière vers les courtes longueurs d'onde, où le détecteur est plus sensible, ce qui facilite la détection"
+    ],
+    "explanation": "L'amplificateur à détection synchrone (lock-in) multiplie la sortie du détecteur par un signal de référence et la fait passer dans un filtre passe-bas ; cette détection synchrone n'extrait que la composante dont la fréquence et la phase correspondent à celles du hacheur. La bande passante équivalente pouvant être rendue très étroite, la plus grande partie du bruit situé à d'autres fréquences est éliminée. De plus, en choisissant une fréquence de modulation de quelques centaines de Hz à quelques kHz, où le bruit en 1/f est faible, on évite le bruit gênant des mesures en continu, la lumière ambiante constante comme l'éclairage de la pièce, et les dérives du détecteur. L'intensité lumineuse et le nombre de photons, eux, n'augmentent pas. Le hachage ne change pas non plus la longueur d'onde de la lumière. Cette méthode est largement employée en spectroscopie et pour mesurer de très faibles absorptions dans les composants optiques."
+  },
+  "measurement-016": {
+    "question": "Pour mesurer la puissance totale d'une source qui émet dans un large domaine angulaire, comme une LED, on utilise une sphère intégrante. Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "Sa paroi interne, réfléchissante comme un miroir, forme l'image de la source sur la fenêtre du détecteur et concentre en un seul foyer la lumière émise dans toutes les directions, que le détecteur mesure directement",
+      "La lumière y fait de nombreux allers-retours et entre en résonance ; le détecteur reçoit la lumière renforcée par interférence, ce qui multiplie la sensibilité par plusieurs milliers même pour une source faible",
+      "La réflexion diffuse de la paroi interne diffuse la lumière de nombreuses fois et éclaire uniformément la paroi, si bien que la fenêtre du détecteur reçoit, quelle que soit la répartition angulaire, une lumière proportionnelle à la puissance totale"
+    ],
+    "explanation": "Une sphère intégrante est une sphère creuse dont la paroi interne est revêtue d'un matériau à fort facteur de réflexion diffuse, comme le sulfate de baryum ou le PTFE. La lumière entrante subit de multiples réflexions diffuses sur la paroi et l'éclairement de la paroi devient presque uniforme : la lumière qui atteint la fenêtre du détecteur est proportionnelle à la puissance totale, quelles que soient les directions et la répartition angulaire de l'émission de la source. En plaçant un écran qui empêche la lumière directe de la source d'atteindre la fenêtre, on obtient une mesure indépendante de la répartition angulaire. Avec une paroi spéculaire, la répartition angulaire de la source serait transmise telle quelle au détecteur et l'éclairement ne serait pas uniforme. La lumière n'entre pas en résonance pour se renforcer : elle se répartit sur toute la paroi de la sphère, si bien que la fraction qui atteint la fenêtre est faible et que la sensibilité est plutôt réduite."
+  },
+  "measurement-017": {
+    "question": "On combine deux faisceaux laser de longueurs d'onde différentes, de +3 dBm et de 0 dBm, et on les mesure avec un seul puissancemètre. Quelle valeur est la plus proche de la puissance totale affichée ? (Les pertes du multiplexeur sont négligées.)",
+    "choices": [
+      "Environ 4,8 dBm",
+      "3 dBm",
+      "Environ 1,5 dBm"
+    ],
+    "explanation": "Le dBm étant un logarithme rapporté à 1 mW, on ne peut pas additionner directement les valeurs : il faut d'abord les convertir en mW. +3 dBm correspondent à 10^(3/10) ≈ 2,0 mW et 0 dBm à 1,0 mW ; les puissances de deux lumières de longueurs d'onde différentes, qui n'interfèrent pas, s'additionnent, d'où un total d'environ 3,0 mW, soit 10 log₁₀(3,0) ≈ 4,8 dBm. La valeur de 3 dBm additionne directement les nombres en dBm, et celle d'environ 1,5 dBm en fait la moyenne. L'addition en dB ne s'applique qu'à la multiplication de rapports, comme des gains ou des pertes. En combinant deux lumières de même puissance, on obtient un total supérieur d'environ 3 dB à celui d'une seule."
+  },
+  "measurement-018": {
+    "question": "Un capteur de distance à mesure de phase (ToF indirect) module sinusoïdalement l'intensité de la lumière et déduit la distance du retard de phase de la lumière qui revient. Pour une fréquence de modulation de 20 MHz, quelle valeur est la plus proche de la distance maximale qui peut être déterminée sans ambiguïté ? (La phase reprend la même valeur tous les 2π ; c = 3,0×10⁸ m/s.)",
+    "choices": [
+      "Environ 15 m",
+      "Environ 7,5 m",
+      "Environ 3,75 m"
+    ],
+    "explanation": "La lumière renvoyée par un objet situé à la distance d parcourt 2d en aller-retour, et le retard de phase vaut 2πf(2d)/c. Au-delà de la distance où il atteint 2π, d = c/(2f) = 3,0×10⁸ / (2 × 20×10⁶) = 7,5 m, la phase redevient égale à celle d'une distance plus courte et les deux ne peuvent plus être distinguées. La valeur d'environ 15 m prend c/f sans tenir compte de l'aller-retour, et celle d'environ 3,75 m divise par 2 une fois de trop. Une fréquence de modulation plus élevée améliore la précision en distance pour une même résolution de phase, mais réduit le domaine sans ambiguïté. On combine donc parfois plusieurs fréquences de modulation pour concilier précision et étendue de mesure."
+  },
+  "measurement-019": {
+    "question": "Un LiDAR ToF mesure la distance d'un mur à réflexion diffuse (lambertienne) bien plus grand que le faisceau. Si la distance du mur double, par quel facteur la puissance lumineuse qui revient sur le récepteur est-elle approximativement multipliée ? (L'atténuation atmosphérique est négligée.)",
+    "choices": [
+      "Environ 1/4",
+      "Environ 1/16",
+      "Environ 1/2"
+    ],
+    "explanation": "Si tout le faisceau tombe sur le mur, la puissance reçue par le mur ne dépend pas de la distance. Le mur la réfléchit de façon diffuse dans un demi-espace ; l'angle solide sous lequel le mur voit la lentille de réception, de diamètre fixé, est inversement proportionnel au carré de la distance, et la lumière qui revient est donc divisée par environ 4 quand la distance double. La valeur d'environ 1/16 correspond au cas d'une cible ponctuelle plus petite que le faisceau, où la fraction du faisceau émis, qui s'élargit, interceptée par la cible diminue elle aussi comme le carré de la distance (le 1/R⁴ de l'équation du radar) ; elle ne s'applique pas à une cible étendue comme un mur. Celle d'environ 1/2 suppose à tort une puissance inversement proportionnelle à la distance. La portée réelle est fixée par cette atténuation, la réflectance de la cible et le bruit de la lumière ambiante."
+  },
+  "measurement-020": {
+    "question": "Dans la méthode du couteau (knife-edge), on déplace pas à pas une lame qui coupe un faisceau laser et l'on mesure la puissance totale de la lumière non arrêtée par la lame. Laquelle des façons suivantes d'obtenir le profil d'intensité du faisceau est correcte ?",
+    "choices": [
+      "La puissance en fonction de la position de la lame est directement le profil d'intensité, et la position de la lame où la puissance est maximale est le centre du faisceau",
+      "En dérivant la variation de puissance par rapport à la position de la lame, on obtient le profil d'intensité dans cette direction (intégré selon l'autre direction)",
+      "On mesure le pas des franges formées par la lumière diffractée par le bord de la lame et l'on en déduit le diamètre du faisceau, sans utiliser les valeurs de puissance"
+    ],
+    "explanation": "Quand la lame atteint la position x, le puissancemètre reçoit la somme de toute l'intensité du côté non masqué par la lame. La courbe mesurée est l'intégrale du profil d'intensité (une fonction d'erreur pour un faisceau gaussien) ; en la dérivant par rapport à x, on obtient le profil d'intensité dans cette direction. Pour un faisceau gaussien, on peut aussi trouver le rayon en utilisant le fait que la lame se déplace d'environ 1,28w (w étant le rayon à 1/e²) pendant que la puissance passe de 10 % à 90 %. La puissance varie seulement de façon monotone avec le déplacement de la lame, et la position du maximum n'est pas le centre du faisceau. Ce n'est pas non plus une méthode qui déduit le diamètre de franges de diffraction. On l'utilise pour les petites taches difficiles à mesurer avec une caméra et pour les faisceaux infrarouges ou de forte puissance."
+  },
+  "measurement-021": {
+    "question": "Au voisinage de 1550 nm, quelle valeur est la plus proche de l'écart en fréquence entre deux faisceaux laser dont les longueurs d'onde diffèrent de 0,40 nm ? (c = 3,0×10⁸ m/s ; utilisez Δν ≈ cΔλ/λ².)",
+    "choices": [
+      "Environ 5 GHz",
+      "Environ 500 GHz",
+      "Environ 50 GHz"
+    ],
+    "explanation": "Δν ≈ cΔλ/λ² = 3,0×10⁸ × 0,40×10⁻⁹ / (1550×10⁻⁹)² ≈ 5,0×10¹⁰ Hz, soit environ 50 GHz. Les valeurs d'environ 5 GHz et d'environ 500 GHz résultent d'erreurs d'ordre de grandeur dans la conversion entre nm et m ou dans le calcul de λ². Dans la bande de 1550 nm, « 0,8 nm ≈ 100 GHz » et « 0,1 nm ≈ 12,5 GHz » sont des repères courants, et l'espacement des canaux du multiplexage en longueur d'onde est lui aussi défini en fréquence. En superposant les deux lumières sur un photodétecteur, on obtient un signal de battement à la différence de fréquence, que l'on mesure avec précision au moyen d'un photodétecteur rapide et d'un analyseur de spectre électrique. Pour un même écart de longueur d'onde, l'écart de fréquence est inversement proportionnel à λ² et augmente donc aux courtes longueurs d'onde."
+  },
+  "measurement-022": {
+    "question": "La largeur de raie d'un laser de quelques dizaines de kHz ne peut pas être résolue par un analyseur de spectre optique à réseau. Laquelle des propositions suivantes décrit correctement le principe de la méthode auto-hétérodyne retardée utilisée dans ce cas ?",
+    "choices": [
+      "On diffracte la lumière laser de nombreuses fois sur un réseau pour accroître la dispersion, on dilate l'échelle des longueurs d'onde et on lit directement la largeur du spectre",
+      "On sépare la lumière en deux, on retarde une partie dans une fibre plus longue que le temps de cohérence, on décale sa fréquence et on superpose, puis on déduit la largeur de raie de la largeur spectrale du battement",
+      "On mesure l'intensité du laser avec un photodétecteur rapide et l'on prend directement la largeur du spectre en fréquence des fluctuations d'intensité comme largeur de raie du laser"
+    ],
+    "explanation": "Dans la méthode auto-hétérodyne retardée, on sépare la lumière laser, on retarde une partie dans une longue fibre, on décale la fréquence de l'autre de quelques dizaines de MHz, par exemple avec un modulateur acousto-optique, puis on superpose les deux sur un photodétecteur. Si le retard est bien plus long que le temps de cohérence, les deux faisceaux se comportent comme deux lasers distincts sans corrélation entre eux ; en mesurant leur battement avec un analyseur de spectre électrique, on obtient un spectre de largeur égale à deux fois la largeur de raie lorentzienne. La résolution étant fixée par l'instrument électrique, on peut mesurer des largeurs de raie de l'ordre du kHz. Même en traversant de nombreuses fois un réseau, la résolution plafonne vers le GHz, très loin du kHz. Les fluctuations d'intensité sont distinctes des fluctuations de phase (de fréquence), et leur largeur ne renseigne pas sur la largeur de raie."
+  },
+  "measurement-023": {
+    "question": "Le bruit est blanc et indépendant d'une mesure à l'autre, et l'on fait la moyenne de 100 répétitions de la même mesure. Comment le rapport signal sur bruit (rapport des amplitudes) de la moyenne se compare-t-il à celui d'une mesure unique ?",
+    "choices": [
+      "Il est multiplié par environ 10 : l'écart-type du bruit diminue en raison inverse de la racine carrée du nombre N de mesures",
+      "Il est multiplié par environ 100 : l'écart-type du bruit diminue en raison inverse du nombre N de mesures moyennées",
+      "Il ne change pas : le signal et le bruit sont moyennés de la même façon, et le rapport reste celui d'une mesure unique"
+    ],
+    "explanation": "En moyennant N fois un bruit indépendant, le signal reste inchangé tandis que l'écart-type du bruit devient 1/√N : le rapport signal sur bruit en amplitude est multiplié par √N, soit environ 10 pour 100 mesures (100 en rapport de puissances, 20 dB). La valeur d'environ 100 suppose à tort que l'amplitude du bruit diminue comme 1/N et confond rapport de puissances et rapport d'amplitudes. Le signal s'ajoute avec la même valeur à chaque mesure, alors que le bruit, de signe aléatoire, se compense en partie : le rapport change donc. C'est la même idée qui explique la baisse du bruit lorsqu'on allonge la constante de temps d'une détection synchrone pour réduire la bande passante. En revanche, un bruit corrélé d'une mesure à l'autre, comme une dérive ou le bruit en 1/f, ne diminue pas dans cette proportion par moyennage."
+  },
+  "measurement-024": {
+    "question": "Laquelle des procédures suivantes décrit correctement la méthode de la fibre coupée (cut-back), qui mesure avec précision l'atténuation (dB/km) d'une fibre optique ?",
+    "choices": [
+      "On mesure la puissance de la lumière juste avant son entrée dans la fibre, puis on divise par la longueur de la fibre l'écart avec la sortie de la fibre longue",
+      "On injecte une impulsion brève à une extrémité de la fibre longue et l'on déduit l'atténuation de la pente avec laquelle la lumière rétrodiffusée diminue avec la distance",
+      "Après avoir mesuré la sortie de la fibre longue, on la coupe près de l'entrée sans changer les conditions d'injection, puis on divise par la longueur l'écart avec la sortie de la fibre courte"
+    ],
+    "explanation": "Dans la méthode de la fibre coupée, on mesure d'abord la puissance P₁ en sortie de la fibre longue ; puis, sans toucher à l'injection, on coupe la fibre à quelques mètres de l'entrée et l'on mesure la puissance P₂ en sortie de la fibre courte. L'atténuation s'obtient en divisant 10 log₁₀(P₂/P₁) par la longueur retirée. Les pertes de couplage à l'injection et l'effet des modes de gaine, qui s'atténuent juste après l'entrée, sont communs aux deux mesures et se compensent : on obtient avec précision la seule atténuation de propagation. La comparaison avec la puissance avant l'entrée dans la fibre inclut les pertes de couplage. C'est l'OTDR qui utilise la lumière rétrodiffusée ; il a l'avantage de mesurer depuis une seule extrémité, mais ce n'est pas la méthode de la fibre coupée. L'inconvénient de celle-ci est d'être une mesure destructive, puisqu'il faut couper la fibre."
+  },
+  "measurement-025": {
+    "question": "Pour étalonner l'échelle de longueur d'onde des analyseurs de spectre optique et des lambdamètres dans la bande de 1,5 µm, on utilise comme référence les raies d'absorption de gaz comme l'acétylène (C₂H₂). Laquelle des raisons suivantes est correcte ?",
+    "choices": [
+      "La longueur d'onde des raies d'absorption d'un gaz varie proportionnellement à l'intensité lumineuse, si bien qu'en changeant l'intensité d'un appareil à l'autre on peut créer une référence à toute longueur d'onde",
+      "La longueur d'onde des raies d'absorption, fixée par les transitions de vibration et de rotation des molécules, ne varie presque pas avec la température ni la pression et prend la même valeur sur tout appareil",
+      "Les raies d'absorption d'un gaz sont larges de quelques nm, si bien que même sur un appareil dont l'échelle est un peu décalée on trouve la position de l'absorption sans la manquer"
+    ],
+    "explanation": "La longueur d'onde des raies d'absorption de l'acétylène est fixée par les transitions entre états de vibration et de rotation de la molécule : elle est propre à cette molécule et ne varie que très peu avec la température ou la pression. Elle sert donc de repère de longueur d'onde identique partout, et l'acétylène, qui présente de nombreuses raies entre 1510 et 1540 nm environ, est largement utilisé pour étalonner l'échelle dans la bande des télécommunications. La longueur d'onde des raies ne dépend pratiquement pas de l'intensité lumineuse, et l'on ne peut pas déplacer la référence en changeant l'intensité. Dans un gaz à basse pression, les raies sont étroites, de l'ordre de la largeur Doppler due à l'agitation thermique des molécules (quelques centaines de MHz, de l'ordre du pm) ; c'est justement parce qu'elles sont fines qu'elles constituent une référence précise. Des raies larges de quelques nm ne permettraient pas un étalonnage précis de l'échelle."
+  },
+  "measurement-026": {
+    "question": "Un lambdamètre déplace le miroir mobile d'un interféromètre de Michelson et compte simultanément les franges d'un laser He-Ne de longueur d'onde connue (632,8 nm) et celles d'un laser inconnu. Pendant le même déplacement, on compte 100 000 franges pour le He-Ne et 81 640 franges pour le laser inconnu. Quelle valeur est la plus proche de la longueur d'onde du laser inconnu ? (La dispersion de l'air est négligée.)",
+    "choices": [
+      "Environ 517 nm",
+      "Environ 1550 nm",
+      "Environ 775 nm"
+    ],
+    "explanation": "Quand le miroir se déplace de x, le nombre de franges vaut N = 2x/λ : les nombres de franges comptés pendant un même déplacement sont inversement proportionnels aux longueurs d'onde. La longueur d'onde inconnue vaut λ = 632,8 nm × 100 000/81 640 ≈ 775,1 nm ; c'est la lumière qui donne le moins de franges qui a la plus grande longueur d'onde. La valeur d'environ 517 nm applique le rapport à l'envers. Celle d'environ 1550 nm calcule le déplacement du miroir à partir des franges du He-Ne par x = Nλ, en oubliant le facteur 1/2 de l'aller-retour, puis n'utilise λ = 2x/N que pour la lumière inconnue. La même relation N = 2x/λ s'applique aux deux lumières, et le 2 disparaît en prenant le rapport. Comme la lumière de longueur d'onde connue sert de règle, il n'est pas nécessaire de connaître précisément la vitesse ni la distance de déplacement du miroir. Dans les mesures précises, on corrige aussi la variation de l'indice de l'air avec la longueur d'onde (de l'ordre de 10⁻⁶)."
+  },
+  "measurement-027": {
+    "question": "Dans un interféromètre à décalage de phase, on déplace le miroir de référence pour décaler la phase d'interférence de 0, π/2, π et 3π/2, et l'on obtient en un point les intensités I₁ = 1,250, I₂ = 0,567, I₃ = 0,750 et I₄ = 1,433 (valeurs relatives). On calcule la phase φ par tanφ = (I₄ − I₂)/(I₁ − I₃) ; en configuration de réflexion (la différence de marche aller-retour vaut deux fois la hauteur) et à la longueur d'onde de 633 nm, quelle valeur est la plus proche de la hauteur de ce point (par rapport à un point de phase nulle) ? (On suppose qu'il n'y a pas d'ambiguïté de 2π sur la phase.)",
+    "choices": [
+      "Environ 53 nm",
+      "Environ 105 nm",
+      "Environ 26 nm"
+    ],
+    "explanation": "tanφ = (1,433 − 0,567)/(1,250 − 0,750) = 0,866/0,500 ≈ 1,73, donc φ ≈ 60°. En réflexion, une marche de hauteur h donne une différence de marche aller-retour de 2h, et la phase vaut 4πh/λ. On obtient h = φλ/(4π) = (60°/360°) × 633 nm / 2 ≈ 53 nm. La valeur d'environ 105 nm oublie le facteur 2 de l'aller-retour et prend h comme différence de marche, et celle d'environ 26 nm applique deux fois ce facteur 2. Comme on prend des différences et un rapport entre les quatre images, les irrégularités de l'éclairage et les différences de réflectance (valeur moyenne et amplitude de l'intensité) se compensent : on mesure la forme d'une surface plus finement qu'en repérant à l'œil les franges claires et sombres, jusqu'à des hauteurs de l'ordre du centième de longueur d'onde ou moins."
+  },
+  "measurement-028": {
+    "question": "Un analyseur de front d'onde de Shack-Hartmann se compose d'une matrice de microlentilles disposées en grille et d'un capteur d'images. Laquelle des propositions suivantes décrit correctement le principe par lequel il détermine la forme du front d'onde ?",
+    "choices": [
+      "On prend directement la répartition de l'intensité lumineuse derrière chaque lentille comme hauteur du front d'onde, en considérant que le front d'onde est d'autant plus en avance que la tache est brillante",
+      "Le déplacement de la tache formée par chaque lentille par rapport à sa référence est proportionnel à la pente locale du front d'onde, et l'on raccorde ces pentes pour obtenir la forme",
+      "On compte, dans la zone de chaque lentille, les franges d'interférence formées avec un faisceau de référence, en comptant une frange pour un retard du front d'onde d'une longueur d'onde"
+    ],
+    "explanation": "Chaque lentille focalise une partie du front d'onde incident dans son plan focal ; si le front d'onde est incliné à cet endroit, la tache se déplace latéralement de la distance focale × la pente. Les déplacements des taches de toutes les lentilles donnent la répartition des pentes locales du front d'onde, que l'on intègre pour reconstruire sa forme. Comme aucune interférence avec un faisceau de référence n'est utilisée, la méthode fonctionne en lumière blanche et en présence de vibrations ; elle sert en optique adaptative des télescopes et pour mesurer les aberrations des faisceaux laser et de l'œil. Compter des franges d'interférence est la méthode des interféromètres. La brillance des taches traduit la répartition de l'intensité lumineuse et n'a pas de rapport direct avec la hauteur du front d'onde."
+  },
+  "measurement-029": {
+    "question": "Laquelle des méthodes suivantes de mesure du facteur de qualité M² d'un faisceau laser est correcte ?",
+    "choices": [
+      "On focalise avec une lentille, on mesure le diamètre du faisceau en plusieurs points, dont certains près du col et d'autres à plus de deux longueurs de Rayleigh, et l'on ajuste la variation du diamètre par une loi hyperbolique",
+      "Il suffit de mesurer avec précision le diamètre du faisceau en un seul point du champ lointain, bien loin du col, et de prendre directement ce diamètre divisé par la longueur d'onde comme M² du faisceau",
+      "On mesure le profil d'intensité du faisceau au niveau du col et l'on prend directement l'ampleur de l'écart de ce profil à une gaussienne comme M² du faisceau"
+    ],
+    "explanation": "Le rayon du faisceau varie au cours de la propagation selon une hyperbole : w(z)² = w₀²[1 + ((z − z₀)/zR)²], avec zR = πw₀²/(M²λ). Le M² compare le produit w₀θ du rayon au col w₀ et de l'angle de divergence en champ lointain θ à la valeur λ/π d'un faisceau gaussien idéal de même longueur d'onde : il faut donc connaître à la fois la taille du col et la façon dont le faisceau diverge. C'est pourquoi on forme un col en focalisant avec une lentille, puis on mesure, en plusieurs points dont certains près du col et d'autres à plus de deux longueurs de Rayleigh, un diamètre défini par exemple par les moments d'ordre 2, et l'on ajuste la courbe. Un seul diamètre ne permet pas de séparer la taille du col et l'angle de divergence. Même si le profil d'intensité est proche d'une gaussienne, un front de phase perturbé augmente le M² : la forme seule ne le détermine pas non plus."
+  },
+  "measurement-030": {
+    "question": "Laquelle des propositions suivantes décrit correctement un avantage d'un interféromètre laser de mesure de déplacement de type hétérodyne, utilisé dans les appareils de positionnement de précision et exploitant deux composantes de polarisation de fréquences légèrement différentes, par rapport au type homodyne à une seule fréquence ?",
+    "choices": [
+      "Les lumières des deux fréquences n'interfèrent pas, si bien que la mesure reste possible même si la différence de longueur des bras dépasse la longueur de cohérence, sans se soucier de la largeur de raie du laser",
+      "La différence de fréquence permet d'obtenir d'un coup la distance en valeur absolue, si bien qu'après une remise sous tension la position du miroir est connue sur place sans retour à l'origine",
+      "Le mouvement du miroir est mesuré comme une variation de phase d'un signal de battement de quelques MHz, ce qui rend la mesure robuste aux fluctuations d'intensité et aux dérives du niveau continu et permet de connaître le sens du mouvement"
+    ],
+    "explanation": "Dans le type hétérodyne, on répartit deux composantes de fréquences f₁ et f₂ (différant de quelques MHz) entre le bras de mesure et le bras de référence, puis on les superpose et l'on détecte le signal de battement à la différence de fréquence. Si le miroir se déplace à la vitesse v, l'effet Doppler augmente ou diminue la fréquence du battement de 2v/λ ; en comparant sa phase à un signal de référence et en la comptant, on connaît le déplacement et son sens. Le signal étant alternatif, il est peu sensible aux variations d'intensité lumineuse et aux dérives du niveau continu du détecteur. Toutefois, ce que l'on mesure est un déplacement relatif obtenu en cumulant les variations de phase : après une remise sous tension, il faut redéfinir l'origine. Les deux composantes interfèrent sur le détecteur pour produire le battement ; elles ne sont donc pas sans interférence, et la différence de longueur des bras doit rester dans les limites de la longueur de cohérence."
+  }
+}

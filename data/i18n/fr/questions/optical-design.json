@@ -1,0 +1,272 @@
+{
+  "optical-design-001": {
+    "question": "Dans un système optique composé de plusieurs lentilles, le diaphragme qui limite la largeur du faisceau issu d'un point objet sur l'axe est appelé diaphragme d'ouverture. Laquelle des descriptions suivantes de la « pupille d'entrée » est correcte ?",
+    "choices": [
+      "L'image du diaphragme d'ouverture vue depuis l'espace objet, à travers les lentilles situées du côté objet de celui-ci",
+      "Le diaphragme qui limite la lumière arrivant en bordure du plan image et fixe la taille de la zone imagée (le champ)",
+      "Le bord même de la lentille la plus proche de l'objet dans le système optique, dont le diamètre est celui de la pupille d'entrée"
+    ],
+    "explanation": "La pupille d'entrée est l'image du diaphragme d'ouverture côté objet : c'est l'ouverture apparente par laquelle le faisceau entre, vue depuis l'objet. L'angle sous lequel un point objet voit la pupille d'entrée fixe l'ouverture numérique côté objet, et pour un objet à l'infini, le nombre d'ouverture (f/D) est la distance focale divisée par le diamètre de la pupille d'entrée. De même, l'image du diaphragme d'ouverture côté image est la pupille de sortie. Ce qui fixe la zone imagée n'est pas le diaphragme d'ouverture mais le diaphragme de champ, et le choix qui parle du diaphragme fixant le champ confond les deux. Le bord de la lentille frontale n'est la pupille d'entrée que s'il constitue lui-même le diaphragme d'ouverture ; dans beaucoup d'objectifs photographiques, la pupille d'entrée est l'image d'un diaphragme plus petit que la lentille frontale. Le rayon principal est défini comme le rayon qui passe par le centre de la pupille d'entrée."
+  },
+  "optical-design-002": {
+    "question": "On ferme le diaphragme d'un objectif photographique de f/2,8 à f/4. Pour un objet à l'infini, par quel facteur l'éclairement du plan image est-il approximativement multiplié ? (L'éclairement est supposé proportionnel à l'aire de la pupille d'entrée et inversement proportionnel au carré de la distance focale.)",
+    "choices": [
+      "Environ 0,71",
+      "Environ 0,25",
+      "Environ 0,49 (environ 1/2)"
+    ],
+    "explanation": "Le nombre d'ouverture vaut N = f/D (D étant le diamètre de la pupille d'entrée). L'éclairement du plan image est proportionnel à l'aire de la pupille, D², et inversement proportionnel au carré de la distance focale f, qui fixe la taille de l'image : E ∝ (D/f)² = 1/N². On obtient donc (2,8/4)² ≈ 0,49, soit environ 1/2. La suite des nombres d'ouverture 1,4, 2, 2,8, 4, 5,6 progresse d'un facteur √2 parce qu'elle est choisie pour que chaque cran divise exactement la quantité de lumière par deux. La valeur d'environ 0,71 prend par erreur le rapport des nombres d'ouverture 2,8/4 comme rapport des éclairements, et celle d'environ 0,25 correspond à une fermeture de deux crans (f/2,8 → f/5,6). En doublant le temps de pose, on retrouve la même lumination."
+  },
+  "optical-design-003": {
+    "question": "Laquelle des aberrations suivantes ne fait pas partie des aberrations du troisième ordre qui apparaissent en lumière monochromatique quand on sort du domaine paraxial (les cinq aberrations de Seidel) ?",
+    "choices": [
+      "L'aberration de coma",
+      "Le chromatisme axial",
+      "La distorsion"
+    ],
+    "explanation": "Les cinq aberrations de Seidel sont l'aberration sphérique, la coma, l'astigmatisme, la courbure de champ et la distorsion : ce sont des aberrations monochromatiques qui apparaissent quand l'ouverture ou le champ de la lentille deviennent grands et que l'approximation paraxiale sin θ ≈ θ ne tient plus. Comme elles apparaissent sous forme de termes du troisième ordre en hauteur de rayon et en angle de champ, on les appelle aussi aberrations du troisième ordre. Les aberrations chromatiques viennent de ce que l'indice de réfraction dépend de la longueur d'onde (dispersion) ; elles n'apparaissent pas en lumière monochromatique et sont traitées à part des cinq aberrations de Seidel. On distingue l'aberration chromatique axiale (chromatisme axial), où la position du foyer varie avec la longueur d'onde, et l'aberration chromatique latérale (chromatisme latéral), où c'est le grandissement qui varie. La coma et la distorsion sont toutes deux des aberrations monochromatiques qui apparaissent pour des points objets hors axe, et font partie des cinq aberrations."
+  },
+  "optical-design-004": {
+    "question": "Laquelle des descriptions suivantes de la distorsion est correcte ?",
+    "choices": [
+      "L'image d'un point n'est pas floue, mais le grandissement varie avec l'angle de champ ; en distorsion en barillet, le grandissement diminue vers le bord de l'image",
+      "C'est une aberration qui rend floue l'image d'un point, et elle diminue lorsqu'on ferme le diaphragme pour affiner le faisceau",
+      "En distorsion en coussinet, le grandissement diminue vers le bord de l'image, et en barillet il augmente"
+    ],
+    "explanation": "La distorsion est une aberration où un point reste imagé en un point, mais où la position de l'image s'écarte de sa position idéale. Le grandissement variant avec l'angle de champ (la hauteur d'image), les droites sont imagées courbes. Si le grandissement diminue vers le bord, les côtés d'une grille carrée se bombent vers l'extérieur (barillet) ; s'il augmente, ils se creusent vers l'intérieur (coussinet) : le choix selon lequel le grandissement diminue au bord en coussinet inverse ce sens. Comme elle est déterminée par le trajet du rayon principal et non par un flou de l'image, la distorsion ne diminue pas quand on ferme le diaphragme pour affiner le faisceau. Elle se compense facilement par une construction symétrique de part et d'autre du diaphragme, et l'on peut aussi la corriger après coup par traitement d'image. Pour les mesures dimensionnelles, même une faible distorsion devient une erreur de mesure."
+  },
+  "optical-design-005": {
+    "question": "Avec une lentille qui image bien les points sur l'axe optique, l'image d'une source ponctuelle hors de l'axe prend la forme d'une comète avec une traîne dans une direction. Quelle est la principale aberration responsable de cette forme ?",
+    "choices": [
+      "L'aberration sphérique",
+      "La coma",
+      "La distorsion"
+    ],
+    "explanation": "La coma apparaît pour les points objets hors axe : les rayons qui traversent des zones annulaires différentes de la pupille sont imagés avec des grandissements différents, et l'image prend la forme d'une comète avec une tête et une queue. Son amplitude est proportionnelle au carré de l'ouverture et à l'angle de champ, si bien qu'elle est d'autant plus visible que l'on est loin de l'axe avec une grande ouverture. Une conception qui satisfait la condition des sinus (aplanétique) corrige la coma en même temps que l'aberration sphérique. L'aberration sphérique apparaît aussi sur l'axe et donne un flou symétrique autour de l'axe optique (un halo) : elle ne correspond pas à la condition « bonne image sur l'axe, image dissymétrique hors axe ». La distorsion ne fait que déplacer la position de l'image sans rendre floue l'image d'un point, et ne convient pas non plus."
+  },
+  "optical-design-006": {
+    "question": "Dans un système optique présentant de l'astigmatisme, laquelle des descriptions suivantes de l'image d'une source ponctuelle hors axe, observée en faisant varier la mise au point, est correcte ?",
+    "choices": [
+      "L'image est une tache floue circulaire, symétrique autour de l'axe optique, dont seule la taille varie quand on déplace la mise au point, sans jamais devenir linéaire",
+      "L'image de chaque point converge en un point, mais la surface de mise au point n'est pas plane : c'est une surface courbe fixée par la somme de Petzval, et le bord est flou",
+      "Les rayons du plan méridien et ceux du plan sagittal convergent en des positions différentes, et l'on voit deux focales linéaires perpendiculaires, avec entre elles le cercle de moindre diffusion"
+    ],
+    "explanation": "L'astigmatisme est une aberration où, dans le faisceau issu d'un point objet hors axe, les rayons du plan qui contient le point objet et l'axe optique (plan méridien) et ceux du plan perpendiculaire (plan sagittal) ont des foyers différents. En déplaçant la mise au point, on voit d'abord une image linéaire allongée dans une direction, puis un cercle de moindre diffusion presque circulaire, puis plus loin une image linéaire tournée de 90°. L'astigmatisme de l'œil a la même nature. Une image qui converge en un point pour chaque point mais dont la surface de mise au point est courbe correspond à la courbure de champ, aberration distincte de l'astigmatisme (fixée par la somme de Petzval). Une tache floue circulaire symétrique autour de l'axe est caractéristique de l'aberration sphérique sur l'axe."
+  },
+  "optical-design-007": {
+    "question": "On accole une lentille convergente en verre crown (nombre d'Abbe V₁ = 64) et une lentille divergente en verre flint (nombre d'Abbe V₂ = 36) pour réaliser une lentille achromatique (achromat) de distance focale résultante 100 mm. En utilisant la condition de coïncidence des foyers pour deux longueurs d'onde, φ₁/V₁ + φ₂/V₂ = 0 (φ étant la vergence, 1/f), quelle combinaison des distances focales des deux lentilles est la plus proche ? (Lentilles minces.)",
+    "choices": [
+      "Convergente environ 43,8 mm, divergente environ −77,8 mm",
+      "Convergente environ 77,8 mm, divergente environ −43,8 mm",
+      "Convergente environ 50 mm, divergente environ −100 mm"
+    ],
+    "explanation": "En résolvant ensemble la vergence résultante φ₁ + φ₂ = 1/100 mm⁻¹ et la condition d'achromatisme, on obtient φ₁ = φV₁/(V₁ − V₂) = 0,01 × 64/28 ≈ 0,0229 mm⁻¹ et φ₂ = −φV₂/(V₁ − V₂) ≈ −0,0129 mm⁻¹, soit f₁ ≈ 43,8 mm et f₂ ≈ −77,8 mm. On donne une forte vergence positive au crown, peu dispersif (grand nombre d'Abbe), et une faible vergence négative au flint, très dispersif, de façon à ne compenser que l'écart chromatique. La combinaison qui intervertit les vergences rend la lentille divergente plus forte, et l'ensemble devient divergent. Environ 50 mm et environ −100 mm satisfont seulement la distance focale résultante, pas la condition d'achromatisme. Plus l'écart entre les nombres d'Abbe est grand, plus les vergences de chaque lentille peuvent rester faibles, ce qui aide aussi à limiter les autres aberrations."
+  },
+  "optical-design-008": {
+    "question": "Avec un objectif de microscope sans aberrations d'ouverture numérique NA = 0,95, on observe deux points qui émettent à la longueur d'onde de 500 nm (sources ponctuelles incohérentes). Quelle valeur est la plus proche de l'écart minimal séparable selon le critère de Rayleigh (le centre de l'image d'un point coïncide avec le premier anneau sombre de l'image de l'autre) ?",
+    "choices": [
+      "Environ 0,26 µm",
+      "Environ 0,64 µm",
+      "Environ 0,32 µm"
+    ],
+    "explanation": "Le rayon du premier anneau sombre de l'image d'un point par une ouverture circulaire (figure d'Airy) vaut, en dimensions côté objet, 0,61λ/NA. Le critère de Rayleigh fixe la limite de séparation à un écart des deux points égal à ce rayon : d = 0,61 × 0,5 µm / 0,95 ≈ 0,32 µm. La valeur d'environ 0,26 µm est λ/(2NA) : elle correspond à la limite de résolution d'une structure périodique sous éclairage oblique (formule d'Abbe), dont les hypothèses diffèrent de celles du critère de Rayleigh pour deux points incohérents. Celle d'environ 0,64 µm transporte telle quelle dans la formule en ouverture numérique le coefficient 1,22 de la formule angulaire 1,22λ/D (D étant un diamètre, on obtient 0,61 en passant au sin θ du demi-angle). Pour améliorer la résolution, on raccourcit la longueur d'onde ou l'on augmente la NA, par exemple par immersion dans l'huile."
+  },
+  "optical-design-009": {
+    "question": "On photographie, avec un objectif sans aberrations ouvert à f/4, un objet en éclairage incohérent de longueur d'onde 0,55 µm. Quelle valeur est la plus proche de la fréquence spatiale de coupure de la FTM fixée par la diffraction (fréquence à laquelle la FTM s'annule dans le plan image) ?",
+    "choices": [
+      "Environ 227 cycles/mm",
+      "Environ 455 cycles/mm",
+      "Environ 909 cycles/mm"
+    ],
+    "explanation": "En imagerie incohérente, la FTM d'un système à ouverture circulaire sans aberrations décroît régulièrement avec la fréquence spatiale et s'annule à la fréquence de coupure fc = 1/(λN) = 2NA/λ (avec une NA côté image d'environ 1/(2N)). On obtient fc = 1/(0,55×10⁻³ mm × 4) ≈ 455 cycles/mm. La valeur d'environ 227 cycles/mm est 1/(2λN) = NA/λ, la coupure du même objectif en éclairage cohérent. En incohérent, la fonction de transfert optique (FTO) est l'autocorrélation de la fonction pupille, si bien que la coupure est deux fois plus élevée qu'en cohérent. Celle d'environ 909 cycles/mm double encore le facteur par erreur. En pratique, les fréquences fixées par les aberrations ou les pixels sont souvent plus basses, et fc sert de repère pour la limite supérieure des performances."
+  },
+  "optical-design-010": {
+    "question": "On associe à un capteur d'images de pas de pixel 3,0 µm un objectif très performant dont la FTM reste élevée jusqu'à des fréquences spatiales plus fines que ce pas. Laquelle des combinaisons suivantes du phénomène probable lorsqu'on photographie un sujet à rayures fines et de la parade correspondante est correcte ?",
+    "choices": [
+      "Les aberrations réduisent uniformément le contraste de toute l'image : on agrandit l'ouverture de l'objectif pour repousser encore la fréquence de coupure vers le haut",
+      "Les composantes au-delà de la fréquence de Nyquist se replient et du moiré apparaît : on atténue les hautes fréquences avec un filtre optique passe-bas",
+      "Les composantes au-delà de la fréquence de Nyquist sont moyennées par l'ouverture des pixels et éliminées au niveau du capteur, si bien qu'aucune rayure ni fausse couleur n'apparaît"
+    ],
+    "explanation": "La plus haute fréquence spatiale qu'un capteur de pas de pixel p peut représenter est la fréquence de Nyquist 1/(2p), soit 1/(2 × 0,003 mm) ≈ 167 cycles/mm pour 3,0 µm. Si l'objectif apporte au plan image des composantes de fréquence plus élevée, l'échantillonnage les replie vers des fréquences plus basses (repliement de spectre, aliasing), et elles apparaissent sous forme de rayures ou de fausses couleurs absentes du sujet (moiré). Après échantillonnage, on ne peut plus les distinguer des rayures réelles ; la parade consiste à placer devant le capteur un filtre optique passe-bas, par exemple une lame biréfringente, pour atténuer optiquement les hautes fréquences. Le moyennage par l'ouverture des pixels ne suffit pas à supprimer le repliement : le choix selon lequel le capteur les élimine automatiquement est faux. Une baisse uniforme du contraste est un symptôme d'aberrations ou de lumière parasite, et agrandir l'ouverture élève la coupure et accentue au contraire le repliement."
+  },
+  "optical-design-011": {
+    "question": "Laquelle des descriptions suivantes de la FTM (fonction de transfert de modulation), qui caractérise les performances d'un système optique, est correcte ?",
+    "choices": [
+      "Elle donne l'importance de la déformation de l'image (distorsion) en fonction de l'angle de champ et indique de combien de % la position de l'image est décalée au bord",
+      "Pour un système limité par la diffraction, sans aberrations, elle reste plate et égale à 1 de la fréquence spatiale 0 jusqu'à la fréquence de coupure, où elle tombe brusquement à zéro",
+      "Elle donne, en fonction de la fréquence spatiale, le rapport des contrastes de l'image et de l'objet pour un objet à variation sinusoïdale de luminosité, et correspond au module de la transformée de Fourier de la PSF"
+    ],
+    "explanation": "La FTM indique dans quelle mesure le contraste (Imax − Imin)/(Imax + Imin) d'une mire sinusoïdale de fréquence spatiale ν est conservé dans l'image. En imagerie incohérente, l'image est la convolution de l'objet par la PSF : le module de la fonction de transfert optique (FTO), transformée de Fourier de la PSF, est la FTM, et sa phase est la fonction de transfert de phase (FTP). Même pour une ouverture circulaire limitée par la diffraction, la FTM décroît régulièrement depuis 1 à la fréquence 0 et s'annule à la fréquence de coupure : le choix qui la dit plate et égale à 1 est faux (cette forme plate caractérise la fonction de transfert en éclairage cohérent). La distorsion est un déplacement de la position de l'image qui ne réduit pas le contraste ; elle ne s'évalue pas avec la FTM et s'exprime à part, par un taux de distorsion. La FTM d'un système complet, comme un objectif et un capteur, s'estime en principe par le produit des FTM de chaque élément."
+  },
+  "optical-design-012": {
+    "question": "On ferme à f/8 un objectif de distance focale 50 mm, et l'on prend un cercle de confusion admissible de 0,03 mm de diamètre. Quelle combinaison de la distance hyperfocale H ≈ f²/(Nc) et de la limite avant de la profondeur de champ (point proche) obtenue en faisant la mise au point sur H est la plus proche ?",
+    "choices": [
+      "Distance hyperfocale environ 10,4 m, point proche environ 5,2 m (net jusqu'à l'infini)",
+      "Distance hyperfocale environ 10,4 m, point proche lui aussi environ 10,4 m (flou en deçà)",
+      "Distance hyperfocale environ 5,2 m, point proche environ 2,6 m"
+    ],
+    "explanation": "H ≈ f²/(Nc) = 50² / (8 × 0,03) ≈ 10 400 mm, soit environ 10,4 m. H est la plus courte distance imagée à l'intérieur du cercle de confusion admissible lorsque la mise au point est faite sur l'infini ; inversement, si l'on fait la mise au point sur H, la profondeur de champ s'étend de H/2 ≈ 5,2 m jusqu'à l'infini. La formule exacte H = f²/(Nc) + f donne environ 10,47 m, ce qui ne change pas la conclusion. Prendre aussi environ 10,4 m comme point proche confond avec le point proche d'une mise au point sur l'infini. Les valeurs d'environ 5,2 m et 2,6 m multiplient par erreur le dénominateur par 2. La profondeur de champ augmente quand on ferme le diaphragme et, à distance de prise de vue égale, quand la distance focale est plus courte. Le cercle de confusion admissible est une valeur conventionnelle fixée d'après les conditions d'observation."
+  },
+  "optical-design-013": {
+    "question": "Dans un système d'imagerie limité par la diffraction, on double l'ouverture numérique NA (à longueur d'onde égale). Laquelle des combinaisons suivantes des variations du plus petit écart séparable latéralement et de la profondeur de foyer (supposée proportionnelle à λ/NA²) est correcte ?",
+    "choices": [
+      "L'écart séparable est divisé par 2, et la profondeur de foyer aussi",
+      "L'écart séparable est divisé par 2, et la profondeur de foyer par 4",
+      "L'écart séparable est divisé par 4, et la profondeur de foyer par 2"
+    ],
+    "explanation": "L'écart séparable latéralement est inversement proportionnel à la NA, comme 0,61λ/NA : doubler la NA le divise par 2. En revanche, la profondeur de foyer est inversement proportionnelle au carré de la NA, comme ±λ/(2NA²) : elle devient 1/2² = 1/4 de sa valeur. Quand l'angle de convergence augmente, le faisceau s'élargit plus vite lorsque la mise au point s'écarte. Le choix qui divise les deux par 2 néglige la dépendance quadratique de la profondeur de foyer, et celui qui divise l'écart par 4 et la profondeur de foyer par 2 intervertit les deux dépendances. Dans les machines de lithographie des semi-conducteurs, augmenter la NA pour améliorer la résolution réduit fortement la profondeur de foyer, ce qui rend plus sévères les exigences sur la planéité des plaquettes et la précision de la mise au point."
+  },
+  "optical-design-014": {
+    "question": "L'écart quadratique moyen (RMS) de l'aberration de front d'onde d'un système optique vaut λ/14. Quelle valeur est la plus proche du rapport de Strehl obtenu par l'approximation de Maréchal S ≈ exp[−(2πσ/λ)²] (σ étant l'aberration de front d'onde RMS) ?",
+    "choices": [
+      "Environ 0,64",
+      "Environ 0,99",
+      "Environ 0,82"
+    ],
+    "explanation": "(2πσ/λ)² = (2π/14)² ≈ 0,201, donc S ≈ exp(−0,201) ≈ 0,82. Le rapport de Strehl est l'intensité au centre de l'image d'un point par le système aberrant, divisée par celle d'un système limité par la diffraction, sans aberrations. Comme une aberration de front d'onde RMS de λ/14 donne S ≈ 0,8, « RMS ≤ λ/14, S ≥ 0,8 » sert de repère pratique de la limite de diffraction (critère de Maréchal). La valeur d'environ 0,99 oublie le facteur 2π et met (1/14)² dans l'exponentielle, et celle d'environ 0,64 oublie le carré et calcule exp(−2π/14). L'aberration de front d'onde étant une erreur de chemin optique, il faut aussi se rappeler que, pour un miroir, l'erreur de front d'onde vaut deux fois l'erreur de forme de la surface."
+  },
+  "optical-design-015": {
+    "question": "On focalise un faisceau parallèle en une tache avec une lentille plan-convexe. Laquelle des orientations suivantes de la lentille réduit l'aberration sphérique ?",
+    "choices": [
+      "Face courbe (convexe) tournée vers le faisceau parallèle, face plane tournée vers le foyer",
+      "Face plane tournée vers le faisceau parallèle, face courbe tournée vers le foyer",
+      "La lentille étant mince, l'aberration sphérique ne change pas quand on la retourne"
+    ],
+    "explanation": "L'aberration sphérique est d'autant plus grande que la déviation des rayons est concentrée sur une seule surface. En tournant la face convexe vers le faisceau parallèle, la réfraction se répartit entre la face convexe et la face plane (dans un rapport d'environ 2:1 pour n = 1,5), et l'aberration diminue. Avec la face plane vers le faisceau parallèle, les rayons ne sont pas du tout déviés par la face plane et la face convexe doit les dévier fortement seule : l'aberration sphérique longitudinale est environ multipliée par 4 (pour n = 1,5). À distance focale égale, l'aberration change avec la répartition des courbures entre les deux faces (cambrure) : c'est la base de la conception des lentilles, et même dans l'approximation des lentilles minces, l'aberration sphérique du troisième ordre dépend de la forme, si bien que l'orientation n'est pas indifférente. Pour collimater la lumière d'une source ponctuelle, on tourne de même la face convexe vers le côté du faisceau parallèle. Pour réduire encore l'aberration, on utilise des lentilles asphériques ou des combinaisons de plusieurs lentilles."
+  },
+  "optical-design-016": {
+    "question": "Avec certains objectifs photographiques, le bord de l'image s'assombrit à pleine ouverture, et cet assombrissement s'atténue quand on ferme le diaphragme. Laquelle des causes principales suivantes est correcte ?",
+    "choices": [
+      "L'assombrissement selon la loi du cos⁴, fixé par l'angle de champ : fermer le diaphragme augmente la valeur de cos⁴θ et éclaircit le bord",
+      "Le vignetage, où une partie des faisceaux obliques est arrêtée par les montures des lentilles : en fermant, les faisceaux s'amincissent et sont moins arrêtés",
+      "La distorsion, plus forte vers le bord : fermer le diaphragme la réduit et uniformise la luminosité de l'image sur tout le champ"
+    ],
+    "explanation": "Un faisceau oblique issu d'un point hors axe peut traverser l'ouverture du diaphragme tout en étant en partie rogné par les montures des lentilles avant et arrière, éloignées du diaphragme, ou par le pare-soleil, si bien que la quantité de lumière qui atteint le plan image diminue. C'est le vignetage : la section du faisceau prend une forme amputée. En fermant le diaphragme, le faisceau est limité et aminci par le diaphragme et ne touche plus les montures, ce qui atténue l'assombrissement du bord. L'assombrissement selon la loi du cos⁴ ne dépend que de l'inclinaison des rayons et ne change pas quand on ferme. La distorsion déplace la position de l'image ; elle ne change pas avec le diaphragme et n'assombrit pas non plus le bord."
+  },
+  "optical-design-017": {
+    "question": "Avec un objectif sans aberrations ni vignetage, on photographie une surface de luminance uniforme. À la position du plan image atteinte par un faisceau qui se propage côté image à 30° de l'axe optique, l'éclairement vaut approximativement quel pourcentage de l'éclairement sur l'axe ? (On suit la loi du cos⁴.)",
+    "choices": [
+      "Environ 56 %",
+      "Environ 87 %",
+      "Environ 75 %"
+    ],
+    "explanation": "cos⁴30° = (0,866)⁴ ≈ 0,5625, soit environ 56 %. Sur les quatre facteurs cos, deux correspondent à l'allongement de la distance oblique entre le point du plan image et la pupille (diminution comme l'inverse du carré de la distance), un à la réduction de l'aire apparente de la pupille vue en biais, et le dernier à l'incidence oblique de la lumière sur le plan image, qui réduit la quantité par unité de surface. La valeur d'environ 87 % ne prend qu'une fois cos θ, et celle d'environ 75 % seulement cos²θ. C'est pourquoi le bord de l'image s'assombrit facilement avec les objectifs grand-angle ; on préserve l'éclairement du bord en jouant sur la position de la pupille de sortie ou en rendant le côté image presque télécentrique."
+  },
+  "optical-design-018": {
+    "question": "La courbure de champ, qui subsiste souvent même dans un système de lentilles corrigé des aberrations, est fixée par la somme de Petzval Σ 1/(nᵢfᵢ) (nᵢ et fᵢ étant l'indice et la distance focale de chaque lentille). Laquelle des méthodes suivantes pour aplanir le champ est correcte ?",
+    "choices": [
+      "En changeant la cambrure de la lentille convergente (répartition des courbures entre ses deux faces), on peut annuler la somme de Petzval tout en conservant la distance focale",
+      "En fermant le diaphragme pour affiner le faisceau, la somme de Petzval tend vers zéro et le champ devient plan",
+      "On utilise un verre de fort indice pour la lentille convergente et on l'associe à une lentille divergente placée à distance, pour réduire la somme de Petzval tout en conservant la vergence du système"
+    ],
+    "explanation": "La somme de Petzval ne dépend que de la vergence et de l'indice de chaque lentille ; elle ne dépend ni de la cambrure des lentilles ni de la position ou de la taille du diaphragme. Dans un système composé seulement de lentilles convergentes, la somme reste positive et le champ est courbe. Pour la réduire, on ajoute une lentille divergente de vergence négative, et l'on utilise un verre de fort indice pour la lentille convergente et un verre de faible indice pour la divergente. En plaçant la lentille divergente à distance, là où la hauteur des rayons est différente, on peut compenser la somme de Petzval sans trop perdre sur la vergence de l'ensemble du système. Fermer le diaphragme augmente la profondeur de foyer et rend la courbure moins visible, mais la somme elle-même ne change pas."
+  },
+  "optical-design-019": {
+    "question": "Laquelle des raisons suivantes explique correctement pourquoi une seule lentille asphérique peut focaliser un faisceau laser parallèle en une tache proche de la limite de diffraction ?",
+    "choices": [
+      "On écarte légèrement la forme de la surface de la sphère pour dévier moins les rayons qui passent près du bord, ce qui permet de faire converger tous les rayons en un point",
+      "Dans une lentille asphérique, l'indice varie continûment du centre vers le bord, si bien que l'écart des foyers avec la longueur d'onde (aberration chromatique) disparaît",
+      "Rendre la lentille asphérique réduit l'ouverture numérique et agrandit la tache d'Airy, si bien que le flou dû aux aberrations devient peu visible"
+    ],
+    "explanation": "Avec une lentille sphérique, les rayons qui passent près du bord sont trop déviés et convergent avant le foyer paraxial : c'est l'aberration sphérique. Une lentille asphérique change la pente de sa surface selon la hauteur par rapport à l'axe optique et dévie moins les rayons vers le bord, ce qui égalise les chemins optiques de tous les rayons jusqu'au foyer ; en lumière monochromatique, une seule lentille élimine presque entièrement l'aberration sphérique sur l'axe. Les lentilles dont l'indice varie avec la position sont les lentilles à gradient d'indice (GRIN) ; une lentille asphérique n'en modifie que la forme. La dispersion du matériau restant la même, l'aberration chromatique ne disparaît pas. Réduire l'ouverture numérique pour masquer les aberrations revient à dégrader la résolution, et ce n'est pas le but de l'asphérique."
+  },
+  "optical-design-020": {
+    "question": "Avec un objectif ouvert à f/4, on photographie un sujet au rapport 1:1 (grandissement transversal −1). Laquelle des combinaisons suivantes du nombre d'ouverture effectif N_w ≈ N(1 + |m|) (m étant le grandissement transversal) et de l'éclairement du plan image, comparé à la prise de vue d'un objet à l'infini, est correcte ?",
+    "choices": [
+      "Le nombre d'ouverture effectif reste égal à 4, et l'éclairement du plan image ne change pas non plus",
+      "Le nombre d'ouverture effectif vaut 8, et l'éclairement du plan image devient environ 1/4",
+      "Le nombre d'ouverture effectif vaut 5,6, et l'éclairement du plan image devient environ 1/2"
+    ],
+    "explanation": "Au rapport 1:1, la distance jusqu'à l'image vaut deux fois la distance focale : l'angle du faisceau vu du côté image est plus petit que pour l'infini, et le nombre d'ouverture effectif vaut N(1 + |m|) = 4 × 2 = 8. L'éclairement du plan image étant inversement proportionnel au carré du nombre d'ouverture effectif, il tombe à (4/8)² = 1/4, et il faut augmenter l'exposition de deux crans. Le nombre d'ouverture indiqué est la valeur pour une mise au point à l'infini : il est faux de dire que l'éclairement ne change pas à courte distance. La valeur de 5,6 suppose un assombrissement d'un seul cran et ne compte que la moitié de l'effet du doublement de la distance jusqu'à l'image. La taille du flou de diffraction est elle aussi fixée par le nombre d'ouverture effectif, si bien que l'effet de la diffraction augmente en proxiphotographie."
+  },
+  "optical-design-021": {
+    "question": "Une lentille f-θ, utilisée pour le balayage en usinage laser ou dans les imprimantes laser, a une distance focale de 100 mm, et l'angle de balayage du miroir galvanométrique (angle par rapport à l'axe optique) vaut ±30°. Quelle valeur est la plus proche de la longueur totale de balayage sur le plan image ?",
+    "choices": [
+      "Environ 115 mm",
+      "Environ 100 mm",
+      "Environ 105 mm"
+    ],
+    "explanation": "Une lentille f-θ est une lentille à laquelle on donne volontairement une distorsion telle que la hauteur d'image vaut h = fθ (θ en radians) : h = 100 × (π/6) ≈ 52,4 mm, d'où une longueur totale d'environ 105 mm. La valeur d'environ 115 mm est calculée avec la hauteur d'image d'une lentille ordinaire, h = f tanθ (100 × tan30° ≈ 57,7 mm), et celle d'environ 100 mm avec h = f sinθ. Avec une lentille en f tanθ, même si le miroir oscille à vitesse angulaire constante, la tache se déplace plus vite vers le bord et l'espacement des points augmente. Avec une lentille f-θ, la vitesse de balayage est constante sur le plan image, si bien qu'en émettant des impulsions à intervalles réguliers on trace des points équidistants."
+  },
+  "optical-design-022": {
+    "question": "On observe de nuit à l'œil (diamètre de pupille d'environ 7 mm) à travers une lunette d'objectif de 60 mm de diamètre et de grossissement 20. Laquelle des propositions suivantes concernant le diamètre de la pupille de sortie et la luminosité de l'image est correcte ?",
+    "choices": [
+      "Le diamètre de la pupille de sortie vaut 60/20 = 3 mm, inférieur à la pupille de l'œil, si bien que toute la lumière entrée dans l'objectif pénètre dans l'œil",
+      "Le diamètre de la pupille de sortie est le même que celui de l'objectif, 60 mm, supérieur à la pupille de l'œil, si bien que la plus grande partie de la lumière n'entre pas dans l'œil",
+      "Le diamètre de la pupille de sortie vaut 60 × 20 = 1200 mm, et plus le grossissement est élevé, plus la pupille de sortie est grande et l'image lumineuse"
+    ],
+    "explanation": "La pupille de sortie d'une lunette est l'image, formée par l'oculaire, de l'objectif qui sert de diaphragme d'ouverture ; son diamètre vaut diamètre/grossissement = 60/20 = 3 mm. Si l'œil est placé là, tout le faisceau entré dans l'objectif passe par ces 3 mm et tient dans la pupille de l'œil (7 mm) : il entre dans l'œil sans perte. Inversement, si la pupille de sortie est plus grande que celle de l'œil, la lumière qui déborde est perdue. À diamètre égal, augmenter le grossissement réduit la pupille de sortie, et la luminosité de la surface de l'image agrandie diminue. Donner à la pupille de sortie la taille de l'objectif revient à oublier l'image formée par l'oculaire. Le choix qui multiplie par le grossissement prend aussi le mauvais sens : le diamètre de la pupille de sortie est inversement proportionnel au grossissement."
+  },
+  "optical-design-023": {
+    "question": "Laquelle des propositions suivantes décrit correctement le rôle du diaphragme de champ d'un système optique ?",
+    "choices": [
+      "Il limite la largeur du faisceau issu d'un point objet sur l'axe et fixe la luminosité du plan image ainsi que la résolution de l'image fixée par la diffraction",
+      "Placé dans le plan objet ou le plan image (ou dans un plan conjugué), il délimite nettement la zone imagée (le champ)",
+      "Il absorbe la lumière réfléchie par les surfaces des lentilles et la lumière parasite pour réduire les images fantômes et le voile, ce qui améliore le contraste de l'image"
+    ],
+    "explanation": "Le diaphragme de champ est un diaphragme placé en une position conjuguée de l'image, comme le plan objet ou un plan d'image intermédiaire : son bord s'image nettement comme limite du champ et fixe l'étendue de la zone imagée. Le cadre circulaire situé dans le plan focal de l'oculaire d'une lunette ou d'un microscope, ou le cadre du capteur d'images lui-même, en sont des exemples. C'est le diaphragme d'ouverture, situé en une position conjuguée de la pupille, qui limite la largeur du faisceau sur l'axe et fixe la luminosité (nombre d'ouverture ou NA) et la résolution. Les diaphragmes destinés à réduire la lumière réfléchie et parasite s'appellent des baffles ou diaphragmes antivoile, et leur but diffère de celui du diaphragme de champ. Le point essentiel pour les distinguer est que le diaphragme d'ouverture est conjugué de la pupille et le diaphragme de champ conjugué de l'image."
+  },
+  "optical-design-024": {
+    "question": "Laquelle des raisons suivantes explique correctement pourquoi un élément optique diffractif (lentille diffractive) associé à une lentille réfractive permet de corriger l'aberration chromatique ?",
+    "choices": [
+      "La lentille diffractive dévie plus fortement les grandes longueurs d'onde, et la valeur qui tient lieu de nombre d'Abbe est négative et petite, environ −3,5, si bien qu'une faible lentille diffractive compense l'aberration chromatique",
+      "La lentille diffractive a la même distance focale quelle que soit la longueur d'onde, si bien qu'associée à une lentille réfractive elle dilue de moitié l'aberration chromatique de celle-ci",
+      "La lentille diffractive dévie plus fortement les courtes longueurs d'onde, et son nombre d'Abbe, très grand, vaut environ 90, si bien qu'elle agit comme un matériau moins dispersif que le verre"
+    ],
+    "explanation": "La vergence d'une lentille diffractive est proportionnelle à la longueur d'onde (sa distance focale est inversement proportionnelle à la longueur d'onde) : elle dévie plus fortement les grandes longueurs d'onde. C'est le sens inverse de la dispersion normale du verre, et la valeur qui tient lieu de nombre d'Abbe vaut V = λd/(λF − λC) = 587,6/(486,1 − 656,3) ≈ −3,45. Son signe étant opposé et sa valeur petite, il suffit de confier à la lentille diffractive une très petite part de la vergence pour compenser l'aberration chromatique d'une lentille réfractive convergente, et l'ensemble est plus léger et plus mince qu'un achromat utilisant une lentille divergente en flint. La diffraction dépendant fortement de la longueur d'onde, l'explication selon laquelle la distance focale ne dépend pas de la longueur d'onde est fausse. Ce sont des matériaux comme la fluorine qui ont un grand nombre d'Abbe et une faible dispersion, à l'opposé des propriétés de la lentille diffractive."
+  },
+  "optical-design-025": {
+    "question": "Dans un achromat formé de deux verres collés, laquelle des combinaisons suivantes de l'aberration chromatique résiduelle qui subsiste après avoir fait coïncider les foyers des raies F (486 nm) et C (656 nm) (spectre secondaire) et de la méthode pour la réduire encore est correcte ?",
+    "choices": [
+      "Le spectre secondaire est une forme d'aberration sphérique, fixée par la forme des surfaces et non par la couleur : il disparaît si l'on rend les surfaces des lentilles asphériques",
+      "Le spectre secondaire est fixé par l'écart des nombres d'Abbe : il disparaît complètement si l'on choisit la combinaison de verres dont les nombres d'Abbe diffèrent le plus",
+      "C'est l'écart résiduel des foyers aux autres longueurs d'onde, que l'on réduit avec un apochromat utilisant de la fluorine ou des verres ED à dispersion partielle relative anormale"
+    ],
+    "explanation": "Un achromat fait coïncider les foyers de deux longueurs d'onde ; mais pour les verres ordinaires, la courbure de la variation de l'indice avec la longueur d'onde (dispersion partielle relative) se range presque sur une même droite en fonction du nombre d'Abbe, si bien que les foyers des longueurs d'onde intermédiaires ou extérieures restent légèrement décalés. C'est le spectre secondaire. En combinant de la fluorine ou des verres ED (à dispersion partielle anormale), dont la dispersion partielle relative s'écarte de cette droite, on peut faire coïncider les foyers de trois longueurs d'onde : on obtient un apochromat. Le spectre secondaire est une aberration chromatique qui n'existe pas en lumière monochromatique, et rendre les surfaces asphériques ne la corrige pas. Augmenter l'écart des nombres d'Abbe réduit la vergence de chaque lentille et diminue un peu le spectre secondaire, mais tant que les dispersions partielles relatives restent alignées, il ne disparaît pas."
+  },
+  "optical-design-026": {
+    "question": "Une lentille simple mince en N-BK7 (nombre d'Abbe Vd = 64,17) a une distance focale de 100 mm. Quelle valeur est la plus proche de l'écart entre les positions des foyers des raies F (486 nm) et C (656 nm) (aberration chromatique axiale, Δf ≈ f/Vd) ?",
+    "choices": [
+      "Environ 1,6 mm",
+      "Environ 0,81 mm",
+      "Environ 0,16 mm"
+    ],
+    "explanation": "La vergence d'une lentille mince étant proportionnelle à (n − 1), l'écart de vergence entre les raies F et C vaut φ(nF − nC)/(nd − 1) = φ/Vd. L'écart des positions des foyers vaut environ Δf ≈ f/Vd = 100 mm / 64,17 ≈ 1,56 mm, soit environ 1,6 mm, et le foyer du bleu (raie F), d'indice plus grand, est du côté de la lentille. La valeur d'environ 0,81 mm calcule f × (nF − nC) = 100 × 0,0081 en oubliant de diviser par (nd − 1). Celle d'environ 0,16 mm est une erreur d'ordre de grandeur. La profondeur de foyer d'un objectif ouvert à f/4 étant de quelques dizaines de µm, un écart chromatique de 1,6 mm produit des franges colorées très visibles dans l'image, et il faut le corriger par un achromat combinant des verres de nombres d'Abbe différents."
+  },
+  "optical-design-027": {
+    "question": "On associe à un capteur d'images de 36 mm de large sur 24 mm de haut un objectif de 50 mm de distance focale (sans distorsion) et l'on photographie un paysage lointain. Quelle valeur est la plus proche de l'angle de champ horizontal (angle total) ? (Angle de champ = 2 arctan(w/(2f)), w étant la largeur du capteur.)",
+    "choices": [
+      "Environ 72°",
+      "Environ 47°",
+      "Environ 40°"
+    ],
+    "explanation": "2 arctan(36/(2 × 50)) = 2 arctan(0,36) ≈ 2 × 19,8° = 39,6°, soit environ 40°. L'image d'un objet à l'infini se forme dans le plan focal, et le rayon principal qui atteint le bord du capteur fait l'angle arctan(18/50) avec l'axe optique ; l'angle total en est le double. La valeur d'environ 72° utilise par erreur toute la largeur de 36 mm au lieu de la demi-largeur, et celle d'environ 47° est l'angle de champ sur la diagonale (environ 43,3 mm). L'angle de champ est d'autant plus étroit que la distance focale est longue : avec le même capteur et un objectif de 100 mm, l'angle de champ horizontal vaut environ 20°. Un capteur plus petit donne, à distance focale égale, un angle de champ plus étroit, et l'image ressemble à celle d'un téléobjectif."
+  },
+  "optical-design-028": {
+    "question": "Lorsqu'on utilise au rapport 1:1 un objectif symétrique, où le diaphragme d'ouverture est au centre et où les lentilles avant et arrière sont disposées en miroir, certaines aberrations se compensent automatiquement. Laquelle des combinaisons suivantes des aberrations compensées est correcte ?",
+    "choices": [
+      "L'aberration sphérique et l'aberration chromatique axiale : la hauteur des rayons étant la même de part et d'autre du diaphragme, les aberrations des rayons sur l'axe des parties avant et arrière sont de signes opposés et s'annulent",
+      "La coma, la distorsion et l'aberration chromatique latérale : de part et d'autre du diaphragme, les rayons hors axe sont déviés en sens opposés, et les aberrations, de signes opposés, s'annulent",
+      "L'astigmatisme et la courbure de champ : disposer les lentilles symétriquement annule la somme de Petzval, si bien que le champ devient plan et que les deux disparaissent"
+    ],
+    "explanation": "Si la construction avant et arrière du diaphragme est symétrique, le rayon principal hors axe suit un trajet symétrique par rapport au centre du diaphragme. La coma, la distorsion et l'aberration chromatique latérale sont des aberrations de symétrie impaire par rapport au diaphragme : elles ont la même amplitude et des signes opposés dans les parties avant et arrière, et se compensent en imagerie au rapport 1:1. L'aberration sphérique et l'aberration chromatique axiale sont de nature paire : elles s'ajoutent avec le même signe à l'avant et à l'arrière et ne disparaissent pas. La somme de Petzval ne dépend que de la vergence et de l'indice de chaque lentille et ne s'annule pas avec une disposition symétrique : l'astigmatisme et la courbure de champ ne disparaissent pas non plus automatiquement. C'est pourquoi de nombreux objectifs photographiques, comme le type double Gauss, ont une forme presque symétrique."
+  },
+  "optical-design-029": {
+    "question": "Dans un logiciel de conception optique, la taille du diagramme de points obtenu par tracé de rayons (diamètre de la tache en optique géométrique) est devenue bien plus petite que le diamètre de la tache d'Airy. Laquelle des évaluations suivantes de l'image de ce système est correcte ?",
+    "choices": [
+      "Le flou est presque entièrement fixé par la diffraction, à la limite de diffraction : réduire encore les aberrations ne rend pas l'image d'un point plus petite que la tache d'Airy",
+      "Le diamètre de la tache étant inférieur à la tache d'Airy, la taille de l'image d'un point est fixée par le diagramme de points, et l'on obtient une résolution au-delà de la diffraction",
+      "Plus la tache est petite, plus la diffraction se renforce et plus la tache d'Airy grandit, si bien que l'image devient au contraire plus floue"
+    ],
+    "explanation": "Le diagramme de points du tracé de rayons ne tient pas compte de la nature ondulatoire de la lumière : il donne une idée de l'importance des aberrations, mais ne représente pas forcément la taille réelle de l'image d'un point. Lorsque la tache géométrique est bien plus petite que la tache d'Airy (de diamètre 2,44λN), l'aberration de front d'onde est faible elle aussi, et l'étalement de l'image d'un point est fixé par la diffraction due à l'ouverture. Dans cette situation, on juge les performances par des évaluations qui incluent la diffraction, comme la FTM, la PSF ou le rapport de Strehl. Réduire encore les aberrations ne rend pas l'image d'un point plus petite que la tache d'Airy. L'étalement par diffraction est fixé par la taille de l'ouverture et la longueur d'onde, et ne se renforce pas selon la taille de la tache géométrique."
+  },
+  "optical-design-030": {
+    "question": "En bordure d'image, on observe des décalages colorés rouges et bleus (franges colorées) sur les contours d'objets blancs, et fermer le diaphragme ne les réduit presque pas. Quelle aberration peut en être la cause ?",
+    "choices": [
+      "L'aberration chromatique axiale : chaque couleur a son foyer décalé en avant ou en arrière, si bien que fermer pour augmenter la profondeur de foyer ne change pas le décalage coloré",
+      "L'aberration chromatique latérale : chaque couleur a un grandissement différent et une image décalée latéralement, si bien que le décalage subsiste même si l'on ferme pour affiner le faisceau",
+      "L'aberration sphérique : la lumière qui passe près du bord sépare plus fortement les couleurs, si bien que fermer pour arrêter cette lumière ne change pas le décalage coloré"
+    ],
+    "explanation": "L'aberration chromatique latérale est une aberration où le grandissement (la hauteur d'image) dépend de la longueur d'onde : la position même du rayon principal se décale latéralement d'une couleur à l'autre. Le rayon principal passant par le centre du diaphragme, l'amplitude du décalage ne change pas quand on ferme ; elle est nulle au centre de l'image et augmente vers le bord. L'aberration chromatique axiale est un décalage du foyer en avant ou en arrière ; elle existe aussi au centre de l'image, et fermer affine le faisceau et augmente la profondeur de foyer, si bien que le flou coloré diminue. L'aberration sphérique existe même en lumière monochromatique ; elle ne sépare pas les couleurs et diminue quand on ferme. L'aberration chromatique latérale peut aussi être en grande partie corrigée par un traitement qui réajuste le grandissement de chaque couleur dans l'image enregistrée."
+  }
+}

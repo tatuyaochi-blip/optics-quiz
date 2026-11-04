@@ -1,0 +1,272 @@
+{
+  "photometry-color-001": {
+    "question": "Les grandeurs énergétiques et les grandeurs photométriques se correspondent une à une. Laquelle des expressions suivantes du lux (lx), unité photométrique d'éclairement lumineux, à l'aide d'autres unités photométriques est correcte ?",
+    "choices": [
+      "cd/m²",
+      "lm/m²",
+      "lm/sr"
+    ],
+    "explanation": "L'éclairement lumineux est le flux lumineux reçu par une surface divisé par son aire : 1 lx = 1 lm/m². Il correspond, parmi les grandeurs énergétiques, à l'éclairement énergétique (W/m²). Le cd/m² est l'unité de luminance, qui exprime à quel point une surface paraît lumineuse dans la direction d'observation (par unité de surface et par unité d'angle solide) ; c'est une grandeur distincte de l'éclairement. Le lm/sr est la candela (cd) elle-même, unité d'intensité lumineuse, densité du flux lumineux qu'une source ponctuelle émet dans une direction. Retenir les correspondances flux énergétique W ↔ flux lumineux lm, intensité énergétique W/sr ↔ intensité lumineuse cd, éclairement énergétique W/m² ↔ éclairement lumineux lx et luminance énergétique W/(m²·sr) ↔ luminance cd/m² évite de confondre les unités."
+  },
+  "photometry-color-002": {
+    "question": "Pour l'efficacité lumineuse relative spectrale normalisée V(λ) de la vision photopique, assurée par les cônes en ambiance lumineuse, laquelle des combinaisons suivantes de la longueur d'onde du maximum et de l'efficacité lumineuse spectrale maximale (flux lumineux par watt) à cette longueur d'onde est correcte ?",
+    "choices": [
+      "Environ 555 nm, 683 lm/W",
+      "Environ 507 nm, 683 lm/W",
+      "Environ 555 nm, environ 1700 lm/W"
+    ],
+    "explanation": "L'efficacité lumineuse relative V(λ) de la vision photopique atteint son maximum, égal à 1, vers 555 nm (vert-jaune), et 1 W de lumière monochromatique à cette longueur d'onde correspond à 683 lm. La candela, unité de base de la photométrie, est définie comme l'intensité lumineuse d'un rayonnement monochromatique de 540 THz (environ 555 nm) dont l'intensité énergétique vaut 1/683 W/sr. Environ 507 nm est le pic de l'efficacité lumineuse relative V′(λ) de la vision scotopique, assurée par les bâtonnets en ambiance sombre, et l'efficacité lumineuse spectrale maximale scotopique vaut environ 1700 lm/W. Les combinaisons 507 nm avec 683 lm/W et 555 nm avec environ 1700 lm/W mélangent donc les valeurs photopiques et scotopiques. L'effet Purkinje, par lequel les lumières bleu-vert paraissent relativement plus lumineuses quand l'ambiance s'assombrit, résulte de ce déplacement du pic."
+  },
+  "photometry-color-003": {
+    "question": "Quelle valeur est la plus proche du flux lumineux d'un pointeur laser vert de longueur d'onde 532 nm et de puissance 5 mW ? (V(532 nm) = 0,88 ; efficacité lumineuse spectrale maximale 683 lm/W.)",
+    "choices": [
+      "Environ 3,4 lm",
+      "Environ 0,0044 lm",
+      "Environ 3,0 lm"
+    ],
+    "explanation": "Le flux lumineux d'une lumière monochromatique s'obtient par Φv = 683 lm/W × V(λ) × Φe. On a Φv = 683 × 0,88 × 5×10⁻³ ≈ 3,0 lm. La valeur d'environ 3,4 lm oublie de multiplier par V(λ) et traite la lumière comme si elle était à 555 nm, et celle d'environ 0,0044 lm oublie les 683 lm/W et ne multiplie que par l'efficacité lumineuse relative. À puissance égale de 5 mW, un laser rouge à 650 nm (V ≈ 0,107) ne donne qu'environ 0,37 lm, soit environ huit fois moins que le vert. C'est pourquoi un pointeur laser vert paraît bien plus lumineux qu'un rouge de même puissance. Pour l'infrarouge ou l'ultraviolet invisibles, V(λ) ≈ 0, si bien que même un rayonnement intense a un flux lumineux presque nul."
+  },
+  "photometry-color-004": {
+    "question": "Une source ponctuelle émet uniformément dans toutes les directions un flux lumineux total de 1000 lm. Quelle valeur est la plus proche de son intensité lumineuse ?",
+    "choices": [
+      "Environ 80 cd",
+      "Environ 160 cd",
+      "Environ 320 cd"
+    ],
+    "explanation": "L'intensité lumineuse est le flux lumineux par unité d'angle solide, I = dΦ/dΩ, et l'angle solide de toutes les directions vaut 4π sr. Pour une source ponctuelle uniforme, I = 1000 lm / 4π sr ≈ 79,6 cd, soit environ 80 cd. La valeur d'environ 160 cd divise par l'angle solide d'un hémisphère, 2π sr, ce qui correspond à une source qui n'émet uniformément que d'un seul côté. Celle d'environ 320 cd divise par π et confond avec la relation M = πL entre la luminance et l'exitance lumineuse d'une surface parfaitement diffusante. Les luminaires réels n'ont pas une répartition uniforme, et leur intensité lumineuse est donnée direction par direction par une courbe photométrique. À flux égal, concentrer la lumière dans un domaine étroit avec un réflecteur ou une lentille augmente l'intensité lumineuse dans cette direction."
+  },
+  "photometry-color-005": {
+    "question": "Une source ponctuelle placée au plafond, à 2 m de hauteur, donne un éclairement de 100 lx sur le sol juste en dessous. L'intensité lumineuse de la source étant la même dans toutes les directions, quelle valeur est la plus proche de l'éclairement en un point du sol situé à 2 m horizontalement de ce point ?",
+    "choices": [
+      "Environ 50 lx",
+      "Environ 35 lx",
+      "Environ 71 lx"
+    ],
+    "explanation": "Juste en dessous, E₀ = I/h² donne une intensité lumineuse I = 100 × 2² = 400 cd. La distance jusqu'au point situé à 2 m horizontalement vaut r = √(2² + 2²) ≈ 2,83 m, et l'angle d'incidence de la lumière θ = 45°. L'éclairement suit à la fois la loi de l'inverse du carré de la distance et la loi du cosinus de l'angle d'incidence : E = I cosθ / r² = 400 × 0,707 / 8 ≈ 35 lx (on peut aussi écrire E = E₀cos³θ). La valeur d'environ 50 lx n'utilise que la loi de l'inverse du carré et oublie que l'incidence oblique sur le sol étale la lumière sur une plus grande surface. Celle d'environ 71 lx ne multiplie que par le cosinus et oublie l'effet de l'éloignement. En conception d'éclairage, cette décroissance en cos³θ est l'une des causes du manque d'uniformité de l'éclairement au sol."
+  },
+  "photometry-color-006": {
+    "question": "On éclaire sous 500 lx une surface parfaitement diffusante (lambertienne) de facteur de réflexion 0,8. Quelle valeur est la plus proche de la luminance de cette surface ?",
+    "choices": [
+      "Environ 400 cd/m²",
+      "Environ 64 cd/m²",
+      "Environ 127 cd/m²"
+    ],
+    "explanation": "Pour une surface parfaitement diffusante, l'exitance lumineuse de la lumière réfléchie, M = ρE = 0,8 × 500 = 400 lm/m², et la luminance L sont liées par M = πL. On a donc L = ρE/π = 400/π ≈ 127 cd/m². La valeur d'environ 400 cd/m² oublie de diviser par π et confond exitance lumineuse et luminance. Sur une surface lambertienne, la luminance est la même quelle que soit la direction d'observation et l'intensité rayonnée vaut l'intensité dans la direction normale multipliée par cos θ : l'intégration sur tout l'hémisphère fait donc apparaître π et non 2π. La valeur d'environ 64 cd/m² divise par erreur par 2π. Une feuille de papier blanc sous l'éclairage d'un bureau a une luminance de cet ordre, autour de 100 cd/m²."
+  },
+  "photometry-color-007": {
+    "question": "On observe une surface parfaitement diffusante uniformément lumineuse en doublant la distance d'observation (l'atténuation atmosphérique est négligée). Laquelle des combinaisons suivantes des variations de la luminance de la surface et du flux lumineux qui entre dans l'œil depuis toute la surface est correcte ?",
+    "choices": [
+      "La luminance devient 1/4, et le flux lumineux qui entre dans l'œil aussi",
+      "La luminance ne change pas, et le flux lumineux qui entre dans l'œil devient 1/4",
+      "La luminance devient 1/2, et le flux lumineux qui entre dans l'œil devient 1/4"
+    ],
+    "explanation": "La luminance est le flux lumineux par unité de surface et par unité d'angle solide ; elle est fixée par les propriétés de la surface et ne dépend pas de la distance d'observation. Quand la distance double, l'angle solide sous lequel chaque point de la surface voit la pupille devient 1/4, et le flux lumineux qui entre dans l'œil devient 1/4. Mais l'aire de l'image sur la rétine devient elle aussi 1/4, si bien que l'éclairement rétinien (la lumière par unité de surface) ne change pas, et la surface paraît aussi lumineuse. Le choix selon lequel la luminance devient 1/4 confond la luminance avec la loi de l'inverse du carré qui s'applique à l'éclairement produit par la source entière. Il n'y a pas non plus de raison que la luminance devienne 1/2. La loi de conservation de la luminance, selon laquelle un système optique passif comme une lentille ne peut pas donner une image de luminance supérieure à celle de l'objet (égale dans un même milieu sans pertes), est liée à cette propriété."
+  },
+  "photometry-color-008": {
+    "question": "Quelle est la principale raison pour laquelle une photodiode en silicium non corrigée ne peut pas être utilisée telle quelle comme luxmètre ?",
+    "choices": [
+      "La sensibilité spectrale du silicium est maximale vers 900 nm et sa forme diffère de celle de l'efficacité lumineuse relative V(λ), si bien que l'indication dépend du spectre de la source",
+      "Le courant d'une photodiode en silicium n'est pas proportionnel à la puissance lumineuse mais à sa racine carrée, si bien qu'aucune mesure linéaire de l'éclairement n'est possible quand la luminosité varie",
+      "Avec la bande interdite du silicium (environ 1,1 eV), la photodiode n'a aucune sensibilité dans le visible et ne détecte que l'infrarouge"
+    ],
+    "explanation": "L'éclairement lumineux est l'éclairement énergétique pondéré par l'efficacité lumineuse relative V(λ) : la sensibilité spectrale du capteur d'un luxmètre doit donc être ajustée sur V(λ). La sensibilité spectrale du silicium couvre tout le visible, mais elle est maximale vers 900 nm et diffère fortement de V(λ), qui a son pic à 555 nm. Les erreurs deviennent donc grandes pour une source de spectre différent de celle utilisée pour l'étalonnage, par exemple entre une lampe à incandescence, riche en infrarouge, et une LED blanche. Les luxmètres réels associent des filtres de correction V(λ), en verre coloré par exemple, pour s'approcher de V(λ). Le photocourant d'une photodiode est proportionnel à la puissance lumineuse sur une large plage, et la sensibilité dans le visible est suffisante : les deux autres choix sont faux."
+  },
+  "photometry-color-009": {
+    "question": "Quelle valeur est la plus proche de la longueur d'onde du maximum du spectre de rayonnement d'un corps noir de température de couleur 3000 K ? (Utilisez la loi de déplacement de Wien λmax T = 2898 µm·K.)",
+    "choices": [
+      "Environ 580 nm",
+      "Environ 9,7 µm",
+      "Environ 966 nm"
+    ],
+    "explanation": "La loi de déplacement de Wien donne λmax = 2898 / 3000 ≈ 0,966 µm, soit environ 966 nm, dans le proche infrarouge. Le rayonnement d'une lampe à incandescence de température de couleur voisine de 3000 K est surtout infrarouge, et seule une partie est visible : son efficacité lumineuse est faible, de l'ordre de 15 lm/W. La valeur d'environ 9,7 µm est une erreur d'ordre de grandeur, proche du pic du rayonnement d'un objet à température ambiante (environ 300 K). Celle d'environ 580 nm est devinée d'après la couleur jaune perçue, mais la longueur d'onde du pic et la couleur apparente ne coïncident pas. Pour le Soleil (environ 5800 K), le pic se situe vers 500 nm, dans le visible. Plus la température de couleur est élevée, plus le pic se déplace vers les courtes longueurs d'onde, et la couleur de la lumière passe du rouge au blanc puis au blanc bleuté."
+  },
+  "photometry-color-010": {
+    "question": "La fiche technique d'un éclairage à LED blanches indique « température de couleur 5000 K ». Laquelle des significations suivantes de cette valeur est correcte ?",
+    "choices": [
+      "Elle indique que la température de la jonction de la puce LED atteint 5000 K en fonctionnement, et que ce rayonnement thermique produit la lumière blanche",
+      "C'est la température du corps noir dont la couleur paraît la plus proche de la chromaticité de la lumière (température de couleur proximale) ; plus elle est élevée, plus le blanc est bleuté",
+      "C'est la température du corps noir dont la couleur paraît la plus proche de la chromaticité de la lumière ; plus elle est élevée, plus le blanc est chaud et rougeâtre, et 5000 K correspond au blanc chaud"
+    ],
+    "explanation": "La couleur des sources qui ne sont pas des corps noirs, comme les LED ou les tubes fluorescents, s'exprime par la température du point le plus proche sur le lieu des corps noirs dans un diagramme de chromaticité uniforme (CIE 1960 UCS, etc.), c'est-à-dire par la température de couleur proximale. 5000 K correspond à un blanc neutre, plus bleuté que le blanc chaud d'environ 3000 K. Plus la température d'un corps noir est élevée, plus la part du rayonnement de courte longueur d'onde augmente : une température de couleur élevée donne un blanc bleuté, une température basse une couleur chaude et rougeâtre. Le choix selon lequel une valeur élevée donne un blanc rougeâtre inverse ce sens. La température de couleur est un indicateur de la couleur de la lumière, sans rapport avec la température du composant émetteur ; la jonction d'une LED en fonctionnement est à quelques dizaines de °C jusqu'à 100 °C environ (environ 300 à 400 K). À température de couleur proximale égale, des spectres différents donnent des rendus différents des couleurs des objets (rendu des couleurs)."
+  },
+  "photometry-color-011": {
+    "question": "Une lampe à vapeur de sodium basse pression émet une lumière presque monochromatique vers 589 nm ; son efficacité lumineuse est très élevée, mais on ne distingue presque pas les couleurs des objets éclairés. Laquelle des descriptions suivantes de l'indicateur qui exprime cette propriété est correcte ?",
+    "choices": [
+      "Son indice général de rendu des couleurs Ra est très bas. Ra se calcule à partir de l'écart de couleur d'échantillons d'essai par rapport à un éclairage de référence, et plus il est proche de 100, plus l'aspect est proche de celui sous la référence",
+      "Son indice général de rendu des couleurs Ra est très élevé. Une lumière monochromatique n'ayant qu'une seule longueur d'onde, elle ne produit aucune frange colorée et reproduit exactement les couleurs des objets",
+      "Sa température de couleur proximale est très basse. Plus la température de couleur d'une source est basse, plus elle est rougeâtre, et son rendu des couleurs est forcément mauvais"
+    ],
+    "explanation": "Le rendu des couleurs exprime à quel point les couleurs des objets éclairés par une source sont proches de celles qu'ils auraient sous un éclairage de référence (rayonnement du corps noir ou lumière du jour) de même température de couleur proximale. L'indice général de rendu des couleurs Ra s'obtient en calculant l'écart de couleur pour huit échantillons d'essai normalisés et en en faisant la moyenne ; il vaut 100 en l'absence d'écart. Avec une lumière monochromatique comme celle d'une lampe à sodium basse pression, les différences entre spectres de réflexion des objets se réduisent à leur différence de réflectance à 589 nm : on ne distingue plus que le clair et le sombre, et Ra devient extrêmement bas (la formule donne même une valeur négative, autour de −40). Une lumière monochromatique ne reproduit pas exactement les couleurs. De plus, température de couleur et rendu des couleurs sont des indicateurs distincts : une lampe à incandescence d'environ 2800 K a une température de couleur basse, mais un Ra proche de 100."
+  },
+  "photometry-color-012": {
+    "question": "Dans le système colorimétrique XYZ de la CIE 1931, les composantes trichromatiques X, Y et Z s'obtiennent en intégrant le spectre de la lumière multiplié par les fonctions colorimétriques x̄(λ), ȳ(λ) et z̄(λ). Laquelle des propositions suivantes concernant Y est correcte ?",
+    "choices": [
+      "Y est la composante qui représente la quantité de lumière jaune, et l'information de luminosité de la couleur est portée par la somme de X et Z",
+      "Y est une grandeur ayant pour primaire une lumière monochromatique verte réelle (546,1 nm), et peut prendre des valeurs négatives selon le spectre",
+      "La fonction colorimétrique ȳ(λ) est choisie de même forme que l'efficacité lumineuse relative photopique V(λ), et Y est proportionnel aux grandeurs photométriques comme la luminance"
+    ],
+    "explanation": "Le système XYZ est défini par une transformation linéaire des fonctions colorimétriques RGB (qui comportent des valeurs négatives), obtenues avec des primaires réelles rouge, verte et bleue, de façon que toutes les fonctions colorimétriques soient positives. On a alors choisi ȳ(λ) égale à V(λ) : Y porte l'information de luminosité et est directement relié aux grandeurs photométriques, comme la luminance L = 683 ∫ S(λ)ȳ(λ) dλ. L'information de couleur est exprimée à part par les coordonnées trichromatiques x et y, rapports des composantes trichromatiques. Y ne signifie pas « jaune ». De plus, X, Y et Z reposant sur des primaires virtuelles qui n'existent pas, ils ne prennent pas de valeurs négatives pour des lumières réelles. Les valeurs négatives apparaissent dans les fonctions colorimétriques du système RGB, qui utilise des primaires réelles."
+  },
+  "photometry-color-013": {
+    "question": "Deux lumières de répartitions spectrales tout à fait différentes peuvent paraître de même couleur dans les mêmes conditions d'observation. Laquelle des combinaisons suivantes de ce phénomène et de son explication est correcte ?",
+    "choices": [
+      "C'est le métamérisme : l'œil juge la couleur uniquement d'après les réponses de trois types de cônes, si bien que la couleur paraît identique si les composantes trichromatiques coïncident",
+      "C'est un effet du rendu des couleurs : sous une source de Ra élevé, les écarts de couleur entre objets diminuent, si bien que des lumières de n'importe quel spectre paraissent de même couleur",
+      "C'est la constance des couleurs : l'œil analyse finement le spectre de la lumière dans la rétine et compense les différences d'éclairage et de réflectance"
+    ],
+    "explanation": "La vision des couleurs est déterminée par les réponses de trois types de cônes (L, M, S) de sensibilités spectrales différentes. L'information d'un spectre, de dimension infinie, étant réduite à trois nombres, des spectres différents paraissent de même couleur si leurs trois réponses (composantes trichromatiques) sont égales. C'est le métamérisme, et c'est pourquoi un écran peut reproduire de nombreuses couleurs avec seulement trois lumières, rouge, verte et bleue. Mais si l'éclairage ou l'observateur change, l'égalisation est rompue : un tissu qui paraissait de la même couleur sous l'éclairage du magasin peut paraître différent à l'extérieur. Le rendu des couleurs est un indicateur de l'aspect des couleurs des objets selon l'éclairage, et non un mécanisme qui donne la même couleur à des spectres différents. La constance des couleurs est une adaptation du système visuel (rétine et cerveau) grâce à laquelle la couleur des objets paraît la même quand l'éclairage change ; l'œil n'analyse pas finement le spectre."
+  },
+  "photometry-color-014": {
+    "question": "Les composantes trichromatiques d'une lumière valent X = 95,05, Y = 100,0 et Z = 108,9. Quelle valeur est la plus proche de ses coordonnées trichromatiques xy ?",
+    "choices": [
+      "x ≈ 0,950, y ≈ 1,000",
+      "x ≈ 0,313, y ≈ 0,329",
+      "x ≈ 0,313, y ≈ 0,358"
+    ],
+    "explanation": "Les coordonnées trichromatiques s'obtiennent en divisant par la somme des composantes trichromatiques. Comme X + Y + Z = 303,95, on a x = 95,05/303,95 ≈ 0,313 et y = 100,0/303,95 ≈ 0,329 (z = 1 − x − y ≈ 0,358). Ce sont les valeurs du point blanc de l'illuminant normalisé de lumière du jour D65 de la CIE (température de couleur proximale d'environ 6500 K), qui sert de référence de blanc pour les écrans et les images. x ≈ 0,950, y ≈ 1,000 ne fait que normaliser par Y et ne donne pas des coordonnées trichromatiques. y ≈ 0,358 prend par erreur la valeur de z pour y. Les coordonnées trichromatiques ne contiennent pas l'information de luminosité : pour décrire complètement une couleur, il faut les trois valeurs Yxy, c'est-à-dire (x, y) complété par Y."
+  },
+  "photometry-color-015": {
+    "question": "Laquelle des propositions suivantes concernant le diagramme de chromaticité xy de la CIE 1931 est correcte ?",
+    "choices": [
+      "Tout point à l'intérieur du diagramme peut être représenté par une lumière monochromatique d'une certaine longueur d'onde",
+      "La chromaticité du mélange de deux lumières se trouve sur la droite qui joint les deux points, et tombe exactement au milieu quelle que soit la lumière la plus intense",
+      "Les chromaticités des lumières monochromatiques se trouvent sur une courbe en fer à cheval (lieu du spectre), et les couleurs reproductibles en mélangeant trois lumières sont limitées à l'intérieur du triangle ayant ces trois points pour sommets"
+    ],
+    "explanation": "En suivant la chromaticité des lumières monochromatiques en fonction de la longueur d'onde, on obtient le lieu du spectre en fer à cheval. La droite qui joint ses deux extrémités, rouge et violette, est la droite des pourpres, où se rangent des couleurs comme le pourpre et le magenta, qu'aucune lumière monochromatique ne représente. La chromaticité de la synthèse additive de deux lumières se trouve sur la droite qui joint les deux points, en un barycentre fixé par le rapport des sommes des composantes trichromatiques (X + Y + Z) de chaque lumière : elle ne tombe pas au milieu indépendamment des intensités. Les couleurs que l'on peut représenter en mélangeant trois sources sont uniquement celles du triangle ayant ces trois points pour sommets : c'est le gamut d'un écran (sRGB, BT.2020, etc.). La plupart des couleurs à l'intérieur du diagramme sont des lumières contenant plusieurs longueurs d'onde, et seules les couleurs situées sur la courbe sont représentables par une lumière monochromatique. Notons que dans le diagramme xy, les distances ne sont pas proportionnelles aux différences de couleur perçues."
+  },
+  "photometry-color-016": {
+    "question": "Le capteur d'un luxmètre est muni d'une correction de cosinus, réalisée par exemple avec un diffuseur, pour que sa sensibilité soit proportionnelle à cos θ en fonction de l'angle d'incidence θ de la lumière. Laquelle des raisons suivantes rendant cette correction nécessaire est correcte ?",
+    "choices": [
+      "L'éclairement ne dépend que de l'intensité lumineuse de la source et de la distance, et non de l'angle d'incidence : il faut compenser la variation angulaire de sensibilité du capteur pour mesurer avec le même poids la lumière venant de toutes les directions",
+      "L'éclairement diminue comme cos θ pour la lumière oblique, mais la sensibilité d'un capteur plan à la lumière oblique chute plus vite, à cause notamment des réflexions de surface, et il sous-estime la lumière oblique",
+      "Toute la lumière oblique subit une réflexion totale à la surface du capteur et ne l'atteint pas : le diffuseur change sa direction pour que la lumière oblique soit mesurée avec la même intensité que la lumière incidente normale"
+    ],
+    "explanation": "L'éclairement est la densité surfacique du flux lumineux reçu par une surface : si un faisceau parallèle arrive sous l'angle θ par rapport à la normale, le même flux s'étale sur une surface 1/cos θ fois plus grande, et l'éclairement est proportionnel à cos θ (loi du cosinus). Un luxmètre idéal doit additionner la lumière oblique avec ce poids cos θ. Or, à la surface d'un capteur plan ou de sa fenêtre, la réflexion de Fresnel augmente avec l'angle et l'ombre de la monture s'y ajoute, si bien que la sensibilité chute plus vite que cos θ. La correction de cosinus consiste à compenser ce déficit en adaptant la forme du diffuseur. Mesurer la lumière de toutes les directions avec le même poids reviendrait à mesurer non pas l'éclairement d'une surface, mais la quantité de lumière qui converge en un point depuis toutes les directions. Toute la lumière oblique ne subit pas non plus une réflexion totale."
+  },
+  "photometry-color-017": {
+    "question": "Une LED émet uniformément un flux lumineux total de 1,0 lm à l'intérieur d'un cône de demi-angle 10°, et rien dans les autres directions. Quelle valeur est la plus proche de l'intensité lumineuse à l'intérieur du cône ? (L'angle solide d'un cône de demi-angle θ vaut 2π(1 − cosθ).)",
+    "choices": [
+      "Environ 2,6 cd",
+      "Environ 0,080 cd",
+      "Environ 10,5 cd"
+    ],
+    "explanation": "L'angle solide d'un cône de demi-angle 10° vaut 2π(1 − cos10°) = 2π × 0,0152 ≈ 0,0955 sr. L'intensité lumineuse étant le flux lumineux par unité d'angle solide, on obtient 1,0 lm/0,0955 sr ≈ 10,5 cd. La valeur d'environ 2,6 cd prend l'angle total de 20° pour le demi-angle et surestime l'angle solide d'un facteur 4 environ. Celle d'environ 0,080 cd correspond au même flux émis uniformément dans toutes les directions (4π sr). À flux égal, concentrer la lumière dans un angle étroit augmente l'intensité lumineuse : dans une lampe de poche ou un projecteur, une lentille ou un réflecteur augmente la luminosité au centre sans changer la source. Le flux lumineux est la quantité totale de lumière émise par la source, l'intensité lumineuse son intensité dans chaque direction, et ce qu'une lentille modifie, c'est la répartition de l'intensité lumineuse."
+  },
+  "photometry-color-018": {
+    "question": "Dans le diagramme de chromaticité xy de la CIE 1931, la taille des domaines de couleurs visuellement indiscernables (ellipses de MacAdam) varie fortement selon l'endroit : grande dans le vert, petite dans le bleu, par exemple. Laquelle des propositions suivantes concernant cette propriété est correcte ?",
+    "choices": [
+      "Dans le diagramme u′v′ de la CIE 1976, obtenu par une transformation projective de XYZ, les différences de taille des ellipses diminuent, et il devient plus facile de comparer les écarts de chromaticité par les distances sur le diagramme",
+      "La taille des ellipses tient aux différences individuelles entre les yeux des observateurs : quelle que soit la transformation des coordonnées, les écarts selon l'endroit ne changent pas, et l'on compare donc les écarts de couleur par la seule luminosité Y",
+      "La région verte, où les ellipses sont grandes, est un domaine de couleurs que les écrans ne peuvent pas afficher : à l'intérieur du triangle du gamut, les distances xy sont directement proportionnelles aux écarts de couleur perçus"
+    ],
+    "explanation": "MacAdam a mesuré, autour d'une couleur, le domaine de chromaticités impossibles à distinguer, et a montré que dans le diagramme xy la taille et l'orientation des ellipses varient fortement selon l'endroit, les ellipses du côté vert étant bien plus grandes que celles du côté bleu. Les distances xy ne sont pas proportionnelles aux écarts de couleur perçus. Les coordonnées u′ = 4X/(X + 15Y + 3Z) et v′ = 9Y/(X + 15Y + 3Z) de la CIE 1976 sont obtenues par une transformation projective de XYZ : elles forment un diagramme de chromaticité uniforme qui réduit la dispersion des tailles d'ellipses. Pour représenter de façon encore plus uniforme les écarts de couleur, luminosité comprise, on utilise des espaces colorimétriques comme CIELAB. La différence entre ellipses apparaît aussi avec les données de l'observateur de référence : c'est une propriété des coordonnées xy elles-mêmes. Même à l'intérieur du gamut, les distances xy ne sont pas proportionnelles aux écarts de couleur."
+  },
+  "photometry-color-019": {
+    "question": "Laquelle des méthodes suivantes pour déterminer la longueur d'onde dominante d'une couleur sur le diagramme de chromaticité xy est correcte ?",
+    "choices": [
+      "On prend la longueur d'onde du point du lieu du spectre le plus proche du point de chromaticité de la couleur, sans utiliser la position du point blanc, si bien que toute couleur a toujours une longueur d'onde dominante",
+      "On prolonge la droite qui part du point blanc et passe par le point de chromaticité de la couleur, et l'on prend la longueur d'onde du point où elle coupe le lieu du spectre ; si elle aboutit à la droite des pourpres, on utilise la longueur d'onde complémentaire",
+      "On prend la longueur d'onde où la puissance rayonnée du spectre de la lumière est maximale, ce qui est fixé uniquement par une mesure au spectromètre, sans rapport avec la position sur le diagramme"
+    ],
+    "explanation": "La longueur d'onde dominante est la longueur d'onde de la lumière monochromatique qui, mélangée additivement à du blanc, reproduirait la couleur. La chromaticité d'un mélange se trouvant sur la droite qui joint les deux points, on prolonge la droite qui part du point blanc (D65, etc.) et passe par le point de la couleur : la longueur d'onde du point où elle coupe le lieu du spectre est la longueur d'onde dominante. La proportion de la distance au point blanc est la pureté d'excitation, égale à 1 sur le lieu du spectre et à 0 au point blanc. Pour les couleurs comme le pourpre, dont la droite aboutit à la droite des pourpres, il n'existe pas de lumière monochromatique correspondante, et on les caractérise par la longueur d'onde complémentaire, obtenue en prolongeant la droite en sens inverse. La méthode du point le plus proche sur le lieu ne tient pas compte du choix du point blanc et diffère de la définition. La longueur d'onde du pic du spectre peut ne pas correspondre à la couleur pour des lumières de largeur ou de forme différentes : c'est une grandeur distincte de la longueur d'onde dominante."
+  },
+  "photometry-color-020": {
+    "question": "Une source parfaitement diffusante en forme de disque (rayon r) de luminance uniforme L produit sur une surface située sur son axe, à la distance d, un éclairement E = πL r²/(r² + d²). Si on le calcule par la loi de l'inverse du carré E ≈ πL r²/d², en assimilant le disque à une source ponctuelle, quelle valeur est la plus proche de l'erreur, en %, lorsque d vaut cinq fois le diamètre de la source (d = 10r) ?",
+    "choices": [
+      "Environ 4 %",
+      "Environ 10 %",
+      "Environ 1 %"
+    ],
+    "explanation": "Le rapport entre la valeur exacte et celle de la loi de l'inverse du carré vaut E/E_point = d²/(r² + d²) = 1/(1 + (r/d)²). Pour d = 10r, (r/d)² = 0,01 et le rapport vaut 1/1,01 ≈ 0,990 : la loi de l'inverse du carré surestime d'environ 1 %. La valeur d'environ 4 % utilise le diamètre 2r au lieu du rayon r, (2r/d)² = 0,04, et celle d'environ 10 % oublie le carré, r/d = 0,1. C'est de là que vient le repère, utilisé pour mesurer ou calculer des éclairements, selon lequel l'erreur de la loi de l'inverse du carré reste inférieure à environ 1 % au-delà de cinq fois la taille de la source. À courte distance, l'éclairement est inférieur à celui de la loi de l'inverse du carré : il ne devient pas infini quand on s'approche de la source, mais tend vers πL."
+  },
+  "photometry-color-021": {
+    "question": "Laquelle des propositions suivantes décrit correctement la différence entre l'efficacité lumineuse relative de la vision scotopique V′(λ), assurée par les bâtonnets en ambiance sombre, et celle de la vision photopique V(λ) ?",
+    "choices": [
+      "En vision scotopique, le maximum de sensibilité se déplace vers les grandes longueurs d'onde, vers 600 nm, si bien qu'au crépuscule les fleurs rouges paraissent plus lumineuses que les fleurs d'autres couleurs et que les feuilles",
+      "En vision scotopique, le maximum de sensibilité se déplace vers les courtes longueurs d'onde, vers 507 nm, si bien qu'au crépuscule les objets rouges paraissent sombres et les objets bleus ou verts lumineux",
+      "En vision scotopique aussi, le maximum de sensibilité reste à 555 nm et la sensibilité baisse seulement dans l'ensemble, si bien que l'ordre des luminosités selon les couleurs ne change pas"
+    ],
+    "explanation": "En vision scotopique, ce sont les bâtonnets qui prennent le relais des cônes, et le maximum de l'efficacité lumineuse relative se déplace vers 507 nm, à une longueur d'onde plus courte que les 555 nm de la vision photopique (l'efficacité lumineuse spectrale maximale scotopique vaut environ 1700 lm/W). Ainsi, de deux objets, l'un rouge et l'autre bleu, qui paraissaient aussi lumineux l'un que l'autre en pleine lumière, le rouge paraît sombre au crépuscule, et le bleu ou le vert relativement lumineux. C'est l'effet Purkinje. L'explication d'un déplacement du maximum vers les grandes longueurs d'onde prend le mauvais sens. Une simple baisse globale de la sensibilité n'explique pas ce phénomène, où l'aspect change selon la couleur. Comme il n'existe qu'un seul type de bâtonnets, on ne distingue presque plus les couleurs en vision scotopique."
+  },
+  "photometry-color-022": {
+    "question": "L'effet d'un filtre de conversion de température de couleur est à peu près constant, quelle que soit la température de couleur de départ, si on l'exprime par la différence des valeurs en mireds M = 10⁶/T (T étant la température de couleur [K]). Quelle valeur est la plus proche de la variation en mireds d'un filtre qui fait paraître une lumière à 3200 K comme une lumière à 5500 K ?",
+    "choices": [
+      "Environ +131 mireds",
+      "Environ −2300 mireds",
+      "Environ −131 mireds"
+    ],
+    "explanation": "Les valeurs en mireds sont 10⁶/3200 ≈ 312,5 à 3200 K et 10⁶/5500 ≈ 181,8 à 5500 K, d'où une variation de 181,8 − 312,5 ≈ −131 mireds. Un filtre qui élève la température de couleur (qui bleuit la lumière) abaisse la valeur en mireds : la variation est négative. +131 mireds prend la différence dans le mauvais sens et correspond à un filtre qui abaisse la température de couleur (qui ajoute du rouge). −2300 mireds prend par erreur l'écart de température de couleur lui-même comme valeur en mireds. Exprimée en écart de température de couleur, la variation produite par un même filtre est très différente pour une lumière de température basse ou élevée, alors que la différence en mireds reste presque constante : c'est pourquoi on exprime en mireds la force des filtres de conversion de température de couleur des appareils photo et des éclairages."
+  },
+  "photometry-color-023": {
+    "question": "On superpose sur une même surface (synthèse additive) une lumière A de coordonnées trichromatiques (x, y) = (0,60, 0,30) et Y = 30 et une lumière B de coordonnées (x, y) = (0,20, 0,60) et Y = 120. Quelle valeur est la plus proche des coordonnées trichromatiques de la lumière mélangée ?",
+    "choices": [
+      "(x, y) ≈ (0,33, 0,50)",
+      "(x, y) ≈ (0,40, 0,45)",
+      "(x, y) ≈ (0,28, 0,54)"
+    ],
+    "explanation": "Les coordonnées trichromatiques sont des proportions rapportées à la somme des composantes trichromatiques S = X + Y + Z : pour un mélange, on additionne séparément X, Y et Z puis on redivise. Avec S = Y/y, la lumière A a S = 30/0,30 = 100 (X = 60) et la lumière B S = 120/0,60 = 200 (X = 40). La lumière mélangée a X = 100, Y = 150 et S = 300, d'où x = 100/300 ≈ 0,33 et y = 150/300 = 0,50. (0,40, 0,45) est la simple moyenne des deux coordonnées trichromatiques, et (0,28, 0,54) une moyenne pondérée par Y. La chromaticité du mélange se trouve sur la droite qui joint les deux points, du côté de la lumière dont S est le plus grand."
+  },
+  "photometry-color-024": {
+    "question": "Laquelle des raisons principales suivantes explique correctement pourquoi l'efficacité lumineuse (flux lumineux par watt consommé) d'une lampe à incandescence de température de couleur d'environ 2800 K est faible, environ 15 lm/W ?",
+    "choices": [
+      "La température du filament est trop élevée, si bien que la plus grande partie du rayonnement est de l'ultraviolet de courte longueur d'onde, invisible pour l'œil",
+      "Le maximum du spectre de rayonnement se situe dans le proche infrarouge, vers 1 µm, si bien que la plus grande partie du rayonnement est de l'infrarouge, où l'efficacité lumineuse relative est presque nulle",
+      "La plus grande partie du rayonnement est visible, mais elle contient beaucoup de jaune et s'écarte des 555 nm où l'efficacité lumineuse relative est maximale"
+    ],
+    "explanation": "D'après la loi de déplacement de Wien λmax = 2898/T [µm], le maximum du rayonnement d'un corps noir à 2800 K se situe dans le proche infrarouge, vers 1,03 µm, et seule une dizaine de pour cent environ du rayonnement tombe dans le visible (380 à 780 nm). La plus grande partie du reste est de l'infrarouge, où l'efficacité lumineuse relative est presque nulle : il ne contribue pas au flux lumineux et se perd en chaleur. À 2800 K, l'ultraviolet est infime, et l'explication par un excès d'ultraviolet inverse la relation entre température et longueur d'onde. Le fait que la lumière visible soit décalée vers le jaune et le rouge réduit un peu l'efficacité, mais l'hypothèse que la plus grande partie du rayonnement serait visible est fausse, et ce n'est pas la raison principale. Les éclairages à LED n'émettant presque pas de rayonnement aux longueurs d'onde invisibles, ils peuvent avoir une efficacité lumineuse bien plus élevée."
+  },
+  "photometry-color-025": {
+    "question": "Une feuille de papier blanc paraît blanche à la lumière du jour comme sous une lampe à incandescence. Laquelle des combinaisons suivantes de cette propriété, qui la fait paraître blanche alors que les spectres de la lumière réfléchie par le papier sont très différents, et du traitement correspondant dans un appareil photo est correcte ?",
+    "choices": [
+      "L'adaptation chromatique : l'œil ajuste la sensibilité de ses trois types de cônes à la couleur de l'éclairage. Dans un appareil photo, la balance des blancs ajuste les gains R, V et B",
+      "Le métamérisme : même si les spectres des deux éclairages diffèrent, les composantes trichromatiques de la lumière renvoyée par le papier sont les mêmes. Dans un appareil photo, la correction gamma ajuste les niveaux",
+      "Le rendu des couleurs : les deux éclairages ont un indice de rendu des couleurs élevé. Dans un appareil photo, la correction d'exposition ajuste la quantité de lumière qui entre dans le capteur"
+    ],
+    "explanation": "L'œil ajuste la sensibilité de chacun des trois types de cônes L, M et S à la couleur de l'éclairage et voit la couleur des objets en soustrayant la dominante de l'éclairage. C'est l'adaptation chromatique, que l'on décrit souvent par le modèle de von Kries, qui considère la réponse de chaque cône comme un rapport à celle du blanc de l'éclairage. Dans un appareil photo, c'est la balance des blancs qui joue ce rôle, en ajustant les gains des signaux R, V et B pour que les objets blancs ou gris soient enregistrés comme achromatiques. Sous la lumière du jour et sous une lampe à incandescence, les composantes trichromatiques du papier blanc sont différentes : ce n'est donc pas du métamérisme. L'indice de rendu des couleurs est un indicateur de la fidélité des couleurs sous un éclairage, et non la raison pour laquelle le papier paraît blanc. La correction gamma et la correction d'exposition traitent la luminosité et ne corrigent pas une dominante de couleur."
+  },
+  "photometry-color-026": {
+    "question": "Dans le système CIE 1976 L*a*b*, la clarté L* se calcule par L* = 116 (Y/Yn)^(1/3) − 16 pour Y/Yn > 0,008856 (Yn étant le Y du blanc de référence). Quelle valeur est la plus proche du L* d'un gris de facteur de réflexion 18 % (Y/Yn = 0,18) ?",
+    "choices": [
+      "Environ 18",
+      "Environ 42",
+      "Environ 50"
+    ],
+    "explanation": "(0,18)^(1/3) ≈ 0,565, donc L* = 116 × 0,565 − 16 ≈ 49,5, soit environ 50. La sensation de luminosité n'est pas proportionnelle à la luminance : elle est comprimée selon une loi proche de la racine cubique, si bien qu'un gris qui ne renvoie que 18 % de la lumière du blanc paraît presque à mi-chemin entre le blanc (L* = 100) et le noir (0). C'est pourquoi le gris à 18 % sert de référence pour l'exposition en photographie. La valeur d'environ 18 prend directement la proportion de Y comme clarté, et celle d'environ 42 comprime par une racine carrée (100√0,18) au lieu d'une racine cubique. L*a*b* est un espace colorimétrique uniforme qui facilite la comparaison des écarts de couleur par des distances, et sert au calcul de l'écart de couleur ΔE*ab."
+  },
+  "photometry-color-027": {
+    "question": "Dans un bureau de 96 m² de surface au sol, on installe 12 luminaires de 4000 lm chacun. Le facteur d'utilisation (part de la lumière des luminaires qui atteint le plan de travail) vaut 0,6 et le facteur de maintenance (baisse due à l'encrassement et au vieillissement) 0,8. Quelle valeur est la plus proche de l'éclairement moyen du plan de travail ? (Éclairement moyen = flux total × facteur d'utilisation × facteur de maintenance / surface.)",
+    "choices": [
+      "Environ 500 lx",
+      "Environ 240 lx",
+      "Environ 300 lx"
+    ],
+    "explanation": "Le flux total vaut 4000 lm × 12 = 48 000 lm ; la part qui atteint le plan de travail en est 0,6 fois, et en multipliant encore par le facteur de maintenance de 0,8, on obtient 23 040 lm. En divisant par 96 m², l'éclairement moyen vaut environ 240 lx. L'éclairement étant le flux lumineux par unité de surface (lm/m²), on divise en principe le flux total par la surface ; mais comme une partie de la lumière est absorbée par les murs et le plafond ou sort du plan de travail, on multiplie par le facteur d'utilisation pour ne compter que ce qui arrive réellement. La valeur d'environ 500 lx oublie le facteur d'utilisation et le facteur de maintenance, et celle d'environ 300 lx oublie le facteur de maintenance. Cette méthode du flux total est la méthode de base de la conception d'éclairage pour estimer la luminosité moyenne de toute une pièce."
+  },
+  "photometry-color-028": {
+    "question": "On mesure avec un luxmètre la lumière d'une LED ultraviolette de longueur d'onde 365 nm (puissance optique 1 W), et l'indication est presque nulle. Laquelle des explications suivantes est correcte ?",
+    "choices": [
+      "L'éclairement est une grandeur pondérée par l'efficacité lumineuse relative V(λ), presque nulle à 365 nm, si bien que malgré la puissance rayonnée, l'éclairement est presque nul",
+      "L'ultraviolet subit une réflexion totale sur le diffuseur du luxmètre et n'atteint pas le capteur, si bien que l'éclairement, en réalité grand, paraît nul par erreur de mesure",
+      "L'éclairement est une grandeur fixée par le nombre de photons, et l'ultraviolet, dont chaque photon a une grande énergie, a peu de photons, si bien que l'éclairement est presque nul"
+    ],
+    "explanation": "Les grandeurs photométriques comme l'éclairement lumineux mesurent la luminosité perçue par l'œil humain : on les obtient en multipliant la puissance rayonnée par l'efficacité lumineuse relative photopique V(λ) et par 683 lm/W. V(λ) étant presque nulle en dessous de 380 nm, même 1 W d'ultraviolet donne un flux lumineux et un éclairement presque nuls, et l'indication du luxmètre est la valeur correcte. L'intensité de l'ultraviolet se mesure en éclairement énergétique, en W/m², avec un radiomètre pour l'ultraviolet. La cause n'est pas un petit nombre de photons, mais la pondération par la sensibilité de l'œil : à 555 nm, le même 1 W donnerait 683 lm. Même s'il ne paraît pas lumineux, l'ultraviolet est nocif pour les yeux et la peau, et il faut s'en méfier."
+  },
+  "photometry-color-029": {
+    "question": "On applique l'une sur l'autre une encre cyan et une encre jaune sur une feuille de papier blanc, que l'on éclaire en lumière blanche. Laquelle des combinaisons suivantes de la couleur apparente du papier et du mécanisme est correcte ?",
+    "choices": [
+      "Il paraît blanc : les lumières cyan et jaune s'additionnent par synthèse additive, et toutes les longueurs d'onde sont réunies",
+      "Il paraît rouge : l'encre cyan laisse passer le rouge et l'encre jaune aussi, si bien que seul le rouge subsiste",
+      "Il paraît vert : l'encre cyan absorbe le rouge et l'encre jaune le bleu, si bien que seul le vert est renvoyé"
+    ],
+    "explanation": "Une encre n'émet pas de lumière : elle absorbe certaines longueurs d'onde et renvoie le reste, c'est la synthèse soustractive. L'encre cyan absorbe la lumière rouge et renvoie le bleu et le vert, et l'encre jaune absorbe la lumière bleue et renvoie le rouge et le vert. En superposant les deux, le rouge et le bleu sont absorbés et seul le vert, que les deux encres laissent passer, subsiste : le papier paraît vert. En synthèse additive, qui superpose des lumières, la combinaison des lumières cyan (bleu + vert) et jaune (rouge + vert) s'approche du blanc ; superposer des encres produit l'effet inverse. L'encre cyan absorbant le rouge, il ne peut pas rester de rouge. En imprimerie, on reproduit les couleurs avec quatre encres : cyan, magenta et jaune, auxquelles s'ajoute le noir."
+  },
+  "photometry-color-030": {
+    "question": "Deux lumières monochromatiques de longueurs d'onde différentes, mélangées dans un rapport d'intensités convenable, peuvent paraître blanches. Laquelle des façons suivantes de trouver deux telles longueurs d'onde (complémentaires) est correcte ? (On raisonne sur le diagramme de chromaticité xy.)",
+    "choices": [
+      "Ce sont les couples dont la moyenne des longueurs d'onde vaut 555 nm, où l'efficacité lumineuse relative est maximale : par exemple, un mélange de 530 nm et de 580 nm paraît blanc",
+      "Ce sont les couples dont la droite joignant les deux points du lieu du spectre passe par le point blanc : par exemple, le bleu (environ 480 nm) et le jaune (environ 580 nm)",
+      "Ce sont les couples dont le rapport des longueurs d'onde vaut exactement 2 : par exemple, un mélange de lumières à 400 nm et 800 nm interfère dans l'œil et paraît blanc"
+    ],
+    "explanation": "La chromaticité du mélange de deux lumières se trouve, sur le diagramme, sur le segment qui joint leurs deux points de chromaticité, à une position fixée par le rapport des intensités. Si ce segment passe par le point blanc, on peut choisir les intensités pour que le point du mélange coïncide avec le point blanc. Deux longueurs d'onde situées sur le lieu du spectre de part et d'autre du point blanc sont complémentaires ; le bleu d'environ 480 nm et le jaune d'environ 580 nm en sont un exemple. Le mélange n'est pas fixé par la moyenne ou le rapport des longueurs d'onde, mais par l'addition des composantes trichromatiques données par les fonctions colorimétriques : mélanger 530 nm et 580 nm ne donne qu'un vert-jaune. Des lumières de longueurs d'onde différentes n'interfèrent pas non plus dans l'œil pour produire une couleur. Le vert (environ 495 à 565 nm) n'a pas de complémentaire monochromatique : sa complémentaire est un pourpre."
+  }
+}
