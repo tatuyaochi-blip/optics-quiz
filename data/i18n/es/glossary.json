@@ -1517,6 +1517,38 @@
     "desc": "Elemento divisor y combinador que aprovecha la autoimagen en una guía de onda multimodo ancha. Su relación de división tiende a mantenerse estable frente a las variaciones de fabricación y de longitud de onda.",
     "aliases": [
       "acopladores MMI"
+    ],
+    "about": [
+      {
+        "h": "División por autoimagen",
+        "p": "Un acoplador MMI (interferencia multimodo) es un elemento que hace pasar la luz de una guía de onda de entrada estrecha a una región multimodo ancha. La luz que entra se reparte entre muchos modos guiados cuyas velocidades de fase difieren ligeramente, de modo que el patrón de interferencia cambia a medida que se propaga y, a ciertas longitudes, la entrada se reproduce como una imagen o como varias (autoimagen). Si se colocan guías de onda de salida donde se forman dos imágenes, se obtiene un divisor 1×2 o 2×2. El número y la posición de las imágenes los fija la longitud, y la región ancha no necesita ninguna estructura fina en su interior."
+      },
+      {
+        "h": "La fórmula de la longitud",
+        "p": "Con una anchura efectiva W y un índice de refracción de la placa n_r, la longitud de batido entre el modo de orden más bajo y el de primer orden es Lπ ≈ 4n_rW²/(3λ). Como referencia, se usa 3Lπ/8 para un 1×2 con la entrada centrada y 3Lπ/2 para un acoplador 2×2 de 3 dB con la entrada desplazada del centro. Con n_r = 2,85, W = 3 µm y λ = 1,55 µm, Lπ ≈ 22 µm y el 1×2 mide unos 8,3 µm. Como Lπ es proporcional al cuadrado de la anchura, un error del 2 % en la anchura desplaza la longitud óptima en un 4 % aproximadamente. Por eso, las dimensiones reales se determinan comprobándolas mediante simulación numérica."
+      },
+      {
+        "h": "Por qué es estable y cuáles son sus límites",
+        "p": "Aunque la posición de la imagen se desplace un poco, la luz de salida sigue repartida casi por igual entre las dos salidas, de modo que la razón de división de un MMI es poco sensible a las variaciones de fabricación y a los cambios de longitud de onda; esta es su ventaja. En cambio, ese desplazamiento aparece como pérdida, y el exceso de pérdidas es pequeño, pero no nulo. Además, Lπ es inversamente proporcional a la longitud de onda y difiere entre TE y TM, por lo que la banda utilizable y la polarización dependen de las condiciones de diseño. La razón de división queda fijada básicamente en valores como 50:50, y una razón arbitraria requiere diseños especiales de forma modificada. Las guías de entrada y de salida suelen unirse mediante tapers que se ensanchan, y su forma también influye en las pérdidas."
+      },
+      {
+        "h": "Uso en moduladores y receptores",
+        "p": "En la división de la entrada y la combinación de la salida de un modulador de Mach-Zehnder se usan a menudo MMI 1×2 o 2×2 por su razón de división estable. En un MMI 2×2, las dos salidas tienen una diferencia de fase de π/2, de modo que pueden construirse interferómetros igual que con los acopladores direccionales. En los receptores coherentes, el híbrido de 90°, que mezcla el oscilador local con la señal y produce cuatro salidas cuyas fases difieren en pasos de 90°, se realiza con MMI 4×4 o 2×4. Como son pequeños, con longitudes de unos pocos a unos cientos de micrómetros, los MMI son adecuados para circuitos integrados con muchos elementos dispuestos uno junto a otro."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se determina la longitud de un acoplador MMI?",
+        "a": "Se calcula la longitud de batido de los modos, Lπ ≈ 4n_rW²/(3λ), y se toma como referencia 3Lπ/8 para un 1×2 o 3Lπ/2 para un 2×2 de 3 dB. Como es proporcional al cuadrado de la anchura, la longitud óptima se confirma finalmente mediante simulación numérica."
+      },
+      {
+        "q": "¿Se puede cambiar la razón de división de un acoplador MMI?",
+        "a": "Un MMI rectangular ordinario está limitado a razones como 50:50, fijadas por el número de imágenes. Razones como 85:15 se obtienen con diseños especiales, con una anchura que cambia a lo largo del dispositivo o con posiciones de entrada y salida elegidas con cuidado. Si se necesita una razón arbitraria, un acoplador direccional es más sencillo."
+      },
+      {
+        "q": "¿Son nulas las pérdidas de un acoplador MMI?",
+        "a": "No. Las imágenes no coinciden por completo con la forma de las guías de onda de salida, y los errores de longitud o de anchura desplazan la posición de las imágenes, de modo que parte de la luz no entra en las salidas y se pierde. Los buenos diseños las mantienen pequeñas, pero se acumulan cuando se encadenan muchas etapas."
+      }
     ]
   },
   "熱光学効果": {
@@ -1524,6 +1556,38 @@
     "desc": "Variación del índice de refracción con la temperatura. En el silicio es grande, de unos 1,8×10⁻⁴ /K, y se usa para ajustar la fase y la longitud de onda de resonancia con calefactores.",
     "aliases": [
       "efecto termo-óptico"
+    ],
+    "about": [
+      {
+        "h": "Su magnitud en distintos materiales",
+        "p": "El efecto termoóptico es la variación del índice de refracción con la temperatura y se expresa con el coeficiente dn/dT. Cerca de 1550 nm y a temperatura ambiente, el silicio tiene unos 1,8×10⁻⁴ /K; la sílice fundida, unos 1×10⁻⁵ /K, más de diez veces menos que el silicio, y el nitruro de silicio, un valor del orden de 2×10⁻⁵ /K. Muchos polímeros tienen valores negativos. Como el del silicio es grande, los elementos que cambian la fase mediante calentamiento pueden ser pequeños, pero son sensibles a los cambios de temperatura: la resonancia de un resonador de anillo se desplaza unos 0,07 nm/K, de modo que un cambio de solo 10 K la mueve unos 0,7 nm."
+      },
+      {
+        "h": "Valores de referencia de los desfasadores termoópticos",
+        "p": "El cambio de fase es Δφ = (2π/λ)(dn/dT)ΔT L. Para cambiar la fase en π en una guía de onda de silicio (dn/dT = 1,8×10⁻⁴ /K, 1550 nm) se necesita un aumento de temperatura de unos 17 K con una longitud de 250 µm, o de unos 4,3 K con 1 mm. En una guía de sílice, el mismo milímetro requeriría unos 78 K, por lo que se usan longitudes de varios milímetros. Aunque se alargue la guía, también aumenta el volumen calentado, de modo que la potencia necesaria para π, Pπ, apenas disminuye y suele ser de unas decenas de mW. Si se elimina el óxido o el sustrato que rodean la guía mediante zanjas o cavidades para que el calor escape con más dificultad, puede reducirse mucho."
+      },
+      {
+        "h": "Diferencias con la dilatación térmica y el efecto electroóptico",
+        "p": "En la variación del camino óptico con la temperatura influyen tanto el cambio del índice de refracción como la dilatación del material, pero el coeficiente de dilatación lineal del silicio es de unos 2,6×10⁻⁶ /K, por lo que el cambio del índice domina con creces. Como el efecto termoóptico actúa mediante la entrada y salida de calor, su respuesta es lenta, del orden de unos pocos a unas decenas de µs, y para la modulación rápida a GHz o más se usan el efecto de dispersión por portadores o el efecto Pockels. A cambio, casi no añade pérdidas y proporciona con facilidad grandes cambios de fase, por lo que resulta adecuado para el ajuste lento de la longitud de onda, los conmutadores y el control del punto de trabajo."
+      },
+      {
+        "h": "Aplicaciones y medidas frente a la temperatura",
+        "p": "En la fotónica de silicio se usan calefactores para ajustar la longitud de onda de resonancia de los anillos a la de la fuente de luz, mantener el punto de trabajo de los moduladores e igualar las fases de los conmutadores ópticos y de las matrices en fase ópticas. A la inversa, los cambios de temperatura no deseados se convierten en desplazamientos de longitud de onda, por lo que la salida se vigila con fotodetectores y se aplica un control por realimentación. Cuando se quiere reducir la sensibilidad a la temperatura, también se usan diseños atérmicos que colocan alrededor de un núcleo con dn/dT positivo un material con dn/dT negativo (como un polímero o el óxido de titanio), de modo que los efectos se compensen para el modo en su conjunto."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuál es el coeficiente termoóptico del silicio?",
+        "a": "Unos 1,8×10⁻⁴ /K cerca de 1550 nm y a temperatura ambiente. Es más de un orden de magnitud mayor que el de la sílice fundida (unos 1×10⁻⁵ /K), y desplaza la resonancia de un resonador de anillo unos 0,07 nm/K."
+      },
+      {
+        "q": "¿Cuánta potencia consume un desfasador termoóptico?",
+        "a": "En el silicio, un cambio de fase de π requiere típicamente unas decenas de mW. Al cambiar la longitud también cambia el volumen calentado, por lo que la potencia apenas disminuye. Con aislamiento térmico mediante zanjas o eliminación del sustrato se ha logrado reducirla en aproximadamente un orden de magnitud en algunos casos."
+      },
+      {
+        "q": "¿Se puede hacer modulación rápida con el efecto termoóptico?",
+        "a": "No. Su respuesta la fija el tiempo que tarda el calor en entrar y salir, del orden de unos pocos a unas decenas de µs. Para la modulación a GHz o más se usan el efecto de dispersión por portadores o el efecto Pockels, y el efecto termoóptico se reserva para el ajuste de la longitud de onda y del punto de trabajo."
+      }
     ]
   },
   "グレーティングカプラ": {
@@ -1533,28 +1597,188 @@
       "acopladores de red",
       "acoplador de rejilla",
       "acopladores de rejilla"
+    ],
+    "about": [
+      {
+        "h": "Cómo se introduce la luz desde arriba",
+        "p": "La sección transversal de una guía de onda de silicio es de unos cientos de nanómetros, muy distinta del diámetro del modo de una fibra (unos 10 µm). Un acoplador de red ensancha la guía hasta una anchura de algo más de una decena de micrómetros, graba surcos periódicos en su superficie y difracta la luz guiada en dirección oblicua hacia arriba para acoplarla con la fibra. La condición es Λ = λ/(n_eff − n_c sinθ), donde n_c es el índice de refracción del medio del lado de la fibra (1 para el aire); por ejemplo, con n_eff = 2,8, θ = 8° y 1550 nm, el periodo es de unos 583 nm. La profundidad y la posición de los surcos regulan la intensidad de la difracción, de modo que el haz saliente se aproxime a la forma del modo de la fibra."
+      },
+      {
+        "h": "Valores típicos de eficiencia y de banda",
+        "p": "Los acopladores estándar sobre SOI de 220 nm con una sola etapa de grabado tienen pérdidas de unos pocos dB (de 3 a 5 dB aproximadamente); 3 dB corresponden a un acoplamiento de alrededor del 50 % y 5 dB, a uno de alrededor del 32 %. Las causas principales de las pérdidas son la parte de la luz difractada que escapa hacia el sustrato, abajo, y la falta de coincidencia con la forma del modo de la fibra. Añadiendo una capa reflectora inferior o variando la intensidad de los surcos con la posición (apodización), las pérdidas pueden bajar hasta alrededor de 1 dB. Como la longitud de onda acoplada la fija el periodo, la banda se limita a unas decenas de nanómetros, y al cambiar el ángulo de la fibra se desplaza la longitud de onda central."
+      },
+      {
+        "h": "Por qué la fibra se inclina en lugar de colocarse en vertical",
+        "p": "Si se acopla justo desde arriba (θ = 0°), la condición coincide con aquella en la que la difracción de segundo orden refleja la luz guiada hacia atrás dentro de la guía de onda (reflexión de Bragg), de modo que aumenta la reflexión y disminuye la eficiencia. Además, la luz que llega en vertical se reparte de forma simétrica hacia delante y hacia atrás en la guía, por lo que es difícil reunirla en un solo sentido. Por eso lo habitual es inclinarla unos 8 a 10°. Una red unidimensional solo actúa sobre una polarización determinada (normalmente TE), así que, para recibir luz de una fibra cuya polarización no está definida, se usa un acoplador de red bidimensional que envía las dos polarizaciones a guías de onda distintas."
+      },
+      {
+        "h": "Cuándo usarlo y cuándo usar un acoplador de borde",
+        "p": "Una gran ventaja del acoplador de red es que puede colocarse en cualquier lugar de la oblea, de modo que las características ópticas pueden probarse en la propia oblea antes de cortar los chips o pulir sus caras. Su tolerancia de alineamiento también es relativamente amplia, por lo que resulta imprescindible en los prototipos y en las pruebas de producción. En cambio, el acoplador de borde, que acopla lateralmente la luz del borde del chip con una fibra, tiene menos pérdidas, una banda más ancha y menos dependencia de la polarización, por lo que a menudo se elige para el encapsulado de los productos. La elección depende de la aplicación y del método de montaje."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se determina el periodo de un acoplador de red?",
+        "a": "Se obtiene de la condición de ajuste de fase Λ = λ/(n_eff − sinθ). Con n_eff = 2,8, una inclinación de 8° y 1550 nm, es de unos 583 nm. Si se invierte el signo del término del ángulo, se obtienen unos 527 nm y la longitud de onda acoplada se desplaza mucho."
+      },
+      {
+        "q": "¿Cuántas pérdidas tiene un acoplador de red?",
+        "a": "Los diseños estándar con una sola etapa de grabado tienen unos pocos dB (de 3 a 5 dB aproximadamente). Las causas principales son la luz que escapa hacia el sustrato y la falta de coincidencia con la forma del modo; con capas reflectoras inferiores y una intensidad de surcos optimizada se han logrado pérdidas de alrededor de 1 dB."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un acoplador de red y un acoplador de borde?",
+        "a": "El acoplador de red acopla desde la superficie del chip y permite probar la oblea tal cual, pero su banda es de unas decenas de nanómetros y depende de la polarización. El acoplador de borde acopla por la cara del extremo, con menos pérdidas y una banda más ancha, pero requiere cortar el chip y preparar la cara."
+      }
     ]
   },
   "dBm": {
     "term": "dBm",
-    "desc": "Expresión logarítmica de la potencia con referencia a 1 mW, 10 log₁₀(P/1 mW). 0 dBm es 1 mW, 10 dBm son 10 mW y −30 dBm es 1 µW."
+    "desc": "Expresión logarítmica de la potencia con referencia a 1 mW, 10 log₁₀(P/1 mW). 0 dBm es 1 mW, 10 dBm son 10 mW y −30 dBm es 1 µW.",
+    "about": [
+      {
+        "h": "La diferencia entre dB y dBm",
+        "p": "El decibelio (dB) es la razón entre dos potencias, 10 log₁₀(P₁/P₂), y no tiene unidad. El dBm fija la referencia en 1 mW y, por tanto, expresa el valor absoluto de una potencia. Por eso «dBm − dBm = dB» y «dBm + dB = dBm» tienen sentido, pero los valores en dBm no pueden sumarse entre sí. La luz de una fuente de +3 dBm que sufre 10 dB de pérdidas queda en −7 dBm. Para volver a vatios se usa P = 10^(dBm/10) mW: 50 mW son unos 17,0 dBm y −20 dBm son 10 µW. El dBW, con referencia a 1 W, difiere en 30 dB."
+      },
+      {
+        "h": "Trucos de cálculo mental y combinación de señales",
+        "p": "Si se recuerda que 10 dB son un factor de 10, 3 dB un factor de 2 aproximadamente (1,995 exactamente) y 1 dB un factor de 1,26 aproximadamente, la mayoría de las conversiones pueden hacerse mentalmente. +13 dBm es el doble de 10 mW, unos 20 mW; −33 dBm es la mitad de 1 µW, unos 0,5 µW. Al superponer dos haces de la misma intensidad (sin que interfieran), la potencia se duplica, de modo que 0 dBm más 0 dBm dan 3 dBm, no 6 dBm. Para combinar señales de distinta intensidad, se pasa cada una a mW, se suman y se vuelve a dBm."
+      },
+      {
+        "h": "Una trampa: factores distintos para la luz y la electricidad",
+        "p": "La potencia óptica se expresa directamente con 10 log₁₀, pero las razones de tensión o de corriente son razones de amplitud y se usa 20 log₁₀. La fuente de confusión es que la fotocorriente de un fotodetector es proporcional a la potencia óptica. La potencia eléctrica es proporcional al cuadrado de la corriente, de modo que cada dB adicional de pérdida óptica reduce la potencia de la señal eléctrica en 2 dB. En el campo de la radiofrecuencia, el dBm expresa la potencia sobre una carga de 50 Ω, y 0 dBm corresponden a una tensión eficaz de unos 0,224 V. Es importante comprobar a qué magnitud se refiere un valor en dBm."
+      },
+      {
+        "h": "Uso en el diseño de enlaces",
+        "p": "En el balance de potencia de un enlace óptico, la potencia del transmisor y la sensibilidad del receptor se expresan en dBm, y las pérdidas de la fibra y de los componentes en dB, de modo que el margen puede estimarse solo con sumas y restas. Por ejemplo, con un transmisor de +3 dBm, 40 km de fibra de 0,2 dB/km a 1550 nm (8 dB) y 1 dB de pérdidas en los conectores, la potencia recibida es de −6 dBm. Con un receptor cuya sensibilidad es de −18 dBm, el margen es de 12 dB. Los medidores de potencia óptica y los OSA (analizadores de espectro óptico) también muestran los valores en dBm de forma estándar, lo que permite manejar en una sola escala valores que difieren en varios órdenes de magnitud."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuántos mW son 0 dBm?",
+        "a": "1 mW. El dBm es una expresión logarítmica con referencia a 1 mW: 10 dBm son 10 mW, 20 dBm son 100 mW, −10 dBm son 0,1 mW y −30 dBm son 1 µW. Cada 3 dB adicionales, la potencia se duplica aproximadamente."
+      },
+      {
+        "q": "¿Se pueden sumar entre sí valores en dBm?",
+        "a": "No directamente. Al combinar dos haces de 0 dBm se obtienen 2 mW, unos 3 dBm. Hay que pasar a mW, sumar y volver a dBm. Sumar o restar dB (ganancia o pérdida) a un valor en dBm sí es un uso correcto."
+      },
+      {
+        "q": "¿Qué relación hay entre dBm y dBW?",
+        "a": "Como 1 W = 1000 mW, dBW = dBm − 30. 0 dBW son 30 dBm, y 10 dBm (10 mW) son −20 dBW. En las comunicaciones ópticas abundan las potencias del orden de mW, por lo que se usa sobre todo el dBm."
+      }
+    ]
   },
   "OTDR": {
     "term": "OTDR (reflectómetro óptico en el dominio del tiempo)",
     "desc": "Instrumento que inyecta pulsos de luz en una fibra y, a partir del tiempo de ida y vuelta y de la intensidad de la luz retrodispersada y reflejada, mide la distribución de las pérdidas y la posición de empalmes y roturas.",
     "aliases": [
       "reflectómetro óptico en el dominio del tiempo"
+    ],
+    "about": [
+      {
+        "h": "Leer las pérdidas en función de la distancia a partir de la retrodispersión",
+        "p": "Un OTDR inyecta pulsos de luz por un extremo de una fibra y mide, en función del tiempo, la parte de la dispersión de Rayleigh producida en cada punto de la fibra que vuelve hacia el lado de entrada. La luz que vuelve en el instante t procede de la posición z = ct/(2n_g), de modo que, al convertir el tiempo en distancia, se obtiene una traza a lo largo de la fibra. En una fibra con un índice de grupo de 1,468, la luz que vuelve al cabo de 50 µs procede de un punto situado a unos 5,1 km. La luz retrodispersada es extremadamente débil comparada con el pulso inyectado, por lo que se promedian muchos pulsos repetidos para reducir el ruido y trazar la curva."
+      },
+      {
+        "h": "Cómo se lee la traza",
+        "p": "La traza es una recta que desciende con la distancia, y su pendiente es la pérdida en un solo sentido (dB/km). La luz sufre el doble de pérdidas en el trayecto de ida y vuelta, pero el valor mostrado ya está dividido por dos. Los empalmes por fusión aparecen como escalones sin reflexión, y los conectores y los extremos rotos, como picos agudos de reflexión de Fresnel. Justo después de una reflexión intensa, el receptor se satura y durante un tiempo no puede medir; esto se llama zona muerta. La resolución en distancia para una anchura de pulso τ es cτ/(2n_g), unos 10 m para un pulso de 100 ns."
+      },
+      {
+        "h": "Por qué un empalme puede parecer una ganancia",
+        "p": "Cuando se unen fibras con distinto diámetro del campo modal u otras propiedades distintas, la intensidad de la retrodispersión cambia a uno y otro lado del empalme. Si se mide en el sentido que va hacia la fibra que retrodispersa más, la traza puede subir aunque haya pérdidas (una ganancia aparente, en inglés «gainer»), y si se mide en el sentido contrario, las pérdidas se sobrestiman. Por eso, la pérdida real del empalme se obtiene midiendo desde ambos extremos y promediando. También hay que tener cuidado de no confundir con un suceso real un pico aparente (fantasma) formado por la luz que va y vuelve dos veces entre reflexiones intensas. Los fantasmas suelen aparecer al doble de la distancia de una reflexión intensa o en otro múltiplo entero, lo que ayuda a distinguirlos."
+      },
+      {
+        "h": "Uso en el mantenimiento y sus limitaciones",
+        "p": "Como basta con acceder a un solo extremo, el OTDR se usa en las pruebas de aceptación de cables instalados, la comprobación de las pérdidas de los empalmes y la localización de roturas y curvaturas. Las pérdidas por curvatura aumentan a longitudes de onda mayores, por lo que comparar 1310 nm con 1550 nm (o 1625 nm) permite distinguir las pérdidas de un empalme de las de una curvatura. Los pulsos más largos aumentan el rango dinámico y permiten medir más lejos, pero reducen la resolución. Además, el pulso siguiente solo puede enviarse después de que haya vuelto la luz del anterior, por lo que en 100 km de fibra la frecuencia de repetición queda limitada a 1 kHz o menos."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo calcula la distancia un OTDR?",
+        "a": "A partir del tiempo de ida y vuelta t, con z = ct/(2n_g). Con un índice de grupo de 1,468, una señal recibida al cabo de 10 µs procede de unos 1,02 km. Si el índice de grupo configurado no es correcto, la distancia mostrada se desvía en la misma proporción."
+      },
+      {
+        "q": "¿Qué es la zona muerta de un OTDR?",
+        "a": "Es el tramo situado justo después de una reflexión intensa, como la de un conector, en el que el receptor está saturado o recuperándose y la traza no puede medirse correctamente. Se estrecha con pulsos más cortos. Para medir cerca del comienzo de la fibra, se intercala una fibra auxiliar, llamada fibra de lanzamiento."
+      },
+      {
+        "q": "¿Por qué la traza a veces sube en un empalme?",
+        "a": "Porque, si la fibra que sigue al empalme retrodispersa más (por ejemplo, porque su diámetro del campo modal es menor), la luz dispersada aumenta y parece una ganancia. Midiendo desde ambos sentidos y promediando se obtiene la pérdida real del empalme."
+      }
     ]
   },
   "LiDAR": {
     "term": "LiDAR",
-    "desc": "Técnica que ilumina con luz láser y mide la distancia y la forma de los objetos a partir de la luz reflejada. Existen el método ToF, que mide el tiempo de ida y vuelta de los pulsos, y el método FMCW, con barrido de frecuencia."
+    "desc": "Técnica que ilumina con luz láser y mide la distancia y la forma de los objetos a partir de la luz reflejada. Existen el método ToF, que mide el tiempo de ida y vuelta de los pulsos, y el método FMCW, con barrido de frecuencia.",
+    "about": [
+      {
+        "h": "Dos métodos para medir la distancia",
+        "p": "El método ToF emite un pulso corto y obtiene la distancia a partir del tiempo t que tarda en volver la luz reflejada, con d = ct/2. Para un objeto situado a 200 m, la ida y vuelta dura unos 1,33 µs, y una resolución temporal de 0,1 ns corresponde a unos 1,5 cm de distancia. El método FMCW emite luz cuya frecuencia se barre linealmente y obtiene la distancia a partir de la frecuencia de batido entre la luz que vuelve y la luz transmitida, haciéndolas interferir. Su resolución en distancia la fija el ancho de banda del barrido B como c/(2B), unos 7,5 cm para 2 GHz. Con FMCW, el desplazamiento Doppler proporciona además la velocidad al mismo tiempo."
+      },
+      {
+        "h": "Cuánta luz vuelve",
+        "p": "Cuando una superficie difusora de reflectancia ρ es mayor que el haz, la luz recibida es aproximadamente la potencia transmitida multiplicada por ρA/(πR²), donde A es el área de la apertura de recepción y R la distancia. Con ρ = 0,1, una apertura de 25 mm y 100 m, el factor es de unos 1,6×10⁻⁹, es decir, unos 88 dB más débil. Si la distancia se duplica, la luz recibida se reduce a la cuarta parte (−6 dB). Para detectar esta luz débil en medio de la luz solar, los sistemas ToF usan detectores de alta sensibilidad, como los APD o los SPAD, con filtros de longitud de onda estrechos, y los sistemas FMCW usan la amplificación por el oscilador local (detección coherente)."
+      },
+      {
+        "h": "La elección de la longitud de onda y la seguridad ocular",
+        "p": "La región de 905 nm tiene la ventaja de poder usar fotodetectores de silicio y SPAD económicos, pero, como esta longitud de onda llega a la retina, las normas de seguridad ocular limitan estrictamente la potencia que puede emitirse. La luz de alrededor de 1550 nm la absorbe el agua de la córnea y del cristalino y apenas llega a la retina, por lo que la exposición permitida es mayor y resulta más fácil medir a gran distancia. Sin embargo, requiere detectores como los de InGaAs, y la absorción por el agua de la lluvia y la niebla es mayor. Con cualquiera de las dos longitudes de onda, los productos suelen diseñarse para quedar dentro de la clase 1 (segura en condiciones normales de uso)."
+      },
+      {
+        "h": "Métodos de barrido y aplicaciones",
+        "p": "Medir la distancia a un solo punto no revela la forma, por lo que el haz se barre para formar una nube de puntos. Hay métodos que cambian la dirección con cabezales mecánicos giratorios, espejos MEMS o matrices en fase ópticas (OPA), y métodos flash, que iluminan una zona amplia y la miden toda a la vez con una matriz de detectores. El LiDAR se usa en la conducción autónoma y la asistencia a la conducción, los robots, la topografía y la cartografía del terreno, y la medición tridimensional de edificios, y los teléfonos inteligentes también llevan sensores ToF de corto alcance. Como su longitud de onda es más corta que la del radar, que usa ondas de radio, distingue formas más finas, pero tiende a verse más afectado por la lluvia y la niebla."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el método ToF y el método FMCW?",
+        "a": "El ToF obtiene la distancia a partir del tiempo de ida y vuelta de un pulso, y el FMCW, a partir de la frecuencia de batido de una luz con barrido de frecuencia. El FMCW es robusto frente a la luz de fondo y puede medir también la velocidad, pero requiere un láser de anchura de línea estrecha que barra linealmente y un procesamiento de señal."
+      },
+      {
+        "q": "¿De qué depende la resolución en distancia de un LiDAR?",
+        "a": "En el ToF, de la resolución temporal o la anchura del pulso: cΔt/2 (unos 1,5 cm para 0,1 ns). En el FMCW, de la anchura del barrido de frecuencia B: c/(2B) (unos 15 cm para 1 GHz). Promediando muchas medidas, la precisión puede hacerse más fina que la resolución."
+      },
+      {
+        "q": "¿Qué conviene usar en un LiDAR, 905 nm o 1550 nm?",
+        "a": "905 nm permite usar fotodetectores de silicio económicos, pero su potencia está limitada por la seguridad ocular. 1550 nm apenas llega a la retina, por lo que admite más potencia y permite medir más lejos, pero los detectores son más caros y la absorción por el agua es mayor."
+      }
+    ]
   },
   "OCT": {
     "term": "OCT (tomografía de coherencia óptica)",
     "desc": "Tomografía de coherencia óptica: técnica que, mediante interferometría con la corta longitud de coherencia de la luz de banda ancha, obtiene imágenes de la estructura de los tejidos en profundidad con una resolución del orden de micrómetros.",
     "aliases": [
       "tomografía de coherencia óptica"
+    ],
+    "about": [
+      {
+        "h": "Separar las profundidades mediante interferencia",
+        "p": "La OCT divide la luz de banda ancha en un haz de referencia y un haz que va a la muestra, hace interferir con la referencia la luz que vuelve de cada profundidad de la muestra y ordena la intensidad de las reflexiones a lo largo de la profundidad. La luz de banda ancha tiene una longitud de coherencia corta y solo interfieren las reflexiones cuya diferencia de camino óptico cae dentro de ella, por lo que la profundidad puede distinguirse con mucha finura. Una diferencia de profundidad de 1 µm solo produce una diferencia de tiempo de unos 7 fs en la ida y vuelta, demasiado corta para separarla midiendo electrónicamente el tiempo de los pulsos, así que la diferencia de camino se mide por interferencia. Se parece a la ecografía, pero usa luz en lugar de sonido."
+      },
+      {
+        "h": "Valores típicos de resolución y profundidad",
+        "p": "Con un espectro gaussiano, la resolución en profundidad en el aire es Δz = (2 ln2/π)λ²/Δλ ≈ 0,44λ²/Δλ, y es más fina cuanto más ancha es la banda y más corta la longitud de onda central. Con un centro de 1050 nm y una anchura de 100 nm se obtienen unos 4,9 µm, y con 1310 nm y 50 nm, unos 15 µm; dentro del tejido, estos valores se dividen por el índice de refracción (de 1,35 a 1,4 aproximadamente). Como la dispersión (scattering) es intensa, la profundidad observable en los tejidos es de 1 a 2 mm como referencia. La resolución lateral la fija la focalización del objetivo, con independencia de la resolución en profundidad."
+      },
+      {
+        "h": "Dominio del tiempo y dominio de Fourier",
+        "p": "La primera OCT, en el dominio del tiempo, barría la profundidad moviendo el espejo de referencia. La OCT en el dominio de Fourier, que hoy es la predominante, mantiene fijo el espejo de referencia y se divide en la SD-OCT, que mide el espectro de la luz de interferencia con un espectrómetro, y la SS-OCT, que usa una fuente cuya longitud de onda se barre rápidamente y un solo fotodetector. Al aplicar la transformada de Fourier a las franjas que aparecen en el espectro, se obtienen todas las profundidades a la vez, lo que mejoró mucho la velocidad y la sensibilidad. La profundidad máxima medible la fija la resolución espectral δλ como λ²/(4δλ) aproximadamente; a 1310 nm con δλ = 0,1 nm es de unos 4,3 mm en el aire."
+      },
+      {
+        "h": "Uso en medicina y en la industria",
+        "p": "Donde más se ha extendido la OCT es en oftalmología, donde permite observar sin contacto, con una resolución de unos pocos µm, el espesor de las capas de la retina y las enfermedades de la mácula. Para la retina se usan las bandas de 800 nm y 1050 nm, en las que la absorción del agua es pequeña, y para la piel y los vasos sanguíneos, que dispersan mucho, la banda de 1310 nm, que penetra más. También existen la OCT intravascular, que introduce una fibra óptica en la punta de un catéter para observar la pared interna de las arterias coronarias, y la angiografía por OCT, que visualiza el flujo sanguíneo. En la industria se usa para mediciones internas no destructivas, como el espesor de recubrimientos y de películas multicapa o la inspección de semiconductores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿De qué depende la resolución en profundidad de la OCT?",
+        "a": "De la anchura espectral de la fuente: con un espectro gaussiano, Δz ≈ 0,44λ²/Δλ (en el aire). Es más fina cuanto más ancha es la banda y más corta la longitud de onda central, y dentro del tejido se divide además por el índice de refracción. La apertura numérica del objetivo determina la resolución lateral, no la resolución en profundidad."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la OCT y la ecografía?",
+        "a": "La OCT usa la interferencia de la luz, y su resolución, de unos pocos µm a algo más de una decena de µm, es más de un orden de magnitud más fina que la de la ecografía de diagnóstico habitual, pero, debido a la dispersión (scattering), la profundidad observable en los tejidos es de 1 a 2 mm aproximadamente. Los ultrasonidos llegan a profundidades de varios centímetros o más."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la SD-OCT y la SS-OCT?",
+        "a": "Ambas son OCT en el dominio de Fourier. La SD-OCT mide todo el espectro de una vez con una fuente de banda ancha y un espectrómetro, y la SS-OCT lo mide en secuencia temporal con una fuente que barre rápidamente la longitud de onda y un solo fotodetector. La SS-OCT es adecuada para longitudes de onda más largas y rangos de profundidad mayores."
+      }
     ]
   },
   "第2高調波発生": {
@@ -1562,6 +1786,34 @@
     "desc": "Fenómeno por el que, mediante un efecto óptico no lineal de segundo orden, la luz de frecuencia ω genera luz de frecuencia doble 2ω (la mitad de la longitud de onda). Se abrevia SHG.",
     "aliases": [
       "segundo armónico"
+    ],
+    "about": [
+      {
+        "h": "Cómo se produce la SHG",
+        "p": "La polarización de un material es proporcional al campo eléctrico cuando la luz es débil, pero con luz intensa aparecen términos de orden superior: P = ε₀(χ⁽¹⁾E + χ⁽²⁾E² + …). El cuadrado E² de un campo de frecuencia ω contiene una componente que oscila a 2ω, la cual radia luz nueva: el segundo armónico. En términos de fotones, es el proceso en el que dos fotones de frecuencia ω dan lugar a un fotón de 2ω. Como χ⁽²⁾ solo existe en cristales sin simetría de inversión, se usan cristales ópticos no lineales como LiNbO₃, KTP, BBO y LBO. En materiales centrosimétricos como el vidrio y el silicio, no se produce en el volumen."
+      },
+      {
+        "h": "Ajuste de fase y eficiencia de conversión",
+        "p": "Para que el segundo armónico generado en cada punto del cristal se refuerce, la polarización creada por la onda fundamental y el segundo armónico ya generado deben mantenerse en fase a lo largo del cristal. Debido a la dispersión, en general n(2ω) ≠ n(ω), de modo que, sin más, el segundo armónico se refuerza y se cancela repetidamente cada longitud de coherencia (de unos pocos a unas decenas de µm). Si se consigue Δk = 0, mediante el ajuste de fase birrefringente, que usa la birrefringencia para igualar los índices de refracción de ondas con distinta polarización, o mediante el cuasiajuste de fase, que invierte periódicamente el sentido de la polarización del cristal, la eficiencia de conversión crece en proporción al cuadrado de la longitud del cristal y a la potencia de la onda fundamental."
+      },
+      {
+        "h": "Aplicaciones de la SHG",
+        "p": "Una aplicación representativa es el láser verde, que obtiene luz verde de 532 nm a partir de un láser de Nd:YAG o un láser de fibra de 1064 nm. Combinada con la generación de suma de frecuencias, también proporciona luz ultravioleta de 355 nm o 266 nm, que se usa en el micromecanizado láser y en la inspección. Su proporcionalidad con el cuadrado de la potencia se aprovecha en los autocorreladores, que miden la duración de los pulsos ultracortos, y en los microscopios SHG, que solo producen señal cerca del foco. Como la simetría de inversión se rompe en las superficies, también sirve como método espectroscópico para estudiar de forma selectiva solo las interfaces."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la longitud de onda de la SHG?",
+        "a": "Como la frecuencia se duplica, la longitud de onda es la mitad de la de la onda fundamental: 532 nm para 1064 nm y 775 nm para 1550 nm. Se deduce de la conservación de la energía, ħω + ħω = ħ(2ω)."
+      },
+      {
+        "q": "¿Por qué no se produce SHG en el vidrio?",
+        "a": "Porque el vidrio es un material isótropo con simetría de inversión, de modo que su susceptibilidad no lineal de segundo orden χ⁽²⁾ es nula. Sí tiene χ⁽³⁾ de tercer orden, por lo que se producen el efecto Kerr y la generación de tercer armónico."
+      },
+      {
+        "q": "¿Cómo puede aumentarse la eficiencia de la SHG?",
+        "a": "Una vez logrado el ajuste de fase, se elige un cristal con un coeficiente no lineal grande, se usan pulsos de potencia de pico elevada, se focaliza el haz o se alarga el cristal. La eficiencia aumenta en proporción a la potencia de la onda fundamental, y la potencia del segundo armónico, en proporción a su cuadrado."
+      }
     ]
   },
   "位相整合": {
@@ -1569,6 +1821,38 @@
     "desc": "En la conversión de longitud de onda de la óptica no lineal, anular la diferencia de números de onda, Δk = 0, para que la luz generada y la polarización no lineal que la produce no se desfasen dentro del cristal.",
     "aliases": [
       "ajuste de fases"
+    ],
+    "about": [
+      {
+        "h": "Por qué hay que mantener las fases alineadas",
+        "p": "En un cristal no lineal, la luz incidente crea una polarización en cada punto, a partir de la cual se genera poco a poco luz de la nueva frecuencia. Para que la luz generada en cada punto se refuerce a la salida, la fase de la polarización que la produce y la de la luz ya generada no deben desfasarse a lo largo del cristal. En la generación de segundo armónico, la diferencia de números de onda es Δk = k(2ω) − 2k(ω), que en general no es nula debido a la dispersión. Con Δk ≠ 0, la señal se refuerza y se cancela alternativamente cada longitud de coherencia Lc = π/Δk, y alargar el cristal no aumenta la potencia de salida."
+      },
+      {
+        "h": "Cómo afecta el desfase a la salida",
+        "p": "La potencia del segundo armónico es proporcional a L² sinc²(ΔkL/2) y solo sigue creciendo con el cuadrado de la longitud del cristal L cuando Δk = 0. La salida cae a la mitad cuando |ΔkL| ≈ 2,78, por lo que, cuanto más largo es el cristal, más estrecha es la desviación admitida (tolerancia) en longitud de onda, ángulo y temperatura, en proporción inversa a L. La longitud de coherencia es Lc = λ/(4Δn), donde λ es la longitud de onda de la onda fundamental y Δn la diferencia de índices de refracción entre las dos ondas; a 1064 nm con Δn = 0,01 es de solo unos 27 µm, por lo que el ajuste de fase es imprescindible para usar cristales de varios milímetros."
+      },
+      {
+        "h": "Métodos para lograr el ajuste de fase",
+        "p": "El método representativo es el ajuste de fase birrefringente, que usa la birrefringencia para igualar los índices de refracción de dos ondas de distinta polarización. Puede hacerse por ángulo, eligiendo la orientación del cristal (el ángulo con el eje óptico), o por temperatura, igualando los índices térmicamente, y según la combinación de polarizaciones se distingue el tipo I (como o + o → e) y el tipo II. En el ajuste por ángulo se produce el walk-off, por el que la dirección en que avanza la energía se separa de la dirección de la luz, lo que reduce el solapamiento en los cristales largos. El ajuste de fase no crítico, que se ajusta por temperatura con una orientación de 90°, no tiene walk-off y su tolerancia angular es amplia."
+      },
+      {
+        "h": "Otros métodos y cuándo usarlos",
+        "p": "En cristales de birrefringencia pequeña, o cuando se quiere que las polarizaciones sean iguales, se usa el cuasiajuste de fase, que invierte periódicamente el sentido de la polarización del cristal. En las guías de onda también puede usarse el ajuste de fase modal, que ajusta los índices efectivos mediante el orden del modo y las dimensiones de la guía. En la mezcla de cuatro ondas, que es un proceso de tercer orden, a la dispersión se suma en Δk la variación del índice de refracción causada por la propia luz, de modo que en las fibras la eficiencia aumenta cerca de la longitud de onda de dispersión nula. En un oscilador paramétrico óptico, elegir el par de longitudes de onda en ajuste de fase cambiando el ángulo, la temperatura o el periodo es directamente el mecanismo de sintonización de la longitud de onda."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué ocurre si no hay ajuste de fase?",
+        "a": "La luz generada se refuerza y se cancela alternativamente cada longitud de coherencia Lc = π/Δk, de modo que alargar el cristal no aumenta la potencia de salida. Lc suele ser de unos pocos a unas decenas de µm, por lo que la eficiencia de conversión se queda en valores ínfimos."
+      },
+      {
+        "q": "¿Qué diferencia hay entre el ajuste de fase de tipo I y el de tipo II?",
+        "a": "En el tipo I, los dos fotones de la onda fundamental tienen la misma polarización (por ejemplo, o + o → e), y en el tipo II, polarizaciones ortogonales (por ejemplo, o + e → e). Según el cristal y la longitud de onda, cambian el ángulo de ajuste de fase, la tolerancia y el valor del coeficiente no lineal."
+      },
+      {
+        "q": "¿Cómo se regula el ajuste de fase?",
+        "a": "En el ajuste de fase birrefringente se ajustan el ángulo o la temperatura del cristal, y en el cuasiajuste de fase, el periodo de inversión de la polarización y la temperatura. En la práctica, el cristal se monta sobre una platina giratoria o con control de temperatura y se busca el punto de máxima salida."
+      }
     ]
   },
   "擬似位相整合": {
@@ -1576,6 +1860,38 @@
     "desc": "Método que invierte periódicamente, cada longitud de coherencia, el sentido de la polarización eléctrica del cristal no lineal para compensar el desfase y que la conversión continúe. Se usa en el PPLN y materiales similares.",
     "aliases": [
       "cuasi ajuste de fase"
+    ],
+    "about": [
+      {
+        "h": "Compensar el desfase invirtiendo el signo",
+        "p": "Incluso en un cristal sin ajuste de fase, el segundo armónico crece hasta la longitud de coherencia Lc y a partir de ahí empieza a disminuir. El cuasiajuste de fase consiste en invertir el sentido de la polarización del cristal (el signo de χ⁽²⁾) justo en cada posición donde empezaría a disminuir, de modo que la fase de la luz generada retrocede en π y el crecimiento continúa. Un periodo es Λ = 2Lc; en términos de números de onda, la condición es que el número de onda de la red, 2π/Λ, compense el desfase Δk: Δk = 2π/Λ. La potencia de salida crece en escalones y aumenta de forma casi proporcional al cuadrado de la longitud del cristal."
+      },
+      {
+        "h": "Valores típicos de eficiencia y periodo",
+        "p": "Como el signo se alterna, el coeficiente no lineal efectivo en el cuasiajuste de fase de primer orden es 2/π veces el del ajuste de fase verdadero, y la eficiencia baja a (2/π)² ≈ 0,41 veces. En el cuasiajuste de fase de tercer orden, la eficiencia es aún menor, de unas 0,045 veces. Aun así, en el LiNbO₃ todas las ondas pueden tener polarización extraordinaria, lo que permite usar el coeficiente máximo, d₃₃. Como d₃₃ es de 5 a 6 veces el d₃₁ que se usa en el ajuste de fase birrefringente, la eficiencia resulta unas 10 veces o más favorable. Como referencia, el periodo es de unos 20 µm para el segundo armónico de 1550 nm y de unos 7 µm para el de 1064 nm."
+      },
+      {
+        "h": "Cómo se fabrica el PPLN y precauciones",
+        "p": "La inversión periódica de la polarización se realiza formando un patrón periódico de electrodos sobre un ferroeléctrico como el LiNbO₃ (PPLN), el LiTaO₃ (PPLT) o el KTP (PPKTP) y aplicando un campo eléctrico intenso que invierte la polarización en dominios alineados. Su punto fuerte es que el periodo, desde unos pocos µm hasta algo más de 30 µm, puede elegirse libremente con el diseño de la máscara. El LiNbO₃ sufre con facilidad daño fotorrefractivo, en el que la luz visible modifica el índice de refracción, por lo que lo habitual es usar cristales dopados con MgO y hacerlos funcionar a temperatura elevada. Al cambiar la temperatura cambian los índices de refracción, lo que permite ajustar con finura la longitud de onda en ajuste de fase."
+      },
+      {
+        "h": "Para qué se usa",
+        "p": "Como no depende de la birrefringencia, permite elegir la orientación que da el coeficiente no lineal máximo, no tiene walk-off y logra eficiencias altas en cristales largos y en guías de onda. Se usa ampliamente en la conversión de longitud de onda de láseres verdes y de otros láseres visibles, la generación de luz del infrarrojo medio con osciladores paramétricos ópticos, la conversión de longitud de onda en la banda de las comunicaciones ópticas y la generación de pares de fotones entrelazados en óptica cuántica. Disponiendo en un mismo cristal regiones de periodos distintos, o variando el periodo poco a poco (chirp), puede conmutarse la longitud de onda o ampliarse la banda de conversión. Combinado con guías de onda de LN de película delgada, la conversión requiere aún menos potencia."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se determina el periodo del cuasiajuste de fase?",
+        "a": "Se toma igual al doble de la longitud de coherencia, Λ = 2Lc = 2π/Δk. Para el segundo armónico, Λ = λ/(2Δn) (λ es la longitud de onda de la onda fundamental). Para el segundo armónico de 1550 nm en PPLN, unos 20 µm es un valor de referencia, y se ajusta con finura mediante la temperatura."
+      },
+      {
+        "q": "¿Es el cuasiajuste de fase menos eficiente que el ajuste de fase verdadero?",
+        "a": "Con el mismo coeficiente no lineal, incluso el de primer orden reduce la eficiencia a (2/π)² ≈ 0,41 veces. Sin embargo, en la práctica puede usar el coeficiente máximo, d₃₃, y no tiene walk-off, por lo que a menudo logra más eficiencia que el ajuste de fase birrefringente."
+      },
+      {
+        "q": "¿Qué es el PPLN?",
+        "a": "Son las siglas de niobato de litio con polarización periódicamente invertida (periodically poled lithium niobate): un cristal de LiNbO₃ en el que el sentido de la polarización se ha invertido periódicamente mediante un campo eléctrico intenso. Se usa para la conversión de longitud de onda por cuasiajuste de fase. Para evitar el daño fotorrefractivo, se usa a menudo material dopado con MgO."
+      }
     ]
   },
   "光パラメトリック発振器": {
@@ -1583,28 +1899,188 @@
     "desc": "Fuente de luz sintonizable que, en un cristal χ⁽²⁾, divide los fotones de bombeo en fotones de señal y fotones idler y los hace oscilar en un resonador. Se abrevia OPO.",
     "aliases": [
       "osciladores paramétricos ópticos"
+    ],
+    "about": [
+      {
+        "h": "Dividir los fotones en dos y amplificar",
+        "p": "En el proceso paramétrico óptico, un fotón de bombeo se divide en un cristal χ⁽²⁾ en dos fotones, uno de señal y otro idler. Solo se amplifican los pares que cumplen a la vez la conservación de la energía, ωp = ωs + ωi, y el ajuste de fase, kp = ks + ki. Con bombeo a 1064 nm y una señal de 1550 nm, el idler es de unos 3390 nm, según 1/λi = 1/1064 − 1/1550. En el punto degenerado, donde la señal y el idler son iguales, ambos están al doble de la longitud de onda de bombeo, 2128 nm. Un OPO es el dispositivo que introduce esta amplificación en un resonador para que oscile."
+      },
+      {
+        "h": "En qué se diferencia de un láser",
+        "p": "La ganancia de un OPO no procede de una inversión de población que almacena la excitación en niveles atómicos o moleculares, sino de una amplificación no lineal que solo existe mientras está presente la luz de bombeo. Por eso, la longitud de onda de salida no la fijan los niveles de energía, y puede variarse de forma continua, manteniendo la conservación de la energía, cambiando el ángulo o la temperatura del cristal o el periodo del cuasiajuste de fase. La señal y el idler tienen siempre una longitud de onda mayor que la del bombeo. Además, la energía de cada fotón de bombeo se reparte entre las dos salidas: con bombeo a 1064 nm y una señal de 1550 nm, alrededor del 69 % de la energía del fotón va a la señal y el resto, al idler."
+      },
+      {
+        "h": "Tipos de resonador y umbral de oscilación",
+        "p": "El OPO de resonancia simple (SRO), que solo hace resonar la señal o el idler, funciona de forma estable, pero en onda continua su umbral de oscilación es alto, de unos pocos W, por lo que a menudo se usa bombeo pulsado. El OPO doblemente resonante (DRO), que hace resonar ambas, tiene un umbral más bajo, pero debe cumplir a la vez dos condiciones de resonancia, por lo que su longitud de onda y su potencia de salida tienden a ser inestables. El dispositivo que no usa resonador y amplifica en un solo paso con un bombeo intenso se llama amplificador paramétrico óptico (OPA) y se usa ampliamente en la conversión de longitud de onda de pulsos ultracortos."
+      },
+      {
+        "h": "Longitudes de onda alcanzables y aplicaciones",
+        "p": "El punto fuerte de los OPO es la región del infrarrojo cercano al infrarrojo medio, aproximadamente entre 1,5 y 5 µm, donde escasean los buenos medios láser. En el PPLN, la absorción del cristal sitúa el límite superior práctico en unos 4 a 5 µm, y para longitudes de onda mayores se usan cristales como el ZGP o el GaAs con cuasiajuste de fase. Se usan en la espectroscopia del infrarrojo medio, rica en líneas de absorción moleculares, la detección de gases, la medicina y el procesado de materiales, y como fuentes de luz sintonizables. Incluso un cristal sin resonador, bombeado débilmente, produce pares de fotones divididos espontáneamente (conversión paramétrica descendente espontánea), una herramienta básica de la óptica cuántica como fuente de fotones entrelazados y de fotones individuales."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se obtiene la longitud de onda del idler de un OPO?",
+        "a": "A partir de la conservación de la energía, 1/λi = 1/λp − 1/λs. Con bombeo a 1064 nm y una señal de 1550 nm, se obtienen unos 3390 nm. Restar directamente las longitudes de onda es un error: el cálculo se hace con las frecuencias (los inversos de la longitud de onda)."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un OPO y un láser?",
+        "a": "Un láser amplifica mediante una inversión de población almacenada en los niveles de un medio, y su longitud de onda la fijan esos niveles. Un OPO amplifica de forma no lineal sin almacenar energía, y su longitud de onda la fija la condición de ajuste de fase, por lo que puede sintonizarse en un amplio intervalo cambiando el ángulo, la temperatura o el periodo."
+      },
+      {
+        "q": "¿Qué intervalo de longitudes de onda puede producir un OPO?",
+        "a": "Las salidas tienen siempre una longitud de onda mayor que la del bombeo. Desde el visible hasta el infrarrojo medio, el intervalo se elige combinando el cristal y la luz de bombeo. En el PPLN, el límite superior práctico es de unos 4 a 5 µm, y para el infrarrojo medio de longitudes de onda mayores se usan cristales como el ZGP."
+      }
     ]
   },
   "光カー効果": {
     "term": "Efecto Kerr óptico",
-    "desc": "Efecto óptico no lineal de tercer orden por el que el índice de refracción varía proporcionalmente a la intensidad de la luz, n = n₀ + n₂I. Causa la automodulación de fase y el autoenfoque."
+    "desc": "Efecto óptico no lineal de tercer orden por el que el índice de refracción varía proporcionalmente a la intensidad de la luz, n = n₀ + n₂I. Causa la automodulación de fase y el autoenfoque.",
+    "about": [
+      {
+        "h": "Un índice de refracción que cambia con la intensidad",
+        "p": "El efecto Kerr óptico es el fenómeno por el que el índice de refracción varía en proporción a la intensidad de la luz, n = n₀ + n₂I, debido a la susceptibilidad no lineal de tercer orden χ⁽³⁾. Como χ⁽³⁾ existe en todos los materiales, con independencia de la simetría de inversión, el efecto se produce en el vidrio e incluso en el aire. En la sílice fundida, n₂ es de unos 2,6×10⁻²⁰ m²/W, de modo que incluso a 10 GW/cm² (10¹⁴ W/m²) Δn es de solo unos 2,6×10⁻⁶. Aun así, en la luz que recorre fibras largas o en pulsos intensos focalizados, los cambios de fase se acumulan y producen efectos grandes."
+      },
+      {
+        "h": "n₂ en distintos materiales y velocidad de respuesta",
+        "p": "n₂ es de alrededor de 5×10⁻¹⁸ m²/W en el silicio, más de 100 veces el de la sílice; en el nitruro de silicio es unas 10 veces el de la sílice, y en el aire, alrededor de la milésima parte. En una fibra, su intensidad se expresa con el coeficiente no lineal γ = 2πn₂/(λA_eff), que vale unos 1,3 /(W·km) a 1550 nm en una fibra estándar con un área efectiva de 80 µm². La parte principal del efecto Kerr es una respuesta electrónica más rápida que un femtosegundo, pero en la sílice se añade con retardo una respuesta Raman debida a las vibraciones moleculares, de alrededor del 20 %, que influye en el comportamiento de los pulsos ultracortos."
+      },
+      {
+        "h": "Efectos en el espacio y en el tiempo",
+        "p": "Si la intensidad es mayor en el centro del haz, el índice de refracción aumenta allí y el medio actúa como una lente convergente, de modo que el haz se estrecha por sí mismo: es el autoenfoque. Por encima de una potencia crítica (unos pocos MW en la sílice a 800 nm), la difracción ya no puede detenerlo, lo que provoca daños en el material o filamentos. En el tiempo, la variación de la intensidad se convierte directamente en variación de fase en la automodulación de fase; la intensidad de otro haz cambia la fase en la modulación de fase cruzada, y la luz de distintas frecuencias se mezcla en la mezcla de cuatro ondas. Todos estos efectos proceden del mismo n₂."
+      },
+      {
+        "h": "Diferencia con el efecto Kerr electroóptico y usos",
+        "p": "El efecto Kerr electroóptico, en el que el índice de refracción cambia con el cuadrado de un campo eléctrico aplicado continuo o de baja frecuencia, también se debe a χ⁽³⁾; el causado por el propio campo de la luz se llama específicamente efecto Kerr óptico para distinguirlo. Se diferencia del efecto Pockels (χ⁽²⁾), proporcional al campo eléctrico, tanto en la relación de proporcionalidad como en los materiales en que se produce. El efecto Kerr óptico se usa en el bloqueo de modos por lente Kerr de los láseres de titanio-zafiro, los solitones ópticos en fibras, los peines de frecuencias ópticos en microrresonadores y la generación de supercontinuo, mientras que en las comunicaciones ópticas distorsiona las formas de onda y es una de las causas que fijan el límite superior de la potencia transmitida."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuáles son las unidades y la magnitud del índice de refracción no lineal n₂?",
+        "a": "Es la variación del índice de refracción por unidad de intensidad, por lo que se expresa en m²/W (o cm²/W). La sílice fundida tiene unos 2,6×10⁻²⁰ m²/W, y el silicio, más de 100 veces ese valor. Los valores en unidades esu de la bibliografía antigua deben convertirse."
+      },
+      {
+        "q": "¿Qué diferencia hay entre el efecto Kerr óptico y el efecto Pockels?",
+        "a": "El efecto Kerr óptico se debe a χ⁽³⁾, es proporcional a la intensidad (el cuadrado del campo eléctrico) y se produce en todos los materiales. El efecto Pockels se debe a χ⁽²⁾, es proporcional al campo eléctrico aplicado y solo se produce en cristales sin simetría de inversión."
+      },
+      {
+        "q": "¿Por qué se produce el autoenfoque?",
+        "a": "Porque la intensidad es mayor en el centro del haz, donde el efecto Kerr aumenta el índice de refracción, de modo que el medio actúa como una lente convergente. Por encima de una potencia crítica, la focalización vence al ensanchamiento por difracción y continúa, lo que provoca daños o filamentos."
+      }
+    ]
   },
   "自己位相変調": {
     "term": "Automodulación de fase (SPM)",
     "desc": "Fenómeno por el que un pulso óptico sufre una modulación de fase por efecto Kerr debida a la variación temporal de su propia intensidad, lo que produce un chirp de frecuencia y ensancha su espectro. SPM.",
     "aliases": [
       "auto-modulación de fase"
+    ],
+    "about": [
+      {
+        "h": "Una fase que cambia con la propia intensidad",
+        "p": "Cuando un pulso de luz intenso atraviesa un medio, el efecto Kerr óptico hace que el índice de refracción, n₀ + n₂I(t), varíe en el tiempo siguiendo la intensidad del pulso, y la fase cambia en proporción. En una fibra, el desfase máximo es φNL = γP₀L_eff, donde P₀ es la potencia de pico. Debido a las pérdidas, la longitud efectiva L_eff es menor que la longitud real; en una fibra de 0,2 dB/km nunca supera unos 21,7 km, por mucho que se alargue. Si se hace pasar una potencia de pico de 1 W por 1 km de fibra con γ = 1,3 /(W·km), φNL es de alrededor de 1,3 rad."
+      },
+      {
+        "h": "Sentido y magnitud del ensanchamiento espectral",
+        "p": "El desplazamiento de la frecuencia instantánea es la derivada temporal de la fase con el signo cambiado, de modo que, con n₂ > 0, la mitad delantera del pulso se desplaza hacia longitudes de onda mayores y la mitad trasera hacia longitudes de onda menores. Como se crean nuevas componentes de frecuencia, el espectro se ensancha de forma aproximadamente proporcional a φNL. En un pulso gaussiano, cuando el desfase máximo llega a unos 1,5π, el centro del espectro se hunde y se divide en dos picos, y el número de picos aumenta después aproximadamente como φNL/π + 1/2. Sin dispersión, el perfil temporal de intensidad no cambia."
+      },
+      {
+        "h": "Comportamiento combinado con la dispersión",
+        "p": "La forma de onda temporal solo cambia cuando el chirp de la automodulación de fase se combina con la dispersión. Con dispersión normal, la parte delantera de longitud de onda larga avanza aún más, de modo que el pulso se ensancha adquiriendo un chirp casi lineal; si se comprime con un par de redes o con espejos con chirp, se obtiene un pulso más corto que el original. Con dispersión anómala, la dispersión compensa el chirp y, cuando ambos se equilibran, se obtiene un solitón óptico que conserva su forma. La modulación de fase cruzada, en la que la intensidad de otro canal cambia la fase, es también una causa de degradación en la transmisión con multiplexación por división de longitud de onda."
+      },
+      {
+        "h": "Usos y limitaciones",
+        "p": "La automodulación de fase es una herramienta básica de la óptica de pulsos ultracortos: ensancha el espectro de los pulsos ultracortos para comprimirlos, genera luz de supercontinuo, de espectro aún más ancho, y permite el bloqueo de modos de los láseres de fibra. En cambio, en las comunicaciones ópticas, cuanto más se eleva la potencia por canal, más se combinan el cambio de fase y la dispersión y distorsionan la forma de onda, lo que impone un límite superior a la potencia de entrada. Se quiere aumentar la potencia para reducir el efecto del ruido, pero si se aumenta demasiado crece la degradación no lineal, y este compromiso determina la potencia de entrada óptima."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cambia la automodulación de fase la forma temporal del pulso?",
+        "a": "No, si no hay dispersión. Solo cambian la fase y la frecuencia instantánea, y el espectro se ensancha. En una fibra con dispersión, este chirp se combina con la dispersión, de modo que el pulso se ensancha o se comprime."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la automodulación de fase y la modulación de fase cruzada?",
+        "a": "En la automodulación de fase, la intensidad del propio pulso cambia su fase; en la modulación de fase cruzada, la fase cambia por la intensidad de otra luz que atraviesa el mismo medio. Ambas se deben al efecto Kerr óptico, y ambas degradan la transmisión con multiplexación por división de longitud de onda."
+      },
+      {
+        "q": "¿Cómo se estima la magnitud de la automodulación de fase?",
+        "a": "En una fibra, se estima con la fase no lineal máxima φNL = γP₀L_eff. Con γ = 1,3 /(W·km), una potencia de pico de 500 mW y una longitud efectiva de 3 km, es de unos 2,0 rad. El ensanchamiento espectral se hace apreciable cuando φNL supera aproximadamente 1 rad."
+      }
     ]
   },
   "ポッケルス効果": {
     "term": "Efecto Pockels",
-    "desc": "Efecto electroóptico lineal por el que el índice de refracción de un cristal sin simetría de inversión varía proporcionalmente al campo eléctrico aplicado. Se usa en moduladores de LN y en conmutadores Q electroópticos."
+    "desc": "Efecto electroóptico lineal por el que el índice de refracción de un cristal sin simetría de inversión varía proporcionalmente al campo eléctrico aplicado. Se usa en moduladores de LN y en conmutadores Q electroópticos.",
+    "about": [
+      {
+        "h": "Un índice de refracción que cambia en proporción al campo",
+        "p": "El efecto Pockels (efecto electroóptico lineal) es el fenómeno por el que el índice de refracción cambia en proporción a un campo eléctrico aplicado E, y la variación se expresa como Δn = (1/2)n³rE, donde r es el coeficiente electroóptico. Como procede de la susceptibilidad no lineal de segundo orden χ⁽²⁾, solo se produce en cristales sin simetría de inversión. En el LiNbO₃, r₃₃ es de unos 31 pm/V y el índice extraordinario es de unos 2,14 a 1550 nm, de modo que un campo de 1 V/µm da Δn ≈ 1,5×10⁻⁴. Para luz de 1550 nm que atraviesa 1 cm, el cálculo da un cambio de fase de unos 6,1 rad."
+      },
+      {
+        "h": "Tensión de media onda y geometría del dispositivo",
+        "p": "La tensión necesaria para cambiar la fase en π se llama tensión de media onda Vπ. En la geometría longitudinal, con el campo aplicado en la dirección de propagación de la luz, Vπ no depende de la longitud del cristal, y una célula de Pockels de KD*P necesita varios kV a 1064 nm. En la geometría transversal, con el campo aplicado de lado, Vπ disminuye cuanto más estrecha es la separación entre electrodos y mayor la longitud. Los moduladores de guía de onda usan esta geometría transversal, con separaciones entre electrodos reducidas a unos pocos µm y longitudes de unos pocos mm a unos pocos cm, de modo que funcionan con unos pocos V. Las prestaciones se comparan a menudo mediante el producto VπL."
+      },
+      {
+        "h": "Por qué no puede usarse en el silicio",
+        "p": "El silicio es un cristal con simetría de inversión y no tiene χ⁽²⁾, por lo que en él normalmente no puede usarse el efecto Pockels. Por eso, los moduladores de silicio usan el efecto de dispersión por portadores, que cambia el índice de refracción mediante la concentración de portadores, pero las pérdidas cambian al mismo tiempo y Vπ tiende a ser grande. Por ello avanzan las investigaciones que combinan con los circuitos de silicio materiales con un efecto Pockels intenso, como el LiNbO₃ de película delgada, el titanato de bario o los polímeros electroópticos. El efecto Kerr (χ⁽³⁾), proporcional al cuadrado del campo eléctrico, se produce también en el silicio, pero es un efecto distinto del efecto Pockels y no deben confundirse."
+      },
+      {
+        "h": "Uso en moduladores y conmutadores Q",
+        "p": "El efecto Pockels es una respuesta electrónica y extremadamente rápida, de modo que el ancho de banda de un modulador no lo fija el cristal, sino las pérdidas de los electrodos y el ajuste de velocidad entre la luz y la señal eléctrica. Los moduladores de LN para comunicaciones ópticas aplican fases opuestas a los dos brazos de un interferómetro de Mach-Zehnder para modular la intensidad o la fase, y con LN de película delgada se han obtenido anchos de banda de varias decenas de GHz o más. Las células de Pockels, que giran la polarización, se usan como conmutadores Q electroópticos en láseres pulsados, para seleccionar pulsos y para introducir y extraer la luz de los amplificadores regenerativos. El muestreo electroóptico, que mide el campo eléctrico de las ondas de terahercios, también aprovecha este efecto."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el efecto Pockels y el efecto Kerr?",
+        "a": "El efecto Pockels se debe a χ⁽²⁾; su variación del índice de refracción es proporcional al campo eléctrico, y solo se produce en cristales sin simetría de inversión. El efecto Kerr se debe a χ⁽³⁾; es proporcional al cuadrado del campo eléctrico, y se produce en todos los materiales, incluidos los vidrios y los líquidos."
+      },
+      {
+        "q": "¿Qué es la tensión de media onda Vπ?",
+        "a": "Es la tensión necesaria para cambiar la fase de la luz en π (media longitud de onda). En un modulador de Mach-Zehnder, es la tensión que lleva la transmitancia del máximo al mínimo. En los dispositivos transversales, disminuye con electrodos más largos y separaciones más estrechas."
+      },
+      {
+        "q": "¿Por qué no puede usarse el efecto Pockels en el silicio?",
+        "a": "Porque el cristal de silicio tiene simetría de inversión, de modo que su susceptibilidad no lineal de segundo orden χ⁽²⁾ es nula. Los moduladores de silicio usan el efecto de dispersión por portadores, y para una modulación más intensa se combinan con materiales como el LiNbO₃."
+      }
+    ]
   },
   "光ソリトン": {
     "term": "Solitón óptico",
     "desc": "Paquete de ondas de luz que se propaga por una fibra óptica conservando la forma del pulso porque el ensanchamiento por dispersión anómala se equilibra con el chirp de la automodulación de fase.",
     "aliases": [
       "solitones ópticos"
+    ],
+    "about": [
+      {
+        "h": "Equilibrio entre dispersión y no linealidad",
+        "p": "Un pulso que recorre una fibra óptica se ensancha por la dispersión y, por la automodulación de fase, adquiere un chirp que desplaza su parte delantera hacia longitudes de onda mayores y su parte trasera hacia longitudes de onda menores. Con dispersión anómala (la fibra monomodo estándar en la banda de 1550 nm), las componentes de longitud de onda más corta avanzan más deprisa, de modo que las componentes de longitud de onda corta de la parte trasera se adelantan y las de longitud de onda larga de la parte delantera se retrasan, lo que compensa el chirp de la SPM. Cuando los dos efectos se equilibran exactamente, el pulso se propaga conservando su forma y su espectro. Este es el solitón fundamental, cuya intensidad tiene forma de sech²."
+      },
+      {
+        "h": "Valores de referencia de la potencia necesaria",
+        "p": "La potencia de pico de un solitón fundamental es P₀ = |β₂|/(γT₀²), donde T₀ es la anchura del pulso, alrededor de 1/1,763 de la anchura a media altura. En una fibra con D = 17 ps/(nm·km) (β₂ ≈ −21,7 ps²/km) y γ = 1,3 /(W·km), un pulso de 10 ps necesita unos 0,52 W. Si la anchura del pulso se reduce a la mitad, la potencia necesaria se cuadruplica, y para 1 ps se necesitan unos 52 W. Los solitones de orden superior, con un orden del solitón N² = γP₀T₀²/|β₂| mayor que 1, avanzan cambiando de forma periódicamente, y la distancia a la que recuperan su forma original es de unos 2,3 km para una anchura de 10 ps."
+      },
+      {
+        "h": "Condiciones de existencia y cómo se degradan",
+        "p": "Los solitones brillantes solo existen con dispersión anómala; con dispersión normal, el pulso no hace más que ensancharse. Con dispersión normal existen, en cambio, los solitones oscuros: hundimientos oscuros en una luz continua que se propagan conservando su forma. El solitón es una solución ideal para una fibra sin pérdidas, por lo que las pérdidas lo ensanchan poco a poco y lo degradan, e incluso si se compensan con amplificadores ópticos, queda la fluctuación del tiempo de llegada causada por el ruido (efecto Gordon-Haus). Además, con pulsos ultracortos, la dispersión Raman desplaza progresivamente la longitud de onda central hacia longitudes de onda mayores: es el autodesplazamiento de frecuencia del solitón."
+      },
+      {
+        "h": "Historia y aplicaciones",
+        "p": "Los solitones ópticos en fibras los propusieron teóricamente Hasegawa y Tappert en 1973, y Mollenauer y sus colaboradores de los Laboratorios Bell los observaron experimentalmente en 1980. Por su propiedad de no deformarse se estudiaron como método de comunicación a larga distancia, pero no son la corriente principal en la actual transmisión con multiplexación por división de longitud de onda y transmisión coherente. En cambio, desempeñan papeles importantes en los campos de los pulsos ultracortos y de la medición de precisión: los láseres de fibra con bloqueo de modos que funcionan con solitones, la generación de supercontinuo por la fisión de solitones de orden superior y los peines de frecuencias ópticos basados en solitones de Kerr disipativos en microrresonadores."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué condiciones requiere un solitón óptico?",
+        "a": "Un medio con dispersión anómala (D > 0, β₂ < 0), y una potencia de pico y una anchura de pulso que cumplan P₀ = |β₂|/(γT₀²). Entonces, el ensanchamiento por dispersión y el chirp de la automodulación de fase se equilibran, y el pulso se propaga conservando su forma."
+      },
+      {
+        "q": "¿Cómo depende de la anchura del pulso la potencia de pico necesaria para un solitón?",
+        "a": "P₀ es inversamente proporcional al cuadrado de la anchura del pulso. En una fibra estándar a 1550 nm, como referencia, se necesitan unos 0,5 W para una anchura de 10 ps y unos 50 W para 1 ps. Cuanto más corto es el pulso, más bruscamente aumenta la potencia necesaria."
+      },
+      {
+        "q": "¿Qué es un solitón oscuro?",
+        "a": "Es un hundimiento oscuro formado en una luz de intensidad constante que se propaga por un medio con dispersión normal conservando su forma. Requiere el signo de dispersión opuesto al del solitón brillante, en el que es un pulso brillante el que conserva su forma."
+      }
     ]
   },
   "F値": {
@@ -1612,6 +2088,38 @@
     "desc": "Cociente N = f/D entre la distancia focal y el diámetro de la pupila de entrada. La iluminancia en el plano imagen es inversamente proporcional a N², y cada paso de diafragma, es decir, cada vez que N se multiplica por √2, reduce la luz a la mitad.",
     "aliases": [
       "números f"
+    ],
+    "about": [
+      {
+        "h": "La razón que fija la luminosidad",
+        "p": "El número f es N = f/D, donde f es la distancia focal y D el diámetro de la pupila de entrada, y expresa la luminosidad de un objetivo. Al fotografiar objetos lejanos, la iluminancia en el plano imagen es proporcional al área de la pupila e inversamente proporcional al cuadrado de la distancia focal, que fija el tamaño de la imagen, por lo que es proporcional a 1/N². Aunque la distancia focal sea distinta, con el mismo número f la luminosidad de la imagen es la misma. La serie 1,4; 2; 2,8; 4; 5,6; 8 avanza en factores de √2, de modo que cada paso de diafragma reduce la luz a la mitad. Al cerrar el diafragma de f/1,4 a f/4, la luz se reduce a 1/8 aproximadamente (tres pasos)."
+      },
+      {
+        "h": "Cuanto mayor es el número, más oscura la imagen y más visible la difracción",
+        "p": "Como el número f tiene la apertura en el denominador, cuanto mayor es su valor, más pequeña es la apertura y más oscura la imagen. A la inversa, cuanto más se cierra el diafragma, más influye la difracción: el diámetro de la imagen de un punto (disco de Airy), 2,44λN, a 550 nm es de unos 3,8 µm a f/2,8 y de unos 21,5 µm a f/16. En sensores con píxeles de unos pocos µm, si se cierra demasiado el diafragma, el desenfoque por difracción se hace mayor que un píxel y los detalles finos pierden nitidez (pérdida de nitidez por difracción). Por otra parte, las aberraciones son mayores cerca de la apertura máxima, por lo que se considera que muchos objetivos rinden mejor cerrando unos dos o tres pasos desde el diafragma totalmente abierto."
+      },
+      {
+        "h": "Apertura numérica, número f efectivo y número T",
+        "p": "En un objetivo que cumple la condición de los senos y forma la imagen de un objeto en el infinito, el número f se relaciona con la apertura numérica del lado imagen mediante N ≈ 1/(2NA), de modo que f/2,8 equivale a NA ≈ 0,18. En el aire, NA no puede superar 1, por lo que f/0,5 es el límite teórico. Al fotografiar un objeto cercano con un aumento m, la distancia hasta la imagen crece y el número f efectivo aumenta a N(1 + m) aproximadamente, de modo que, a tamaño natural (1:1), un objetivo f/4 da una imagen tan oscura como f/8. El número T (T-stop), que se usa en los objetivos de cine, expresa la luminosidad incluyendo la transmitancia τ del objetivo, T = N/√τ; un objetivo f/2 con una transmitancia del 80 % equivale a T2,24 aproximadamente."
+      },
+      {
+        "h": "Uso en fotografía y en el diseño",
+        "p": "En fotografía, la exposición la fijan el número f, la velocidad de obturación y la sensibilidad. Si se aumenta el número f en un paso, puede recuperarse la misma exposición duplicando el tiempo de exposición. El número f también fija la profundidad de campo, que aumenta cuanto más se cierra el diafragma. En el diseño óptico, cuanto menor es el número f, mayores son los ángulos de focalización y más difícil es corregir la aberración esférica y la coma, por lo que los objetivos más luminosos necesitan más lentes y resultan más grandes y pesados. En los espectrómetros, los telescopios y el acoplamiento a fibras, también es importante igualar los números f (las aperturas numéricas) para reducir las pérdidas al pasar la luz de una parte a otra."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué un número f mayor da una imagen más oscura?",
+        "a": "Porque el número f es la distancia focal dividida por el diámetro de la pupila de entrada, de modo que, con la misma distancia focal, un valor mayor significa una apertura más pequeña. La iluminancia en el plano imagen es proporcional a 1/N², y cada vez que el número f se multiplica por √2 (un paso), la luz se reduce a la mitad."
+      },
+      {
+        "q": "¿Qué relación hay entre el número f y la apertura numérica?",
+        "a": "En un sistema que cumple la condición de los senos y forma la imagen de un objeto en el infinito, N ≈ 1/(2NA). f/2 equivale a NA ≈ 0,25, y f/1, a 0,5. Para objetos cercanos, la conversión se hace con el número f efectivo."
+      },
+      {
+        "q": "¿Qué diferencia hay entre el número f y el número T?",
+        "a": "El número f es la luminosidad geométrica, fijada solo por la distancia focal y el diámetro de la pupila; el número T es la luminosidad real, que incluye la transmitancia τ del objetivo, T = N/√τ. Como la transmitancia es inferior al 100 %, el número T es algo mayor que el número f."
+      }
     ]
   },
   "開口絞り": {
@@ -1619,6 +2127,38 @@
     "desc": "Diafragma que, en un sistema óptico, fija la anchura del haz de luz que procede de un punto objeto en el eje. Su imagen vista desde el lado del objeto es la pupila de entrada, y vista desde el lado de la imagen, la pupila de salida.",
     "aliases": [
       "diafragmas de apertura"
+    ],
+    "about": [
+      {
+        "h": "El diafragma que fija la anchura del haz",
+        "p": "Un sistema óptico tiene muchos elementos que limitan la luz: los bordes de las lentes, el tubo del objetivo, las láminas del diafragma. El diafragma de apertura es el que fija realmente la anchura del haz de luz que procede de un punto objeto en el eje. Su imagen vista desde el lado del objeto es la pupila de entrada, y vista desde el lado de la imagen, la pupila de salida, y el rayo que va del punto objeto en el eje al borde de la pupila de entrada (rayo marginal) fija la apertura numérica y el número f. Por otra parte, el rayo que parte de un punto objeto fuera del eje y pasa por el centro del diafragma de apertura es el rayo principal, y la posición de la imagen, la distorsión y la telecentricidad dependen de su trayectoria."
+      },
+      {
+        "h": "Cómo saber qué abertura es el diafragma de apertura",
+        "p": "Cuál es el diafragma de apertura no puede decidirse solo por el tamaño físico. Se forma la imagen de cada abertura del sistema en el espacio objeto a través de las lentes situadas delante de ella; la que se ve bajo el ángulo más pequeño desde el punto objeto en el eje es la pupila de entrada, y la abertura de la que procede es el diafragma de apertura. Si cambian la distancia del objeto o la posición del zoom, puede pasar a ser diafragma de apertura otra abertura distinta. El borde de la lente frontal solo es el diafragma de apertura cuando es el que se ve más pequeño; en la mayoría de los objetivos fotográficos, el diafragma de apertura son las láminas del diafragma situadas en la parte central."
+      },
+      {
+        "h": "Diferencias con el diafragma de campo y el viñeteo",
+        "p": "La extensión de lo que aparece en la imagen (el campo) no la fija el diafragma de apertura, sino un diafragma de campo situado cerca del plano imagen o el marco del sensor de imagen. El fenómeno por el que parte del haz procedente de un punto fuera del eje queda recortada por los bordes de las lentes y la periferia de la imagen se oscurece se llama viñeteo, y se distingue de la limitación del haz por el diafragma de apertura. Al cambiar el tamaño del diafragma de apertura cambian la luminosidad de la imagen, la profundidad de campo y las aberraciones, pero no lo que aparece en el encuadre. Al cerrar el diafragma, el viñeteo disminuye y el oscurecimiento de la periferia se atenúa porque el diafragma de apertura estrecha el haz y se reduce la parte recortada por los bordes."
+      },
+      {
+        "h": "Qué cambia con la posición del diafragma",
+        "p": "Al mover el diafragma cambia la trayectoria de los rayos principales, lo que modifica la magnitud de la coma, el astigmatismo y la distorsión. En cambio, la aberración esférica, que depende del haz en el eje, no depende de la posición del diafragma. Si el diafragma se coloca en el foco posterior del objetivo, la pupila de entrada queda en el infinito y se obtiene un sistema telecéntrico en el espacio objeto, en el que los rayos principales del lado del objeto son paralelos al eje óptico. Como el tamaño de la imagen no cambia aunque la distancia del objeto varíe un poco, estos sistemas se usan en la medición de dimensiones por imagen. Si se coloca en el foco anterior, la pupila de salida queda en el infinito y se obtiene un sistema telecéntrico en el espacio imagen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre el diafragma de apertura y el diafragma de campo?",
+        "a": "El diafragma de apertura fija la anchura del haz que procede de un punto objeto en el eje e influye en la luminosidad, la resolución y la profundidad de campo. El diafragma de campo fija la extensión de lo que aparece en la imagen y se sitúa cerca del plano imagen o de una imagen intermedia. Físicamente ambos son aberturas, pero sus funciones son completamente distintas."
+      },
+      {
+        "q": "¿Cómo se obtienen la pupila de entrada y la pupila de salida?",
+        "a": "La pupila de entrada es la imagen del diafragma de apertura vista desde el lado del objeto a través de las lentes situadas delante de él, y la pupila de salida, su imagen vista desde el lado de la imagen a través de las lentes situadas detrás. Se obtienen calculando la posición y el tamaño de la imagen del diafragma con las ecuaciones de la formación de imágenes paraxial."
+      },
+      {
+        "q": "¿Qué es un sistema óptico telecéntrico?",
+        "a": "Es un sistema en el que el diafragma de apertura se coloca en un foco, de modo que la pupila queda en el infinito. En un sistema telecéntrico en el espacio objeto, los rayos principales son paralelos al eje óptico y el aumento no cambia aunque la distancia del objeto varíe algo, por lo que se usa en la medición de dimensiones."
+      }
     ]
   },
   "ザイデル収差": {
@@ -1627,11 +2167,75 @@
     "aliases": [
       "aberración de Seidel"
     ],
-    "plural": true
+    "plural": true,
+    "about": [
+      {
+        "h": "Qué son las cinco aberraciones",
+        "p": "La aproximación paraxial calcula la formación de la imagen con sinθ ≈ θ, pero con aperturas y ángulos de campo mayores el término siguiente del desarrollo de sinθ desplaza la imagen. Si esta primera desviación se ordena según su dependencia de la coordenada de la pupila y de la altura de la imagen, se divide en cinco: aberración esférica, coma, astigmatismo, curvatura de campo y distorsión. Se llaman aberraciones de Seidel porque Seidel las ordenó sistemáticamente en el siglo XIX. Como son términos de tercer orden en la desviación de los rayos (aberración transversal), también se llaman aberraciones de tercer orden; expresadas como aberración de onda, corresponden a términos de cuarto orden. Todas son aberraciones monocromáticas."
+      },
+      {
+        "h": "Dependencia de la apertura y del campo",
+        "p": "Si y es el radio de la pupila y h la altura de la imagen, las aberraciones transversales son proporcionales a y³ en la aberración esférica, a y²h en la coma, a yh² en el astigmatismo y la curvatura de campo, y a h³ en la distorsión. Por eso, en los objetivos luminosos el problema es la aberración esférica; en los grandes angulares, la distorsión, y en los objetivos luminosos de gran angular, todas ellas. Esta dependencia muestra también que, al cerrar el diafragma (reducir y), la aberración esférica disminuye mucho, pero la distorsión no cambia. A medida que aumenta el ángulo de campo, el astigmatismo y la curvatura de campo se hacen rápidamente notables."
+      },
+      {
+        "h": "Relación con las aberraciones cromáticas y las de orden superior",
+        "p": "Las aberraciones de Seidel son monocromáticas; la aberración cromática axial y la aberración cromática lateral, debidas a que el índice de refracción varía con la longitud de onda, se tratan por separado. La teoría de tercer orden describe bien los sistemas con aberraciones pequeñas, pero en los objetivos luminosos de número f pequeño y con ángulos de campo grandes no pueden despreciarse las aberraciones de quinto orden y superiores, y a veces se dejan aberraciones de tercer orden para que se compensen con las de orden superior. La parte de la curvatura de campo que depende solo de las potencias y los índices de refracción de las lentes se expresa con la suma de Petzval, y se reduce combinando lentes convergentes y divergentes separadas."
+      },
+      {
+        "h": "Uso en el diseño de lentes",
+        "p": "Las aberraciones de Seidel pueden calcularse como contribuciones de cada superficie (sumas de Seidel) solo con el trazado de rayos paraxial, y muestran de un vistazo qué superficie produce qué aberración, por lo que se usan para decidir la configuración inicial de un diseño. Con el curvado de las lentes (bending), la posición del diafragma y la elección de los vidrios se redistribuyen las aberraciones para que se compensen entre sí. En las configuraciones simétricas respecto del diafragma, las aberraciones impares, como la coma, la distorsión y la aberración cromática lateral, se compensan (y desaparecen por completo cuando se usan a tamaño natural). Las prestaciones finales se evalúan y optimizan con el trazado de rayos real y con medidas como la MTF."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cuáles son las cinco aberraciones de Seidel?",
+        "a": "La aberración esférica, la coma, el astigmatismo, la curvatura de campo y la distorsión: las aberraciones monocromáticas de tercer orden que se deben a la desviación respecto de la aproximación paraxial. Las aberraciones cromáticas se deben a la variación del índice de refracción con la longitud de onda y no forman parte de estas cinco."
+      },
+      {
+        "q": "¿Por qué se llaman aberraciones de tercer orden?",
+        "a": "Porque, al desarrollar el error de posición del rayo en el plano imagen (aberración transversal) en función de la coordenada de la pupila y de la altura de la imagen, los primeros términos de error que aparecen son de tercer orden. Si las mismas aberraciones se expresan como error del frente de onda, son términos de cuarto orden. Proceden del término en θ³ del desarrollo de sinθ."
+      },
+      {
+        "q": "¿Se reducen las aberraciones de Seidel al cerrar el diafragma?",
+        "a": "Depende de la aberración. Con un radio de pupila y, la aberración esférica disminuye en proporción a y³, la coma en proporción a y², y el astigmatismo y la curvatura de campo en proporción a y. La distorsión no depende de y, por lo que no disminuye al cerrar el diafragma."
+      }
+    ]
   },
   "コマ収差": {
     "term": "Aberración de coma",
-    "desc": "Aberración por la que la imagen de un punto fuera del eje se alarga como la cola de un cometa, porque cada zona anular de la pupila forma la imagen con un aumento distinto. Es proporcional al cuadrado de la apertura y al ángulo de campo."
+    "desc": "Aberración por la que la imagen de un punto fuera del eje se alarga como la cola de un cometa, porque cada zona anular de la pupila forma la imagen con un aumento distinto. Es proporcional al cuadrado de la apertura y al ángulo de campo.",
+    "about": [
+      {
+        "h": "Por qué la imagen tiene forma de cometa",
+        "p": "La aberración de coma se produce porque, en la luz que procede de un punto objeto fuera del eje, los rayos que pasan por el centro de la pupila y los que pasan por las zonas anulares exteriores de la pupila forman la imagen con aumentos distintos. La luz de cada zona anular forma un pequeño círculo en el plano imagen, más grande y más alejado del centro cuanto más exterior es la zona, de modo que la imagen superpuesta tiene la forma de un cometa (coma), con una cabeza brillante y una cola que se ensancha. Estos círculos caben dentro de un sector de 60°, y la longitud de la cola en la dirección radial (meridional) es 1,5 veces su anchura en la dirección perpendicular (sagital) (la coma meridional es el triple de la coma sagital)."
+      },
+      {
+        "h": "Magnitud y cómo reducirla",
+        "p": "La aberración transversal de la coma es proporcional al cuadrado del radio de la pupila y a la altura de la imagen (el ángulo de campo). Si se multiplica el número f por √2, de modo que el diámetro de la pupila pase a 1/√2, la coma se reduce a la mitad. Si se corrige la aberración esférica y además se cumple la condición de los senos, la coma también desaparece; un sistema libre de ambas se llama aplanático. En una lente simple, la coma cambia con el curvado de la lente: con un índice de refracción de 1,5 y un objeto en el infinito, la forma de aberración esférica mínima y la de coma nula son parecidas, y en ambas la superficie convexa de curvatura más fuerte mira hacia la luz paralela."
+      },
+      {
+        "h": "Diferencias con la aberración esférica y el descentramiento",
+        "p": "La aberración esférica se produce incluso en la imagen en el eje y da un desenfoque simétrico alrededor del eje óptico, mientras que la coma es nula en el eje y produce en las imágenes fuera del eje un desenfoque asimétrico hacia un solo lado. Sin embargo, si una lente está inclinada o desplazada respecto del eje óptico (descentramiento), aparece un desenfoque similar a la coma incluso en el eje. Si en el ajuste de un telescopio las imágenes de las estrellas dejan una cola hacia un lado, lo primero que debe sospecharse es un error de alineación del eje óptico (colimación). Además, la distorsión solo desplaza la posición de la imagen sin desenfocar la imagen del punto en sí, por lo que puede distinguirse de la coma."
+      },
+      {
+        "h": "La coma en telescopios y microscopios",
+        "p": "Un espejo parabólico no tiene aberración esférica en el eje, pero fuera del eje su coma es grande, y cuanto menor es el número f del espejo, más se alargan las imágenes de las estrellas en la periferia del campo. El diseño Ritchey-Chrétien, una mejora del Cassegrain cuyos dos espejos corrigen también la coma, se ha adoptado en muchos grandes telescopios, como el telescopio espacial Hubble. Los objetivos de microscopio se diseñan para cumplir la condición de los senos, de modo que la imagen no se deteriore en el campo incluso con una apertura numérica alta. También las lentes que focalizan un láser producen coma si se usan inclinadas respecto del eje óptico, por lo que hay que tener cuidado."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo puede reducirse la aberración de coma?",
+        "a": "Al cerrar el diafragma y reducir la pupila, disminuye en proporción al cuadrado del radio de la pupila. En el diseño, se adopta una configuración aplanática que cumpla la condición de los senos y se eligen el curvado de las lentes y la posición del diafragma. En el montaje, también es importante eliminar el descentramiento."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la aberración de coma y la aberración esférica?",
+        "a": "La aberración esférica se produce incluso en el eje, y la imagen se desenfoca de forma simétrica alrededor del eje óptico. La coma se produce en los puntos objeto fuera del eje y da un desenfoque asimétrico que deja una cola hacia un lado, como un cometa. También difieren en su dependencia: el cubo de la apertura frente al cuadrado de la apertura por el ángulo de campo."
+      },
+      {
+        "q": "¿Por qué aparece una imagen parecida a la coma incluso en el centro de la imagen?",
+        "a": "A menudo la causa es la inclinación de una lente o un espejo, o su desplazamiento respecto del eje óptico (descentramiento). En un sistema montado idealmente, la coma es nula en el eje, por lo que una imagen con cola en el centro indica un error de montaje o de alineación del eje óptico."
+      }
+    ]
   },
   "色消しレンズ": {
     "term": "Lente acromática",
@@ -1640,6 +2244,38 @@
       "lentes acromáticas",
       "doblete acromático",
       "dobletes acromáticos"
+    ],
+    "about": [
+      {
+        "h": "Cómo se compensa el color con dos lentes",
+        "p": "El índice de refracción del vidrio es mayor a longitudes de onda más cortas, de modo que una lente simple tiene aberración cromática axial: la luz azul se enfoca más cerca y la roja más lejos. Una lente acromática (acromático) combina una lente convergente de vidrio crown, de baja dispersión, con una lente divergente de vidrio flint, de alta dispersión, y compensa solo el desplazamiento de color manteniendo la potencia del conjunto. En lentes delgadas en contacto, la condición para que dos longitudes de onda (normalmente la línea C, de 656,3 nm, y la línea F, de 486,1 nm) tengan el mismo foco es φ₁/V₁ + φ₂/V₂ = 0, donde φ es la potencia y V el número de Abbe."
+      },
+      {
+        "h": "Un ejemplo de reparto de potencias",
+        "p": "Si la potencia del conjunto es φ, se necesita φ₁ = φV₁/(V₁ − V₂) y φ₂ = −φV₂/(V₁ − V₂). Para una distancia focal de 100 mm con un crown de número de Abbe 60 y un flint de 30, la lente convergente es de 50 mm y la divergente de −100 mm. Cuanto menor es la diferencia entre los números de Abbe, mayor es la potencia de cada lente, las superficies se curvan más y aumentan las demás aberraciones, por lo que se eligen pares de vidrios con una diferencia grande. La mayoría de los acromáticos son dobletes cementados cuyas curvaturas se eligen además para reducir al mismo tiempo la aberración esférica y la coma."
+      },
+      {
+        "h": "Espectro secundario y apocromáticos",
+        "p": "En un acromático solo coinciden los focos de dos longitudes de onda; las demás, como la línea e verde (546,1 nm), quedan ligeramente desplazadas. Esto es el espectro secundario, que en los pares de vidrios ordinarios es de alrededor de 1/2000 de la distancia focal. En un telescopio de 1000 mm de distancia focal son unos 0,5 mm, que se ven como franjas de color alrededor de las estrellas brillantes. Un apocromático usa vidrio ED con dispersión parcial anómala o fluorita (CaF₂) para hacer coincidir el foco en tres longitudes de onda, y se emplea en telescopios y objetivos de microscopio de altas prestaciones."
+      },
+      {
+        "h": "Historia y otros métodos",
+        "p": "Newton pensaba que la aberración cromática de los telescopios refractores era inevitable y construyó un telescopio reflector, pero en el siglo XVIII se ideó la lente acromática que combina crown y flint, y Dollond la llevó a la práctica, lo que hizo avanzar mucho los telescopios refractores. Hoy, además de la combinación de vidrios, también pueden usarse superficies difractivas. La dispersión de una superficie difractiva es de sentido opuesto a la del vidrio, con un valor equivalente al número de Abbe de unos −3,45, negativo, de modo que basta añadir una superficie difractiva débil a una lente refractiva para corregir la aberración cromática; se usa en teleobjetivos ligeros, entre otros."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué una lente acromática combina una lente convergente y una divergente?",
+        "a": "Para compensar en sentido contrario el desplazamiento de color de la lente convergente con una lente divergente débil hecha de un vidrio de alta dispersión. Si se cumple la condición φ₁/V₁ + φ₂/V₂ = 0, los focos de dos longitudes de onda coinciden y el conjunto sigue actuando como una lente convergente."
+      },
+      {
+        "q": "¿Qué diferencia hay entre un acromático y un apocromático?",
+        "a": "Un acromático hace coincidir el foco en dos longitudes de onda y deja un desplazamiento residual en las demás (el espectro secundario). Un apocromático usa vidrio ED o fluorita para hacerlo coincidir en tres longitudes de onda, lo que reduce mucho las franjas de color que quedan."
+      },
+      {
+        "q": "¿Qué es el espectro secundario?",
+        "a": "Es el desplazamiento del foco que queda en las demás longitudes de onda en una lente acromática corregida para dos longitudes de onda. En los pares ordinarios de crown y flint es de alrededor de 1/2000 de la distancia focal, y en los telescopios de distancia focal larga se ve como franjas de color."
+      }
     ]
   },
   "MTF": {
@@ -1647,11 +2283,71 @@
     "desc": "Función de transferencia de modulación: indicador del rendimiento de formación de imagen que expresa, en función de la frecuencia espacial, cuánto se conserva en la imagen el contraste de un patrón sinusoidal de claros y oscuros.",
     "aliases": [
       "función de transferencia de modulación"
+    ],
+    "about": [
+      {
+        "h": "Definición de la MTF",
+        "p": "Cuando se forma la imagen de un objeto cuyo brillo varía de forma sinusoidal, la imagen es también una sinusoide del mismo periodo, pero su contraste (Imax − Imin)/(Imax + Imin) es menor que el del objeto. Esta razón, expresada en función de la frecuencia espacial (ciclos por milímetro), es la MTF. En la formación de imágenes incoherente, la imagen es la convolución del objeto con la función de dispersión de punto (PSF), de modo que el módulo de la función de transferencia óptica (OTF), la transformada de Fourier de la PSF, es la MTF, y su fase es la función de transferencia de fase (PTF). Vale 1 a frecuencia cero y normalmente disminuye cuanto más fino es el patrón."
+      },
+      {
+        "h": "Límite de difracción y frecuencia de corte",
+        "p": "Incluso en un sistema sin aberraciones con apertura circular, la difracción hace que la MTF disminuya suavemente con la frecuencia, hasta anularse en la frecuencia de corte fc = 1/(λN) = 2NA/λ. Con una longitud de onda de 0,55 µm y f/4, son unos 455 ciclos/mm. Como la MTF incoherente la fija la autocorrelación de la función pupila, su frecuencia de corte es el doble que con iluminación coherente (NA/λ). Las aberraciones hacen que la MTF quede por debajo de la curva limitada por difracción, y bajan sobre todo el contraste de las frecuencias intermedias. Comparando las MTF con distintos desenfoques y para cada altura de imagen fuera del eje, se ve el rendimiento en todo el plano imagen."
+      },
+      {
+        "h": "La MTF combinada con el sensor de imagen",
+        "p": "La MTF de una cámara completa se estima básicamente como el producto de las MTF del objetivo, el filtro óptico de paso bajo, la apertura de los píxeles, el procesamiento de imagen, etc. La frecuencia de Nyquist de un sensor de imagen con un paso de píxel p es 1/(2p), unos 167 ciclos/mm para píxeles de 3 µm. Si la MTF del objetivo se mantiene a frecuencias superiores a esta, el aliasing produce moiré. En la evaluación de objetivos se usan a menudo la MTF a una frecuencia de alrededor de la mitad de la frecuencia de Nyquist y gráficas que muestran la MTF en dos direcciones, radial y concéntrica, para cada altura de imagen."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué expresa la MTF?",
+        "a": "Expresa, para cada frecuencia espacial, cuánto contraste se conserva en la imagen cuando se fotografían franjas de distinta finura. Cuanto más alta se mantiene la MTF hasta frecuencias altas, con más claridad reproduce el objetivo los detalles finos."
+      },
+      {
+        "q": "¿Es 1 la MTF de una lente sin aberraciones?",
+        "a": "No. Debido a la difracción, la MTF disminuye con la frecuencia incluso sin aberraciones, y se anula en la frecuencia de corte 1/(λN). Cuanto mayor es el número f, más baja es la frecuencia de corte."
+      },
+      {
+        "q": "¿Puede conocerse la distorsión con la MTF?",
+        "a": "No. La distorsión solo desplaza la posición de la imagen y no reduce el contraste, por lo que no aparece en la MTF. Se evalúa por separado como porcentaje de distorsión."
+      }
     ]
   },
   "被写界深度": {
     "term": "Profundidad de campo",
-    "desc": "Intervalo de distancias en el lado del objeto, por delante y por detrás de la distancia enfocada, en el que el desenfoque de la imagen se mantiene dentro del círculo de confusión admisible. Es mayor cuanto más se cierra el diafragma y, a igual distancia, cuanto más corta es la distancia focal."
+    "desc": "Intervalo de distancias en el lado del objeto, por delante y por detrás de la distancia enfocada, en el que el desenfoque de la imagen se mantiene dentro del círculo de confusión admisible. Es mayor cuanto más se cierra el diafragma y, a igual distancia, cuanto más corta es la distancia focal.",
+    "about": [
+      {
+        "h": "El intervalo que se ve enfocado",
+        "p": "Un objetivo solo enfoca con exactitud a una distancia, pero por delante y por detrás de ella la imagen sigue viéndose nítida para el observador mientras el desenfoque se mantenga dentro del diámetro c del círculo de confusión admisible. Este intervalo de distancias en el lado del objeto es la profundidad de campo. El círculo de confusión admisible es un valor convencional que se fija según el tamaño al que se mira la fotografía y la distancia desde la que se mira; en el formato de 35 mm se usa a menudo alrededor de 0,03 mm. Cuanto más pequeño es el sensor, más se amplía la imagen para verla, por lo que también se toma un c más pequeño. Como el desenfoque aumenta de forma continua, el límite no es nítido."
+      },
+      {
+        "h": "Valores de referencia para el cálculo",
+        "p": "Con la distancia hiperfocal H ≈ f²/(Nc), al enfocar a una distancia s, el límite cercano es sH/(H + s) y el lejano, sH/(H − s). Con 50 mm, f/2,8 y c = 0,03 mm, enfocando a 3 m, H es de unos 29,8 m y el intervalo va de unos 2,73 a 3,34 m, con una profundidad de unos 0,61 m. El intervalo es más amplio por detrás del punto enfocado que por delante, unas 1,2 veces en este ejemplo. Si s es mucho menor que H, la profundidad es de unos 2Ncs²/f²: proporcional al número f y al cuadrado de la distancia, e inversamente proporcional al cuadrado de la distancia focal."
+      },
+      {
+        "h": "Con el mismo tamaño de imagen, no depende de la distancia focal",
+        "p": "«Cuanto más corta es la distancia focal, mayor es la profundidad» vale cuando se fotografía desde la misma distancia. Si con un objetivo de 100 mm se fotografía desde 6 m, con el mismo tamaño que con 50 mm desde 3 m, la profundidad vuelve a ser de unos 0,61 m, casi la misma. Cuando el sujeto se fotografía con el mismo aumento, la profundidad de campo la fijan principalmente el número f y el aumento. Sin embargo, la forma en que se desenfoca el fondo sí cambia con la distancia focal. Además, el intervalo de error de enfoque admisible en el lado de la imagen se llama profundidad de foco, y es de ±Nc aproximadamente: ±0,24 mm a f/8 con c = 0,03 mm."
+      },
+      {
+        "h": "Uso en fotografía y en instrumentos ópticos",
+        "p": "En los paisajes, si se enfoca a la distancia hiperfocal, todo lo que hay desde H/2 hasta el infinito queda dentro de la profundidad de campo. En los retratos, se abre el diafragma para desenfocar el fondo. Sin embargo, si se cierra demasiado el diafragma para ganar profundidad, el desenfoque por difracción (unos 21 µm de diámetro a f/16) se acerca al círculo de confusión admisible y toda la imagen pierde nitidez, por lo que el número f se elige equilibrando la profundidad y la resolución. En los microscopios, la profundidad es extremadamente pequeña, del orden de λ/NA², y al observar muestras tridimensionales con gran aumento se usa mucho el apilamiento de enfoque, que combina imágenes tomadas con distintas posiciones de enfoque."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la profundidad de campo y la profundidad de foco?",
+        "a": "La profundidad de campo es el intervalo de distancias, en el lado del objeto, que se ven enfocadas. La profundidad de foco es el intervalo, en el lado de la imagen, en el que el sensor puede desplazarse sin que la imagen deje de verse enfocada, de ±Nc aproximadamente (N es el número f y c el círculo de confusión admisible). Ambas aumentan al cerrar el diafragma."
+      },
+      {
+        "q": "¿Cómo puede aumentarse la profundidad de campo?",
+        "a": "Lo básico es cerrar el diafragma para aumentar el número f, alejarse del sujeto y, a la misma distancia, usar un objetivo de distancia focal más corta. Sin embargo, si se cierra demasiado el diafragma, la difracción hace perder nitidez a toda la imagen, por lo que conviene elegir un equilibrio entre la profundidad y la resolución."
+      },
+      {
+        "q": "¿Qué valor debe tener el círculo de confusión admisible?",
+        "a": "No hay un valor fijo: es una convención que se fija según el tamaño al que se mira la imagen y la distancia desde la que se mira. En el formato de 35 mm se usa a menudo alrededor de 0,03 mm, y cuanto más pequeño es el sensor, menor es el valor. Si las imágenes de un sensor de muchos píxeles se miran ampliadas, se usa un valor aún menor."
+      }
+    ]
   },
   "ストレール比": {
     "term": "Razón de Strehl",
@@ -1659,6 +2355,38 @@
     "aliases": [
       "relación de Strehl",
       "cociente de Strehl"
+    ],
+    "about": [
+      {
+        "h": "Medir el rendimiento por el brillo central de la imagen de un punto",
+        "p": "La razón de Strehl es el cociente entre la intensidad central de la imagen de un punto en un sistema con aberraciones y la de un sistema sin aberraciones, limitado por difracción, con la misma apertura. Las aberraciones dispersan la luz del centro de la imagen del punto hacia su alrededor, por lo que la intensidad central disminuye. El valor ideal es 1, y disminuye a medida que aumentan las aberraciones. Como se expresa con un solo número, se usa mucho para evaluar sistemas de altas prestaciones con aberraciones pequeñas. La intensidad central de la imagen de un punto es también la integral de la función de transferencia óptica (OTF) sobre la frecuencia espacial, por lo que la razón de Strehl puede expresarse también como el cociente entre las integrales de las OTF del sistema con aberraciones y del sistema sin ellas."
+      },
+      {
+        "h": "Estimación a partir de la aberración de onda RMS",
+        "p": "Cuando las aberraciones son pequeñas, puede estimarse con la aproximación de Maréchal S ≈ exp[−(2πσ/λ)²], donde σ es la aberración de onda RMS: unos 0,91 con σ = λ/20 y unos 0,67 con λ/10. El criterio que toma S ≥ 0,8 como referencia de sistema limitado por difracción corresponde a σ ≤ λ/14. Con la misma σ, la razón es menor a longitudes de onda más cortas: un sistema con σ = 50 nm tiene unos 0,96 a 1550 nm, pero unos 0,67 a 500 nm. Como la aproximación deja de valer con aberraciones mayores, conviene usarla para juzgar valores en torno a 0,8."
+      },
+      {
+        "h": "Relación con el valor P-V y el criterio de Rayleigh",
+        "p": "El criterio de Rayleigh, que admite una diferencia entre pico y valle (valor P-V) de la aberración de onda de λ/4, corresponde a unos λ/14 RMS cuando solo hay desenfoque. En el desenfoque, la razón entre P-V y RMS es √12 ≈ 3,46, de modo que λ/4 P-V equivale a unos λ/13,9 RMS, con una razón de Strehl de unos 0,81. Sin embargo, la razón entre P-V y RMS cambia con el tipo de aberración, y un error local pequeño puede dar un valor P-V grande. Por eso, para predecir la calidad de la imagen, el valor RMS es más adecuado que el valor P-V."
+      },
+      {
+        "h": "Dónde se usa",
+        "p": "La razón de Strehl se usa para evaluar los telescopios astronómicos y la óptica adaptativa (la técnica que corrige con espejos deformables los frentes de onda perturbados por la turbulencia atmosférica), los sistemas ópticos de focalización de láseres, los objetivos de microscopio y los componentes ópticos medidos con interferómetros. En el procesado láser y en las comunicaciones ópticas, una razón de Strehl menor reduce la intensidad central del punto focal y la eficiencia de acoplamiento a una fibra. En un espejo, el error del frente de onda es el doble del error de forma de la superficie, por lo que la precisión de la superficie debe ser la mitad de la exigida al frente de onda. Cuando se mide directamente la imagen del punto, hay que normalizarla correctamente por la potencia total."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué significa una razón de Strehl de 0,8?",
+        "a": "Significa que la intensidad central de la imagen de un punto es el 80 % de la de un sistema ideal sin aberraciones. Corresponde a una aberración de onda RMS de unos λ/14 y se usa mucho como referencia práctica de sistema limitado por difracción (el criterio de Maréchal)."
+      },
+      {
+        "q": "¿Cómo se calcula la razón de Strehl?",
+        "a": "Si las aberraciones son pequeñas, se obtiene a partir de la aberración de onda RMS σ con la aproximación de Maréchal S ≈ exp[−(2πσ/λ)²]: unos 0,67 para λ/10 y unos 0,91 para λ/20. Para un valor exacto, se calcula la imagen del punto a partir del frente de onda, o se mide la imagen del punto y se compara con el valor ideal."
+      },
+      {
+        "q": "¿Conviene expresar la aberración de onda con el valor P-V o con el valor RMS?",
+        "a": "Para predecir la calidad de la imagen es más adecuado el valor RMS. El valor P-V se ve fácilmente dominado por un único error grande, y un mismo valor P-V puede dar razones de Strehl muy distintas según la forma de la aberración. En las especificaciones se indican a menudo ambos."
+      }
     ]
   },
   "比視感度": {
@@ -1667,23 +2395,179 @@
     "aliases": [
       "función de eficiencia luminosa",
       "eficiencia luminosa espectral relativa"
+    ],
+    "about": [
+      {
+        "h": "Eficiencia luminosa espectral en visión fotópica y escotópica",
+        "p": "En entornos luminosos actúan los conos, y la eficiencia luminosa espectral de la visión fotópica V(λ) tiene su máximo en unos 555 nm (amarillo verdoso) y disminuye bruscamente hacia 400 nm y 700 nm. Por ejemplo, vale unos 0,11 a 650 nm y unos 0,04 a 450 nm. En entornos oscuros actúan los bastones, y el máximo de la eficiencia luminosa espectral de la visión escotópica V′(λ) se desplaza a unos 507 nm. El efecto Purkinje, por el que al anochecer las flores rojas se ven oscuras y las azules relativamente claras, se debe a este desplazamiento. Ambas son funciones estándar que la CIE definió como promedio de muchos observadores."
+      },
+      {
+        "h": "Conversión de magnitudes radiométricas en fotométricas",
+        "p": "Una magnitud fotométrica se obtiene multiplicando el espectro de la magnitud radiométrica por V(λ), integrando y multiplicando por la eficacia luminosa máxima Km = 683 lm/W. Para el flujo luminoso, Φv = 683 ∫ Φe(λ) V(λ) dλ. 1 W de luz monocromática de 555 nm equivale a 683 lm; a 532 nm (V ≈ 0,88), a unos 600 lm, y en el infrarrojo o el ultravioleta, donde V ≈ 0, a casi 0 lm. Este valor de 683 procede de la definición de la candela (1 cd para luz monocromática de 540 THz con una intensidad radiante de 1/683 W/sr). En visión escotópica, la eficacia luminosa máxima es de unos 1700 lm/W."
+      },
+      {
+        "h": "Fotómetros y corrección de V(λ)",
+        "p": "En los luxómetros y los medidores de luminancia, la respuesta espectral del elemento detector debe ajustarse a V(λ). La responsividad de un fotodiodo de silicio tiene su máximo en torno a 900 nm, por lo que se combina con filtros de corrección de vidrio coloreado o de capas interferenciales para aproximarla a V(λ). Si la corrección es imperfecta, se producen errores al medir LED blancos o LED de un solo color cuyo espectro difiere del de la fuente usada para la calibración (normalmente el iluminante patrón A, de unos 2856 K). Para reducir estos errores, también se usa el método de medir el espectro con un espectrorradiómetro y aplicar después V(λ) mediante cálculo."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Por qué tiene su máximo en 555 nm?",
+        "a": "Porque la suma de las sensibilidades de los conos L y M, que son los que más contribuyen al brillo, es máxima en torno al amarillo verdoso. También se considera que está relacionado con que el espectro de la luz solar es intenso en el visible y con la evolución del ojo."
+      },
+      {
+        "q": "¿Cuántos lúmenes tiene un láser infrarrojo?",
+        "a": "Fuera del visible, en el infrarrojo o el ultravioleta, V(λ) es casi 0, por lo que el flujo luminoso es casi 0 lm. Aunque el ojo no perciba brillo, sí llega energía a la retina y a la piel, por lo que la seguridad se evalúa con magnitudes radiométricas (W)."
+      },
+      {
+        "q": "¿Con qué conviene comparar el brillo de las luces?",
+        "a": "Para comparar el brillo visible se usan magnitudes fotométricas, como el flujo luminoso (lm) o la iluminancia (lx). Aunque la potencia en vatios sea la misma, el brillo es menor cuanto más se aleja la longitud de onda de 555 nm y cuanto más infrarrojo contiene la fuente."
+      }
     ]
   },
   "光束": {
     "term": "Flujo luminoso",
-    "desc": "Magnitud fotométrica que expresa la cantidad de luz que sale de una fuente o atraviesa una superficie, ponderada por la eficiencia luminosa espectral. Su unidad es el lumen (lm); su equivalente radiométrico es el flujo radiante (W)."
+    "desc": "Magnitud fotométrica que expresa la cantidad de luz que sale de una fuente o atraviesa una superficie, ponderada por la eficiencia luminosa espectral. Su unidad es el lumen (lm); su equivalente radiométrico es el flujo radiante (W).",
+    "about": [
+      {
+        "h": "La cantidad de luz ponderada por la sensibilidad del ojo",
+        "p": "El flujo luminoso es la potencia de la luz (flujo radiante) ponderada por la sensibilidad del ojo humano, y su unidad es el lumen (lm). Se obtiene multiplicando el espectro del flujo radiante Φe(λ) por la eficiencia luminosa espectral V(λ), integrando y multiplicando por 683 lm/W: Φv = 683∫Φe(λ)V(λ)dλ. 1 W de luz monocromática de 555 nm equivale a 683 lm, de modo que 1 lm corresponde a unos 1,46 mW a esta longitud de onda. En el infrarrojo y el ultravioleta, V(λ) es casi 0, por lo que, por intensos que sean, su flujo luminoso es casi 0. El flujo luminoso es la magnitud fotométrica básica que expresa cuánta luz visible emite una fuente en total."
+      },
+      {
+        "h": "Valores típicos de eficacia luminosa",
+        "p": "La eficacia luminosa de una fuente de luz se expresa como flujo luminoso por vatio de potencia eléctrica consumida (lm/W). Las lámparas incandescentes radian sobre todo en el infrarrojo, por lo que solo dan unos 10 a 15 lm/W, mientras que la iluminación LED supera habitualmente los 100 lm/W. Según el etiquetado japonés de las bombillas LED, el equivalente a una lámpara incandescente de tipo 60 son 810 lm; 810 lm con 7,3 W son unos 111 lm/W, mientras que una lámpara incandescente de 60 W da unos 13,5 lm/W. La «eficacia luminosa de la fuente» (por vatio eléctrico) y la «eficacia luminosa de la radiación» (por vatio de luz) tienen denominadores distintos y son magnitudes diferentes, por lo que hay que tener cuidado al compararlas."
+      },
+      {
+        "h": "Relación con la intensidad luminosa, la iluminancia y la luminancia",
+        "p": "El flujo luminoso es la cantidad total de luz que sale de una fuente; dividiéndolo por el ángulo sólido o por el área se obtienen otras magnitudes fotométricas. Por unidad de ángulo sólido es la intensidad luminosa (cd = lm/sr); por unidad de área de la superficie que recibe la luz, la iluminancia (lx = lm/m²), y además por unidad de ángulo sólido en la dirección de observación, la luminancia (cd/m²). Incluso con la misma fuente de 1000 lm, si la luz se concentra en un intervalo estrecho con un reflector, aumentan la intensidad luminosa en esa dirección y la iluminancia de la superficie iluminada, pero el flujo luminoso no aumenta. Es importante distinguir con qué magnitud se está comparando el «brillo»."
+      },
+      {
+        "h": "Cómo se mide el flujo luminoso",
+        "p": "El flujo luminoso total de una fuente se obtiene encendiéndola dentro de una esfera integradora con la superficie interior blanca y difusora, y midiendo con un detector ajustado a V(λ) la luz, que se ha hecho uniforme tras muchas reflexiones en la pared. Lo habitual es determinar el valor por comparación con una fuente de referencia. Las luminarias grandes se miden con un goniofotómetro, que mueve un detector alrededor de la fuente para medir la intensidad luminosa en cada dirección, e integra sobre todas las direcciones para obtener el flujo luminoso total. Cuando el espectro difiere de una fuente a otra, como en los LED blancos, también se usa el método de medir el espectro con un espectrorradiómetro y calcular el flujo."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre lúmenes y vatios?",
+        "a": "Los vatios miden la potencia de la luz (flujo radiante) o el consumo eléctrico; los lúmenes miden la cantidad de luz ponderada por la sensibilidad del ojo V(λ). El mismo 1 W equivale a 683 lm a 555 nm, pero a casi 0 lm en el infrarrojo. El brillo de la iluminación se compara en lúmenes."
+      },
+      {
+        "q": "¿Qué diferencia hay entre lúmenes y lux?",
+        "a": "Los lúmenes (lm) son la cantidad total de luz que emite una fuente; el lux (lx) es el flujo luminoso por unidad de área que llega a una superficie, con 1 lx = 1 lm/m². Con la misma fuente, cuanto más lejos está la superficie iluminada, o cuanto más amplia es, menor es el valor en lux."
+      },
+      {
+        "q": "¿Qué brillo tiene una bombilla LED?",
+        "a": "Según el etiquetado japonés, el equivalente a una bombilla incandescente de tipo 60 son 810 lm. La potencia depende del producto, pero un LED con una eficacia luminosa de alrededor de 100 lm/W necesita unos 8 W, entre 1/7 y 1/8 aproximadamente de la potencia de una bombilla incandescente de 60 W, para dar el mismo flujo luminoso."
+      }
+    ]
   },
   "光度": {
     "term": "Intensidad luminosa",
-    "desc": "Flujo luminoso por unidad de ángulo sólido que emite una fuente puntual en una dirección. Su unidad es la candela (cd = lm/sr). Para una fuente uniforme en todas las direcciones, es el flujo luminoso total dividido entre 4π."
+    "desc": "Flujo luminoso por unidad de ángulo sólido que emite una fuente puntual en una dirección. Su unidad es la candela (cd = lm/sr). Para una fuente uniforme en todas las direcciones, es el flujo luminoso total dividido entre 4π.",
+    "about": [
+      {
+        "h": "La intensidad de la luz en una dirección",
+        "p": "La intensidad luminosa es el flujo luminoso por unidad de ángulo sólido que una fuente puntual emite en una dirección, y su unidad es la candela (cd = lm/sr). La candela es una de las siete unidades básicas del SI. En 1979 se definió como la intensidad luminosa, en una dirección, de una luz monocromática de frecuencia 540×10¹² Hz (unos 555 nm) cuya intensidad radiante en esa dirección es de 1/683 W/sr, y en la revisión de 2019 este valor de 683 se mantuvo fijo como constante de la definición. El nombre procede de la vela (candela), y la intensidad luminosa de una vela es de aproximadamente 1 cd."
+      },
+      {
+        "h": "Conversión con el flujo luminoso",
+        "p": "Para una fuente puntual que emite de forma uniforme en todas las direcciones, la intensidad luminosa es el flujo luminoso total dividido entre 4π, de modo que 810 lm dan unas 64 cd. Para una fuente como una superficie lambertiana, con I₀ de frente e I₀cosθ a un ángulo θ, el flujo luminoso total es πI₀, de modo que una fuente superficial de 100 lm tiene una intensidad luminosa frontal de unas 31,8 cd. En cambio, si la luz se concentra en un cono de 10° de semiángulo (unos 0,0955 sr), incluso 1 lm da unas 10,5 cd en esa dirección. Como con el mismo flujo luminoso la intensidad luminosa cambia mucho según la distribución de la luz, las luminarias indican la intensidad luminosa en cada dirección mediante curvas de distribución de intensidad luminosa."
+      },
+      {
+        "h": "Relación con la iluminancia y la condición de distancia",
+        "p": "La iluminancia sobre una superficie situada a una distancia r de la fuente es E = I cosθ/r², donde θ es el ángulo de incidencia, por lo que puede obtenerse a partir de la intensidad luminosa. Esta ley del inverso del cuadrado vale lo bastante lejos como para que la fuente pueda considerarse puntual, y una regla práctica (la regla de las cinco veces) dice que el error es pequeño a partir de unas cinco veces el tamaño de la fuente. Al medir de cerca una fuente superficial grande, los resultados se apartan de la ley del inverso del cuadrado. La intensidad luminosa es una propiedad de la fuente que no depende de la distancia, mientras que la iluminancia depende de la posición de la superficie que recibe la luz. La intensidad luminosa se mide básicamente midiendo la iluminancia a una distancia suficiente de la fuente y calculando E × r²."
+      },
+      {
+        "h": "Uso en LED y en luces de señalización",
+        "p": "En las especificaciones de los LED de tipo bala, la intensidad luminosa se indica en mcd (milicandelas) junto con el ángulo de visión. Cuanto más estrecho es el ángulo de visión de un LED, mayor es su intensidad luminosa frontal con el mismo flujo luminoso, por lo que el valor de la intensidad luminosa no basta para comparar el brillo global de las fuentes. Las normas de los semáforos, los faros y las luces de los automóviles, y las luces de aviación y marítimas establecen la intensidad luminosa necesaria en direcciones determinadas. Si se miran tanto la intensidad luminosa central (cd) como el flujo luminoso (lm) de un foco, se sabe en qué medida concentra la luz en un intervalo estrecho."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre candelas y lúmenes?",
+        "a": "Los lúmenes son la cantidad total de luz que emite una fuente (flujo luminoso), y las candelas, el flujo luminoso por unidad de ángulo sólido en una dirección (intensidad luminosa), con 1 cd = 1 lm/sr. Para una fuente uniforme en todas las direcciones, la intensidad luminosa es el flujo luminoso total dividido entre 4π."
+      },
+      {
+        "q": "¿Cómo se obtiene la iluminancia a partir de la intensidad luminosa?",
+        "a": "A distancias en las que la fuente puede considerarse puntual, E = I cosθ/r². Si la intensidad luminosa en esa dirección es de 200 cd, una superficie situada de frente a 2 m recibe 50 lx, y a 4 m, 12,5 lx. Si la superficie está inclinada 30° respecto de la luz, se multiplica por cos30° ≈ 0,87 y se obtienen unos 43 lx a 2 m."
+      },
+      {
+        "q": "¿Qué significa mcd en los LED?",
+        "a": "Son milicandelas (1/1000 cd), y expresan la intensidad luminosa de un LED en la dirección frontal. Cuanto más estrecho es el ángulo de visión, mayor es el valor con el mismo flujo luminoso, por lo que el brillo global de los LED se compara teniendo en cuenta también el ángulo de visión, o mediante el flujo luminoso (lm)."
+      }
+    ]
   },
   "照度": {
     "term": "Iluminancia",
-    "desc": "Flujo luminoso que incide sobre una superficie por unidad de área. Su unidad es el lux (lx = lm/m²). La iluminancia producida por una fuente puntual es inversamente proporcional al cuadrado de la distancia y proporcional al coseno del ángulo de incidencia."
+    "desc": "Flujo luminoso que incide sobre una superficie por unidad de área. Su unidad es el lux (lx = lm/m²). La iluminancia producida por una fuente puntual es inversamente proporcional al cuadrado de la distancia y proporcional al coseno del ángulo de incidencia.",
+    "about": [
+      {
+        "h": "La cantidad de luz que llega a una superficie",
+        "p": "La iluminancia es el flujo luminoso que incide sobre una superficie por unidad de área, y su unidad es el lux (lx = lm/m²). Equivale a la irradiancia (W/m²) ponderada por la eficiencia luminosa espectral. Incluso con la misma fuente, la iluminancia cambia si la superficie se aleja o se inclina: desde una fuente puntual, E = I cosθ/r², es inversamente proporcional al cuadrado de la distancia y proporcional al coseno del ángulo de incidencia. En un suelo alejado del punto situado justo debajo de una lámpara de techo actúan a la vez la distancia y la inclinación, de modo que la iluminancia disminuye como cos³θ y se vuelve desigual. Un pie-candela (lm/ft²) equivale a unos 10,76 lx."
+      },
+      {
+        "h": "Valores de iluminancia del entorno cotidiano",
+        "p": "Los valores de la iluminancia difieren en órdenes de magnitud. La luz solar directa en un día despejado da unos 100000 lx; el exterior en un día nublado, de varios miles a decenas de miles de lx; la superficie de una mesa de oficina, de unos cientos a unos mil lx, y el suelo en una noche de luna llena, menos de 1 lx. Como el ojo se adapta a este amplio intervalo, las diferencias son difíciles de percibir y solo se aprecian al medirlas. Las normas de iluminación fijan valores de referencia de la iluminancia necesaria para cada tipo de tarea, y cuanto más fino es el trabajo, mayor es la iluminancia exigida. Los exposímetros fotográficos y el ajuste automático del brillo de los teléfonos inteligentes también usan sensores de iluminancia."
+      },
+      {
+        "h": "Precauciones con los luxómetros",
+        "p": "Un luxómetro debe cumplir dos requisitos: la corrección de V(λ), que ajusta la sensibilidad espectral del detector a V(λ), y la respuesta a la incidencia oblicua (corrección del coseno), que recibe la luz oblicua en proporción al coseno de su ángulo. Si las correcciones son imperfectas, se producen errores con LED blancos cuyo espectro difiere del de la fuente usada para la calibración y con la luz que llega en dirección oblicua. El detector se coloca orientado igual que la superficie que se quiere medir, y evitando proyectar sobre él la propia sombra. La iluminancia es la cantidad de luz que llega a una superficie, por lo que, con la misma iluminancia, el brillo visible (luminancia) difiere mucho según que el objeto iluminado sea blanco o negro."
+      },
+      {
+        "h": "Cálculos en el diseño de iluminación",
+        "p": "La iluminancia media de una sala se estima a menudo con el método de los lúmenes, E = ΦUM/A, a partir del flujo luminoso total Φ de las fuentes, el factor de utilización U (la fracción de la luz de las fuentes que llega al plano de trabajo), el factor de mantenimiento M (que tiene en cuenta la suciedad y el envejecimiento) y la superficie del suelo A. Para obtener 500 lx en una sala de 10 m² con U = 0,6 y M = 0,8, se necesita un flujo luminoso total de unos 10400 lm. La iluminancia en cada punto se calcula con el método punto por punto a partir de la intensidad luminosa y la distancia de cada fuente, y se suman las contribuciones. La uniformidad de la iluminancia (la razón entre el mínimo y la media) es también un indicador importante de la facilidad del trabajo."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre lux y lúmenes?",
+        "a": "Los lúmenes son la cantidad total de luz que emite una fuente, y el lux, el flujo luminoso que llega a cada metro cuadrado de una superficie. Si 1000 lm inciden de forma uniforme sobre 1 m², se obtienen 1000 lx; si se reparten sobre 10 m², 100 lx."
+      },
+      {
+        "q": "¿Cómo cambia la iluminancia con la distancia?",
+        "a": "La iluminancia producida por una fuente puntual es inversamente proporcional al cuadrado de la distancia, de modo que al duplicar la distancia se reduce a la cuarta parte. Si la superficie está inclinada respecto de la luz, se multiplica además por el coseno del ángulo de incidencia. Con fuentes grandes y cercanas, los resultados se apartan de la ley del inverso del cuadrado."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la iluminancia y la luminancia?",
+        "a": "La iluminancia es la cantidad de luz que llega a una superficie (lx), y la luminancia, el brillo con que se ve esa superficie desde una dirección de observación (cd/m²). Con la misma iluminancia, el papel blanco tiene mayor luminancia que el papel negro. En un difusor perfecto, la luminancia es reflectancia × iluminancia/π."
+      }
+    ]
   },
   "輝度": {
     "term": "Luminancia",
-    "desc": "Magnitud que expresa el brillo con que se ve una superficie desde una dirección, como flujo luminoso por unidad de área y por unidad de ángulo sólido. Su unidad es cd/m². No depende de la distancia de observación y se usa para el brillo de las pantallas."
+    "desc": "Magnitud que expresa el brillo con que se ve una superficie desde una dirección, como flujo luminoso por unidad de área y por unidad de ángulo sólido. Su unidad es cd/m². No depende de la distancia de observación y se usa para el brillo de las pantallas.",
+    "about": [
+      {
+        "h": "El brillo en la dirección de observación",
+        "p": "La luminancia es la luz que sale de un punto de una superficie en la dirección de observación, dividida por el área vista desde esa dirección (el área aparente) y por el ángulo sólido; su unidad es cd/m². El «nit», que se usa a menudo para el brillo de las pantallas, es un nombre corriente de la misma unidad. Es la magnitud fotométrica que corresponde de forma más directa al brillo visible: con la misma iluminación, el papel blanco se ve más claro que el negro porque su luminancia es mayor. Si se piensa en la iluminancia como la luz «que entra en una superficie» y en la luminancia como la luz «que va de la superficie hacia el ojo», es fácil distinguirlas. Su equivalente radiométrico es la radiancia, W/(m²·sr)."
+      },
+      {
+        "h": "Conversión a partir de la iluminancia y valores habituales",
+        "p": "Si se ilumina con una iluminancia E un difusor perfecto (superficie lambertiana) de reflectancia ρ, la luminancia es L = ρE/π, la misma desde cualquier dirección de observación. Un papel blanco de reflectancia 0,9 iluminado con 300 lx tiene unas 86 cd/m². En las pantallas, el blanco de referencia de sRGB es de 80 cd/m², los monitores corrientes llegan a unos cientos de cd/m², y algunas pantallas HDR producen picos de 1000 cd/m² o más. La norma de señal HDR (PQ) abarca hasta 10000 cd/m². La luminancia del sol a mediodía llega a unos 1,6×10⁹ cd/m²."
+      },
+      {
+        "h": "Por qué no depende de la distancia",
+        "p": "Al alejarse de una superficie, la luz que entra en el ojo disminuye en proporción inversa al cuadrado de la distancia, pero el área de la imagen en la retina se reduce en la misma proporción, de modo que la iluminancia en la retina no cambia y la superficie se ve igual de brillante. Por eso la luminancia no depende de la distancia de observación. En los sistemas ópticos pasivos, como las lentes, la luminancia de la imagen no puede superar la del objeto y, sin pérdidas, es igual dentro del mismo medio (conservación de la luminancia). Aunque se concentre la luz del sol con una lupa, no puede formarse una imagen de luminancia mayor que la de la superficie del sol; lo que aumenta al concentrar la luz es la iluminancia, no la luminancia."
+      },
+      {
+        "h": "Percepción del brillo y medición",
+        "p": "El brillo que percibe una persona no es proporcional a la luminancia, sino que varía aproximadamente de forma logarítmica o como una raíz cúbica. En la claridad CIE, L* = 116(Y/Yn)^(1/3) − 16, un gris con el 18 % de la luminancia del blanco tiene L* ≈ 49,5, casi en el punto medio. La cantidad de luz que llega a la retina se expresa en troland (Td), la luminancia multiplicada por el área de la pupila; al observar 100 cd/m² con una pupila de 3 mm de diámetro se obtienen unos 707 Td. Un medidor de luminancia forma con una lente la imagen de la superficie y mide la luz de una parte de ella con un detector ajustado a V(λ). Se usa para medir pantallas y para evaluar el deslumbramiento."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Son lo mismo cd/m² y nit?",
+        "a": "Sí. El nit es un nombre corriente de cd/m²; no es un nombre oficial de unidad del SI, pero se usa mucho para indicar el brillo de las pantallas. Una pantalla de 1000 nit tiene una luminancia de pico de 1000 cd/m²."
+      },
+      {
+        "q": "¿Cómo se obtiene la luminancia a partir de la iluminancia?",
+        "a": "En un difusor perfecto, L = ρE/π (ρ es la reflectancia). Una superficie de reflectancia 0,5 iluminada con 400 lx tiene unas 64 cd/m². Se divide entre π porque la luz de un difusor se reparte por el hemisferio con una distribución en cosθ."
+      },
+      {
+        "q": "¿Por qué no cambia la luminancia al mirar desde lejos?",
+        "a": "Porque, al alejarse, la luz que entra en el ojo disminuye, pero el área de la imagen en la retina se reduce en la misma proporción, de modo que la luz por unidad de área no cambia. Si no hay atenuación atmosférica, la luminancia de una superficie no depende de la distancia de observación."
+      }
+    ]
   },
   "等色関数": {
     "term": "Funciones de igualación de color",
@@ -1691,13 +2575,73 @@
     "aliases": [
       "función de igualación de color"
     ],
-    "plural": true
+    "plural": true,
+    "about": [
+      {
+        "h": "Experimentos de igualación de color y valores triestímulo",
+        "p": "La visión del color humana está determinada por las respuestas de tres tipos de conos, por lo que cualquier color puede igualarse con una combinación de cantidades de tres estímulos primarios (por ejemplo, luces monocromáticas roja, verde y azul). Las funciones de igualación de color expresan, en función de la longitud de onda, las cantidades de estímulos primarios necesarias para igualar la luz monocromática de cada longitud de onda. Los tres valores que se obtienen multiplicando el espectro de una luz S(λ) por las funciones de igualación de color e integrando se llaman valores triestímulo, y las luces con los mismos valores triestímulo se ven del mismo color aunque sus espectros sean distintos (metamerismo). Esta propiedad es también la razón por la que una pantalla puede representar muchos colores solo con luz roja, verde y azul."
+      },
+      {
+        "h": "El sistema colorimétrico XYZ CIE 1931",
+        "p": "Si se toman como estímulos primarios un rojo, un verde y un azul reales, una parte de las funciones de igualación de color se hace negativa (porque, para lograr la igualación, hay que añadir un primario al lado de la luz monocromática). En 1931, la CIE transformó linealmente estas funciones en las funciones de igualación de color x̄(λ), ȳ(λ) y z̄(λ), basadas en estímulos primarios imaginarios y positivas en todo el intervalo. Al hacerlo, igualó ȳ(λ) a la eficiencia luminosa espectral de la visión fotópica V(λ), de modo que el valor triestímulo Y es proporcional a magnitudes fotométricas como la luminancia. X se calcula como X = k∫S x̄ dλ, e Y y Z se obtienen de la misma forma."
+      },
+      {
+        "h": "Coordenadas de cromaticidad y diagrama de cromaticidad",
+        "p": "Dividiendo los valores triestímulo por su suma se obtienen las coordenadas de cromaticidad x = X/(X + Y + Z) e y = Y/(X + Y + Z), que expresan las propiedades de un color sin su brillo. Las cromaticidades de la luz monocromática describen el lugar espectral, con forma de herradura; la mezcla de dos luces queda sobre la recta que las une, y la mezcla de tres, dentro de su triángulo. La gama de colores de una pantalla se representa con este triángulo. Por ejemplo, el punto blanco de la luz diurna normalizada D65 es (x, y) ≈ (0,313; 0,329). Las distancias en el diagrama de cromaticidad xy no son proporcionales a las diferencias de color percibidas, por lo que las diferencias de color se evalúan en espacios de color uniformes como CIELAB."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Varían las funciones de igualación de color de un observador a otro?",
+        "a": "Hay diferencias individuales, pero las funciones de igualación de color de la CIE son promedios de muchos observadores y están definidas como observador patrón. Como la apariencia cambia con el tamaño del campo visual, hay dos versiones: la de campo de 2° (1931) y la de campo de 10° (1964)."
+      },
+      {
+        "q": "¿Qué representa el valor triestímulo Y?",
+        "a": "Como ȳ(λ) tiene la misma forma que la eficiencia luminosa espectral V(λ), Y es una magnitud proporcional al brillo (la luminancia o el flujo luminoso). La información de color la llevan principalmente las coordenadas de cromaticidad x e y, que son razones en las que intervienen también X y Z."
+      },
+      {
+        "q": "¿En qué se diferencian los valores RGB de XYZ?",
+        "a": "XYZ es un sistema colorimétrico independiente del dispositivo que expresa todos los colores con valores positivos. Los espacios RGB, como sRGB, son representaciones basadas en tres primarios y un punto blanco determinados, y se obtienen a partir de XYZ con una matriz de 3×3 y una conversión gamma. Los colores fuera de la gama de colores toman en RGB valores negativos o mayores que 1."
+      }
+    ]
   },
   "色温度": {
     "term": "Temperatura de color",
     "desc": "Color de la luz expresado como la temperatura (K) del cuerpo negro que se ve de ese color. Para fuentes fuera del lugar geométrico del cuerpo negro se usa la temperatura del cuerpo negro más cercano (temperatura de color correlacionada). Cuanto más alta, más blanco azulado.",
     "aliases": [
       "temperatura de color correlacionada"
+    ],
+    "about": [
+      {
+        "h": "Expresar el color de la luz con la temperatura del cuerpo negro",
+        "p": "Cuanto más se calienta un cuerpo negro (un objeto ideal que absorbe toda la luz), mayor es la proporción de radiación de longitud de onda corta, y su color pasa del rojo al naranja, al blanco y al blanco azulado. Usando esta relación, la temperatura de color expresa el color de una luz como la temperatura (K) del cuerpo negro que se ve de ese mismo color. La llama de una vela tiene unos 1900 K; las lámparas incandescentes, de unos 2700 a 2800 K; la luz solar de mediodía, de unos 5000 a 5500 K, y la luz diurna normalizada D65, unos 6500 K. Cuanto más baja es la temperatura de color, más rojizo y cálido es el color, y cuanto más alta, más blanco azulado, al revés que la sensación física de calor."
+      },
+      {
+        "h": "Temperatura de color correlacionada y desviación respecto del lugar del cuerpo negro",
+        "p": "Las cromaticidades de los LED y de los fluorescentes no caen exactamente sobre la línea de los colores del cuerpo negro (el lugar del cuerpo negro). Por eso, se usa como temperatura de color correlacionada (CCT) la temperatura del cuerpo negro más cercano en un diagrama de cromaticidad (u, v del CIE 1960 UCS), y la distancia al lugar se expresa con Duv. La CIE pide que no se use la temperatura de color correlacionada para luces muy alejadas del lugar, con |Duv| ≤ 0,05 como referencia. Con los mismos 5000 K, un Duv positivo se ve verdoso, y uno negativo, rosa violáceo. La propia D65 está ligeramente por encima del lugar (Duv ≈ +0,003)."
+      },
+      {
+        "h": "El mired y la percepción de las diferencias de temperatura de color",
+        "p": "Las diferencias percibidas de temperatura de color siguen más de cerca las diferencias de su inverso que las de la propia temperatura. Por eso se usa el mired (micro reciprocal degree), 10⁶/T. La diferencia entre 3000 K y 3200 K es de unos 20,8 mired, pero la diferencia entre 6000 K y 6500 K, aunque hay 500 K, es de solo unos 12,8 mired, de modo que, a temperaturas de color altas, la misma diferencia de temperatura se ve como una diferencia de color menor. Los filtros de conversión de temperatura de color de fotografía y vídeo y el ajuste del color de los LED expresan sus cantidades en mired. Según la ley de desplazamiento de Wien, la longitud de onda del máximo es de unos 446 nm a 6500 K y de unos 1073 nm a 2700 K."
+      },
+      {
+        "h": "La elección en iluminación y algunos malentendidos",
+        "p": "En Japón, los colores de la luz de iluminación se clasifican en color de bombilla incandescente (de unos 2700 a 3000 K), blanco cálido, blanco, blanco neutro (unos 5000 K) y luz diurna (unos 6500 K). Para los espacios de descanso se eligen a menudo temperaturas de color bajas, y para el trabajo minucioso o los lugares donde se comprueban colores, temperaturas altas. La temperatura de color es un índice del color de la luz, no la temperatura de la propia lámpara o del chip LED. Además, una temperatura de color más alta no significa que la luz sea más brillante ni que los colores de los objetos se vean correctamente. Cómo se ven los colores de los objetos se evalúa por separado con el índice de reproducción cromática."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿De qué color es una luz con una temperatura de color alta?",
+        "a": "Blanco azulado. Cuanto más baja es, más cálido es el color, rojizo o amarillento. El color de bombilla incandescente es de unos 2700 a 3000 K; el blanco neutro, de unos 5000 K, y la luz diurna, de unos 6500 K. Hay que tener en cuenta que el sentido es el contrario a la sensación de calor."
+      },
+      {
+        "q": "¿Qué es la temperatura de color correlacionada?",
+        "a": "Es la expresión del color de la luz de LED o fluorescentes, ligeramente apartado del lugar del cuerpo negro, mediante la temperatura del cuerpo negro más cercano en un diagrama de cromaticidad. La desviación respecto del lugar se expresa con Duv, y no se usa para luces con una desviación grande (como referencia, |Duv| > 0,05)."
+      },
+      {
+        "q": "¿Qué es el mired?",
+        "a": "Es el inverso de la temperatura de color multiplicado por 10⁶ (10⁶/T). Como las diferencias de color percibidas siguen más de cerca las diferencias de los inversos que las de las temperaturas, se usa para expresar la intensidad de los filtros de conversión de temperatura de color y del ajuste de color. 3000 K son unos 333 mired, y 6500 K, unos 154 mired."
+      }
     ]
   },
   "演色評価数": {
@@ -1706,6 +2650,38 @@
     "aliases": [
       "índice de rendimiento de color",
       "IRC"
+    ],
+    "about": [
+      {
+        "h": "Expresar con un número cómo se ven los colores de los objetos",
+        "p": "El índice de reproducción cromática expresa en qué medida los colores de los objetos iluminados por una fuente se ven igual que cuando se iluminan con una luz de referencia de la misma temperatura de color correlacionada. La luz de referencia es la radiación de cuerpo negro si la temperatura de color correlacionada es inferior a 5000 K, y la luz diurna de la CIE si es de 5000 K o más. Para cada color de prueba especificado se obtiene la diferencia de color ΔE bajo las dos luces y se evalúa como Ri = 100 − 4,6ΔE. Sin diferencia se obtiene 100, y con un ΔE de 5, 77. El promedio de ocho colores de saturación media es el índice general de reproducción cromática Ra."
+      },
+      {
+        "h": "Valores de referencia para distintas fuentes",
+        "p": "Las lámparas incandescentes y halógenas se parecen a la radiación de cuerpo negro, por lo que su Ra es casi 100. Los LED blancos habituales, con un LED azul y un fósforo amarillo, tienen unos 70 a 80, y los LED de alta reproducción cromática con fósforo rojo añadido llegan a 90 o más. En fuentes casi monocromáticas, como las lámparas de sodio de baja presión, el Ra calculado es negativo. Muchas normas para oficinas y espacios similares exigen un Ra de 80 o más, y donde hay que ver los colores correctamente, como en los museos, la imprenta y la medicina, se elige a menudo 90 o más."
+      },
+      {
+        "h": "R9 y las limitaciones del Ra",
+        "p": "Como el Ra es el promedio de ocho colores, una fuente que reproduce mal un color determinado puede dar igualmente un valor alto. En particular, el color de prueba rojo saturado R9 no está incluido en el Ra, y en los LED blancos el R9 puede ser bajo o incluso negativo aunque el Ra sea de 80 o más, lo que hace que la carne y la piel se vean apagadas. Por eso, cada vez más productos que anuncian una alta reproducción cromática indican también el R9. Además, debido a que usa pocos colores de prueba y un espacio de color antiguo para el cálculo, también se usan métodos de evaluación más nuevos, como el índice de fidelidad de color Rf de la CIE o el TM-30 de la IES (Rf y el índice de gama Rg)."
+      },
+      {
+        "h": "Diferencia con la temperatura de color y malentendidos",
+        "p": "El índice de reproducción cromática y la temperatura de color son índices completamente distintos. Una lámpara incandescente de 2800 K tiene una temperatura de color baja, pero un Ra de casi 100, mientras que un LED blanco de 6500 K puede tener un Ra en torno a 70. Además, un Ra de 100 no significa «se ve igual que con la luz solar», sino «se ve igual que con una luz de referencia de la misma temperatura de color correlacionada». Aunque una lámpara incandescente tenga un Ra de 100, los colores se ven de forma distinta que con la luz diurna. También hay un compromiso con la eficiencia: si se añade más rojo de longitud de onda larga, para el que el ojo es poco sensible, la reproducción cromática mejora, pero la eficacia luminosa tiende a disminuir."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué es el índice general de reproducción cromática Ra?",
+        "a": "Es el promedio de los índices R1 a R8, obtenidos a partir de las diferencias de color de ocho colores de prueba de saturación media respecto de su apariencia con la luz de referencia. El máximo es 100; cuanto mayores son las diferencias, menor es el valor, y en fuentes casi monocromáticas puede llegar a ser negativo."
+      },
+      {
+        "q": "¿Qué es el R9?",
+        "a": "Es el índice especial de reproducción cromática para un color de prueba rojo saturado. No figura entre los ocho colores del Ra, por lo que hay fuentes con un Ra alto y un R9 bajo. Influye en cómo se ven la carne, la piel y los objetos rojos, por lo que en la iluminación de alta reproducción cromática también se comprueba el R9."
+      },
+      {
+        "q": "¿Qué diferencia hay entre la reproducción cromática y la temperatura de color?",
+        "a": "La temperatura de color expresa el color de la propia luz (rojizo o azulado), y la reproducción cromática, en qué medida los objetos iluminados por esa luz se ven igual que con la luz de referencia. Las lámparas incandescentes tienen una temperatura de color baja, pero una reproducción cromática casi máxima."
+      }
     ]
   },
   "波長分解能": {
@@ -1714,6 +2690,38 @@
     "aliases": [
       "poder de resolución",
       "poder resolutivo"
+    ],
+    "about": [
+      {
+        "h": "Dos formas de expresarla: Δλ y R",
+        "p": "La resolución espectral se expresa como la diferencia mínima de longitud de onda Δλ que un espectrómetro puede mostrar como dos líneas separadas, o también como el cociente R = λ/Δλ, y como ambas se llaman «resolución», hay que tener cuidado. Un Δλ menor y un R mayor significan mejores prestaciones. Por ejemplo, para separar las líneas D del sodio (589,0 nm y 589,6 nm) se necesita R ≈ 1000. Como criterio para considerar separadas dos líneas se usa el criterio de Rayleigh, en el que el máximo de una cae sobre el primer mínimo de la otra, pero también la anchura a media altura de la función de aparato, por lo que, al comparar valores, hay que unificar las definiciones."
+      },
+      {
+        "h": "El límite mN de una red de difracción",
+        "p": "El poder de resolución teórico de una red de difracción es el producto del número de surcos iluminados N por el orden m, R = mN. Si se ilumina una red de 1200 surcos por mm a lo largo de una anchura de 50 mm, se obtiene R = 60000 en el primer orden, es decir, Δλ ≈ 0,008 nm a 500 nm. Con la ecuación de la red puede escribirse mN = W(sinα + sinβ)/λ (W es la anchura iluminada), de modo que, fijados los ángulos, depende solo de W, no de la densidad de surcos ni del orden, y su límite superior es 2W/λ. En un prisma, el poder de resolución es el producto de la longitud de la base b que llena el haz por |dn/dλ|."
+      },
+      {
+        "h": "Qué fija la resolución real",
+        "p": "La resolución de un espectrómetro real es casi siempre muy inferior a mN, porque antes influyen el ancho de banda, dado por la anchura de la imagen de la rendija sobre el detector multiplicada por la dispersión lineal recíproca, el tamaño de los píxeles y las aberraciones del sistema óptico. Además, para registrar correctamente la forma de una línea, como referencia hay que muestrearla con al menos 2 o 3 píxeles por anchura a media altura de la línea. La resolución es una propiedad distinta de la exactitud en longitud de onda, que expresa lo correcta que es la escala de longitudes de onda: aunque la resolución sea alta, si la calibración está desviada, la posición de las líneas no se lee correctamente."
+      },
+      {
+        "h": "Diferencias entre técnicas espectroscópicas",
+        "p": "La resolución necesaria varía mucho según la aplicación. Para un espectrómetro compacto que mide las bandas anchas del espectro de absorción de una disolución puede bastar un Δλ de varios nm, mientras que para separar líneas de emisión atómicas o líneas Raman pueden necesitarse 0,1 nm o menos. En la espectroscopia por transformada de Fourier, la resolución se expresa en número de onda como Δσ ≈ 1/δmax (δmax es la diferencia de camino máxima) y la fija el recorrido del espejo móvil. Un interferómetro de Fabry-Pérot alcanza poderes de resolución de más de 10⁵ gracias al producto del orden por la fineza, R = mF, pero su rango espectral libre es estrecho, por lo que se combina con un espectrómetro predispersor."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre R y Δλ como medida de la resolución?",
+        "a": "Δλ es la diferencia mínima de longitud de onda que puede separarse, y cuanto menor es, mejor. R = λ/Δλ la convierte en un cociente adimensional, y cuanto mayor es, mejor. Con el mismo R, Δλ es mayor a longitudes de onda más largas."
+      },
+      {
+        "q": "¿Cómo se aumenta la resolución de un espectrómetro de red?",
+        "a": "Se aumenta mN iluminando más surcos o usando un orden más alto. En la práctica, también hay que reducir el ancho de banda fijado por la imagen de la rendija, estrechando la rendija o usando una distancia focal mayor, y se decide buscando un equilibrio con la cantidad de luz."
+      },
+      {
+        "q": "¿Cómo se mide la resolución de un espectrómetro?",
+        "a": "Lo habitual es medir una línea de emisión mucho más estrecha que el instrumento, como las de una lámpara de mercurio o de neón de baja presión, y tomar la anchura a media altura de la línea registrada como resolución del instrumento. Otro método es comprobar si dos líneas próximas se ven separadas."
+      }
     ]
   },
   "逆線分散": {
@@ -1721,6 +2729,38 @@
     "desc": "Intervalo de longitudes de onda que se distribuye por unidad de longitud en el plano focal de un espectrómetro, dλ/dx (nm/mm). En una red de difracción es d cosβ/(mf); multiplicado por la anchura de la imagen de la rendija da el ancho de banda.",
     "aliases": [
       "dispersión lineal inversa"
+    ],
+    "about": [
+      {
+        "h": "Cómo se reparten las longitudes de onda en el plano focal",
+        "p": "La dispersión lineal recíproca dλ/dx expresa cuántos nm de longitud de onda se reparten en 1 mm del plano focal de un espectrómetro (la superficie del detector). Su inverso, dx/dλ (mm/nm), se llama dispersión lineal, y como los nombres se parecen, se distinguen por las unidades. En una red de difracción, dλ/dx = d cosβ/(mf), que se hace menor cuanto menor es el periodo de los surcos d y cuanto mayores son el orden m y la distancia focal f. Cuanto menor es la dispersión lineal recíproca, más se estiran las longitudes de onda y más finas son las diferencias que pueden separarse, pero más estrecho es el intervalo que cabe a la vez en el detector."
+      },
+      {
+        "h": "Ancho de banda y longitud de onda por píxel",
+        "p": "La dispersión lineal recíproca se usa para estimar el ancho de banda de un espectrómetro. Si se usa una red de 600 surcos por mm en el primer orden, con una distancia focal de 500 mm y un ángulo de difracción de 10°, dλ/dx ≈ 3,3 nm/mm. Con una imagen de la rendija de 100 µm de anchura, el ancho de banda es de unos 0,33 nm; con píxeles de 26 µm de anchura, cada píxel abarca unos 0,085 nm, y un detector de 25 mm de anchura recoge a la vez un intervalo de unos 82 nm. En un espectrómetro cuyo aumento entre la entrada y la salida no es 1, se usa la anchura de la imagen, es decir, la anchura de la rendija de entrada multiplicada por el aumento."
+      },
+      {
+        "h": "No es constante en todo el detector",
+        "p": "Como el ángulo de difracción β aparece en la fórmula, la dispersión lineal recíproca difiere ligeramente de un extremo a otro del detector, de modo que la escala de longitudes de onda no es estrictamente equidistante. En un intervalo en el que β es pequeño, cosβ cambia poco y la escala de un espectrómetro de red es casi uniforme. En cambio, en un espectrómetro de prisma, dn/dλ cambia mucho con la longitud de onda, por lo que la dispersión lineal recíproca es menor a longitudes de onda cortas y mayor a longitudes de onda largas. En ambos casos, se miden líneas de emisión conocidas, como las del mercurio o el neón, y se relacionan los píxeles con la longitud de onda mediante una fórmula de calibración."
+      },
+      {
+        "h": "Uso para elegir un espectrómetro",
+        "p": "En los catálogos de espectrómetros se indica a menudo la dispersión lineal recíproca a la longitud de onda central en nm/mm, lo que sirve de referencia para elegir la red y la distancia focal a partir de la resolución y el intervalo de longitudes de onda que se necesitan. Si se busca una resolución alta, se elige una red de alta densidad de surcos o una distancia focal larga, y si se quiere medir un intervalo amplio de una vez, una combinación con una dispersión lineal recíproca grande. Un mismo espectrómetro puede adaptarse a distintos usos intercambiando o girando la red. Sin embargo, las prestaciones no las fija solo la dispersión lineal recíproca: también hay que tener en cuenta las aberraciones, la luz parásita y la anchura de la rendija."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué diferencia hay entre la dispersión lineal recíproca y la dispersión lineal?",
+        "a": "La dispersión lineal recíproca es el intervalo de longitudes de onda por mm del plano focal, dλ/dx (nm/mm), y la dispersión lineal es su inverso, dx/dλ (mm/nm). Cuanto menor es la primera, o cuanto mayor es la segunda, más se estiran las longitudes de onda."
+      },
+      {
+        "q": "¿Cómo se obtiene el ancho de banda a partir de la dispersión lineal recíproca?",
+        "a": "Se multiplica la anchura de la imagen de la rendija en el detector por la dispersión lineal recíproca. Con 3,3 nm/mm y una imagen de la rendija de 50 µm de anchura, el ancho de banda es de unos 0,16 nm."
+      },
+      {
+        "q": "¿Cómo se reduce la dispersión lineal recíproca?",
+        "a": "Usando una red de mayor densidad de surcos, un espectrómetro de distancia focal más larga o un orden más alto. A cambio, el intervalo de longitudes de onda que puede medirse de una vez se hace más estrecho."
+      }
     ]
   },
   "ブレーズド回折格子": {
@@ -1730,6 +2770,38 @@
       "red blazed",
       "redes blazed",
       "redes de difracción blazed"
+    ],
+    "about": [
+      {
+        "h": "Concentrar la luz en un solo orden con las facetas de los surcos",
+        "p": "En una red con surcos de perfil plano o sinusoidal, la luz incidente se reparte entre el orden cero y varios órdenes más, y la fracción que llega al orden que se usa es pequeña. Una red de difracción blazed da a los surcos un perfil en diente de sierra y hace coincidir la dirección de la reflexión especular en las facetas con la dirección de difracción del orden que se usa, de modo que la luz se concentra en ese orden. En inglés, blaze significa brillar intensamente, y el nombre viene de que la red se ve muy brillante cuando se mira desde esa dirección. Cambiar la forma de los surcos no cambia la ecuación de la red, por lo que los ángulos de difracción y el poder de resolución son los mismos; solo cambia el reparto de la eficiencia entre los órdenes."
+      },
+      {
+        "h": "Longitud de onda de blaze y polarización",
+        "p": "En la configuración de Littrow, en la que la luz difractada vuelve en la dirección de la luz incidente, la longitud de onda de blaze es λB = 2d sinθB/m, donde θB es el ángulo de blaze. Una red de 1800 surcos por mm con un ángulo de blaze de 26,7° tiene una longitud de onda de blaze de unos 500 nm en el primer orden. Una red cuya longitud de onda de blaze es λB en el primer orden tiene también una eficiencia alta cerca de λB/2 en el segundo orden. Además, la curva de eficiencia tiene una forma distinta para la polarización paralela y la perpendicular a los surcos, y pueden aparecer cambios bruscos (anomalías de Wood), por lo que, cuando se usa luz de polarización fija, hay que comprobar la gráfica de eficiencia para cada polarización."
+      },
+      {
+        "h": "Redes echelle con ángulos de blaze grandes",
+        "p": "Una red con un ángulo de blaze grande y una densidad de surcos baja, que se usa en órdenes altos, se llama echelle. Son habituales las redes de unos 63,4°, para las que tanθB = 2 (R2); con 79 surcos por mm, una longitud de onda de 500 nm cae en el orden 45 aproximadamente. Como trabaja en órdenes altos, incluso una red pequeña da un poder de resolución alto, pero el rango espectral libre es estrecho, λ/m ≈ 11 nm. Por eso se combina con un dispersor cruzado, un prisma u otra red que dispersa en la dirección perpendicular, de modo que los órdenes quedan dispuestos en escalones sobre un detector bidimensional y se mide un intervalo amplio de una vez."
+      },
+      {
+        "h": "Cómo elegirla y precauciones",
+        "p": "Para redes cuyo periodo de surcos es de alrededor del doble de la longitud de onda o más, una regla aproximada dice que la eficiencia en el primer orden cae a cerca de la mitad del máximo a unas 2/3 y unas 1,5 veces la longitud de onda de blaze, de modo que el intervalo de eficiencia alta se extiende más hacia las longitudes de onda largas. Sin embargo, las curvas de eficiencia reales cambian con la polarización y la forma de los surcos, por lo que la longitud de onda de blaze se elige comprobando las gráficas de eficiencia del fabricante. Las redes rayadas, cuyos surcos se graban mecánicamente, son fáciles de hacer blazed, mientras que las redes holográficas, fabricadas por exposición a franjas de interferencia, tienen menos luz parásita pero surcos casi sinusoidales, y algunas se hacen blazed mediante grabado iónico. El blaze no elimina la superposición de órdenes, por lo que, para medir un intervalo amplio, se necesita un filtro separador de órdenes."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué es la longitud de onda de blaze?",
+        "a": "Es la longitud de onda a la que la dirección de la reflexión especular en las facetas de los surcos coincide con la dirección de difracción de un orden determinado, y sirve de referencia para saber dónde es máxima la eficiencia de difracción de ese orden. En la configuración de Littrow se obtiene con λB = 2d sinθB/m."
+      },
+      {
+        "q": "¿Aumenta el poder de resolución con una red de difracción blazed?",
+        "a": "No. El poder de resolución lo fija mN, el producto del número de surcos iluminados por el orden, y no depende de la forma del perfil de los surcos. Lo que cambia con el blaze es la eficiencia, es decir, cuánta luz se envía a cada orden."
+      },
+      {
+        "q": "¿Qué ocurre a la mitad de la longitud de onda de blaze?",
+        "a": "Una red blazed en el primer orden también tiene una eficiencia alta cerca de λB/2 en el segundo orden. Como λB en el primer orden y λB/2 en el segundo orden salen con el mismo ángulo, se separan con un filtro separador de órdenes que elimina las longitudes de onda cortas."
+      }
     ]
   },
   "フーリエ変換分光法": {
@@ -1737,6 +2809,34 @@
     "desc": "Método espectroscópico que obtiene el espectro mediante la transformada de Fourier del interferograma registrado al variar la diferencia de camino de un interferómetro de Michelson. El ejemplo más representativo es la FTIR en el infrarrojo.",
     "aliases": [
       "espectroscopía por transformada de Fourier"
+    ],
+    "about": [
+      {
+        "h": "Principio",
+        "p": "Cuando se introduce luz en un interferómetro de Michelson y se mueve el espejo móvil, la luz monocromática de número de onda σ = 1/λ da una intensidad que varía como cos(2πσδ) con la diferencia de camino δ. Con luz que contiene muchos números de onda se obtiene un interferograma I(δ) en el que se superponen las ondas coseno de cada componente, y su transformada de Fourier devuelve el espectro B(σ). Dos líneas próximas producen un batido, y su periodo 1/Δσ da la diferencia de números de onda. El instrumento que se usa ampliamente en la espectroscopia infrarroja es el FTIR (espectrofotómetro infrarrojo por transformada de Fourier)."
+      },
+      {
+        "h": "Resolución y muestreo",
+        "p": "El interferograma solo puede medirse hasta una diferencia de camino finita δmax, por lo que el espectro se ensancha con la función de aparato, y la resolución en número de onda es aproximadamente Δσ ≈ 1/δmax. Al mover el espejo una distancia x, la diferencia de camino cambia en 2x, de modo que una resolución de 0,5 cm⁻¹ requiere un recorrido de alrededor de 1 cm hacia un lado. El muestreo se hace a intervalos iguales, usando como señal las franjas de interferencia de un láser de He-Ne (632,8 nm) que recorre el mismo camino. Con un punto por cada periodo de franja, la condición de Nyquist da un número de onda máximo medible de unos 7900 cm⁻¹."
+      },
+      {
+        "h": "Ventajas frente a los instrumentos dispersivos",
+        "p": "Como el FTIR mide todas las longitudes de onda a la vez, en el infrarrojo, donde domina el ruido del detector, la relación señal-ruido mejora aproximadamente √M veces para M puntos del espectro (ventaja de Fellgett). También son ventajas que no necesita rendijas estrechas y puede recoger mucha luz (ventaja de Jacquinot), y que la escala de números de onda queda fijada con exactitud por la longitud de onda del láser (ventaja de Connes). En cambio, en el visible y el ultravioleta, donde domina el ruido de disparo, la ventaja de la multiplexación casi desaparece, y se usan a menudo espectrómetros dispersivos con detectores de matriz."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿De qué depende la resolución de un FTIR?",
+        "a": "De la diferencia de camino máxima δmax: como referencia, Δσ ≈ 1/δmax. El recorrido del espejo es la mitad de ese valor. Si se aplica una apodización para suprimir los lóbulos laterales del truncamiento, la anchura de la función de aparato aumenta."
+      },
+      {
+        "q": "¿Por qué se usa tanto en la espectroscopia infrarroja?",
+        "a": "Porque los detectores infrarrojos son ruidosos, de modo que la ventaja de la multiplexación, que mide todas las longitudes de onda a la vez, tiene un efecto grande. Incluso con fuentes infrarrojas débiles se obtienen en poco tiempo espectros con una relación señal-ruido alta, y la exactitud del número de onda también puede ser alta."
+      },
+      {
+        "q": "¿Para qué se usa el láser de He-Ne?",
+        "a": "Para marcar la posición del espejo móvil con las franjas de interferencia del He-Ne cada 632,8 nm de diferencia de camino. Así se puede muestrear a intervalos iguales aunque la velocidad del espejo fluctúe, y la escala de números de onda resulta exacta."
+      }
     ]
   },
   "インターフェログラム": {
@@ -1744,6 +2844,38 @@
     "desc": "Registro de cómo cambia la intensidad de la luz detectada al variar la diferencia de camino de un interferómetro. Su transformada de Fourier da el espectro de la luz.",
     "aliases": [
       "interferogramas"
+    ],
+    "about": [
+      {
+        "h": "La intensidad en función de la diferencia de camino",
+        "p": "Cuando se mueve el espejo móvil de un interferómetro de Michelson y se cambia la diferencia de camino δ entre los dos brazos, la intensidad detectada varía como I(δ) = ∫B(σ)[1 + cos(2πσδ)]dσ, donde σ es el número de onda y B(σ) el espectro. Con luz monocromática, es una onda coseno que completa un periodo cada vez que la diferencia de camino cambia en una longitud de onda. Cuando se mezclan muchos números de onda, sus ondas coseno solo coinciden y se refuerzan en la diferencia de camino cero y se cancelan lejos de ella, de modo que el interferograma tiene un pico agudo en la diferencia de camino cero (centerburst) con pequeñas oscilaciones a ambos lados."
+      },
+      {
+        "h": "Relación con el espectro y resolución",
+        "p": "Una vez eliminada la componente constante, el interferograma es la transformada coseno del espectro B(σ), de modo que la transformada de Fourier devuelve el espectro. Cuanto mayor es la diferencia de camino hasta la que se mide, más finas son las estructuras que pueden separarse, y la resolución es Δσ ≈ 1/δmax, donde δmax es la diferencia de camino máxima. Por ejemplo, dos líneas separadas 0,5 cm⁻¹ aparecen como un batido cuya amplitud aumenta y disminuye con un periodo de 2 cm de diferencia de camino, por lo que hay que medir al menos hasta ese valor. El intervalo de muestreo, por su parte, se elige de modo que cumpla la condición de Nyquist para el número de onda más alto que se quiere medir."
+      },
+      {
+        "h": "Cómo se ve como señal temporal",
+        "p": "Si el espejo móvil se desplaza a velocidad constante v, la diferencia de camino cambia a una velocidad 2v y una componente de número de onda σ se convierte en una señal eléctrica de frecuencia 2vσ. Con una velocidad del espejo de unos 0,32 cm/s, las franjas del láser de He-Ne (632,8 nm) dan una señal de unos 10 kHz, y la luz infrarroja de 1000 cm⁻¹, una de unos 630 Hz. Como basta con que el detector responda en este intervalo de frecuencias, la velocidad del espejo se elige según el detector: lo habitual es barrer despacio con los detectores piroeléctricos, de respuesta lenta, y deprisa con los detectores MCT, que son rápidos."
+      },
+      {
+        "h": "Truncamiento, apodización y corrección de fase",
+        "p": "Como el interferograma se trunca en una diferencia de camino finita, si se le aplica directamente la transformada de Fourier, aparece a ambos lados de cada línea un ensanchamiento en forma de sinc con lóbulos laterales negativos. La apodización lo suprime multiplicando el interferograma por una función que disminuye suavemente hacia los extremos de la diferencia de camino; los lóbulos laterales se reducen a cambio de que las líneas se ensanchen. Además, los retardos del sistema óptico y de los circuitos eléctricos rompen la simetría entre los dos lados, por lo que, en los métodos que miden un lado mucho más lejos que el otro, la fase se obtiene a partir de los datos de ambos lados cerca del centerburst y se corrige (método de Mertz, entre otros)."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué es el pico agudo del centro de un interferograma?",
+        "a": "Es el centerburst, que se forma en la posición de diferencia de camino cero (ZPD) porque allí todas las componentes de número de onda se refuerzan con la misma fase. Se usa como referencia para ajustar el interferómetro y para fijar el origen de la diferencia de camino."
+      },
+      {
+        "q": "¿Cómo se obtiene el espectro a partir de un interferograma?",
+        "a": "Se elimina la componente media, se aplica una función de apodización, se corrige la fase si es necesario, y después se aplica la transformada de Fourier respecto de la diferencia de camino. La transmitancia se obtiene del cociente entre este espectro y el medido sin muestra."
+      },
+      {
+        "q": "¿Qué forma tiene el interferograma de la luz monocromática?",
+        "a": "Es una onda coseno de amplitud constante que repite un periodo cada vez que la diferencia de camino cambia en una longitud de onda. No hay centerburst, y la amplitud no disminuye por mucho que se mueva el espejo, por lo que puede usarse como regla de la diferencia de camino."
+      }
     ]
   },
   "自由スペクトル領域": {
@@ -1751,17 +2883,105 @@
     "desc": "Intervalo de longitudes de onda (o de frecuencias) que puede usarse sin que se superpongan los picos de transmisión o la luz difractada de órdenes contiguos. En un Fabry-Pérot es λ²/(2nL), y en el orden m de una red de difracción, aproximadamente λ/m.",
     "aliases": [
       "intervalo espectral libre"
+    ],
+    "about": [
+      {
+        "h": "Un intervalo fijado por la repetición de los órdenes",
+        "p": "Tanto las redes de difracción como los interferómetros de Fabry-Pérot cumplen la misma condición una y otra vez al cambiar el orden m, de modo que una longitud de onda en el orden m y otra longitud de onda distinta en el orden m + 1 pueden aparecer en la misma posición. El rango espectral libre (FSR) es el intervalo de longitudes de onda (o de frecuencias) que puede usarse sin esta superposición con el orden contiguo. Si la banda de la luz que entra es más ancha que el FSR, sus picos ya no pueden distinguirse de los de otro orden, por lo que el FSR fija el límite superior del intervalo que puede tratarse de una vez. Los elementos de mayor resolución se usan a menudo en órdenes más altos, y su FSR tiende a ser más estrecho."
+      },
+      {
+        "h": "Las fórmulas del Fabry-Pérot y de la red de difracción",
+        "p": "En un Fabry-Pérot de índice de refracción n y separación L, los picos de transmisión están separados c/(2nL) en frecuencia y λ²/(2nL) en longitud de onda. Una lámina de sílice fundida de 1 mm de espesor (n ≈ 1,444) usada a 1550 nm da unos 104 GHz, es decir, unos 0,83 nm. Los picos están igualmente espaciados en frecuencia, pero su separación en longitud de onda cambia en proporción a λ². Cuando el medio tiene dispersión, en sentido estricto debe usarse el índice de grupo en lugar de n; en este ejemplo, con unos 1,463, se obtienen unos 102 GHz. En el orden m de una red de difracción, el FSR es de unos λ/m. Por eso la luz de 400 nm del segundo orden se superpone en la posición donde se mide 800 nm en el primer orden."
+      },
+      {
+        "h": "Relación con la fineza y la resolución",
+        "p": "En un Fabry-Pérot, el FSR dividido por la anchura a media altura de los picos de transmisión es la fineza F. Con F constante, al alargar la separación L se estrechan en la misma proporción tanto el FSR como la anchura de los picos. Es decir, para aumentar la resolución manteniendo un FSR amplio, hay que aumentar F elevando la reflectancia de los espejos, no cambiando la separación. En los resonadores de anillo se aplica la misma idea, con FSR = λ²/(n_g L) (L es el perímetro), y la razón entre el FSR y la anchura de línea se llama fineza. En las guías de onda de hilo de silicio, el índice de grupo y el índice efectivo difieren mucho, por lo que hay que tener cuidado de no confundirlos."
+      },
+      {
+        "h": "Cómo trabajar con un FSR estrecho",
+        "p": "Cuando se usa un elemento con un FSR estrecho, se combina con otro elemento que restringe el intervalo. Un espectrómetro echelle, que trabaja en órdenes altos, separa los órdenes con un dispersor cruzado, y un interferómetro de Fabry-Pérot solo deja entrar luz de un intervalo más estrecho que su FSR mediante un espectrómetro predispersor o un filtro paso banda. A la inversa, se aprovecha que el FSR es una regla de frecuencias igualmente espaciadas: sirve de escala al barrer la frecuencia de un láser, y se usan etalones con el FSR ajustado a la separación entre canales de las comunicaciones ópticas (por ejemplo, 100 GHz) para controlar las longitudes de onda."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula el rango espectral libre?",
+        "a": "En un Fabry-Pérot es c/(2nL) en frecuencia y λ²/(2nL) en longitud de onda. Con una separación de 5 mm en aire, es de unos 30 GHz. En el orden m de una red de difracción, se obtiene como λ/m aproximadamente."
+      },
+      {
+        "q": "¿Qué relación hay entre el FSR y la fineza?",
+        "a": "La fineza es el FSR dividido por la anchura a media altura de los picos de transmisión. Con un FSR de 30 GHz y una fineza de 100, la anchura de los picos es de unos 300 MHz."
+      },
+      {
+        "q": "¿Por qué el FSR se expresa a menudo en frecuencia?",
+        "a": "Porque los picos de transmisión de un Fabry-Pérot y los modos longitudinales de un láser están igualmente espaciados en frecuencia, mientras que en longitud de onda su separación cambia en proporción a λ². Cuando se trata un intervalo amplio, es más fácil comparar en frecuencia o en número de onda."
+      }
     ]
   },
   "フィネス": {
     "term": "Fineza",
-    "desc": "Cociente entre el rango espectral libre de un interferómetro de Fabry-Pérot y la anchura a media altura de sus picos de transmisión. Con espejos sin pérdidas es π√R/(1 − R) y aumenta con la reflectancia."
+    "desc": "Cociente entre el rango espectral libre de un interferómetro de Fabry-Pérot y la anchura a media altura de sus picos de transmisión. Con espejos sin pérdidas es π√R/(1 − R) y aumenta con la reflectancia.",
+    "about": [
+      {
+        "h": "Definición y relación con la reflectancia",
+        "p": "Los picos de transmisión de un interferómetro de Fabry-Pérot están separados por el rango espectral libre (FSR), y su agudeza se expresa con la fineza F = FSR/δν (δν es la anchura a media altura). Con dos espejos iguales sin absorción, F = π√R/(1 − R): unos 30 para R = 0,90, unos 103 para 0,97 y unos 313 para 0,99. La cantidad 4R/(1 − R)² que aparece en la fórmula de la transmitancia T = 1/[1 + (4R/(1 − R)²) sin²(δ/2)] es otra magnitud distinta, llamada coeficiente de fineza, por lo que hay que tener cuidado de no confundirlas."
+      },
+      {
+        "h": "Relación con el poder de resolución",
+        "p": "El poder de resolución de un interferómetro de Fabry-Pérot es el producto del orden de interferencia m = 2nL/λ por la fineza, R = mF. Con una separación entre espejos de 5 mm, una longitud de onda de 500 nm y una fineza de 30, m = 20000 y R = 6×10⁵, más de un orden de magnitud por encima de un espectrómetro de red. Sin embargo, el FSR, λ²/(2nL) = 0,025 nm, es estrecho, por lo que, para medir un intervalo amplio de longitudes de onda, hay que restringir antes el intervalo con un espectrómetro de red o un filtro. También puede decirse que la fineza expresa aproximadamente cuántos picos separables caben dentro del FSR."
+      },
+      {
+        "h": "Factores que reducen la fineza",
+        "p": "En los interferómetros reales, la fineza es menor que el valor fijado solo por la reflectancia. Las irregularidades de la superficie de los espejos (planitud) o una desviación del paralelismo entre los dos desplazan la longitud de onda de resonancia de un lugar a otro y ensanchan los picos. La luz que incide oblicuamente, la divergencia del haz y la absorción o la dispersión (scattering) en los espejos tienen el mismo efecto. Como referencia, la fineza total se obtiene sumando los inversos de los cuadrados de las finezas debidas a cada factor, y queda dominada por el factor de menor fineza. En los resonadores de alta fineza se usan espejos dieléctricos multicapa de pérdidas ultrabajas, y se han obtenido valores superiores a 100000."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Cómo se calcula la fineza?",
+        "a": "En las medidas, se obtiene dividiendo el FSR por la anchura a media altura de los picos de transmisión. A partir de la reflectancia R de espejos sin pérdidas, puede estimarse con F ≈ π√R/(1 − R). Para R = 0,97 es de unos 103."
+      },
+      {
+        "q": "¿En qué se diferencian la fineza y el factor Q?",
+        "a": "La fineza es la razón entre el FSR y la anchura de los picos, y el factor Q, la razón entre la frecuencia de resonancia y la anchura de los picos. Cuanto más largo es el resonador, mayor es el orden, de modo que, con la misma fineza, el factor Q es mayor, con la relación Q = mF."
+      },
+      {
+        "q": "¿Aumenta sin límite el poder de resolución si se eleva la fineza?",
+        "a": "Como el poder de resolución es mF, sí aumenta, pero la planitud y el paralelismo de los espejos y la absorción limitan la fineza real. Además, cuanto más agudos son los picos de transmisión, más les afectan las fluctuaciones de la frecuencia de la luz o de la separación entre espejos."
+      }
+    ]
   },
   "アッベ数": {
     "term": "Número de Abbe",
     "desc": "Número que expresa lo pequeña que es la dispersión de un material óptico, Vd = (nd − 1)/(nF − nC). Cuanto mayor es, menor es la diferencia de índice de refracción entre longitudes de onda y menos aberración cromática aparece.",
     "aliases": [
       "números de Abbe"
+    ],
+    "about": [
+      {
+        "h": "Definición y valores típicos",
+        "p": "El número de Abbe se obtiene a partir del índice de refracción nd en la línea d (587,6 nm) y de la diferencia de índices nF − nC entre la línea F (486,1 nm) y la línea C (656,3 nm), como Vd = (nd − 1)/(nF − nC). El denominador expresa la magnitud de la dispersión, y el numerador, la del poder refractor, de modo que el número de Abbe indica lo poco que se separan los colores en relación con lo mucho que refracta el material. Los vidrios de tipo BK7 tienen unos 64; el fluoruro de calcio, unos 95, y los vidrios flint densos, alrededor de 20 a 30. También se usa Ve, con la línea e (546,1 nm) como referencia."
+      },
+      {
+        "h": "Crown y flint",
+        "p": "Los vidrios ópticos se clasifican en un diagrama (el diagrama de Abbe) con el índice de refracción nd en el eje vertical y el número de Abbe en el horizontal. Como referencia, los vidrios con un número de Abbe mayor que 50 aproximadamente son vidrios crown, y los de número menor, vidrios flint. Los vidrios flint contienen elementos pesados como el plomo o el titanio, lo que les da un índice de refracción más alto a costa de una dispersión mayor. En los últimos años se han sustituido por vidrios sin plomo por razones ambientales, pero la clasificación funciona de la misma manera."
+      },
+      {
+        "h": "Uso en la acromatización",
+        "p": "La condición para que dos lentes en contacto hagan coincidir el foco de dos longitudes de onda es φ₁/V₁ + φ₂/V₂ = 0, con las potencias φ y los números de Abbe V. Se combina una lente convergente de crown, de número de Abbe grande, con una lente divergente de flint, de número de Abbe pequeño; cuanto mayor es la diferencia entre los números de Abbe, menor puede ser la potencia de cada lente, lo que facilita la corrección de las aberraciones. Los apocromáticos, que hacen coincidir también el foco de una tercera longitud de onda, usan fluorita o vidrios especiales de baja dispersión con una razón de dispersión parcial anómala."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué implica un número de Abbe grande?",
+        "a": "Que la diferencia de índice de refracción entre longitudes de onda es pequeña, de modo que incluso una lente simple tiene poca aberración cromática. El fluoruro de calcio (unos 95) y los vidrios especiales de baja dispersión se usan en teleobjetivos y en objetivos de microscopio de altas prestaciones para reducir las franjas de color."
+      },
+      {
+        "q": "¿Cómo se calcula el número de Abbe?",
+        "a": "Con los índices de refracción en las líneas d, F y C, Vd = (nd − 1)/(nF − nC). Con nd = 1,5168 y nF − nC = 0,00806, es de unos 64. Hay que tener cuidado de no intercambiar el numerador y el denominador."
+      },
+      {
+        "q": "¿Tienen los vidrios de mayor índice de refracción números de Abbe menores?",
+        "a": "Como tendencia, sí: en los vidrios de mayor índice de refracción, la absorción ultravioleta se desplaza hacia longitudes de onda mayores y la dispersión tiende a ser mayor. Sin embargo, hay materiales, como los vidrios que contienen lantano, con un número de Abbe relativamente grande a pesar de su alto índice de refracción."
+      }
     ]
   },
   "セルマイヤーの式": {
@@ -1769,6 +2989,38 @@
     "desc": "Ecuación que expresa la dependencia del índice de refracción con la longitud de onda como n²(λ) = 1 + Σ Bᵢλ²/(λ² − Cᵢ). Cada término corresponde a una resonancia de absorción del ultravioleta o del infrarrojo, y representa con precisión la dispersión en la región transparente.",
     "aliases": [
       "fórmula de Sellmeier"
+    ],
+    "about": [
+      {
+        "h": "El índice de refracción como suma de osciladores",
+        "p": "La ecuación de Sellmeier, n²(λ) = 1 + Σ Bᵢλ²/(λ² − Cᵢ), trata los electrones y las vibraciones reticulares de un material como osciladores con longitudes de onda de resonancia fijas y suma sus contribuciones. Bᵢ es la intensidad de cada oscilador y √Cᵢ su longitud de onda de resonancia; cada término diverge cuando λ se acerca a √Cᵢ. Para los vidrios ópticos, la forma estándar tiene tres términos, dos para resonancias en el ultravioleta y uno en el infrarrojo, y los catálogos de vidrios dan B₁ a B₃ y C₁ a C₃. Como no incluye el amortiguamiento por absorción, es una ecuación para la región transparente, lejos de las resonancias."
+      },
+      {
+        "h": "Unidades de los coeficientes y un ejemplo de cálculo",
+        "p": "Los coeficientes de los catálogos se usan normalmente con λ en µm y dan Cᵢ en µm². Si se confunde Cᵢ con la propia longitud de onda de resonancia (en µm), se obtienen valores completamente distintos. Con los coeficientes representativos de la sílice fundida (la fórmula de Malitson), n ≈ 1,4585 a 587,6 nm y n ≈ 1,4440 a 1550 nm. Como la ecuación puede derivarse analíticamente, también es adecuada para obtener el índice de grupo n − λ dn/dλ y, a partir de la segunda derivada, la dispersión de la velocidad de grupo. En la sílice fundida, la longitud de onda de dispersión nula del material, donde se anula la segunda derivada, está en unos 1,27 µm."
+      },
+      {
+        "h": "Diferencia con la ecuación de Cauchy",
+        "p": "Una fórmula con un propósito similar es la ecuación de Cauchy, que usa potencias del inverso de la longitud de onda, como n = A + B/λ² + C/λ⁴. Es lo bastante precisa en un intervalo estrecho del visible, pero no tiene ningún término para la absorción infrarroja, por lo que deja de ajustarse a longitudes de onda más allá del infrarrojo cercano. La ecuación de Sellmeier, al basarse en osciladores, es precisa en un intervalo amplio, pero ninguna de las dos está garantizada fuera del intervalo en que se ajustó. Los coeficientes se determinan ajustándolos a valores medidos, por lo que también hay que tener en cuenta que Bᵢ y Cᵢ no coinciden necesariamente con exactitud con la intensidad y la longitud de onda de las absorciones reales."
+      },
+      {
+        "h": "Uso en el diseño",
+        "p": "El software de diseño óptico calcula el índice de refracción a cualquier longitud de onda a partir de los coeficientes de Sellmeier de cada vidrio y evalúa la aberración cromática. El número de Abbe y las razones de dispersión parcial también pueden calcularse con los índices obtenidos con esta ecuación. En los láseres y las comunicaciones ópticas, se obtienen el índice de grupo y la dispersión de la velocidad de grupo para estimar el ensanchamiento de los pulsos y la dispersión de las fibras, y en los cristales ópticos no lineales se dan coeficientes distintos para el rayo ordinario y el extraordinario, con los que se calculan los ángulos y las longitudes de onda de ajuste de fase. La variación con la temperatura se trata por separado, con fórmulas cuyos coeficientes dependen de la temperatura o con el coeficiente termoóptico dn/dT."
+      }
+    ],
+    "faq": [
+      {
+        "q": "¿Qué representa Cᵢ en la ecuación de Sellmeier?",
+        "a": "Es el cuadrado de una longitud de onda de resonancia, de modo que √Cᵢ es la longitud de onda de resonancia. En los catálogos, normalmente λ se introduce en µm y Cᵢ se da en µm², y si se confunden las unidades, el índice de refracción resulta muy erróneo."
+      },
+      {
+        "q": "¿Conviene usar la ecuación de Sellmeier o la de Cauchy?",
+        "a": "Para un intervalo amplio de longitudes de onda o para longitudes de onda más allá del infrarrojo cercano, es adecuada la ecuación de Sellmeier, que incluye términos de resonancia infrarroja. Para una aproximación en un intervalo estrecho del visible, puede bastar la sencilla ecuación de Cauchy."
+      },
+      {
+        "q": "¿Puede obtenerse la dispersión de la velocidad de grupo a partir de la ecuación de Sellmeier?",
+        "a": "Sí. Se calcula GVD = λ³/(2πc²)·d²n/dλ² a partir de la segunda derivada del índice de refracción respecto de la longitud de onda. Con los coeficientes de la sílice fundida, se obtienen unos 36 fs²/mm a 800 nm."
+      }
     ]
   },
   "正常分散": {
