@@ -1,0 +1,2648 @@
+{
+  "title": "屈折率データ集(分散式・群屈折率・GVD・アッベ数の計算)",
+  "description": "光学ガラス・溶融石英・結晶・赤外材料・水・空気の32材料の屈折率を、原典のセルマイヤーの式などの係数で計算。波長を入れると n、群屈折率、GVD、分散パラメータ D、反射率、ブリュースター角が出て、材料を並べ比べ、CSV で持ち出せます。",
+  "h1": "屈折率データ集",
+  "lead": "レンズ・窓・光ファイバ・結晶の屈折率を、波長を変えて計算し、2〜4材料を並べ比べ、出典つきの CSV で持ち出すためのページです。係数はすべてメーカーのデータシートか論文で確かめたもので、式の適用範囲の外は計算しません。",
+  "note": "値は出典の条件(温度・組成・測定の基準)での代表値です。同じ名前の材料でも、溶解のロット、結晶の向き、薄膜かバルクか、温度で値は変わります。設計に使う前に、出典とメーカーの最新の資料を確かめてください。",
+  "sources_h": "出典の一覧",
+  "groups": [
+    {
+      "id": "glass",
+      "name": "光学ガラス(SCHOTT)"
+    },
+    {
+      "id": "window",
+      "name": "溶融石英・結晶"
+    },
+    {
+      "id": "ir",
+      "name": "赤外材料・半導体"
+    },
+    {
+      "id": "fluid",
+      "name": "水・空気"
+    }
+  ],
+  "defaults": {
+    "m": [
+      "n-bk7",
+      "fused-silica"
+    ],
+    "l": 587.5618,
+    "a": 400,
+    "b": 1600,
+    "s": 50
+  },
+  "quick": [
+    355,
+    405,
+    532,
+    587.5618,
+    633,
+    800,
+    1064,
+    1310,
+    1550
+  ],
+  "terms": [
+    "セルマイヤーの式",
+    "アッベ数",
+    "正常分散",
+    "群屈折率",
+    "波長分散",
+    "群遅延分散",
+    "複屈折",
+    "ブリュースター角",
+    "反射防止膜",
+    "フッ化カルシウム",
+    "位相整合"
+  ],
+  "cats": [
+    "optical-materials",
+    "polarization",
+    "nonlinear",
+    "fiber"
+  ],
+  "tools": [
+    {
+      "tool": "arcoat",
+      "q": {
+        "lambda0": "lam",
+        "lambda": "lam",
+        "ns": "n"
+      },
+      "label": "tool_arcoat_sub",
+      "skip": [
+        "fluid"
+      ]
+    },
+    {
+      "tool": "arcoat",
+      "q": {
+        "lambda0": "lam",
+        "lambda": "lam",
+        "n1": "n"
+      },
+      "label": "tool_arcoat_film",
+      "only": [
+        "mgf2"
+      ]
+    },
+    {
+      "tool": "gaussian",
+      "q": {
+        "lambda": "lam",
+        "n": "n"
+      },
+      "label": "tool_gauss"
+    }
+  ],
+  "ui": {
+    "noscript": "計算・グラフ・並べ比べ・CSV には JavaScript が必要です。下の材料の一覧(式・係数・範囲・出典・n_d と ν_d)は JavaScript なしでも読めます。",
+    "toc": "このページの目次",
+    "calc_h": "波長を入れて計算する",
+    "list_h": "材料の一覧({n})",
+    "add": "材料を追加(4つまで)",
+    "add_ph": "材料を選ぶ…",
+    "empty": "材料を選ぶと、ここに値が出ます。",
+    "remove": "{name} を外す",
+    "max": "選べるのは {n} 材料までです。どれかを外してから追加してください。",
+    "lam": "波長",
+    "unit": "単位",
+    "quick": "よく使う波長",
+    "at": "λ = {lam} での値",
+    "col_mat": "材料",
+    "col_ng": "群屈折率 n_g",
+    "col_r": "反射率 R",
+    "col_b": "ブリュースター角",
+    "col_ray": "光線",
+    "table_note": "n_g = n − λ dn/dλ。GVD は β₂ = λ³/(2πc²)·d²n/dλ²、D = −(λ/c)·d²n/dλ²(どちらも材料だけの分散。ファイバの導波路分散は含まない)。R は空気(n = 1)との界面に垂直に入るときの反射率 ((n − 1)/(n + 1))²、ブリュースター角は空気から入るときの arctan n。導関数は式から解析的に出しています。",
+    "out": "式の範囲外({range})。計算しません",
+    "out_warn": "{list} は、この波長が式の適用範囲の外なので計算していません。範囲の外へ式を延ばすと、値が大きく外れることがあります。",
+    "tools_h": "この値を計算ツールで使う",
+    "tool_arcoat_sub": "反射防止膜の計算(基板: {name}、nₛ = {n})",
+    "tool_arcoat_film": "反射防止膜の計算(膜: {name}、n₁ = {n})",
+    "tool_gauss": "ガウシアンビームの計算(媒質: {name}、n = {n})",
+    "chart_h": "屈折率 n(λ) のグラフと波長の表",
+    "a": "開始 (nm)",
+    "b": "終了 (nm)",
+    "s": "刻み (nm)",
+    "chart_none": "この波長の範囲に、選んだ材料の式の適用範囲がありません。開始と終了を変えてください。",
+    "chart_out": "この範囲では式が使えません",
+    "chart_label": "屈折率 n と波長のグラフ: {list}",
+    "axis_x_nm": "波長 λ (nm)",
+    "axis_x_um": "波長 λ (µm)",
+    "axis_y": "屈折率 n",
+    "csv_copy": "CSV をコピー",
+    "csv_save": "CSV を保存",
+    "share": "この条件の URL をコピー",
+    "csv_note": "CSV は開始〜終了を刻みごとに計算した表です(選んだ材料すべて、式の範囲外の行は除く)。数の小数点は言語によらず「.」、列は material, ray, wavelength_nm, wavelength_um, n, group_index, dn_dlambda_per_um, gvd_fs2_per_mm, D_ps_per_nm_km, source(出典)。URL には選んだ材料・波長・単位・表の範囲が入り、開くと同じ画面になります。",
+    "csv_many": "行が多すぎます(5000 行まで)。刻みを大きくするか、範囲を狭めてください。",
+    "csv_none": "この範囲には、式の適用範囲に入る行がありません。",
+    "csv_copied": "{n} 行の CSV をコピーしました。",
+    "csv_saved": "{n} 行の CSV を保存しました。",
+    "link_copied": "URL をコピーしました。",
+    "ray_o": "常光線 o",
+    "ray_e": "異常光線 e",
+    "count": "{n} / {total} 材料",
+    "search": "材料を探す",
+    "search_ph": "例: BK7、石英、CaF2、ニオブ酸リチウム",
+    "groups": "材料の種類",
+    "all": "すべて",
+    "none": "当てはまる材料がありません。",
+    "pick": "選ぶ",
+    "range": "適用できる波長",
+    "form_note": "原典の式の形そのものは出版社のページで見られなかったため、式は refractiveindex.info の形で載せています。係数と、原典の表の値(この式で計算した値)が合うことを確かめています。",
+    "abbe_none": "式の適用範囲が F 線〜C 線(486〜656 nm)を含まないため、n_d・ν_d は出しません。",
+    "sheet_short": "シート",
+    "src": "出典",
+    "data_from": "式を当てはめた測定値",
+    "sheet": "確かめたデータシート",
+    "checked": "原典で確かめたページ",
+    "rii": "係数の取り込み元(refractiveindex.info)",
+    "sources_note": "係数は refractiveindex.info のデータベース(CC0)から取り込み、上の原典(メーカーのデータシート・論文の出版社のページ)の係数と一つずつ突き合わせています。原典で確かめられなかった材料(結晶石英・BBO・ゲルマニウム・GaAs・PMMA・ポリカーボネートなど)は、いまは載せていません。",
+    "terms_h": "関連する用語",
+    "rel_cats": "関連する分野の問題"
+  },
+  "guide": [
+    {
+      "id": "how-to-read",
+      "h": "分散式の読み方",
+      "p": [
+        "このページの式はどれも、波長 λ を µm で入れて屈折率 n を出す当てはめの式です。いちばん多いのはセルマイヤーの式 n² − 1 = Σ Bᵢλ²/(λ² − Cᵢ) で、λ² − Cᵢ = 0 となる波長(紫外と赤外の吸収の位置)の近くで n が大きく変わる形をしています。",
+        "同じセルマイヤーの式でも、原典によって定数の書き方が違います。SCHOTT のデータシートは Cᵢ を µm² で(λᵢ² をそのまま)書き、Malitson や Dodge の論文は λᵢ を µm で書いて式の中で2乗します。このページでは、原典の記号と単位のまま係数を載せています。",
+        "係数は、決まった波長範囲の測定値に合わせて決めた数です。範囲の外では物理的な意味が保証されないので、このページは範囲外の波長を計算せず、警告を出します。"
+      ]
+    },
+    {
+      "id": "abbe",
+      "h": "n_d と ν_d(アッベ数)",
+      "p": [
+        "n_d はヘリウムの d 線(587.5618 nm)での屈折率、アッベ数 ν_d = (n_d − 1)/(n_F − n_C) は、水素の F 線(486.1327 nm)と C 線(656.2725 nm)の間の屈折率の差で分散の小ささを表す数です。ν_d が大きいほど分散が小さく、光学ガラスではおおむね ν_d が 50 より大きいものをクラウン、小さいものをフリントと呼びます。",
+        "ヨーロッパの規格では、水銀の e 線(546.0740 nm)とカドミウムの F′ 線・C′ 線(479.9914 nm・643.8469 nm)を使う n_e・ν_e も使います。このページは、式からこの4つを計算し、データシートの値があれば並べて出します。SCHOTT の18ガラスでは、式から出した n_d・ν_d・n_e・ν_e がデータシートの値と表示の桁ですべて一致します。",
+        "色消しレンズでは、ν_d の大きいクラウンの凸レンズと ν_d の小さいフリントの凹レンズを組み合わせて、F 線と C 線の焦点をそろえます。"
+      ]
+    },
+    {
+      "id": "group",
+      "h": "群屈折率と群速度分散",
+      "p": [
+        "パルスや波束が進む速さ(群速度)は c/n_g で、群屈折率は n_g = n − λ dn/dλ です。正常分散(波長が長いほど n が小さい)の範囲では n_g は n より大きく、溶融石英の 1550 nm では n = 1.4440 に対して n_g = 1.4626 です。",
+        "群速度分散 GVD β₂ = λ³/(2πc²)·d²n/dλ² は、パルスの中の波長ごとの到着時間のずれの大きさで、超短パルスでは fs²/mm で表します。光ファイバの分野では、同じ量を分散パラメータ D = −(λ/c)·d²n/dλ²(ps/(nm·km))で表し、符号が逆になります。溶融石英の材料分散は、Malitson の式で約 1273 nm でゼロになり、それより短い波長で GVD が正(D が負)です。",
+        "通信用の単一モードファイバでゼロ分散が 1310 nm 付近になるのは、材料分散に導波路分散が加わるためです。このページの GVD と D は材料だけの値です。"
+      ]
+    },
+    {
+      "id": "caution",
+      "h": "温度・波長範囲・条件の注意",
+      "p": [
+        "屈折率は温度で変わります。光学ガラスの dn/dT は 10⁻⁶ /K 程度ですが、シリコンなどの半導体はそれより2桁ほど大きく、数十 ℃ 違うだけで小数点以下3〜4桁目が変わります。各材料に書いた温度を確かめてください。",
+        "屈折率には、空気に対する値(相対屈折率)と真空に対する値(絶対屈折率)があり、絶対屈折率は相対屈折率に空気の屈折率を掛けた値なので、差は n × (n_air − 1)、ガラス(n ≈ 1.5)で約 4×10⁻⁴ です。波長も空気中の波長と真空中の波長があり、どちらで書かれた式かは出典によります。小数点以下4桁目以降を比べるときは、この違いが効きます。",
+        "MgF₂ や TiO₂ の蒸着膜は、密度や結晶の状態がバルクの単結晶と違うため、屈折率も違うことがあります。複屈折の結晶では、常光線 o と異常光線 e の主屈折率を載せています。光が光学軸と角度 θ をなすとき、異常光線の屈折率は 1/n(θ)² = cos²θ/n_o² + sin²θ/n_e² で決まります。"
+      ]
+    },
+    {
+      "id": "cite",
+      "h": "引用するときの注意",
+      "p": [
+        "値を論文や報告に使うときは、このページではなく、各材料に書いた原典(論文かメーカーのデータシート)を引用してください。式・係数・波長範囲・温度をあわせて書くと、読む人が同じ値を出せます。",
+        "CSV には出典の列があります。係数は原典の桁のまま使っていますが、SCHOTT のデータシートは係数を少ない桁に丸めて印刷していることがあり、このページはメーカーのカタログファイルの桁で計算しています(違いは n の小数点以下7桁目以下です)。"
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "N-BK7 と BK7 は同じガラスですか?",
+      "SCHOTT の名前の「N-」は、鉛やヒ素を使わない組成に置き換えたガラスを表します。N-BK7 は BK7 を置き換えたガラスで、n_d = 1.51680、ν_d = 64.17 です。古い文献の BK7 の値とは小数点以下の桁でわずかに違うことがあります。"
+    ],
+    [
+      "範囲の外の波長を計算しないのはなぜですか?",
+      "分散式は、決まった範囲の測定値に合わせた式なので、範囲の外へ延ばすと、吸収の近くで値が大きく外れたり、まったく意味のない値になったりします。範囲外の値が必要なときは、その波長を測った別の出典を探してください。"
+    ],
+    [
+      "小数点以下何桁まで信用できますか?",
+      "出典によります。SCHOTT のデータシートの n_d は小数点以下5桁で、当てはめの残差は論文に書かれていることが多く、たとえば Malitson の溶融石英の式は平均の残差が約 1×10⁻⁵ です。表示は n を小数点以下5桁にしていますが、温度・組成・ロットの違いのほうが大きいことがよくあります。"
+    ],
+    [
+      "空気の屈折率はどの条件の値ですか?",
+      "Ciddor の標準空気(乾燥空気、15 ℃、101 325 Pa、CO₂ 450 ppm)で、波長は真空中の値です。温度・気圧・湿度が違うときの値は、原典の手順で計算し直す必要があります。"
+    ],
+    [
+      "o と e の両方がある材料で、どちらを使えばよいですか?",
+      "光の偏光と結晶の光学軸の向きで決まります。光学軸に垂直な偏光(常光線)は n_o、光学軸を含む面内の偏光(異常光線)は、進む向きによって n_o と n_e の間の値になります。グラフでは e を破線で描いています。"
+    ]
+  ],
+  "refs": [
+    {
+      "k": "schott",
+      "s": "SCHOTT data sheets",
+      "full": "SCHOTT AG, Optical Glass Data Sheets (one sheet per glass). Coefficients imported from the SCHOTT Zemax catalog 2017-01-20b via refractiveindex.info and checked against the data sheets.",
+      "url": "https://www.schott.com/en-gb/products/optical-glass-p1000267"
+    },
+    {
+      "k": "malitson65",
+      "s": "Malitson 1965",
+      "full": "I. H. Malitson, “Interspecimen comparison of the refractive index of fused silica,” J. Opt. Soc. Am. 55, 1205–1209 (1965).",
+      "url": "https://doi.org/10.1364/JOSA.55.001205"
+    },
+    {
+      "k": "malitson63",
+      "s": "Malitson 1963",
+      "full": "I. H. Malitson, “A redetermination of some optical properties of calcium fluoride,” Appl. Opt. 2, 1103–1107 (1963).",
+      "url": "https://doi.org/10.1364/AO.2.001103"
+    },
+    {
+      "k": "daimon02",
+      "s": "Daimon & Masumura 2002",
+      "full": "M. Daimon and A. Masumura, “High-accuracy measurements of the refractive index and its temperature coefficient of calcium fluoride in a wide wavelength range from 138 to 2326 nm,” Appl. Opt. 41, 5275–5281 (2002).",
+      "url": "https://doi.org/10.1364/AO.41.005275"
+    },
+    {
+      "k": "malitson64",
+      "s": "Malitson 1964",
+      "full": "I. H. Malitson, “Refractive properties of barium fluoride,” J. Opt. Soc. Am. 54, 628–632 (1964).",
+      "url": "https://doi.org/10.1364/JOSA.54.000628"
+    },
+    {
+      "k": "dodge84",
+      "s": "Dodge 1984",
+      "full": "M. J. Dodge, “Refractive properties of magnesium fluoride,” Appl. Opt. 23, 1980–1985 (1984).",
+      "url": "https://doi.org/10.1364/AO.23.001980"
+    },
+    {
+      "k": "malitson62",
+      "s": "Malitson 1962",
+      "full": "I. H. Malitson, “Refraction and dispersion of synthetic sapphire,” J. Opt. Soc. Am. 52, 1377–1379 (1962).",
+      "url": "https://doi.org/10.1364/JOSA.52.001377"
+    },
+    {
+      "k": "zelmon97",
+      "s": "Zelmon et al. 1997",
+      "full": "D. E. Zelmon, D. L. Small, and D. Jundt, “Infrared corrected Sellmeier coefficients for congruently grown lithium niobate and 5 mol. % magnesium oxide–doped lithium niobate,” J. Opt. Soc. Am. B 14, 3319–3322 (1997).",
+      "url": "https://doi.org/10.1364/JOSAB.14.003319"
+    },
+    {
+      "k": "zelmon98",
+      "s": "Zelmon et al. 1998",
+      "full": "D. E. Zelmon, D. L. Small, and R. Page, “Refractive-index measurements of undoped yttrium aluminum garnet from 0.4 to 5.0 μm,” Appl. Opt. 37, 4933–4935 (1998).",
+      "url": "https://doi.org/10.1364/AO.37.004933"
+    },
+    {
+      "k": "devore51",
+      "s": "Devore 1951",
+      "full": "J. R. Devore, “Refractive indices of rutile and sphalerite,” J. Opt. Soc. Am. 41, 416–419 (1951).",
+      "url": "https://doi.org/10.1364/JOSA.41.000416"
+    },
+    {
+      "k": "tatian84",
+      "s": "Tatian 1984",
+      "full": "B. Tatian, “Fitting refractive-index data with the Sellmeier dispersion formula,” Appl. Opt. 23, 4477–4485 (1984).",
+      "url": "https://doi.org/10.1364/AO.23.004477"
+    },
+    {
+      "k": "klein86",
+      "s": "Klein 1986",
+      "full": "C. A. Klein, “Room-temperature dispersion equations for cubic zinc sulfide,” Appl. Opt. 25, 1873–1875 (1986).",
+      "url": "https://doi.org/10.1364/AO.25.001873"
+    },
+    {
+      "k": "daimon07",
+      "s": "Daimon & Masumura 2007",
+      "full": "M. Daimon and A. Masumura, “Measurement of the refractive index of distilled water from the near-infrared region to the ultraviolet region,” Appl. Opt. 46, 3811–3820 (2007).",
+      "url": "https://doi.org/10.1364/AO.46.003811"
+    },
+    {
+      "k": "ciddor96",
+      "s": "Ciddor 1996",
+      "full": "P. E. Ciddor, “Refractive index of air: new equations for the visible and near infrared,” Appl. Opt. 35, 1566–1573 (1996).",
+      "url": "https://doi.org/10.1364/AO.35.001566"
+    }
+  ],
+  "materials": [
+    {
+      "id": "n-bk7",
+      "g": "glass",
+      "name": "N-BK7",
+      "kw": "BK7 ボロシリケートクラウン 硼珪酸",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.5168,
+        "vd": 64.17,
+        "ne": 1.51872,
+        "ve": 63.96,
+        "url": "https://media.schott.com/api/public/content/41e799d0bf874807a0bb8e702fbb75b5",
+        "what": "SCHOTT N-BK7 data sheet, as of 01-Dec-2023"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.03961212"
+            ],
+            [
+              "B2",
+              "0.231792344"
+            ],
+            [
+              "B3",
+              "1.01046945"
+            ],
+            [
+              "C1",
+              "0.00600069867 µm²"
+            ],
+            [
+              "C2",
+              "0.0200179144 µm²"
+            ],
+            [
+              "C3",
+              "103.560653 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.03961212,
+              2,
+              0.00600069867
+            ],
+            [
+              0.231792344,
+              2,
+              0.0200179144
+            ],
+            [
+              1.01046945,
+              2,
+              103.560653
+            ]
+          ],
+          "range": [
+            0.3,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/41e799d0bf874807a0bb8e702fbb75b5",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BK7.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-k5",
+      "g": "glass",
+      "name": "N-K5",
+      "kw": "クラウン",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.52249,
+        "vd": 59.48,
+        "ne": 1.52458,
+        "ve": 59.22,
+        "url": "https://uio.no/studier/emner/matnat/fys/FYS2150/v17/kursmateriell/datablader-og-brukermanualer/schott-optical-glass-collection-datasheets-english-17012017.pdf",
+        "what": "SCHOTT Optical Glass Collection Datasheets 2017-01-17"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.08511833"
+            ],
+            [
+              "B2",
+              "0.199562005"
+            ],
+            [
+              "B3",
+              "0.930511663"
+            ],
+            [
+              "C1",
+              "0.00661099503 µm²"
+            ],
+            [
+              "C2",
+              "0.024110866 µm²"
+            ],
+            [
+              "C3",
+              "111.982777 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.08511833,
+              2,
+              0.00661099503
+            ],
+            [
+              0.199562005,
+              2,
+              0.024110866
+            ],
+            [
+              0.930511663,
+              2,
+              111.982777
+            ]
+          ],
+          "range": [
+            0.31,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://uio.no/studier/emner/matnat/fys/FYS2150/v17/kursmateriell/datablader-og-brukermanualer/schott-optical-glass-collection-datasheets-english-17012017.pdf",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-K5.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-bak1",
+      "g": "glass",
+      "name": "N-BAK1",
+      "kw": "バリウムクラウン",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.5725,
+        "vd": 57.55,
+        "ne": 1.57487,
+        "ve": 57.27,
+        "url": "https://uio.no/studier/emner/matnat/fys/FYS2150/v17/kursmateriell/datablader-og-brukermanualer/schott-optical-glass-collection-datasheets-english-17012017.pdf",
+        "what": "SCHOTT Optical Glass Collection Datasheets 2017-01-17"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.12365662"
+            ],
+            [
+              "B2",
+              "0.309276848"
+            ],
+            [
+              "B3",
+              "0.881511957"
+            ],
+            [
+              "C1",
+              "0.00644742752 µm²"
+            ],
+            [
+              "C2",
+              "0.0222284402 µm²"
+            ],
+            [
+              "C3",
+              "107.297751 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.12365662,
+              2,
+              0.00644742752
+            ],
+            [
+              0.309276848,
+              2,
+              0.0222284402
+            ],
+            [
+              0.881511957,
+              2,
+              107.297751
+            ]
+          ],
+          "range": [
+            0.3,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://uio.no/studier/emner/matnat/fys/FYS2150/v17/kursmateriell/datablader-og-brukermanualer/schott-optical-glass-collection-datasheets-english-17012017.pdf",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK1.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-bak2",
+      "g": "glass",
+      "name": "N-BAK2",
+      "kw": "バリウムクラウン",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.53996,
+        "vd": 59.71,
+        "ne": 1.54212,
+        "ve": 59.44,
+        "url": "https://media.schott.com/api/public/content/bc7e46b06673461d914118764877c539",
+        "what": "SCHOTT N-BAK2 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.01662154"
+            ],
+            [
+              "B2",
+              "0.319903051"
+            ],
+            [
+              "B3",
+              "0.937232995"
+            ],
+            [
+              "C1",
+              "0.00592383763 µm²"
+            ],
+            [
+              "C2",
+              "0.0203828415 µm²"
+            ],
+            [
+              "C3",
+              "113.118417 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.01662154,
+              2,
+              0.00592383763
+            ],
+            [
+              0.319903051,
+              2,
+              0.0203828415
+            ],
+            [
+              0.937232995,
+              2,
+              113.118417
+            ]
+          ],
+          "range": [
+            0.3,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/bc7e46b06673461d914118764877c539",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK2.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-bak4",
+      "g": "glass",
+      "name": "N-BAK4",
+      "kw": "バリウムクラウン プリズム",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.56883,
+        "vd": 55.98,
+        "ne": 1.57125,
+        "ve": 55.7,
+        "url": "https://hallaweb.jlab.org/tech/Detectors/public_html/manuals/data_sheets-manuals/S-T/S/schott/datasheet_all_us.pdf",
+        "what": "SCHOTT optical glass data sheets (2007-05-01)"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.28834642"
+            ],
+            [
+              "B2",
+              "0.132817724"
+            ],
+            [
+              "B3",
+              "0.945395373"
+            ],
+            [
+              "C1",
+              "0.00779980626 µm²"
+            ],
+            [
+              "C2",
+              "0.0315631177 µm²"
+            ],
+            [
+              "C3",
+              "105.965875 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.28834642,
+              2,
+              0.00779980626
+            ],
+            [
+              0.132817724,
+              2,
+              0.0315631177
+            ],
+            [
+              0.945395373,
+              2,
+              105.965875
+            ]
+          ],
+          "range": [
+            0.334,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://hallaweb.jlab.org/tech/Detectors/public_html/manuals/data_sheets-manuals/S-T/S/schott/datasheet_all_us.pdf",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAK4.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sk16",
+      "g": "glass",
+      "name": "N-SK16",
+      "kw": "重クラウン",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.62041,
+        "vd": 60.32,
+        "ne": 1.62286,
+        "ve": 60.08,
+        "url": "https://media.schott.com/api/public/content/5e904e6952b54f05be70518c4b669395",
+        "what": "SCHOTT N-SK16 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.34317774"
+            ],
+            [
+              "B2",
+              "0.241144399"
+            ],
+            [
+              "B3",
+              "0.994317969"
+            ],
+            [
+              "C1",
+              "0.00704687339 µm²"
+            ],
+            [
+              "C2",
+              "0.0229005 µm²"
+            ],
+            [
+              "C3",
+              "92.7508526 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.34317774,
+              2,
+              0.00704687339
+            ],
+            [
+              0.241144399,
+              2,
+              0.0229005
+            ],
+            [
+              0.994317969,
+              2,
+              92.7508526
+            ]
+          ],
+          "range": [
+            0.31,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/5e904e6952b54f05be70518c4b669395",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SK16.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-fk5",
+      "g": "glass",
+      "name": "N-FK5",
+      "kw": "フッ素クラウン 低分散",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.48749,
+        "vd": 70.41,
+        "ne": 1.48914,
+        "ve": 70.23,
+        "url": "https://media.schott.com/api/public/content/9a17a153adb1464591ca4c1fc7dae8a6",
+        "what": "SCHOTT Datenblatt N-FK5, Stand 01.02.2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "0.844309338"
+            ],
+            [
+              "B2",
+              "0.344147824"
+            ],
+            [
+              "B3",
+              "0.910790213"
+            ],
+            [
+              "C1",
+              "0.00475111955 µm²"
+            ],
+            [
+              "C2",
+              "0.0149814849 µm²"
+            ],
+            [
+              "C3",
+              "97.8600293 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.844309338,
+              2,
+              0.00475111955
+            ],
+            [
+              0.344147824,
+              2,
+              0.0149814849
+            ],
+            [
+              0.910790213,
+              2,
+              97.8600293
+            ]
+          ],
+          "range": [
+            0.26,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/9a17a153adb1464591ca4c1fc7dae8a6",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK5.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-fk51a",
+      "g": "glass",
+      "name": "N-FK51A",
+      "kw": "フッ素クラウン 異常分散 アポクロマート",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.48656,
+        "vd": 84.47,
+        "ne": 1.48794,
+        "ve": 84.07,
+        "url": "https://media.schott.com/api/public/content/9a17a153adb1464591ca4c1fc7dae8a6",
+        "what": "SCHOTT Datenblatt N-FK51A, Stand 01.12.2023"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "0.971247817"
+            ],
+            [
+              "B2",
+              "0.216901417"
+            ],
+            [
+              "B3",
+              "0.904651666"
+            ],
+            [
+              "C1",
+              "0.00472301995 µm²"
+            ],
+            [
+              "C2",
+              "0.0153575612 µm²"
+            ],
+            [
+              "C3",
+              "168.68133 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.971247817,
+              2,
+              0.00472301995
+            ],
+            [
+              0.216901417,
+              2,
+              0.0153575612
+            ],
+            [
+              0.904651666,
+              2,
+              168.68133
+            ]
+          ],
+          "range": [
+            0.29,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/9a17a153adb1464591ca4c1fc7dae8a6",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-FK51A.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-lak22",
+      "g": "glass",
+      "name": "N-LAK22",
+      "kw": "ランタンクラウン",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.65113,
+        "vd": 55.89,
+        "ne": 1.65391,
+        "ve": 55.63,
+        "url": "https://media.schott.com/api/public/content/d029686313c84933a698d5cd29e85c0c",
+        "what": "SCHOTT N-LAK22 data sheet, as of 01-Dec-2023"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.14229781"
+            ],
+            [
+              "B2",
+              "0.535138441"
+            ],
+            [
+              "B3",
+              "1.04088385"
+            ],
+            [
+              "C1",
+              "0.00585778594 µm²"
+            ],
+            [
+              "C2",
+              "0.0198546147 µm²"
+            ],
+            [
+              "C3",
+              "100.834017 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.14229781,
+              2,
+              0.00585778594
+            ],
+            [
+              0.535138441,
+              2,
+              0.0198546147
+            ],
+            [
+              1.04088385,
+              2,
+              100.834017
+            ]
+          ],
+          "range": [
+            0.31,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/d029686313c84933a698d5cd29e85c0c",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LAK22.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-baf10",
+      "g": "glass",
+      "name": "N-BAF10",
+      "kw": "バリウムフリント",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.67003,
+        "vd": 47.11,
+        "ne": 1.67341,
+        "ve": 46.83,
+        "url": "https://media.schott.com/api/public/content/20ac348ec0934bc78102504bf1403ffb",
+        "what": "SCHOTT N-BAF10 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.5851495"
+            ],
+            [
+              "B2",
+              "0.143559385"
+            ],
+            [
+              "B3",
+              "1.08521269"
+            ],
+            [
+              "C1",
+              "0.00926681282 µm²"
+            ],
+            [
+              "C2",
+              "0.0424489805 µm²"
+            ],
+            [
+              "C3",
+              "105.613573 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.5851495,
+              2,
+              0.00926681282
+            ],
+            [
+              0.143559385,
+              2,
+              0.0424489805
+            ],
+            [
+              1.08521269,
+              2,
+              105.613573
+            ]
+          ],
+          "range": [
+            0.35,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/20ac348ec0934bc78102504bf1403ffb",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-BAF10.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-f2",
+      "g": "glass",
+      "name": "N-F2",
+      "kw": "フリント 鉛なし",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.62005,
+        "vd": 36.43,
+        "ne": 1.62408,
+        "ve": 36.16,
+        "url": "https://media.schott.com/api/public/content/061f3156c83a44ed9220770b0f65a869",
+        "what": "SCHOTT N-F2 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.39757037"
+            ],
+            [
+              "B2",
+              "0.159201403"
+            ],
+            [
+              "B3",
+              "1.2686543"
+            ],
+            [
+              "C1",
+              "0.00995906143 µm²"
+            ],
+            [
+              "C2",
+              "0.0546931752 µm²"
+            ],
+            [
+              "C3",
+              "119.248346 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.39757037,
+              2,
+              0.00995906143
+            ],
+            [
+              0.159201403,
+              2,
+              0.0546931752
+            ],
+            [
+              1.2686543,
+              2,
+              119.248346
+            ]
+          ],
+          "range": [
+            0.365,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/061f3156c83a44ed9220770b0f65a869",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-F2.yml"
+        }
+      ]
+    },
+    {
+      "id": "f2",
+      "g": "glass",
+      "name": "F2",
+      "kw": "フリント 鉛",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.62004,
+        "vd": 36.37,
+        "ne": 1.62408,
+        "ve": 36.11,
+        "url": "https://media.schott.com/api/public/content/4c96933ddb2a4a06adf062d635f0b35d",
+        "what": "SCHOTT F2 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.34533359"
+            ],
+            [
+              "B2",
+              "0.209073176"
+            ],
+            [
+              "B3",
+              "0.937357162"
+            ],
+            [
+              "C1",
+              "0.00997743871 µm²"
+            ],
+            [
+              "C2",
+              "0.0470450767 µm²"
+            ],
+            [
+              "C3",
+              "111.886764 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.34533359,
+              2,
+              0.00997743871
+            ],
+            [
+              0.209073176,
+              2,
+              0.0470450767
+            ],
+            [
+              0.937357162,
+              2,
+              111.886764
+            ]
+          ],
+          "range": [
+            0.32,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/4c96933ddb2a4a06adf062d635f0b35d",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/F2.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sf2",
+      "g": "glass",
+      "name": "N-SF2",
+      "kw": "重フリント",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.64769,
+        "vd": 33.82,
+        "ne": 1.65222,
+        "ve": 33.56,
+        "url": "https://media.schott.com/api/public/content/1c70bc797d484962a51d0c950638a99f",
+        "what": "SCHOTT N-SF2 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.47343127"
+            ],
+            [
+              "B2",
+              "0.163681849"
+            ],
+            [
+              "B3",
+              "1.36920899"
+            ],
+            [
+              "C1",
+              "0.0109019098 µm²"
+            ],
+            [
+              "C2",
+              "0.0585683687 µm²"
+            ],
+            [
+              "C3",
+              "127.404933 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.47343127,
+              2,
+              0.0109019098
+            ],
+            [
+              0.163681849,
+              2,
+              0.0585683687
+            ],
+            [
+              1.36920899,
+              2,
+              127.404933
+            ]
+          ],
+          "range": [
+            0.365,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/1c70bc797d484962a51d0c950638a99f",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF2.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sf5",
+      "g": "glass",
+      "name": "N-SF5",
+      "kw": "重フリント",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.67271,
+        "vd": 32.25,
+        "ne": 1.67763,
+        "ve": 32.0,
+        "url": "https://media.schott.com/api/public/content/f8d4ac6649594677ab1b17b05ebd6a8f",
+        "what": "SCHOTT N-SF5 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.52481889"
+            ],
+            [
+              "B2",
+              "0.187085527"
+            ],
+            [
+              "B3",
+              "1.42729015"
+            ],
+            [
+              "C1",
+              "0.011254756 µm²"
+            ],
+            [
+              "C2",
+              "0.0588995392 µm²"
+            ],
+            [
+              "C3",
+              "129.141675 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.52481889,
+              2,
+              0.011254756
+            ],
+            [
+              0.187085527,
+              2,
+              0.0588995392
+            ],
+            [
+              1.42729015,
+              2,
+              129.141675
+            ]
+          ],
+          "range": [
+            0.37,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/f8d4ac6649594677ab1b17b05ebd6a8f",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF5.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sf6",
+      "g": "glass",
+      "name": "N-SF6",
+      "kw": "重フリント 高屈折率",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.80518,
+        "vd": 25.36,
+        "ne": 1.81266,
+        "ve": 25.16,
+        "url": "https://media.schott.com/api/public/content/71867e8f4d09454b9ed013ea40429b29",
+        "what": "SCHOTT N-SF6 data sheet, as of 01-Jun-2018"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.77931763"
+            ],
+            [
+              "B2",
+              "0.338149866"
+            ],
+            [
+              "B3",
+              "2.08734474"
+            ],
+            [
+              "C1",
+              "0.0133714182 µm²"
+            ],
+            [
+              "C2",
+              "0.0617533621 µm²"
+            ],
+            [
+              "C3",
+              "174.01759 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.77931763,
+              2,
+              0.0133714182
+            ],
+            [
+              0.338149866,
+              2,
+              0.0617533621
+            ],
+            [
+              2.08734474,
+              2,
+              174.01759
+            ]
+          ],
+          "range": [
+            0.37,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/71867e8f4d09454b9ed013ea40429b29",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF6.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sf10",
+      "g": "glass",
+      "name": "N-SF10",
+      "kw": "重フリント",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.72828,
+        "vd": 28.53,
+        "ne": 1.7343,
+        "ve": 28.31,
+        "url": "https://media.schott.com/api/public/content/7c60bae06a384f1e93cf44f9f6f6ce4f",
+        "what": "SCHOTT N-SF10 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.62153902"
+            ],
+            [
+              "B2",
+              "0.256287842"
+            ],
+            [
+              "B3",
+              "1.64447552"
+            ],
+            [
+              "C1",
+              "0.0122241457 µm²"
+            ],
+            [
+              "C2",
+              "0.0595736775 µm²"
+            ],
+            [
+              "C3",
+              "147.468793 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.62153902,
+              2,
+              0.0122241457
+            ],
+            [
+              0.256287842,
+              2,
+              0.0595736775
+            ],
+            [
+              1.64447552,
+              2,
+              147.468793
+            ]
+          ],
+          "range": [
+            0.38,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/7c60bae06a384f1e93cf44f9f6f6ce4f",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF10.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-sf11",
+      "g": "glass",
+      "name": "N-SF11",
+      "kw": "重フリント 高分散",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.78472,
+        "vd": 25.68,
+        "ne": 1.79192,
+        "ve": 25.47,
+        "url": "https://media.schott.com/api/public/content/78e83df5ca2c4da4ad4490a52c80a146",
+        "what": "SCHOTT N-SF11 data sheet, as of 01-Feb-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "1.73759695"
+            ],
+            [
+              "B2",
+              "0.313747346"
+            ],
+            [
+              "B3",
+              "1.89878101"
+            ],
+            [
+              "C1",
+              "0.013188707 µm²"
+            ],
+            [
+              "C2",
+              "0.0623068142 µm²"
+            ],
+            [
+              "C3",
+              "155.23629 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.73759695,
+              2,
+              0.013188707
+            ],
+            [
+              0.313747346,
+              2,
+              0.0623068142
+            ],
+            [
+              1.89878101,
+              2,
+              155.23629
+            ]
+          ],
+          "range": [
+            0.37,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/78e83df5ca2c4da4ad4490a52c80a146",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-SF11.yml"
+        }
+      ]
+    },
+    {
+      "id": "n-lasf9",
+      "g": "glass",
+      "name": "N-LASF9",
+      "kw": "ランタン重フリント 高屈折率",
+      "maker": "SCHOTT",
+      "cond": "SCHOTT データシートの値(温度などの測定条件はシートに記載なし)",
+      "sheet": {
+        "nd": 1.85025,
+        "vd": 32.17,
+        "ne": 1.8565,
+        "ve": 31.93,
+        "url": "https://media.schott.com/api/public/content/81f53dfdd4324d86ad1a19744b0067a3",
+        "what": "SCHOTT N-LASF9 data sheet, as of 09-May-2014"
+      },
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = B₁λ²/(λ² − C₁) + B₂λ²/(λ² − C₂) + B₃λ²/(λ² − C₃)",
+          "params": [
+            [
+              "B1",
+              "2.00029547"
+            ],
+            [
+              "B2",
+              "0.298926886"
+            ],
+            [
+              "B3",
+              "1.80691843"
+            ],
+            [
+              "C1",
+              "0.0121426017 µm²"
+            ],
+            [
+              "C2",
+              "0.0538736236 µm²"
+            ],
+            [
+              "C3",
+              "156.530829 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              2.00029547,
+              2,
+              0.0121426017
+            ],
+            [
+              0.298926886,
+              2,
+              0.0538736236
+            ],
+            [
+              1.80691843,
+              2,
+              156.530829
+            ]
+          ],
+          "range": [
+            0.365,
+            2.5
+          ],
+          "ref": "schott",
+          "src": "https://media.schott.com/api/public/content/81f53dfdd4324d86ad1a19744b0067a3",
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/specs/schott/optical/N-LASF9.yml"
+        }
+      ]
+    },
+    {
+      "id": "fused-silica",
+      "g": "window",
+      "name": "溶融石英(SiO₂ ガラス)",
+      "kw": "fused silica シリカ 石英ガラス 合成石英 SiO2 Malitson",
+      "cond": "20 ℃",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "0.6961663"
+            ],
+            [
+              "A2",
+              "0.4079426"
+            ],
+            [
+              "A3",
+              "0.8974794"
+            ],
+            [
+              "λ1",
+              "0.0684043 µm"
+            ],
+            [
+              "λ2",
+              "0.1162414 µm"
+            ],
+            [
+              "λ3",
+              "9.896161 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.6961663,
+              2,
+              0.00467914825849
+            ],
+            [
+              0.4079426,
+              2,
+              0.013512063073959999
+            ],
+            [
+              0.8974794,
+              2,
+              97.93400253792099
+            ]
+          ],
+          "range": [
+            0.21,
+            3.71
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/SiO2/nk/Malitson.yml",
+          "src": "https://opg.optica.org/josa/abstract.cfm?uri=josa-55-10-1205",
+          "ref": "malitson65"
+        }
+      ]
+    },
+    {
+      "id": "caf2",
+      "g": "window",
+      "name": "フッ化カルシウム(CaF₂、蛍石)",
+      "kw": "calcium fluoride fluorite CaF2 蛍石 Malitson",
+      "cond": "24 ℃",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "0.5675888"
+            ],
+            [
+              "A2",
+              "0.4710914"
+            ],
+            [
+              "A3",
+              "3.8484723"
+            ],
+            [
+              "λ1",
+              "0.050263605 µm"
+            ],
+            [
+              "λ2",
+              "0.1003909 µm"
+            ],
+            [
+              "λ3",
+              "34.64904 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.5675888,
+              2,
+              0.002526429987596025
+            ],
+            [
+              0.4710914,
+              2,
+              0.010078332802810001
+            ],
+            [
+              3.8484723,
+              2,
+              1200.5559729216
+            ]
+          ],
+          "range": [
+            0.23,
+            9.7
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/CaF2/nk/Malitson.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-2-11-1103",
+          "ref": "malitson63"
+        }
+      ]
+    },
+    {
+      "id": "caf2-duv",
+      "g": "window",
+      "name": "フッ化カルシウム(CaF₂、深紫外〜近赤外)",
+      "kw": "calcium fluoride CaF2 蛍石 深紫外 DUV 193 nm Daimon",
+      "cond": "20 ℃・窒素中の測定",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aᵢλ²/(λ² − λᵢ²)  (i = 1…4)",
+          "params": [
+            [
+              "A1",
+              "0.443749998"
+            ],
+            [
+              "A2",
+              "0.444930066"
+            ],
+            [
+              "A3",
+              "0.150133991"
+            ],
+            [
+              "A4",
+              "8.85319946"
+            ],
+            [
+              "λ1²",
+              "0.00178027854 µm²"
+            ],
+            [
+              "λ2²",
+              "0.00788536061 µm²"
+            ],
+            [
+              "λ3²",
+              "0.0124119491 µm²"
+            ],
+            [
+              "λ4²",
+              "2752.28175 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.443749998,
+              2,
+              0.00178027854
+            ],
+            [
+              0.444930066,
+              2,
+              0.00788536061
+            ],
+            [
+              0.150133991,
+              2,
+              0.0124119491
+            ],
+            [
+              8.85319946,
+              2,
+              2752.28175
+            ]
+          ],
+          "range": [
+            0.138,
+            2.326
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/CaF2/nk/Daimon-20.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-41-25-5275",
+          "ref": "daimon02"
+        }
+      ]
+    },
+    {
+      "id": "baf2",
+      "g": "window",
+      "name": "フッ化バリウム(BaF₂)",
+      "kw": "barium fluoride BaF2 Malitson",
+      "cond": "25 ℃",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "0.643356"
+            ],
+            [
+              "A2",
+              "0.506762"
+            ],
+            [
+              "A3",
+              "3.8261"
+            ],
+            [
+              "λ1",
+              "0.057789 µm"
+            ],
+            [
+              "λ2",
+              "0.10968 µm"
+            ],
+            [
+              "λ3",
+              "46.3864 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.643356,
+              2,
+              0.003339568521
+            ],
+            [
+              0.506762,
+              2,
+              0.0120297024
+            ],
+            [
+              3.8261,
+              2,
+              2151.6981049600004
+            ]
+          ],
+          "range": [
+            0.2652,
+            10.346
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/BaF2/nk/Malitson.yml",
+          "src": "https://opg.optica.org/josa/abstract.cfm?uri=josa-54-5-628",
+          "ref": "malitson64"
+        }
+      ]
+    },
+    {
+      "id": "mgf2",
+      "g": "window",
+      "name": "フッ化マグネシウム(MgF₂、結晶)",
+      "kw": "magnesium fluoride MgF2 単結晶 複屈折 反射防止膜 Dodge",
+      "cond": "19 ℃・単結晶(蒸着膜の屈折率はこれと違うことがある)",
+      "ds": [
+        {
+          "ax": "o",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "0.48755108"
+            ],
+            [
+              "A2",
+              "0.39875031"
+            ],
+            [
+              "A3",
+              "2.3120353"
+            ],
+            [
+              "λ1",
+              "0.04338408 µm"
+            ],
+            [
+              "λ2",
+              "0.09461442 µm"
+            ],
+            [
+              "λ3",
+              "23.793604 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.48755108,
+              2,
+              0.0018821783974463998
+            ],
+            [
+              0.39875031,
+              2,
+              0.008951888471936401
+            ],
+            [
+              2.3120353,
+              2,
+              566.135591308816
+            ]
+          ],
+          "range": [
+            0.2,
+            7.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/MgF2/nk/Dodge-o.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-23-12-1980",
+          "ref": "dodge84"
+        },
+        {
+          "ax": "e",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "0.41344023"
+            ],
+            [
+              "A2",
+              "0.50497499"
+            ],
+            [
+              "A3",
+              "2.4904862"
+            ],
+            [
+              "λ1",
+              "0.03684262 µm"
+            ],
+            [
+              "λ2",
+              "0.09076162 µm"
+            ],
+            [
+              "λ3",
+              "23.771995 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.41344023,
+              2,
+              0.0013573786484644
+            ],
+            [
+              0.50497499,
+              2,
+              0.0082376716650244
+            ],
+            [
+              2.4904862,
+              2,
+              565.107746280025
+            ]
+          ],
+          "range": [
+            0.2,
+            7.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/MgF2/nk/Dodge-e.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-23-12-1980",
+          "ref": "dodge84"
+        }
+      ]
+    },
+    {
+      "id": "sapphire",
+      "g": "window",
+      "name": "サファイア(Al₂O₃、常光線のみ)",
+      "kw": "sapphire Al2O3 アルミナ 単結晶 Malitson",
+      "cond": "24 ℃・合成サファイア・常光線(o)",
+      "ds": [
+        {
+          "ax": "o",
+          "eq": "n² − 1 = Σ Aⱼλ²/(λ² − λⱼ²)  (j = 1…3)",
+          "params": [
+            [
+              "A1",
+              "1.023798"
+            ],
+            [
+              "A2",
+              "1.058264"
+            ],
+            [
+              "A3",
+              "5.280792"
+            ],
+            [
+              "λ1",
+              "0.06144821 µm"
+            ],
+            [
+              "λ2",
+              "0.1106997 µm"
+            ],
+            [
+              "λ3",
+              "17.92656 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              1.023798,
+              2,
+              0.0037758825122041003
+            ],
+            [
+              1.058264,
+              2,
+              0.012254423580089999
+            ],
+            [
+              5.280792,
+              2,
+              321.36155343359997
+            ]
+          ],
+          "range": [
+            0.2652,
+            5.577
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/Al2O3/nk/Malitson.yml",
+          "src": "https://opg.optica.org/josa/abstract.cfm?uri=josa-52-12-1377",
+          "ref": "malitson62"
+        }
+      ]
+    },
+    {
+      "id": "linbo3",
+      "g": "window",
+      "name": "ニオブ酸リチウム(LiNbO₃、コングルエント)",
+      "kw": "lithium niobate LiNbO3 LN CLN 電気光学 非線形 複屈折 Zelmon",
+      "cond": "室温・コングルエント組成(MgO 添加なし)",
+      "ds": [
+        {
+          "ax": "o",
+          "eq": "n² − 1 = Aλ²/(λ² − B) + Cλ²/(λ² − D) + Eλ²/(λ² − F)",
+          "params": [
+            [
+              "A",
+              "2.6734"
+            ],
+            [
+              "B",
+              "0.01764 µm²"
+            ],
+            [
+              "C",
+              "1.229"
+            ],
+            [
+              "D",
+              "0.05914 µm²"
+            ],
+            [
+              "E",
+              "12.614"
+            ],
+            [
+              "F",
+              "474.6 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              2.6734,
+              2,
+              0.01764
+            ],
+            [
+              1.229,
+              2,
+              0.05914
+            ],
+            [
+              12.614,
+              2,
+              474.6
+            ]
+          ],
+          "range": [
+            0.4,
+            5.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/LiNbO3/nk/Zelmon-o.yml",
+          "src": "https://opg.optica.org/josab/abstract.cfm?uri=josab-14-12-3319",
+          "ref": "zelmon97"
+        },
+        {
+          "ax": "e",
+          "eq": "n² − 1 = Aλ²/(λ² − B) + Cλ²/(λ² − D) + Eλ²/(λ² − F)",
+          "params": [
+            [
+              "A",
+              "2.9804"
+            ],
+            [
+              "B",
+              "0.02047 µm²"
+            ],
+            [
+              "C",
+              "0.5981"
+            ],
+            [
+              "D",
+              "0.0666 µm²"
+            ],
+            [
+              "E",
+              "8.9543"
+            ],
+            [
+              "F",
+              "416.08 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              2.9804,
+              2,
+              0.02047
+            ],
+            [
+              0.5981,
+              2,
+              0.0666
+            ],
+            [
+              8.9543,
+              2,
+              416.08
+            ]
+          ],
+          "range": [
+            0.4,
+            5.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/LiNbO3/nk/Zelmon-e.yml",
+          "src": "https://opg.optica.org/josab/abstract.cfm?uri=josab-14-12-3319",
+          "ref": "zelmon97"
+        }
+      ]
+    },
+    {
+      "id": "yag",
+      "g": "window",
+      "name": "YAG(Y₃Al₅O₁₂、無添加)",
+      "kw": "YAG yttrium aluminum garnet イットリウム アルミニウム ガーネット Nd:YAG 母材 Zelmon",
+      "cond": "室温・無添加",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Aλ²/(λ² − B) + Cλ²/(λ² − D)",
+          "params": [
+            [
+              "A",
+              "2.282"
+            ],
+            [
+              "B",
+              "0.01185 µm²"
+            ],
+            [
+              "C",
+              "3.27644"
+            ],
+            [
+              "D",
+              "282.734 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              2.282,
+              2,
+              0.01185
+            ],
+            [
+              3.27644,
+              2,
+              282.734
+            ]
+          ],
+          "range": [
+            0.4,
+            5.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/Y3Al5O12/nk/Zelmon.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-37-21-4933",
+          "ref": "zelmon98"
+        }
+      ]
+    },
+    {
+      "id": "tio2",
+      "g": "window",
+      "name": "二酸化チタン(TiO₂、ルチル単結晶)",
+      "kw": "titanium dioxide rutile TiO2 ルチル 高屈折率 複屈折 Devore",
+      "cond": "室温・ルチル単結晶(薄膜の TiO₂ は製法で大きく違う)",
+      "ds": [
+        {
+          "ax": "o",
+          "eq": "n² = A + B/(λ² − C)",
+          "params": [
+            [
+              "A",
+              "5.913"
+            ],
+            [
+              "B",
+              "0.2441 µm²"
+            ],
+            [
+              "C",
+              "0.0803 µm²"
+            ]
+          ],
+          "a": 5.913,
+          "t": [
+            [
+              0.2441,
+              0,
+              0.0803
+            ]
+          ],
+          "range": [
+            0.43,
+            1.53
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/TiO2/nk/Devore-o.yml",
+          "src": "https://opg.optica.org/josa/abstract.cfm?uri=josa-41-6-416",
+          "ref": "devore51",
+          "form_note": 1
+        },
+        {
+          "ax": "e",
+          "eq": "n² = A + B/(λ² − C)",
+          "params": [
+            [
+              "A",
+              "7.197"
+            ],
+            [
+              "B",
+              "0.3322 µm²"
+            ],
+            [
+              "C",
+              "0.0843 µm²"
+            ]
+          ],
+          "a": 7.197,
+          "t": [
+            [
+              0.3322,
+              0,
+              0.0843
+            ]
+          ],
+          "range": [
+            0.43,
+            1.53
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/TiO2/nk/Devore-e.yml",
+          "src": "https://opg.optica.org/josa/abstract.cfm?uri=josa-41-6-416",
+          "ref": "devore51",
+          "form_note": 1
+        }
+      ]
+    },
+    {
+      "id": "znse",
+      "g": "ir",
+      "name": "セレン化亜鉛(ZnSe、CVD)",
+      "kw": "zinc selenide ZnSe CVD 赤外 CO2 レーザー 窓 Raytran",
+      "cond": "CVD 多結晶(Raytran)・温度は原典の表に記載なし",
+      "data_from": "J. Connolly, B. diBenedetto, R. Donadio, “Specifications of Raytran material,” Proc. SPIE 181, 141–144 (1979)",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aᵢλ²/(λ² − Bᵢ²)  (i = 1…3)",
+          "params": [
+            [
+              "A1",
+              "4.45813734"
+            ],
+            [
+              "A2",
+              "0.467216334"
+            ],
+            [
+              "A3",
+              "2.8956629"
+            ],
+            [
+              "B1",
+              "0.200859853 µm"
+            ],
+            [
+              "B2",
+              "0.391371166 µm"
+            ],
+            [
+              "B3",
+              "47.1362108 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              4.45813734,
+              2,
+              0.04034468054718161
+            ],
+            [
+              0.467216334,
+              2,
+              0.15317138957619955
+            ],
+            [
+              2.8956629,
+              2,
+              2221.8223685820367
+            ]
+          ],
+          "range": [
+            0.54,
+            18.2
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/ZnSe/nk/Connolly.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-23-24-4477",
+          "ref": "tatian84"
+        }
+      ]
+    },
+    {
+      "id": "si",
+      "g": "ir",
+      "name": "シリコン(Si、赤外)",
+      "kw": "silicon Si シリコン 赤外 シリコンフォトニクス 1550 Salzberg",
+      "cond": "26 ℃・単結晶",
+      "data_from": "C. D. Salzberg and J. J. Villa, “Infrared refractive indexes of silicon, germanium and modified selenium glass,” J. Opt. Soc. Am. 47, 244–246 (1957)",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aᵢλ²/(λ² − Bᵢ²)  (i = 1…3)",
+          "params": [
+            [
+              "A1",
+              "10.6684293"
+            ],
+            [
+              "A2",
+              "0.0030434748"
+            ],
+            [
+              "A3",
+              "1.54133408"
+            ],
+            [
+              "B1",
+              "0.301516485 µm"
+            ],
+            [
+              "B2",
+              "1.13475115 µm"
+            ],
+            [
+              "B3",
+              "1104.0 µm"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              10.6684293,
+              2,
+              0.09091219072675523
+            ],
+            [
+              0.0030434748,
+              2,
+              1.2876601724263226
+            ],
+            [
+              1.54133408,
+              2,
+              1218816.0
+            ]
+          ],
+          "range": [
+            1.36,
+            11.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/Si/nk/Salzberg.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-23-24-4477",
+          "ref": "tatian84"
+        }
+      ]
+    },
+    {
+      "id": "zns",
+      "g": "ir",
+      "name": "硫化亜鉛(ZnS、立方晶)",
+      "kw": "zinc sulfide ZnS Cleartran 赤外 窓 Klein Debenham",
+      "cond": "室温・立方晶",
+      "data_from": "M. Debenham, “Refractive indices of zinc sulfide in the 0.405–13-µm wavelength range,” Appl. Opt. 23, 2238–2239 (1984)",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² = ε₀ + A/(λ² − λ_UV²) − (ε₀ − ε∞)λ_IR²/(λ_IR² − λ²)",
+          "params": [
+            [
+              "ε₀",
+              "8.393"
+            ],
+            [
+              "ε∞",
+              "5.105"
+            ],
+            [
+              "A",
+              "0.14383 µm²"
+            ],
+            [
+              "λ_UV",
+              "0.2421 µm"
+            ],
+            [
+              "λ_IR",
+              "36.71 µm"
+            ]
+          ],
+          "a": 8.393,
+          "t": [
+            [
+              0.14383,
+              0,
+              0.058612410000000004
+            ],
+            [
+              4430.99,
+              0,
+              1347.6241
+            ]
+          ],
+          "range": [
+            0.405,
+            13.0
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/ZnS/nk/Debenham.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-25-12-1873",
+          "form_note": 1,
+          "ref": "klein86"
+        }
+      ]
+    },
+    {
+      "id": "water",
+      "g": "fluid",
+      "name": "水(蒸留水)",
+      "kw": "water H2O 水 純水 液浸 Daimon",
+      "cond": "20.0 ℃・真空に対する屈折率(絶対屈折率)",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "n² − 1 = Σ Aᵢλ²/(λ² − λᵢ²)  (i = 1…4)",
+          "params": [
+            [
+              "A1",
+              "0.5684027565"
+            ],
+            [
+              "A2",
+              "0.1726177391"
+            ],
+            [
+              "A3",
+              "0.02086189578"
+            ],
+            [
+              "A4",
+              "0.1130748688"
+            ],
+            [
+              "λ1²",
+              "0.005101829712 µm²"
+            ],
+            [
+              "λ2²",
+              "0.01821153936 µm²"
+            ],
+            [
+              "λ3²",
+              "0.02620722293 µm²"
+            ],
+            [
+              "λ4²",
+              "10.69792721 µm²"
+            ]
+          ],
+          "a": 1,
+          "t": [
+            [
+              0.5684027565,
+              2,
+              0.005101829712
+            ],
+            [
+              0.1726177391,
+              2,
+              0.01821153936
+            ],
+            [
+              0.02086189578,
+              2,
+              0.02620722293
+            ],
+            [
+              0.1130748688,
+              2,
+              10.69792721
+            ]
+          ],
+          "range": [
+            0.182,
+            1.129
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/main/H2O/nk/Daimon-20.0C.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-46-18-3811",
+          "ref": "daimon07"
+        }
+      ]
+    },
+    {
+      "id": "air",
+      "g": "fluid",
+      "name": "空気(標準空気)",
+      "kw": "air 空気 大気 Ciddor 標準空気",
+      "cond": "標準空気: 乾燥空気・15 ℃・101 325 Pa・CO₂ 450 ppm、真空中の波長",
+      "ds": [
+        {
+          "ax": "",
+          "eq": "(n − 1) × 10⁸ = k₁/(k₀ − σ²) + k₃/(k₂ − σ²),  σ = 1/λ",
+          "params": [
+            [
+              "k₀",
+              "238.0185 µm⁻²"
+            ],
+            [
+              "k₁",
+              "5792105 µm⁻²"
+            ],
+            [
+              "k₂",
+              "57.362 µm⁻²"
+            ],
+            [
+              "k₃",
+              "167917 µm⁻²"
+            ]
+          ],
+          "gas": [
+            [
+              0.05792105,
+              238.0185
+            ],
+            [
+              0.00167917,
+              57.362
+            ]
+          ],
+          "range": [
+            0.23,
+            1.69
+          ],
+          "rii": "https://github.com/polyanskiy/refractiveindex.info-database/blob/c5c2f188e848453def5970e347399d653df2ffc2/database/data/other/mixed%20gases/air/nk/Ciddor.yml",
+          "src": "https://opg.optica.org/ao/abstract.cfm?uri=ao-35-9-1566",
+          "ref": "ciddor96"
+        }
+      ]
+    }
+  ]
+}

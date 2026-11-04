@@ -1094,5 +1094,8 @@
   "measure_conv_w_range": "G = {g} is outside the range of the E112 tables (00 to 14). The conversion simply extends the formulas and is not a grain size number in the standard.",
   "measure_gtab_n100": "n (per in² at 100×)",
   "measure_gtab_abar": "Ā (µm²)",
-  "measure_gtab_more": "n and Ā are also checked against E112 table 4."
+  "measure_gtab_more": "n and Ā are also checked against E112 table 4.",
+  "nav_rindex": "Refractive index",
+  "home_feat_rindex_desc": "Refractive indices of {n} materials (glasses, crystals, IR materials) from source-checked dispersion formulas. Compare and export CSV",
+  "about_rindex": "refractive indices of optical glasses, fused silica, crystals, infrared materials, water and air, calculated from dispersion formulas whose coefficients were checked against manufacturers' data sheets and the original papers. Enter a wavelength for the index, group index, group velocity dispersion, Abbe number, reflectance and Brewster angle, compare two to four materials, and export a CSV with sources."
 }

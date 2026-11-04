@@ -363,6 +363,41 @@ function fmlText(code) {
     }),
   };
 }
+// 屈折率データ集(/refractive-index/)。data/rindex.json(既定言語の文章・材料・分散式の係数・範囲・出典)と、訳 data/i18n/{言語}/rindex.json(文章だけ。式・係数・範囲・出典は言語によらない)。
+// 材料と係数は、作業用のスクリプトが refractiveindex.info のデータベースから取り込み、原典(データシート・論文)と突き合わせたもの(作り方は data/rindex.json の外)。
+// 計算(n・群屈折率・GVD など)と画面の動き(材料の選択・波長・グラフ・並べ比べ・CSV・共有の URL)は src/js/rindex.js(計算の関数は build の検査でも使う)。
+// その言語の src/i18n に nav_rindex があり、文章の訳もある言語でだけ作る。ファイルがなければ何も作らない
+const riBase = readOpt('data/rindex.json', null);
+const riTr = code => (code === defLang ? null : readOpt(`data/i18n/${code}/rindex.json`, null));
+const riOn = code => !!riBase && Object.hasOwn(readOpt(`src/i18n/${code}.json`, {}), 'nav_rindex') && (code === defLang || !!riTr(code)?.materials);
+const riJs = riBase ? await import(pathToFileURL(path.join(root, 'src/js/rindex.js')).href) : null;
+// 訳を既定言語のデータに重ねる。足りない訳や数の合わない訳があれば止める
+function riText(code) {
+  const d = riBase;
+  const T = riTr(code);
+  if (!T) return d;
+  const where = `data/i18n/${code}/rindex.json`;
+  const need = (v, k) => {
+    if (v == null || v === '' || (Array.isArray(v) && !v.length)) throw new Error(`${where}: ${k} の訳がありません`);
+    return v;
+  };
+  const same = (a, b, k) => {
+    if (!Array.isArray(b) || b.length !== a.length) throw new Error(`${where}: ${k} の数を既定言語(${a.length})とそろえてください`);
+    return b;
+  };
+  return {
+    ...d,
+    ...Object.fromEntries(['title', 'description', 'h1', 'lead', 'note', 'sources_h'].map(k => [k, need(T[k], k)])),
+    ui: Object.fromEntries(Object.keys(d.ui).map(k => [k, need(T.ui?.[k], `ui.${k}`)])),
+    groups: d.groups.map(g => ({ ...g, name: need(T.groups?.[g.id], `groups.${g.id}`) })),
+    guide: (same(d.guide, T.guide, 'guide'), d.guide).map((s, i) => ({ ...s, h: need(T.guide[i].h, `guide[${i}].h`), p: same(s.p, T.guide[i].p, `guide[${i}].p`).map((x, j) => need(x, `guide[${i}].p[${j}]`)) })),
+    faq: T.faq ?? [],
+    materials: d.materials.map(m => {
+      const x = need(T.materials?.[m.id], `materials.${m.id}`);
+      return { ...m, name: need(x.name, `materials.${m.id}.name`), cond: need(x.cond, `materials.${m.id}.cond`), kw: x.kw ?? '' };
+    }),
+  };
+}
 // 分析・評価手法ナビ(/methods/)。data/methods.json(既定言語の文章・目的・試料の条件の段階 x・リンク・出典)と、訳 data/i18n/{言語}/methods.json(文章だけ。段階・リンクは言語によらない)。
 // 絞り込みの判定・並べ方・比べる表・条件の URL は src/js/methods.js(judge と rank は build の検査でも使う)。
 // その言語の src/i18n に nav_methods があり、文章の訳もある言語でだけ作る。ファイルがなければ何も作らない
@@ -614,7 +649,8 @@ const loc = (v, code) => (v && typeof v === 'object' ? v[code] ?? v[defLang] : v
 // ---- 出力先を作り直す ----
 fs.rmSync(out, { recursive: true, force: true });
 fs.cpSync(path.join(root, 'src/css'), path.join(out, 'css'), { recursive: true });
-fs.cpSync(path.join(root, 'src/js'), path.join(out, 'js'), { recursive: true });
+// 屈折率データ集の rindex.js は data/rindex.json があるときだけ出す(ないときの出力を前と同じにする)
+fs.cpSync(path.join(root, 'src/js'), path.join(out, 'js'), { recursive: true, filter: f => !!riBase || path.relative(path.join(root, 'src/js'), f) !== 'rindex.js' });
 // 外部のライブラリ(SQL 練習ツールの sql.js など)。大きいので Service Worker の事前保存(js/)には入れない
 if (exists('src/vendor')) fs.cpSync(path.join(root, 'src/vendor'), path.join(out, 'vendor'), { recursive: true });
 write('js/modes/index.js',
@@ -666,6 +702,8 @@ function buildLang(L) {
   const mtl = matOn(code) ? matText(code) : null;
   // 公式集(この言語で作るときだけ。訳を重ねた文章)
   const fml = fmlOn(code) ? fmlText(code) : null;
+  // 屈折率データ集(この言語で作るときだけ。訳を重ねた文章)
+  const rix = riOn(code) ? riText(code) : null;
   // 分析・評価手法ナビ(この言語で作るときだけ。訳を重ねた文章)
   const mtd = mtdOn(code) ? mtdText(code) : null;
   // 試料調製・エッチングガイド(この言語で作るときだけ。訳を重ねた文章)
@@ -747,7 +785,8 @@ function buildLang(L) {
     lang: code,
     locale: L.locale,
     siteName,
-    strings: S,
+    // 屈折率データ集の文言は、データがないときは入れない(ないときの出力を前と同じにする)
+    strings: riBase ? S : Object.fromEntries(Object.entries(S).filter(([k]) => !['nav_rindex', 'home_feat_rindex_desc', 'about_rindex'].includes(k))),
     exams: exams.map(e => ({ id: e.id, name: exName(e), groups: e.groups.map(g => ({ id: g.id, name: grName(e, g) })) })),
     categories: live.map(c => ({ id: c.id, exam: c.exam, group: c.group, name: c.name, count: qs[c.id].length })),
     glossary: glossaryIndex,
@@ -824,7 +863,7 @@ function buildLang(L) {
     ${interviewText[code] ? feature(`${home}interview-questions/`, interviewText[code].nav, interviewText[code].card, 'home_feat_interview') : ''}
     ${beyondText[code] && pageNames(code).includes('beyond-scaling') ? feature(`${home}beyond-scaling/`, beyondText[code].nav, beyondText[code].card, 'home_feat_beyond') : ''}
     ${compares.some(e => isDef || tr('compare')[e.slug]) ? feature(`${home}compare/`, S.nav_compare, t('home_feat_compare_desc'), 'home_feat_compare') : ''}
-    ${fail ? feature(`${home}failure/`, S.nav_failure, t('home_feat_failure_desc'), 'home_feat_failure') : ''}${atl ? feature(`${home}atlas/`, S.nav_atlas, t('home_feat_atlas_desc'), 'home_feat_atlas') : ''}${drl ? feature(`${home}drill/`, S.nav_drill, t('home_feat_drill_desc'), 'home_feat_drill') : ''}${mtl ? feature(`${home}materials/`, S.nav_materials, t('home_feat_materials_desc'), 'home_feat_materials') : ''}${fml ? feature(`${home}formulas/`, S.nav_formulas, t('home_feat_formulas_desc', { n: fml.formulas.length }), 'home_feat_formulas') : ''}${mtd ? feature(`${home}methods/`, S.nav_methods, t('home_feat_methods_desc', { n: mtd.methods.length }), 'home_feat_methods') : ''}${prp ? feature(`${home}prep/`, S.nav_prep, t('home_feat_prep_desc', { n: prp.materials.length }), 'home_feat_prep') : ''}${msr ? feature(`${home}measure/`, S.nav_measure, t('home_feat_measure_desc'), 'home_feat_measure') : ''}${phr ? feature(`${home}phrases/`, phr.ui.nav, phr.ui.card.replace('{n}', phr.phrases.length), 'home_feat_phrases') : ''}
+    ${fail ? feature(`${home}failure/`, S.nav_failure, t('home_feat_failure_desc'), 'home_feat_failure') : ''}${atl ? feature(`${home}atlas/`, S.nav_atlas, t('home_feat_atlas_desc'), 'home_feat_atlas') : ''}${drl ? feature(`${home}drill/`, S.nav_drill, t('home_feat_drill_desc'), 'home_feat_drill') : ''}${mtl ? feature(`${home}materials/`, S.nav_materials, t('home_feat_materials_desc'), 'home_feat_materials') : ''}${fml ? feature(`${home}formulas/`, S.nav_formulas, t('home_feat_formulas_desc', { n: fml.formulas.length }), 'home_feat_formulas') : ''}${rix ? feature(`${home}refractive-index/`, S.nav_rindex, t('home_feat_rindex_desc', { n: rix.materials.length }), 'home_feat_rindex') : ''}${mtd ? feature(`${home}methods/`, S.nav_methods, t('home_feat_methods_desc', { n: mtd.methods.length }), 'home_feat_methods') : ''}${prp ? feature(`${home}prep/`, S.nav_prep, t('home_feat_prep_desc', { n: prp.materials.length }), 'home_feat_prep') : ''}${msr ? feature(`${home}measure/`, S.nav_measure, t('home_feat_measure_desc'), 'home_feat_measure') : ''}${phr ? feature(`${home}phrases/`, phr.ui.nav, phr.ui.card.replace('{n}', phr.phrases.length), 'home_feat_phrases') : ''}
     ${Object.keys(figs).length ? feature(`${home}figures/`, S.footer_figures, t('home_feat_figures_desc'), 'home_feat_figures') : ''}
     ${toolsIn(code).length ? feature(`${home}tools/`, S.nav_tools, t('home_feat_tools_desc'), 'home_feat_tools') : ''}
     ${news.length ? feature(`${home}news-terms/`, S.news_title, t('home_feat_news_desc'), 'home_feat_news') : ''}
@@ -1059,6 +1098,9 @@ function buildLang(L) {
       ...drl.types.map(x => ({ t: 'd', n: x.name, u: `drill/?t=${x.id}`, x: x.short }))] : []),
     ...(fml ? [{ t: 'e', n: fml.h1, u: 'formulas/', x: fml.description },
       ...fml.formulas.map(f => ({ t: 'e', n: f.name, u: `formulas/#f-${f.id}`, x: `${f.f.map(y => y.t).join(' ').replace(/[_{}^]/g, '')} ${f.kw}` }))] : []),
+    // 屈折率データ集: 検索のグループは材料データ集と同じ記号 m を使う(search.js を変えないため。同じ言語に両方あるときは止める)
+    ...(rix ? [{ t: 'm', n: rix.h1, u: 'refractive-index/', x: rix.description },
+      ...rix.materials.map(m => ({ t: 'm', n: m.name, u: `refractive-index/?m=${m.id}#m-${m.id}`, x: `${rix.h1} ${m.kw} ${m.cond}` }))] : []),
     ...(mtd ? [{ t: 'v', n: mtd.h1, u: 'methods/', x: mtd.description },
       ...mtd.methods.map(m => ({ t: 'v', n: m.abbr ? `${m.name} / ${m.abbr}` : m.name, u: `methods/#m-${m.id}`, x: m.what }))] : []),
     ...(prp ? [{ t: 'r', n: prp.h1, u: 'prep/', x: prp.description },
@@ -1079,7 +1121,7 @@ function buildLang(L) {
     ...live.flatMap(c => qs[c.id].map(q => ({ t: 'q', n: q.question, u: `q/${c.id}/${q.id}/`, x: c.name }))),
   ];
   write(`data/${code}/search.json`, JSON.stringify({
-    strings: { ...Object.fromEntries(['search_none', 'search_hint', 'search_more', 'search_count', 'search_g_c', 'search_g_t', 'search_g_k', 'search_g_f', 'search_g_q'].map(k => [k, S[k]])), ...(LT ? { search_g_l: LT.search } : {}), ...(fail ? { search_g_x: S.nav_failure } : {}), ...(atl ? { search_g_a: S.nav_atlas } : {}), ...(drl ? { search_g_d: S.nav_drill } : {}), ...(mtl ? { search_g_m: S.nav_materials } : {}), ...(fml ? { search_g_e: S.nav_formulas } : {}), ...(mtd ? { search_g_v: S.nav_methods } : {}), ...(prp ? { search_g_r: S.nav_prep } : {}), ...(msr ? { search_g_u: S.nav_measure } : {}), ...(phr ? { search_g_p: phr.ui.nav } : {}) },
+    strings: { ...Object.fromEntries(['search_none', 'search_hint', 'search_more', 'search_count', 'search_g_c', 'search_g_t', 'search_g_k', 'search_g_f', 'search_g_q'].map(k => [k, S[k]])), ...(LT ? { search_g_l: LT.search } : {}), ...(fail ? { search_g_x: S.nav_failure } : {}), ...(atl ? { search_g_a: S.nav_atlas } : {}), ...(drl ? { search_g_d: S.nav_drill } : {}), ...(mtl ? { search_g_m: S.nav_materials } : {}), ...(rix && !mtl ? { search_g_m: S.nav_rindex } : {}), ...(fml ? { search_g_e: S.nav_formulas } : {}), ...(mtd ? { search_g_v: S.nav_methods } : {}), ...(prp ? { search_g_r: S.nav_prep } : {}), ...(msr ? { search_g_u: S.nav_measure } : {}), ...(phr ? { search_g_p: phr.ui.nav } : {}) },
     items: searchItems,
   }));
 
@@ -1128,6 +1170,7 @@ function buildLang(L) {
     aboutDrill: drl ? `  <li><strong><a href="${home}drill/">${esc(S.nav_drill)}</a></strong>${itemSep}${esc(t('about_drill'))}</li>\n` : '',
     aboutMaterials: mtl ? `  <li><strong><a href="${home}materials/">${esc(S.nav_materials)}</a></strong>${itemSep}${esc(t('about_materials'))}</li>\n` : '',
     aboutFormulas: fml ? `  <li><strong><a href="${home}formulas/">${esc(S.nav_formulas)}</a></strong>${itemSep}${esc(t('about_formulas'))}</li>\n` : '',
+    aboutRindex: rix ? `  <li><strong><a href="${home}refractive-index/">${esc(S.nav_rindex)}</a></strong>${itemSep}${esc(t('about_rindex'))}</li>\n` : '',
     aboutMethods: mtd ? `  <li><strong><a href="${home}methods/">${esc(S.nav_methods)}</a></strong>${itemSep}${esc(t('about_methods'))}</li>\n` : '',
     aboutPrep: prp ? `  <li><strong><a href="${home}prep/">${esc(S.nav_prep)}</a></strong>${itemSep}${esc(t('about_prep'))}</li>\n` : '',
     aboutMeasure: msr ? `  <li><strong><a href="${home}measure/">${esc(S.nav_measure)}</a></strong>${itemSep}${esc(t('about_measure'))}</li>\n` : '',
@@ -1208,6 +1251,7 @@ function buildLang(L) {
       ['practice', S.nav_group_practice, [...(drl ? [['drill/', S.nav_drill, t('home_feat_drill_desc')]] : []), ['stats/', S.nav_stats]]],
       ['lookup', S.nav_group_lookup, [...(toolsIn(code).length ? [['tools/', S.nav_tools, t('home_feat_tools_desc')]] : []),
         ...(mtl ? [['materials/', S.nav_materials, t('home_feat_materials_desc')]] : []), ...(fml ? [['formulas/', S.nav_formulas, t('home_feat_formulas_desc', { n: fml.formulas.length })]] : []),
+        ...(rix ? [['refractive-index/', S.nav_rindex, t('home_feat_rindex_desc', { n: rix.materials.length })]] : []),
         ...(phr ? [['phrases/', phr.ui.nav, phr.ui.card.replace('{n}', phr.phrases.length)]] : []),
         ...(mtd ? [['methods/', S.nav_methods, t('home_feat_methods_desc', { n: mtd.methods.length })]] : []),
         ...(prp ? [['prep/', S.nav_prep, t('home_feat_prep_desc', { n: prp.materials.length })]] : []),
@@ -3676,6 +3720,226 @@ ${relCats.length ? `<section>
     });
   }
 
+  // 屈折率データ集: /refractive-index/(材料のカードは JS なしでも読める。計算・グラフ・並べ比べ・CSV・共有の URL・計算ツールへのリンクは rindex.js。ページは1つだけ)
+  if (rix) buildRindex();
+  function buildRindex() {
+    const D = rix;
+    const where = 'data/rindex.json';
+    // データの検査(既定言語のデータで決まるので、どの言語でも同じ結果になる。訳の欠けは riText が止める)
+    if (mtl) throw new Error(`${where}: 材料データ集と同じ言語には置けません(サイト内検索のグループ m が重なります)`);
+    const gIds = new Set(D.groups.map(g => g.id)), refIds = new Set(D.refs.map(r => r.k)), seen = new Set();
+    for (const m of D.materials) {
+      const at = `${where}: 材料 ${m.id}`;
+      if (!/^[a-z0-9-]+$/.test(m.id) || seen.has(m.id)) throw new Error(`${at}: id は英小文字・数字・ハイフンで、重ならないように`);
+      seen.add(m.id);
+      if (!gIds.has(m.g)) throw new Error(`${at} の存在しない群 ${m.g}`);
+      if (!m.ds.length || new Set(m.ds.map(x => x.ax)).size !== m.ds.length || m.ds.some(x => !['', 'o', 'e'].includes(x.ax))) throw new Error(`${at}: データセット(ax は ''・o・e のどれかで重ならないように)`);
+      for (const x of m.ds) {
+        if (!refIds.has(x.ref)) throw new Error(`${at} の出典 ${x.ref} が refs にありません`);
+        if (!(x.range[0] > 0 && x.range[1] > x.range[0])) throw new Error(`${at} の波長範囲 ${x.range}`);
+        if (!x.gas && !(Number.isFinite(x.a) && x.t.length && x.t.every(([B, p, C]) => Number.isFinite(B) && [0, 2].includes(p) && Number.isFinite(C)))) throw new Error(`${at} の式の項`);
+        if (!x.eq || !x.params.length || !x.src) throw new Error(`${at}: 式・係数・確かめた原典のページがありません`);
+        // 範囲の中で n が有限で 1 以上、dn/dλ と GVD が有限であること
+        for (let k = 0; k <= 50; k++) {
+          const l = x.range[0] * (x.range[1] / x.range[0]) ** (k / 50), p = riJs.props(x, l);
+          if (![p.n, p.ng, p.gvd].every(Number.isFinite) || p.n < 1) throw new Error(`${at} (${x.ax || '-'}): λ = ${l} µm で n = ${p.n}`);
+        }
+      }
+    }
+    for (const id of D.defaults.m) if (!seen.has(id)) throw new Error(`${where}: defaults.m の存在しない材料 ${id}`);
+    for (const k of D.terms) if (!glossary.some(g => g.term === k)) throw new Error(`${where}: 用語集にない語 ${k}`);
+    for (const x of D.tools) if (!tools.some(y => y.id === x.tool)) throw new Error(`${where}: 存在しないツール ${x.tool}`);
+    if (D.guide.some(g => ['ri-app', 'ri-list', 'sources', 'faq', 'terms'].includes(g.id) || /^(m|g)-/.test(g.id))) throw new Error(`${where}: guide の id が重なります`);
+    const U = D.ui;
+    const rHome = `${home}refractive-index/`;
+    const rPath = l => `${l.path}refractive-index/`;
+    const rAlt = Object.fromEntries(langs.filter(x => riOn(x.code)).map(x => [x.code, rPath(x)]));
+    const de = /^de/.test(code);
+    const dot = s => (de ? String(s).replace(/(\d)\.(\d)/g, '$1,$2') : String(s));
+    const fixed = (x, k) => dot(x.toFixed(k)).replace(/^-/, '−');
+    const um = x => dot(String(+x.toPrecision(6)));
+    const rng = r => `${um(r[0])}–${um(r[1])} µm`;
+    const ref = Object.fromEntries(D.refs.map(r => [r.k, r]));
+    const ray = ax => (ax ? U[`ray_${ax}`] : '');
+    const trs = langs.map(x => riTr(x.code)).filter(Boolean);
+    const keyOf = m => [m.id, m.name, m.kw, ...trs.flatMap(x => [x.materials?.[m.id]?.name, x.materials?.[m.id]?.kw]), riBase.materials.find(y => y.id === m.id).name, riBase.materials.find(y => y.id === m.id).kw].filter(Boolean).join(' ');
+    const termOf = k => terms.find(g => g.key === k);
+    const tm = D.terms.map(termOf).filter(Boolean).map(g => `<a class="chip" href="${home}term/${termSlug[g.key]}/">${esc(g.term)}</a>`);
+    // 式から計算した n_d・ν_d・n_e・ν_e(データシートの値があれば並べる)
+    const abbeRow = m => {
+      const cells = m.ds.map(x => ({ x, a: riJs.abbe(x) })).filter(({ a }) => a.nd != null || a.ne != null);
+      if (!cells.length) return `<p class="ri-abbe muted">${esc(U.abbe_none)}</p>`;
+      const sh = m.sheet;
+      const v = (calc, sheet, k) => `${calc == null ? '–' : fixed(calc, k)}${sh && sheet != null ? ` <span class="ri-sheet">(${esc(U.sheet_short)} ${fixed(sheet, k)})</span>` : ''}`;
+      return `<table class="ri-abbe"><thead><tr>${m.ds.length > 1 ? `<th scope="col">${esc(U.col_ray)}</th>` : ''}<th scope="col">n<sub>d</sub></th><th scope="col">ν<sub>d</sub></th><th scope="col">n<sub>e</sub></th><th scope="col">ν<sub>e</sub></th></tr></thead><tbody>${cells.map(({ x, a }) => `
+        <tr>${m.ds.length > 1 ? `<th scope="row">${esc(ray(x.ax))}</th>` : ''}<td>${v(a.nd, sh?.nd, 5)}</td><td>${v(a.vd, sh?.vd, 2)}</td><td>${v(a.ne, sh?.ne, 5)}</td><td>${v(a.ve, sh?.ve, 2)}</td></tr>`).join('')}
+      </tbody></table>`;
+    };
+    const card = m => {
+      const r0 = ref[m.ds[0].ref];
+      return `
+  <article class="fm-card ri-card" id="m-${m.id}" data-id="${m.id}" data-g="${m.g}" data-k="${esc(keyOf(m))}">
+    <div class="fm-head"><h3><a href="#m-${m.id}">${esc(m.name)}</a></h3><label class="fm-pick"><input type="checkbox" data-pick="${m.id}"> ${esc(U.pick)}</label></div>
+    <p class="ri-cond">${esc(m.cond)}</p>${m.ds.map(x => `
+    <div class="ri-ds">${x.ax ? `
+      <h4>${esc(ray(x.ax))}</h4>` : ''}
+      <p class="ri-eq">${esc(x.eq)}</p>
+      <table class="ri-params"><tbody>${x.params.map(([k, v]) => `<tr><th scope="row">${esc(k)}</th><td>${esc(dot(v))}</td></tr>`).join('')}</tbody></table>
+      <p class="ri-range"><b>${esc(U.range)}</b> ${esc(rng(x.range))}${x.ax ? '' : ''}</p>${x.form_note ? `
+      <p class="ri-fnote muted">${esc(U.form_note)}</p>` : ''}
+    </div>`).join('')}
+    ${abbeRow(m)}
+    <p class="ri-src"><b>${esc(U.src)}</b> ${esc(r0.full)} <a href="${esc(r0.url)}" rel="noopener">${esc(r0.url.replace(/^https:\/\/(doi\.org\/)?/, ''))}</a>${m.data_from ? `<br><b>${esc(U.data_from)}</b> ${esc(m.data_from)}` : ''}${m.sheet ? `<br><b>${esc(U.sheet)}</b> <a href="${esc(m.sheet.url)}" rel="noopener">${esc(m.sheet.what)}</a>` : `<br><b>${esc(U.checked)}</b> <a href="${esc(m.ds[0].src)}" rel="noopener">${esc(m.ds[0].src.replace(/^https:\/\//, ''))}</a>`}<br><b>${esc(U.rii)}</b> ${m.ds.map(x => `<a href="${esc(x.rii)}" rel="noopener">${esc(x.rii.split('/database/data/')[1].replace(/%20/g, ' '))}</a>`).join(', ')}</p>
+  </article>`;
+    };
+    // rindex.js に渡すデータ(計算に使う部分だけ)
+    const toolUrl = id => { const x = tools.find(y => y.id === id); return x?.text[code] ? `${home}tools/${x.slug}/` : null; };
+    const jsData = {
+      ui: U,
+      defaults: D.defaults,
+      materials: D.materials.map(m => ({ id: m.id, name: m.name, g: m.g, ds: m.ds.map(x => ({ ax: x.ax, ...(x.gas ? { gas: x.gas } : { a: x.a, t: x.t }), range: x.range, ref: x.ref })) })),
+      refs: Object.fromEntries(D.refs.map(r => [r.k, `${r.s} (${r.url})`])),
+      tools: D.tools.filter(x => toolUrl(x.tool)).map(x => ({ id: x.tool, url: toolUrl(x.tool), q: x.q, label: x.label, ...(x.only ? { only: x.only } : {}), ...(x.skip ? { skip: x.skip } : {}) })),
+    };
+    const opt = (v, s, on) => `<option value="${esc(v)}"${on ? ' selected' : ''}>${esc(s)}</option>`;
+    const relCats = D.cats.map(catOf).filter(c => c && live.includes(c));
+    const nOf = g => D.materials.filter(m => m.g === g.id).length;
+    page({
+      path: rPath(L),
+      alt: rAlt,
+      title: D.title,
+      fullTitle: `${D.title} | ${siteName}`,
+      description: D.description,
+      scripts: ['rindex.js'],
+      jsonld: [
+        crumbs([t('breadcrumb_top'), home], [S.nav_rindex, rHome]),
+        { '@context': 'https://schema.org', '@type': 'Dataset', name: D.h1, description: D.description, url: abs(rHome), inLanguage: L.htmlLang, isAccessibleForFree: true,
+          citation: D.refs.map(r => r.url), variableMeasured: ['refractive index', 'group index', 'group velocity dispersion'] },
+        ...(D.faq.length ? [{ '@context': 'https://schema.org', '@type': 'FAQPage',
+          mainEntity: D.faq.map(([q, a]) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })) }] : []),
+      ],
+      content: `<nav class="breadcrumb"><a href="${home}">${esc(t('breadcrumb_top'))}</a></nav>
+<h1>${esc(D.h1)}</h1>
+<p class="lead">${esc(D.lead)}</p>
+<p class="fn-caution">${esc(D.note)}</p>
+<style>
+.ri-app { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 14px 16px; margin: 16px 0; min-width: 0; }
+.ri-app h2 { margin-top: 0; }
+.ri-form { display: flex; flex-wrap: wrap; gap: 12px; align-items: flex-end; margin: 0 0 10px; }
+.ri-row { display: flex; flex-wrap: wrap; gap: 10px; align-items: flex-end; width: 100%; min-width: 0; }
+.ri-form label { display: grid; gap: 4px; font-size: .88rem; color: var(--muted); min-width: 0; }
+.ri-form input, .ri-form select { font: inherit; font-size: 1rem; color: var(--text); background: var(--bg); border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px; min-height: 42px; box-sizing: border-box; max-width: 100%; }
+.ri-form input[aria-invalid="true"] { border-color: var(--ng); box-shadow: 0 0 0 1px var(--ng); }
+.ri-add, .ri-add select { width: min(100%, 24rem); }
+.ri-lam input { width: 9.5rem; }
+.ri-rangeform input { width: 7.5rem; }
+.ri-quick, .ri-picked { display: flex; flex-wrap: wrap; gap: 6px; margin: 0; }
+.ri-quick .chip, .ri-pchip { min-height: 36px; }
+.ri-pchip { border-width: 2px; }
+.ri-c0 { border-color: var(--accent); } .ri-c1 { border-color: var(--ok); } .ri-c2 { border-color: var(--ng); } .ri-c3 { border-color: var(--muted); }
+.ri-table { border-collapse: collapse; width: 100%; font-size: .92rem; font-variant-numeric: tabular-nums; }
+.ri-table th, .ri-table td { border-bottom: 1px solid var(--border); padding: 6px 8px; text-align: right; white-space: nowrap; }
+.ri-table thead th { font-size: .82rem; color: var(--muted); font-weight: 600; }
+.ri-table th:first-child { text-align: left; white-space: normal; min-width: 8rem; }
+.ri-table td.ri-out { color: var(--ng); text-align: left; white-space: normal; }
+.ri-fig { margin: 0; }
+.ri-legend { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: .9rem; margin: 4px 0 0; }
+.ri-lg::before { content: ""; display: inline-block; width: 24px; border-top: 3px solid var(--accent); vertical-align: middle; margin-right: 6px; }
+.ri-lg-ac2::before { border-top-color: var(--ok); } .ri-lg-ng::before { border-top-color: var(--ng); } .ri-lg-dash::before { border-top-color: var(--muted); }
+.ri-lg-e::before { border-top-style: dashed; }
+.ri-btns { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ri-msg { color: var(--ok); margin: 6px 0 0; }
+.ri-tools ul { margin: 4px 0 0; padding-left: 1.2em; }
+.ri-tools li { margin: 2px 0; }
+.ri-find { margin: 0 0 12px; }
+.ri-gh { font-size: 1.1rem; margin: 18px 0 10px; }
+.ri-cond { margin: 4px 0 8px; font-size: .9rem; color: var(--muted); }
+.ri-ds h4 { margin: 10px 0 4px; font-size: .95rem; }
+.ri-eq { font-family: "Cambria Math", "STIX Two Math", "Times New Roman", serif; font-size: 1.02rem; margin: 6px 0; overflow-wrap: anywhere; }
+.ri-params, .ri-abbe { border-collapse: collapse; font-size: .9rem; font-variant-numeric: tabular-nums; margin: 4px 0 8px; }
+.ri-params th, .ri-params td, .ri-abbe th, .ri-abbe td { border-bottom: 1px solid var(--border); padding: 3px 10px 3px 0; text-align: left; }
+.ri-params td { overflow-wrap: anywhere; }
+.ri-sheet { color: var(--muted); font-size: .85em; }
+.ri-range, .ri-fnote { margin: 4px 0; font-size: .9rem; }
+.ri-src { font-size: .84rem; color: var(--muted); overflow-wrap: anywhere; margin: 8px 0 0; line-height: 1.6; }
+</style>
+<noscript><p class="muted">${esc(U.noscript)}</p></noscript>
+<nav class="at-toc" aria-label="${esc(U.toc)}"><a class="chip" href="#ri-app">${esc(U.calc_h)}</a> <a class="chip" href="#ri-list">${esc(U.list_h.replace('{n}', D.materials.length))}</a>${D.guide.map(g => ` <a class="chip" href="#${g.id}">${esc(g.h)}</a>`).join('')}${D.faq.length ? ` <a class="chip" href="#faq">${esc(t('compare_faq'))}</a>` : ''} <a class="chip" href="#sources">${esc(D.sources_h)}</a></nav>
+<script type="application/json" id="ri-data">${JSON.stringify(jsData).replace(/</g, '\\u003c')}</script>
+<section id="ri-app" class="ri-app" hidden>
+  <h2>${esc(U.calc_h)}</h2>
+  <form class="ri-form" autocomplete="off">
+    <div class="ri-row">
+      <label class="ri-add"><span>${esc(U.add)}</span><select id="ri-add">${opt('', U.add_ph)}${D.groups.map(g => `<optgroup label="${esc(g.name)}">${D.materials.filter(m => m.g === g.id).map(m => opt(m.id, m.name)).join('')}</optgroup>`).join('')}</select></label>
+      <p class="ri-picked" aria-live="polite"></p>
+      <p class="ri-empty muted" hidden>${esc(U.empty)}</p>
+    </div>
+    <div class="ri-row ri-lamrow">
+      <label class="ri-lam"><span>${esc(U.lam)}</span><input id="ri-lam" type="text" inputmode="decimal" spellcheck="false" data-num></label>
+      <label class="ri-unit"><span>${esc(U.unit)}</span><select id="ri-unit">${opt('nm', 'nm', true)}${opt('um', 'µm')}</select></label>
+      <div class="ri-quick" role="group" aria-label="${esc(U.quick)}">${D.quick.map(nm => `<button type="button" class="chip" data-lam="${nm}">${esc(dot(nm))} nm</button>`).join('')}</div>
+    </div>
+  </form>
+  <h3 class="ri-at"></h3>
+  <p class="ri-warn fn-caution" role="status" hidden></p>
+  <div class="ri-table-wrap fm-scroll"><table id="ri-table" class="ri-table"><thead><tr><th scope="col">${esc(U.col_mat)}</th><th scope="col">n</th><th scope="col">${esc(U.col_ng)}</th><th scope="col">dn/dλ (µm⁻¹)</th><th scope="col">GVD (fs²/mm)</th><th scope="col">D (ps/(nm·km))</th><th scope="col">${esc(U.col_r)}</th><th scope="col">${esc(U.col_b)}</th></tr></thead><tbody></tbody></table></div>
+  <p class="muted fn-note">${esc(U.table_note)}</p>
+  <div class="ri-tools" hidden><h3>${esc(U.tools_h)}</h3><ul></ul></div>
+  <h3>${esc(U.chart_h)}</h3>
+  <form class="ri-form ri-rangeform" autocomplete="off">
+    <label><span>${esc(U.a)}</span><input id="ri-a" type="text" inputmode="decimal" spellcheck="false" data-num></label>
+    <label><span>${esc(U.b)}</span><input id="ri-b" type="text" inputmode="decimal" spellcheck="false" data-num></label>
+    <label><span>${esc(U.s)}</span><input id="ri-s" type="text" inputmode="decimal" spellcheck="false" data-num></label>
+  </form>
+  <figure class="ri-fig"><svg id="ri-chart" class="sta-chart" viewBox="0 0 600 320" role="img" aria-label=""></svg><p class="ri-chart-none muted" hidden>${esc(U.chart_none)}</p><ul class="ri-legend"></ul></figure>
+  <div class="ri-btns">
+    <button type="button" class="btn btn-primary btn-small" data-csv-copy>${esc(U.csv_copy)}</button>
+    <button type="button" class="btn btn-ghost btn-small" data-csv-save>${esc(U.csv_save)}</button>
+    <button type="button" class="btn btn-ghost btn-small" data-share>${esc(U.share)}</button>
+  </div>
+  <p class="ri-msg" role="status" hidden></p>
+  <p class="muted fn-note">${esc(U.csv_note)}</p>
+</section>
+<section id="ri-list" class="ri-list">
+  <h2>${esc(U.list_h.replace('{n}', D.materials.length))}</h2>
+  <div class="ri-find">
+    <label class="fm-q"><span>${esc(U.search)}</span><input id="ri-q" type="search" placeholder="${esc(U.search_ph)}" autocomplete="off" spellcheck="false" enterkeyhint="search"></label>
+    <div class="ri-chips fm-chips" role="group" aria-label="${esc(U.groups)}"><button type="button" class="chip" data-g="" aria-pressed="true">${esc(U.all)}</button>${D.groups.map(g => `<button type="button" class="chip" data-g="${g.id}" aria-pressed="false">${esc(g.name)}</button>`).join('')}</div>
+    <p class="ri-count muted" aria-live="polite"></p>
+  </div>
+  <p class="ri-none muted" hidden>${esc(U.none)}</p>${D.groups.map(g => `
+  <section class="ri-group" id="g-${g.id}" data-g="${g.id}">
+    <h3 class="ri-gh">${esc(g.name)} <span class="fm-n">${nOf(g)}</span></h3>${D.materials.filter(m => m.g === g.id).map(card).join('')}
+  </section>`).join('')}
+</section>
+<div data-ad="compare"></div>
+${D.guide.map(g => `<section id="${g.id}" class="fm-guide">
+  <h2>${esc(g.h)}</h2>${g.p.map(p => `
+  <p>${linked(p)}</p>`).join('')}
+</section>`).join('\n')}
+${D.faq.length ? `<section class="faq" id="faq">
+  <h2>${esc(t('compare_faq'))}</h2>${D.faq.map(([q, a]) => `
+  <h3>${esc(q)}</h3>
+  <p>${linked(a)}</p>`).join('')}
+</section>` : ''}
+<section id="sources" class="fn-sources fm-refs">
+  <h2>${esc(D.sources_h)}</h2>
+  <ul>${D.refs.map(r => `
+    <li><b>${esc(r.s)}</b>: ${esc(r.full)} <a href="${esc(r.url)}" rel="noopener">${esc(r.url.replace(/^https:\/\/(doi\.org\/)?/, ''))}</a></li>`).join('')}
+  </ul>
+  <p class="muted">${esc(U.sources_note)}</p>
+</section>
+${tm.length ? `<section id="terms">
+  <h2>${esc(U.terms_h)}</h2>
+  <p class="term-chips">${tm.join(' ')}</p>
+</section>` : ''}
+${relCats.length ? `<section>
+  <h2>${esc(U.rel_cats)}</h2>
+  ${catCards(relCats)}
+</section>` : ''}`,
+    });
+  }
+
   // 分析・評価手法ナビ: /methods/(条件での絞り込み・並べて比べる・条件の URL は methods.js。手法のカードと一覧表は JS なしでも読める。ページは1つだけ)
   if (mtd) buildMethods();
   function buildMethods() {
@@ -5093,7 +5357,7 @@ fs.writeFileSync(lastmodFile, '{\n' + Object.entries(lastmod).map(([k, v]) => ` 
 // /sitemap.xml の場所は変えないので、Search Console と robots.txt はそのままでよい
 const SITEMAP_MAX = 40000;
 const langOfUrl = url => [...langs].sort((a, b) => b.path.length - a.path.length).find(x => pageKey(url).startsWith(x.path)).code; // 既定言語(path が空)は最後に当たる
-const SITEMAP_TYPES = ['term', 'compare', 'q', 'learn', 'tools', 'failure', 'atlas', 'drill', 'materials', 'formulas', 'methods', 'prep', 'measure', 'phrases']; // これ以外(トップ・分野・図解集など)は other にまとめる
+const SITEMAP_TYPES = ['term', 'compare', 'q', 'learn', 'tools', 'failure', 'atlas', 'drill', 'materials', 'formulas', 'refractive-index', 'methods', 'prep', 'measure', 'phrases']; // これ以外(トップ・分野・図解集など)は other にまとめる
 const typeOfUrl = url => {
   const L = langs.find(x => x.code === langOfUrl(url));
   const first = pageKey(url).slice(L.path.length).split('/')[0];
