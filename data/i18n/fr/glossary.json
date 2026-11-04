@@ -4909,6 +4909,38 @@
   "読み出し雑音": {
     "term": "Bruit de lecture",
     "desc": "Bruit ajouté lors de la conversion de la charge d'un pixel en tension et de sa lecture, exprimé en nombre efficace d'électrons. Il fixe le rapport S/B dans les scènes sombres et l'extrémité sombre de la plage dynamique.",
+    "about": [
+      {
+        "h": "Le bruit qui fixe la qualité d'image dans les scènes sombres",
+        "p": "Le bruit de lecture est le bruit ajouté par les circuits qui convertissent la charge d'un pixel en tension, l'amplifient et la numérisent ; il s'ajoute à chaque lecture, même en l'absence de lumière. On l'exprime par sa valeur efficace convertie en nombre d'électrons, par exemple 2 e⁻ rms. Pour un signal de S électrons et un bruit de lecture σr, le bruit, en négligeant le courant d'obscurité, vaut √(S + σr²) : le bruit de lecture domine dans les zones sombres où S est inférieur à σr², et le bruit de grenaille là où S est plus grand. Avec un bruit de lecture de 2 électrons, le bruit de lecture l'emporte pour les signaux inférieurs à 4 électrons. Dans les scènes sombres où le signal ne compte que quelques électrons, un bruit de lecture plus faible se traduit directement par une meilleure image."
+      },
+      {
+        "h": "Les sources du bruit",
+        "p": "Le bruit thermique √(kTC) qui subsiste à chaque réinitialisation de la diffusion flottante atteint environ 18 électrons à 300 K pour une capacité de 2 fF, mais on peut l'annuler par le double échantillonnage corrélé, qui fait la différence entre le niveau juste après la réinitialisation et le niveau après le transfert de la charge. Les principales composantes restantes sont le bruit thermique du transistor amplificateur du pixel, les fluctuations basse fréquence comme le bruit en 1/f et le bruit télégraphique aléatoire, et le bruit des circuits de colonne et du convertisseur analogique-numérique. Elles apparaissent comme un bruit en tension : plus le gain de conversion est élevé, c'est-à-dire plus la tension par électron est grande, plus le bruit de lecture exprimé en électrons est faible."
+      },
+      {
+        "h": "Le distinguer des autres bruits",
+        "p": "Le grain d'une image sombre ne provient pas du seul bruit de lecture. Les électrons accumulés par le courant d'obscurité augmentent avec le temps d'exposition et la température, et ajoutent un bruit de grenaille égal à leur racine carrée. Le bruit de lecture est à peu près constant à chaque lecture, quel que soit le temps d'exposition : le bruit du courant d'obscurité ressort dans les poses longues, le bruit de lecture dans les poses courtes. Le bruit spatial fixe, dû aux décalages et aux écarts de sensibilité propres à chaque pixel, apparaît sous la même forme à chaque fois ; on peut donc le corriger en soustrayant une image d'obscurité ou en divisant par une image uniforme. Le bruit de lecture, qui change à chaque fois, ne peut pas être éliminé par de telles corrections."
+      },
+      {
+        "h": "Mesure et niveaux actuels",
+        "p": "On obtient le bruit de lecture en faisant la différence de deux images prises dans l'obscurité avec le temps d'exposition le plus court, en divisant l'écart-type de cette différence par √2, puis en le convertissant en électrons avec le gain de conversion. La différence sert à éliminer les décalages fixes propres à chaque pixel. Par exemple, si l'image différence a un écart-type de 5,0 DN et que le gain de conversion vaut 0,5 e⁻/DN, le bruit de lecture est d'environ 1,8 électron. Un bruit de 1 à 2 électrons est aujourd'hui courant dans les capteurs d'images CMOS, et l'on étudie des capteurs dont les pixels à gain de conversion élevé descendent vers 0,3 électron, ce qui permet de compter les photons un par un."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que signifie l'unité e⁻ rms du bruit de lecture ?",
+        "a": "Elle exprime l'amplitude du bruit par sa valeur efficace (écart-type) convertie en nombre d'électrons. Une tension ou une valeur numérique n'a pas le même sens selon la structure du pixel ; l'exprimer en électrons permet de la comparer au bruit de grenaille et à la capacité de puits."
+      },
+      {
+        "q": "Le bruit de lecture augmente-t-il avec le temps d'exposition ?",
+        "a": "Non. Le bruit de lecture s'ajoute une fois par lecture ; il est donc à peu près constant quel que soit le temps d'exposition. Une pose plus longue recueille plus de signal, si bien que son effet relatif diminue, mais le bruit dû au courant d'obscurité augmente."
+      },
+      {
+        "q": "Que devient le bruit de lecture quand on additionne plusieurs images ?",
+        "a": "En additionnant N images, le signal est multiplié par N et la variance des bruits de lecture indépendants aussi par N : le bruit de lecture est donc multiplié par √N. Pour un même temps d'exposition total, additionner de nombreuses poses courtes donne un S/B moins bon qu'une seule pose, en raison du bruit de lecture ajouté."
+      }
+    ],
     "aliases": [
       "read noise",
       "readout noise"
@@ -4917,6 +4949,34 @@
   "ダイナミックレンジ": {
     "term": "Plage dynamique",
     "desc": "Rapport entre le plus grand signal qu'une mesure ou un enregistrement peut traiter et le plus petit, fixé par le bruit. Pour un capteur d'images, le rapport entre la capacité de puits et le bruit de lecture s'exprime en dB ou en diaphragmes (stops).",
+    "about": [
+      {
+        "h": "Le rapport entre la capacité de puits et le bruit de lecture",
+        "p": "Un pixel de capteur d'images ne peut pas accumuler plus d'électrons que sa capacité de puits, et les zones plus lumineuses saturent en blanc. Du côté sombre, le bruit de lecture et le bruit du courant d'obscurité existent même sans lumière, et les signaux plus faibles y sont noyés. La plage dynamique est le rapport entre ces deux limites ; par exemple, avec une capacité de puits de 20 000 électrons et un bruit de lecture de 4 électrons, le rapport vaut 5000. En traitant le nombre d'électrons comme une amplitude et en l'exprimant par 20 log₁₀, on obtient environ 74 dB, soit environ 12,3 diaphragmes (IL), chaque diaphragme correspondant à un facteur deux. Les fiches techniques des appareils photo donnent parfois des valeurs qui incluent le nombre de bits de la conversion analogique-numérique et le traitement d'image."
+      },
+      {
+        "h": "La différence avec le S/B",
+        "p": "La plage dynamique est l'étendue des luminosités qu'une même image peut traiter ; c'est une grandeur différente du S/B, qui décrit la qualité d'image à une luminosité donnée. À cause du bruit de grenaille des photons, même un pixel rempli jusqu'à sa capacité de puits n'atteint qu'un S/B de √20 000 ≈ 141 (environ 43 dB). Autrement dit, un capteur de plage dynamique 74 dB ne donne pas un S/B de 74 dB par pixel. Le S/B des zones sombres est fixé par le bruit de lecture et celui des zones claires par la quantité de lumière ; une grande plage dynamique exige donc à la fois une grande capacité de puits et un faible bruit de lecture."
+      },
+      {
+        "h": "Les moyens d'étendre la plage dynamique",
+        "p": "Il est difficile de satisfaire les deux exigences dans un seul pixel, d'où diverses techniques : le double gain, qui commute la capacité de la diffusion flottante pour lire avec un gain de conversion élevé dans les scènes sombres et faible dans les scènes claires ; la prise de vue HDR, qui combine plusieurs images de temps d'exposition différents ; et les pixels dotés d'une capacité supplémentaire qui stocke séparément la charge qui déborde. Augmenter la sensibilité ISO (augmenter le gain) réduit le nombre d'électrons qui atteint la valeur maximale du convertisseur analogique-numérique, et la plage dynamique se rétrécit. Pour les sujets très contrastés, comme les scènes à contre-jour, il est avantageux de photographier à faible sensibilité ISO."
+      }
+    ],
+    "faq": [
+      {
+        "q": "La plage dynamique s'exprime-t-elle en dB ou en diaphragmes ?",
+        "a": "Les fiches techniques des capteurs utilisent souvent les dB avec 20 log₁₀, et la photographie les diaphragmes, ou indices de lumination (IL), avec log₂. Un diaphragme correspond à environ 6,02 dB ; 74 dB valent donc environ 12,3 diaphragmes."
+      },
+      {
+        "q": "Quelle est la plage dynamique de l'œil humain ?",
+        "a": "On estime qu'il traite environ 10 diaphragmes ou plus même en regardant une seule scène, et qu'en tenant compte de l'adaptation à la luminosité il couvre une étendue bien plus large, de la lumière des étoiles à celle du jour. La valeur change beaucoup selon qu'on inclut ou non l'adaptation ; il faut donc faire attention aux conditions lors des comparaisons."
+      },
+      {
+        "q": "Augmenter le nombre de bits de la conversion analogique-numérique élargit-il la plage dynamique ?",
+        "a": "La plage dynamique du capteur lui-même est fixée par la capacité de puits et le bruit de lecture, et ne s'élargit pas avec davantage de bits. Avec trop peu de bits, en revanche, le bruit de quantification fait perdre la gradation des tons dans les ombres ; il faut donc un nombre de bits adapté aux performances du capteur."
+      }
+    ],
     "aliases": [
       "dynamique",
       "plages dynamiques",
@@ -4932,6 +4992,38 @@
   "ベイヤー配列": {
     "term": "Matrice de Bayer",
     "desc": "Matrice de filtres colorés comportant deux filtres verts, un rouge et un bleu dans chaque bloc de 2×2 pixels. Chaque pixel ne mesure qu'une couleur ; les autres sont interpolées à partir des pixels voisins (dématriçage).",
+    "about": [
+      {
+        "h": "Capter la couleur avec un seul capteur",
+        "p": "Une photodiode au silicium ne mesure que l'intensité de la lumière et ne distingue pas les couleurs. On place donc sur chaque pixel un filtre qui ne laisse passer que le rouge, le vert ou le bleu, afin d'obtenir l'information de couleur. La matrice de Bayer, conçue par Bryce Bayer chez Kodak et brevetée aux États-Unis en 1976, attribue le vert aux deux pixels d'une diagonale de chaque bloc de 2×2 pixels, et le rouge et le bleu aux deux autres. Le vert est doublé pour échantillonner finement la couleur à laquelle l'œil est le plus sensible et qui porte l'essentiel de l'information de luminosité. La plupart des capteurs d'images couleur actuels utilisent cette matrice ou l'une de ses variantes."
+      },
+      {
+        "h": "Le dématriçage et les fausses couleurs",
+        "p": "Chaque pixel n'a la valeur que d'une seule couleur ; les deux autres sont estimées à partir des pixels voisins. Ce traitement est le dématriçage ; il va de l'interpolation simple, qui fait la moyenne des pixels voisins, à des méthodes qui déterminent la direction des contours et interpolent le long de ceux-ci. Le rouge et le bleu ne sont échantillonnés qu'un pixel sur deux, horizontalement comme verticalement ; des motifs de rayures fins, proches du pas des pixels, produisent donc de fausses couleurs absentes de la scène et du moiré coloré. C'est pourquoi de nombreux appareils ont utilisé un filtre passe-bas optique fait de lames biréfringentes, qui rend l'image légèrement floue et supprime les détails trop fins pour être échantillonnés. Certains appareils aux pixels suffisamment fins s'en passent pour privilégier la netteté."
+      },
+      {
+        "h": "Efficacité lumineuse et comparaison avec les capteurs monochromes",
+        "p": "Un filtre coloré absorbe la lumière autre que la couleur qu'il transmet ; même sous une lumière blanche, chaque pixel n'utilise donc qu'environ un tiers de la lumière, et la sensibilité est bien plus faible que celle d'un capteur monochrome sans filtre. Un capteur monochrome mesure la luminosité en chaque pixel ; il n'a pas besoin d'interpolation et résout mieux les détails à nombre de pixels égal. En astronomie et en microscopie, on utilise donc aussi des capteurs monochromes devant lesquels on change de filtre pour enregistrer chaque couleur séparément. De plus, les spectres de transmission des filtres ne coïncident pas avec les fonctions colorimétriques de l'œil ; pour reproduire correctement les couleurs à partir de la sortie du capteur, on applique une matrice de conversion des couleurs."
+      },
+      {
+        "h": "Les matrices dérivées",
+        "p": "De nombreuses matrices dérivées de la matrice de Bayer sont utilisées. Celles qui regroupent les pixels de même couleur en blocs de 2×2 ou de 3×3 additionnent ces pixels pour les faire fonctionner comme de grands pixels dans les scènes sombres, et les réarrangent pour produire des images à haute résolution dans les scènes claires. Celles qui ajoutent des pixels blancs sans filtre peuvent augmenter la sensibilité, au prix d'une reproduction des couleurs plus difficile. Celles qui utilisent un motif de base de 6×6 pixels avec un ordre des couleurs irrégulier visent à rendre le moiré moins probable afin de supprimer le filtre passe-bas. Il existe aussi des approches qui exploitent le fait que les différentes longueurs d'onde sont absorbées à différentes profondeurs dans le silicium pour mesurer les trois couleurs dans un seul pixel."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quel est le lien entre le nombre de pixels et la résolution avec une matrice de Bayer ?",
+        "a": "Même un capteur de 20 millions de pixels ne mesure le vert que sur l'équivalent de 10 millions de pixels, et le rouge et le bleu sur 5 millions de pixels chacun. Le dématriçage donne les trois valeurs de couleur à chaque pixel, mais la résolution en couleur est inférieure au nombre de pixels, et la résolution en luminosité est aussi un peu moins bonne que celle d'un capteur monochrome."
+      },
+      {
+        "q": "Que signifie RGGB ?",
+        "a": "C'est une notation qui décrit le motif 2×2 d'une matrice de Bayer de gauche à droite sur la ligne du haut, puis de gauche à droite sur la ligne suivante. Il existe aussi BGGR, GRBG et GBRG ; lors du traitement des images RAW, les couleurs sont interverties si le motif du capteur n'est pas correctement indiqué."
+      },
+      {
+        "q": "Où le dématriçage est-il effectué ?",
+        "a": "Dans la plupart des appareils, il est effectué juste après la prise de vue par les circuits de traitement d'image de l'appareil, qui produisent des images comme des JPEG. Pour les images enregistrées en RAW, c'est le logiciel de développement de l'ordinateur qui effectue le dématriçage ; les détails et les fausses couleurs peuvent donc varier d'un logiciel à l'autre."
+      }
+    ],
     "aliases": [
       "matrices de Bayer",
       "filtre de Bayer",
@@ -4947,6 +5039,38 @@
   "裏面照射型": {
     "term": "Éclairage par la face arrière (BSI)",
     "desc": "Structure de capteur d'images dans laquelle la lumière entre par la face opposée aux couches d'interconnexion (la face arrière de la plaquette). Comme la lumière n'est pas masquée par les interconnexions, même les petits pixels conservent leur sensibilité.",
+    "about": [
+      {
+        "h": "Faire entrer la lumière du côté opposé aux interconnexions",
+        "p": "Dans un capteur d'images CMOS classique éclairé par la face avant, de nombreuses couches d'interconnexions métalliques se trouvent au-dessus de la surface du silicium dans lequel sont formées les photodiodes, et la lumière atteint les photodiodes en passant entre elles. Dans l'éclairage par la face arrière (BSI), la plaquette portant les interconnexions est collée sur une plaquette de support, la face arrière d'origine du silicium est amincie jusqu'à quelques µm, et la lumière entre par ce côté. Comme aucune interconnexion ne se trouve au-dessus de la surface de réception, la lumière concentrée par les microlentilles n'est pas bloquée, et la lumière arrivant en oblique est aussi mieux reçue. Dans les capteurs de smartphones, dont le pas des pixels est descendu vers 1 µm ou moins, c'est une structure indispensable pour conserver la sensibilité."
+      },
+      {
+        "h": "Rendement quantique et sensibilité à la lumière oblique",
+        "p": "Dans l'éclairage par la face avant, les couches d'interconnexions ont une épaisseur de plusieurs µm, et lorsque les pixels rapetissent, le trajet de la lumière devient long et étroit comme un puits profond. La lumière arrivant en oblique heurte les interconnexions ou entre dans les pixels voisins, ce qui assombrit les bords de l'image ou mélange les couleurs. Dans l'éclairage par la face arrière, la photodiode est proche de la surface de réception et l'ouverture s'étend sur presque tout le pixel ; le rendement quantique et la sensibilité à la lumière oblique s'améliorent donc tous deux. L'éclairage par la face avant perdait aussi de la lumière par réflexion et absorption dans l'empilement des couches isolantes entre les interconnexions, et la disparition de cette perte contribue elle aussi au gain d'efficacité."
+      },
+      {
+        "h": "Le prix de l'amincissement",
+        "p": "Amincir le silicium jusqu'à quelques µm signifie que la lumière de grande longueur d'onde, faiblement absorbée, n'est pas entièrement absorbée et tend à traverser. La longueur d'absorption du silicium est d'environ 1,6 µm à 550 nm, mais proche de 20 µm à 850 nm ; la sensibilité dans le proche infrarouge diminue donc. La diaphonie, par laquelle la lumière ou la charge fuit vers les pixels voisins dans le silicium mince, devient aussi plus probable ; on utilise donc des structures d'isolation qui creusent des tranchées profondes entre les pixels et les remplissent d'isolant. La face arrière amincie présente de nombreux défauts qui provoquent du courant d'obscurité ; on les neutralise par des traitements comme le recouvrement de la surface par un film chargé négativement. Pour le proche infrarouge, on texture aussi finement la face arrière afin d'allonger le trajet de la lumière."
+      },
+      {
+        "h": "L'évolution vers les capteurs empilés",
+        "p": "Dans l'éclairage par la face arrière, la lumière entre par l'arrière ; le côté des interconnexions, à l'avant, n'est donc soumis à aucune contrainte de trajet optique. Les capteurs empilés en tirent parti en collant la plaquette des pixels sur une plaquette distincte qui porte les circuits de traitement du signal. La couche des pixels peut se consacrer à la réception de la lumière, et la couche des circuits peut utiliser des procédés logiques fins, ce qui permet la lecture rapide, la conversion analogique-numérique pixel par pixel, la mémoire intégrée, etc. L'idée de faire entrer la lumière par l'arrière est aussi utilisée depuis longtemps dans les CCD scientifiques pour l'astronomie et la spectroscopie, notamment pour accroître la sensibilité à l'ultraviolet et aux rayons X mous."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre l'éclairage par la face arrière et l'éclairage par la face avant ?",
+        "a": "La face par laquelle la lumière entre est différente. L'éclairage par la face avant fait entrer la lumière par la face qui porte les interconnexions ; l'éclairage par la face arrière la fait entrer par la face amincie du côté opposé. Pour les petits pixels, l'éclairage par la face arrière, qui n'est pas gêné par les interconnexions, est avantageux pour la sensibilité et la réception de la lumière oblique."
+      },
+      {
+        "q": "Quels appareils utilisent l'éclairage par la face arrière ?",
+        "a": "La plupart des appareils photo de smartphones, les modèles haut de gamme d'appareils reflex et hybrides, les caméras scientifiques, etc. Avec de grands pixels, la différence avec l'éclairage par la face avant est plus faible, mais son adoption s'étend en association avec les structures empilées destinées à la lecture rapide."
+      },
+      {
+        "q": "Pourquoi le courant d'obscurité pose-t-il problème dans l'éclairage par la face arrière ?",
+        "a": "Parce que la face arrière amincie présente de nombreux défauts cristallins et états de surface, où des électrons sont facilement créés par agitation thermique. La surface de réception est juste à côté de la photodiode ; des films de passivation ou des couches dopées en surface empêchent donc ces électrons de se mêler au signal."
+      }
+    ],
     "aliases": [
       "illumination par la face arrière",
       "capteur rétroéclairé",
@@ -4958,6 +5082,38 @@
   "ローリングシャッタ": {
     "term": "Obturateur roulant (rolling shutter)",
     "desc": "Mode d'obturation électronique qui expose et lit chaque ligne à un instant légèrement décalé. Les sujets en mouvement rapide sont enregistrés déformés. Le mode qui expose tous les pixels en même temps est l'obturateur global.",
+    "about": [
+      {
+        "h": "Une exposition décalée dans le temps ligne par ligne",
+        "p": "La plupart des capteurs d'images CMOS sélectionnent et lisent une ligne à la fois ; ils ne peuvent pas lire tous les pixels en même temps. Avec un obturateur roulant, chaque ligne est réinitialisée puis lue après un temps fixe, et l'opération est répétée ligne par ligne depuis le haut avec un léger décalage temporel. Toutes les lignes ont le même temps d'exposition, mais le début et la fin de l'exposition se décalent d'un temps de lecture de ligne à chaque ligne. Par exemple, avec 10 µs par ligne et 3000 lignes, le décalage entre la première et la dernière ligne est d'environ 30 ms. Lorsqu'on photographie un objet en mouvement, son déplacement pendant ces 30 ms apparaît comme une déformation de l'image."
+      },
+      {
+        "h": "Estimer la déformation et les bandes",
+        "p": "Si T_r est le temps de lecture du haut au bas de l'image, un objet qui se déplace latéralement à la vitesse v est enregistré avec un décalage de v × T_r entre les lignes du haut et du bas. Un objet qui traverse l'image latéralement à 1000 pixels par seconde, enregistré par un capteur de T_r = 30 ms, se décale d'environ 30 pixels entre le haut et le bas, et un poteau vertical apparaît incliné. Les bâtiments qui semblent penchés lors d'un panoramique ont la même cause. Par ailleurs, l'éclairage alimenté par un secteur à 50 Hz change de luminosité 100 fois par seconde ; si le temps d'exposition est plus court que cette période, chaque ligne reçoit une quantité de lumière différente et des bandes horizontales apparaissent. Choisir un temps d'exposition multiple entier de la période du scintillement fait disparaître les bandes."
+      },
+      {
+        "h": "La différence avec l'obturateur global",
+        "p": "Un obturateur global commence et termine l'exposition de tous les pixels en même temps, transfère la charge dans une mémoire à l'intérieur de chaque pixel, puis la lit séquentiellement. Les objets en mouvement sont enregistrés sans déformation, mais chaque pixel a besoin d'une mémoire et de transistors supplémentaires ; à pas de pixel égal, la surface de la photodiode diminue, et la lumière qui fuit dans la mémoire peut ajouter du bruit. Notons que la déformation de l'obturateur roulant ne disparaît pas avec un temps d'exposition plus court. Une exposition plus courte réduit le flou à l'intérieur de chaque ligne, mais le décalage temporel T_r entre les lignes est fixé par la vitesse de lecture."
+      },
+      {
+        "h": "Parades et utilisations dans les appareils",
+        "p": "Le moyen de base pour réduire la déformation est d'accélérer la lecture pour raccourcir T_r ; dans les appareils dont les capteurs empilés permettent une lecture rapide, la déformation est désormais assez faible même avec l'obturateur électronique. Un obturateur mécanique limite la déformation, car ses rideaux se déplacent rapidement, en quelques ms. En vidéo, on estime aussi le mouvement ligne par ligne à partir des données d'un gyroscope ou de l'analyse de l'image pour le corriger. À l'inverse, le décalage temporel entre les lignes peut être exploité, comme dans la communication optique par caméra, qui lit la lumière de LED clignotant rapidement sous forme de bandes dans une seule image."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que se passe-t-il quand on utilise un flash avec un obturateur roulant ?",
+        "a": "L'éclair du flash est extrêmement bref ; si les instants d'exposition sont décalés ligne par ligne, seules les lignes en cours d'exposition au moment de l'éclair deviennent claires, ce qui donne une bande où seule une partie de l'image est éclairée. On choisit un temps d'exposition assez long pour que toutes les lignes soient exposées en même temps pendant un certain intervalle, ou l'on synchronise avec un obturateur mécanique."
+      },
+      {
+        "q": "Dans quelles applications utilise-t-on un obturateur global ?",
+        "a": "Dans les applications où la déformation de l'image devient une erreur de mesure, comme la vision industrielle pour l'inspection en usine, la mesure d'objets rapides, la capture de mouvement et la mesure de distance. Depuis peu, on commence aussi à en trouver dans les appareils grand public destinés à photographier des sujets rapides."
+      },
+      {
+        "q": "Comment déterminer le temps de lecture d'un obturateur roulant ?",
+        "a": "On photographie une source dont la fréquence de scintillement est connue et l'on déduit ce temps du nombre de bandes qui apparaissent sur l'image. Par exemple, si un éclairage qui scintille 100 fois par seconde montre trois périodes de bandes sur la hauteur de l'image, la lecture du haut vers le bas prend environ 30 ms."
+      }
+    ],
     "aliases": [
       "obturateurs roulants",
       "obturateur déroulant"
@@ -4966,6 +5122,38 @@
   "波長分割多重": {
     "term": "Multiplexage en longueur d'onde (WDM)",
     "desc": "Méthode de multiplexage qui place un signal distinct sur chacune de plusieurs lumières de fréquences différentes et les transmet simultanément dans une seule fibre. La capacité augmente proportionnellement au nombre de longueurs d'onde.",
+    "about": [
+      {
+        "h": "Regrouper les signaux par fréquence dans une seule fibre",
+        "p": "Le multiplexage en longueur d'onde (WDM) place un signal distinct sur chacun de plusieurs faisceaux laser de fréquences différentes, les regroupe dans une seule fibre avec un multiplexeur, puis les sépare par longueur d'onde avec un démultiplexeur à la réception. Tant que la lumière est suffisamment faible, les faisceaux se propagent dans la fibre sans s'influencer mutuellement ; chaque longueur d'onde peut donc servir de canal indépendant. La capacité vaut à peu près le débit par longueur d'onde multiplié par le nombre de longueurs d'onde ; on peut ainsi l'augmenter sans poser de nouvelle fibre. De plus, la possibilité d'amplifier ensemble de nombreuses longueurs d'onde avec un seul EDFA a rendu pratique la transmission à longue distance et à grande capacité."
+      },
+      {
+        "h": "Espacement des canaux et bande",
+        "p": "Pour le WDM dense (DWDM), la recommandation ITU-T G.694.1 fixe des canaux à des fréquences espacées de 100 GHz, de 50 GHz, etc., à partir d'une référence de 193,1 THz. Comme l'espacement est défini en fréquence, l'espacement en longueur d'onde vaut λ²Δf/c ; 50 GHz près de 1550 nm correspondent à environ 0,4 nm. La bande C que les EDFA peuvent amplifier (environ 1530 à 1565 nm) a une largeur d'environ 4,4 THz en fréquence ; avec un espacement de 50 GHz, elle contient donc environ 90 canaux. Depuis peu, on utilise aussi des grilles flexibles qui attribuent la largeur par pas de 12,5 GHz selon la bande de chaque signal."
+      },
+      {
+        "h": "Choisir entre DWDM et CWDM",
+        "p": "Le WDM grossier (CWDM), dont l'espacement des canaux est large, de 20 nm, est défini par la recommandation ITU-T G.694.2 avec 18 longueurs d'onde de 1271 à 1611 nm. Comme l'espacement est large, même si la longueur d'onde du laser dérive quelque peu avec la température, elle n'empiète pas sur le canal voisin ; on peut donc construire les systèmes avec des lasers bon marché sans régulation de température et des filtres simples. En contrepartie, les canaux sont peu nombreux et la plupart des longueurs d'onde se trouvent hors de la bande des EDFA ; on l'utilise donc pour des distances allant jusqu'à quelques dizaines de km, accessibles sans amplification. Le DWDM exige une stabilisation de la longueur d'onde, mais peut amplifier ensemble de nombreux canaux ; il sert aux transmissions à longue distance et sous-marines."
+      },
+      {
+        "h": "Les limites du multiplexage et l'usage des longueurs d'onde",
+        "p": "Ajouter des longueurs d'onde augmente la puissance optique totale dans la fibre, et des effets non linéaires comme le mélange à quatre ondes et la modulation de phase croisée font interagir les canaux. On limite donc la diaphonie en choisissant la puissance par canal, la dispersion de la fibre et la disposition des canaux. Le WDM sert aussi dans l'accès optique résidentiel (PON), où les sens descendant et montant utilisent des longueurs d'onde différentes (en GPON, par exemple, 1490 nm en descendant et 1310 nm en montant) pour transmettre dans les deux sens sur une seule fibre. Les équipements appelés ROADM extraient et insèrent seulement certaines longueurs d'onde dans les nœuds intermédiaires et commutent les routes longueur d'onde par longueur d'onde."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Combien de longueurs d'onde peut-on placer dans une fibre en WDM ?",
+        "a": "Cela dépend de la bande de l'amplificateur et de l'espacement des canaux. La bande C seule, avec un espacement de 50 GHz, en contient environ 90, et l'ajout de bandes comme la bande L permet d'en placer davantage. Combiné au débit par longueur d'onde, cela permet des transmissions de plusieurs dizaines de Tb/s sur une seule fibre."
+      },
+      {
+        "q": "Pourquoi les canaux DWDM sont-ils définis en fréquence ?",
+        "a": "Parce que la fréquence de la lumière est la même dans tous les milieux, alors que la longueur d'onde diffère d'environ 0,03 % même entre l'air et le vide, soit environ 0,4 nm à 1550 nm, un écart proche de l'espacement de 50 GHz. On définit donc les canaux en fréquence, et l'on utilise les valeurs dans le vide lorsqu'on les écrit en longueur d'onde."
+      },
+      {
+        "q": "Quels types de démultiplexeurs utilise-t-on en WDM ?",
+        "a": "Des filtres diélectriques multicouches dont la bande passante est conçue pour chaque longueur d'onde, des réseaux de guides d'onde (AWG) qui séparent les longueurs d'onde par l'interférence de nombreux guides de longueurs de trajet différentes, des réseaux de diffraction, etc. Les AWG sont courants en DWDM avec de nombreux canaux, et les filtres multicouches lorsque les canaux sont peu nombreux."
+      }
+    ],
     "aliases": [
       "multiplexage par répartition en longueur d'onde",
       "multiplexage en longueurs d'onde",
@@ -4975,6 +5163,38 @@
   "光信号対雑音比": {
     "term": "Rapport signal sur bruit optique (OSNR)",
     "desc": "Rapport entre la puissance du signal optique et la puissance du bruit optique dans une bande définie (généralement 0,1 nm). Fixé principalement par le bruit d'émission spontanée amplifiée (ASE) des amplificateurs, il sert d'indicateur de la qualité de transmission.",
+    "about": [
+      {
+        "h": "Une mesure du bruit des amplificateurs",
+        "p": "Un EDFA placé le long d'une liaison par fibre ajoute de l'émission spontanée amplifiée (ASE) en amplifiant le signal. L'ASE s'étale sur une large bande, et la partie qui recouvre la bande du signal lui-même ne peut pas être retirée par filtrage ; elle s'accumule donc à chaque amplificateur. Le rapport signal sur bruit optique (OSNR) est le rapport entre la puissance du signal et la puissance de l'ASE comprise dans une bande définie ; on l'exprime généralement en dB. Comme l'OSNR décrit la qualité du signal au stade optique, avant la détection, on l'utilise dans les transmissions à longue distance comportant de nombreux EDFA pour estimer la portée et pour surveiller les liaisons en service."
+      },
+      {
+        "h": "La formule d'estimation et la bande de référence",
+        "p": "La bande de bruit standard est de 0,1 nm, ce qui correspond à environ 12,5 GHz près de 1550 nm. Pour une liaison de N tronçons identiques, on peut estimer l'OSNR par OSNR[dB] ≈ 58 + P_ch − L_span − NF − 10 log₁₀N. Le 58 provient du fait que le produit de l'énergie d'un photon à 1550 nm par 12,5 GHz vaut environ −58 dBm. Pour combiner les OSNR de sections différentes, on additionne les inverses des valeurs linéaires, comme 1/OSNR = 1/OSNR₁ + 1/OSNR₂ + … ; deux sections de 20 dB chacune donnent environ 17 dB au total."
+      },
+      {
+        "h": "Attention à la bande de mesure",
+        "p": "La valeur de l'OSNR dépend de la bande dans laquelle le bruit est mesuré. Avec une résolution de 0,5 nm sur l'analyseur de spectre optique, la puissance de bruit est 5 fois celle mesurée dans 0,1 nm, et l'OSNR apparaît inférieur d'environ 7 dB ; il faut donc ajouter environ 7 dB pour se ramener à la référence de 0,1 nm. Par ailleurs, la méthode traditionnelle estime le bruit dans la bande du signal à partir du niveau de bruit entre les canaux, mais cette estimation n'est plus valable pour la transmission cohérente aux canaux très serrés, ni pour les liaisons où les filtres des ROADM ont supprimé le bruit hors du signal. On utilise donc aussi des méthodes qui mesurent le bruit à l'intérieur de la bande du signal, en exploitant notamment la polarisation."
+      },
+      {
+        "h": "L'OSNR requis et la conception",
+        "p": "L'OSNR nécessaire à la réception dépend du format de modulation, du débit de symboles et de la capacité de correction d'erreurs. Doubler le débit de symboles élargit à la fois la bande du signal et la bande de bruit captée à la réception ; l'OSNR nécessaire pour un même taux d'erreur augmente donc d'environ 3 dB. Une modulation d'ordre plus élevé exige aussi un OSNR plus élevé : passer de la QPSK à la 16QAM fait une différence d'environ 7 dB dans des conditions idéales. Du côté de la liaison, on gagne de l'OSNR en augmentant la puissance injectée, en raccourcissant les tronçons ou en utilisant des amplificateurs à plus faible facteur de bruit ou l'amplification Raman ; mais une puissance trop élevée accroît la dégradation non linéaire, si bien qu'il existe une valeur optimale."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre l'OSNR et le SNR ?",
+        "a": "L'OSNR est pris au stade optique, comme le rapport entre la puissance du signal et le bruit dans une bande définie, par exemple 0,1 nm. Le SNR est le rapport du signal électrique reçu au bruit dans la bande du signal, et il inclut le bruit du récepteur. On peut convertir l'OSNR en SNR à l'aide du rapport entre le débit de symboles et la bande de référence."
+      },
+      {
+        "q": "De combien de dB d'OSNR a-t-on besoin ?",
+        "a": "Cela varie beaucoup selon le format. Pour du DP-QPSK à 100 Gb/s, par exemple, on considère comme repère une valeur comprise entre 10 et 20 dB (dans 0,1 nm), en supposant une correction d'erreurs, et les formats d'ordre plus élevé comme la 16QAM demandent quelques dB de plus. La conception vise cette valeur augmentée d'une marge pour les dégradations."
+      },
+      {
+        "q": "Comment mesure-t-on l'OSNR ?",
+        "a": "La méthode de base mesure la puissance de crête du signal et le niveau de bruit voisin avec un analyseur de spectre optique, puis en fait le rapport après avoir ramené la bande de résolution à 0,1 nm. Sur les liaisons aux canaux serrés, on ne peut pas estimer le bruit entre les canaux ; on utilise donc des méthodes qui mesurent le bruit à l'intérieur de la bande du signal."
+      }
+    ],
     "aliases": [
       "rapport signal/bruit optique",
       "optical signal-to-noise ratio"
@@ -4983,6 +5203,38 @@
   "分散補償ファイバ": {
     "term": "Fibre à compensation de dispersion (DCF)",
     "desc": "Fibre dont la dispersion chromatique est grande et de signe opposé à celle de la fibre de transmission. On l'insère le long de la liaison ou côté réception pour annuler la dispersion accumulée.",
+    "about": [
+      {
+        "h": "Annuler la dispersion par une dispersion de signe opposé",
+        "p": "La fibre monomode standard présente une dispersion chromatique positive d'environ 17 ps/(nm·km) près de 1550 nm, qui s'accumule jusqu'à environ 1700 ps/nm sur 100 km. La fibre à compensation de dispersion (DCF) est une fibre dotée d'une forte dispersion de signe opposé ; en insérant une longueur appropriée après la liaison, on annule la dispersion accumulée. Comme la dispersion de la DCF est grande, autour de −100 ps/(nm·km), la longueur nécessaire n'est qu'une fraction de celle de la liaison. Parce qu'elle compense la dispersion sans quitter le domaine optique, elle a été largement utilisée dans les transmissions WDM à 10 Gb/s en détection directe, avant que la réception cohérente ne se généralise."
+      },
+      {
+        "h": "Une conception à forte dispersion, et ses pertes",
+        "p": "La DCF obtient une dispersion de guide d'onde fortement négative grâce à des structures comme un cœur fin à indice de réfraction élevé entouré d'une couche à indice abaissé. En contrepartie, ses pertes sont d'environ 0,5 dB/km, plus du double de celles d'une fibre ordinaire, et son aire effective est d'environ 20 µm², bien plus petite que les quelque 80 µm² de la fibre standard. On compare l'efficacité de la compensation par le facteur de mérite |D|/α, la dispersion divisée par les pertes : −100 ps/(nm·km) avec 0,5 dB/km donnent 200 ps/(nm·dB). Comme la lumière est concentrée dans le cœur étroit et sensible aux effets non linéaires, on limite la puissance injectée."
+      },
+      {
+        "h": "Compenser aussi la pente de dispersion",
+        "p": "La valeur de la dispersion chromatique varie avec la longueur d'onde, et la pente de dispersion S de la fibre standard vaut environ 0,057 ps/(nm²·km) près de 1550 nm. Même si la dispersion est exactement annulée pour le canal central, une DCF dont la pente ne convient pas laisse de la dispersion dans les canaux situés aux bords de la bande C. On conçoit donc la DCF pour que le rapport de la pente à la dispersion (la pente de dispersion relative S/D) soit le même que celui de la liaison, ce qui compense tous les canaux à la fois. Pour la fibre standard, ce rapport vaut environ 0,0034 nm⁻¹. La dispersion résiduelle non compensée s'accumule à chaque tronçon ; on procède donc parfois à un ajustement fin par longueur d'onde à la réception."
+      },
+      {
+        "h": "Cartes de dispersion et remplacement",
+        "p": "Dans les liaisons réelles, on compense parfois chaque tronçon de façon à laisser un peu de dispersion plutôt que d'atteindre exactement zéro. De longues portions à dispersion quasi nulle renforcent le mélange à quatre ondes et la modulation de phase croisée entre canaux ; la répartition de la compensation par tronçon (la carte de dispersion) est donc conçue en tenant compte des effets non linéaires. La DCF ayant de fortes pertes, on la place le plus souvent entre les étages d'un EDFA à deux étages pour limiter l'augmentation du bruit. Il existe aussi des composants qui compensent la dispersion avec des réseaux de Bragg sur fibre à pas variable (chirpés). Dans les transmissions cohérentes actuelles, la dispersion est compensée par traitement numérique du signal, si bien que les configurations sans DCF sont la norme."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Comment détermine-t-on la longueur de DCF ?",
+        "a": "On divise la dispersion accumulée de la liaison par la valeur absolue de la dispersion de la DCF. Par exemple, pour annuler les 1700 ps/nm produits par 100 km de fibre à 17 ps/(nm·km) avec une DCF à −85 ps/(nm·km), il faut 20 km."
+      },
+      {
+        "q": "L'ajout de DCF allonge-t-il la distance de transmission ?",
+        "a": "Il recule la limite de distance fixée par la dispersion, mais la DCF ajoute des pertes, qu'il faut compenser par de l'amplification. Le prix en est davantage de pertes et d'effets non linéaires ; la conception cherche donc un compromis entre compensation de dispersion et pertes."
+      },
+      {
+        "q": "Existe-t-il d'autres moyens que la DCF pour compenser la dispersion ?",
+        "a": "Il existe les réseaux de Bragg sur fibre à pas variable, la compensation électronique qui prédéforme la forme d'onde à l'émission, le traitement numérique du signal des récepteurs cohérents, etc. Dans les transmissions actuelles à longue distance, on utilise surtout le traitement numérique du signal."
+      }
+    ],
     "aliases": [
       "fibres à compensation de dispersion",
       "fibre compensatrice de dispersion",
@@ -4993,6 +5245,38 @@
   "利得平坦化フィルタ": {
     "term": "Filtre égaliseur de gain (GFF)",
     "desc": "Filtre optique dont le spectre de pertes compense la variation du gain d'un EDFA avec la longueur d'onde. Il sert à égaliser les puissances des canaux dans une amplification en cascade.",
+    "about": [
+      {
+        "h": "Le gain non uniforme d'un EDFA",
+        "p": "Le gain d'un EDFA n'est pas plat : il reflète la dépendance en longueur d'onde des sections efficaces d'absorption et d'émission des ions erbium. Dans la bande C, il présente un pic marqué près de 1530 nm et varie plus doucement du côté des grandes longueurs d'onde. Même un écart de gain de 0,5 dB par amplificateur s'additionne en dB sur de nombreux amplificateurs et atteint 15 dB après 30 d'entre eux. Les canaux à faible gain manquent d'OSNR, et les canaux à fort gain deviennent trop puissants et subissent une dégradation non linéaire. Un filtre égaliseur de gain (GFF) est un filtre optique dont les pertes ont la forme inverse du gain et annulent ces écarts."
+      },
+      {
+        "h": "Comment sont réalisés les filtres",
+        "p": "Les GFF utilisent des filtres diélectriques multicouches, des réseaux à longue période sur fibre, des réseaux de Bragg sur fibre inclinés, etc. Dans tous les cas, on donne aux pertes la forme de la différence entre le spectre de gain de l'EDFA et le gain plat visé, de sorte que les longueurs d'onde à fort gain sont plus atténuées. Avec un GFF, le gain global de l'amplificateur s'abaisse au niveau de la longueur d'onde de plus faible gain ; on utilise donc davantage de puissance de pompe en conséquence. On le place généralement entre les étages d'un EDFA à deux étages pour limiter son effet sur le facteur de bruit, et l'écart de gain après égalisation est ramené à environ 1 dB ou moins."
+      },
+      {
+        "h": "Plat seulement dans les conditions de conception",
+        "p": "La forme des pertes d'un GFF est fixe, mais la forme du spectre de gain de l'EDFA varie avec le degré d'inversion de population, c'est-à-dire avec le gain de l'amplificateur lui-même. Lorsque la puissance d'entrée ou le nombre de canaux changent et que le gain s'écarte de la valeur de conception, une pente du gain en fonction de la longueur d'onde (tilt) apparaît dans le spectre censé être aplati. On équipe donc les amplificateurs d'un atténuateur variable interne, qui règle la puissance de sortie tout en maintenant le gain à la valeur de conception. Dans les liaisons à longue distance, on place parfois en ligne des égaliseurs de gain dynamiques, capables de faire varier les pertes longueur d'onde par longueur d'onde, pour corriger les écarts restants."
+      },
+      {
+        "h": "L'égalisation dans l'amplification Raman et au-delà",
+        "p": "L'égalisation du gain n'est pas un problème propre aux EDFA. Dans l'amplification Raman dans les fibres, un pic de gain apparaît à des fréquences inférieures d'environ 13 THz à celle de la pompe ; on combine donc plusieurs pompes de longueurs d'onde différentes et l'on règle leurs puissances pour aplatir le gain. Lorsqu'on combine EDFA et amplification Raman, on conçoit aussi l'égalisation en examinant la forme du gain total. De petits effets comme le creusement de trou spectral (spectral hole burning), par lequel des canaux intenses réduisent localement l'inversion de population, ne peuvent pas être corrigés par un GFF fixe ; dans les câbles sous-marins à très longue distance, on tient donc compte aussi de ces écarts résiduels lors de la conception."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Où place-t-on le GFF dans un EDFA ?",
+        "a": "En général entre le premier et le second étage d'un EDFA à deux étages. Placé avant le premier étage, ses pertes dégradent directement le facteur de bruit ; placé après le second étage, il abaisse la puissance de sortie. Entre les étages, c'est la meilleure position à la fois pour le bruit et pour la puissance de sortie."
+      },
+      {
+        "q": "Qu'est-ce que la pente de gain (tilt) ?",
+        "a": "C'est un déséquilibre dans lequel le gain augmente ou diminue de façon presque linéaire avec la longueur d'onde. Elle apparaît lorsqu'on modifie le réglage du gain de l'EDFA, et on l'annule soit en ramenant le gain à la valeur de conception avec un atténuateur variable, soit avec un filtre qui corrige la pente."
+      },
+      {
+        "q": "Quels problèmes se posent sans GFF ?",
+        "a": "Chaque amplificateur supplémentaire creuse les écarts de puissance entre canaux : les canaux à faible gain manquent d'OSNR et subissent davantage d'erreurs, tandis que les canaux à fort gain subissent une dégradation non linéaire. La portée et le nombre de canaux sont limités par le canal le plus défavorisé."
+      }
+    ],
     "aliases": [
       "filtres égaliseurs de gain",
       "filtre d'égalisation de gain",
@@ -5004,6 +5288,38 @@
   "四光波混合": {
     "term": "Mélange à quatre ondes (FWM)",
     "desc": "Effet d'optique non linéaire du troisième ordre par lequel des lumières à trois fréquences engendrent une lumière à la fréquence f_i + f_j − f_k. Il devient intense lorsque la dispersion est faible et provoque de la diaphonie en WDM.",
+    "about": [
+      {
+        "h": "De nouvelles fréquences nées de trois ondes",
+        "p": "Le mélange à quatre ondes (FWM) est le phénomène par lequel, sous l'effet de la susceptibilité non linéaire du troisième ordre χ⁽³⁾, des lumières de fréquences f_i, f_j et f_k engendrent une lumière de fréquence f_i + f_j − f_k ; dans la fibre optique, il se manifeste comme un effet Kerr. Lorsque f_i = f_j (mélange à quatre ondes dégénéré), deux ondes produisent une lumière de fréquence 2f_i − f_k. Si les canaux WDM sont placés à espacement régulier, la lumière ainsi produite tombe exactement sur les fréquences d'autres canaux. Le nombre de combinaisons produites vaut N²(N − 1)/2 pour N canaux, soit 9 pour 3 canaux et 224 pour 8 canaux : il croît rapidement avec le nombre de canaux."
+      },
+      {
+        "h": "Le rôle de l'accord de phase et de la dispersion",
+        "p": "Pour que la lumière produite se renforce au cours de la propagation, les ondes en jeu doivent progresser avec des phases concordantes (accord de phase). En présence de dispersion chromatique, les constantes de propagation diffèrent selon la fréquence, les phases se décalent vite et l'efficacité diminue. Dans une fibre standard (17 ps/(nm·km)) avec des canaux espacés de 100 GHz, la distance au bout de laquelle la phase glisse de π n'est que de quelques centaines de m, et le FWM ne se développe presque pas. Dans une fibre à dispersion aussi faible que 0,1 ps/(nm·km), cette distance atteint plusieurs dizaines de km, et le FWM est intense sur toute la longueur effective (environ 20 km) avant que les pertes n'affaiblissent la lumière."
+      },
+      {
+        "h": "Puissance et diaphonie",
+        "p": "La puissance de la lumière produite par FWM est proportionnelle au produit des puissances des trois ondes en jeu. Augmenter de 1 dB la puissance de tous les canaux accroît la lumière de FWM de 3 dB et dégrade de 2 dB son rapport au signal. Avec des canaux régulièrement espacés, la lumière produite se superpose au signal à la même fréquence et ne peut pas en être séparée par filtrage ; elle devient un bruit de réception par interférence avec le signal. Les parades consistent à utiliser une fibre à dispersion décalée non nulle, qui conserve un peu de dispersion à 1550 nm, à espacer les canaux de façon irrégulière et à limiter la puissance par canal. Dans la fibre standard à forte dispersion, le FWM n'est généralement pas la limite principale."
+      },
+      {
+        "h": "Mettre le mélange à quatre ondes au service des applications",
+        "p": "Si le FWM gêne la transmission, il est aussi un outil utile. En injectant une pompe intense et un signal dans une fibre à faible dispersion, on crée une copie du signal à 2f_p − f_s, ce qui convertit sa longueur d'onde sans quitter le domaine optique. Cette copie est une lumière à phase conjuguée ; en effectuant la conversion au milieu d'une liaison, la seconde moitié annule la dispersion accumulée dans la première. Le FWM sert aussi à l'amplification paramétrique optique, qui transfère l'énergie d'une pompe vers un signal. Les micropeignes, qui engendrent de nombreuses fréquences régulièrement espacées à partir d'une lumière continue dans un minuscule résonateur optique, résultent eux aussi de mélanges à quatre ondes successifs."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre le mélange à quatre ondes et l'automodulation de phase ?",
+        "a": "Tous deux proviennent de l'effet Kerr, mais l'automodulation de phase est la modification de la phase d'une onde par sa propre intensité, et elle ne crée pas de lumière aux fréquences des autres canaux. Le mélange à quatre ondes est le mélange de plusieurs ondes qui crée de la lumière à d'autres fréquences, et il devient en WDM une diaphonie entre canaux."
+      },
+      {
+        "q": "Comment évite-t-on le mélange à quatre ondes ?",
+        "a": "L'approche de base consiste à éviter les fibres à dispersion quasi nulle pour rompre l'accord de phase. On peut utiliser une fibre à dispersion décalée non nulle, espacer les canaux de façon irrégulière ou réduire la puissance par canal."
+      },
+      {
+        "q": "Qu'est-ce que le mélange à quatre ondes dégénéré ?",
+        "a": "C'est le cas où deux des ondes en jeu ont la même fréquence : la lumière à f₁, comptée deux fois, et la lumière à f₂ produisent une lumière à 2f₁ − f₂. Même avec deux canaux seulement, une nouvelle lumière apparaît ainsi de part et d'autre, à l'extérieur des deux canaux."
+      }
+    ],
     "aliases": [
       "four-wave mixing"
     ]
@@ -5011,6 +5327,38 @@
   "パワーバジェット": {
     "term": "Bilan de puissance",
     "desc": "Bilan de pertes qui répartit l'écart entre la puissance de l'émetteur et la sensibilité du récepteur entre les pertes de la fibre et des raccordements et une marge. Il sert à estimer la distance de transmission maximale d'une liaison optique.",
+    "about": [
+      {
+        "h": "Répartir l'écart entre émetteur et récepteur entre les pertes",
+        "p": "Le bilan de puissance est une méthode de conception d'une liaison optique qui traite l'écart entre la puissance de l'émetteur et la sensibilité du récepteur comme un budget pour les pertes le long du trajet. La sensibilité du récepteur est la puissance moyenne minimale qui peut être reçue avec un taux d'erreur spécifié ; on l'exprime en dBm. Avec une puissance d'émission de 0 dBm et une sensibilité du récepteur de −28 dBm, le budget disponible est de 28 dB. On en retranche les pertes de la fibre (longueur × coefficient d'atténuation), les pertes des connecteurs et des épissures, ainsi que les pénalités de puissance dues à la dispersion et à d'autres causes, et l'on vérifie qu'il reste une marge pour le vieillissement des composants et les réparations. Travailler en dB a l'avantage de traiter les pertes en série par de simples additions et soustractions."
+      },
+      {
+        "h": "Ordres de grandeur des pertes",
+        "p": "L'atténuation typique de la fibre monomode est d'environ 0,35 dB/km à 1310 nm et d'environ 0,2 dB/km à 1550 nm ; pour un câble installé, on l'estime un peu plus élevée pour inclure les raccordements et les courbures. Les pertes d'un connecteur sont généralement d'environ 0,2 à 0,5 dB par raccordement, et celles d'une épissure par fusion de 0,1 dB ou moins. Dans un PON (accès optique résidentiel), qui divise la lumière, une division 1:32 fait perdre 10 log₁₀32 ≈ 15 dB même dans le cas idéal, et environ 17 dB en pratique, ce qui occupe une grande partie du budget. La classe B+ du GPON exige un fonctionnement sur une plage de pertes de 13 à 28 dB."
+      },
+      {
+        "h": "Trop peu de pertes pose aussi problème",
+        "p": "On a tendance à ne penser le bilan de puissance qu'en termes de pertes maximales, mais un récepteur a aussi une puissance maximale admissible (le niveau de surcharge). Avec une puissance d'émission de +3 dBm et un niveau de surcharge du récepteur de −3 dBm, les pertes de la liaison doivent être d'au moins 6 dB ; sur les courtes distances, on insère un atténuateur pour abaisser la puissance reçue. Outre la distance fixée par les pertes, il existe une limite de distance fixée par la dispersion chromatique et la dispersion modale de polarisation, et la portée réelle est la plus courte des deux. En détection directe à 10 Gb/s et au-delà, la dispersion limite souvent la distance avant les pertes dans la fibre standard à 1550 nm."
+      },
+      {
+        "h": "Déroulement de la conception et de la vérification",
+        "p": "La conception peut additionner les valeurs les plus défavorables des spécifications des composants ou procéder à une estimation statistique à partir de leur dispersion ; la première méthode est sûre, mais peut laisser une marge excessive. Une fois la liaison installée, on mesure les pertes d'insertion réelles avec une source lumineuse et un puissancemètre optique, et un OTDR vérifie les pertes et la réflexion à chaque raccordement pour les comparer à la ventilation du budget. Dans les transmissions à longue distance avec amplificateurs optiques, les pertes sont compensées tronçon par tronçon par l'amplification, et ce sont l'OSNR et la dégradation non linéaire, plutôt que la puissance reçue, qui deviennent les limites ; le bilan de puissance laisse alors place à un bilan d'OSNR."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre le bilan de puissance et les pertes de la liaison ?",
+        "a": "Le bilan de puissance est la limite supérieure des pertes admissibles, fixée par l'écart entre la puissance d'émission et la sensibilité du récepteur. Les pertes de la liaison sont la somme des pertes du trajet réel ; si cette somme, augmentée des pénalités et de la marge, tient dans le bilan de puissance, la liaison fonctionne."
+      },
+      {
+        "q": "Quelle marge prend-on ?",
+        "a": "Cela dépend de l'application et de la norme, mais une marge d'environ 3 dB est courante. Elle couvre le vieillissement des composants, les variations de température et les épissures supplémentaires dues aux réparations futures ; on la prend plus grande lorsque l'environnement du câble est sévère."
+      },
+      {
+        "q": "Pourquoi la sensibilité du récepteur est-elle donnée avec un taux d'erreur ?",
+        "a": "Parce que plus la puissance reçue est faible, plus le bruit provoque d'erreurs ; la puissance minimale dépend donc du taux d'erreur admis. Par exemple, la puissance nécessaire diffère beaucoup entre un taux d'erreur de 10⁻¹² et un taux de 10⁻³ qui suppose une correction d'erreurs."
+      }
+    ],
     "aliases": [
       "bilans de puissance",
       "bilan de liaison",
@@ -5025,6 +5373,38 @@
   "直交振幅変調": {
     "term": "Modulation d'amplitude en quadrature (QAM)",
     "desc": "Format de modulation qui place l'information à la fois sur l'amplitude de la composante en phase et sur celle de la composante en quadrature de la porteuse. La 16QAM utilise 16 points de constellation et transporte 4 bits par symbole.",
+    "about": [
+      {
+        "h": "Porter l'information sur deux dimensions, l'amplitude et la phase",
+        "p": "La modulation d'amplitude en quadrature (QAM) décompose la porteuse en une composante en cos ωt (la composante en phase I) et une composante en sin ωt (la composante en quadrature Q), et place des valeurs distinctes sur l'amplitude de chacune. En prenant I et Q comme axes horizontal et vertical du plan complexe, chaque symbole est représenté par un point du plan (un point de constellation), et leur disposition s'appelle la constellation. La M-QAM, à M points, transporte log₂M bits par symbole : 4 bits pour la 16QAM et 6 bits pour la 64QAM. Comme elle utilise deux axes, elle transmet deux fois plus d'information qu'une modulation d'amplitude n'utilisant qu'un seul axe, à débit de symboles et nombre de niveaux par axe égaux."
+      },
+      {
+        "h": "Espacement des points et SNR requis",
+        "p": "À puissance moyenne égale, plus les points de constellation sont nombreux, plus les points voisins se rapprochent et plus il est facile de les confondre en présence de bruit. Pour une M-QAM carrée, le rapport du carré de la distance entre points les plus proches à la puissance moyenne vaut 6/(M − 1) ; passer de la 16QAM à la 64QAM est donc plus exigeant d'environ 6,2 dB, et de la 64QAM à la 256QAM encore d'environ 6 dB. Chaque bit supplémentaire augmente le SNR requis d'environ 3 dB. De plus, les points des coins ont une puissance supérieure à la moyenne, 1,8 fois pour la 16QAM et environ 2,3 fois pour la 64QAM ; les émetteurs et les amplificateurs doivent disposer de la réserve correspondante."
+      },
+      {
+        "h": "La différence avec la PSK et la PAM",
+        "p": "La QPSK a quatre points sur un cercle de même rayon, distingués par la seule phase ; on peut donc la considérer comme identique à la 4-QAM. Avec 16 points, la 16QAM sur une grille présente une distance entre points voisins plus grande que la 16PSK sur un cercle ; elle fait donc moins d'erreurs à SNR égal. Les formats comme le PAM4, qui n'utilisent que l'intensité de la lumière, peuvent être reçus en détection directe et sont peu coûteux, mais ils ne peuvent exploiter ni la phase du champ ni deux axes ; ils transportent donc moins de bits que la QAM à débit de symboles égal. Recevoir une QAM optique exige la réception cohérente, qui mesure I et Q par interférence avec un oscillateur local."
+      },
+      {
+        "h": "La mise en œuvre en communications optiques",
+        "p": "Les signaux QAM optiques sont produits par un modulateur IQ, qui place côte à côte deux modulateurs de Mach-Zehnder et combine leurs sorties en déphasant l'une de 90°. Chaque modulateur fonctionne autour de son point de transmission minimale, de façon que l'amplitude du champ de la lumière puisse varier du positif au négatif. En communications optiques, la QAM est combinée au multiplexage en polarisation, qui place des signaux QAM distincts sur deux polarisations orthogonales ; la DP-16QAM transmet ainsi 8 bits par symbole. Depuis peu, la mise en forme probabiliste de la constellation, qui réduit la probabilité d'utiliser les points extérieurs pour se rapprocher d'une distribution gaussienne, sert à approcher la limite de Shannon et à ajuster finement le débit binaire."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Combien de bits la 16QAM transmet-elle par symbole ?",
+        "a": "Comme 16 = 2⁴, elle transmet 4 bits. La M-QAM transporte log₂M bits : la 64QAM en transporte donc 6 et la 256QAM 8. Combinée au multiplexage en polarisation, le nombre de bits par symbole double."
+      },
+      {
+        "q": "Que se passe-t-il quand on augmente l'ordre de la QAM ?",
+        "a": "On transporte plus de bits à débit de symboles et bande égaux, mais l'espacement des points diminue ; le SNR (l'OSNR) requis augmente et la portée diminue. Le signal devient aussi plus sensible au bruit de phase du laser et aux distorsions de l'émetteur et du récepteur."
+      },
+      {
+        "q": "Qu'est-ce que le codage de Gray ?",
+        "a": "C'est une façon d'attribuer les combinaisons de bits de sorte que des points de constellation voisins ne diffèrent que d'un seul bit. Les erreurs qui confondent un point avec son voisin sont les plus fréquentes en présence de bruit ; ce codage limite donc à un seul bit l'erreur qui en résulte."
+      }
+    ],
     "aliases": [
       "16QAM",
       "MAQ",
@@ -5034,6 +5414,34 @@
   "コヒーレント受信": {
     "term": "Réception cohérente",
     "desc": "Méthode de réception qui fait interférer le signal reçu avec un oscillateur local pour mesurer l'amplitude et la phase du champ. Elle permet la démodulation des formats multiniveaux et la compensation numérique de la dispersion chromatique.",
+    "about": [
+      {
+        "h": "Mesurer la phase par interférence avec un oscillateur local",
+        "p": "Le courant fourni par un photodétecteur est proportionnel à l'intensité optique ; les signaux modulés en intensité peuvent donc être reçus en détection directe, mais l'information portée par la phase est perdue. La réception cohérente superpose au signal une lumière laser de fréquence voisine (l'oscillateur local, LO) avant la détection. Un terme d'interférence entre le signal et le LO apparaît dans l'intensité, et son amplitude et son signe reflètent l'amplitude et la phase du signal. Un LO plus intense agrandit le terme d'interférence, ce qui a aussi l'avantage d'augmenter la sensibilité par rapport au bruit thermique du récepteur. En formant deux interférences avec des déphasages de 0 et π/2 dans un hybride à 90°, on obtient la composante en phase I et la composante en quadrature Q du champ."
+      },
+      {
+        "h": "La configuration d'un récepteur cohérent numérique",
+        "p": "Un récepteur pratique sépare le signal en deux polarisations avec un séparateur de polarisation, mélange chacune avec le LO dans un hybride à 90° et détecte I et Q avec quatre paires de photodétecteurs équilibrés. Un détecteur équilibré fait la différence entre deux photodétecteurs, ce qui annule la composante d'intensité propre au LO et ses fluctuations. Les quatre signaux électriques obtenus sont numérisés par des convertisseurs analogique-numérique rapides, et le traitement du signal estime et retire l'écart de fréquence et les fluctuations de phase par rapport au LO. Le verrouillage de phase optique du LO sur le signal est donc inutile, et l'on utilise le schéma intradyne, qui emploie comme LO un laser à faible largeur de raie fonctionnant de façon indépendante."
+      },
+      {
+        "h": "Ce que permet le traitement numérique du signal",
+        "p": "Comme le champ est obtenu sous forme de valeurs numériques, les dégradations linéaires subies dans la liaison peuvent être éliminées par le calcul. La dispersion chromatique est une variation de phase dépendant de la fréquence ; un filtre à caractéristique inverse peut donc en compenser même des milliers de km, ce qui rend inutile la fibre à compensation de dispersion. Même lorsque la polarisation tourne dans la fibre et que les signaux des deux polarisations se mélangent, des filtres adaptatifs peuvent les séparer, en compensant du même coup la dispersion modale de polarisation. Il est ainsi devenu possible de combiner le multiplexage en polarisation à des formats multiniveaux comme la QPSK et la 16QAM pour transmettre des centaines de Gb/s par longueur d'onde. La dégradation non linéaire due à l'effet Kerr, en revanche, n'est pas aussi facile à éliminer que les dégradations linéaires."
+      }
+    ],
+    "faq": [
+      {
+        "q": "En quoi diffère-t-elle de la détection directe ?",
+        "a": "La détection directe ne mesure que l'intensité optique ; on l'utilise donc avec la modulation d'intensité (NRZ ou PAM4), et elle est simple et peu coûteuse. La réception cohérente mesure l'amplitude et la phase du champ par interférence avec un oscillateur local ; elle peut donc démoduler les formats multiniveaux qui utilisent la phase et la polarisation et compenser numériquement la dispersion, mais le récepteur est plus complexe et consomme davantage."
+      },
+      {
+        "q": "La fréquence de l'oscillateur local doit-elle coïncider exactement avec celle du signal ?",
+        "a": "Pas en réception cohérente numérique. Les écarts de fréquence allant jusqu'à l'ordre du GHz et les fluctuations de phase peuvent être estimés et éliminés par le traitement numérique du signal. Une grande largeur de raie du laser rend toutefois l'estimation de la phase plus difficile ; plus l'ordre de modulation est élevé, plus il faut des lasers à faible largeur de raie."
+      },
+      {
+        "q": "Où l'utilise-t-on ?",
+        "a": "Principalement dans les transmissions de quelques dizaines à quelques milliers de km : liaisons dorsales à longue distance, câbles sous-marins et liaisons entre centres de données. Sur les courtes distances, comme à l'intérieur d'un centre de données, on utilise surtout la détection directe, peu coûteuse et peu gourmande en énergie."
+      }
+    ],
     "aliases": [
       "détection cohérente",
       "récepteur cohérent",
@@ -5045,6 +5453,38 @@
   "時間帯域幅積": {
     "term": "Produit durée-largeur spectrale",
     "desc": "Produit ΔνΔt de la durée d'une impulsion par sa largeur spectrale. Sa borne inférieure dépend de la forme de l'impulsion : 0,441 pour une gaussienne et 0,315 pour une sech². L'égalité est atteinte en l'absence de dérive de fréquence.",
+    "about": [
+      {
+        "h": "Les impulsions courtes exigent un spectre large",
+        "p": "Le produit durée-largeur spectrale est le produit de la durée Δt d'une impulsion par sa largeur spectrale Δν (toutes deux prises comme largeurs à mi-hauteur de l'intensité). D'après les propriétés de la transformée de Fourier, plus l'impulsion est courte, plus la gamme de fréquences qu'elle doit contenir est large, et ΔνΔt a une borne inférieure fixée par la forme : 2 ln2/π ≈ 0,441 pour une gaussienne et environ 0,315 pour une sech². Une impulsion qui atteint cette borne est dite limitée par transformée de Fourier ; c'est l'impulsion la plus courte que son spectre puisse former. Par exemple, une impulsion gaussienne de 100 fs centrée à 800 nm exige une largeur spectrale Δν ≈ 4,41 THz, soit environ 9,4 nm en longueur d'onde."
+      },
+      {
+        "h": "La conversion depuis une largeur en longueur d'onde",
+        "p": "La largeur spectrale est souvent mesurée en longueur d'onde ; on la convertit en fréquence par Δν = cΔλ/λ². Pour une même largeur en fréquence, la largeur en longueur d'onde varie comme λ² : une largeur de 9,4 nm à 800 nm correspond à environ 35 nm à 1550 nm. Pour une impulsion sech² de 100 fs, elle vaut environ 6,7 nm à 800 nm. La forme est supposée d'après l'expérience, par exemple que les impulsions solitons issues du verrouillage de modes passif sont proches d'une sech² ; la conversion comporte donc une part d'erreur. Si l'on utilise comme mesure indépendante de la forme les largeurs quadratiques moyennes, le produit des largeurs en temps et en pulsation est au moins égal à 1/2."
+      },
+      {
+        "h": "Une borne inférieure, pas une valeur fixe",
+        "p": "Les valeurs 0,441 et 0,315 sont des bornes inférieures, et toutes les impulsions ne les atteignent pas. Une impulsion à dérive de fréquence, dont la phase varie avec la fréquence, est plus longue pour un même spectre, et son produit dépasse la borne. Inversement, le rapport entre le ΔνΔt mesuré et la borne donne une idée de la compression possible de l'impulsion. Cependant, un produit proche de la borne n'est pas une preuve suffisante que l'impulsion a une forme propre. Si la forme du spectre diffère de celle supposée, ou s'il existe des ailes longues et faibles ou des impulsions satellites, le seul produit des largeurs à mi-hauteur peut ne pas les révéler."
+      },
+      {
+        "h": "Usage dans la conception et la caractérisation des lasers",
+        "p": "Pour caractériser les lasers ultrarapides, on calcule le produit durée-largeur spectrale à partir de la largeur spectrale et de la durée d'impulsion mesurée par autocorrélation ou par une méthode analogue, afin de vérifier si l'impulsion est proche de la limite de Fourier. S'il dépasse la borne, il reste possible de raccourcir l'impulsion en compensant la dispersion avec une paire de prismes ou des miroirs chirpés. Inversement, lorsqu'il faut une impulsion d'une durée donnée, le produit durée-largeur spectrale donne la bande que doit avoir le milieu amplificateur. Par exemple, une impulsion gaussienne de 10 fs exige une largeur d'environ 44 THz, soit environ 94 nm à 800 nm. C'est pourquoi on utilise des milieux à très large bande de gain comme le Ti:saphir."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Pourquoi le produit durée-largeur spectrale vaut-il 0,441 ?",
+        "a": "Parce que, pour une impulsion gaussienne, si l'on prend les largeurs en temps et en fréquence comme largeurs à mi-hauteur de l'intensité, la relation de transformée de Fourier rend leur produit exactement égal à 2 ln2/π ≈ 0,441. La valeur dépend de la forme et de la définition des largeurs ; pour une sech², elle vaut environ 0,315."
+      },
+      {
+        "q": "Que nous apprend le produit durée-largeur spectrale ?",
+        "a": "Il indique à quel point une impulsion est proche de la limite de Fourier. S'il est nettement supérieur à la borne, une dérive de fréquence subsiste, ce qui signifie qu'en compensant la dispersion on pourrait raccourcir l'impulsion avec le même spectre."
+      },
+      {
+        "q": "Comment convertir une largeur en longueur d'onde en largeur en fréquence ?",
+        "a": "On utilise Δν = cΔλ/λ². Une largeur de 10 nm à 800 nm vaut environ 4,7 THz, et une largeur de 10 nm à 1550 nm environ 1,25 THz : pour une même largeur en longueur d'onde, la largeur en fréquence est plus étroite aux grandes longueurs d'onde."
+      }
+    ],
     "aliases": [
       "produit temps-fréquence",
       "produit durée-bande",
@@ -5054,6 +5494,38 @@
   "チャープ": {
     "term": "Dérive de fréquence (chirp)",
     "desc": "Variation au cours du temps de la fréquence instantanée à l'intérieur d'une impulsion. Lorsque la fréquence augmente avec le temps, on parle de dérive positive (up-chirp). Elle provient de la dispersion et de l'automodulation de phase.",
+    "about": [
+      {
+        "h": "Une fréquence instantanée qui varie dans le temps",
+        "p": "Lorsqu'on écrit le champ d'une impulsion lumineuse comme le produit d'une enveloppe lentement variable et d'une oscillation porteuse, le taux de variation temporelle de la phase porteuse φ(t) est la pulsation instantanée ω(t) = dφ/dt. La dérive de fréquence (chirp) est la variation de cette fréquence instantanée au cours du temps à l'intérieur de l'impulsion. Lorsque la phase varie comme le carré du temps, la fréquence varie proportionnellement au temps : c'est une dérive linéaire ; on appelle dérive montante (up-chirp) celle où la fréquence augmente avec le temps, et dérive descendante (down-chirp) celle où elle diminue. Une impulsion à dérive de fréquence est plus longue que l'impulsion limitée par transformée de Fourier de même spectre."
+      },
+      {
+        "h": "Une dérive produite par la dispersion et l'automodulation de phase",
+        "p": "La dérive de fréquence a deux causes principales. À la traversée d'un milieu à dispersion normale, les composantes de grande longueur d'onde vont plus vite et se placent à l'avant, et les courtes longueurs d'onde à l'arrière, ce qui produit une dérive montante. Dans ce cas, le spectre ne change pas : seule la durée s'allonge. Dans l'automodulation de phase, en revanche, une variation de phase proportionnelle à l'intensité abaisse la fréquence à l'avant de l'impulsion et l'élève à l'arrière ; près du centre de l'impulsion, la dérive est donc aussi montante, mais de nouvelles fréquences apparaissent et le spectre s'élargit. Lorsque les deux se produisent ensemble, comme dans une fibre, leurs effets se combinent pour déterminer la forme de l'impulsion."
+      },
+      {
+        "h": "Attention aux conventions de signe",
+        "p": "Les expressions « dérive positive » et « dérive négative » peuvent avoir des sens opposés selon le domaine et la façon d'écrire le champ. Par exemple, pour les lasers à semi-conducteur des communications optiques, le signe de la dérive produite par modulation directe est donné par le signe du facteur d'élargissement de raie (le paramètre α), tandis qu'en optique ultrarapide on appelle souvent positive la dérive montante, par cohérence avec le signe de la dispersion du délai de groupe. Pour éviter les malentendus, le plus sûr est d'indiquer s'il s'agit d'une dérive montante ou descendante, c'est-à-dire si c'est l'avant ou l'arrière de l'impulsion qui a la fréquence la plus élevée. Par ailleurs, la dispersion linéaire seule ne modifie pas la largeur spectrale ; il faut donc distinguer la dérive de fréquence de l'élargissement spectral."
+      },
+      {
+        "h": "Les techniques qui utilisent la dérive et celles qui l'évitent",
+        "p": "La dérive de fréquence est souvent créée volontairement. L'amplification à dérive de fréquence donne à l'impulsion une forte dérive pour l'étirer avant l'amplification, puis la comprime par une dérive opposée. Les miroirs chirpés apportent une dispersion du délai de groupe négative en faisant varier avec la longueur d'onde la profondeur de réflexion dans l'empilement multicouche. Une lumière dont la fréquence varie avec le temps permet aussi une spectroscopie qui lit la fréquence à partir du temps d'arrivée, ainsi que la mesure FMCW, qui convertit une distance en différence de fréquence. À l'inverse, dans les lasers à modulation directe des communications optiques, la dérive élargit le spectre et rend le signal bien plus sensible à la dispersion ; on utilise donc des modulateurs externes pour les transmissions rapides à longue distance."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre une dérive montante et une dérive descendante ?",
+        "a": "Dans une dérive montante, la fréquence augmente avec le temps à l'intérieur de l'impulsion : l'avant porte les basses fréquences (grandes longueurs d'onde) et l'arrière les hautes fréquences. La dérive descendante est l'inverse. La dispersion normale produit une dérive montante, et la dispersion anormale une dérive descendante."
+      },
+      {
+        "q": "Comment mesure-t-on la dérive de fréquence ?",
+        "a": "L'autocorrélation en intensité ne révèle pas le sens de la dérive ; on utilise donc des méthodes qui retrouvent aussi la phase spectrale, comme le FROG et le SPIDER. Connaître le temps d'arrivée de chaque fréquence donne l'amplitude et le sens de la dérive."
+      },
+      {
+        "q": "Qu'est-ce que la dérive de fréquence d'un laser à semi-conducteur ?",
+        "a": "En modulation directe, où l'on fait varier l'intensité lumineuse par le courant, l'indice de réfraction change avec la densité de porteurs, et la fréquence d'émission varie aussi. Elle élargit le spectre ; dans une fibre à forte dispersion, la forme d'onde se déforme donc facilement, ce qui limite la portée."
+      }
+    ],
     "aliases": [
       "dérives de fréquence",
       "chirp de fréquence"
@@ -5070,6 +5542,38 @@
   "群遅延分散": {
     "term": "Dispersion du délai de groupe (GDD)",
     "desc": "Taux de variation du délai de groupe avec la pulsation, d²φ/dω² (en fs²). Lorsqu'elle est positive, les grandes longueurs d'onde se propagent en avance, et l'impulsion acquiert une dérive de fréquence positive et s'élargit.",
+    "about": [
+      {
+        "h": "Des écarts de temps d'arrivée entre fréquences",
+        "p": "Si l'on développe la phase spectrale φ(ω) de la lumière ayant traversé un élément optique autour de la pulsation centrale, le coefficient du premier ordre dφ/dω est le délai de groupe, c'est-à-dire l'instant d'arrivée de l'impulsion. La dispersion du délai de groupe (GDD) est le coefficient du second ordre d²φ/dω² ; elle exprime de combien le délai de groupe varie avec la fréquence et s'exprime en fs². Avec une GDD positive, c'est-à-dire en dispersion normale, les grandes longueurs d'onde vont en avance et l'impulsion s'élargit en acquérant une dérive de fréquence montante. Dans un milieu transparent, la GDD est la dispersion de vitesse de groupe par unité de longueur, β₂ = d²k/dω² (en fs²/mm), multipliée par la longueur ; la silice fondue, par exemple, présente environ 36 fs²/mm vers 800 nm."
+      },
+      {
+        "h": "Ordres de grandeur de l'élargissement des impulsions",
+        "p": "Une impulsion gaussienne limitée par transformée de Fourier, de durée τ₀, s'élargit sous l'effet d'une GDD jusqu'à τ = τ₀√(1 + (4 ln2 · GDD/τ₀²)²). La GDD qui l'élargit d'un facteur √2 vaut τ₀²/(4 ln2), soit environ 144 fs² pour une impulsion de 20 fs et environ 3600 fs² pour une impulsion de 100 fs. Autrement dit, lorsque la durée de l'impulsion est divisée par 5, la GDD qui provoque le même élargissement est divisée par 25. Une impulsion de 20 fs s'élargit d'environ 1,4 fois dans environ 4 mm de silice fondue ; les systèmes optiques qui manipulent des impulsions de quelques dizaines de fs ou moins comptabilisent et compensent donc la dispersion jusqu'à celle des lentilles, des hublots et des lames séparatrices."
+      },
+      {
+        "h": "Conversion des unités et des signes",
+        "p": "En communications optiques, la dispersion chromatique s'exprime par D (en ps/(nm·km)), relié à β₂ par D = −2πcβ₂/λ². Les signes sont opposés : la dispersion anormale, où D est positif, correspond à β₂ négatif. Le D ≈ 17 ps/(nm·km) de la fibre monomode standard à 1550 nm correspond à β₂ ≈ −21,7 ps²/km, et comme ps²/km et fs²/mm sont des unités de même valeur, écrire −21,7 fs²/mm revient au même. Lorsqu'on discute du signe de la dispersion, il faut toujours vérifier s'il s'agit du signe de D ou de celui de β₂ (ou de la GDD), sans quoi on confond facilement le sens."
+      },
+      {
+        "h": "Méthodes de compensation et dispersion d'ordre supérieur",
+        "p": "On annule une GDD positive en apportant une GDD négative. Les paires de prismes et les paires de réseaux créent une GDD négative parce que la longueur du trajet géométrique varie avec la longueur d'onde, et les miroirs chirpés font varier avec la longueur d'onde la profondeur de réflexion dans l'empilement multicouche. Cependant, la variation de la GDD d'un compensateur avec la longueur d'onde ne coïncide pas avec celle du milieu ; pour les impulsions à large bande, une dispersion du troisième ordre (TOD, d³φ/dω³, en fs³) subsiste et produit des ailes oscillantes d'un côté de l'impulsion. Pour des impulsions de quelques fs, on ajuste simultanément la GDD et la TOD, par exemple en combinant des prismes et des miroirs chirpés."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre la GDD et la GVD ?",
+        "a": "La GVD (dispersion de vitesse de groupe) est une propriété d'un milieu par unité de longueur, β₂, exprimée par exemple en fs²/mm. La GDD est une propriété d'un élément optique entier ; pour un milieu, elle vaut la GVD multipliée par la longueur, en fs². La GDD s'applique aussi aux éléments, comme les miroirs et les réseaux, qu'on ne peut pas décrire par une longueur."
+      },
+      {
+        "q": "Comment mesure-t-on la GDD ?",
+        "a": "Une méthode courante utilise un interféromètre en lumière blanche : on déduit la phase à chaque fréquence des franges d'interférence spectrale entre la lumière qui a traversé l'élément et une lumière de référence, puis on la dérive deux fois. La GDD qui subsiste dans une impulsion s'obtient en mesurant la phase de l'impulsion par FROG ou par une méthode analogue."
+      },
+      {
+        "q": "Que devient une impulsion soumise à une GDD positive ?",
+        "a": "Les composantes de grande longueur d'onde vont en avance et celles de courte longueur d'onde en retard ; l'impulsion s'élargit donc dans le temps en acquérant une dérive de fréquence montante. La forme du spectre ne change pas, et l'élargissement est d'autant plus grand que l'impulsion est courte."
+      }
+    ],
     "aliases": [
       "dispersion de délai de groupe",
       "dispersion du retard de groupe",
@@ -5079,6 +5583,38 @@
   "可飽和吸収体": {
     "term": "Absorbant saturable",
     "desc": "Matériau ou composant dont l'absorption diminue (sature) quand la lumière devient plus intense. Placé dans une cavité, il impose moins de pertes aux pics les plus intenses ; il sert au verrouillage de modes passif et au déclenchement passif.",
+    "about": [
+      {
+        "h": "Plus transparent quand la lumière est plus intense",
+        "p": "Un absorbant saturable est un matériau ou un composant dont l'absorption diminue quand la lumière devient plus intense. Une lumière intense fait passer les électrons du niveau inférieur responsable de l'absorption vers le niveau supérieur, si bien qu'il reste moins d'électrons capables d'absorber et que l'absorption sature. Dans un modèle simple, le coefficient d'absorption s'écrit α = α₀/(1 + I/I_sat), et l'absorption est divisée par deux lorsque l'intensité est égale à l'intensité de saturation I_sat. Pour des impulsions, le repère utile est la fluence de saturation F_sat = hν/σ (σ étant la section efficace d'absorption), exprimée en énergie par unité de surface. Comme une lumière plus intense subit moins de pertes, l'absorbant peut sélectionner et faire croître les composantes intenses dans la cavité d'un laser."
+      },
+      {
+        "h": "Les paramètres qui fixent les performances",
+        "p": "Les performances d'un absorbant saturable sont décrites par plusieurs grandeurs. La profondeur de modulation est la variation d'absorption due à la saturation ; plus elle est grande, plus l'absorbant agit fortement pour raccourcir les impulsions. L'absorption qui subsiste même une fois saturée constitue les pertes non saturables, qui réduisent le rendement du laser. Le temps de récupération est le temps nécessaire à l'absorption saturée pour revenir à sa valeur initiale ; on appelle absorbants saturables rapides ceux qui récupèrent plus vite que la durée de l'impulsion, et absorbants saturables lents ceux qui récupèrent plus lentement. Dans les miroirs absorbants saturables à semi-conducteur (SESAM), on peut régler le temps de récupération vers la ps par les conditions de croissance cristalline ou des moyens analogues, et choisir aussi la profondeur de modulation et la fluence de saturation par la conception des couches."
+      },
+      {
+        "h": "Rôle dans le verrouillage de modes et le déclenchement",
+        "p": "Parmi les fluctuations d'intensité de la lumière dans la cavité, les pics les plus intenses subissent moins de pertes ; au fil des allers-retours, un pic croît jusqu'à devenir une impulsion. Si la récupération est rapide, les parties faibles avant et après l'impulsion sont absorbées et l'impulsion reste courte. Le verrouillage de modes passif fournit des impulsions de la fs à la ps à des cadences de l'ordre du MHz au GHz. En revanche, lorsque l'absorbant sature d'un seul coup après qu'un gain suffisant s'est accumulé, on obtient un déclenchement passif ; les lasers microchip Nd:YAG utilisent des cristaux de Cr⁴⁺:YAG pour produire des impulsions de l'ordre de la ns. L'absorption saturable inverse, dans laquelle l'absorption augmente avec une lumière intense, est une propriété différente, utilisée dans les limiteurs optiques."
+      },
+      {
+        "h": "Composants réels et absorption saturable artificielle",
+        "p": "Les absorbants saturables pratiques comprennent les SESAM à puits quantiques semi-conducteurs, les cristaux comme le Cr⁴⁺:YAG, les nanotubes de carbone et le graphène. Il existe aussi une absorption saturable artificielle, qui exploite l'effet Kerr plutôt que l'absorption d'un matériau pour créer un mécanisme dans lequel les pertes diminuent quand la lumière est plus intense. Dans le verrouillage de modes par lentille de Kerr des lasers Ti:saphir, la lumière plus intense se resserre par autofocalisation et franchit plus facilement un diaphragme ; dans les lasers à fibre, la rotation non linéaire de la polarisation ou les miroirs à boucle non linéaire jouent le même rôle. Leur réponse étant quasi instantanée, on peut obtenir des impulsions de moins de 10 fs."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre un absorbant saturable et un limiteur optique ?",
+        "a": "Un absorbant saturable absorbe moins et transmet davantage quand la lumière devient plus intense, tandis qu'un limiteur optique absorbe davantage et limite la transmission. Leurs réponses vont en sens opposés : le premier sert à produire des impulsions courtes, le second à protéger les yeux et les capteurs contre une lumière intense."
+      },
+      {
+        "q": "Qu'est-ce qu'un SESAM ?",
+        "a": "C'est un miroir absorbant saturable à semi-conducteur, un composant dans lequel des puits quantiques servant de couche absorbante sont placés sur un réflecteur de Bragg. Il peut servir de l'un des miroirs de la cavité, et la profondeur de modulation et le temps de récupération se choisissent par la conception de la couche absorbante ; il est donc largement utilisé pour le verrouillage de modes des lasers à solide et des lasers à fibre."
+      },
+      {
+        "q": "Qu'est-ce qui décide entre verrouillage de modes passif et déclenchement passif ?",
+        "a": "C'est l'équilibre entre la facilité avec laquelle l'absorbant sature, son temps de récupération, la durée pendant laquelle le milieu amplificateur peut stocker l'énergie et d'autres facteurs. Dans certaines conditions apparaît aussi un état instable, appelé verrouillage de modes déclenché, dans lequel le train d'impulsions à modes verrouillés croît et décroît sous une enveloppe de déclenchement."
+      }
+    ],
     "aliases": [
       "absorbants saturables",
       "absorbeur saturable",
@@ -5089,6 +5625,38 @@
   "チャープパルス増幅": {
     "term": "Amplification à dérive de fréquence (CPA)",
     "desc": "Méthode d'amplification des impulsions ultracourtes de haute intensité qui étire l'impulsion par dispersion pour abaisser sa puissance crête, l'amplifie, puis la recomprime pour retrouver l'impulsion courte d'origine.",
+    "about": [
+      {
+        "h": "Étirer d'abord, amplifier ensuite",
+        "p": "Amplifier directement une impulsion ultracourte rend la puissance crête si élevée que l'autofocalisation et l'automodulation de phase dues à l'effet Kerr apparaissent dans le milieu amplificateur, déformant la forme d'onde ou endommageant les optiques. Dans l'amplification à dérive de fréquence (CPA), un étireur applique d'abord une forte dispersion qui étire l'impulsion d'un facteur de quelques milliers à quelques dizaines de milliers, abaissant la puissance crête dans le même rapport avant l'amplification. Après l'amplification, un compresseur de dispersion de signe opposé restitue l'impulsion courte d'origine. La méthode a été publiée en 1985 par Strickland et Mourou ; tous deux ont reçu le prix Nobel de physique 2018."
+      },
+      {
+        "h": "Estimer la puissance crête",
+        "p": "La puissance crête d'une impulsion vaut à peu près son énergie divisée par sa durée. Une impulsion de 1 J et de 30 fs donne environ 33 TW, ou environ 31 TW après multiplication par le facteur 0,94 d'une gaussienne. Étirer cette même impulsion de 1 J jusqu'à 1 ns abaisse la crête à environ 1 GW, dans les limites que le milieu amplificateur et les optiques peuvent supporter. En focalisant ces impulsions de très forte puissance crête sur une petite tache, on obtient des intensités supérieures à 10¹⁸ W/cm², où les électrons sont mis en mouvement à des vitesses proches de celle de la lumière, ce qui permet d'étudier la physique du régime relativiste avec des équipements de laboratoire."
+      },
+      {
+        "h": "Le couple étireur–compresseur",
+        "p": "Les compresseurs utilisent couramment deux réseaux de diffraction parallèles pour apporter une dispersion du délai de groupe négative. L'étireur de base place des lentilles ou des miroirs concaves entre des réseaux pour inverser l'image, ce qui produit une dispersion positive avec des réseaux du même type ; il est conçu pour annuler la dispersion du compresseur jusqu'aux ordres élevés. Si la phase globale, y compris la dispersion des milieux amplificateurs placés entre eux, n'est pas ajustée pour être uniforme, des ailes et des impulsions satellites subsistent après la compression. Aux fortes énergies, le seuil d'endommagement des réseaux du dernier compresseur peut fixer la limite supérieure de l'énergie obtenue."
+      },
+      {
+        "h": "Difficultés restantes et développements",
+        "p": "L'étirement n'abaisse pas complètement la crête ; on conçoit donc le système pour garder faible la phase non linéaire accumulée pendant l'amplification (l'intégrale B). Comme la bande de gain est finie, il se produit aussi un rétrécissement spectral par le gain, le spectre se resserrant au fil de l'amplification, et le maintien d'impulsions courtes exige de le corriger. De plus, les ailes d'ASE et les petites pré-impulsions situées avant l'impulsion principale peuvent détruire la cible avant l'arrivée de l'impulsion principale dans les expériences à forte focalisation ; améliorer le contraste est donc important. L'OPCPA, qui utilise l'amplification paramétrique optique au lieu d'un milieu amplificateur, a une large bande et une faible charge thermique ; on l'utilise pour concilier impulsions courtes et cadences élevées."
+      }
+    ],
+    "faq": [
+      {
+        "q": "L'étirement en CPA laisse-t-il le spectre inchangé ?",
+        "a": "Un étirement par la seule dispersion ne modifie que la phase à chaque fréquence ; le spectre ne change donc pas. C'est pourquoi annuler la dispersion après l'amplification ramène l'impulsion près de sa durée d'origine. Pendant l'amplification, toutefois, le rétrécissement spectral par le gain peut rétrécir le spectre."
+      },
+      {
+        "q": "Où utilise-t-on la CPA ?",
+        "a": "Outre la recherche en physique des lasers de haute intensité, elle est largement utilisée dans les équipements qui emploient des impulsions courtes de forte puissance crête, comme les lasers femtosecondes de chirurgie ophtalmique et le micro-usinage du verre et des métaux."
+      },
+      {
+        "q": "Quelle puissance crête la CPA peut-elle atteindre ?",
+        "a": "Les grandes installations atteignent la classe du PW (10¹⁵ W), et des systèmes de 10 PW sont en service. La classe du TW est courante même pour les systèmes de laboratoire. La valeur est fixée par l'énergie et la durée d'impulsion, et la taille et le seuil d'endommagement des réseaux du compresseur font partie des limites supérieures."
+      }
+    ],
     "aliases": [
       "amplification d'impulsions à dérive de fréquence",
       "chirped-pulse amplification"
@@ -5097,6 +5665,34 @@
   "光周波数コム": {
     "term": "Peigne de fréquences optiques",
     "desc": "Lumière dont le spectre comporte de nombreuses raies fines régulièrement espacées. La fréquence de chaque raie vaut fₙ = nf_rep + f_ceo ; on l'obtient notamment avec des lasers à modes verrouillés.",
+    "about": [
+      {
+        "h": "Un train d'impulsions et un peigne de fréquences",
+        "p": "Un laser à modes verrouillés émet sans interruption des impulsions de même forme à chaque temps d'aller-retour T = 1/f_rep. Le spectre d'un signal périodique est formé de raies espacées de l'inverse de la période ; le spectre du train d'impulsions se compose donc de dizaines de milliers à des millions de raies fines espacées de f_rep, autrement dit d'un peigne. Plus les impulsions sont courtes, plus l'étendue couverte par les raies est large, et plus le train d'impulsions dure longtemps et de façon stable, plus chaque raie est fine. Les raies ne se trouvent pas exactement aux multiples entiers de f_rep : toutes sont décalées d'une même fréquence de décalage f_ceo, et la fréquence de la n-ième raie vaut fₙ = nf_rep + f_ceo."
+      },
+      {
+        "h": "La fréquence de décalage et sa mesure",
+        "p": "f_ceo apparaît parce que la dispersion de la cavité rend la vitesse de phase de la porteuse différente de la vitesse de groupe de l'enveloppe : la phase relative entre la porteuse et l'enveloppe (la phase porteuse-enveloppe) glisse de Δφ d'une impulsion à l'autre, et f_ceo = (Δφ/2π) f_rep. On peut mesurer directement f_rep comme une fréquence micro-onde en détectant le train d'impulsions, mais pas f_ceo. On élargit donc le spectre sur au moins une octave, et l'autoréférencement f-2f, qui double en fréquence une raie du côté des basses fréquences et la fait battre avec une raie du côté des hautes fréquences, donne 2fₙ − f₂ₙ = f_ceo. En asservissant ces deux fréquences sur une référence micro-onde, on fixe la fréquence de toutes les raies."
+      },
+      {
+        "h": "Une règle pour mesurer les fréquences optiques",
+        "p": "Un peigne dont f_rep et f_ceo sont stabilisées devient une « règle de fréquences » qui relie en une seule étape les fréquences micro-ondes et optiques. On obtient la fréquence d'un laser inconnu simplement en mesurant son battement avec une raie voisine du peigne et en l'ajoutant à fₙ ou en la retranchant, ce qui a rendu inutiles les grandes chaînes de fréquences d'autrefois. Inversement, asservir un peigne sur la fréquence optique stable d'une horloge optique transfère cette stabilité au domaine micro-onde. Parmi les autres usages figurent la spectroscopie à double peigne, qui mesure rapidement des spectres à large bande avec deux peignes de fréquences de répétition légèrement différentes, l'étalonnage en longueur d'onde des spectrographes astronomiques et la mesure précise de distances."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Qu'est-ce qui fixe l'espacement des raies du peigne ?",
+        "a": "Dans un laser à modes verrouillés, c'est la fréquence de répétition f_rep, inverse du temps d'aller-retour dans la cavité. Elle va typiquement de quelques dizaines de MHz à 1 GHz pour les lasers à fibre, tandis que les micropeignes produits dans de minuscules résonateurs optiques atteignent de quelques dizaines de GHz au THz."
+      },
+      {
+        "q": "Pourquoi f_ceo n'est-elle pas nulle ?",
+        "a": "Parce que, dans la cavité, la vitesse de phase de la porteuse diffère de la vitesse de groupe de l'enveloppe de l'impulsion : à chaque impulsion émise, la position des crêtes de la porteuse par rapport au maximum de l'enveloppe s'est décalée. Ce glissement qui progresse à un rythme constant revient à décaler du même montant la fréquence de toutes les raies."
+      },
+      {
+        "q": "Que permet de connaître un peigne de fréquences ?",
+        "a": "Il permet de compter les fréquences optiques elles-mêmes avec la même exactitude qu'un étalon de fréquence micro-onde. On l'utilise donc pour comparer des horloges optiques, mesurer la valeur absolue de fréquences laser, ainsi que pour la spectroscopie et la mesure précise de distances."
+      }
+    ],
     "aliases": [
       "peignes de fréquences optiques",
       "peigne de fréquence optique",
@@ -5111,6 +5707,38 @@
   "キャリア・エンベロープ位相": {
     "term": "Phase porteuse-enveloppe (CEP)",
     "desc": "Phase de la porteuse par rapport au maximum de l'enveloppe de l'impulsion. Dans les impulsions de quelques cycles seulement, elle détermine la forme du champ électrique, et son glissement d'une impulsion à l'autre donne la fréquence f_ceo d'un peigne de fréquences.",
+    "about": [
+      {
+        "h": "La position de la porteuse par rapport à l'enveloppe",
+        "p": "Le champ d'une impulsion lumineuse peut s'écrire comme le produit d'une enveloppe A(t) et d'une oscillation porteuse, E(t) = A(t) cos(ω₀t + φ_CE). La phase porteuse-enveloppe (CEP) φ_CE exprime le décalage de la crête de la porteuse par rapport au maximum de l'enveloppe. Avec φ_CE = 0, le champ atteint son maximum positif au maximum de l'enveloppe ; avec π/2, il passe presque par zéro au maximum. Dans les impulsions longues, dont l'enveloppe contient des dizaines de cycles de la porteuse, une variation de la CEP ne change presque pas le champ maximal ; mais dans les impulsions de quelques cycles seulement, c'est la forme même du champ qui change avec la CEP."
+      },
+      {
+        "h": "Pourquoi la dispersion la fait glisser",
+        "p": "Les crêtes de la porteuse avancent à la vitesse de phase et l'enveloppe à la vitesse de groupe ; la traversée d'un milieu dispersif où les deux diffèrent fait donc glisser peu à peu la CEP. Le glissement produit par un milieu de longueur L vaut (ω₀/c)(n_g − n)L, où n est l'indice de réfraction et n_g l'indice de groupe. Pour la silice fondue à 800 nm, n ≈ 1,453 et n_g ≈ 1,467 ; la CEP glisse donc de 2π environ tous les 58 µm parcourus. On exploite cette propriété pour régler la CEP par l'enfoncement d'un fin coin de verre. Dans une cavité, la CEP glisse à chaque aller-retour pour la même raison, et ce glissement devient la fréquence de décalage f_ceo d'un peigne de fréquences."
+      },
+      {
+        "h": "Mesure et stabilisation",
+        "p": "La CEP est une propriété de la forme du champ ; les photodétecteurs ordinaires ne la voient donc pas. Le glissement de la CEP d'un train d'impulsions (f_ceo) s'obtient par la méthode f-2f, qui élargit le spectre au-delà d'une octave et mesure comme un battement l'interférence entre le second harmonique des composantes de basse fréquence et les composantes de haute fréquence. En rétroagissant sur des grandeurs comme la puissance de pompe pour fixer f_ceo, on aligne la CEP d'une impulsion à l'autre. Par ailleurs, produire la différence de fréquences entre deux composantes spectrales d'une même impulsion retranche la CEP commune aux deux ; on peut ainsi produire de façon passive des impulsions à CEP constante."
+      },
+      {
+        "h": "Une grandeur essentielle pour les impulsions de quelques cycles",
+        "p": "La CEP pèse surtout sur les résultats des phénomènes qui dépendent fortement de la valeur instantanée du champ. Dans la génération d'harmoniques d'ordre élevé par des impulsions intenses dans les gaz, des électrons sont arrachés puis reviennent heurter l'ion (recollision) à chaque demi-cycle intense du champ ; pour des impulsions de quelques cycles, la CEP change le nombre et l'instant des émissions, et le contrôle de la CEP est indispensable pour obtenir des impulsions attosecondes isolées. L'émission d'électrons par des nanopointes métalliques et les courants induits dans les solides par le champ lumineux varient eux aussi avec la CEP. Un cycle de la lumière à 800 nm dure environ 2,7 fs ; en règle générale, il faut donc tenir compte de la CEP dès que la durée de l'impulsion descend sous environ 10 fs."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la relation entre la CEP et f_ceo ?",
+        "a": "Lorsque la CEP glisse de Δφ à chaque impulsion émise, f_ceo = (Δφ/2π) f_rep, avec la fréquence de répétition f_rep. Avec f_ceo = 0, toutes les impulsions ont la même CEP ; en fixant f_ceo à une fraction entière comme f_rep/4, on retrouve la même CEP à intervalles d'un nombre fixe d'impulsions."
+      },
+      {
+        "q": "Qu'est-ce qui fait varier la CEP ?",
+        "a": "La traversée de milieux dispersifs, les variations de la puissance de pompe ou de la température de la cavité laser et les fluctuations de pointé du faisceau la modifient toutes. Les expériences qui exploitent la CEP limitent donc ces fluctuations par mesure et rétroaction."
+      },
+      {
+        "q": "Pourquoi peut-on ignorer la CEP pour les impulsions longues ?",
+        "a": "Parce que, lorsque l'enveloppe contient des dizaines de cycles de la porteuse ou plus, une variation de la CEP ne change presque pas le champ maximal ni l'énergie. Une impulsion de 1 ps à 800 nm contient environ 370 cycles d'oscillation dans sa largeur à mi-hauteur."
+      }
+    ],
     "aliases": [
       "phase enveloppe-porteuse",
       "carrier-envelope phase"
@@ -5119,6 +5747,38 @@
   "強度自己相関": {
     "term": "Autocorrélation en intensité",
     "desc": "Méthode qui divise une impulsion en deux, retarde l'une des parties et mesure, en fonction du retard, l'intensité du second harmonique produit par leur recouvrement. Le résultat est converti en durée d'impulsion en supposant une forme d'impulsion.",
+    "about": [
+      {
+        "h": "Mesurer une impulsion avec elle-même",
+        "p": "Les impulsions femtosecondes sont bien plus courtes que le temps de réponse des photodétecteurs et oscilloscopes les plus rapides (quelques ps) ; on ne peut donc pas mesurer directement leur forme d'onde. En autocorrélation en intensité, on divise l'impulsion en deux, on retarde l'une des copies de τ, on superpose les deux dans un cristal non linéaire, et l'on enregistre en fonction de τ l'intensité du second harmonique produit uniquement lorsqu'elles se recouvrent. Le signal obtenu est A(τ) = ∫I(t)I(t − τ)dt : l'impulsion sert de porte pour se mesurer elle-même. On fait varier le retard par la position d'un miroir ; déplacer le miroir de 1 µm modifie le trajet de 2 µm, ce qui change le retard d'environ 6,67 fs."
+      },
+      {
+        "h": "La conversion des largeurs et l'hypothèse de forme",
+        "p": "L'autocorrélation est plus large que l'impulsion, d'un facteur fixé par la forme de l'impulsion : √2 pour une gaussienne et environ 1,54 pour une sech². On divise la largeur à mi-hauteur de l'autocorrélation mesurée par ce facteur pour obtenir la durée de l'impulsion. Par exemple, une largeur d'autocorrélation de 77 fs donne environ 50 fs en supposant une sech². Une autre hypothèse de forme change la largeur convertie : la même autocorrélation donne environ 54 fs pour une gaussienne. On juge de la forme la plus adaptée en la confrontant à la forme du spectre et au produit durée-largeur spectrale. L'autocorrélation est toujours symétrique ; une forme d'impulsion asymétrique ne peut donc pas être décelée."
+      },
+      {
+        "h": "Géométries de mesure et précautions",
+        "p": "Dans une géométrie non colinéaire, où les deux faisceaux entrent dans le cristal avec un angle, le second harmonique sort entre les deux faisceaux seulement lorsqu'ils se recouvrent, ce qui donne un signal sans fond. Dans une géométrie colinéaire, l'autocorrélation en intensité, franges moyennées, présente un rapport pic sur fond de 3 pour 1, et de 8 pour 1 lorsque les franges sont résolues ; ces rapports permettent de vérifier que l'alignement de l'optique est correct. Pour les impulsions courtes, un cristal épais n'a pas une bande d'accord de phase suffisante et fait paraître l'autocorrélation plus large qu'elle ne l'est ; on utilise donc des cristaux minces. Les autocorrélateurs monocoups, qui croisent les faisceaux pour reporter le retard sur une position dans l'espace, peuvent aussi mesurer des impulsions à faible cadence."
+      },
+      {
+        "h": "Des pièges faciles à manquer",
+        "p": "L'autocorrélation en intensité ne contient aucune information sur la phase de l'impulsion ; on ne peut donc savoir ni s'il y a une dérive de fréquence, ni dans quel sens. Pour des trains d'impulsions qui fluctuent comme du bruit, l'autocorrélation présente un pic étroit sur un large piédestal, et ne regarder que le pic conduit à sous-estimer la durée de l'impulsion (l'artefact cohérent). De plus, comme la mesure fait la moyenne sur de nombreuses impulsions, les différences d'une impulsion à l'autre sont lissées. Pour retrouver la forme et la phase de l'impulsion, on utilise des méthodes comme le FROG, qui associe à l'autocorrélation une analyse en fréquence du signal, et le SPIDER, qui exploite l'interférence spectrale."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Comment obtient-on la durée d'impulsion à partir de la largeur d'autocorrélation ?",
+        "a": "On suppose une forme d'impulsion et l'on divise la largeur à mi-hauteur de l'autocorrélation par √2 pour une gaussienne ou par environ 1,54 pour une sech². Par exemple, une largeur d'autocorrélation de 100 fs donne environ 71 fs pour une gaussienne et environ 65 fs pour une sech²."
+      },
+      {
+        "q": "L'autocorrélation en intensité révèle-t-elle la dérive de fréquence ?",
+        "a": "Non. L'autocorrélation ne mesure que le recouvrement des intensités ; pour une même forme d'intensité, elle est identique avec ou sans dérive de fréquence. La comparaison avec la largeur spectrale par le produit durée-largeur spectrale indique s'il y a une dérive, mais son sens se détermine par des méthodes comme le FROG."
+      },
+      {
+        "q": "Qu'est-ce que l'autocorrélation interférométrique ?",
+        "a": "C'est une autocorrélation enregistrée en superposant les deux impulsions de façon colinéaire et en résolvant les franges d'interférence à chaque cycle optique. Le rapport pic sur fond vaut 8 pour 1, et l'allure des franges permet d'estimer en partie l'amplitude de la dérive de fréquence, mais pas d'en distinguer le sens."
+      }
+    ],
     "aliases": [
       "autocorrélation d'intensité",
       "intensity autocorrelation"
@@ -5127,6 +5787,34 @@
   "2次の相関関数": {
     "term": "Fonction de corrélation du second ordre",
     "desc": "Corrélation temporelle de l'intensité lumineuse, g⁽²⁾(τ) = ⟨I(t)I(t + τ)⟩/⟨I⟩². En τ = 0, elle vaut 1 pour la lumière laser, 2 pour la lumière thermique et moins de 1 pour une source de photons uniques.",
+    "about": [
+      {
+        "h": "Mesurer les fluctuations d'intensité par comptage de coïncidences",
+        "p": "La fonction de corrélation du second ordre g⁽²⁾(τ) = ⟨I(t)I(t + τ)⟩/⟨I⟩² est la corrélation entre l'intensité lumineuse à un instant et celle mesurée un temps τ plus tard, divisée par le carré de l'intensité moyenne. En termes de photons, elle indique combien de fois il est plus probable, par rapport à des arrivées complètement aléatoires, de détecter un second photon un temps τ après avoir détecté le premier. Un détecteur unique ne peut pas mesurer les τ courts à cause de son temps mort ; on utilise donc un montage HBT, qui sépare la lumière avec une lame séparatrice et compte les coïncidences entre deux détecteurs, et l'on normalise par le nombre attendu de coïncidences fortuites R₁R₂ΔtT."
+      },
+      {
+        "h": "Les différences entre sources lumineuses",
+        "p": "La lumière d'un laser stabilisé (un état cohérent) ne fluctue pas en intensité, les photons arrivent au hasard et g⁽²⁾ = 1 pour tout τ. L'intensité de la lumière thermique fluctue sur une durée de l'ordre du temps de cohérence, et les photons arrivent groupés pendant les instants lumineux ; on a donc g⁽²⁾(0) = 2, avec un retour à 1 lorsque τ dépasse le temps de cohérence (groupement de photons, ou bunching). Un atome ou une boîte quantique unique ne peut pas émettre un autre photon avant d'avoir été réexcité après en avoir émis un ; on a donc g⁽²⁾(0) < 1, avec une remontée vers 1 quand τ augmente (dégroupement de photons, ou antibunching)."
+      },
+      {
+        "h": "Ce que signifie une valeur inférieure à 1",
+        "p": "Pour des intensités électromagnétiques classiques, l'inégalité de Cauchy-Schwarz garantit g⁽²⁾(0) ≥ 1 ; une valeur g⁽²⁾(0) < 1 est donc une preuve directe de la nature quantique de la lumière. Un état à nombre de photons |n⟩ donne g⁽²⁾(0) = 1 − 1/n, et la lumière de N sources de photons uniques indépendantes donne 1 − 1/N ; une valeur inférieure à 0,5 indique donc que la lumière provient principalement d'un seul émetteur. Pour caractériser les sources de photons uniques, g⁽²⁾(0) mesure la rareté des mélanges de deux photons ou plus ; c'est une caractéristique de base des sources utilisées pour la distribution quantique de clés et le calcul quantique photonique."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Pourquoi ne mesure-t-on pas g⁽²⁾(0) avec un seul détecteur ?",
+        "a": "Après avoir compté un photon, un détecteur de photons uniques ne peut plus compter pendant un certain temps (son temps mort) ; il ne peut donc pas distinguer deux photons arrivant presque ensemble. En répartissant la lumière sur deux détecteurs, on peut mesurer les coïncidences au voisinage du retard nul indépendamment du temps mort de chacun."
+      },
+      {
+        "q": "Pourquoi n'observe-t-on parfois pas g⁽²⁾(0) = 2, même pour une lumière thermique ?",
+        "a": "Le groupement de la lumière thermique a une largeur de l'ordre de son temps de cohérence, qui est extrêmement court pour la lumière blanche, de l'ordre de la fs ; il est donc lissé par la résolution temporelle des détecteurs. On utilise un filtre à bande étroite pour allonger le temps de cohérence, ou des détecteurs de meilleure résolution temporelle."
+      },
+      {
+        "q": "Une source de photons uniques est-elle d'autant meilleure que g⁽²⁾(0) est petit ?",
+        "a": "g⁽²⁾(0) exprime la rareté de l'émission simultanée de deux photons ou plus, et plus il est proche de 0, plus les photons uniques sont purs. Il faut cependant évaluer séparément le rendement avec lequel on peut extraire les photons (la brillance) et l'indiscernabilité des photons (la profondeur du creux de Hong-Ou-Mandel)."
+      }
+    ],
     "aliases": [
       "fonction de corrélation d'ordre deux",
       "fonction de corrélation du deuxième ordre",
@@ -5137,6 +5825,38 @@
   "HBT干渉計": {
     "term": "Interféromètre de Hanbury Brown et Twiss (HBT)",
     "desc": "Montage qui sépare la lumière avec une lame séparatrice et mesure les coïncidences entre deux détecteurs en fonction du retard. Il détermine g⁽²⁾(τ) pour étudier le groupement et le dégroupement de photons.",
+    "about": [
+      {
+        "h": "Un interféromètre qui mesure des corrélations d'intensité",
+        "p": "L'interféromètre HBT est le montage publié par Hanbury Brown et Twiss en 1956 : la lumière est séparée en deux par une lame séparatrice, et l'on mesure la corrélation entre les sorties de deux détecteurs en faisant varier le retard. Alors qu'un interféromètre ordinaire observe l'interférence entre champs, c'est-à-dire des relations de phase, l'interféromètre HBT observe les corrélations entre fluctuations d'intensité. Les deux chercheurs l'avaient conçu à l'origine comme un interféromètre d'intensité, qui mesure la corrélation des intensités de la lumière d'une étoile reçue par deux télescopes éloignés afin d'en déterminer la taille apparente. Les corrélations d'intensité ont l'avantage d'être peu sensibles aux perturbations de phase dues à la turbulence atmosphérique."
+      },
+      {
+        "h": "La mesure avec des photons uniques",
+        "p": "Dans les expériences actuelles d'optique quantique, on place des détecteurs de photons uniques aux deux sorties, et l'électronique d'horodatage compte l'écart de temps entre une détection d'un côté et une détection de l'autre pour en construire un histogramme. En divisant les coïncidences au voisinage du retard nul par les coïncidences fortuites attendues pour une lumière aux arrivées aléatoires, on obtient g⁽²⁾(τ). On répartit la lumière sur deux détecteurs au lieu d'un seul, car un détecteur ne peut pas compter le photon suivant pendant son temps mort après en avoir compté un. À faible taux de comptage, l'histogramme des écarts de temps reproduit directement la forme de g⁽²⁾(τ)."
+      },
+      {
+        "h": "Signification et histoire en optique quantique",
+        "p": "Lorsque les expériences HBT ont montré que les photons de la lumière thermique arrivent groupés, le fait que des photons censés arriver indépendamment soient corrélés a surpris, et cela a déclenché l'élaboration de la théorie statistique de la lumière. En 1977, Kimble et ses collaborateurs ont observé le dégroupement de photons, un creux des coïncidences autour du retard nul, dans la fluorescence de résonance d'atomes de sodium, démontrant une nature quantique de la lumière que les ondes classiques ne peuvent pas expliquer. C'est aujourd'hui une mesure indispensable pour caractériser les sources de photons uniques comme les boîtes quantiques et les centres colorés : une valeur de g⁽²⁾(0) nettement inférieure à 0,5 confirme que la lumière provient d'un seul émetteur."
+      },
+      {
+        "h": "Les sources d'erreur de mesure",
+        "p": "Dans les mesures réelles, plusieurs facteurs écartent g⁽²⁾(0) de sa valeur idéale. Si la gigue temporelle des détecteurs et de l'électronique de chronométrage est grande devant le temps caractéristique de la source, les creux et les pics sont lissés et deviennent moins prononcés. La lumière parasite et les coups d'obscurité ajoutent des coïncidences fortuites et font monter g⁽²⁾(0). Les SPAD peuvent aussi émettre une faible lumière pendant une avalanche ; si cette lumière atteint le détecteur opposé, elle crée un faux pic à un retard fixe. On élimine donc la lumière parasite par des filtres, on empêche les fuites de lumière entre les deux détecteurs, et l'on estime la contribution du fond à partir de l'histogramme mesuré pour la corriger."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre un interféromètre HBT et un interféromètre de Michelson ?",
+        "a": "Un interféromètre de Michelson superpose les champs de deux trajets et observe des franges d'interférence ; la différence de trajet doit donc être ajustée plus finement qu'une longueur d'onde. Un interféromètre HBT mesure électriquement la corrélation des intensités sur deux détecteurs ; il n'est donc pas nécessaire d'ajuster les phases de la lumière."
+      },
+      {
+        "q": "Que révèle un interféromètre HBT ?",
+        "a": "À partir de la corrélation d'intensité g⁽²⁾(τ), il révèle si une source émet une lumière thermique (groupement), une lumière cohérente comme celle d'un laser, ou une lumière quantique comme celle d'une source de photons uniques (dégroupement). La largeur de g⁽²⁾(τ) permet aussi d'estimer le temps de cohérence ou la durée de vie de l'émetteur."
+      },
+      {
+        "q": "Les interféromètres d'intensité servant à mesurer la taille des étoiles sont-ils encore utilisés ?",
+        "a": "Dans les années 1960 et 1970, les diamètres de nombreuses étoiles ont été mesurés à Narrabri, en Australie. Récemment, on a aussi tenté de pratiquer l'interférométrie d'intensité avec des réseaux de grands télescopes construits pour l'observation des rayons gamma, et la méthode est reconsidérée comme moyen d'atteindre une haute résolution angulaire aux courtes longueurs d'onde."
+      }
+    ],
     "aliases": [
       "HBT",
       "montage HBT",
@@ -5149,6 +5869,38 @@
   "スクイーズド光": {
     "term": "Lumière comprimée",
     "desc": "Lumière dont les fluctuations de l'une des quadratures du champ sont réduites en dessous de celles du vide, tandis que celles de l'autre augmentent. Elle sert à des mesures dont le bruit est inférieur au bruit de grenaille.",
+    "about": [
+      {
+        "h": "Une lumière plus calme que les fluctuations du vide",
+        "p": "Le champ électrique de la lumière peut être décrit par deux composantes en quadrature, X₁ et X₂, correspondant aux coefficients de cos ωt et de sin ωt. En mécanique quantique, le produit de leurs fluctuations a une borne inférieure, et le vide comme la lumière laser (un état cohérent) ont deux fluctuations égales, à la valeur correspondant à cette borne. Ces fluctuations sont à l'origine du bruit de grenaille dans les mesures optiques. La lumière comprimée est une lumière dans laquelle, tout en respectant la relation d'incertitude, l'une des fluctuations est rendue plus petite que celle du vide et l'autre plus grande en contrepartie. En mesurant la composante la plus calme, on peut détecter de petites variations de phase ou d'amplitude avec un bruit inférieur au bruit de grenaille."
+      },
+      {
+        "h": "Production et mesure",
+        "p": "On obtient de la lumière comprimée en créant des photons par paires dans des processus d'optique non linéaire. Une source typique est un oscillateur paramétrique optique dégénéré fonctionnant sous le seuil, dans lequel un photon de pompe se scinde en deux photons de même fréquence dont la corrélation réduit la fluctuation de l'une des quadratures. La lumière comprimée a été observée pour la première fois en 1985 par mélange à quatre ondes dans une vapeur de sodium, et une compression de 15 dB est aujourd'hui rapportée avec des cristaux χ⁽²⁾ en cavité. La mesure utilise la détection homodyne, qui superpose la lumière à un oscillateur local intense et fait la différence dans un détecteur équilibré ; on fait varier la phase de l'oscillateur local pour trouver la composante réduite."
+      },
+      {
+        "h": "Les idées fausses courantes",
+        "p": "Le vide comprimé porte le nom de vide, mais il contient des photons. Avec le paramètre de compression r, le nombre moyen de photons vaut sinh²r, soit environ 2 pour un vide comprimé de 10 dB. Les photons étant créés par paires, le nombre de photons ne prend que des valeurs paires. Par ailleurs, la lumière comprimée ne réduit pas les deux fluctuations à la fois et ne viole pas la relation d'incertitude. Elle est extrêmement sensible aux pertes : la traversée d'un système de rendement η mêle des fluctuations du vide à la place de la lumière perdue, si bien que la compression réellement mesurable chute rapidement."
+      },
+      {
+        "h": "L'utilisation dans la détection des ondes gravitationnelles",
+        "p": "La principale application de la lumière comprimée concerne les détecteurs d'ondes gravitationnelles. Dans les interféromètres de Michelson à longs bras comme LIGO, la sensibilité du côté des hautes fréquences est limitée par le bruit de grenaille. Injecter par le port de sortie de l'interféromètre un vide comprimé à fluctuations de phase réduites abaisse ce bruit ; après GEO600, la méthode est utilisée dans les campagnes d'observation de LIGO et de Virgo depuis 2019. Cependant, réduire les fluctuations de phase augmente les fluctuations d'amplitude, ce qui accroît le bruit de pression de radiation qui agite les miroirs aux basses fréquences. C'est pourquoi on a introduit des cavités de filtrage qui changent la composante comprimée selon la fréquence."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que représente la compression exprimée en dB ?",
+        "a": "Elle exprime en dB la fraction des fluctuations du vide (le niveau du bruit de grenaille) que représente la variance de la composante la plus calme. 10 dB signifient une variance multipliée par 0,1, et 3 dB par environ 0,5. L'augmentation des fluctuations de la composante opposée est indiquée séparément sous le nom d'anti-compression."
+      },
+      {
+        "q": "En quoi la lumière comprimée diffère-t-elle de la lumière laser ?",
+        "a": "Une lumière laser idéale est un état cohérent, dont les fluctuations des deux quadratures sont égales à celles du vide. La lumière comprimée a l'une rendue plus petite que celle du vide et l'autre plus grande ; on ne peut pas la produire en atténuant ou en amplifiant une lumière laser."
+      },
+      {
+        "q": "Pourquoi la lumière comprimée est-elle si sensible aux pertes ?",
+        "a": "Parce que, lorsqu'une partie de la lumière est perdue, des fluctuations du vide se mêlent pour la remplacer. Par exemple, dans un système de rendement 50 %, aussi forte que soit la compression, on ne peut mesurer qu'environ 3 dB au plus."
+      }
+    ],
     "aliases": [
       "état comprimé",
       "états comprimés",
@@ -5161,6 +5913,38 @@
   "自発的パラメトリック下方変換": {
     "term": "Conversion paramétrique descendante spontanée (SPDC)",
     "desc": "Processus dans un cristal χ⁽²⁾ par lequel un photon de pompe se scinde en deux photons en conservant l'énergie et la quantité de mouvement. Il sert de source de paires de photons et de paires de photons intriqués.",
+    "about": [
+      {
+        "h": "Un photon qui se scinde en deux",
+        "p": "Dans la conversion paramétrique descendante spontanée (SPDC), l'envoi d'une lumière de pompe dans un cristal non linéaire possédant une susceptibilité χ⁽²⁾ fait se scinder un photon de pompe en deux photons, appelés signal et complémentaire (idler). La conservation de l'énergie donne ωp = ωs + ωi, et la conservation de la quantité de mouvement kp = ks + ki (accord de phase). Par exemple, une pompe à 405 nm produit des paires de photons à 810 nm, et une pompe à 532 nm des paires à 810 nm et à environ 1550 nm. C'est le processus inverse de la génération de fréquence somme ; comme il se produit même sans lumière incidente, déclenché par les fluctuations du vide, on le dit spontané."
+      },
+      {
+        "h": "Corrélations des paires et rendement",
+        "p": "Les deux photons naissent au même instant dans le même processus élémentaire ; leurs instants d'arrivée coïncident donc à environ un temps de cohérence près, et leurs fréquences et directions d'émission sont aussi fortement corrélées. Cette propriété permet de réaliser des sources de photons uniques annoncés, dans lesquelles la détection d'un photon signale la présence de l'autre. Cependant, le rendement de conversion est très faible : dans les cristaux massifs, seule une infime fraction des photons de pompe se transforme en paires. Le taux de paires augmente proportionnellement à la puissance de pompe, mais une pompe plus intense accroît aussi la probabilité de créer deux paires à la fois et réduit la pureté des photons uniques ; il y a donc un compromis entre brillance et pureté."
+      },
+      {
+        "h": "Types d'accord de phase et cristaux",
+        "p": "L'accord de phase se classe en types selon les polarisations du signal et du complémentaire. En type I, les deux photons ont la même polarisation, orthogonale à celle de la pompe ; en type II, les deux photons ont des polarisations orthogonales entre elles. Les deux types utilisent la biréfringence du cristal pour accorder les phases. Dans le KTP ou le niobate de lithium à domaines ferroélectriques inversés périodiquement, le quasi-accord de phase permet de donner la même polarisation aux trois ondes (type 0) et d'exploiter le grand coefficient non linéaire. Avec une structure de guide d'onde, la lumière est confinée dans une région étroite, et l'on obtient des paires de photons avec des rendements supérieurs de plusieurs ordres de grandeur à ceux des cristaux massifs."
+      },
+      {
+        "h": "Une source pour les expériences d'optique quantique",
+        "p": "La SPDC est la source de paires de photons la plus utilisée en optique quantique. On produit des paires de photons intriqués en polarisation avec des montages à cristal de type II ou avec deux cristaux de type I superposés à angle droit ; elles ont permis des expériences comme les tests des inégalités de Bell, la téléportation quantique et la distribution quantique de clés fondée sur l'intrication. La corrélation en fréquence des deux photons peut aussi réduire la pureté du photon annoncé ; on la supprime en découpant une bande étroite avec un filtre ou en concevant la dispersion du cristal. Le taux de paires et les rendements de détection peuvent être obtenus à partir des taux de comptage des deux détecteurs et du taux de coïncidences, comme dans la méthode de Klyshko."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre la SPDC et un OPO ?",
+        "a": "Les deux reposent sur le même processus de scission des photons de pompe en signal et complémentaire, mais la SPDC se produit spontanément sans cavité et ne produit que des paires de photons sporadiques. Un OPO fait circuler et amplifie la lumière dans une cavité ; au-dessus du seuil, il oscille donc en produisant une lumière cohérente intense."
+      },
+      {
+        "q": "Qu'est-ce qui détermine les longueurs d'onde des paires de photons de la SPDC ?",
+        "a": "La conservation de l'énergie, 1/λp = 1/λs + 1/λi, ainsi que la condition d'accord de phase. L'accord de phase dépend des indices de réfraction et de l'angle du cristal, de sa température et de la période d'inversion des domaines ; en les ajustant, on modifie les longueurs d'onde des paires de photons."
+      },
+      {
+        "q": "Pourquoi le rendement de la SPDC est-il si faible ?",
+        "a": "Parce que la susceptibilité non linéaire du second ordre est faible et que le processus est spontané, déclenché seulement par les fluctuations du vide. On augmente le rendement en confinant la lumière dans des cavités ou des guides d'onde, et en exploitant de grands coefficients non linéaires grâce au quasi-accord de phase."
+      }
+    ],
     "aliases": [
       "conversion paramétrique descendante",
       "fluorescence paramétrique",
@@ -5171,6 +5955,38 @@
   "量子もつれ": {
     "term": "Intrication quantique",
     "desc": "Corrélation entre plusieurs particules dont l'état commun ne peut pas s'écrire comme un produit d'états individuels. Dans une paire de photons intriqués en polarisation, la polarisation de chaque photon n'est pas définie, mais les résultats de mesure sont fortement corrélés.",
+    "about": [
+      {
+        "h": "Des états qu'on ne peut pas écrire partie par partie",
+        "p": "Lorsque l'état de deux particules ne peut pas s'écrire comme un produit de leurs états individuels, on dit que les deux particules sont intriquées. Dans la paire de photons intriqués en polarisation (|HV⟩ + |VH⟩)/√2, la polarisation de chaque photon n'est pas définie à elle seule, et pourtant des mesures dans la base H et V donnent toujours des résultats opposés. Une corrélation classique pourrait s'expliquer comme la simple vérification d'un couple de polarisations fixé à la naissance, mais dans un état intriqué, de fortes corrélations subsistent même si l'on mesure dans une autre base, non orthogonale, par exemple orientée à 45°. C'est cette propriété qui permet de distinguer l'intrication d'une corrélation classique."
+      },
+      {
+        "h": "De l'argument EPR à l'inégalité de Bell",
+        "p": "En 1935, Einstein, Podolsky et Rosen ont soutenu, en s'appuyant sur les corrélations des états intriqués, que la description quantique est incomplète. En 1964, Bell a montré que, dans le cadre du réalisme local, où les résultats de mesure sont déterminés à l'avance et où une opération effectuée en un lieu éloigné n'a pas d'influence, la force des corrélations est bornée. Sous la forme CHSH de l'inégalité, le réalisme local impose S ≤ 2, alors que la mécanique quantique permet jusqu'à 2√2. Des expériences sur les photons menées par Clauser, Aspect et d'autres dans les années 1970 et 1980 ont confirmé la violation de l'inégalité, et des expériences fermant les échappatoires ont été réalisées en 2015, ce qui a conduit au prix Nobel de physique 2022."
+      },
+      {
+        "h": "L'intrication ne transmet pas de signal plus vite que la lumière",
+        "p": "Mesurer un photon semble fixer instantanément le résultat de l'autre ; on croit donc souvent à tort qu'on peut transmettre de l'information plus vite que la lumière. Mais du seul côté du récepteur, quelle que soit la base dans laquelle l'autre partie mesure, ses propres résultats sont aléatoires et leur statistique ne change pas. La corrélation n'apparaît que lorsque les deux parties comparent leurs résultats par une communication ordinaire ; l'intrication seule ne permet donc pas de transmettre d'information. L'intrication est aussi fragile face aux pertes et au bruit : lorsque les photons interagissent avec l'environnement, l'état devient un état mélangé et les corrélations s'affaiblissent. On évalue la force de l'intrication par des grandeurs comme la visibilité des franges d'interférence dans deux bases."
+      },
+      {
+        "h": "Les usages en information quantique",
+        "p": "L'intrication est une ressource de base des technologies de l'information quantique. Dans la distribution quantique de clés qui utilise comme clé les deux résultats de mesure de paires de photons intriqués (comme le protocole E91), l'amplitude de la violation de l'inégalité de Bell révèle s'il y a eu écoute. La téléportation quantique combine une paire de photons intriqués et une communication classique pour transférer un état quantique inconnu à une particule située en un lieu éloigné. L'échange d'intrication, qui mesure un membre de chacune de deux paires intriquées pour intriquer des photons n'ayant jamais interagi directement, est la base des répéteurs quantiques qui relient de longues distances par l'intrication. Dans les ordinateurs quantiques aussi, l'intrication de nombreux qubits produit la puissance de calcul."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre l'intrication quantique et une corrélation classique ?",
+        "a": "Une corrélation classique s'explique par la simple vérification de valeurs fixées à l'avance, et elle satisfait l'inégalité de Bell. Les corrélations issues de l'intrication quantique restent fortes lorsqu'on mesure dans plusieurs bases non orthogonales, et elles peuvent être assez fortes pour violer l'inégalité de Bell."
+      },
+      {
+        "q": "Comment produit-on des paires de photons intriqués ?",
+        "a": "La conversion paramétrique descendante spontanée dans des cristaux χ⁽²⁾ est la méthode la plus courante ; elle produit des paires intriquées en polarisation, en temps ou en fréquence. On utilise aussi l'émission en cascade, dans laquelle deux excitons d'une boîte quantique émettent successivement des photons, et le mélange à quatre ondes dans les fibres."
+      },
+      {
+        "q": "Comment vérifie-t-on l'intrication ?",
+        "a": "On mesure les deux photons dans plusieurs bases et l'on examine les corrélations des comptages de coïncidences. Une visibilité élevée à la fois dans la base H/V et dans la base à 45° indique l'intrication, que l'on évalue quantitativement par la tomographie d'état quantique, qui reconstruit l'état à partir des mesures, ou par la violation de l'inégalité de Bell."
+      }
+    ],
     "aliases": [
       "intrication",
       "photons intriqués",
@@ -5184,6 +6000,38 @@
   "単一光子アバランシェダイオード": {
     "term": "Diode à avalanche à photon unique (SPAD)",
     "desc": "Photodiode utilisée sous une tension inverse supérieure à la tension de claquage (mode Geiger), qui détecte un photon unique en déclenchant une avalanche. Elle présente un temps mort et des post-impulsions.",
+    "about": [
+      {
+        "h": "Déclencher une avalanche avec un seul photon",
+        "p": "Une diode à avalanche à photon unique (SPAD) est une photodiode utilisée sous une tension inverse supérieure de quelques volts environ à sa tension de claquage. Dans cet état, un électron ou un trou créé par un seul photon est accéléré par le champ intense et provoque des ionisations par impact successives, qui deviennent un courant d'avalanche auto-entretenu. Le courant atteint la même valeur quel que soit le nombre de photons ; le composant ne détecte donc que l'arrivée ou non d'un photon, sous forme d'une impulsion numérique unique. C'est le mode Geiger, que l'on distingue du mode linéaire des APD ordinaires, utilisées sous une tension inférieure à la tension de claquage, dont la sortie est proportionnelle à l'intensité lumineuse."
+      },
+      {
+        "h": "Extinction et temps mort",
+        "p": "Une avalanche ne s'arrête pas d'elle-même ; il faut donc un circuit qui, dès que le courant circule, abaisse la tension sous la tension de claquage pour arrêter l'avalanche (extinction, ou quenching), puis rétablit la tension. Il existe l'extinction passive, qui place une résistance en série, et l'extinction active, qui détecte l'avalanche et commute la tension ; le temps mort qui en résulte va de quelques dizaines de ns à, pour certains composants, la µs. Avec un temps mort τ, le taux compté pour un taux réel n vaut environ n/(1 + nτ) ; avec τ = 22 ns, même si 10⁷ photons arrivent par seconde, seuls environ 8,2×10⁶ sont comptés. Le comptage sature sous une lumière intense, et une correction est nécessaire."
+      },
+      {
+        "h": "Bruit et caractéristiques temporelles",
+        "p": "Même sans lumière, des porteurs créés thermiquement ou par effet tunnel peuvent déclencher des avalanches, ce qui donne des coups d'obscurité. Si des porteurs piégés par des défauts pendant une avalanche sont libérés plus tard, ils déclenchent une nouvelle avalanche, ce qui produit une post-impulsion ; on prévoit donc après chaque avalanche un temps de maintien (hold-off) pendant lequel la tension reste basse. La dispersion du délai entre l'arrivée d'un photon et la montée de l'avalanche (gigue temporelle) est faible, de quelques dizaines de ps dans les composants minces, ce qui permet de mesurer précisément l'instant d'arrivée des photons. Les composants au silicium sont très efficaces dans le visible, alors que les composants InGaAs/InP pour la bande de 1550 nm ont un rendement plus faible et davantage de coups d'obscurité et de post-impulsions ; on les utilise souvent en mode à fenêtres (gated), en n'élevant la tension que pendant de brèves fenêtres."
+      },
+      {
+        "h": "Matrices et applications",
+        "p": "Les SPAD peuvent être fabriquées avec des procédés CMOS standard ; on peut donc en faire des matrices de nombreux pixels qui enregistrent chacun l'instant d'arrivée des photons. Grâce à cela, des capteurs de distance à temps de vol direct, qui mesurent le temps de retour d'une impulsion laser, sont utilisés dans les smartphones et les LiDAR automobiles. Les photomultiplicateurs au silicium (SiPM), qui relient en parallèle de nombreuses SPAD à une sortie unique, fournissent une sortie qui dépend du nombre de photons arrivant ensemble ; ils servent à la détection des rayonnements et à l'imagerie médicale. En optique quantique aussi, les SPAD sont largement utilisées pour les mesures de g⁽²⁾ et comme récepteurs en distribution quantique de clés."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre une SPAD et une APD ?",
+        "a": "Toutes deux utilisent la multiplication par avalanche, mais une APD fonctionne sous une tension inférieure à la tension de claquage et fournit une sortie proportionnelle à l'intensité lumineuse. Une SPAD fonctionne au-delà de la tension de claquage, produit une impulsion de taille fixe à partir d'un seul photon et compte les photons un par un."
+      },
+      {
+        "q": "Une SPAD peut-elle distinguer le nombre de photons ?",
+        "a": "Une SPAD seule ne le peut pas, car la taille de l'avalanche ne dépend pas du nombre de photons. Pour connaître le nombre de photons, on répartit la lumière sur de nombreuses SPAD et l'on compte combien déclenchent une avalanche, ou l'on utilise des détecteurs supraconducteurs capables de résoudre le nombre de photons."
+      },
+      {
+        "q": "Quel est le rendement de détection d'une SPAD ?",
+        "a": "Les composants au silicium atteignent typiquement quelques dizaines de pour cent dans le visible, selon la longueur d'onde et l'épaisseur du composant. Les composants InGaAs/InP pour la bande de 1550 nm se situent à environ 10 à 30 %, avec le compromis qu'augmenter le rendement augmente aussi les coups d'obscurité."
+      }
+    ],
     "aliases": [
       "diodes à avalanche à photon unique",
       "photodiode à avalanche à photon unique",
@@ -5196,6 +6044,38 @@
   "超伝導ナノワイヤ単一光子検出器": {
     "term": "Détecteur de photons uniques à nanofil supraconducteur (SNSPD)",
     "desc": "Détecteur qui utilise un fil supraconducteur refroidi à très basse température, qui redevient localement normal lorsqu'il absorbe un photon. Son rendement est élevé même dans le proche infrarouge, avec un faible taux de coups d'obscurité et une faible gigue temporelle.",
+    "about": [
+      {
+        "h": "Un seul photon qui détruit la supraconductivité",
+        "p": "Un détecteur de photons uniques à nanofil supraconducteur (SNSPD) est formé d'un fil en méandres d'un supraconducteur comme le NbN ou le WSi, large d'environ 100 nm et épais de quelques nm. Refroidi sous quelques K dans l'état supraconducteur et parcouru par un courant proche de son courant critique, le fil perd localement sa supraconductivité dès qu'il absorbe un seul photon ; il se forme une région résistive qui repousse le courant vers le circuit extérieur et produit une impulsion de tension. La région résistive se refroidit rapidement et redevient supraconductrice, prête à détecter le photon suivant. Son premier fonctionnement a été rapporté en 2001, et il est devenu largement utilisé en optique quantique et en communication quantique."
+      },
+      {
+        "h": "Les caractéristiques de performance",
+        "p": "Les SNSPD excellent à la fois par leur rendement de détection dans le proche infrarouge, leur faible taux de coups d'obscurité et leur faible gigue temporelle. Dans les composants intégrant des cavités optiques qui renforcent l'absorption, le rendement de détection à 1550 nm dépasse 90 %, les coups d'obscurité peuvent descendre sous 1 par seconde, et la gigue temporelle est de quelques dizaines de ps, voire de quelques ps dans des composants spécialement conçus. Par rapport aux SPAD InGaAs/InP à la même longueur d'onde, leur rendement est plusieurs fois plus élevé et leurs coups d'obscurité inférieurs de plusieurs ordres de grandeur. En revanche, le fil en méandres absorbe différemment selon la polarisation, et la lumière polarisée parallèlement au fil est détectée plus facilement."
+      },
+      {
+        "h": "Temps de récupération et refroidissement",
+        "p": "Le temps nécessaire au retour du courant après une détection est fixé par le rapport L_k/R entre l'inductance cinétique L_k du fil et la résistance de charge R de lecture. Par exemple, avec L_k = 500 nH et R = 50 Ω, la constante de temps vaut 10 ns, et la récupération prend plusieurs fois ce temps. Allonger le fil pour agrandir la surface active augmente l'inductance et ralentit la récupération. À l'inverse, si L_k est trop petite, le courant revient avant que le fil ne se soit refroidi, et le fil reste bloqué dans l'état résistif (verrouillage, ou latching) ; il existe donc une plage appropriée. Le fonctionnement exige un cryoréfrigérateur ; on refroidit généralement le NbN à 2 à 3 K et le WSi sous 1 K."
+      },
+      {
+        "h": "L'usage en communication quantique et en liaisons optiques spatiales",
+        "p": "En distribution quantique de clés à longue distance, les pertes de la fibre ne laissent arriver que très peu de photons ; les SNSPD, à rendement de détection élevé et à faibles coups d'obscurité, sont donc la clé pour allonger la distance, et ils ont servi à des expériences sur plus de 400 km de fibre. Dans les expériences de calcul quantique photonique, les SNSPD servent aussi à compter de nombreux photons simultanément. Pour la communication optique avec les sondes spatiales, des matrices de SNSPD équipent les récepteurs au sol et comptent les rares photons arrivant de sondes lointaines. On les utilise aussi pour la mesure de durée de vie de fluorescence, le LiDAR à longue portée et la détection de l'émission lumineuse pour l'analyse de défaillance des circuits intégrés."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Faut-il utiliser un SNSPD ou une SPAD ?",
+        "a": "Le SNSPD est avantageux lorsqu'il faut un rendement élevé et peu de coups d'obscurité dans la bande de 1550 nm, mais il exige un cryoréfrigérateur, ce qui rend l'équipement encombrant et coûteux. Pour le visible, pour la facilité d'emploi ou pour les applications qui demandent de nombreux pixels, on utilise des SPAD fonctionnant près de la température ambiante."
+      },
+      {
+        "q": "Pourquoi les SNSPD ont-ils besoin de températures cryogéniques ?",
+        "a": "Parce que le maintien du fil dans l'état supraconducteur exige de le refroidir bien en dessous de la température critique du matériau. La température critique des couches minces de NbN est d'environ 10 K, et une détection efficace exige de refroidir à une fraction de cette valeur."
+      },
+      {
+        "q": "Un SNSPD peut-il indiquer combien de photons sont arrivés ?",
+        "a": "Un fil unique standard ne distingue pas un photon de plusieurs. Des recherches progressent sur des structures qui divisent le fil en nombreuses sections lues en parallèle, et sur des méthodes qui exploitent les différences de forme du signal de sortie, afin de résoudre en partie le nombre de photons."
+      }
+    ],
     "aliases": [
       "détecteurs de photons uniques à nanofil supraconducteur",
       "détecteur à nanofil supraconducteur",
@@ -5206,6 +6086,34 @@
   "量子鍵配送": {
     "term": "Distribution quantique de clés (QKD)",
     "desc": "Méthode de partage d'une clé de chiffrement codée dans des états quantiques, comme ceux de photons. Mesurer ces états pour écouter introduit des erreurs, si bien que le taux d'erreur révèle la présence ou non d'une écoute. Le protocole le plus connu est BB84.",
+    "about": [
+      {
+        "h": "Comment l'écoute laisse une trace",
+        "p": "La distribution quantique de clés (QKD) permet à un émetteur et à un récepteur de partager des nombres aléatoires servant de clé de chiffrement, en les codant dans des états quantiques comme la polarisation ou la phase de photons. Un état quantique inconnu ne peut pas être copié parfaitement (théorème de non-clonage), et une mesure visant à distinguer des états non orthogonaux entre eux les perturbe. Si un espion mesure des photons en cours de route, les erreurs augmentent donc dans les résultats du récepteur. L'émetteur et le récepteur divulguent une partie de la clé pour vérifier le taux d'erreur, estiment la quantité d'information qui a pu fuir et décident si la clé est utilisable."
+      },
+      {
+        "h": "Le protocole BB84",
+        "p": "Dans le protocole BB84, le plus représentatif, l'émetteur choisit au hasard l'une de deux bases, 0°/90° ou 45°/135°, et envoie un photon polarisé, et le récepteur mesure dans une base choisie au hasard. Ensuite, seules les bases sont comparées sur un canal public, et l'on conserve la moitié environ des bits pour lesquels elles coïncident (tamisage). Si un espion mesure chaque photon dans une base aléatoire et le renvoie, les bits conservés présentent un taux d'erreur de 25 %. Si le taux d'erreur est inférieur à la valeur tolérable, on procède à la correction d'erreurs puis à l'amplification de confidentialité, qui raccourcit la clé pour annuler l'information divulguée, afin de produire la clé finale."
+      },
+      {
+        "h": "Les équipements réels et les limites de distance",
+        "p": "De nombreux systèmes utilisent des impulsions laser atténuées au lieu de sources idéales de photons uniques. Le nombre de photons suit une loi de Poisson, et une attaque par séparation du nombre de photons, dans laquelle un espion prélève un photon dans les impulsions qui en contiennent occasionnellement deux ou plus, est possible ; on s'en protège par la méthode des états leurres (decoy), qui mêle des impulsions leurres d'intensités différentes. Les photons qui arrivent diminuent exponentiellement avec la distance à cause des pertes de la fibre, et les états quantiques ne peuvent pas être amplifiés par des amplificateurs optiques ordinaires ; la distance couverte par une seule liaison est donc limitée. Pour aller plus loin, on envisage des nœuds relais de confiance ou des répéteurs quantiques utilisant l'intrication."
+      }
+    ],
+    "faq": [
+      {
+        "q": "La distribution quantique de clés transmet-elle le texte chiffré lui-même ?",
+        "a": "Seuls les nombres aléatoires qui deviennent la clé sont transmis ; le texte chiffré passe par un canal ordinaire. La clé partagée sert de masque jetable ou de clé d'un chiffrement symétrique, et les propriétés quantiques servent à confirmer que la clé n'a pas été dérobée."
+      },
+      {
+        "q": "Peut-elle empêcher complètement l'écoute ?",
+        "a": "Elle n'empêche pas l'écoute elle-même ; sa particularité est que l'écoute se manifeste par une augmentation du taux d'erreur. Si le taux d'erreur est élevé, la clé est rejetée ; s'il est acceptable, l'amplification de confidentialité réduit suffisamment l'information de l'espion. La sécurité suppose que l'équipement se comporte comme le prévoit le modèle théorique ; des parades contre les faiblesses de mise en œuvre sont donc aussi nécessaires."
+      },
+      {
+        "q": "Pourquoi les amplificateurs optiques ne permettent-ils pas d'allonger la distance ?",
+        "a": "Multiplier les photons avec un amplificateur optique revient à copier l'état quantique entrant, ce que le théorème de non-clonage interdit de faire exactement, et du bruit d'émission spontanée s'y ajoute. Pour allonger la distance, il faut un relais de confiance qui reçoit et renvoie la clé dans un nœud, ou un répéteur quantique utilisant l'intrication."
+      }
+    ],
     "aliases": [
       "distribution quantique de clé",
       "quantum key distribution"
@@ -5214,6 +6122,38 @@
   "光起電力効果": {
     "term": "Effet photovoltaïque",
     "desc": "Apparition d'une tension entre les bornes lorsque les électrons et les trous créés par la lumière sont séparés par le champ électrique interne d'une jonction. Il fournit de l'énergie électrique sans alimentation extérieure et constitue le principe des cellules solaires.",
+    "about": [
+      {
+        "h": "Comment la lumière produit une tension",
+        "p": "L'effet photovoltaïque est l'apparition d'une tension entre les bornes lorsque les électrons et les trous créés par l'absorption de la lumière dans un semi-conducteur sont séparés, par exemple par le champ électrique interne d'une jonction. Il a été découvert en 1839, lorsque Becquerel a constaté qu'éclairer des électrodes plongées dans un électrolyte faisait circuler un courant, et en 1954 les laboratoires Bell ont réalisé une cellule solaire à jonction pn au silicium d'un rendement d'environ 6 %. Dans une jonction pn, les porteurs minoritaires créés par la lumière diffusent jusqu'à la zone de déplétion, où le champ interne envoie les électrons vers le côté n et les trous vers le côté p. Bornes ouvertes, la charge s'accumule et une tension directe apparaît ; en branchant une charge, un courant circule."
+      },
+      {
+        "h": "La tension vue comme un écart entre quasi-niveaux de Fermi",
+        "p": "Dans un semi-conducteur éclairé, les électrons et les trous se répartissent selon des quasi-niveaux de Fermi distincts, et leur écart ΔE_F correspond à l'énergie libre tirée de la lumière. La tension qui apparaît aux bornes en circuit ouvert vaut qV = ΔE_F ; elle est d'autant plus grande que la lumière est intense et que la recombinaison est faible. Le sens d'extraction des porteurs est fixé par l'association d'une couche qui ne laisse passer que les électrons et d'une couche qui ne laisse passer que les trous (sélectivité des porteurs), et le champ interne d'une jonction pn est l'un des moyens de l'obtenir. Les cellules à hétérojonction et les cellules à pérovskite séparent les porteurs par des couches de transport qui ne laissent passer chacune qu'un seul type de porteur."
+      },
+      {
+        "h": "Potentiel interne et tension de sortie",
+        "p": "Le potentiel interne (potentiel de diffusion) d'une jonction pn existe même dans l'obscurité, mais on ne peut pas le mesurer avec un voltmètre. Il est compensé par les différences de potentiel de contact avec les métaux et vaut donc 0 dans le circuit extérieur. Sous éclairement, les porteurs créés s'accumulent dans le sens qui affaiblit le champ interne, et cette part apparaît comme la tension aux bornes. La tension de circuit ouvert est donc inférieure au potentiel interne, et elle est fixée par l'équilibre entre le nombre de porteurs créés par la lumière et la vitesse de recombinaison. Par ailleurs, le courant d'une cellule solaire circule, sous tension directe, en sens inverse du courant direct de la diode ; la cellule fonctionne donc dans le quadrant où le produit du courant et de la tension est négatif, c'est-à-dire en fournissant de la puissance."
+      },
+      {
+        "h": "Cellules solaires et photodétecteurs",
+        "p": "L'effet photovoltaïque sert non seulement aux cellules solaires, mais aussi aux photodétecteurs. En mode photovoltaïque, où la photodiode est utilisée sans tension appliquée, le courant d'obscurité est presque nul et le bruit faible, ce qui convient aux luxmètres et aux mesures précises de la lumière. En mode photoconducteur, sous tension inverse, la zone de déplétion s'élargit et la capacité diminue, si bien que la réponse devient plus rapide. Une cellule solaire est un composant photovoltaïque conçu pour collecter la lumière sur une grande surface et fournir sa puissance au point de puissance maximale. Notons aussi que, dans les matériaux de faible symétrie cristalline comme les ferroélectriques, on connaît un effet photovoltaïque de volume, dans lequel la lumière fait circuler un courant même sans jonction."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la différence entre l'effet photovoltaïque et l'effet photoélectrique ?",
+        "a": "L'effet photoélectrique est l'éjection par la lumière d'électrons hors de la surface d'un métal ou d'un autre matériau vers le vide. L'effet photovoltaïque est l'apparition d'une tension entre des bornes lorsque les électrons et les trous sont séparés à l'intérieur du matériau, sans en sortir ; on le classe parmi les formes de l'effet photoélectrique interne dans les semi-conducteurs."
+      },
+      {
+        "q": "Qu'est-ce qui fixe la tension d'une cellule solaire ?",
+        "a": "La tension de circuit ouvert est fixée par l'équilibre entre le nombre de porteurs créés par la lumière et la vitesse de recombinaison, et la largeur de bande interdite donne un ordre de grandeur de sa limite supérieure. Une cellule solaire au silicium donne environ 0,6 à 0,7 V, et les modules relient de nombreuses cellules en série pour augmenter la tension."
+      },
+      {
+        "q": "Comment l'effet photovoltaïque varie-t-il avec la température ?",
+        "a": "Une température plus élevée augmente la recombinaison et abaisse la tension, si bien que la puissance fournie diminue. Dans le silicium cristallin, la tension de circuit ouvert baisse d'environ 2 mV par K, et le rendement diminue sous les fortes chaleurs estivales en extérieur."
+      }
+    ],
     "aliases": [
       "photovoltaic effect"
     ]
@@ -5221,6 +6161,38 @@
   "開放電圧": {
     "term": "Tension de circuit ouvert",
     "desc": "Tension d'une cellule solaire dont les bornes sont en circuit ouvert. C'est la tension pour laquelle le photocourant et le courant de recombinaison s'équilibrent, environ (kT/q) ln(J_sc/J₀) ; qV_oc est inférieur à l'énergie de la bande interdite.",
+    "about": [
+      {
+        "h": "L'équilibre entre photocourant et recombinaison",
+        "p": "La tension de circuit ouvert V_oc est la tension d'une cellule solaire lorsque rien n'est branché à ses bornes et qu'aucun courant n'est prélevé. Tous les porteurs créés par la lumière se recombinent alors dans la cellule, et le photocourant est exactement compensé par le courant de diode qui circule sous la tension directe. Pour une diode idéale, V_oc = (nkT/q) ln(J_sc/J₀ + 1), où J₀ est la densité de courant de saturation, qui exprime l'importance de la recombinaison, et n le facteur d'idéalité. Comme V_oc est fixée par le logarithme du rapport de J_sc à J₀, avec n = 1 à 300 K elle n'augmente que d'environ 60 mV quand la lumière devient 10 fois plus intense, et ne baisse que d'environ 60 mV quand elle est divisée par 10."
+      },
+      {
+        "h": "L'écart à la bande interdite",
+        "p": "La tension de circuit ouvert est toujours inférieure à la largeur de bande interdite E_g divisée par q, et l'écart E_g/q − V_oc exprime la perte de tension. Selon la théorie du bilan détaillé, un écart d'environ 0,25 à 0,3 V est inévitable même avec la seule recombinaison radiative, et la recombinaison non radiative s'y ajoute. Les cellules à haut rendement en silicium cristallin (1,12 eV) ont une V_oc de l'ordre de 0,7 V, soit un écart d'environ 0,4 V. Les cellules GaAs à haut rendement (1,42 eV) atteignent environ 1,1 V. Pour comparer la qualité des cellules, l'écart à la bande interdite est plus équitable que la V_oc elle-même. Chaque baisse d'un facteur 10 du rendement quantique externe de luminescence abaisse V_oc d'environ 60 mV."
+      },
+      {
+        "h": "Les variations avec la température et l'intensité lumineuse",
+        "p": "J₀ augmente fortement avec la température ; la tension de circuit ouvert diminue donc quand la température s'élève, d'environ −2 mV par K dans le silicium cristallin. La tension de circuit ouvert d'une cellule à 60 °C en extérieur l'été est inférieure d'environ 70 mV à sa valeur à 25 °C. À l'inverse, concentrer la lumière solaire augmente le terme dans le logarithme proportionnellement à J_sc, si bien que V_oc augmente ; c'est l'une des raisons pour lesquelles le rendement s'améliore sous concentration. Sous une lumière faible, V_oc diminue au contraire, et les fuites par la résistance parallèle prennent relativement plus d'importance ; pour les cellules solaires utilisées en intérieur sous une lumière faible, il est donc important de limiter les fuites et de maintenir la tension de circuit ouvert."
+      },
+      {
+        "h": "La mesure et ce qu'elle révèle",
+        "p": "On obtient la tension de circuit ouvert en mesurant entre les bornes avec un voltmètre de résistance d'entrée suffisamment élevée ; aucun courant ne circulant, la résistance série n'a pas d'effet. En mesurant V_oc à différentes intensités lumineuses et en la reliant au courant de court-circuit, on obtient une courbe I-V exempte de résistance série (Suns-V_oc), qui permet d'estimer les performances intrinsèques de la cellule. Même avant la pose des électrodes, on peut déduire l'écart entre les quasi-niveaux de Fermi de l'intensité de la luminescence sous éclairement et évaluer la tension de circuit ouvert attendue (V_oc implicite, implied V_oc) ; on s'en sert en cours de fabrication pour vérifier, par exemple, la qualité de la passivation des surfaces."
+      }
+    ],
+    "faq": [
+      {
+        "q": "En quoi la tension de circuit ouvert diffère-t-elle de la tension de fonctionnement ?",
+        "a": "La tension de circuit ouvert est la tension sans courant prélevé, et la tension au point de puissance maximale, où la puissance est effectivement extraite, est plus basse. Dans les cellules en silicium cristallin, la tension au point de puissance maximale représente, à titre indicatif, un peu plus de 80 % de la tension de circuit ouvert."
+      },
+      {
+        "q": "Comment augmenter la tension de circuit ouvert ?",
+        "a": "L'approche de base consiste à réduire la recombinaison pour diminuer J₀. On peut réduire les défauts cristallins, recouvrir les surfaces de films de passivation et réduire la surface de contact direct entre les électrodes métalliques et le semi-conducteur. Utiliser un matériau de plus grande bande interdite augmente aussi la tension de circuit ouvert."
+      },
+      {
+        "q": "La tension de circuit ouvert dépend-elle de la surface de la cellule ?",
+        "a": "Presque pas. Agrandir la surface augmente le photocourant et le courant de recombinaison dans la même proportion ; la tension de circuit ouvert, fixée par leur rapport, reste donc la même. Le courant est proportionnel à la surface : pour augmenter le courant, on utilise de plus grandes cellules, et pour augmenter la tension, on relie les cellules en série."
+      }
+    ],
     "aliases": [
       "tension en circuit ouvert",
       "V_oc",
@@ -5230,6 +6202,38 @@
   "短絡電流": {
     "term": "Courant de court-circuit",
     "desc": "Courant qui circule lorsque les bornes d'une cellule solaire sont court-circuitées. La densité de courant de court-circuit J_sc, par unité de surface, est fixée par le nombre de photons incidents et le rendement quantique externe.",
+    "about": [
+      {
+        "h": "Un courant fixé par le nombre de photons collectés",
+        "p": "Le courant de court-circuit I_sc est le courant qui circule lorsque les bornes d'une cellule solaire sont court-circuitées et que la tension est nulle. Le courant direct de la diode est alors presque nul ; le nombre de porteurs créés par la lumière et collectés dans le circuit extérieur devient donc directement le courant. La valeur par unité de surface est la densité de courant de court-circuit J_sc, que l'on obtient à partir du flux de photons incidents Φ(λ) et du rendement quantique externe EQE(λ) par J_sc = q∫EQE(λ)Φ(λ)dλ. Si la résistance série est faible, J_sc est presque égale au photocourant et proportionnelle à l'intensité lumineuse ; les cellules solaires servent donc aussi de capteurs pour mesurer l'éclairement solaire."
+      },
+      {
+        "h": "La limite supérieure et les principales pertes",
+        "p": "La limite supérieure de J_sc est atteinte lorsque chaque photon de la lumière solaire AM1.5G d'énergie supérieure à la bande interdite est converti en un électron ; pour le silicium (1,12 eV), elle vaut environ 43 à 44 mA/cm². Les cellules réelles restent en dessous à cause de la réflexion en surface, de l'ombrage des électrodes, de la lumière qui traverse sans être entièrement absorbée et de la recombinaison des porteurs créés. Une surface de silicium plane a un indice de réfraction élevé, d'environ 3,9, et réfléchit environ 35 % de la lumière même en incidence normale. On texture donc la surface en pyramides pour que la lumière la frappe plusieurs fois, et un traitement antireflet en nitrure de silicium d'environ 75 nm d'épaisseur (indice d'environ 2,0) réduit la réflexion vers 600 nm."
+      },
+      {
+        "h": "Courant et densité de courant, précautions de mesure",
+        "p": "Des cellules de tailles différentes donnent des courants différents ; on compare donc les performances avec J_sc, le courant divisé par la surface. La surface utilisée, surface totale électrodes comprises ou surface éclairée, change la valeur ; les publications de rendement précisent donc la définition de la surface. De plus, la lumière d'un simulateur solaire ne reproduit pas parfaitement le spectre solaire ; même si l'intensité est réglée avec une cellule de référence, J_sc est entachée d'une erreur si la réponse spectrale de la cellule mesurée diffère de celle de la référence. On calcule donc un facteur de correction de la désadaptation spectrale à partir du spectre de rendement quantique externe mesuré et du spectre normalisé."
+      },
+      {
+        "h": "Comportement avec la température et dans les multijonctions",
+        "p": "Le courant de court-circuit est peu sensible à la température ; quand la température s'élève, la bande interdite se rétrécit légèrement et l'absorption aux grandes longueurs d'onde augmente, si bien qu'il augmente un peu. Comparé à la forte baisse de la tension de circuit ouvert, son effet sur le rendement est faible. En revanche, dans les cellules solaires tandem connectées en série à deux bornes, le courant total est fixé par la cellule de plus faible J_sc ; égaliser les J_sc des cellules supérieure et inférieure est donc au cœur de la conception. Lorsque le spectre solaire change, comme au lever et au coucher du soleil, l'équilibre entre les J_sc des cellules supérieure et inférieure change aussi, ce qui influe sur la production d'énergie de la journée."
+      }
+    ],
+    "faq": [
+      {
+        "q": "En quoi le courant de court-circuit diffère-t-il du courant au point de puissance maximale ?",
+        "a": "Le courant de court-circuit est le courant à tension nulle, et le courant au point de puissance maximale est un peu plus faible. Le courant direct de la diode compense une partie du photocourant à mesure que la tension augmente ; dans les bonnes cellules, le courant au point de puissance maximale dépasse 90 % du courant de court-circuit."
+      },
+      {
+        "q": "À quoi faut-il faire attention en mesurant le courant de court-circuit ?",
+        "a": "La résistance de l'ampèremètre et des fils peut empêcher la tension aux bornes d'être exactement nulle. Pour les cellules à fort courant, on mesure avec quatre fils, ou l'on applique une tension extérieure de sorte que la tension soit nulle et l'on mesure le courant. Il faut aussi régler l'intensité et le spectre de la lumière sur les conditions normalisées."
+      },
+      {
+        "q": "Le courant de court-circuit est-il proportionnel à l'intensité lumineuse ?",
+        "a": "Presque, dans la plage d'intensités habituelle. Une cellule solaire étalonnée peut donc servir à mesurer l'éclairement solaire. Sous une concentration très forte, la résistance série peut empêcher la tension d'atteindre zéro et la recombinaison des porteurs peut augmenter, ce qui provoque un écart à la proportionnalité."
+      }
+    ],
     "aliases": [
       "densité de courant de court-circuit",
       "J_sc",
@@ -5239,6 +6243,34 @@
   "曲線因子": {
     "term": "Facteur de forme",
     "desc": "Rapport FF entre la puissance maximale et le produit de la tension de circuit ouvert par le courant de court-circuit. Il exprime à quel point la courbe I-V est rectangulaire et diminue sous l'effet de la résistance série, de la résistance parallèle et de la recombinaison.",
+    "about": [
+      {
+        "h": "Le caractère plus ou moins rectangulaire de la courbe I-V",
+        "p": "Sur la courbe I-V d'une cellule solaire, la puissance est nulle à la fois au point de court-circuit (tension nulle, courant I_sc) et au point de circuit ouvert (courant nul, tension V_oc) ; entre les deux se trouve le point de puissance maximale (V_mp, I_mp), où le produit du courant et de la tension est le plus grand. Le facteur de forme vaut FF = V_mpI_mp/(V_ocI_sc) ; c'est le rapport entre l'aire du plus grand rectangle inscrit sous la courbe et celle du rectangle formé par I_sc et V_oc. Plus la courbe est rectangulaire, plus il se rapproche de 1, mais à cause de la caractéristique exponentielle de la diode, même une cellule idéale n'atteint jamais 1."
+      },
+      {
+        "h": "Valeurs idéales et tension de circuit ouvert",
+        "p": "Pour une diode de facteur d'idéalité n, on utilise couramment l'approximation FF ≈ (v_oc − ln(v_oc + 0,72))/(v_oc + 1), avec la tension de circuit ouvert normalisée v_oc = V_oc/(nkT/q). Plus la tension de circuit ouvert est élevée, plus FF est élevé ; avec V_oc = 0,7 V, n = 1 et 300 K, v_oc ≈ 27 et FF vaut environ 0,85. Les cellules à tension de circuit ouvert plus élevée, comme celles en GaAs, atteignent un FF encore plus élevé. Comme le rendement de conversion vaut η = V_ocI_scFF/P_in, FF est le troisième facteur qui fixe le rendement, avec la tension et le courant."
+      },
+      {
+        "h": "Ce qui abaisse le facteur de forme",
+        "p": "Dans les cellules réelles, FF est inférieur à la valeur idéale à cause des résistances parasites et de la recombinaison. La résistance série consomme de la tension au voisinage du point de puissance maximale, où le courant est grand, et adoucit la courbe du côté du circuit ouvert. Une faible résistance parallèle laisse circuler un courant de fuite proportionnel à la tension et incline la courbe du côté du court-circuit. Une forte recombinaison dans la zone de déplétion rapproche le facteur d'idéalité de 2, si bien que la courbe monte moins brusquement et que FF diminue. Comme la forme de la courbe I-V indique quelle perte domine, FF sert aussi au diagnostic des cellules."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelles sont les valeurs typiques du facteur de forme ?",
+        "a": "Les bonnes cellules en silicium cristallin ont des valeurs d'environ 0,8, et les cellules à forte tension de circuit ouvert, comme celles en GaAs, vont au-delà. Si la valeur est nettement inférieure à 0,7, il faut soupçonner des problèmes comme une forte résistance série ou un courant de fuite important."
+      },
+      {
+        "q": "Pourquoi le facteur de forme n'atteint-il jamais 1 ?",
+        "a": "À cause de la caractéristique de la diode, dans laquelle le courant varie exponentiellement avec la tension : le courant diminue progressivement à l'approche de la tension de circuit ouvert, si bien que la tension au point de puissance maximale est toujours inférieure à la tension de circuit ouvert, et le courant toujours inférieur au courant de court-circuit."
+      },
+      {
+        "q": "Que devient le facteur de forme sous concentration ?",
+        "a": "La tension de circuit ouvert augmente, si bien qu'idéalement FF augmente légèrement ; mais à mesure que le courant croît, la perte de tension IR_s due à la résistance série augmente, et au-delà d'une certaine concentration FF diminue. Dans les cellules pour concentration, la conception des électrodes maintient une faible résistance série."
+      }
+    ],
     "aliases": [
       "facteur de remplissage",
       "fill factor"
@@ -5250,6 +6282,34 @@
   "ショックレー・クワイサー限界": {
     "term": "Limite de Shockley-Queisser",
     "desc": "Limite supérieure du rendement de conversion d'une cellule solaire à simple jonction, obtenue à partir du bilan détaillé. Pour le spectre AM1.5G, elle vaut environ 33 % pour une bande interdite voisine de 1,3 à 1,4 eV.",
+    "about": [
+      {
+        "h": "Une limite tirée du bilan détaillé",
+        "p": "En 1961, Shockley et Queisser ont traité la cellule solaire comme un corps qui absorbe la lumière solaire et émet de la lumière à sa propre température, et ont déduit la limite de rendement d'une simple jonction du bilan détaillé de l'absorption et de l'émission. Les hypothèses sont que chaque photon d'énergie supérieure ou égale à la bande interdite est absorbé et crée exactement une paire électron-trou, que les porteurs se relaxent immédiatement vers les bords de bande, et que la seule recombinaison est la recombinaison radiative, inévitable. C'est une limite fondamentale qui subsiste même après suppression de toutes les pertes d'une cellule réelle."
+      },
+      {
+        "h": "Les principales pertes et la bande interdite optimale",
+        "p": "Deux grandes pertes fixent la limite. La lumière d'énergie inférieure à la bande interdite traverse sans être absorbée, et l'énergie excédentaire des photons plus énergétiques se transforme en chaleur par thermalisation des porteurs. Une bande interdite plus petite absorbe davantage de photons mais abaisse la tension par photon, tandis qu'une bande interdite plus grande élève la tension mais absorbe moins de photons ; le rendement présente donc un optimum. Pour le spectre AM1.5G, le maximum d'environ 33 % est atteint vers 1,3 à 1,4 eV, et le silicium (1,12 eV) a lui aussi une bande interdite proche de l'optimum."
+      },
+      {
+        "h": "Les moyens de dépasser la limite",
+        "p": "La limite SQ s'applique à une simple jonction sous l'hypothèse d'une paire par photon ; on peut donc la dépasser en levant ces hypothèses. Les tandems (multijonctions), qui empilent des cellules de bandes interdites différentes, réduisent les pertes par thermalisation et par transmission ; avec un nombre infini de jonctions, la limite théorique est d'environ 68 % sans concentration. Concentrer la lumière solaire élève la tension de circuit ouvert, et à la concentration maximale, fixée par la taille apparente du soleil, la limite d'une simple jonction atteint environ 40 %. On étudie aussi la génération d'excitons multiples, dans laquelle un photon crée plusieurs paires, et les cellules à porteurs chauds, qui extraient les porteurs avant leur thermalisation."
+      }
+    ],
+    "faq": [
+      {
+        "q": "À combien de pour cent s'élève la limite SQ ?",
+        "a": "Pour le spectre AM1.5G, le maximum est d'environ 33 %, pour des bandes interdites voisines de 1,3 à 1,4 eV. La valeur dépend du spectre solaire utilisé et de la concentration éventuelle de la lumière."
+      },
+      {
+        "q": "Pourquoi les cellules solaires au silicium réelles n'atteignent-elles pas la limite SQ ?",
+        "a": "Le silicium est à bande interdite indirecte, avec une recombinaison radiative lente ; la recombinaison non radiative, comme la recombinaison Auger, joue donc un rôle important. S'y ajoutent les pertes par réflexion, par ombrage des électrodes, par résistance et par recombinaison de surface. La limite théorique du silicium cristallin, recombinaison Auger comprise, est estimée à environ 29 %."
+      },
+      {
+        "q": "Un tandem permet-il d'augmenter le rendement sans limite ?",
+        "a": "Ajouter des jonctions élève la limite, mais de moins en moins. En pratique, il faut composer avec la conception pour l'égalisation des courants, les pertes entre couches et le coût de fabrication ; les configurations à deux ou trois jonctions sont donc les principales."
+      }
+    ],
     "aliases": [
       "limite SQ",
       "limite de Shockley–Queisser",
@@ -5261,6 +6321,38 @@
   "タンデム太陽電池": {
     "term": "Cellule solaire tandem",
     "desc": "Cellule solaire qui empile des cellules de bandes interdites différentes : les courtes longueurs d'onde sont exploitées par la cellule supérieure, de plus grande bande interdite, et les grandes longueurs d'onde par la cellule inférieure. Elle réduit les pertes par thermalisation et par transmission.",
+    "about": [
+      {
+        "h": "Utiliser la lumière répartie par longueur d'onde",
+        "p": "Dans une cellule solaire à simple jonction, la lumière d'énergie inférieure à la bande interdite traverse, et l'énergie excédentaire des photons énergétiques est perdue par thermalisation. Une cellule solaire tandem empile des cellules de bandes interdites différentes, par ordre décroissant à partir du côté où entre la lumière : la lumière de courte longueur d'onde est utilisée dans la cellule supérieure sous une tension élevée, et la lumière de grande longueur d'onde transmise par celle-ci dans la cellule inférieure. On réduit ainsi à la fois les pertes par thermalisation et par transmission. Selon la théorie du bilan détaillé, la limite de rendement d'une simple jonction est d'environ 33 %, mais deux jonctions la portent vers 45 %, et une infinité de jonctions donne environ 68 % sans concentration."
+      },
+      {
+        "h": "Les configurations à deux et à quatre bornes",
+        "p": "Dans une configuration à deux bornes, où les cellules supérieure et inférieure sont empilées directement et où seules deux bornes sont sorties, le même courant traverse les deux cellules : leurs tensions s'additionnent, mais le courant est fixé par la cellule qui fournit le plus faible courant. L'égalisation des courants, qui consiste à ajuster l'épaisseur et la bande interdite de la cellule supérieure pour égaliser les photocourants des deux cellules, est donc au cœur de la conception. Entre les cellules, une jonction tunnel ou une couche de recombinaison les relie en faisant se recombiner électrons et trous. Une configuration à quatre bornes, avec des bornes pour chaque cellule, n'exige pas l'égalisation des courants et perd moins de rendement quand le spectre change, mais elle ajoute des électrodes et du câblage, ainsi que des pertes optiques dans les électrodes transparentes."
+      },
+      {
+        "h": "Les combinaisons de bandes interdites",
+        "p": "Dans un tandem à deux bornes, une fois la bande interdite de la cellule inférieure fixée, la bande interdite optimale de la cellule supérieure pour égaliser les courants l'est aussi. Avec du silicium (1,12 eV) en bas, on estime qu'environ 1,7 eV est optimal pour la cellule supérieure, et les pérovskites, dont la bande interdite s'ajuste par la composition, sont des candidats sérieux. En 2026, des rendements records supérieurs à 35 % sont rapportés pour les tandems pérovskite-silicium, au-delà du record du silicium à simple jonction. Les cellules multijonctions qui empilent des semi-conducteurs III-V comme l'InGaP et le GaAs détiennent des records de plus de 47 % sous concentration."
+      },
+      {
+        "h": "Utilisations et difficultés",
+        "p": "Les cellules multijonctions III-V ont une puissance élevée par unité de masse et résistent relativement bien aux rayonnements ; elles alimentent donc depuis longtemps les satellites. Mais la croissance cristalline est coûteuse, si bien qu'au sol on ne les utilise guère que dans les systèmes à concentration, qui focalisent la lumière sur de petites cellules avec des lentilles. Les tandems pérovskite-silicium devraient permettre d'augmenter le rendement en ajoutant une couche mince au-dessus des cellules au silicium produites en masse, mais la stabilité à long terme de la cellule supérieure et le dépôt uniforme sur de grandes surfaces restent des défis. Dans les configurations à deux bornes, les variations du spectre selon la saison et l'heure, qui rompent l'équilibre des courants, influent aussi sur la production en extérieur."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Quelle est la limite de rendement des cellules solaires tandem ?",
+        "a": "Selon la théorie du bilan détaillé, sans concentration, elle est d'environ 45 % pour deux jonctions, d'environ 50 % pour trois et d'environ 68 % pour une infinité de jonctions. En pratique, les pertes entre couches et la contrainte d'égalisation des courants la rendent plus basse."
+      },
+      {
+        "q": "Quelle est la tension de circuit ouvert d'un tandem ?",
+        "a": "Dans une configuration en série à deux bornes, elle vaut à peu près la somme des tensions de circuit ouvert des cellules supérieure et inférieure. Par exemple, empiler des cellules de 1,2 V et de 0,7 V donne environ 1,9 V ; le courant est plus faible que dans une cellule à simple jonction, mais la tension plus élevée augmente la puissance fournie."
+      },
+      {
+        "q": "Multijonction et tandem veulent-ils dire la même chose ?",
+        "a": "Les deux termes s'emploient presque indifféremment. On appelle souvent tandem un empilement de deux cellules, et l'on emploie multijonction pour inclure les empilements de trois cellules ou plus ; les cellules III-V à triple jonction, par exemple, sont appelées cellules solaires multijonctions."
+      }
+    ],
     "aliases": [
       "cellules solaires tandem",
       "cellule tandem",
@@ -5276,6 +6368,38 @@
   "ペロブスカイト太陽電池": {
     "term": "Cellule solaire à pérovskite",
     "desc": "Cellule solaire qui absorbe la lumière dans une couche mince de pérovskite aux halogénures métalliques. Elle peut être fabriquée par dépôt en solution et d'autres procédés à basse température, et sa bande interdite s'ajuste par la composition. Sa stabilité reste un défi.",
+    "about": [
+      {
+        "h": "Un absorbeur à haut rendement que l'on peut déposer par enduction",
+        "p": "Une cellule solaire à pérovskite absorbe la lumière dans une couche mince de pérovskite aux halogénures métalliques de composition ABX₃. A est le méthylammonium (CH₃NH₃⁺), le formamidinium ou le césium, B le plomb, et X un halogène comme l'iode ou le brome. Tout a commencé en 2009, lorsque Miyasaka et ses collaborateurs l'ont utilisée comme sensibilisateur dans une cellule à colorant et ont rapporté un rendement d'environ 3,8 % ; le rendement des simples jonctions a ensuite progressé rapidement, et des valeurs supérieures à 27 % sont rapportées en 2026. Son coefficient d'absorption est grand, si bien qu'une couche de quelques centaines de nm suffit à absorber la lumière solaire."
+      },
+      {
+        "h": "Une bande interdite choisie par la composition",
+        "p": "La bande interdite des pérovskites peut être modifiée par leur composition. CH₃NH₃PbI₃ a une bande interdite d'environ 1,55 à 1,6 eV ; remplacer A par le formamidinium l'abaisse à environ 1,5 eV, et remplacer progressivement l'iode par le brome l'élargit jusqu'à environ 2,3 eV avec du brome seul. Remplacer une partie du plomb par de l'étain l'abaisse vers 1,2 à 1,3 eV, ce qui permet aussi de réaliser des tandems en empilant deux couches de pérovskite. Cependant, dans les compositions à large bande interdite mêlant iode et brome, on sait qu'un éclairement prolongé fait ségréger les halogènes et forme des régions de plus petite bande interdite, ce qui abaisse la tension de circuit ouvert."
+      },
+      {
+        "h": "Tolérance aux défauts et dégradation",
+        "p": "Les couches polycristallines élaborées en solution à basse température devraient comporter de nombreux défauts, mais dans les pérovskites aux halogénures, beaucoup de défauts forment des niveaux peu profonds près des bords de bande et provoqueraient peu de recombinaison non radiative. Les longueurs de diffusion des porteurs sont aussi grandes, ce qui expliquerait l'obtention de rendements élevés par des procédés simples. En revanche, les ions se déplacent facilement dans le cristal, et l'humidité, la chaleur, la lumière et les champs électriques provoquent décomposition et changements de composition, d'où une dégradation. La migration ionique est aussi à l'origine de l'hystérésis, la courbe I-V changeant selon le sens et la vitesse du balayage en tension ; on confirme donc le rendement en suivant la puissance au point de puissance maximale pendant un certain temps."
+      },
+      {
+        "h": "Les défis de la mise en pratique et les applications",
+        "p": "Les cellules solaires à pérovskite peuvent aussi être fabriquées sur des substrats légers et souples ; on attend donc des applications sur les toits et les façades soumis à des limites de poids et sur les véhicules, et elles retiennent l'attention comme cellule supérieure de tandems sur silicium. Les défis de la mise en pratique sont une durabilité suffisante pour plus de 20 ans en extérieur, le dépôt uniforme sur de grandes surfaces et la question du plomb qu'elles contiennent. Les améliorations progressent : encapsulation pour bloquer l'humidité et l'oxygène, choix d'additifs et de compositions qui freinent la migration ionique, matériaux stables pour les électrodes et les couches de transport. Des matériaux sans plomb à base d'étain sont aussi étudiés, mais ils n'atteignent pas encore le même rendement ni la même stabilité."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que signifie le mot pérovskite ?",
+        "a": "C'était à l'origine le nom du minéral titanate de calcium, CaTiO₃, devenu le nom générique des matériaux de même structure cristalline ABX₃. Les cellules solaires utilisent les pérovskites aux halogénures métalliques, celles qui contiennent des halogènes."
+      },
+      {
+        "q": "En quoi les cellules solaires à pérovskite et au silicium diffèrent-elles ?",
+        "a": "Les cellules au silicium sont fabriquées à partir de plaquettes d'environ 100 à 200 µm d'épaisseur par des procédés à haute température, tandis que les couches de pérovskite de quelques centaines de nm sont élaborées par des procédés à basse température comme l'enduction ou l'évaporation. Les rendements des simples jonctions ont atteint presque le même niveau, mais le silicium les devance largement en stabilité à long terme."
+      },
+      {
+        "q": "Quelle est la durée de vie des cellules solaires à pérovskite ?",
+        "a": "Les publications faisant état d'une durabilité de plusieurs milliers d'heures en essais accélérés se multiplient grâce aux progrès de l'encapsulation et des matériaux, mais les pérovskites n'ont pas encore le recul du silicium, utilisé en extérieur depuis des décennies. La durée de vie varie beaucoup selon le matériau, la structure et la méthode d'encapsulation."
+      }
+    ],
     "aliases": [
       "cellules solaires à pérovskite",
       "cellule à pérovskite",
@@ -5292,6 +6416,38 @@
   "エアマス": {
     "term": "Masse d'air",
     "desc": "Longueur du trajet de la lumière solaire dans l'atmosphère, rapportée à 1 pour un soleil au zénith ; elle vaut environ 1/cos θ pour un angle zénithal θ. Les cellules solaires sont évaluées avec le spectre AM1.5G.",
+    "about": [
+      {
+        "h": "La longueur du trajet dans l'atmosphère",
+        "p": "La masse d'air (AM) est la longueur du trajet de la lumière solaire dans l'atmosphère avant d'atteindre le sol, rapportée à 1 pour un soleil au zénith. En assimilant l'atmosphère à une couche plane, elle vaut environ 1/cos θ pour un soleil d'angle zénithal θ ; θ = 60° donne donc AM2. La lumière hors de l'atmosphère correspond à AM0, avec un éclairement d'environ 1361 W/m². Plus le trajet dans l'atmosphère est long, plus la lumière est affaiblie par la diffusion sur les molécules de l'air (plus forte aux courtes longueurs d'onde) et par l'absorption de la vapeur d'eau, de l'ozone et d'autres gaz, et la forme du spectre change aussi. Le soleil couchant paraît rouge parce que la masse d'air devient grande et que la lumière bleue est perdue par diffusion."
+      },
+      {
+        "h": "Le spectre normalisé AM1.5",
+        "p": "Les cellules solaires sont évaluées avec le spectre AM1.5 comme référence, ce qui correspond à un angle zénithal d'environ 48,2°. AM1.5G, défini notamment par la norme ASTM G173, est le spectre global qui combine le rayonnement direct et le rayonnement diffus du ciel reçus par une surface inclinée de 37° vers l'équateur, avec un éclairement total de 1000 W/m². AM1.5D, rayonnement direct seul, vaut environ 900 W/m² et sert à évaluer les cellules à concentration, qui focalisent la lumière avec des lentilles. Les conditions d'essai normalisées fixent le spectre AM1.5G à 1000 W/m² et la température de la cellule à 25 °C. Ce n'est pas l'ensoleillement moyen d'un lieu particulier, mais une condition convenue pour les comparaisons."
+      },
+      {
+        "h": "Quand l'approximation 1/cos θ ne tient plus",
+        "p": "1/cos θ est une approximation qui assimile l'atmosphère à une couche plane ; lorsque le soleil approche de l'horizon, la courbure de la Terre empêche le trajet réel de s'allonger autant. 1/cos θ tend vers l'infini à l'horizon, mais les formules qui tiennent compte de la courbure et de la réfraction atmosphérique donnent une masse d'air d'environ 38 à l'horizon. Pour un angle zénithal de 80°, la valeur plus exacte est d'environ 5,6, contre environ 5,8 avec 1/cos θ ; jusque-là, l'approximation reste globalement utilisable. Par ailleurs, la masse d'air est rapportée à l'atmosphère à la pression du niveau de la mer ; en altitude, l'atmosphère plus mince fait que la quantité d'air réellement traversée est plus faible, et l'on corrige la valeur par le rapport des pressions."
+      },
+      {
+        "h": "Les variations selon la saison et le lieu",
+        "p": "L'angle zénithal du soleil varie avec la latitude, la saison et l'heure. À 35° de latitude nord, lorsque le soleil culmine à midi, l'angle zénithal est d'environ 35° et AM d'environ 1,2 aux équinoxes, mais d'environ 58° et AM d'environ 1,9 au solstice d'hiver, et d'environ 12° et AM de presque 1,0 au solstice d'été. En hiver ainsi que le matin et le soir, la masse d'air est grande, la lumière plus faible et le spectre décalé vers les grandes longueurs d'onde. Les cellules au silicium amorphe, sensibles aux courtes longueurs d'onde, et les cellules supérieures des tandems sont donc plus affectées par le spectre selon la saison et l'heure. Les prévisions de production tiennent compte des variations du spectre en plus de l'éclairement."
+      }
+    ],
+    "faq": [
+      {
+        "q": "Que représente le 1,5 de AM1.5 ?",
+        "a": "Il signifie que le trajet dans l'atmosphère est 1,5 fois celui d'un soleil au zénith. Cela correspond à une lumière solaire sous un angle zénithal d'environ 48°, choisie comme condition représentative des régions de moyenne latitude. Il ne représente ni une pression ni un nombre d'atmosphères."
+      },
+      {
+        "q": "Quelle est la différence entre AM1.5G et AM1.5D ?",
+        "a": "AM1.5G est le rayonnement global, rayonnement direct plus rayonnement diffus du ciel, soit 1000 W/m² au total. AM1.5D ne comprend que la lumière venant directement de la direction du soleil (et celle de son voisinage immédiat), soit environ 900 W/m² ; il sert à évaluer les cellules solaires à concentration, qui ne peuvent pas collecter le rayonnement diffus."
+      },
+      {
+        "q": "Quand utilise-t-on AM0 ?",
+        "a": "C'est le spectre de la lumière solaire hors de l'atmosphère ; on l'utilise pour évaluer les cellules solaires des satellites et des sondes spatiales. Son éclairement, d'environ 1361 W/m², est plus fort que celui d'AM1.5G au sol, et il contient davantage d'ultraviolet."
+      }
+    ],
     "aliases": [
       "masse atmosphérique",
       "AM1.5G",
