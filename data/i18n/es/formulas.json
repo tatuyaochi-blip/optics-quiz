@@ -1,0 +1,1691 @@
+{
+  "title": "Fórmulas de óptica (símbolos, unidades, condiciones y ejemplos resueltos)",
+  "description": "78 fórmulas de óptica, desde la ley de Snell, la ecuación de las lentes delgadas, las ecuaciones de Fresnel, el ángulo de Brewster y la ecuación de la red hasta los haces gaussianos, la estabilidad de resonadores, el número V y la dispersión de fibras, la responsividad y el ruido de disparo, el ajuste de fase en SHG, la ley de Planck y el límite de Shockley-Queisser, cada una con sus símbolos y unidades SI, sus condiciones de uso, los errores habituales y un ejemplo numérico. Imprima en A4 solo las fórmulas que elija.",
+  "h1": "Fórmulas",
+  "lead": "Las fórmulas que se usan en los cursos, exámenes y trabajos de óptica y fotónica, agrupadas por tema. Cada una indica los símbolos con sus unidades SI, las condiciones y el rango de validez, los errores habituales y un ejemplo numérico, y las dimensiones de ambos miembros se han comprobado todas de forma automática. Los enlaces llevan a las calculadoras que usan la misma fórmula.",
+  "note": "Los valores de los ejemplos son los predeterminados de las calculadoras de este sitio o coinciden con datos de libros de texto y de fabricantes (las fuentes se indican en cada fórmula). Para el diseño, use los valores de las hojas de datos de los componentes y materiales.",
+  "groups": {
+    "geo": "Óptica geométrica y formación de imágenes",
+    "wave": "Interferencia, difracción, espectroscopia",
+    "pol": "Polarización",
+    "material": "Materiales ópticos y capas delgadas",
+    "laser": "Láseres y haces gaussianos",
+    "fiber": "Fibras ópticas y comunicaciones",
+    "detect": "Detección y sensores de imagen",
+    "nonlinear": "Óptica no lineal y pulsos ultracortos",
+    "photo": "Radiometría, fotometría y color",
+    "quantum": "Fotones, óptica cuántica, células solares"
+  },
+  "guide": [
+    {
+      "h": "Cómo se usa",
+      "p": [
+        "Escriba en el cuadro de búsqueda el nombre de una fórmula, un símbolo o un término (“Brewster”, “z_R”, “índice de grupo”) para dejar solo las fórmulas que coinciden, o acótelas con los botones de tema. Cada título tiene un enlace (#f-…) que lleva directamente a esa fórmula.",
+        "Marque “Elegir” en una fórmula para añadirla a su propio formulario. “Imprimir solo las elegidas” imprime en A4, a dos columnas, las fórmulas y las tablas de símbolos de las elegidas (de 10 a 15 fórmulas caben en una o dos páginas). Marque “Imprimir también las condiciones y los ejemplos” para imprimir también las condiciones de uso, los errores habituales y los ejemplos.",
+        "“Copiar el enlace a las elegidas” da una URL (?f=…) que abre la misma selección. La selección se guarda también en este navegador (localStorage) y nunca se envía a un servidor. Si su navegador bloquea el almacenamiento, la URL la recupera igualmente."
+      ]
+    },
+    {
+      "h": "Cómo se comprueban las dimensiones",
+      "p": [
+        "Para cada fórmula (78 en total), un programa convierte las unidades SI de la tabla de símbolos en unidades básicas (kg, m, s, K, mol, A, cd) y comprueba que ambos miembros tienen las mismas dimensiones, que los términos que se suman coinciden y que los argumentos de exp, ln, log y de las funciones trigonométricas son adimensionales. Los [ ] que siguen a cada fórmula dan las dimensiones de ambos miembros de esa línea.",
+        "El radián (rad) y el estereorradián (sr) cuentan como dimensión 1. dB y dBm también son de dimensión 1, pero en las tablas de símbolos se muestran como unidades (dB es un cociente y dBm un nivel respecto a 1 mW, y siguen reglas distintas al sumarse). El lumen es cd·sr, por lo que las fórmulas fotométricas muestran cd en sus dimensiones."
+      ]
+    }
+  ],
+  "units_h": "Conversión de unidades",
+  "units_lead": "Conversiones para unidades habituales en óptica, para pasar los valores al SI antes de usar una fórmula (según NIST SP 811 y el folleto del SI, 9.ª ed.).",
+  "units": [
+    {
+      "a": "λ [nm] → ν [THz]",
+      "b": "ν = 299 792,458/λ (1550 nm = 193,414 THz)",
+      "q": "longitud de onda y frecuencia (vacío)"
+    },
+    {
+      "a": "λ [nm] → E [eV]",
+      "b": "E = 1239,842/λ (1550 nm = 0,7999 eV)",
+      "q": "energía del fotón"
+    },
+    {
+      "a": "λ [nm] → σ̃ [cm⁻¹]",
+      "b": "σ̃ = 10⁷/λ (1550 nm = 6451,6 cm⁻¹)",
+      "q": "número de onda (espectroscopia)"
+    },
+    {
+      "a": "1 eV",
+      "b": "1,602 176 634 × 10⁻¹⁹ J = 241,799 THz = 8065,54 cm⁻¹",
+      "q": "energía"
+    },
+    {
+      "a": "Δλ → Δν",
+      "b": "Δν = cΔλ/λ² (0,8 nm ≈ 100 GHz a 1550 nm)",
+      "q": "anchura espectral, separación entre canales"
+    },
+    {
+      "a": "1 Å",
+      "b": "0,1 nm = 10⁻¹⁰ m",
+      "q": "longitud (longitud de onda, espesor de capa)"
+    },
+    {
+      "a": "G [dB]",
+      "b": "10 log₁₀(P₂/P₁) (+3,01 dB = ×2, +10 dB = ×10; 20 log₁₀ para amplitudes)",
+      "q": "cociente de potencias"
+    },
+    {
+      "a": "P [dBm]",
+      "b": "10 log₁₀(P/1 mW) (0 dBm = 1 mW, 30 dBm = 1 W, −30 dBm = 1 µW)",
+      "q": "potencia"
+    },
+    {
+      "a": "1 dB/km",
+      "b": "0,2303 km⁻¹ = 2,303 × 10⁻⁴ m⁻¹ (α[dB/km] = 4,343 α[km⁻¹])",
+      "q": "pérdidas, absorción (potencia)"
+    },
+    {
+      "a": "1 ps/(nm·km)",
+      "b": "10⁻⁶ s/m²",
+      "q": "parámetro de dispersión D"
+    },
+    {
+      "a": "1 ps²/km",
+      "b": "10⁻²⁷ s²/m",
+      "q": "dispersión de la velocidad de grupo β₂"
+    },
+    {
+      "a": "1 W/cm²",
+      "b": "10⁴ W/m² (1 GW/cm² = 10¹³ W/m²)",
+      "q": "intensidad"
+    },
+    {
+      "a": "1 cm²/W",
+      "b": "10⁻⁴ m²/W",
+      "q": "índice no lineal n₂"
+    },
+    {
+      "a": "1 lm (555 nm)",
+      "b": "1/683 W = 1,464 mW (monocromática a 540 THz)",
+      "q": "flujo luminoso y flujo radiante"
+    },
+    {
+      "a": "1 lx",
+      "b": "1 lm/m² (1 fc = 10,764 lx)",
+      "q": "iluminancia"
+    },
+    {
+      "a": "1 nt",
+      "b": "1 cd/m²",
+      "q": "luminancia"
+    },
+    {
+      "a": "1 D (dioptría)",
+      "b": "1 m⁻¹ (f = 50 mm son 20 D)",
+      "q": "potencia de una lente"
+    },
+    {
+      "a": "1″ (segundo de arco)",
+      "b": "4,848 µrad (1 mrad = 206,3″)",
+      "q": "ángulo"
+    },
+    {
+      "a": "1 mA/cm²",
+      "b": "10 A/m²",
+      "q": "densidad de corriente (células solares)"
+    },
+    {
+      "a": "T [K]",
+      "b": "t [°C] + 273,15",
+      "q": "temperatura (use K en las leyes de la radiación)"
+    }
+  ],
+  "const_h": "Constantes físicas",
+  "const_lead": "Valores recomendados CODATA 2022 (Mohr et al., Rev. Mod. Phys. 97, 025002 (2025); physics.nist.gov/cuu). “Exacta” indica las constantes fijadas por el SI de 2019 y las que se derivan de ellas, que no tienen incertidumbre. Las cifras entre paréntesis son la incertidumbre típica en las últimas cifras. Los ejemplos usan estos valores.",
+  "constants": [
+    "velocidad de la luz en el vacío",
+    "constante de Planck",
+    "constante de Planck reducida h/2π",
+    "carga elemental",
+    "constante de Boltzmann",
+    "constante de Boltzmann (eV)",
+    "constante de Planck × velocidad de la luz",
+    "constante de Stefan-Boltzmann",
+    "constante de desplazamiento de Wien (longitud de onda)",
+    "constante de desplazamiento de Wien (frecuencia)",
+    "primera constante de radiación 2πhc²",
+    "segunda constante de radiación hc/k_B",
+    "eficacia luminosa (540 THz)",
+    "permitividad eléctrica del vacío",
+    "permeabilidad magnética del vacío",
+    "impedancia característica del vacío μ₀c",
+    "masa del electrón"
+  ],
+  "faq": [
+    [
+      "¿Debo usar el índice de grupo o el índice de fase?",
+      "Las magnitudes que dependen de la fase usan el índice de fase n: la posición de las franjas, el espesor de una capa λ/4, las longitudes de onda de resonancia de un anillo (mλ = n_eff L) y el ajuste de fase (Δk). Las magnitudes ligadas a la propagación de la energía o de la envolvente usan el índice de grupo n_g = n − λ dn/dλ: el retardo de un pulso, el FSR de una cavidad y la separación entre modos longitudinales, y la posición de la envolvente en OCT o en interferometría de luz blanca. En la fibra de sílice ambos difieren en torno a un 1 %, pero en las guías de onda de silicio n_eff ≈ 2,4 y n_g ≈ 4,2 difieren mucho."
+    ],
+    [
+      "¿Cuándo se usan las fórmulas paraxiales y cuándo las exactas?",
+      "La ecuación de las lentes delgadas, las matrices ABCD, el invariante de Lagrange y las fórmulas del haz gaussiano son paraxiales (sinθ ≈ θ). Para pendientes de los rayos de 0,1 rad (unos 6°) el error es inferior al 0,2 %, pero los objetivos de NA alta y los objetivos gran angular requieren trazado de rayos con la ley de Snell o un cálculo de aberraciones. NA = n sinθ es exacta; NA ≈ 1/(2N) es la relación para una lente que cumple la condición de los senos con el objeto en el infinito."
+    ],
+    [
+      "¿Qué diferencia hay entre la reflectancia en amplitud y en intensidad?",
+      "Los r y t de las ecuaciones de Fresnel son cocientes de amplitudes de campo y tienen signo (fase). El cociente de potencias es R = |r|², pero la transmitancia es T = (n₂cosθ_t)/(n₁cosθ_i)·|t|², no |t|² (el índice cambia la potencia de la onda y el ángulo cambia la sección del haz). Los cálculos de interferencia (capas delgadas, Fabry-Pérot) suman primero las amplitudes y luego elevan al cuadrado. En dB, la potencia usa 10 log₁₀ y la amplitud 20 log₁₀."
+    ],
+    [
+      "¿Qué diferencia hay entre las magnitudes radiométricas (W) y las fotométricas (lm)?",
+      "Las magnitudes radiométricas son flujos físicos de energía (W, W/m², W/(m²·sr)); las fotométricas están ponderadas por la sensibilidad del ojo V(λ) (lm, lx, cd/m²). El mismo 1 W equivale a 683 lm a 555 nm, a unos 73 lm a 650 nm y a 0 lm en el infrarrojo. Comparar la eficiencia de los LED en W o en lm/W puede dar clasificaciones distintas."
+    ],
+    [
+      "¿Qué fórmulas tienen convenios de signos que cambian de un libro a otro?",
+      "Sobre todo la distancia objeto de una lente delgada (esta página y la calculadora toman positivo un objeto real, 1/a + 1/b = 1/f), el sentido de los radios de curvatura, el signo de r_p de Fresnel, el sentido de los ángulos de difracción de una red, el sentido de giro de la polarización circular y el signo de la parte imaginaria del parámetro q. Las magnitudes medibles, como la reflectancia o la distancia focal, no dependen del convenio, así que unifique los convenios antes de comparar pasos intermedios con otras fuentes."
+    ],
+    [
+      "¿Qué es el [ ] a la derecha de cada fórmula?",
+      "Las dimensiones de ambos miembros de esa línea en unidades básicas del SI (kg, m, s, K, mol, A, cd). La intensidad, por ejemplo, es kg·s⁻³ (= W/m²); las magnitudes adimensionales muestran 1. Úselo para comprobar la unidad de su resultado. Un programa ha comprobado que todas las fórmulas tienen las mismas dimensiones en ambos miembros."
+    ],
+    [
+      "¿Cuántas páginas ocupa imprimir las fórmulas elegidas?",
+      "Solo con las fórmulas y las tablas de símbolos, de 10 a 15 fórmulas ocupan aproximadamente una o dos páginas A4 a dos columnas. Si se incluyen las condiciones y los ejemplos, ocupa más. La cabecera, los anuncios y el cuadro de búsqueda no se imprimen, y la página sigue siendo legible con los “gráficos de fondo” desactivados en la configuración de impresión."
+    ],
+    [
+      "¿Pueden los valores de los ejemplos diferir ligeramente de los de las calculadoras?",
+      "Los ejemplos que usan los valores predeterminados de las calculadoras (lente delgada, recubrimiento antirreflectante, fibra, haz gaussiano, conversión de longitud de onda) dan los mismos valores que muestran las calculadoras. Cuando el número de cifras difiere, es solo por redondeo. Las calculadoras usan las mismas fórmulas, símbolos y convenios de signos que esta página."
+    ]
+  ],
+  "sources_h": "Fuentes principales",
+  "refs": {
+    "hecht": "Hecht, 5.ª ed.",
+    "saleh": "Saleh y Teich, 3.ª ed.",
+    "bornwolf": "Born y Wolf, 7.ª ed.",
+    "smith": "Smith, 4.ª ed.",
+    "yariv": "Yariv y Yeh, 6.ª ed.",
+    "palmer": "Palmer, 8.ª ed.",
+    "schott": "Hojas de datos de SCHOTT",
+    "malitson": "Malitson 1965",
+    "macleod": "Macleod, 5.ª ed.",
+    "siegman": "Siegman",
+    "kogelnik": "Kogelnik y Li 1966",
+    "iso11146": "ISO 11146-1",
+    "coldren": "Coldren et al., 2.ª ed.",
+    "koechner": "Koechner, 6.ª ed.",
+    "agrawal-fo": "Agrawal, Fiber-Optic Comm., 5.ª ed.",
+    "agrawal-nfo": "Agrawal, Nonlinear Fiber Optics, 6.ª ed.",
+    "marcuse": "Marcuse 1977",
+    "itu-g652": "ITU-T G.652",
+    "bogaerts": "Bogaerts et al. 2012",
+    "sze": "Sze y Ng, 3.ª ed.",
+    "mcintyre": "McIntyre 1966",
+    "rogalski": "Rogalski, 3.ª ed.",
+    "emva1288": "EMVA 1288 4.0",
+    "boyd": "Boyd, 4.ª ed.",
+    "jundt": "Jundt 1997",
+    "diels": "Diels y Rudolph, 2.ª ed.",
+    "weiner": "Weiner",
+    "udem": "Udem et al. 2002",
+    "mccluney": "McCluney, 2.ª ed.",
+    "cie015": "CIE 015:2018",
+    "bipm-si": "Folleto del SI, 9.ª ed.",
+    "codata": "CODATA 2022",
+    "loudon": "Loudon, 3.ª ed.",
+    "fox": "Fox",
+    "schubert": "Schubert, 2.ª ed.",
+    "green": "Green",
+    "sq1961": "Shockley y Queisser 1961"
+  },
+  "formulas": {
+    "snell": {
+      "name": "Ley de Snell",
+      "l": [
+        ""
+      ],
+      "m": [
+        "índices de refracción de los medios de incidencia y de refracción",
+        "ángulo de incidencia (medido desde la normal a la superficie)",
+        "ángulo de refracción (medido desde la normal)"
+      ],
+      "when": "Una frontera plana (si es curva, el plano tangente en el punto de incidencia) entre dos medios homogéneos e isótropos, grande comparada con la longitud de onda. El rayo extraordinario en un cristal birrefringente requiere un tratamiento aparte. Si n₁ sinθ₁/n₂ > 1 no hay solución y la luz se refleja totalmente.",
+      "miss": "Medir los ángulos desde la superficie en lugar de desde la normal. Confundir grados y radianes en la calculadora. La luz que entra en el medio de mayor índice se acerca a la normal, no se aleja de ella.",
+      "ex": "Del aire (n = 1) a un vidrio de n = 1,5 con θ₁ = 45°: sinθ₂ = sin45°/1,5 = 0,4714, luego θ₂ = 28,13°. Hacia el agua (n = 1,33): 32,12°.",
+      "kw": "Snell refracción ángulo de incidencia ángulo de refracción índice de refracción"
+    },
+    "critical-angle": {
+      "name": "Ángulo crítico de la reflexión total interna",
+      "l": [
+        "(n₁ > n₂)"
+      ],
+      "m": [
+        "ángulo crítico (medido desde la normal)",
+        "índice del medio del que procede la luz (índice mayor)",
+        "índice del medio exterior (índice menor)"
+      ],
+      "when": "Solo para luz que pasa de un medio de mayor índice a uno de menor índice. Para θ₁ > θ_c la luz se refleja totalmente y una onda evanescente penetra en el medio exterior (con una profundidad del orden de la longitud de onda). En una frontera sin pérdidas la reflectancia es 1.",
+      "miss": "Intercambiar n₁ y n₂, con lo que sale sin > 1. Esperar un ángulo crítico para luz que entra en el medio de mayor índice. Olvidar que s y p sufren desfases distintos en la reflexión total (ecuaciones de Fresnel).",
+      "ex": "Del vidrio (n = 1,5) al aire: θ_c = arcsin(1/1,5) = 41,81°. Del agua (1,333) al aire: 48,61°. En la frontera núcleo-revestimiento de una fibra con 1,45 y 1,4447: 85,10°.",
+      "kw": "ángulo crítico reflexión total interna RTI onda evanescente"
+    },
+    "thin-lens": {
+      "name": "Ecuación de las lentes delgadas y aumento lateral",
+      "l": [
+        "formación de imagen",
+        "aumento lateral",
+        "potencia"
+      ],
+      "m": [
+        "distancia objeto (positiva para un objeto delante de la lente)",
+        "distancia imagen (positiva para una imagen detrás de la lente)",
+        "distancia focal (positiva para una lente convergente, negativa para una divergente)",
+        "aumento lateral (negativo si la imagen es invertida)",
+        "potencia óptica (m⁻¹ = dioptría D)"
+      ],
+      "when": "Una lente delgada en aire y rayos paraxiales. Para lentes gruesas vale la misma forma con las distancias medidas desde los planos principales. Los signos siguen el mismo convenio que la calculadora de este sitio (“objeto real e imagen real son positivos”). Algunos libros toman negativa la distancia objeto (1/b − 1/a = 1/f).",
+      "miss": "Mezclar convenios de signos de libros distintos (poner un a positivo en 1/b − 1/a = 1/f). Tomar b < 0 como un error (es una imagen virtual del lado del objeto). Expresar la potencia en mm⁻¹ y llamarla D (D es m⁻¹).",
+      "ex": "f = 50 mm, a = 150 mm: 1/b = 1/50 − 1/150 da b = 75 mm y m = −0,5 (imagen real invertida, de la mitad de tamaño). Con a = 30 mm (dentro de la distancia focal), b = −75 mm y m = 2,5 (imagen virtual derecha, una lupa). P = 1/0,05 m = 20 D.",
+      "kw": "lente delgada ecuación de las lentes fórmula de Gauss aumento distancia imagen distancia objeto dioptría"
+    },
+    "lensmaker": {
+      "name": "Ecuación del fabricante de lentes",
+      "l": [
+        ""
+      ],
+      "m": [
+        "distancia focal",
+        "índice de refracción del material de la lente (en aire)",
+        "radios de curvatura de la primera y la segunda superficie (positivos si el centro de curvatura está detrás de la superficie)"
+      ],
+      "when": "Una lente delgada en aire (espesor ≪ radios), paraxial. Con espesor t: 1/f = (n − 1)[1/R₁ − 1/R₂ + (n − 1)t/(nR₁R₂)]. En un medio de índice n_m, sustituya (n − 1) por (n/n_m − 1).",
+      "miss": "El signo de R₂ en una lente biconvexa (la superficie posterior tiene R₂ < 0). Confundir el radio de curvatura con el diámetro. Olvidar el índice del medio que la rodea (una lente en agua tiene una distancia focal mayor).",
+      "ex": "Lente biconvexa de N-BK7 (n_d = 1,5168), R₁ = 100 mm, R₂ = −100 mm: 1/f = 0,5168 × (1/100 + 1/100) da f = 96,75 mm.",
+      "kw": "fabricante de lentes radio de curvatura distancia focal biconvexa planoconvexa"
+    },
+    "two-lens": {
+      "name": "Dos lentes delgadas: distancia focal efectiva y distancia focal posterior",
+      "l": [
+        "combinación",
+        "distancia focal posterior"
+      ],
+      "m": [
+        "distancia focal efectiva (medida desde el plano principal posterior)",
+        "distancias focales de la primera y la segunda lente",
+        "separación entre las lentes",
+        "distancia de la segunda lente al foco posterior"
+      ],
+      "when": "Dos lentes delgadas en aire, paraxial. En términos de potencia, P = P₁ + P₂ − dP₁P₂. Con d = f₁ + f₂, P = 0: un sistema afocal (telescopio, expansor de haz).",
+      "miss": "Medir la distancia focal efectiva desde la lente 2 (de la lente 2 al foco es la BFD). Usar la suma simple de lentes en contacto (d = 0) cuando están separadas.",
+      "ex": "f₁ = 50 mm, f₂ = 100 mm, d = 30 mm: 1/f = 0,02 + 0,01 − 0,006 = 0,024 mm⁻¹, luego f = 41,67 mm (24 D) y BFD = 41,67 × (1 − 30/50) = 16,67 mm.",
+      "kw": "distancia focal efectiva dos lentes distancia focal posterior plano principal potencia afocal"
+    },
+    "abcd": {
+      "name": "Matriz de transferencia de rayos (matriz ABCD)",
+      "l": [
+        "altura",
+        "ángulo",
+        "determinante"
+      ],
+      "m": [
+        "altura del rayo a la entrada y a la salida",
+        "pendiente del rayo a la entrada y a la salida (paraxial)",
+        "elementos diagonales de la matriz",
+        "elemento de la matriz (dimensión de longitud)",
+        "elemento de la matriz (−C es la potencia del sistema)",
+        "índices de los medios de entrada y de salida"
+      ],
+      "when": "Rayos paraxiales (sinθ ≈ θ). Un tramo de espacio libre de longitud d es [[1, d], [0, 1]]; una lente delgada de distancia focal f es [[1, 0], [−1/f, 1]]. Se multiplica de derecha a izquierda en el orden en que la luz encuentra los elementos. Con el mismo medio a la entrada y a la salida, AD − BC = 1. La distancia focal es f = −1/C y la distancia de la última superficie al foco posterior es −A/C.",
+      "miss": "Multiplicar en el orden equivocado (el primer elemento va a la derecha del todo). Introducir los ángulos en grados. Mezclar, entre medios distintos, con el convenio que usa n θ en lugar de θ (con el que el determinante vale 1).",
+      "ex": "Para f₁ = 50 mm, d = 30 mm, f₂ = 100 mm: M = L₂·T(30)·L₁ = [[0,4; 30], [−0,024; 0,7]], luego f = −1/C = 41,67 mm y −A/C = 16,67 mm (lo mismo que con la fórmula de dos lentes), con AD − BC = 1.",
+      "kw": "ABCD matriz de rayos transferencia de rayos trazado de rayos paraxial"
+    },
+    "lagrange": {
+      "name": "Invariante de Lagrange",
+      "l": [
+        "invariante",
+        "entre planos conjugados"
+      ],
+      "m": [
+        "invariante de Lagrange",
+        "índices de refracción del lado del objeto y del lado de la imagen",
+        "pendiente del rayo marginal (del punto axial al borde de la apertura)",
+        "alturas del objeto y de la imagen"
+      ],
+      "when": "Paraxial, entre los planos objeto e imagen (planos conjugados). En una superficie cualquiera, H = n(ū y − u ȳ) (rayo marginal y, u y rayo principal ȳ, ū) toma el mismo valor en todas las superficies. Su cuadrado es proporcional a la luz que puede pasar por el sistema (étendue).",
+      "miss": "Tomar el aumento lateral m = y′/y como aumento angular (m = n u/(n′ u′)). Olvidar que una imagen más pequeña implica ángulos mayores (NA más alta) y diseñar por encima de la NA de la lente.",
+      "ex": "Altura del objeto y = 10 mm y pendiente del rayo marginal u = 0,1 en el objeto (en aire): H = 1,0 mm. Formando la imagen con m = −0,5 se obtiene y′ = −5 mm, luego u′ = H/y′ = −0,2: la pendiente (NA) del lado de la imagen se duplica.",
+      "kw": "invariante de Lagrange Helmholtz étendue conjugado paraxial"
+    },
+    "na-fnumber": {
+      "name": "Apertura numérica y número f",
+      "l": [
+        "apertura numérica",
+        "número f",
+        "objeto en el infinito, en aire"
+      ],
+      "m": [
+        "apertura numérica",
+        "índice de refracción del lado del objeto (o de la imagen)",
+        "semiángulo del rayo marginal",
+        "número f (también F/#)",
+        "distancia focal",
+        "diámetro de la pupila de entrada"
+      ],
+      "when": "La fórmula de la NA es exacta. NA ≈ 1/(2N) vale para una lente que cumple la condición de los senos (corregida de aberraciones) con el objeto en el infinito. Para objetos cercanos, use el número f de trabajo N(1 + |m|). Los objetivos de inmersión tienen NA mayor que 1.",
+      "miss": "Usar el ángulo total del cono en lugar del semiángulo. Aplicar NA ≈ 1/(2N) a conjugados finitos. Invertir la relación entre número f y apertura (un número f menor es más luminoso).",
+      "ex": "f = 50 mm, D = 25 mm: N = 2 y NA ≈ 1/(2N) = 0,25 (en una lente que cumple la condición de los senos la altura del rayo marginal es f sinθ, de modo que sinθ = 12,5/50 = 0,25 se cumple directamente; el 0,2425 que se obtiene de arctan(12,5/50) con un plano principal plano corresponde a una lente que no cumple la condición de los senos). Inmersión en aceite (n = 1,515) con θ = 67,5°: NA = 1,40.",
+      "kw": "apertura numérica NA número f F/# apertura inmersión"
+    },
+    "young": {
+      "name": "Interferencia de Young con doble rendija",
+      "l": [
+        "franjas brillantes",
+        "interfranja"
+      ],
+      "m": [
+        "separación entre las dos rendijas",
+        "dirección de una franja brillante",
+        "orden (entero)",
+        "longitud de onda",
+        "separación entre franjas en la pantalla",
+        "distancia de las rendijas a la pantalla"
+      ],
+      "when": "Las dos fuentes están en fase (coherencia espacial). La fórmula de Δy requiere L ≫ d y θ pequeño (sinθ ≈ tanθ). La envolvente de las franjas la fija la difracción de cada rendija.",
+      "miss": "Confundir la anchura de la rendija con la separación entre rendijas. Olvidar que la longitud de onda en un medio es λ₀/n. Escribir las franjas oscuras como d sinθ = mλ (las oscuras están en (m + 1/2)λ).",
+      "ex": "λ = 632,8 nm, d = 0,25 mm, L = 1,0 m: Δy = 632,8 × 10⁻⁹ × 1,0/(0,25 × 10⁻³) = 2,531 mm.",
+      "kw": "Young doble rendija interferencia franjas interfranja"
+    },
+    "michelson": {
+      "name": "Interferómetro de Michelson",
+      "l": [
+        "anillos brillantes",
+        "recuento de franjas"
+      ],
+      "m": [
+        "diferencia de longitud de los brazos (posiciones de los espejos)",
+        "ángulo de la luz (ángulo en el campo de visión)",
+        "orden",
+        "longitud de onda (en aire)",
+        "desplazamiento del espejo",
+        "número de franjas que pasan por el centro"
+      ],
+      "when": "Los dos brazos tienen el mismo número de reflexiones y el mismo desfase en la cara del divisor de haz (con lámina compensadora). Según el divisor, las condiciones de franja brillante y oscura pueden intercambiarse. Las franjas desaparecen cuando la diferencia de camino supera la longitud de coherencia.",
+      "miss": "Olvidar la ida y vuelta y escribir Δd = Nλ (desplazar el espejo λ/2 hace pasar una franja). No tener en cuenta la diferencia entre la longitud de onda en el vacío y en el aire (n ≈ 1,00027) en medidas de longitud precisas.",
+      "ex": "Con luz de 632,8 nm pasan 1000 franjas: Δd = 1000 × 632,8/2 nm = 316,4 µm.",
+      "kw": "Michelson interferómetro diferencia de camino franjas desplazamiento"
+    },
+    "coherence-length": {
+      "name": "Longitud de coherencia",
+      "l": [
+        "",
+        "a partir de la anchura en longitud de onda"
+      ],
+      "m": [
+        "longitud de coherencia (en el vacío)",
+        "tiempo de coherencia",
+        "velocidad de la luz",
+        "anchura espectral (frecuencia)",
+        "longitud de onda central",
+        "anchura espectral (longitud de onda)"
+      ],
+      "when": "Una fórmula de orden de magnitud. El factor numérico depende de la forma del espectro y de la definición de la anchura (para un espectro gaussiano con anchura a media altura Δλ, tomar l_c como la anchura a media altura de |g(τ)| en diferencia de camino da l_c = (4 ln2/π)λ²/Δλ ≈ 0,88λ²/Δλ). En un medio, divida por el índice de grupo. Las franjas son nítidas cuando la diferencia de camino es bastante menor que este valor.",
+      "miss": "Comparar valores de libros distintos sin fijarse en el factor que acompaña a λ²/Δλ. La resolución en profundidad de la OCT es l_c/2 por la ida y vuelta, que para un espectro gaussiano es (2 ln2/π)λ²/Δλ ≈ 0,44λ²/Δλ (algunos libros llaman longitud de coherencia a esta expresión con 0,44, así que no la divida otra vez por 2).",
+      "ex": "LED de 850 nm (Δλ = 40 nm): l_c ≈ 850²/40 nm = 18,1 µm (15,9 µm con la definición gaussiana de anchura a media altura; resolución de OCT 7,97 µm). Láser de He-Ne con Δν = 1,5 GHz: c/Δν = 0,200 m. Láser monofrecuencia con 1 MHz de anchura de línea: 300 m.",
+      "kw": "longitud de coherencia tiempo de coherencia coherencia temporal anchura de línea OCT"
+    },
+    "fabry-perot": {
+      "name": "Transmisión de un Fabry-Pérot (función de Airy)",
+      "l": [
+        "transmitancia",
+        "coeficiente de fineza",
+        "fase de ida y vuelta"
+      ],
+      "m": [
+        "transmitancia (intensidad)",
+        "coeficiente de fineza",
+        "reflectancia de los espejos (intensidad, igual en ambos)",
+        "fase de ida y vuelta",
+        "índice del medio entre los espejos",
+        "separación entre los espejos",
+        "ángulo de la luz entre los espejos",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Dos espejos iguales sin pérdidas y una onda plana. Con una absorción A, la transmitancia de pico baja a (1 − A/(1 − R))². La fase de reflexión de los espejos va incluida en δ (aquí se toma constante y se omite).",
+      "miss": "Confundir el coeficiente F con la fineza 𝓕 = π√F/2. Usar la reflectancia en amplitud como R. Los picos de transmisión están en δ = 2πm (L = mλ/(2n), un número entero de longitudes de onda por ida y vuelta).",
+      "ex": "R = 0,9: F = 4 × 0,9/0,1² = 360. Con δ/2 = π/2 (transmisión mínima), T = 1/361 = 0,00277.",
+      "kw": "Fabry-Pérot etalón función de Airy transmitancia resonancia"
+    },
+    "fsr-finesse": {
+      "name": "Rango espectral libre (FSR) y fineza",
+      "l": [
+        "FSR",
+        "fineza",
+        "anchura de línea de transmisión (FWHM)"
+      ],
+      "m": [
+        "separación entre picos de transmisión contiguos (frecuencia)",
+        "velocidad de la luz",
+        "índice de grupo entre los espejos (1 en aire o en el vacío)",
+        "separación entre los espejos",
+        "fineza (limitada por la reflectancia)",
+        "reflectancia de los espejos (intensidad)",
+        "anchura a media altura de un pico de transmisión"
+      ],
+      "when": "La fórmula de 𝓕 es una aproximación para R próxima a 1 (R ≳ 0,5); la planitud y el paralelismo de los espejos reducen la fineza real. En longitud de onda, Δλ_FSR = λ²/(2n_g L). Al usarlo como espectrómetro, el espectro de la luz medida debe ser más estrecho que el FSR o los órdenes se solapan.",
+      "miss": "Escribir el FSR como c/(nL) (la ida y vuelta es 2L). Usar el índice de fase en un medio dispersivo (use el índice de grupo). Confundir la fineza (adimensional) con el factor Q (ν/δν).",
+      "ex": "Separación de aire L = 5 mm: Δν_FSR = c/(2 × 0,005 m) = 29,98 GHz. Con R = 0,95, 𝓕 = π√0,95/0,05 = 61,2 y δν = 29,98/61,2 = 0,490 GHz.",
+      "kw": "FSR rango espectral libre fineza etalón cavidad anchura de línea"
+    },
+    "airy-rayleigh": {
+      "name": "Disco de Airy y criterio de Rayleigh",
+      "l": [
+        "ángulo del primer anillo oscuro",
+        "resolución de un microscopio (Rayleigh)"
+      ],
+      "m": [
+        "radio angular del primer anillo oscuro del disco de Airy (= menor ángulo resoluble)",
+        "longitud de onda",
+        "diámetro de la apertura circular",
+        "menor separación resoluble entre dos puntos (plano objeto)",
+        "apertura numérica del objetivo"
+      ],
+      "when": "Una apertura circular sin aberraciones y dos puntos incoherentes (autoluminosos o fluorescentes). Por convenio, dos puntos se resuelven justo cuando el centro de la imagen de uno cae sobre el primer anillo oscuro del otro; la intensidad en el punto medio entre ambos es de un 74 % del pico. El 1,22 es el primer cero de la función de Bessel de primer orden dividido por π, 3,832/π.",
+      "miss": "Confundir diámetro y radio (1,22λ/D usa el diámetro D). Olvidar convertir radianes en segundos de arco. Usar 0,61λ/NA con iluminación coherente (depende de la iluminación).",
+      "ex": "Telescopio de 100 mm de diámetro con λ = 550 nm: θ_R = 1,22 × 550 × 10⁻⁹/0,1 = 6,71 µrad = 1,38″. Objetivo de NA 1,4 con λ = 550 nm: δ = 0,61 × 550/1,4 = 240 nm.",
+      "kw": "disco de Airy criterio de Rayleigh resolución límite de difracción 1,22"
+    },
+    "abbe-limit": {
+      "name": "Límite de resolución de Abbe",
+      "l": [
+        ""
+      ],
+      "m": [
+        "menor periodo resoluble (paso de una red)",
+        "longitud de onda de iluminación (en el vacío)",
+        "apertura numérica del objetivo (con la misma NA de iluminación)"
+      ],
+      "when": "Un objeto periódico con iluminación coherente y una NA de iluminación igual a la del objetivo (o iluminación oblicua): el límite en que los órdenes de difracción 0 y 1 entran ambos en el objetivo. Con iluminación coherente solo en incidencia normal, el límite es λ/NA. La NA incluye el índice del medio, por lo que la inmersión lo reduce.",
+      "miss": "Confundirlo con el criterio de Rayleigh (0,61λ/NA, dos puntos). Leer d_min como un radio (es un periodo). Usar solo sinθ como NA y olvidar el índice de refracción.",
+      "ex": "λ = 550 nm, NA = 1,4: d_min = 550/(2 × 1,4) = 196 nm.",
+      "kw": "Abbe resolución límite de difracción apertura numérica microscopio"
+    },
+    "grating": {
+      "name": "Ecuación de la red y poder de resolución",
+      "l": [
+        "dirección de difracción",
+        "poder de resolución"
+      ],
+      "m": [
+        "paso de los surcos (inverso de los surcos por mm)",
+        "ángulo de incidencia (desde la normal)",
+        "ángulo de difracción (positivo del mismo lado que la luz incidente)",
+        "orden de difracción",
+        "longitud de onda",
+        "menor diferencia de longitud de onda resoluble",
+        "número de surcos iluminados"
+      ],
+      "when": "Una red plana y una onda plana. Convenio de signos: los ángulos de difracción del mismo lado que el haz incidente son positivos (con el convenio opuesto se escribe sinα − sinβ). Solo existen los órdenes con |sinβ| ≤ 1. El poder de resolución es el valor ideal; en un espectrómetro real suele limitarlo la anchura de la rendija.",
+      "miss": "Poner directamente los surcos por mm como d (d = 1/densidad). Mezclar convenios de signos. Tomar como N todos los surcos de la red (solo cuenta la parte iluminada).",
+      "ex": "1200 surcos/mm (d = 833,3 nm), λ = 532 nm, incidencia normal: sinβ = 532/833,3 = 0,6384, luego β = 39,67° (primer orden). Iluminando 50 mm, N = 60000 y en primer orden δλ = 532/60000 nm = 8,87 pm. Separar el doblete D del Na (589,0 y 589,6 nm) requiere mN > 982 (589,3/0,6).",
+      "kw": "red de difracción ecuación de la red poder de resolución espectrómetro orden"
+    },
+    "fresnel-amp": {
+      "name": "Ecuaciones de Fresnel (coeficientes de amplitud)",
+      "l": [
+        "polarización s",
+        "polarización p",
+        "polarización s",
+        "polarización p"
+      ],
+      "m": [
+        "coeficientes de reflexión en amplitud (s: E perpendicular al plano de incidencia, p: E en el plano)",
+        "coeficientes de transmisión en amplitud",
+        "índices de los medios de incidencia y de transmisión",
+        "ángulo de incidencia",
+        "ángulo de refracción (de la ley de Snell)"
+      ],
+      "when": "Medios isótropos sin pérdidas (n real) con la permeabilidad del vacío. Con absorción, use un n complejo en las mismas fórmulas. El signo de r_p cambia de un libro a otro (esta forma sigue a Hecht y a Born y Wolf, con r_p = −r_s en incidencia normal).",
+      "miss": "Mezclar convenios de signos para r_p (la reflectancia en intensidad es la misma). Tomar |t|² como transmitancia (hace falta el factor de índice y ángulo). Leer p (“paralela”) como “E paralelo a la superficie” e intercambiarla con s (p tiene E en el plano de incidencia; es el campo s el que es paralelo a la superficie).",
+      "ex": "n₁ = 1, n₂ = 1,5, θ_i = 45° (θ_t = 28,13°): r_s = −0,3033, r_p = 0,0920, t_s = 0,6967, t_p = 0,7280.",
+      "kw": "ecuaciones de Fresnel coeficiente de reflexión coeficiente de transmisión polarización s polarización p TE TM"
+    },
+    "fresnel-power": {
+      "name": "Reflectancia y transmitancia (intensidad)",
+      "l": [
+        "reflectancia",
+        "transmitancia",
+        "incidencia normal"
+      ],
+      "m": [
+        "reflectancia (cociente de potencias)",
+        "coeficiente de reflexión en amplitud (s o p)",
+        "transmitancia (cociente de potencias, R + T = 1)",
+        "coeficiente de transmisión en amplitud",
+        "índices de los medios de incidencia y de transmisión",
+        "ángulos de incidencia y de refracción",
+        "reflectancia en incidencia normal"
+      ],
+      "when": "Una sola interfaz sin pérdidas. Para luz no polarizada use (R_s + R_p)/2. Para las dos caras de una lámina, sume de forma incoherente (sumando las reflexiones múltiples se obtiene T_{lámina} = (1 − R)/(1 + R)).",
+      "miss": "Usar el cociente de amplitudes como reflectancia (hay que elevarlo al cuadrado). Escribir T = |t|² (T lleva el factor de índice y de área del haz). Olvidar el 4 % × 2 de las dos caras de una lámina.",
+      "ex": "Vidrio (1,52) en incidencia normal: R₀ = (0,52/2,52)² = 4,26 %. Silicio (3,48 a 1,55 µm): 30,6 %. n = 1,5 a 45°: R_s = 9,20 %, R_p = 0,85 %, T_s = 90,80 % (R_s + T_s = 1).",
+      "kw": "reflectancia transmitancia incidencia normal 4 % reflexión de Fresnel"
+    },
+    "brewster": {
+      "name": "Ángulo de Brewster",
+      "l": [
+        "",
+        "ángulo de refracción en el ángulo de Brewster"
+      ],
+      "m": [
+        "ángulo de Brewster (ángulo de incidencia en que se anula la reflexión p)",
+        "índices de los medios de incidencia y de transmisión",
+        "ángulo de refracción"
+      ],
+      "when": "Medios isótropos sin pérdidas, solo polarización p. En metales absorbentes la reflectancia nunca llega a cero, sino que pasa por un mínimo (cerca del ángulo principal). La luz reflejada está polarizada s por completo, lo que se aprovecha en polarizadores y en las ventanas de Brewster de los láseres.",
+      "miss": "Intercambiar n₁ y n₂ (desde dentro del vidrio es 33,7°). Esperar que también se anule la reflexión s. Confundir el ángulo de Brewster con el ángulo crítico.",
+      "ex": "Del aire a n = 1,5: θ_B = arctan 1,5 = 56,31°. Desde dentro del vidrio hacia el aire: arctan(1/1,5) = 33,69° (ambos suman 90°).",
+      "kw": "ángulo de Brewster ángulo de polarización polarización p ventana de Brewster"
+    },
+    "malus": {
+      "name": "Ley de Malus",
+      "l": [
+        ""
+      ],
+      "m": [
+        "intensidad después del analizador",
+        "intensidad de la luz linealmente polarizada que entra en el analizador",
+        "ángulo entre la polarización y el eje de transmisión del analizador"
+      ],
+      "when": "Un polarizador ideal (deja pasar por completo la componente según su eje y bloquea la perpendicular) y luz totalmente polarizada lineal. La luz no polarizada que atraviesa un polarizador da I₀/2 (el valor medio de cos²). Los polarizadores reales tienen una relación de extinción y una transmitancia finitas.",
+      "miss": "Aplicar cos² a la luz no polarizada (es 1/2). Confundir el factor de amplitud cosθ con el factor de intensidad cos²θ.",
+      "ex": "θ = 60°: I/I₀ = cos²60° = 0,25. Luz no polarizada a través de tres polarizadores a 0°, 45° y 90°: 1/2 × cos²45° × cos²45° = 1/8 (solo con los de 0° y 90° da 0).",
+      "kw": "ley de Malus polarizador analizador cos2 extinción"
+    },
+    "jones": {
+      "name": "Matrices de Jones",
+      "l": [
+        "vector del campo",
+        "polarizador lineal",
+        "lámina de onda (eje rápido según x)"
+      ],
+      "m": [
+        "campo eléctrico de la luz entrante y saliente (amplitudes complejas en x e y)",
+        "matriz de Jones (2 × 2)",
+        "polarizador lineal con su eje a θ de x",
+        "ángulo del eje de transmisión",
+        "lámina de onda (se omite la fase común)",
+        "diferencia de fase entre los ejes rápido y lento (retardo)"
+      ],
+      "when": "Solo luz totalmente polarizada (coherente). La luz parcialmente polarizada o no polarizada requiere vectores de Stokes y matrices de Mueller. Las matrices de los elementos se multiplican de derecha a izquierda en el orden en que la luz los encuentra. Un elemento girado un ángulo φ pasa a ser R(−φ)·J·R(φ).",
+      "miss": "Multiplicar en el orden equivocado. El convenio de fase (e^{i(kz − ωt)} o e^{i(ωt − kz)}) invierte la denominación de la luz dextrógira y levógira. La intensidad es |E_x|² + |E_y|² (suma de los cuadrados de las componentes).",
+      "ex": "La polarización lineal a 45° (1, 1)/√2 a través de una lámina λ/4 con el eje rápido según x (Γ = π/2) da (1, i)/√2, polarización circular. La luz lineal a 45° a través de un polarizador a 0° da (1, 0)/√2, con intensidad 1/2 (como dice la ley de Malus).",
+      "kw": "matriz de Jones vector de Jones polarización lámina de onda polarización circular"
+    },
+    "waveplate": {
+      "name": "Retardo de una lámina de onda",
+      "l": [
+        "",
+        "lámina λ/4 (orden cero)"
+      ],
+      "m": [
+        "diferencia de fase entre los rayos ordinario y extraordinario",
+        "índices extraordinario y ordinario (eje óptico en el plano de la lámina)",
+        "espesor de la lámina",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Un cristal uniáxico con el eje óptico en el plano de la lámina, en incidencia normal. La birrefringencia n_e − n_o varía con la longitud de onda, de modo que una lámina es λ/4 o λ/2 solo a su longitud de onda de diseño. Las láminas de orden múltiple (Γ = 2πm + π/2) son más gruesas y fáciles de fabricar, pero más sensibles a la longitud de onda, la temperatura y el ángulo.",
+      "miss": "Usar como λ la longitud de onda en el medio. No tener en cuenta el signo de n_e − n_o (positivo en el cuarzo, negativo en la calcita) y confundir el eje rápido. Recordar la lámina λ/2 como “gira la polarización 90°” (la gira el doble del ángulo entre la polarización y el eje).",
+      "ex": "Lámina λ/4 de orden cero de cuarzo (n_e − n_o = 0,00907 a 633 nm): d = 633/(4 × 0,00907) nm = 17,4 µm.",
+      "kw": "lámina de onda lámina λ/4 lámina λ/2 cuarto de onda media onda retardo birrefringencia"
+    },
+    "faraday": {
+      "name": "Rotación de Faraday",
+      "l": [
+        ""
+      ],
+      "m": [
+        "rotación del plano de polarización",
+        "constante de Verdet (depende del material, la longitud de onda y la temperatura)",
+        "densidad de flujo magnético en la dirección del haz",
+        "longitud del material"
+      ],
+      "when": "Un campo uniforme en la dirección del haz. El sentido de giro lo fija la dirección del campo, no la de propagación (no recíproco). En ida y vuelta se obtiene 2β, y un rotador de 45° entre polarizadores forma un aislador óptico.",
+      "miss": "Esperar que la rotación se anule en ida y vuelta (no se anula, a diferencia de la actividad óptica). Mezclar rad y grados, o T y G (gauss), en la constante de Verdet.",
+      "ex": "TGG (1064 nm, V ≈ −40 rad/(T·m)): una rotación de 45° (π/4 rad) requiere |B|L = 0,785/40 = 0,0196 T·m, es decir, una longitud de 19,6 mm con 1 T.",
+      "kw": "rotación de Faraday constante de Verdet aislador óptico magnetoóptico no recíproco"
+    },
+    "sellmeier": {
+      "name": "Ecuación de Sellmeier",
+      "l": [
+        ""
+      ],
+      "m": [
+        "índice de refracción",
+        "longitud de onda en el vacío (en las tablas de coeficientes, a menudo en µm)",
+        "coeficientes (adimensionales)",
+        "coeficientes (cuadrados de longitudes de onda de absorción)"
+      ],
+      "when": "Un ajuste para el rango transparente, lejos de las bandas de absorción. Use coeficientes de los datos del fabricante (p. ej., SCHOTT) o de la bibliografía y no extrapole fuera del rango de longitudes de onda indicado. El índice cambia con la temperatura (dn/dT).",
+      "miss": "Mezclar C_i de una tabla en µm² con λ en m (use unidades coherentes). Tomar C_i como una longitud de onda en lugar de su cuadrado. Leer n² como n (tome la raíz cuadrada al final).",
+      "ex": "N-BK7 (B = 1,03961212; 0,231792344; 1,01046945; C = 0,00600069867; 0,0200179144; 103,560653 µm²) a 587,56 nm: n = 1,51680. Sílice fundida (Malitson 1965) a 1550 nm: n = 1,44402.",
+      "kw": "Sellmeier fórmula de dispersión índice de refracción dispersión cromática"
+    },
+    "cauchy": {
+      "name": "Ecuación de Cauchy",
+      "l": [
+        ""
+      ],
+      "m": [
+        "índice de refracción",
+        "coeficiente",
+        "coeficiente",
+        "coeficiente",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Un ajuste sencillo para la dispersión normal en el visible (lejos de las bandas de absorción, con n decreciente con la longitud de onda). Falla cerca de las bandas de absorción del ultravioleta y del infrarrojo; para rangos amplios use la ecuación de Sellmeier.",
+      "miss": "No mantener coherentes las unidades de B (µm² o nm²). Extrapolar fuera del rango sin comprobar que bastan dos términos.",
+      "ex": "A = 1,5046, B = 0,00420 µm² (aproximación para el BK7): n = 1,5046 + 0,00420/0,5876² = 1,5168 a 587,6 nm, 1,5224 a 486,1 nm y 1,5144 a 656,3 nm.",
+      "kw": "Cauchy dispersión índice de refracción dispersión normal"
+    },
+    "abbe-number": {
+      "name": "Número de Abbe",
+      "l": [
+        ""
+      ],
+      "m": [
+        "número de Abbe (cuanto mayor, menos dispersión)",
+        "índice en la línea d (587,56 nm)",
+        "índice en la línea F (486,13 nm)",
+        "índice en la línea C (656,27 nm)"
+      ],
+      "when": "Una medida de la dispersión en el visible. Algunas normas usan V_e con las líneas e (546,07 nm), F′ (479,99 nm) y C′ (643,85 nm). Los vidrios con V_d > 50 se suelen llamar crown y los de valor menor, flint.",
+      "miss": "Confundir V_d con n_d. Invertir el orden en el denominador (n_F − n_C; F es la longitud de onda más corta) y obtener un valor negativo.",
+      "ex": "N-BK7 (n_d = 1,51680; n_F = 1,522376; n_C = 1,514322): V_d = 0,51680/0,008054 = 64,17. F2 (n_d = 1,620040; n_F = 1,632081; n_C = 1,615032): V_d = 36,37.",
+      "kw": "número de Abbe dispersión crown flint aberración cromática"
+    },
+    "achromat": {
+      "name": "Condición del doblete acromático (dos lentes delgadas en contacto)",
+      "l": [
+        "condición acromática",
+        "primera lente",
+        "segunda lente"
+      ],
+      "m": [
+        "potencia del doblete y de cada lente (1/f)",
+        "números de Abbe de los dos vidrios"
+      ],
+      "when": "Dos lentes delgadas en contacto que hacen coincidir los focos F y C (corrección para dos colores). Queda una diferencia residual en la línea d (espectro secundario). Para hacer coincidir tres colores hace falta una lente apocromática (con vidrios de dispersión anómala).",
+      "miss": "Elegir vidrios con una diferencia V₁ − V₂ pequeña (cada lente resulta demasiado potente). Equivocarse en los signos (un crown convergente con un flint divergente, de modo que φ₂ es negativa).",
+      "ex": "f = 100 mm (φ = 0,01 mm⁻¹) con N-BK7 (64,17) y F2 (36,37): φ₁ = 0,01 × 64,17/27,80 da f₁ = 43,32 mm y φ₂ = −0,01 × 36,37/27,80 da f₂ = −76,44 mm.",
+      "kw": "acromático doblete acromático aberración cromática número de Abbe"
+    },
+    "absorption": {
+      "name": "Coeficiente de absorción (ley de Beer-Lambert)",
+      "l": [
+        "intensidad",
+        "a partir del coeficiente de extinción"
+      ],
+      "m": [
+        "intensidad a la profundidad z y a la entrada",
+        "coeficiente de absorción (intensidad)",
+        "distancia recorrida",
+        "coeficiente de extinción (parte imaginaria del índice complejo n + iκ)",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Un medio homogéneo sin dispersión (scattering), a baja intensidad (sin saturación). Las pérdidas por reflexión en las superficies se cuentan aparte. En química se escribe A = εcl con la absortividad molar y logaritmos decimales. En dB/m es 4,343α.",
+      "miss": "Confundir la atenuación de la amplitud (α/2) con la de la intensidad (α). Mezclar la absorbancia decimal con el α en logaritmo natural (α = 2,303 × absorbancia/espesor).",
+      "ex": "κ = 1,0 × 10⁻⁴ con λ = 1 µm: α = 4π × 10⁻⁴/10⁻⁶ = 1257 m⁻¹ (12,57 cm⁻¹), y la intensidad cae a 1/e (36,8 %) a 1/α = 0,796 mm.",
+      "kw": "coeficiente de absorción Beer Lambert coeficiente de extinción profundidad de penetración absorbancia"
+    },
+    "ar-quarter": {
+      "name": "Recubrimiento antirreflectante de una capa (capa λ/4)",
+      "l": [
+        "espesor de la capa",
+        "índice ideal de la capa",
+        "reflectancia a la longitud de onda de diseño"
+      ],
+      "m": [
+        "espesor físico de la capa",
+        "longitud de onda de diseño (en el vacío)",
+        "índice de la capa",
+        "índice del medio de incidencia (1 para el aire)",
+        "índice del sustrato",
+        "reflectancia a la longitud de onda de diseño, en incidencia normal (una superficie)"
+      ],
+      "when": "Incidencia normal, capa y sustrato sin absorción ni dispersión, una sola superficie. Reduce la reflexión cuando n₀ < n₁ < nₛ. En incidencia oblicua, la longitud de onda en que se anula la reflexión se desplaza hacia longitudes más cortas y s y p difieren.",
+      "miss": "Tomar el espesor óptico λ/4 como espesor físico (hay que dividir por n₁). Esperar que una capa λ/2 también reduzca la reflexión (equivale a no tener capa). Olvidar el 4 % de la cara posterior del sustrato.",
+      "ex": "MgF₂ (n₁ = 1,38) sobre vidrio (nₛ = 1,52) para 550 nm: d = 550/(4 × 1,38) = 99,64 nm, índice ideal √1,52 = 1,2329, R = ((1,52 − 1,9044)/(1,52 + 1,9044))² = 1,26 % (4,26 % sin recubrimiento).",
+      "kw": "recubrimiento antirreflectante capa AR capa λ/4 cuarto de onda MgF2 una capa"
+    },
+    "ar-single": {
+      "name": "Reflectancia de una capa (a cualquier longitud de onda)",
+      "l": [
+        "amplitud",
+        "espesor de fase de la capa"
+      ],
+      "m": [
+        "coeficiente de reflexión en amplitud de la superficie recubierta (R = |r|²)",
+        "coeficientes de reflexión en amplitud de las interfaces superior e inferior ((n₀ − n₁)/(n₀ + n₁), etc.)",
+        "fase en una pasada por la capa",
+        "índice de la capa",
+        "espesor de la capa",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Incidencia normal y una capa sin absorción (la forma exacta que suma todas las reflexiones múltiples). En incidencia oblicua, multiplique δ por cosθ₁ y use los coeficientes s y p. Las multicapas usan el producto de matrices características.",
+      "miss": "Olvidar el 2 de e^{−2iδ} (ida y vuelta). El convenio de signo de la fase (algunos libros escriben e^{+2iδ}; |r|² es el mismo).",
+      "ex": "Capa λ/4 de MgF₂ para 550 nm (99,64 nm) sobre vidrio (1,52): R = 1,62 % a 450 nm, 1,60 % a 700 nm y 2,21 % a 400 nm.",
+      "kw": "interferencia en capas delgadas reflectancia una capa recubrimiento antirreflectante espectral"
+    },
+    "hr-stack": {
+      "name": "Espejo dieléctrico multicapa ((HL)ᴺH)",
+      "l": [
+        "reflectancia de pico",
+        "banda de alta reflectancia"
+      ],
+      "m": [
+        "reflectancia a la longitud de onda de diseño",
+        "admitancia normalizada del apilamiento",
+        "índices de las capas de índice alto y bajo",
+        "número de pares HL (2N + 1 capas en total)",
+        "índices del medio de incidencia y del sustrato",
+        "anchura total de la banda de alta reflectancia (en g = λ₀/λ)"
+      ],
+      "when": "Todas las capas son λ/4 a la longitud de onda de diseño, incidencia normal, sin absorción. Tanto la capa más externa como la contigua al sustrato son H. Los bordes de la banda están en λ = λ₀/(1 ± Δg/2), y la anchura es Δλ ≈ λ₀Δg cuando la banda es estrecha.",
+      "miss": "Confundir N con el número de capas. Usar esta fórmula para un apilamiento que termina en L (Y cambia). Confundir la semianchura con la anchura total.",
+      "ex": "TiO₂ (2,35)/SiO₂ (1,46) sobre vidrio (1,52): N = 7 (15 capas) da R = 99,86 % y N = 5 da 99,06 %. La banda es Δg = 0,300, así que en torno a 1064 nm λ₀Δg ≈ 319 nm (los bordes están en 925 nm y 1252 nm, una anchura de 327 nm).",
+      "kw": "espejo dieléctrico multicapa reflector de Bragg recubrimiento HR apilamiento λ/4"
+    },
+    "gauss-w": {
+      "name": "Radio del haz gaussiano y longitud de Rayleigh",
+      "l": [
+        "radio del haz",
+        "longitud de Rayleigh"
+      ],
+      "m": [
+        "radio del haz a la distancia z (1/e² de la intensidad de pico)",
+        "radio de la cintura",
+        "distancia desde la cintura",
+        "longitud de Rayleigh (el radio crece en un factor √2)",
+        "índice de refracción del medio",
+        "calidad del haz (1 para un haz ideal)",
+        "longitud de onda en el vacío"
+      ],
+      "when": "Haces paraxiales (w₀ ≫ λ). Para haces reales con M² > 1 se supone que el radio de segundo momento crece del mismo modo (gaussiano incrustado).",
+      "miss": "Confundir diámetro y radio (el diámetro a 1/e² es 2w). Tomar como w la anchura a media altura de la intensidad (FWHM = 1,177w).",
+      "ex": "λ = 1064 nm, w₀ = 500 µm, M² = 1, en aire: z_R = π × (0,5 mm)²/1,064 µm = 738,2 mm. A z = 1000 mm, w = 842 µm (diámetro 1,68 mm).",
+      "kw": "haz gaussiano radio del haz longitud de Rayleigh cintura profundidad de foco"
+    },
+    "gauss-r": {
+      "name": "Radio de curvatura del frente de onda y fase de Gouy",
+      "l": [
+        "radio de curvatura",
+        "fase de Gouy"
+      ],
+      "m": [
+        "radio de curvatura del frente de onda (positivo más allá de la cintura)",
+        "distancia desde la cintura",
+        "longitud de Rayleigh",
+        "fase de Gouy (desfase respecto a una onda plana)"
+      ],
+      "when": "R es infinito en la cintura (frente de onda plano), mínimo (2z_R) en z = z_R y R ≈ z lejos de ella. La fase de Gouy cambia π en total al atravesar la cintura; los modos de orden superior (TEMₘₙ) tienen (m + n + 1)ψ, lo que desplaza sus frecuencias de resonancia en una cavidad.",
+      "miss": "Tomar R(z) igual a z (solo vale para z ≫ z_R). Olvidar el cambio de signo antes de la cintura (z < 0).",
+      "ex": "λ = 1064 nm, w₀ = 500 µm (z_R = 738,2 mm), z = 1000 mm: R = 1000 × (1 + 0,7382²) = 1545 mm y ψ = arctan(1000/738,2) = 53,57°.",
+      "kw": "radio de curvatura frente de onda fase de Gouy haz gaussiano"
+    },
+    "divergence-bpp": {
+      "name": "Divergencia y producto de parámetros del haz",
+      "l": [
+        "semiángulo",
+        "BPP"
+      ],
+      "m": [
+        "semiángulo de divergencia en campo lejano",
+        "calidad del haz",
+        "longitud de onda en el vacío",
+        "índice de refracción del medio",
+        "radio de la cintura"
+      ],
+      "when": "Campo lejano, z ≫ z_R. El BPP suele darse como w₀θ (radio × semiángulo) y no cambia con lentes sin aberraciones. Algunas especificaciones usan diámetro × ángulo total, que es cuatro veces mayor.",
+      "miss": "Mezclar ángulo total y semiángulo, o diámetro y radio (compruebe qué convenio usa un BPP en mm·mrad).",
+      "ex": "λ = 1064 nm, w₀ = 500 µm, M² = 1: θ = 1,064/(π × 500) = 0,677 mrad y BPP = λ/π = 0,339 mm·mrad. Con M² = 1,5: 0,508 mm·mrad.",
+      "kw": "divergencia BPP producto de parámetros del haz M2 calidad del haz"
+    },
+    "focus-spot": {
+      "name": "Radio del punto enfocado por una lente",
+      "l": [
+        ""
+      ],
+      "m": [
+        "radio de la cintura en el foco",
+        "calidad del haz",
+        "longitud de onda",
+        "distancia focal de la lente",
+        "radio del haz en la lente (1/e²)"
+      ],
+      "when": "El haz incidente tiene su cintura cerca de la lente y una longitud de Rayleigh mucho mayor que f (un haz colimado ancho). Una lente sin aberraciones cuya apertura no recorta el haz (diámetro de la lente ≳ 3W).",
+      "miss": "Usar el diámetro como W. Suponer que el foco está exactamente en f (se acerca a la lente cuando la z_R del haz incidente es próxima a f).",
+      "ex": "λ = 1064 nm, f = 100 mm, W = 5 mm, M² = 1: w_f = 1,064 × 10⁻⁶ × 0,1/(π × 0,005) = 6,77 µm.",
+      "kw": "enfoque tamaño del punto foco haz gaussiano procesamiento láser"
+    },
+    "q-abcd": {
+      "name": "Parámetro q y ley ABCD",
+      "l": [
+        "a la distancia z de la cintura",
+        "a partir de R y w",
+        "ley ABCD"
+      ],
+      "m": [
+        "parámetro complejo del haz",
+        "distancia desde la cintura",
+        "longitud de Rayleigh",
+        "radio de curvatura del frente de onda",
+        "radio del haz",
+        "longitud de onda en el vacío",
+        "índice de refracción",
+        "elementos de la matriz de rayos",
+        "elemento de la matriz de rayos",
+        "elemento de la matriz de rayos"
+      ],
+      "when": "Haces gaussianos paraxiales (modo fundamental). Las mismas matrices que para los rayos transforman q. Para haces con M² > 1, sustituya λ por M²λ.",
+      "miss": "Mezclar convenios de signo para la parte imaginaria de 1/q (e^{−iωt} o e^{+iωt}). La cintura está donde la parte real de q es cero (Re q = 0).",
+      "ex": "Una cintura w₀ = 0,5 mm (1064 nm, z_R = 738,2 mm) con una lente de f = 200 mm colocada en ella: q₂ = q₁/(1 − q₁/f) sitúa la nueva cintura 186,3 mm detrás de la lente, con un radio de 0,1308 mm.",
+      "kw": "parámetro q ABCD parámetro complejo del haz transformación de haces gaussianos"
+    },
+    "stability": {
+      "name": "Condición de estabilidad de un resonador",
+      "l": [
+        "estable",
+        "parámetro g"
+      ],
+      "m": [
+        "parámetros g de los espejos 1 y 2",
+        "parámetro g del espejo i",
+        "separación entre los espejos (con un cristal dentro, la longitud efectiva Σ L_i/n_i)",
+        "radio de curvatura del espejo i (positivo si es cóncavo, ∞ si es plano)"
+      ],
+      "when": "Resonadores de dos espejos esféricos, paraxial. Los límites (g₁g₂ = 0 o 1: plano-paralelo, confocal, concéntrico) se vuelven inestables con un ligero desalineamiento. Un resonador estable fija la cintura del modo fundamental.",
+      "miss": "El signo de R en un espejo convexo (negativo). Olvidar la corrección por el índice en L (un cristal de longitud L cuenta como L/n).",
+      "ex": "L = 0,5 m, un espejo plano (R₁ = ∞, g₁ = 1) y R₂ = 1 m (g₂ = 0,5): g₁g₂ = 0,5, estable. La cintura sobre el espejo plano, a partir de w₀² = (λ/π)√(L(R₂ − L)), es w₀ = 0,412 mm a 1064 nm.",
+      "kw": "resonador estabilidad parámetro g curvatura espejo esférico"
+    },
+    "long-modes": {
+      "name": "Separación entre modos longitudinales",
+      "l": [
+        "frecuencias de resonancia",
+        "separación"
+      ],
+      "m": [
+        "frecuencia del modo longitudinal q-ésimo",
+        "número de modo (un entero grande)",
+        "velocidad de la luz",
+        "índice dentro de la cavidad",
+        "longitud de la cavidad",
+        "separación entre modos longitudinales contiguos",
+        "índice de grupo"
+      ],
+      "when": "Resonadores de onda estacionaria (lineales). En resonadores de anillo, sustituya 2L por la longitud de una vuelta. El número de modos que oscilan depende de la anchura de banda de la ganancia y de las pérdidas (aproximadamente anchura de la ganancia/Δν). En los láseres de semiconductor se usa el índice de grupo (3,5–4).",
+      "miss": "Escribir L en lugar de 2L. Usar el índice de fase en un láser de semiconductor (sobrestimando la separación). Olvidar el factor λ²/c al convertir la separación a longitud de onda (Δλ = λ²Δν/c).",
+      "ex": "He-Ne con L = 0,3 m: Δν = c/0,6 m = 500 MHz (unos 3 modos en una anchura de ganancia de 1,5 GHz). Láser de semiconductor con L = 300 µm y n_g = 3,6: Δν = 139 GHz, Δλ = 1,11 nm a 1550 nm.",
+      "kw": "modos longitudinales separación entre modos cavidad FSR modo longitudinal único"
+    },
+    "threshold": {
+      "name": "Ganancia umbral de un láser",
+      "l": [
+        ""
+      ],
+      "m": [
+        "coeficiente de ganancia umbral (intensidad, ganancia modal)",
+        "pérdidas internas de la cavidad por absorción y por dispersión (scattering)",
+        "longitud del medio activo (cavidad)",
+        "reflectancias de los espejos (intensidad)"
+      ],
+      "when": "La ganancia en una ida y vuelta iguala a las pérdidas (estado estacionario, ganancia uniforme en la cavidad). En los láseres de semiconductor es Γg, con el factor de confinamiento Γ, lo que alcanza este valor.",
+      "miss": "Escribir R₁R₂ dentro del ln y obtener un valor negativo (es 1/(R₁R₂)). Olvidar la ida y vuelta 2L. Mezclar cm⁻¹ y m⁻¹.",
+      "ex": "Láser de semiconductor con caras exfoliadas (R₁ = R₂ = 0,31, L = 300 µm, α_i = 10 cm⁻¹): las pérdidas por los espejos (1/0,06 cm) × ln(1/0,0961) = 39,0 cm⁻¹, luego g_th = 49,0 cm⁻¹.",
+      "kw": "ganancia umbral pérdidas pérdidas por los espejos condición de oscilación láser"
+    },
+    "gain": {
+      "name": "Ganancia de pequeña señal y sección eficaz de emisión estimulada",
+      "l": [
+        "coeficiente de ganancia",
+        "amplificación de pequeña señal"
+      ],
+      "m": [
+        "coeficiente de ganancia (intensidad)",
+        "sección eficaz de emisión estimulada",
+        "densidades de los niveles superior e inferior",
+        "degeneraciones de los niveles",
+        "intensidad a la distancia z y a la entrada",
+        "distancia en el medio activo"
+      ],
+      "when": "Cuando la intensidad es bastante menor que la intensidad de saturación (pequeña señal). A alta intensidad γ se satura como γ₀/(1 + I/I_sat). γ > 0 solo con inversión de población (N₂ > (g₂/g₁)N₁).",
+      "miss": "Mezclar cm² y m² (10⁻¹⁹ cm² = 10⁻²³ m²). Olvidar las degeneraciones. Mezclar la ganancia en dB con la ganancia en el exponente de e.",
+      "ex": "Nd:YAG (σ = 2,8 × 10⁻¹⁹ cm²) con una inversión N₂ − N₁ = 1 × 10¹⁷ cm⁻³ (nivel inferior casi vacío): γ = 0,028 cm⁻¹, de modo que una pasada por una barra de 10 cm da e^{0,28} = 1,32 veces.",
+      "kw": "ganancia emisión estimulada sección eficaz inversión de población amplificación saturación"
+    },
+    "fiber-na": {
+      "name": "Apertura numérica de una fibra y diferencia relativa de índices",
+      "l": [
+        "apertura numérica",
+        "diferencia relativa de índices",
+        ""
+      ],
+      "m": [
+        "apertura numérica",
+        "índices del núcleo y del revestimiento",
+        "índice del medio desde el que se inyecta la luz (1 para el aire)",
+        "semiángulo de aceptación máximo",
+        "diferencia relativa de índices (≈ (n₁ − n₂)/n₁)"
+      ],
+      "when": "Fibras de salto de índice, en la descripción por rayos (rayos meridionales). En las fibras monomodo la descripción por rayos es solo orientativa; la divergencia real la fija el diámetro del campo modal.",
+      "miss": "Tomar la NA como n₁ − n₂ (es la raíz cuadrada de la diferencia de cuadrados). Mezclar Δ en % y como fracción. Olvidar n₀ cuando la luz se inyecta desde un medio distinto del aire.",
+      "ex": "n₁ = 1,45, n₂ = 1,4447: NA = 0,1239, semiángulo de aceptación en aire 7,12°, Δ = 0,365 %.",
+      "kw": "apertura numérica NA diferencia relativa de índices ángulo de aceptación núcleo revestimiento"
+    },
+    "v-number": {
+      "name": "Número V y condición monomodo",
+      "l": [
+        "frecuencia normalizada",
+        "monomodo",
+        "longitud de onda de corte",
+        "número de modos (V ≫ 1)"
+      ],
+      "m": [
+        "frecuencia normalizada",
+        "radio del núcleo",
+        "apertura numérica",
+        "longitud de onda en el vacío",
+        "longitud de onda de corte (monomodo por encima de ella)",
+        "número de modos guiados (incluidas las polarizaciones, aproximado)"
+      ],
+      "when": "Fibras de salto de índice con guiado débil (Δ ≪ 1). 2,405 es el primer cero de J₀. Las fibras de índice gradual tienen aproximadamente la mitad de modos (V²/4).",
+      "miss": "Usar el diámetro del núcleo como a. Esperar funcionamiento monomodo por debajo de λ_c (es monomodo por encima). Usar V²/2 para V pequeño.",
+      "ex": "n₁ = 1,45, n₂ = 1,4447, a = 4,1 µm, λ = 1550 nm: V = 2,059, monomodo, λ_c = 1327 nm. Diámetro del núcleo 50 µm, NA 0,2 a 850 nm: V = 37,0, unos 683 modos.",
+      "kw": "número V frecuencia normalizada monomodo longitud de onda de corte número de modos"
+    },
+    "mfd": {
+      "name": "Diámetro del campo modal (aproximación de Marcuse)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "radio del campo modal (radio a 1/e² de la aproximación gaussiana, MFD = 2w)",
+        "radio del núcleo",
+        "frecuencia normalizada"
+      ],
+      "when": "Fibras monomodo de salto de índice. El ajuste de Marcuse tiene un error de aproximadamente un 1 % para 1,2 < V < 2,4 y sirve como estimación para aproximadamente 0,8 < V < 2,5. El modo fundamental se aproxima por una gaussiana.",
+      "miss": "Tomar w como el diámetro (MFD = 2w). Igualar el diámetro del núcleo con el MFD (a 1550 nm el MFD es un 20–30 % mayor).",
+      "ex": "a = 4,1 µm, V = 2,059: w = 4,1 × (0,65 + 0,5481 + 0,0378) = 5,07 µm, MFD = 10,1 µm.",
+      "kw": "diámetro del campo modal MFD Marcuse fibra monomodo"
+    },
+    "group-index": {
+      "name": "Índice de grupo y velocidad de grupo",
+      "l": [
+        "índice de grupo",
+        "velocidad de grupo"
+      ],
+      "m": [
+        "índice de grupo",
+        "índice de fase",
+        "longitud de onda en el vacío",
+        "derivada del índice respecto a la longitud de onda",
+        "velocidad de grupo (velocidad de los pulsos y de las envolventes)",
+        "velocidad de la luz"
+      ],
+      "when": "Longitudes de onda con poca absorción. El retardo de los pulsos, el FSR de una cavidad y la envolvente de las diferencias de camino en un interferómetro usan n_g; la fase (posición de las franjas, ajuste de fase) usa n. En guías de onda, sustituya n por el índice efectivo n_eff.",
+      "miss": "Pensar que n_g < n con dispersión normal (dn/dλ < 0 da n_g > n). Usar n para el FSR.",
+      "ex": "Sílice fundida (Sellmeier) a 1550 nm: n = 1,44402 y dn/dλ = −0,01198 µm⁻¹ dan n_g = 1,44402 + 1,55 × 0,01198 = 1,46260.",
+      "kw": "índice de grupo velocidad de grupo velocidad de fase dispersión índice efectivo"
+    },
+    "modal-disp": {
+      "name": "Ensanchamiento de pulsos por dispersión modal",
+      "l": [
+        ""
+      ],
+      "m": [
+        "diferencia en el tiempo de llegada entre los rayos más rápido y más lento",
+        "longitud de la fibra",
+        "índices del núcleo y del revestimiento",
+        "velocidad de la luz",
+        "diferencia relativa de índices"
+      ],
+      "when": "Fibras multimodo de salto de índice, la diferencia máxima en la descripción por rayos (sin acoplamiento entre modos). Un perfil de índice gradual (parabólico) la reduce a aproximadamente L n₁Δ²/(8c). Las fibras monomodo no la tienen.",
+      "miss": "Introducir Δ en %. Olvidar que en distancias largas los modos se mezclan y el ensanchamiento crece más bien como √L.",
+      "ex": "n₁ = 1,48, Δ = 1 %: L n₁Δ/c = 49,4 ns/km (50,1 ns/km con la forma exacta).",
+      "kw": "dispersión modal fibra multimodo ensanchamiento de pulsos ancho de banda"
+    },
+    "chrom-disp": {
+      "name": "Ensanchamiento de pulsos por dispersión cromática",
+      "l": [
+        "ensanchamiento",
+        "D y β₂"
+      ],
+      "m": [
+        "ensanchamiento del pulso",
+        "parámetro de dispersión (normalmente en ps/(nm·km))",
+        "longitud de la fibra",
+        "anchura espectral de la fuente",
+        "velocidad de la luz",
+        "longitud de onda",
+        "dispersión de la velocidad de grupo (GVD)"
+      ],
+      "when": "Cuando la anchura espectral la fija la fuente (más ancha que la modulación). Con fuentes estrechas la anchura la fija la modulación y Δλ es proporcional al ancho de banda de la señal. D > 0 es dispersión anómala (β₂ < 0, las longitudes de onda largas llegan más tarde).",
+      "miss": "Olvidar el factor 10⁻⁶ s/m² al convertir ps/(nm·km) al SI. Confundir los signos de D y β₂ (D > 0 ⇔ β₂ < 0).",
+      "ex": "D = 17 ps/(nm·km) a 1550 nm, L = 80 km, Δλ = 0,1 nm: Δτ = 17 × 80 × 0,1 = 136 ps. β₂ = −21,7 ps²/km.",
+      "kw": "dispersión cromática parámetro de dispersión GVD beta2 ensanchamiento de pulsos"
+    },
+    "db-dbm": {
+      "name": "dB y dBm",
+      "l": [
+        "cociente (dB)",
+        "nivel absoluto (dBm)"
+      ],
+      "m": [
+        "cociente de potencias",
+        "las dos potencias que se comparan",
+        "potencia respecto a 1 mW",
+        "potencia"
+      ],
+      "when": "Para cocientes de potencia (intensidad). Para amplitudes de campo o de tensión use 20 log₁₀. Los valores en dB se suman y se restan, pero sumar valores en dBm no da la suma de las potencias (convierta primero a W).",
+      "miss": "Usar 20 log para la potencia. Mezclar dBm y dB en las sumas (dBm − dBm = dB, dBm + dB = dBm). Leer −3 dB como “la mitad de la amplitud” (es la mitad de la potencia).",
+      "ex": "1 mW = 0 dBm, 0,5 mW = −3,01 dBm, 2 µW = −26,99 dBm. Unas pérdidas de 10 dB dejan 1/10 de la potencia.",
+      "kw": "dB dBm decibelio logaritmo potencia pérdidas ganancia"
+    },
+    "fiber-loss": {
+      "name": "Atenuación de una fibra",
+      "l": [
+        "",
+        "dB y 1/m"
+      ],
+      "m": [
+        "potencia a la longitud L y a la entrada",
+        "atenuación (normalmente en dB/km)",
+        "longitud de la fibra",
+        "coeficiente de atenuación expresado con el logaritmo natural (potencia, P = P(0)e^{−αL})"
+      ],
+      "when": "Una fibra con pérdidas uniformes proporcionales a la longitud. Las pérdidas de conectores y curvaturas se suman aparte. La fibra monomodo de sílice tiene unos 0,2 dB/km a 1550 nm y unos 0,35 dB/km a 1310 nm (los límites de G.652.D son 0,3 y 0,4 dB/km).",
+      "miss": "Mezclar un coeficiente en 1/km con dB/km. Equivocarse en el signo al restar unas pérdidas en dB.",
+      "ex": "0,2 dB/km × 50 km = 10 dB, de modo que queda el 10 % de la potencia de entrada. Inyectando 1 mW (0 dBm) se obtienen −10 dBm.",
+      "kw": "pérdidas de la fibra atenuación dB/km pérdidas de transmisión"
+    },
+    "link-budget": {
+      "name": "Balance de potencia de un enlace",
+      "l": [
+        "potencia recibida (dBm)",
+        "margen (dB)"
+      ],
+      "m": [
+        "potencia que llega al receptor",
+        "potencia del transmisor",
+        "atenuación de la fibra",
+        "longitud de la fibra",
+        "número de conectores y de empalmes por fusión",
+        "pérdidas por conector y por empalme",
+        "margen del sistema",
+        "sensibilidad del receptor (potencia mínima necesaria)"
+      ],
+      "when": "Todo se suma y se resta en dB y dBm. Reserve unos pocos dB de margen para el envejecimiento, la temperatura y los empalmes de reparación. Las penalizaciones por dispersión y por ruido también se restan en dB.",
+      "miss": "Sumar W y dBm. Tomar la sensibilidad como un valor positivo en dBm (normalmente es negativo).",
+      "ex": "Transmisor de 0 dBm, 40 km × 0,35 dB/km = 14 dB a 1310 nm, 2 conectores × 0,5 dB, 10 empalmes × 0,1 dB: P_rx = 0 − 14 − 1 − 1 = −16 dBm. Con una sensibilidad de −24 dBm, el margen es de 8 dB.",
+      "kw": "balance de potencia presupuesto de potencia pérdidas margen sensibilidad del receptor"
+    },
+    "ring": {
+      "name": "Resonador de anillo: resonancias y FSR",
+      "l": [
+        "longitudes de onda de resonancia",
+        "FSR",
+        "factor Q"
+      ],
+      "m": [
+        "orden de resonancia",
+        "longitud de onda de resonancia",
+        "índice efectivo de la guía de onda",
+        "longitud de una vuelta del anillo (2πR)",
+        "separación entre resonancias contiguas",
+        "longitud de onda",
+        "índice de grupo de la guía de onda",
+        "factor Q",
+        "anchura a media altura de la resonancia"
+      ],
+      "when": "Una vuelta completa de un anillo de guía de onda. La posición de las resonancias sigue a n_eff y su separación a n_g. La intensidad del acoplamiento y las pérdidas fijan la profundidad y la anchura de los mínimos de transmisión (la transmisión se anula en el acoplamiento crítico). La temperatura cambia n_eff y desplaza la resonancia (unos 0,08 nm/K en silicio).",
+      "miss": "Usar n_eff para el FSR (en guías de silicio n_g ≈ 4,2 y n_eff ≈ 2,4 difieren mucho). Usar el radio como L.",
+      "ex": "Anillo de silicio (radio 10 µm, L = 62,83 µm, n_g = 4,2) a 1550 nm: Δλ_FSR = 1,55²/(4,2 × 62,83) µm = 9,10 nm.",
+      "kw": "resonador de anillo microanillo FSR factor Q fotónica de silicio"
+    },
+    "responsivity": {
+      "name": "Responsividad y eficiencia cuántica",
+      "l": [
+        "responsividad",
+        "fotocorriente",
+        "eficiencia cuántica"
+      ],
+      "m": [
+        "responsividad",
+        "eficiencia cuántica (externa)",
+        "carga elemental",
+        "longitud de onda en el vacío",
+        "constante de Planck",
+        "velocidad de la luz",
+        "fotocorriente",
+        "potencia óptica incidente",
+        "frecuencia óptica"
+      ],
+      "when": "Detectores sin ganancia (PIN, etc.). Para un APD, multiplique por la ganancia M. η incluye la reflexión en la superficie, la profundidad de absorción y la eficiencia de colección. La responsividad cae cuando la longitud de onda se acerca al borde de absorción.",
+      "miss": "Introducir η en %. Poner nm en ℛ ≈ λ[µm]/1,24 (con nm, divida por 1239,84).",
+      "ex": "Límite superior con η = 1: ℛ = 1,250 A/W a 1550 nm y 0,686 A/W a 850 nm. Con η = 0,8, 1,000 A/W a 1550 nm, es decir, 1,00 mA para 1 mW.",
+      "kw": "responsividad eficiencia cuántica fotocorriente A/W fotodiodo"
+    },
+    "shot-noise": {
+      "name": "Ruido de disparo",
+      "l": [
+        ""
+      ],
+      "m": [
+        "valor cuadrático medio de la corriente de ruido",
+        "carga elemental",
+        "fotocorriente",
+        "corriente de oscuridad",
+        "ancho de banda de medida"
+      ],
+      "when": "Las cargas fluyen de forma independiente (estadística de Poisson). Para un APD es 2qM²F(I_p + I_d)Δf, con I_p la fotocorriente sin multiplicar e I_d la parte multiplicada de la corriente de oscuridad; la corriente de oscuridad superficial, que no se multiplica, añade 2qI_{ds}Δf por separado. La luz con estadística de fotones no poissoniana (p. ej., la luz comprimida) requiere otro tratamiento.",
+      "miss": "Confundir el valor cuadrático medio con el valor eficaz (√). Mezclar anchos de banda unilaterales y bilaterales (el factor 2 corresponde a un ancho de banda unilateral).",
+      "ex": "I_p = 1 µA, I_d = 1 nA, Δf = 1 GHz: √(2 × 1,602 × 10⁻¹⁹ × 1,001 × 10⁻⁶ × 10⁹) = 17,9 nA (eficaz).",
+      "kw": "ruido de disparo ruido cuántico corriente de oscuridad ruido ancho de banda"
+    },
+    "snr": {
+      "name": "SNR de un receptor (ruido de disparo y ruido térmico)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "relación señal-ruido en potencia",
+        "ganancia (1 para un PIN)",
+        "responsividad con ganancia unidad",
+        "potencia óptica",
+        "carga elemental",
+        "factor de ruido en exceso (1 para un PIN)",
+        "corriente de oscuridad (parte multiplicada)",
+        "ancho de banda",
+        "constante de Boltzmann",
+        "temperatura de la resistencia de carga",
+        "resistencia de carga"
+      ],
+      "when": "Detección directa con solo el ruido de disparo y el ruido térmico de la carga (multiplique el término térmico por la figura de ruido del amplificador). A baja potencia domina el ruido térmico y a alta potencia, el de disparo.",
+      "miss": "Mezclar cocientes de corriente (√) con cocientes de potencia (para dB use 10 log). Introducir T en °C.",
+      "ex": "PIN (M = F = 1), ℛ = 1 A/W, P = 10 µW, Δf = 1 GHz, R_L = 50 Ω, 300 K, I_d despreciable: disparo 3,20 × 10⁻¹⁵ A², térmico 3,31 × 10⁻¹³ A², SNR = 299 (24,8 dB).",
+      "kw": "SNR relación señal-ruido ruido térmico ruido de disparo ruido de Johnson sensibilidad"
+    },
+    "nep": {
+      "name": "NEP y detectividad específica D*",
+      "l": [
+        "potencia equivalente de ruido",
+        "detectividad específica"
+      ],
+      "m": [
+        "potencia equivalente de ruido (por 1 Hz de ancho de banda, la potencia que da SNR = 1)",
+        "densidad de corriente de ruido (eficaz)",
+        "responsividad",
+        "detectividad específica (normalmente en cm·Hz¹ᐟ²/W = Jones)",
+        "área del detector"
+      ],
+      "when": "Cuando el ruido crece con la raíz cuadrada del ancho de banda (ruido blanco). D* compara detectores de áreas distintas, suponiendo que el ruido escala con la raíz cuadrada del área.",
+      "miss": "Dar la NEP en W (es W/√Hz). Mezclar m y cm en D* (1 m·Hz¹ᐟ²/W = 100 cm·Hz¹ᐟ²/W).",
+      "ex": "Solo el ruido de disparo de una corriente de oscuridad de 1 nA, ℛ = 0,9 A/W: i_n = √(2q × 10⁻⁹) = 1,79 × 10⁻¹⁴ A/√Hz y NEP = 1,99 × 10⁻¹⁴ W/√Hz. Para un detector de 1 mm², D* = 5,03 × 10¹² cm·Hz¹ᐟ²/W.",
+      "kw": "NEP potencia equivalente de ruido detectividad específica D* sensibilidad"
+    },
+    "apd": {
+      "name": "Ganancia y factor de ruido en exceso de un APD",
+      "l": [
+        "fotocorriente",
+        "factor de ruido en exceso (McIntyre)"
+      ],
+      "m": [
+        "fotocorriente multiplicada",
+        "ganancia media",
+        "responsividad con ganancia unidad",
+        "potencia óptica",
+        "factor de ruido en exceso",
+        "cociente de coeficientes de ionización (k = β/α para multiplicación iniciada por electrones)"
+      ],
+      "when": "Un APD con una región de multiplicación uniforme, inyectando el portador con el mayor coeficiente de ionización. Cuanto menor es k, menor es el ruido (unos 0,02 en Si y 0,4–0,5 en InGaAs/InP). La M óptima es un equilibrio con el ruido térmico.",
+      "miss": "Introducir como k el cociente inverso (α/β). Esperar que F crezca proporcionalmente a M (para k pequeño se acerca a 2).",
+      "ex": "APD de Si (k = 0,02) con M = 100: F = 2,00 + 0,98 × 1,99 = 3,95. APD de InGaAs (k = 0,5) con M = 10: F = 5,95.",
+      "kw": "APD fotodiodo de avalancha ganancia ruido en exceso cociente de ionización"
+    },
+    "sensor-dr": {
+      "name": "Rango dinámico y SNR de un sensor de imagen",
+      "l": [
+        "rango dinámico (dB)",
+        "SNR de un píxel"
+      ],
+      "m": [
+        "rango dinámico",
+        "electrones de saturación (capacidad de pozo lleno)",
+        "ruido de lectura (electrones eficaces)",
+        "relación señal-ruido (amplitud)",
+        "electrones de señal",
+        "corriente de oscuridad (electrones/s)",
+        "tiempo de exposición"
+      ],
+      "when": "Contado en electrones (tras dividir por la ganancia de conversión). El ruido de disparo de los fotones es poissoniano (√S). No se incluyen la falta de uniformidad de los píxeles (PRNU) ni el ruido de cuantificación. EMVA 1288 da el DR como cociente; en dB es 20 log₁₀.",
+      "miss": "Usar 10 log para el DR (un cociente de números de electrones es un cociente de amplitudes, 20 log). Dejar fuera de la SNR el ruido de disparo de los fotones.",
+      "ex": "N_sat = 10000 e⁻, σ_r = 2 e⁻: DR = 20 log₁₀(5000) = 74,0 dB. Con S = 10000 e⁻ (corriente de oscuridad despreciable), SNR = 10000/√10004 = 99,98 (casi √S).",
+      "kw": "rango dinámico pozo lleno ruido de lectura SNR sensor de imagen píxel"
+    },
+    "shg-pm": {
+      "name": "Ajuste de fase en SHG y longitud de coherencia",
+      "l": [
+        "desajuste de fase",
+        "longitud de coherencia",
+        "periodo de cuasiajuste de fase"
+      ],
+      "m": [
+        "desajuste del vector de onda",
+        "números de onda del segundo armónico y de la fundamental",
+        "longitud de onda en el vacío de la fundamental",
+        "índices en el segundo armónico y en la fundamental",
+        "longitud de coherencia (longitud en la que crece la conversión)",
+        "periodo de inversión de dominios (primer orden)"
+      ],
+      "when": "Conversión débil (fundamental no agotada), ondas planas. La intensidad convertida es proporcional a L² sinc²(ΔkL/2) y crece como L² cuando Δk = 0 (ajuste de fase). Δk = 0 se consigue con birrefringencia (por ángulo o por temperatura) o con cuasiajuste de fase.",
+      "miss": "Usar como λ la longitud de onda del segundo armónico (use la de la fundamental). Introducir la longitud de onda en el medio en k = 2πn/λ. Confundir L_c = π/Δk con 2π/Δk (las definiciones cambian de un libro a otro).",
+      "ex": "Onda extraordinaria en LiNbO₃ (24,5 °C, ecuación de Jundt: n_e(1064 nm) = 2,1558, n_e(532 nm) = 2,2342): L_c = 1,064/(4 × 0,0784) µm = 3,39 µm y Λ = 6,78 µm.",
+      "kw": "SHG segundo armónico ajuste de fase cuasiajuste de fase QPM PPLN longitud de coherencia"
+    },
+    "kerr": {
+      "name": "Efecto Kerr óptico (índice dependiente de la intensidad)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "índice de refracción",
+        "índice a baja intensidad",
+        "índice no lineal",
+        "intensidad óptica"
+      ],
+      "when": "No linealidad de tercer orden rápida (electrónica), a intensidades en las que la absorción multifotónica y la ionización son pequeñas. n₂ se relaciona con χ⁽³⁾ mediante n₂ = 3χ⁽³⁾/(4n₀²ε₀c) (SI, polarización lineal).",
+      "miss": "Mezclar cm²/W y m²/W (10⁻¹⁶ cm²/W = 10⁻²⁰ m²/W). Confundirlo con el n₂ definido respecto al cuadrado del campo (esu).",
+      "ex": "Sílice fundida (n₂ ≈ 2,7 × 10⁻²⁰ m²/W) a 10 GW/cm² (10¹⁴ W/m²): Δn = 2,7 × 10⁻⁶.",
+      "kw": "efecto Kerr óptico índice no lineal n2 chi3 autoenfoque"
+    },
+    "spm-b": {
+      "name": "Automodulación de fase e integral B",
+      "l": [
+        "integral B",
+        "coeficiente no lineal de la fibra",
+        "fase no lineal en la fibra",
+        "longitud efectiva"
+      ],
+      "m": [
+        "fase no lineal de pico (integral B)",
+        "longitud de onda en el vacío",
+        "índice no lineal",
+        "intensidad",
+        "posición a lo largo del haz",
+        "coeficiente no lineal de la fibra",
+        "área efectiva",
+        "fase no lineal",
+        "potencia de pico",
+        "longitud efectiva",
+        "pérdidas (logaritmo natural, potencia)",
+        "longitud de la fibra"
+      ],
+      "when": "En longitudes en las que la dispersión es débil (L ≪ longitud de dispersión), la forma del pulso no cambia: solo cambia la fase y el espectro se ensancha. En amplificadores de alta potencia, B ≳ 3–5 rad es un nivel de alerta habitual para el autoenfoque y la degradación del pulso.",
+      "miss": "Introducir α en dB/km (hay que dividir por 4,343). Usar el área del núcleo como A_eff (use el MFD).",
+      "ex": "SMF (n₂ = 2,6 × 10⁻²⁰ m²/W, A_eff = 80 µm², 1550 nm): γ = 1,32 W⁻¹·km⁻¹. Con 0,2 dB/km (α = 0,0461 km⁻¹) y 80 km, L_eff = 21,2 km, y P = 10 mW da φ_NL = 0,279 rad.",
+      "kw": "automodulación de fase SPM integral B fase no lineal longitud efectiva coeficiente no lineal"
+    },
+    "pockels": {
+      "name": "Efecto Pockels y tensión de media onda",
+      "l": [
+        "cambio de fase",
+        "tensión de media onda"
+      ],
+      "m": [
+        "cambio de fase de la luz debido a la tensión",
+        "índice para esa polarización",
+        "coeficiente electroóptico (r₃₃ del LiNbO₃, etc.)",
+        "tensión",
+        "longitud de los electrodos",
+        "longitud de onda en el vacío",
+        "separación entre electrodos",
+        "tensión que produce un cambio de fase de π"
+      ],
+      "when": "Configuración transversal (campo perpendicular a la luz), campo uniforme y solapamiento completo entre el campo y el modo óptico. En los moduladores reales de guía de onda se divide por un factor de solapamiento (0,3–0,7). Los diseños Mach-Zehnder en contrafase (push-pull) la reducen a la mitad.",
+      "miss": "Introducir r en pm/V. Confundir la configuración longitudinal (V_π = λ/(2n³r₆₃), independiente de la longitud) con la transversal.",
+      "ex": "LiNbO₃ (n_e = 2,138, r₃₃ = 30,8 pm/V), d = 10 µm, L = 2 cm, 1550 nm: V_π = 1,55 × 10⁻⁶ × 10⁻⁵/(2,138³ × 30,8 × 10⁻¹² × 0,02) = 2,57 V (unos 5 V con un solapamiento de 0,5).",
+      "kw": "Pockels efecto electroóptico tensión de media onda Vpi modulador LiNbO3"
+    },
+    "spdc": {
+      "name": "Conservación de la energía en procesos paramétricos",
+      "l": [
+        "energía",
+        "en longitudes de onda",
+        "ajuste de fase (momento)"
+      ],
+      "m": [
+        "frecuencias angulares del bombeo, la señal y el idler",
+        "longitudes de onda en el vacío de cada onda",
+        "vectores de onda de cada onda"
+      ],
+      "when": "Común a la amplificación paramétrica óptica, la oscilación (OPO) y la conversión descendente (SPDC). Qué par de longitudes de onda aparece lo fija el ajuste de fase. En la SPDC los pares de fotones se crean simultáneamente.",
+      "miss": "Sumar directamente las longitudes de onda (hay que sumar sus inversos). Mezclar longitudes de onda en el medio y en el vacío.",
+      "ex": "Bombeo de 405 nm con una señal de 780 nm: 1/λ_i = 1/405 − 1/780 da λ_i = 842,4 nm (810 nm en el caso degenerado). OPO bombeado a 1064 nm con una señal de 1550 nm: λ_i = 3393 nm.",
+      "kw": "SPDC conversión paramétrica descendente OPO señal idler conservación de la energía"
+    },
+    "tbp": {
+      "name": "Producto tiempo-ancho de banda",
+      "l": [
+        ""
+      ],
+      "m": [
+        "anchura espectral a media altura (frecuencia)",
+        "anchura a media altura de la intensidad del pulso",
+        "valor fijado por la forma del pulso (0,441 gaussiano, 0,315 sech²)"
+      ],
+      "when": "La igualdad vale para pulsos sin chirp (limitados por transformada). En longitud de onda, Δλ = λ²Δν/c. K corresponde a anchuras a media altura de la intensidad y cambia con otras definiciones de la anchura.",
+      "miss": "Confundir Δν con la frecuencia angular (Δω = 2πΔν). Usar una K que no corresponde a la forma del pulso.",
+      "ex": "Pulso sech² de 100 fs a 800 nm: Δν = 0,315/100 fs = 3,15 THz, Δλ = 6,72 nm. Para un pulso gaussiano: 4,41 THz, 9,41 nm.",
+      "kw": "producto tiempo-ancho de banda TBP limitado por transformada límite de Fourier duración del pulso anchura espectral"
+    },
+    "gdd": {
+      "name": "Ensanchamiento de pulsos por dispersión del retardo de grupo",
+      "l": [
+        "gaussiano",
+        "GDD"
+      ],
+      "m": [
+        "anchuras a media altura de la intensidad de los pulsos de salida y de entrada",
+        "dispersión del retardo de grupo (GDD)",
+        "dispersión de la velocidad de grupo (GVD)",
+        "longitud del material"
+      ],
+      "when": "Un pulso gaussiano de entrada sin chirp y solo dispersión de segundo orden (se desprecian la dispersión de tercer orden y la no linealidad). Los pulsos más cortos se ensanchan más (se divide por τ_in²).",
+      "miss": "Mezclar fs² y fs²/mm. Usar el factor gaussiano para pulsos sech².",
+      "ex": "10 mm de sílice fundida (36,1 fs²/mm a 800 nm, φ₂ = 361 fs²): 50 fs pasan a 53,9 fs, y 20 fs pasan también a 53,9 fs (4 ln2 × 361/20² = 2,50).",
+      "kw": "GDD GVD dispersión del retardo de grupo ensanchamiento de pulsos chirp compensación de la dispersión"
+    },
+    "comb": {
+      "name": "Peine de frecuencias óptico",
+      "l": [
+        "frecuencia de una línea del peine",
+        "frecuencia de repetición"
+      ],
+      "m": [
+        "frecuencia de la línea n-ésima del peine",
+        "número de línea (un entero grande)",
+        "frecuencia de repetición de los pulsos",
+        "frecuencia de desplazamiento portadora-envolvente",
+        "periodo de los pulsos (retardo de grupo de una vuelta)"
+      ],
+      "when": "Un tren de pulsos estable de un láser con bloqueo de modos. f_ceo se mide con un interferómetro f-2f o similar. Una frecuencia láser desconocida se obtiene de su batido f_b con la línea más próxima: f = n f_rep + f_ceo ± f_b.",
+      "miss": "Suponer f_ceo = 0. Para fijar el número de línea n hay que conocer antes la frecuencia con una precisión mejor que f_rep (p. ej., con un medidor de longitud de onda).",
+      "ex": "f_rep = 250 MHz, f_ceo = 20 MHz, n = 776000: f_n = 194,000020 THz (1545,32 nm).",
+      "kw": "peine de frecuencias óptico f_rep f_ceo CEO bloqueo de modos metrología de frecuencias"
+    },
+    "planck": {
+      "name": "Ley de Planck",
+      "l": [
+        "radiancia espectral"
+      ],
+      "m": [
+        "radiancia espectral de un cuerpo negro (por unidad de longitud de onda)",
+        "temperatura",
+        "constante de Planck",
+        "velocidad de la luz",
+        "longitud de onda en el vacío",
+        "constante de Boltzmann"
+      ],
+      "when": "Un cuerpo negro (emisividad 1). Para cuerpos reales se multiplica por la emisividad ε(λ). La B_ν por unidad de frecuencia y la B_λ por unidad de longitud de onda difieren en forma y en la posición del pico (B_λ dλ = B_ν dν). Multiplique por π para obtener la exitancia hemisférica.",
+      "miss": "Introducir T en °C. Introducir λ en µm y que no cuadren las unidades. Esperar los picos de B_λ y B_ν a la misma longitud de onda.",
+      "ex": "T = 3000 K, λ = 1 µm: B_λ = 9,92 × 10¹¹ W·m⁻³·sr⁻¹ (= 99,2 W/(cm²·sr·µm)).",
+      "kw": "Planck cuerpo negro radiación radiancia espectral ley de la radiación"
+    },
+    "wien": {
+      "name": "Ley de desplazamiento de Wien",
+      "l": [
+        ""
+      ],
+      "m": [
+        "longitud de onda en la que B_λ es máxima",
+        "temperatura del cuerpo negro",
+        "constante de desplazamiento de Wien (2,897 771 955 × 10⁻³ m·K)"
+      ],
+      "when": "El pico de la distribución B_λ por unidad de longitud de onda de un cuerpo negro. El pico de la distribución por unidad de frecuencia es ν_max = 5,879 × 10¹⁰ Hz/K × T, y c/ν_max no es igual a λ_max.",
+      "miss": "Confundirlo con el pico de B_ν. Introducir T en °C.",
+      "ex": "Sol (5772 K): λ_max = 502,0 nm (el pico en frecuencia, 339 THz, está en 883 nm). 300 K: 9,66 µm. Una lámpara de 3000 K: 966 nm.",
+      "kw": "ley de desplazamiento de Wien longitud de onda de pico cuerpo negro temperatura de color"
+    },
+    "stefan": {
+      "name": "Ley de Stefan-Boltzmann",
+      "l": [
+        ""
+      ],
+      "m": [
+        "exitancia radiante (potencia total emitida al hemisferio por unidad de área)",
+        "emisividad (1 para un cuerpo negro, constante para un cuerpo gris)",
+        "constante de Stefan-Boltzmann",
+        "temperatura"
+      ],
+      "when": "Sumada sobre todas las longitudes de onda y el hemisferio. Vale para cuerpos grises (ε independiente de la longitud de onda). El intercambio neto con el entorno es εσ(T⁴ − T_s⁴) (para un cuerpo mucho menor que su entorno).",
+      "miss": "Introducir T en °C. Confundirla con la radiancia (W·m⁻²·sr⁻¹, M/π).",
+      "ex": "Cuerpo negro a 300 K: M = 5,670 × 10⁻⁸ × 300⁴ = 459 W/m². A 5772 K: 6,29 × 10⁷ W/m².",
+      "kw": "Stefan Boltzmann cuerpo negro exitancia radiante emisividad"
+    },
+    "lum-flux": {
+      "name": "Flujo luminoso (a partir del flujo radiante)",
+      "l": [
+        "",
+        "eficacia luminosa máxima"
+      ],
+      "m": [
+        "flujo luminoso",
+        "eficacia luminosa máxima (fotópica)",
+        "eficiencia luminosa espectral fotópica normalizada (1 a 555 nm)",
+        "flujo radiante espectral (por unidad de longitud de onda)",
+        "longitud de onda"
+      ],
+      "when": "Visión fotópica (diurna), luminancias por encima de unos 5 cd/m². Los 683 lm/W los fija el SI a 540 × 10¹² Hz (555,0 nm en aire). La visión escotópica usa V′(λ) y 1700 lm/W.",
+      "miss": "Multiplicar por 683 lm/W a longitudes de onda distintas de 555 nm (hay que multiplicar por V(λ)). Tratar W y lm como la misma magnitud.",
+      "ex": "1 mW a 555 nm: Φ_v = 683 × 10⁻³ = 0,683 lm. 1 mW a 650 nm (V = 0,107): 0,0731 lm.",
+      "kw": "flujo luminoso lumen eficiencia luminosa V(λ) 683 lm/W fotometría"
+    },
+    "illuminance": {
+      "name": "Iluminancia (ley de la inversa del cuadrado y del coseno)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "iluminancia",
+        "intensidad luminosa en esa dirección",
+        "ángulo entre la normal a la superficie y la dirección de la luz",
+        "distancia a la fuente"
+      ],
+      "when": "Para una fuente que puede tratarse como puntual (menor que aproximadamente 1/5 de la distancia). En un punto del suelo alejado de la vertical de una lámpara situada a la altura h, d = h/cosθ, de modo que E = I cos³θ/h².",
+      "miss": "Mantener la altura de la lámpara como d para un punto oblicuo. Confundir lx y lm (lx = lm/m²).",
+      "ex": "Fuente de 100 cd a 2 m, de frente: E = 100/4 = 25 lx. Con la superficie inclinada 45°: 17,7 lx.",
+      "kw": "iluminancia intensidad luminosa inversa del cuadrado ley del coseno lux candela"
+    },
+    "lambert": {
+      "name": "Superficie perfectamente difusora (lambertiana)",
+      "l": [
+        "distribución angular de la intensidad",
+        "exitancia luminosa y luminancia",
+        "superficie blanca iluminada"
+      ],
+      "m": [
+        "intensidad luminosa en la dirección θ y en la normal a la superficie",
+        "ángulo desde la normal a la superficie",
+        "exitancia luminosa (lm/m²)",
+        "luminancia (la misma en todas las direcciones)",
+        "reflectancia",
+        "iluminancia"
+      ],
+      "when": "Un difusor ideal (luminancia independiente de la dirección). El papel y las paredes la siguen aproximadamente; las superficies brillantes no. El π es la integral hemisférica ∫cosθ dΩ = π sr, que elimina el sr de la luminancia (cd/m² = lm/(m²·sr)).",
+      "miss": "Escribir M = 2πL (la ponderación por el coseno da π). Confundir las unidades de luminancia e iluminancia (cd/m² y lx = lm/m²).",
+      "ex": "Papel blanco de reflectancia 0,9 bajo 500 lx: L_v = 0,9 × 500/π = 143 cd/m².",
+      "kw": "lambertiana difusor perfecto luminancia exitancia luminosa ley del coseno"
+    },
+    "chromaticity": {
+      "name": "Coordenadas de cromaticidad CIE",
+      "l": [
+        "",
+        "",
+        "valores triestímulo (Y y Z del mismo modo)"
+      ],
+      "m": [
+        "coordenadas de cromaticidad (z = 1 − x − y)",
+        "valores triestímulo (relativos)",
+        "constante de normalización (fija la escala de Y)",
+        "distribución espectral (relativa)",
+        "función de igualación de color",
+        "longitud de onda"
+      ],
+      "when": "Funciones de igualación de color CIE 1931 de 2° (para campos de más de 4°, use el observador de 10° de 1964). La cromaticidad no contiene la luminosidad. Para medir diferencias de color use un espacio de color uniforme como CIELAB.",
+      "miss": "Mezclar las funciones de igualación de color de 2° y de 10°. Leer las distancias en el diagrama xy como diferencias de color (no es uniforme).",
+      "ex": "Blanco D65 (X = 95,047; Y = 100; Z = 108,883): x = 0,3127; y = 0,3290.",
+      "kw": "coordenadas de cromaticidad xy triestímulo funciones de igualación de color CIE XYZ diagrama de cromaticidad"
+    },
+    "photon-energy": {
+      "name": "Energía, frecuencia y número de onda del fotón",
+      "l": [
+        "energía",
+        "frecuencia",
+        "número de onda"
+      ],
+      "m": [
+        "energía de un fotón",
+        "constante de Planck",
+        "frecuencia",
+        "velocidad de la luz",
+        "longitud de onda en el vacío",
+        "número de onda (normalmente en cm⁻¹)"
+      ],
+      "when": "Longitudes de onda en el vacío. En un medio la longitud de onda pasa a λ/n, pero la frecuencia y la energía no cambian. Formas prácticas: E[eV] = 1239,84/λ[nm]; ν[THz] = 299792,458/λ[nm]; σ̃[cm⁻¹] = 10⁷/λ[nm].",
+      "miss": "Calcular con la longitud de onda en el aire o en un medio (en espectroscopia de precisión se distinguen las longitudes de onda en el aire y en el vacío). Confundir el número de onda con el número de onda angular 2π/λ.",
+      "ex": "1550 nm: E = 1,2816 × 10⁻¹⁹ J = 0,7999 eV; ν = 193,41 THz; σ̃ = 6451,6 cm⁻¹.",
+      "kw": "energía del fotón eV frecuencia número de onda 1240 conversión"
+    },
+    "photon-flux": {
+      "name": "Número de fotones (flujo de fotones)",
+      "l": [
+        ""
+      ],
+      "m": [
+        "fotones por segundo",
+        "potencia óptica",
+        "constante de Planck",
+        "frecuencia",
+        "longitud de onda en el vacío",
+        "velocidad de la luz"
+      ],
+      "when": "Luz monocromática. Para luz de banda ancha, sume sobre las longitudes de onda (∫P_λ λ/(hc) dλ). A igual potencia, las longitudes de onda más largas transportan más fotones.",
+      "miss": "Mezclar mW y W. Confundir la energía del pulso con la potencia (los fotones de un pulso son E_pulso/(hν)).",
+      "ex": "1 mW a 1550 nm: Φ_p = 10⁻³/(1,2816 × 10⁻¹⁹) = 7,80 × 10¹⁵ s⁻¹. 1 W a 532 nm: 2,68 × 10¹⁸ s⁻¹.",
+      "kw": "número de fotones flujo de fotones tasa de fotones potencia"
+    },
+    "g2": {
+      "name": "Correlación de segundo orden g⁽²⁾(0)",
+      "l": [
+        "definición",
+        "a partir de una medida HBT"
+      ],
+      "m": [
+        "correlación de segundo orden con retardo cero",
+        "número de fotones",
+        "coincidencias con retardo cero",
+        "tasas de recuento de los dos detectores",
+        "ventana de coincidencia",
+        "tiempo de medida"
+      ],
+      "when": "Con una ventana de coincidencia adecuada al tiempo de coherencia de la luz y a la resolución temporal de los detectores. La luz térmica da 2, la luz coherente (un láser) 1, y un fotón único (estado número n = 1) 0. g⁽²⁾(0) < 0,5 es el criterio habitual para una fuente de fotones únicos.",
+      "miss": "Calcular las coincidencias accidentales R₁R₂τT sin la ventana. No tener en cuenta que los recuentos de oscuridad y la fluctuación temporal (jitter) aumentan g⁽²⁾(0).",
+      "ex": "Con R₁ = R₂ = 100 kcps, τ = 1 ns y T = 10 s, las coincidencias accidentales son 100. Si se mide N_c = 5, g⁽²⁾(0) = 0,05.",
+      "kw": "g2 correlación de segundo orden HBT antiagrupamiento fotón único estadística de fotones"
+    },
+    "led-eqe": {
+      "name": "Eficiencia cuántica externa y eficiencia de extracción de luz de un LED",
+      "l": [
+        "eficiencia cuántica externa",
+        "extracción por una cara plana"
+      ],
+      "m": [
+        "eficiencia cuántica externa",
+        "potencia óptica emitida",
+        "constante de Planck",
+        "frecuencia óptica",
+        "corriente",
+        "carga elemental",
+        "eficiencia cuántica interna (eficiencia de inyección × eficiencia radiativa)",
+        "eficiencia de extracción de luz",
+        "ángulo crítico del semiconductor al exterior",
+        "índice del semiconductor (aire en el exterior)"
+      ],
+      "when": "La fórmula de la extracción supone un emisor isótropo bajo una cara plana y desprecia la reflexión de Fresnel y la absorción y reemisión (reciclado de fotones). Los LED reales la multiplican varias veces con el conformado, el texturizado y los reflectores. La eficiencia de potencia (WPE) es P/(IV).",
+      "miss": "Confundir la eficiencia cuántica externa con la eficiencia de potencia. Tomar 1/(4n²) como el total de todas las caras (es una sola cara).",
+      "ex": "GaN (n = 2,5): θ_c = 23,58° y (1 − cosθ_c)/2 = 0,0417 (1/(4n²) = 0,040). Un LED que emite 0,5 W a 450 nm con 0,35 A: η_ext = 0,518.",
+      "kw": "eficiencia cuántica externa EQE eficiencia de extracción de luz LED eficiencia cuántica interna"
+    },
+    "solar-ff": {
+      "name": "Factor de forma y eficiencia de una célula solar",
+      "l": [
+        "factor de forma",
+        "eficiencia de conversión"
+      ],
+      "m": [
+        "factor de forma",
+        "tensión en el punto de máxima potencia",
+        "densidad de corriente en el punto de máxima potencia",
+        "tensión de circuito abierto",
+        "densidad de corriente de cortocircuito",
+        "eficiencia de conversión",
+        "irradiancia incidente (en condiciones estándar, AM1.5G, 1000 W/m²)"
+      ],
+      "when": "Compare en condiciones estándar de ensayo (25 °C, AM1.5G, 1000 W/m²). Las resistencias en serie y en paralelo reducen el FF. Indique si el área es el área de apertura (activa) o el área total.",
+      "miss": "Olvidar convertir mA/cm² en A/m² (1 mA/cm² = 10 A/m²). Multiplicar por el FF en %.",
+      "ex": "V_oc = 0,70 V, J_sc = 40 mA/cm² (400 A/m²), FF = 0,80: η = 0,80 × 0,70 × 400/1000 = 22,4 %.",
+      "kw": "factor de forma factor de llenado FF eficiencia de conversión tensión de circuito abierto corriente de cortocircuito célula solar"
+    },
+    "diode-voc": {
+      "name": "Ecuación del diodo de una célula solar y tensión de circuito abierto",
+      "l": [
+        "corriente-tensión",
+        "tensión de circuito abierto"
+      ],
+      "m": [
+        "densidad de corriente de salida",
+        "densidad de corriente de cortocircuito (fotocorriente)",
+        "densidad de corriente de saturación en oscuridad",
+        "carga elemental",
+        "tensión",
+        "factor de idealidad (1–2)",
+        "constante de Boltzmann",
+        "temperatura de la célula",
+        "tensión de circuito abierto"
+      ],
+      "when": "Un modelo de un diodo que desprecia las resistencias en serie y en paralelo, con una fotocorriente independiente de la tensión. Multiplicar J_sc por diez aumenta V_oc en (n_id k_B T/q) ln10 (59,2 mV a 25 °C con n_id = 1), por lo que la concentración aumenta la eficiencia.",
+      "miss": "Introducir T en °C. Mezclar las unidades de J₀ (A/cm² y A/m²). V_oc disminuye al aumentar la temperatura (J₀ crece).",
+      "ex": "J_sc = 400 A/m², J₀ = 1 × 10⁻⁹ A/m², n_id = 1, 25 °C (k_B T/q = 25,69 mV): V_oc = 25,69 mV × ln(4 × 10¹¹) = 0,686 V.",
+      "kw": "tensión de circuito abierto ecuación del diodo corriente de saturación factor de idealidad célula solar"
+    },
+    "sq": {
+      "name": "Eficiencia última de Shockley-Queisser y límite radiativo",
+      "l": [
+        "eficiencia última (x = E/(k_B T_s))",
+        "corriente de saturación radiativa"
+      ],
+      "m": [
+        "eficiencia última (sol como cuerpo negro; cada fotón por encima de E_g aporta E_g)",
+        "E_g/(k_B T_s)",
+        "E/(k_B T_s)",
+        "densidad de corriente de saturación con solo recombinación radiativa (una cara)",
+        "carga elemental",
+        "constante de Planck",
+        "velocidad de la luz",
+        "energía del fotón",
+        "energía de la banda prohibida",
+        "constante de Boltzmann",
+        "temperatura de la célula"
+      ],
+      "when": "Una sola unión que absorbe todo lo que está por encima de E_g y nada por debajo. La eficiencia última es el límite para una célula a 0 K; si se incluye la emisión propia de la célula (J_{0,rad}) se obtiene el límite de balance detallado de aproximadamente el 33 % bajo AM1.5G (E_g ≈ 1,34 eV).",
+      "miss": "Confundir la eficiencia última (aproximadamente el 44 %) con el límite de balance detallado (aproximadamente el 33 %). Mezclar T_s (sol, 6000 K) y T_c (célula, 300 K).",
+      "ex": "Para un sol como cuerpo negro de 6000 K, el máximo de u es del 43,9 % con x_g = 2,17 (E_g = 1,12 eV). Con E_g = 1,34 eV y T_c = 300 K, J_{0,rad} = 2,36 × 10⁻¹⁶ A/m².",
+      "kw": "Shockley Queisser límite SQ balance detallado eficiencia última banda prohibida"
+    }
+  }
+}
