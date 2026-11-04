@@ -558,7 +558,7 @@
   "formulas_search_ph": "Nom, symbole ou terme (ex. : Brewster, z_R, indice de groupe)",
   "formulas_groups_label": "Filtrer par thème",
   "formulas_all": "Tous",
-  "formulas_count": "{n} formules sur {total}",
+  "formulas_count": "Formules affichées : {n} sur {total}",
   "formulas_none": "Aucune formule ne correspond. Raccourcissez le mot cherché ou réglez le thème sur « Tous ».",
   "formulas_pick": "Choisir",
   "formulas_picked": "Formules choisies : {n}",
