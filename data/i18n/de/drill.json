@@ -1,0 +1,1126 @@
+{
+  "title": "Rechentrainer Optik mit Rechenweg",
+  "description": "34 typische Rechenaufgaben aus Optik und Photonik mit jedes Mal neuen Zahlen üben: Snelliussches Brechungsgesetz, Grenzwinkel, dünne Linsen, Beugungsgrenze, Gitter, Fresnelscher Reflexionsgrad, Antireflexschichten, Gauß-Strahlen, NA und V-Parameter von Glasfasern, dBm, spektrale Empfindlichkeit, Photonenenergie und mehr. Antworten werden mit Einheit bewertet, mit Rechenweg und typischen Fehlern.",
+  "h1": "Rechentrainer",
+  "lead": "Typische Rechenaufgaben aus Vorlesungen und Prüfungen zu Optik und Photonik, jedes Mal mit neuen Zahlen. Lösen Sie jede Aufgabe selbst und geben Sie das Ergebnis mit Einheit ein: Sie sehen, ob es stimmt, den Rechenweg, der zeigt, welche Werte in welche Formel eingesetzt werden, und den typischen Fehler, auf den Ihr Zahlenwert hindeutet. Wo ein Rechner den Aufgabentyp abdeckt, können Sie ihn zur Kontrolle mit denselben Zahlen öffnen.",
+  "note": "Die Zahlen sind Übungswerte, die jedes Mal aus Bereichen gezogen werden. Brechungsindizes und Konstanten stammen aus denselben Quellen wie in der Formelsammlung (unten aufgeführt) oder werden in der Aufgabe als Annahme angegeben. Für echte Auslegungen verwenden Sie Werte aus Datenblättern der Hersteller und aus Normen.",
+  "lowerNames": false,
+  "mat": {},
+  "groups": {
+    "geo": "Geometrische Optik und Abbildung",
+    "wave": "Interferenz, Beugung und Spektroskopie",
+    "pol": "Polarisation",
+    "material": "Optische Materialien und Dünnschichten",
+    "laser": "Laser und Gauß-Strahlen",
+    "fiber": "Glasfasern und optische Nachrichtentechnik",
+    "detect": "Photodetektion und Bildsensoren",
+    "nonlinear": "Nichtlineare Optik und ultrakurze Pulse",
+    "photo": "Radiometrie, Photometrie und Farbmetrik",
+    "quantum": "Photonen, Quantenoptik und Solarzellen"
+  },
+  "units": {
+    "s⁻¹": "s⁻¹ (pro Sekunde)",
+    "″": "″ (Bogensekunde)"
+  },
+  "names": {
+    "x": {
+      "med_air": "Luft",
+      "med_water": "Wasser",
+      "med_silica": "Quarzglas",
+      "med_bk7": "N-BK7",
+      "med_f2": "F2-Glas",
+      "med_linbo3": "LiNbO₃ für den außerordentlichen Strahl",
+      "med_gaas": "GaAs",
+      "med_si": "Silizium",
+      "imm_air": "Luft",
+      "imm_water": "Wasser",
+      "imm_oil": "Immersionsöl",
+      "ng_air": "Luft",
+      "ng_silica": "Quarzglas",
+      "xtal_quartz": "Quarz",
+      "xtal_mgf2": "kristallinem MgF₂",
+      "film_mgf2": "MgF₂",
+      "film_sinx": "Siliziumnitrid (SiNₓ)",
+      "det_si": "Silizium",
+      "det_ingaas": "InGaAs",
+      "sh_gauss": "Gauß",
+      "sh_sech": "sech²",
+      "gap_si": "Si",
+      "gap_ge": "Ge",
+      "gap_gaas": "GaAs",
+      "gap_inp": "InP",
+      "gap_ingaas": "In₀.₅₃Ga₀.₄₇As",
+      "gap_gan": "GaN",
+      "cell_si": "Silizium-Solarzelle",
+      "cell_gaas": "GaAs-Solarzelle",
+      "cell_perov": "Perowskit-Solarzelle",
+      "mode_single": "V < 2,405, also einmodig",
+      "mode_multi": "V ≥ 2,405, also mehrmodig"
+    },
+    "diff": {}
+  },
+  "guide": [
+    {
+      "id": "how",
+      "h": "Bedienung",
+      "p": [
+        "Wählen Sie ein Gebiet oder einen Aufgabentyp und starten Sie einzelne Aufgaben oder einen Satz mit 5 oder 10 Aufgaben. Mit „Schwache Typen häufiger“ kommen Typen, die Sie zuletzt oder oft falsch beantwortet haben, häufiger an die Reihe. Ein Klick auf den Namen eines Typs in der Liste der Aufgabentypen weiter unten liefert eine Aufgabe dieses Typs.",
+        "Geben Sie das Ergebnis als Zahl ein und wählen Sie die Einheit im Auswahlfeld. Schreibweisen wie 1,23e-5, 1,23×10^-5 und 1,23 × 10⁻⁵ werden alle erkannt. Ist die Einheit wählbar, funktioniert jede Einheit (zum Beispiel nm oder µm), solange die Zahl zur gewählten Einheit passt.",
+        "Mit „Prüfen“ erhalten Sie die Bewertung und den Rechenweg. Ist die Antwort falsch, zeigt der Rechentrainer den typischen Fehler, auf den Ihre Zahl hindeutet (Radius und Durchmesser, Amplitude und Intensität, θ und 2θ, 10 und 20 bei Dezibel usw.). „Lösung anzeigen“ öffnet den Rechenweg, ohne dass Sie antworten.",
+        "„Link zu dieser Aufgabe kopieren“ liefert eine URL, die dieselbe Aufgabe mit denselben Zahlen öffnet. Die URL enthält nur den Aufgabentyp und eine Startzahl, nie die Lösung. Ihre Ergebnisse werden nur in diesem Browser gespeichert (localStorage) und nie an einen Server gesendet. Blockiert Ihr Browser die Speicherung, können Sie trotzdem Aufgaben lösen; Ihre Ergebnisse werden dann nur nicht aufbewahrt."
+      ]
+    },
+    {
+      "id": "tips",
+      "h": "Tipps zum Lösen",
+      "p": [
+        "Notieren Sie zuerst die gegebenen und die gesuchte Größe mit Formelzeichen und Einheiten. Begriffe in der Aufgabe wie „Kerndurchmesser“, „voller Winkel“ oder „spektrale Halbwertsbreite“ können von der Größe in der Formel abweichen (Radius a, halber Winkel θ, Δλ); klären Sie das zuerst.",
+        "Prüfen Sie, von wo aus ein Winkel gemessen wird. Beim Snelliusschen Brechungsgesetz, beim Grenzwinkel und beim Brewster-Winkel werden die Winkel gegen das Lot auf die Grenzfläche gemessen. Achten Sie am Taschenrechner auf Verwechslungen von Grad und Radiant.",
+        "Halten Sie Intensität (Leistung) und Amplitude (Feld) auseinander. Der Reflexionsgrad R ist das Quadrat des Amplitudenreflexionsfaktors r, die Intensität hinter einem Polarisator ist proportional zu cos²θ, und dB ist 10 log₁₀ eines Leistungsverhältnisses.",
+        "Prüfen Sie die Größenordnung des Ergebnisses. Eine Glasoberfläche reflektiert etwa 4 %, Photonen im Sichtbaren tragen 2–3 eV, der V-Parameter einer Einmodenfaser bei 1550 nm liegt bei etwa 2, und der Modenabstand eines He-Ne-Lasers beträgt einige hundert MHz. Liegen Sie um den Faktor 10 oder mehr daneben, ist vermutlich eine Einheitenumrechnung oder eine Zehnerpotenz falsch."
+      ]
+    },
+    {
+      "id": "units",
+      "h": "Einheiten",
+      "p": [
+        "Das Auswahlfeld bietet andere Einheiten derselben Größe an (nm und µm, GHz und MHz, mW und µW, ° und rad oder mrad usw.). Ein Wert, der in der gewählten Einheit richtig ist, wird als richtig bewertet. Gibt es nur eine Einheit, antworten Sie in dieser Einheit.",
+        "Anteile können als Dezimalzahl von 0 bis 1 oder in % eingegeben werden (0,04 und 4 % sind dasselbe). dB und dBm sind logarithmische Einheiten und werden daher nicht in mW oder einfache Verhältnisse umgerechnet.",
+        "Temperaturen können in K oder °C eingegeben werden. Umgerechnet wird durch Addieren oder Subtrahieren von 273,15.",
+        "Häufige Umrechnungen: 1 nm = 10⁻⁹ m; 1 µm = 10⁻⁶ m; 1 THz = 10¹² Hz; 1 mrad = 10⁻³ rad ≈ 0,0573°; 1 eV = 1,602 × 10⁻¹⁹ J; E[eV] ≈ 1239,84/λ[nm]; 1 mW = 0 dBm."
+      ]
+    },
+    {
+      "id": "sig",
+      "h": "Signifikante Stellen und Bewertung",
+      "p": [
+        "Die Zahlen in jeder Aufgabe sind auf die angezeigten Stellen gerundet, und die Referenzlösung wird aus diesen gerundeten Zahlen berechnet. Wenn Sie die Zahlen so verwenden, wie sie angegeben sind, wird Ihre Antwort nie wegen der Rundung falsch.",
+        "Bewertet wird nach der relativen Abweichung. Bei den meisten Typen werden Antworten innerhalb von ±1 % akzeptiert. Bei Typen, deren Ergebnis ein Winkel ist (Brechungs-, Grenz-, Brewster-, Beugungs- und Akzeptanzwinkel), und bei Typen, deren Ergebnis ein Brechungsindex ist, sind es ±0,5 %. Auch bei Ergebnissen in dBm oder dB gilt die relative Abweichung; bei −16,0 dBm sind also ±0,16 dB zulässig. Die Toleranz wird bei jeder Aufgabe angezeigt.",
+        "Es genügt, das Ergebnis mit so vielen Stellen anzugeben, wie in der Aufgabe verwendet werden (meist drei signifikante Stellen). Mehr Stellen sind ebenfalls in Ordnung.",
+        "Liegen Sie knapp außerhalb der Toleranz (innerhalb von 5 %), meldet der Rechentrainer „Knapp daneben“. Meist stimmt dann die Formel; prüfen Sie, ob Sie Zwischenwerte zu stark gerundet oder eine andere Konstante (c, h, q usw.) als in der Aufgabe verwendet haben."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Meine Antwort müsste richtig sein, wird aber als falsch bewertet.",
+      "Prüfen Sie zuerst das Auswahlfeld der Einheit. Passt die gewählte Einheit nicht zur eingegebenen Zahl, wird auch ein richtiger Wert als falsch bewertet (meist erscheint dann „Das sieht nach einer Verwechslung der Einheit aus“). Stimmt die Einheit und liegen Sie nur knapp daneben, haben Sie vermutlich Zwischenwerte zu stark gerundet oder eine andere Konstante verwendet. Rechnen Sie mit den Zahlen und Konstanten der Aufgabe neu und behalten Sie dabei mindestens vier Stellen."
+    ],
+    [
+      "Wie werden die Zahlen gewählt?",
+      "Für jeden Typ ist ein Bereich festgelegt, der bei realen Bauteilen und Experimenten vorkommt; daraus wird jedes Mal neu gezogen. Die Brechungsindizes sind dieselben Werte wie in den Beispielen der Formelsammlung (SCHOTT-Daten für N-BK7 und F2, die Sellmeier-Gleichung von Malitson für Quarzglas, die Gleichung von Jundt für LiNbO₃ usw.). Werte, die streuen, wie die Doppelbrechung oder die Dispersion einer Faser, werden aus einem Bereich gewählt und in der Aufgabe als Annahme angegeben."
+    ],
+    [
+      "Kann ich dieselbe Aufgabe noch einmal lösen oder jemand anderem dieselbe Aufgabe geben?",
+      "Ja. Öffnen Sie die URL aus „Link zu dieser Aufgabe kopieren“ (?t=Typ&s=Startzahl), dann erhalten Sie dieselbe Aufgabe mit denselben Zahlen. Die URL enthält die Lösung nicht; Sie können sich damit also gegenseitig abfragen."
+    ],
+    [
+      "Wo werden meine Ergebnisse gespeichert? Kann ich sie löschen?",
+      "Nur im localStorage dieses Browsers; sie werden nie an einen Server gesendet und nicht mit anderen Geräten oder Browsern geteilt. „Ergebnisse löschen“ entfernt sie. Im privaten Modus oder in anderen Modi, die die Speicherung blockieren, werden keine Ergebnisse aufbewahrt, Sie können die Aufgaben aber ganz normal lösen."
+    ],
+    [
+      "Was bringt es, den Rechner zu öffnen?",
+      "Der Rechner öffnet sich mit denselben Zahlen. So können Sie die Lösung auf anderem Weg prüfen oder sehen, was sich ändert, wenn Sie die Bedingungen variieren. Bei einer Aufgabe zum Gauß-Strahl sehen Sie den Strahlradius in anderen Abständen z, bei einer Aufgabe zur Antireflexschicht den Reflexionsgrad abseits der Entwurfswellenlänge. Für Typen ohne Rechner verlinkt der Rechentrainer verwandte Begriffe und die Formelsammlung."
+    ],
+    [
+      "Mein Lehrbuch kommt auf ein leicht anderes Ergebnis.",
+      "Lehrbücher runden oft Zwischenwerte oder verwenden gekürzte Konstanten (hc ≈ 1240 eV·nm, c ≈ 3 × 10⁸ m/s usw.), sodass die dritte Stelle abweichen kann. Die Lösungen hier werden ohne Zwischenrundung aus den Zahlen und Konstanten der Aufgabe berechnet. Innerhalb der Toleranz wird jede der beiden Antworten als richtig bewertet."
+    ]
+  ],
+  "sources": [
+    {
+      "name": "Brechungsindizes (sichtbar, d-Linie 587,6 nm)",
+      "text": "N-BK7 1,5168 und F2 1,6200 (SCHOTT-Datenblätter); Quarzglas 1,4585 (Sellmeier-Gleichung von Malitson 1965); Wasser 1,333. Diese Werte stimmen mit den Beispielen zur Sellmeier-Gleichung und zur Abbe-Zahl in der Formelsammlung überein."
+    },
+    {
+      "name": "Brechungsindizes (nahes Infrarot, 1550 nm)",
+      "text": "Quarzglas 1,4440 und N-BK7 1,5007 (dieselben Sellmeier-Gleichungen); Si 3,48; LiNbO₃ für den außerordentlichen Strahl 2,138 (Jundt 1997); GaAs 3,37 (Gleichung von Skauli u. a. 2003). Der Gruppenindex von Quarzglas, 1,4626, stimmt mit dem Beispiel zum Gruppenindex in der Formelsammlung überein."
+    },
+    {
+      "name": "Brechungsindizes von LiNbO₃ für SHG",
+      "text": "Werte für Grundwelle und zweite Harmonische aus der Sellmeier-Gleichung für den außerordentlichen Strahl von kongruentem LiNbO₃ bei 24,5 °C nach D. H. Jundt, Opt. Lett. 22, 1553 (1997) (zum Beispiel 2,1558/2,2342 bei 1064/532 nm)."
+    },
+    {
+      "name": "Abbe-Zahlen und Gläser",
+      "text": "N-BK7 V_d = 64,17 und F2 V_d = 36,37 (aus n_d, n_F und n_C der SCHOTT-Datenblätter)."
+    },
+    {
+      "name": "Doppelbrechung von Quarz und MgF₂",
+      "text": "n_e − n_o bei jeder Wellenlänge aus den Sellmeier-Gleichungen von G. Ghosh, Opt. Commun. 163, 95 (1999) für Quarz und von M. J. Dodge, Appl. Opt. 23, 1980 (1984) für MgF₂ (zum Beispiel 0,00904 für Quarz und 0,01178 für MgF₂ bei 633 nm)."
+    },
+    {
+      "name": "Physikalische Konstanten",
+      "text": "Exakte und empfohlene Werte nach CODATA 2022 (c = 299 792 458 m/s; h = 6,626 070 15 × 10⁻³⁴ J·s; q = 1,602 176 634 × 10⁻¹⁹ C; Wiensche Verschiebungskonstante b = 2,897 772 × 10⁻³ m·K; hc = 1239,84 eV·nm)."
+    },
+    {
+      "name": "Bandlücken (Raumtemperatur)",
+      "text": "Si 1,12 eV; Ge 0,66 eV; GaAs 1,42 eV; InP 1,34 eV; In₀.₅₃Ga₀.₄₇As 0,75 eV; GaN 3,4 eV (Werte aus Sze & Ng, Physics of Semiconductor Devices, 3. Aufl., und ähnlichen Quellen)."
+    },
+    {
+      "name": "Werte für Fasern und Übertragungsstrecken",
+      "text": "Dämpfung der Einmodenfaser 0,35 dB/km bei 1310 nm und 0,20 dB/km bei 1550 nm; 0,5 dB pro Stecker und 0,1 dB pro Spleiß, wie im Beispiel zum Leistungsbudget in der Formelsammlung (im Rahmen von ITU-T G.652). Die Dispersion D wird für das 1550-nm-Band aus einem Bereich gewählt und als Annahme angegeben."
+    },
+    {
+      "name": "Angenommene Werte",
+      "text": "Der Brechungsindex von Siliziumnitridschichten, Absorptions- und Extinktionskoeffizienten, der Gruppenindex von Halbleiterlasern, V_oc, J_sc und FF von Solarzellen sowie der Dunkelstrom von Photodioden sind Übungswerte aus Bereichen, die für diese Materialien und Bauelemente realistisch sind. Als Zeit-Bandbreite-Produkt werden 0,441 für Gauß-Pulse und 0,315 für sech²-Pulse verwendet."
+    }
+  ],
+  "types": {
+    "snell-angle": {
+      "name": "Brechungswinkel (Snelliussches Brechungsgesetz)",
+      "short": "Aus dem Einfallswinkel den Brechungswinkel an der Grenzfläche zweier Medien bestimmen",
+      "formula": "n₁ sinθ₁ = n₂ sinθ₂",
+      "q": "Licht der Wellenlänge {lam} nm tritt unter dem Einfallswinkel {t1}° (gegen das Lot auf die Grenzfläche gemessen) aus {m1} (n₁ = {n1}) in {m2} (n₂ = {n2}) über. Berechnen Sie den Brechungswinkel θ₂.",
+      "steps": [
+        "Aus dem Snelliusschen Brechungsgesetz n₁ sinθ₁ = n₂ sinθ₂ folgt sinθ₂ = n₁ sinθ₁/n₂.",
+        "Mit sin{t1}° = {s1} ist sinθ₂ = {n1} × {s1}/{n2} = {s}.",
+        "θ₂ = arcsin {s} = {t2}°."
+      ],
+      "mistakes": {
+        "swap": "Sie haben n₁ und n₂ vertauscht (sinθ₂ = n₂ sinθ₁/n₁). n₁ ist der Brechungsindex des Mediums, aus dem das Licht kommt.",
+        "surf": "Sie haben den Winkel gegen die Grenzfläche angegeben (90° − θ₂). Winkel werden gegen das Lot gemessen.",
+        "surfin": "Sie haben den Einfallswinkel so behandelt, als wäre er gegen die Grenzfläche gemessen (cos statt sin). Der angegebene Winkel ist gegen das Lot gemessen."
+      }
+    },
+    "critical-angle": {
+      "name": "Grenzwinkel der Totalreflexion",
+      "short": "Den Grenzwinkel für Licht bestimmen, das aus dem optisch dichteren Medium auf eine Grenzfläche trifft, oder aus einem gemessenen Grenzwinkel den Brechungsindex",
+      "formula": "sinθ_c = n₂/n₁",
+      "q": {
+        "ang": "Licht der Wellenlänge {lam} nm läuft in {m1} (n₁ = {n1}) auf die Grenzfläche zu {m2} (n₂ = {n2}) zu. Berechnen Sie den Grenzwinkel θ_c der Totalreflexion.",
+        "n": "Licht trifft im Inneren eines transparenten Materials auf eine ebene Grenzfläche zu {out} (n₂ = {n2}). Die Totalreflexion setzt bei einem Einfallswinkel (Grenzwinkel) von {tc}° ein, gegen das Lot gemessen. Berechnen Sie den Brechungsindex n₁ des Materials."
+      },
+      "steps": {
+        "ang": [
+          "Beim Grenzwinkel beträgt der Brechungswinkel 90°: Aus n₁ sinθ_c = n₂ sin90° folgt sinθ_c = n₂/n₁.",
+          "sinθ_c = {n2}/{n1} = {s}.",
+          "θ_c = arcsin {s} = {tc}°."
+        ],
+        "n": [
+          "Aus sinθ_c = n₂/n₁ folgt n₁ = n₂/sinθ_c.",
+          "sin{tc}° = {s}.",
+          "n₁ = {n2}/{s} = {n1}."
+        ]
+      },
+      "mistakes": {
+        "brew": "Sie haben tanθ = n₂/n₁ verwendet; das ist die Formel für den Brewster-Winkel. Für den Grenzwinkel gilt sinθ_c = n₂/n₁.",
+        "comp": "Sie haben 90° − θ_c angegeben. Auch der Grenzwinkel wird gegen das Lot gemessen.",
+        "cos": "Sie haben cos verwendet (die Form für einen gegen die Grenzfläche gemessenen Winkel). Die Bedingung lautet sinθ_c = n₂/n₁.",
+        "tan": "Sie haben tan verwendet. Die Bedingung lautet sinθ_c = n₂/n₁.",
+        "inv": "Sie haben n₂ × sinθ_c berechnet. Richtig ist n₁ = n₂/sinθ_c (Totalreflexion tritt auf der Seite mit dem höheren Brechungsindex auf)."
+      }
+    },
+    "thin-lens": {
+      "name": "Dünne Linse: Bildweite und Abbildungsmaßstab",
+      "short": "Aus Brennweite und Gegenstandsweite einer Sammellinse die Bildweite oder den Abbildungsmaßstab bestimmen",
+      "formula": "1/a + 1/b = 1/f; m = −b/a",
+      "q": {
+        "b": "Ein Gegenstand steht a = {a} mm vor einer dünnen Sammellinse (in Luft) mit der Brennweite f = {f} mm. Berechnen Sie den Abstand b von der Linse zum Bild.",
+        "m": "Ein Gegenstand steht a = {a} mm vor einer dünnen Sammellinse (in Luft) mit der Brennweite f = {f} mm. Berechnen Sie den Abbildungsmaßstab m mit Vorzeichen (negativ für ein umgekehrtes Bild)."
+      },
+      "steps": {
+        "b": [
+          "Aus der Abbildungsgleichung 1/a + 1/b = 1/f folgt 1/b = 1/f − 1/a.",
+          "1/b = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm (positiv: reelles Bild hinter der Linse)."
+        ],
+        "m": [
+          "Aus der Abbildungsgleichung 1/a + 1/b = 1/f folgt 1/b = 1/f − 1/a = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm.",
+          "m = −b/a = −{b}/{a} = {m} (negativ: umgekehrtes Bild)."
+        ]
+      },
+      "mistakes": {
+        "plus": "Sie haben 1/b = 1/f + 1/a verwendet. Wird die Gegenstandsweite a positiv gezählt, lautet die Gleichung 1/a + 1/b = 1/f.",
+        "inv": "Sie haben m = −a/b verwendet. Der Abbildungsmaßstab ist Bildgröße/Gegenstandsgröße = −b/a.",
+        "nosign": "Der Betrag stimmt, das Vorzeichen nicht. Das reelle Bild einer Sammellinse ist umgekehrt, m ist also negativ."
+      }
+    },
+    "two-lens": {
+      "name": "Zwei Linsen mit Abstand: Gesamtbrennweite",
+      "short": "Gesamtbrennweite und bildseitige Schnittweite zweier dünner Linsen im Abstand d bestimmen",
+      "formula": "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂); BFD = f(1 − d/f₁)",
+      "q": {
+        "f": "Zwei dünne Linsen mit den Brennweiten f₁ = {f1} mm und f₂ = {f2} mm stehen auf derselben optischen Achse im Abstand d = {d} mm (in Luft). Berechnen Sie die Gesamtbrennweite f.",
+        "bfd": "Zwei dünne Linsen mit den Brennweiten f₁ = {f1} mm und f₂ = {f2} mm stehen auf derselben optischen Achse im Abstand d = {d} mm (in Luft; das Licht tritt durch Linse 1 ein). Berechnen Sie den Abstand von Linse 2 zum bildseitigen Brennpunkt (bildseitige Schnittweite BFD)."
+      },
+      "steps": {
+        "f": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂).",
+          "1/f = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm."
+        ],
+        "bfd": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm.",
+          "BFD = f(1 − d/f₁) = {f} × (1 − {d}/{f1}) = {bfd} mm."
+        ]
+      },
+      "mistakes": {
+        "nod": "Sie haben den Term mit dem Abstand d weggelassen (das ist die Formel für anliegende Linsen, 1/f = 1/f₁ + 1/f₂).",
+        "plus": "Sie haben den Term d/(f₁f₂) addiert. Rückt man zwei Sammellinsen auseinander, sinkt die Gesamtbrechkraft; der Term wird also subtrahiert.",
+        "f": "Sie haben die Gesamtbrennweite f angegeben. Die bildseitige Schnittweite wird von Linse 2 aus gemessen: f(1 − d/f₁).",
+        "f2": "Sie haben f(1 − d/f₂) verwendet. Die bildseitige Schnittweite enthält f₁ der Linse, die das Licht zuerst durchläuft: f(1 − d/f₁)."
+      }
+    },
+    "na-fnumber": {
+      "name": "Numerische Apertur und Blendenzahl",
+      "short": "Die NA eines Objektivs oder aus Brennweite und Öffnung die Blendenzahl und die bildseitige NA bestimmen",
+      "formula": "NA = n sinθ; N = f/D; NA ≈ 1/(2N)",
+      "q": {
+        "na": "Ein Objektiv, das in {im} (n = {n}) verwendet wird, hat auf der Gegenstandsseite einen halben Öffnungswinkel des Randstrahls von θ = {th}°. Berechnen Sie seine numerische Apertur NA.",
+        "fn": "Eine Linse mit der Brennweite f = {f} mm und dem Durchmesser der Eintrittspupille D = {D} mm bildet einen Gegenstand im Unendlichen ab. Berechnen Sie aus der Blendenzahl N = f/D die bildseitige numerische Apertur mit NA ≈ 1/(2N) (die Linse erfüllt die Sinusbedingung)."
+      },
+      "steps": {
+        "na": [
+          "NA = n sinθ.",
+          "sin{th}° = {s}.",
+          "NA = {n} × {s} = {na}."
+        ],
+        "fn": [
+          "N = f/D = {f}/{D} = {N}.",
+          "NA ≈ 1/(2N) = 1/(2 × {N}) = {na}."
+        ]
+      },
+      "mistakes": {
+        "non": "Sie haben den Brechungsindex n des Mediums weggelassen (NA = n sinθ). Mit Immersion kann die NA größer als 1 sein.",
+        "tan": "Sie haben tanθ verwendet. Die numerische Apertur ist n sinθ.",
+        "n1": "Sie haben 1/N angegeben. Die Randstrahlhöhe ist D/2, also NA ≈ 1/(2N).",
+        "atan": "Sie haben sinθ aus θ = arctan(D/(2f)) gebildet. Bei einer Linse, die die Sinusbedingung erfüllt, ist die Randstrahlhöhe f sinθ, also sinθ = D/(2f).",
+        "nval": "Sie haben die Blendenzahl N angegeben. Gefragt ist NA ≈ 1/(2N)."
+      }
+    },
+    "young-fringe": {
+      "name": "Streifenabstand beim Youngschen Doppelspaltversuch",
+      "short": "Den Streifenabstand eines Doppelspalts oder aus einem gemessenen Abstand die Wellenlänge bestimmen",
+      "formula": "Δy = λL/d",
+      "q": {
+        "dy": "Beim Youngschen Doppelspaltversuch haben die Spalte den Abstand d = {d} mm, der Schirm steht L = {L} m entfernt. Verwendet wird Licht der Wellenlänge {lam} nm. Berechnen Sie den Abstand Δy benachbarter heller Streifen auf dem Schirm.",
+        "lam": "Zwei Spalte im Abstand d = {d} mm beleuchten einen L = {L} m entfernten Schirm. Von einem hellen Streifen bis zu dem hellen Streifen, der {N} Streifen weiter liegt, sind es {s} mm. Berechnen Sie die Wellenlänge des Lichts."
+      },
+      "steps": {
+        "dy": [
+          "Für L ≫ d beträgt der Abstand benachbarter heller Streifen Δy = λL/d.",
+          "λ = {lm} m; d = {dm} m.",
+          "Δy = ({lm}) × {L}/({dm}) m = {dy} mm."
+        ],
+        "lam": [
+          "Abstand benachbarter heller Streifen Δy = {s}/{N} = {dy} mm.",
+          "Aus Δy = λL/d folgt λ = Δy·d/L.",
+          "λ = {dy} mm × {d} mm/{L} m = {lam} nm."
+        ]
+      },
+      "mistakes": {
+        "half": "Sie haben einen überzähligen Faktor 2 (Δy = λL/(2d) oder 2λL/d). Der Streifenabstand ist Δy = λL/d, ohne 2.",
+        "dbl": "Sie haben mit 2 multipliziert. Von einem hellen Streifen zum nächsten ändert sich der Gangunterschied um λ, also Δy = λL/d.",
+        "non": "Sie haben nicht durch {N} geteilt. Die {s} mm umfassen {N} Streifenabstände.",
+        "n1": "Sie haben durch {N} − 1 geteilt. Von einem hellen Streifen bis zu dem, der {N} Streifen weiter liegt, sind es {N} Abstände."
+      }
+    },
+    "airy-spot": {
+      "name": "Beugungsgrenze (Airy-Scheibchen und Rayleigh-Kriterium)",
+      "short": "Das Winkelauflösungsvermögen eines Teleskops, den Radius des Airy-Scheibchens eines fokussierten Flecks oder die Auflösung eines Mikroskops bestimmen",
+      "formula": "θ_R = 1,22λ/D; r = 1,22λN; δ = 0,61λ/NA",
+      "q": {
+        "ang": "Ein Teleskop mit dem Öffnungsdurchmesser D = {D} mm beobachtet Licht der Wellenlänge {lam} nm. Berechnen Sie den kleinsten Winkel θ_R zwischen zwei Punktquellen, die nach dem Rayleigh-Kriterium noch getrennt werden.",
+        "spot": "Eine aberrationsfreie Linse mit der Blendenzahl N = {N} fokussiert einen parallelen Strahl der Wellenlänge {lam} nm. Berechnen Sie den Radius des Airy-Scheibchens in der Brennebene (von der Mitte bis zum ersten dunklen Ring).",
+        "res": "Ein Mikroskopobjektiv mit NA = {na} wird mit Licht der Wellenlänge {lam} nm verwendet. Berechnen Sie die Auflösung nach dem Rayleigh-Kriterium (kleinster Abstand zweier Punkte, die noch getrennt werden)."
+      },
+      "steps": {
+        "ang": [
+          "Bei der Beugung an einer kreisförmigen Öffnung liegt der erste dunkle Ring bei sinθ_R = 1,22λ/D (für kleine Winkel θ_R ≈ 1,22λ/D).",
+          "λ/D = {x} rad.",
+          "θ_R = 1,22 × {x} rad = {th} µrad (= {as}″)."
+        ],
+        "spot": [
+          "Der Radius des Airy-Scheibchens in der Brennebene ist r = 1,22λf/D = 1,22λN.",
+          "r = 1,22 × {lam} nm × {N} = {r} µm."
+        ],
+        "res": [
+          "Rayleigh-Kriterium: Die Mitte des einen Bildes fällt auf den ersten dunklen Ring des anderen, beim Abstand δ = 0,61λ/NA.",
+          "δ = 0,61 × {lam}/{na} = {d} nm."
+        ]
+      },
+      "mistakes": {
+        "no122": "Sie haben den Faktor 1,22 weggelassen. Bei einer kreisförmigen Öffnung liegt der erste dunkle Ring bei 1,22λ/D (1,22 ist die erste Nullstelle der Bessel-Funktion J₁, 3,832, geteilt durch π).",
+        "diam": "Sie haben den Durchmesser des ersten dunklen Rings angegeben. Gefragt ist der Abstand von der Mitte bis zum ersten dunklen Ring.",
+        "abbe": "Sie haben die Abbesche Auflösungsgrenze λ/(2NA) angegeben. Das Rayleigh-Kriterium lautet 0,61λ/NA.",
+        "no061": "Sie haben den Faktor 0,61 weggelassen (δ = 0,61λ/NA)."
+      }
+    },
+    "grating-angle": {
+      "name": "Beugungsgitter: Beugungswinkel und Auflösungsvermögen",
+      "short": "Den Beugungswinkel bei senkrechtem Einfall auf ein Gitter oder den kleinsten auflösbaren Wellenlängenunterschied bestimmen",
+      "formula": "d sinβ = mλ; λ/δλ = mN",
+      "q": {
+        "beta": "Licht der Wellenlänge {lam} nm fällt senkrecht auf ein Gitter mit {G} Strichen pro mm. Berechnen Sie den Beugungswinkel β der Ordnung m = {m} (gegen die Gitternormale gemessen).",
+        "dl": "Ein Gitter mit {G} Strichen pro mm wird auf seiner gesamten Breite von {W} mm mit Licht um {lam} nm beleuchtet. Berechnen Sie den kleinsten Wellenlängenunterschied δλ, der in der Ordnung m = {m} aufgelöst wird."
+      },
+      "steps": {
+        "beta": [
+          "Gitterperiode d = 1 mm/{G} = {d} nm.",
+          "Bei senkrechtem Einfall gilt d sinβ = mλ, also sinβ = mλ/d = {m} × {lam}/{d} = {s}.",
+          "β = arcsin {s} = {b}°."
+        ],
+        "dl": [
+          "Anzahl der beleuchteten Striche N = {G} × {W} = {N}.",
+          "Auflösungsvermögen λ/δλ = mN = {m} × {N} = {R}.",
+          "δλ = λ/(mN) = {lam} nm/{R} = {dl} pm."
+        ]
+      },
+      "mistakes": {
+        "m1": "Das ist der Wert für die 1. Ordnung. Gefragt ist die Ordnung {m} (sinβ = mλ/d; λ/δλ = mN).",
+        "tan": "Sie haben tanβ = mλ/d verwendet. Die Gittergleichung lautet d sinβ = mλ.",
+        "nw": "Sie haben die Strichzahl pro mm, {G}, als N verwendet. Multiplizieren Sie mit der beleuchteten Breite: N = {G} × {W}."
+      }
+    },
+    "fsr-finesse": {
+      "name": "Fabry-Pérot: FSR, Finesse und Linienbreite",
+      "short": "Den freien Spektralbereich eines Etalons, die Finesse aus dem Reflexionsgrad der Spiegel oder die Linienbreite eines Transmissionsmaximums bestimmen",
+      "formula": "Δν_FSR = c/(2n_g L); 𝓕 = π√R/(1 − R); δν = Δν_FSR/𝓕",
+      "q": {
+        "fsr": "Ein Fabry-Pérot-Etalon mit {med} zwischen den Spiegeln (Gruppenindex n_g = {ng}) hat den Spiegelabstand L = {L} mm. Berechnen Sie den freien Spektralbereich Δν_FSR als Frequenz (c = {c} m/s; senkrechter Einfall).",
+        "fin": "Beide Spiegel eines Fabry-Pérot-Resonators haben den Reflexionsgrad R = {R} (keine Absorptions- oder Streuverluste). Berechnen Sie die Finesse 𝓕.",
+        "lw": "Ein Fabry-Pérot-Etalon mit {med} zwischen den Spiegeln (Gruppenindex n_g = {ng}) hat den Spiegelabstand L = {L} mm, die Spiegel haben den Reflexionsgrad R = {R}. Berechnen Sie die Halbwertsbreite δν eines Transmissionsmaximums (c = {c} m/s; senkrechter Einfall; verlustfrei)."
+      },
+      "steps": {
+        "fsr": [
+          "Δν_FSR = c/(2n_g L).",
+          "Δν_FSR = {c}/(2 × {ng} × {L} × 10⁻³) Hz = {fsr} GHz."
+        ],
+        "fin": [
+          "𝓕 = π√R/(1 − R).",
+          "√R = {sq}.",
+          "𝓕 = π × {sq}/(1 − {R}) = {F}."
+        ],
+        "lw": [
+          "Δν_FSR = c/(2n_g L) = {fsr} GHz.",
+          "𝓕 = π√R/(1 − R) = π × {sq}/(1 − {R}) = {F}.",
+          "δν = Δν_FSR/𝓕 = {fsr} GHz/{F} = {lw} MHz."
+        ]
+      },
+      "mistakes": {
+        "no2": "Der Faktor 2 fehlt (oder ist doppelt). Das Licht läuft zwischen den Spiegeln hin und zurück, also Δν_FSR = c/(2n_g L).",
+        "non": "Sie haben den Gruppenindex n_g weggelassen (außer bei Luft ist der optische Weg n_g-mal so lang).",
+        "coef": "Sie haben den Koeffizienten F = 4R/(1 − R)² angegeben. Die Finesse 𝓕 = π√R/(1 − R) ist eine andere Größe (𝓕 = (π/2)√F).",
+        "nosq": "Sie haben R statt √R verwendet (𝓕 = π√R/(1 − R)).",
+        "nopi": "Sie haben π weggelassen (𝓕 = π√R/(1 − R)).",
+        "mult": "Sie haben Δν_FSR mit 𝓕 multipliziert. Die Linienbreite ist Δν_FSR geteilt durch 𝓕 (eine höhere Finesse ergibt schärfere Maxima).",
+        "fsr": "Sie haben den freien Spektralbereich angegeben. Die Linienbreite ist δν = Δν_FSR/𝓕."
+      }
+    },
+    "coherence-length": {
+      "name": "Kohärenzlänge",
+      "short": "Die Kohärenzlänge aus der spektralen Breite einer Lichtquelle (in Wellenlänge oder Frequenz) abschätzen",
+      "formula": "l_c ≈ λ²/Δλ; l_c ≈ c/Δν",
+      "q": {
+        "lam": "Eine breitbandige Lichtquelle (etwa eine SLD) hat die Mittenwellenlänge {lam} nm und die spektrale Halbwertsbreite Δλ = {dl} nm. Berechnen Sie ihre Kohärenzlänge mit l_c ≈ λ²/Δλ.",
+        "nu": "Ein Laser hat die spektrale Linienbreite Δν = {dnu} MHz. Berechnen Sie seine Kohärenzlänge mit l_c ≈ c/Δν (c = {c} m/s)."
+      },
+      "steps": {
+        "lam": [
+          "l_c ≈ λ²/Δλ.",
+          "λ² = {sq} nm².",
+          "l_c = {sq}/{dl} nm = {lc} µm."
+        ],
+        "nu": [
+          "l_c ≈ c/Δν.",
+          "Δν = {nu} Hz.",
+          "l_c = {c}/({nu}) m = {lc} m."
+        ]
+      },
+      "mistakes": {
+        "half": "Sie haben durch 2 geteilt. In einem Interferometer, in dem der Gangunterschied durch Hin- und Rückweg entsteht, entspricht das einer Spiegelverschiebung von l_c/2, die Kohärenzlänge selbst ist aber λ²/Δλ (c/Δν).",
+        "oct": "Sie haben (2 ln2/π)λ²/Δλ angegeben, die Tiefenauflösung der OCT für ein Gaußspektrum. Diese Aufgabe verwendet l_c ≈ λ²/Δλ.",
+        "pi": "Sie haben c/(πΔν) angegeben, eine andere Definition für eine Lorentz-Linie. Diese Aufgabe verwendet l_c ≈ c/Δν."
+      }
+    },
+    "brewster": {
+      "name": "Brewster-Winkel",
+      "short": "Aus den beiden Brechungsindizes den Einfallswinkel bestimmen, bei dem p-polarisiertes Licht nicht reflektiert wird",
+      "formula": "tanθ_B = n₂/n₁",
+      "q": "Licht der Wellenlänge {lam} nm trifft aus {m1} (n₁ = {n1}) auf eine ebene Grenzfläche zu {m2} (n₂ = {n2}). Berechnen Sie den Einfallswinkel θ_B, bei dem der Reflexionsgrad für p-Polarisation null ist (Brewster-Winkel).",
+      "steps": [
+        "tanθ_B = n₂/n₁ = {n2}/{n1} = {x}.",
+        "θ_B = arctan {x} = {tb}°.",
+        "Der Brechungswinkel ist dann 90° − θ_B = {tt}°; reflektierter und gebrochener Strahl stehen senkrecht aufeinander."
+      ],
+      "mistakes": {
+        "inv": "Sie haben n₁/n₂ verwendet. Es gilt tanθ_B = n₂/n₁, wobei n₁ der Brechungsindex des Mediums ist, aus dem das Licht kommt.",
+        "crit": "Sie haben sinθ = (kleinerer Brechungsindex)/(größerer Brechungsindex) verwendet; das ist der Grenzwinkel. Für den Brewster-Winkel gilt tanθ_B = n₂/n₁."
+      }
+    },
+    "fresnel-normal": {
+      "name": "Reflexionsgrad bei senkrechtem Einfall (Fresnel)",
+      "short": "Den Reflexionsgrad einer Fläche bei senkrechtem Einfall, die Transmission durch eine Platte oder aus einem gemessenen Reflexionsgrad den Brechungsindex bestimmen",
+      "formula": "R = ((n₁ − n₂)/(n₁ + n₂))²",
+      "q": {
+        "r": "Licht der Wellenlänge {lam} nm trifft aus {m1} (n₁ = {n1}) senkrecht auf eine ebene Oberfläche aus {m2} (n₂ = {n2}). Berechnen Sie den Reflexionsgrad R (Intensität).",
+        "t2": "Licht der Wellenlänge {lam} nm trifft senkrecht auf eine planparallele Platte aus {m2} (n = {n2}) in Luft. Berücksichtigen Sie nur die Reflexionen an den beiden Oberflächen (Mehrfachreflexionen in der Platte und Absorption vernachlässigen) und berechnen Sie den Anteil des Lichts, der durch die Platte hindurchgeht.",
+        "n": "Licht trifft in Luft senkrecht auf eine ebene Oberfläche eines nicht absorbierenden Materials; der Reflexionsgrad (Intensität) beträgt {R} %. Berechnen Sie den Brechungsindex n des Materials."
+      },
+      "steps": {
+        "r": [
+          "Amplitudenreflexionsfaktor bei senkrechtem Einfall r = (n₁ − n₂)/(n₁ + n₂) = {r}.",
+          "R = r² = {R} = {Rp} %."
+        ],
+        "t2": [
+          "Reflexionsgrad einer Fläche R = ((n − 1)/(n + 1))² = {Rp} %.",
+          "Anteil durch eine Fläche 1 − R = {T1}.",
+          "Durch beide Flächen (1 − R)² = {T2} = {T2p} %."
+        ],
+        "n": [
+          "Aus R = ((n − 1)/(n + 1))² folgt √R = (n − 1)/(n + 1).",
+          "√R = √({R} × 10⁻²) = {s}.",
+          "n = (1 + √R)/(1 − √R) = {n}."
+        ]
+      },
+      "mistakes": {
+        "amp": "Sie haben den Amplitudenreflexionsfaktor |r| angegeben. Der Reflexionsgrad (Intensität) ist sein Quadrat, R = r².",
+        "trans": "Sie haben den Transmissionsgrad 1 − R angegeben. Gefragt ist der Reflexionsgrad.",
+        "one": "Das ist 1 − R für eine Fläche. Die Platte hat zwei Oberflächen.",
+        "mult": "Das ist (1 − R)/(1 + R), einschließlich der Mehrfachreflexionen in der Platte. Diese Aufgabe vernachlässigt sie: (1 − R)².",
+        "r": "Sie haben den Reflexionsgrad R einer Fläche angegeben. Gefragt ist der Anteil, der durch die Platte hindurchgeht.",
+        "nosqrt": "Sie haben (1 + R)/(1 − R) ohne Wurzel verwendet. Es gilt √R = (n − 1)/(n + 1).",
+        "inv": "Sie haben (1 − √R)/(1 + √R) verwendet. Der Brechungsindex ist der Wert größer als 1, (1 + √R)/(1 − √R)."
+      }
+    },
+    "malus": {
+      "name": "Gesetz von Malus (Licht durch Polarisatoren)",
+      "short": "Die Leistung bestimmen, nachdem linear polarisiertes oder unpolarisiertes Licht einen oder mehrere Polarisatoren durchlaufen hat",
+      "formula": "I = I₀ cos²θ",
+      "q": {
+        "pol": "Linear polarisiertes Licht mit der Leistung {I0} mW durchläuft einen idealen Polarisator, dessen Durchlassrichtung mit der Polarisationsrichtung den Winkel θ = {th}° bildet. Berechnen Sie die durchgelassene Leistung.",
+        "unpol": "Unpolarisiertes Licht mit der Leistung {I0} mW durchläuft zwei ideale Polarisatoren, deren Durchlassrichtungen den Winkel {th}° einschließen. Berechnen Sie die Leistung hinter dem zweiten Polarisator.",
+        "three": "Unpolarisiertes Licht mit der Leistung {I0} mW durchläuft nacheinander drei ideale Polarisatoren mit den Durchlassrichtungen 0°, {th}° und 90°. Berechnen Sie die Leistung hinter dem dritten Polarisator."
+      },
+      "steps": {
+        "pol": [
+          "Gesetz von Malus: I = I₀ cos²θ.",
+          "cos{th}° = {c}; cos²{th}° = {c2}.",
+          "I = {I0} × {c2} = {I} mW."
+        ],
+        "unpol": [
+          "Der erste Polarisator lässt die Hälfte des unpolarisierten Lichts durch: {I0}/2 = {h} mW.",
+          "Gesetz von Malus am zweiten Polarisator: cos²{th}° = {c2}.",
+          "I = {h} × {c2} = {I} mW."
+        ],
+        "three": [
+          "Durch den ersten Polarisator geht die Hälfte: {h} mW.",
+          "Zweiter Polarisator ({th}° gegen den ersten): Multiplikation mit cos²{th}° = {c2} ergibt {I2} mW.",
+          "Dritter Polarisator ({th3}° gegen den zweiten): Multiplikation mit cos²{th3}° = sin²{th}° = {s2} ergibt {I} mW."
+        ]
+      },
+      "mistakes": {
+        "nosq": "Sie haben cosθ nicht quadriert. Die Feldamplitude skaliert mit cosθ, die Intensität mit cos²θ.",
+        "sin": "Sie haben sin²θ verwendet. θ ist der Winkel zwischen Polarisationsrichtung und Durchlassrichtung; durchgelassen wird der Anteil cos²θ.",
+        "nohalf": "Sie haben vergessen, dass der erste Polarisator nur die Hälfte des unpolarisierten Lichts durchlässt.",
+        "one": "Das ist die Leistung hinter dem zweiten Polarisator. Der dritte ist um {th3}° gegen den zweiten gedreht; multiplizieren Sie also noch mit cos²{th3}°.",
+        "zero": "Null ergibt sich nur, wenn allein die Polarisatoren bei 0° und 90° vorhanden sind. Mit dem Polarisator bei {th}° dazwischen kommt Licht hindurch."
+      }
+    },
+    "waveplate": {
+      "name": "Dicke und Verzögerung einer Verzögerungsplatte",
+      "short": "Die Dicke eines λ/4- oder λ/2-Plättchens nullter Ordnung oder die Verzögerung einer doppelbrechenden Platte in Wellenlängen bestimmen",
+      "formula": "Γ = 2π(n_e − n_o)d/λ; (n_e − n_o)d = λ/4",
+      "q": {
+        "qwp": "Ein λ/4-Plättchen nullter Ordnung für {lam} nm wird aus {x} gefertigt (angenommen: n_e − n_o = {dn} bei {lam} nm). Berechnen Sie die Plattendicke d.",
+        "hwp": "Ein λ/2-Plättchen nullter Ordnung für {lam} nm wird aus {x} gefertigt (angenommen: n_e − n_o = {dn} bei {lam} nm). Berechnen Sie die Plattendicke d.",
+        "ret": "Eine Platte aus {x} (angenommen: n_e − n_o = {dn} bei {lam} nm) mit der Dicke {d} mm und der optischen Achse in der Plattenebene wird bei senkrechtem Einfall verwendet. Berechnen Sie ihre Verzögerung bei {lam} nm in Wellenlängen (Γ/2π)."
+      },
+      "steps": {
+        "qwp": [
+          "Beim λ/4-Plättchen ist der optische Gangunterschied (n_e − n_o)d der beiden Polarisationen gleich λ/4.",
+          "d = λ/(4(n_e − n_o)) = {lam} nm/(4 × {dn}) = {d} µm."
+        ],
+        "hwp": [
+          "Beim λ/2-Plättchen ist der optische Gangunterschied (n_e − n_o)d gleich λ/2.",
+          "d = λ/(2(n_e − n_o)) = {lam} nm/(2 × {dn}) = {d} µm."
+        ],
+        "ret": [
+          "Optischer Gangunterschied (n_e − n_o)d = {dn} × {d} mm = {od} nm.",
+          "Γ/2π = (n_e − n_o)d/λ = {od}/{lam} = {w} (Γ = {G} rad)."
+        ]
+      },
+      "mistakes": {
+        "half": "λ/(2Δn) ist die Dicke eines λ/2-Plättchens. Ein λ/4-Plättchen ist λ/(4Δn) dick.",
+        "quarter": "λ/(4Δn) ist die Dicke eines λ/4-Plättchens. Ein λ/2-Plättchen ist λ/(2Δn) dick.",
+        "full": "Das ist λ/Δn, die Dicke für eine volle Wellenlänge (Verzögerung 2π).",
+        "nodn": "Sie haben nicht durch die Doppelbrechung n_e − n_o geteilt. λ/4 und λ/2 sind Gangunterschiede; die Dicke ist dieser Wert geteilt durch n_e − n_o.",
+        "rad": "Sie haben die Verzögerung in Radiant angegeben (Γ = 2π × {w}). Gefragt ist sie in Wellenlängen (Γ/2π).",
+        "inv": "Sie haben den Kehrwert gebildet: λ/((n_e − n_o)d)."
+      }
+    },
+    "ar-coat": {
+      "name": "λ/4-Antireflexschicht: Dicke, Brechungsindex und Reflexionsgrad",
+      "short": "Die physikalische Dicke einer einlagigen λ/4-Antireflexschicht, den idealen Brechungsindex der Schicht oder den Reflexionsgrad bei der Entwurfswellenlänge bestimmen",
+      "formula": "d = λ₀/(4n₁); n₁ = √(n₀nₛ); R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²",
+      "q": {
+        "d": "Auf ein Substrat aus {s} (nₛ = {ns}) wird eine einlagige Antireflexschicht aus {film} (n₁ = {n1}) als λ/4-Schicht für die Entwurfswellenlänge λ₀ = {lam0} nm aufgebracht. Berechnen Sie die physikalische Dicke d der Schicht (in Luft, senkrechter Einfall).",
+        "n": "Auf ein Substrat aus {s} (nₛ = {ns} bei {lam0} nm) wird eine einlagige λ/4-Antireflexschicht für den Einsatz in Luft (n₀ = 1) aufgebracht. Berechnen Sie den idealen Brechungsindex n₁ der Schicht, bei dem der Reflexionsgrad bei der Entwurfswellenlänge null ist.",
+        "r": "Auf ein Substrat aus {s} (nₛ = {ns}) ist eine λ/4-Schicht aus {film} (n₁ = {n1}; Entwurfswellenlänge {lam0} nm) aufgebracht. Berechnen Sie den Reflexionsgrad der Oberfläche bei der Entwurfswellenlänge und senkrechtem Einfall (in Luft, n₀ = 1)."
+      },
+      "steps": {
+        "d": [
+          "Die optische Dicke n₁d wird gleich λ₀/4 gewählt: n₁d = {lam0}/4 = {opt} nm.",
+          "d = λ₀/(4n₁) = {lam0}/(4 × {n1}) = {d} nm."
+        ],
+        "n": [
+          "Die beiden Reflexionen haben gleiche Amplituden, wenn n₁ = √(n₀nₛ).",
+          "n₁ = √(1 × {ns}) = {n}."
+        ],
+        "r": [
+          "Reflexionsgrad einer λ/4-Schicht bei der Entwurfswellenlänge: R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))².",
+          "n₁² = {n12}; Amplitude ({ns} − {n12})/({ns} + {n12}) = {r}.",
+          "R = {Rp} % ({R0p} % ohne Schicht)."
+        ]
+      },
+      "mistakes": {
+        "nodiv": "λ₀/4 ist die optische Dicke. In der Schicht verkürzt sich die Wellenlänge auf λ₀/n₁, die physikalische Dicke ist also λ₀/(4n₁).",
+        "half": "λ₀/(2n₁) ist eine λ/2-Schicht. Bei der Entwurfswellenlänge reflektiert eine λ/2-Schicht so, als wäre keine Schicht vorhanden.",
+        "ns": "Sie haben durch den Brechungsindex des Substrats geteilt. Die Dicke hängt vom Brechungsindex n₁ der Schicht ab (d = λ₀/(4n₁)).",
+        "mean": "Sie haben das arithmetische Mittel von n₀ und nₛ gebildet. Der ideale Brechungsindex ist das geometrische Mittel √(n₀nₛ).",
+        "nosqrt": "Sie haben die Wurzel nicht gezogen (n₁ = √(n₀nₛ)).",
+        "bare": "Das ist der Reflexionsgrad ohne Schicht, ((nₛ − 1)/(nₛ + 1))².",
+        "amp": "Sie haben den Amplitudenreflexionsfaktor angegeben. Der Reflexionsgrad (Intensität) ist sein Quadrat.",
+        "simple": "Das ist ((nₛ − n₁)/(nₛ + n₁))² für die Grenzfläche zwischen Schicht und Substrat allein. Bei einer λ/4-Schicht wirken beide Reflexionen zusammen: ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²."
+      }
+    },
+    "achromat": {
+      "name": "Achromat: Brennweiten der beiden Linsen",
+      "short": "Die Brennweite jeder Linse eines verkitteten Achromaten aus Kron- und Flintglas bestimmen",
+      "formula": "φ₁/V₁ + φ₂/V₂ = 0; φ₁ = φV₁/(V₁ − V₂); φ₂ = −φV₂/(V₁ − V₂)",
+      "q": {
+        "f1": "Eine Sammellinse aus N-BK7 (Abbe-Zahl V₁ = {V1}) und eine Zerstreuungslinse aus F2 (V₂ = {V2}) werden zu einem Achromaten mit der Gesamtbrennweite f = {f} mm verkittet (C- und F-Linie mit gemeinsamem Brennpunkt). Berechnen Sie die Brennweite f₁ der N-BK7-Linse.",
+        "f2": "Eine Sammellinse aus N-BK7 (Abbe-Zahl V₁ = {V1}) und eine Zerstreuungslinse aus F2 (V₂ = {V2}) werden zu einem Achromaten mit der Gesamtbrennweite f = {f} mm verkittet (C- und F-Linie mit gemeinsamem Brennpunkt). Berechnen Sie die Brennweite f₂ der F2-Linse mit Vorzeichen."
+      },
+      "steps": {
+        "f1": [
+          "Aus der Achromasiebedingung φ₁/V₁ + φ₂/V₂ = 0 und φ₁ + φ₂ = φ folgt φ₁ = φV₁/(V₁ − V₂).",
+          "V₁ − V₂ = {dV}; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₁ = 1/φ₁ = f(V₁ − V₂)/V₁ = {f1} mm."
+        ],
+        "f2": [
+          "Aus der Achromasiebedingung φ₁/V₁ + φ₂/V₂ = 0 und φ₁ + φ₂ = φ folgt φ₂ = −φV₂/(V₁ − V₂).",
+          "V₁ − V₂ = {dV}; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₂ = 1/φ₂ = −f(V₁ − V₂)/V₂ = {f2} mm (Zerstreuungslinse)."
+        ]
+      },
+      "mistakes": {
+        "swap": "Sie haben V₁ und V₂ vertauscht.",
+        "inv": "Sie haben die Brechkraft φ und die Brennweite f = 1/φ verwechselt (aus φ₁ = φV₁/(V₁ − V₂) folgt f₁ = f(V₁ − V₂)/V₁)."
+      }
+    },
+    "absorption": {
+      "name": "Absorptionskoeffizient und Transmissionsgrad (Lambert-Beer)",
+      "short": "Aus α und Dicke den inneren Transmissionsgrad, die 1/e-Eindringtiefe oder aus dem Extinktionskoeffizienten α bestimmen",
+      "formula": "I = I₀e^(−αz); α = 4πκ/λ",
+      "q": {
+        "trans": "Eine Platte aus einem Material mit dem Absorptionskoeffizienten α = {a} cm⁻¹ ist {z} mm dick. Berechnen Sie ihren inneren Transmissionsgrad I/I₀ (ohne Oberflächenreflexionen).",
+        "depth": "Berechnen Sie für ein Material mit dem Absorptionskoeffizienten α = {a} cm⁻¹ die Tiefe, in der die Intensität auf 1/e (etwa 37 %) ihres Werts beim Eintritt gefallen ist.",
+        "kappa": "Ein Material hat den Extinktionskoeffizienten (Imaginärteil des komplexen Brechungsindex) κ = {kap}. Berechnen Sie den Absorptionskoeffizienten α (Intensität) bei {lam} nm."
+      },
+      "steps": {
+        "trans": [
+          "I/I₀ = e^(−αz). z = {zc} cm.",
+          "αz = {a} × {zc} = {x}.",
+          "I/I₀ = e^(−{x}) = {T} %."
+        ],
+        "depth": [
+          "e^(−αz) = 1/e bei z = 1/α.",
+          "1/α = {dc} cm = {dp} µm."
+        ],
+        "kappa": [
+          "Absorptionskoeffizient (Intensität) α = 4πκ/λ.",
+          "λ = {lc} cm.",
+          "α = 4π × ({kap})/({lc}) = {a} cm⁻¹."
+        ]
+      },
+      "mistakes": {
+        "log10": "Sie haben 10^(−αz) verwendet. Im Lambert-Beerschen Gesetz gehört α zur natürlichen Exponentialfunktion e^(−αz) (die Basis 10 gehört zur dekadischen Extinktion).",
+        "cm": "Sie haben α in cm⁻¹ mit der Dicke in mm multipliziert. Rechnen Sie z zuerst in cm um (1 mm = 0,1 cm).",
+        "lin": "Sie haben die Näherung 1 − αz verwendet. αz ist hier nicht klein, rechnen Sie also mit e^(−αz).",
+        "ln2": "Das ist ln2/α, die Tiefe, in der sich die Intensität halbiert. Auf 1/e fällt sie bei 1/α.",
+        "amp": "Das ist 2/α, die Tiefe, in der die Feldamplitude auf 1/e fällt. Die Intensität ist das Quadrat der Amplitude, die Lösung ist also 1/α.",
+        "pi2": "2πκ/λ ist der Dämpfungskoeffizient der Amplitude. Der Koeffizient für die Intensität ist doppelt so groß, 4πκ/λ.",
+        "nopi": "Sie haben π weggelassen (α = 4πκ/λ)."
+      }
+    },
+    "gauss-beam": {
+      "name": "Gauß-Strahl: zR, w(z) und Divergenz",
+      "short": "Aus Strahltaille und M² die Rayleigh-Länge, den Strahlradius im Abstand z oder den Divergenzwinkel im Fernfeld bestimmen",
+      "formula": "z_R = πw₀²/(M²λ); w(z) = w₀√(1 + (z/z_R)²); θ = M²λ/(πw₀)",
+      "q": {
+        "zr": "Ein Laserstrahl (in Luft) hat die Wellenlänge {lam} nm, den Taillenradius w₀ = {w0} µm (1/e²) und M² = {m2}. Berechnen Sie die Rayleigh-Länge z_R.",
+        "wz": "Ein Laserstrahl (in Luft) hat die Wellenlänge {lam} nm, den Taillenradius w₀ = {w0} µm (1/e²) und M² = {m2}. Berechnen Sie den Strahlradius w(z) im Abstand z = {z} mm von der Taille.",
+        "div": "Ein Laserstrahl (in Luft) hat die Wellenlänge {lam} nm, den Taillenradius w₀ = {w0} µm (1/e²) und M² = {m2}. Berechnen Sie den halben Divergenzwinkel θ im Fernfeld."
+      },
+      "steps": {
+        "zr": [
+          "z_R = πw₀²/(M²λ).",
+          "z_R = π × ({w0} µm)²/({m2} × {lam} nm) = {zr} mm."
+        ],
+        "wz": [
+          "z_R = πw₀²/(M²λ) = {zr} mm.",
+          "z/z_R = {z}/{zr} = {x}; (z/z_R)² = {x2}.",
+          "w(z) = w₀√(1 + (z/z_R)²) = {w0} × √(1 + {x2}) = {w} µm."
+        ],
+        "div": [
+          "θ = M²λ/(πw₀).",
+          "θ = {m2} × {lam} nm/(π × {w0} µm) = {th} mrad."
+        ]
+      },
+      "mistakes": {
+        "diam": "Sie haben für w₀ den Durchmesser verwendet. w₀ ist der Radius (bis zu der Stelle, an der die Intensität auf 1/e² gefallen ist).",
+        "nopi": "Sie haben π weggelassen (z_R = πw₀²/(M²λ); θ = M²λ/(πw₀)).",
+        "m2": "M² ist falsch herum berücksichtigt. Ein größeres M² verkürzt z_R (um den Faktor 1/M²) und vergrößert θ (um den Faktor M²).",
+        "full": "Sie haben den vollen Winkel 2θ angegeben. Gefragt ist der halbe Winkel.",
+        "nosqrt": "Sie haben die Wurzel vergessen (w = w₀√(1 + (z/z_R)²)).",
+        "far": "Sie haben die Fernfeldnäherung w ≈ w₀z/z_R (= θz) verwendet. Innerhalb weniger z_R von der Taille rechnen Sie mit √(1 + (z/z_R)²).",
+        "lin": "Sie haben w₀(1 + z/z_R) verwendet. Richtig ist w₀√(1 + (z/z_R)²)."
+      }
+    },
+    "long-modes": {
+      "name": "Abstand der Longitudinalmoden",
+      "short": "Den Frequenzabstand der Longitudinalmoden aus der Resonatorlänge oder den Wellenlängenabstand eines Halbleiterlasers bestimmen",
+      "formula": "Δν = c/(2nL); Δλ = λ²/(2n_g L)",
+      "q": {
+        "nu": "Ein He-Ne-Laser hat die Resonatorlänge L = {L} m (Brechungsindex im Resonator als 1 angenommen). Berechnen Sie den Frequenzabstand Δν seiner Longitudinalmoden (c = {c} m/s).",
+        "lam": "Ein Fabry-Pérot-Halbleiterlaser hat die Länge L = {Lu} µm und den Gruppenindex n_g = {ng}. Berechnen Sie den Wellenlängenabstand Δλ seiner Longitudinalmoden bei etwa {lam} nm."
+      },
+      "steps": {
+        "nu": [
+          "Abstand der Longitudinalmoden Δν = c/(2nL).",
+          "Δν = {c}/(2 × {L}) Hz = {dn} MHz."
+        ],
+        "lam": [
+          "Wellenlängenabstand Δλ = λ²/(2n_g L).",
+          "λ² = {sq} nm²; 2n_g L = {den} nm.",
+          "Δλ = {sq}/{den} = {dl} nm."
+        ]
+      },
+      "mistakes": {
+        "no2": "Sie haben die 2 weggelassen. Das Licht läuft im Resonator hin und zurück, also Δν = c/(2nL) und Δλ = λ²/(2n_g L).",
+        "half": "Sie haben durch 4L geteilt. Richtig ist Δν = c/(2nL).",
+        "non": "Sie haben den Gruppenindex n_g weggelassen."
+      }
+    },
+    "fiber-na": {
+      "name": "NA, Akzeptanzwinkel und Brechungsindexdifferenz der Faser",
+      "short": "Aus den Brechungsindizes von Kern und Mantel die numerische Apertur, den Akzeptanzwinkel in Luft oder die relative Brechungsindexdifferenz bestimmen",
+      "formula": "NA = √(n₁² − n₂²) = sinθ_max; Δ = (n₁² − n₂²)/(2n₁²)",
+      "q": {
+        "na": "Eine Stufenindexfaser hat im Kern den Brechungsindex n₁ = {n1} und im Mantel n₂ = {n2}. Berechnen Sie ihre numerische Apertur NA.",
+        "theta": "Licht wird aus Luft in die Stirnfläche einer Stufenindexfaser eingekoppelt, die im Kern den Brechungsindex n₁ = {n1} und im Mantel n₂ = {n2} hat. Berechnen Sie den größten Einfallswinkel θ_max (halber Akzeptanzwinkel), bei dem das Licht im Kern geführt wird.",
+        "delta": "Eine Stufenindexfaser hat im Kern den Brechungsindex n₁ = {n1} und im Mantel n₂ = {n2}. Berechnen Sie die relative Brechungsindexdifferenz Δ = (n₁² − n₂²)/(2n₁²)."
+      },
+      "steps": {
+        "na": [
+          "NA = √(n₁² − n₂²).",
+          "n₁² − n₂² = {d2}.",
+          "NA = √{d2} = {na}."
+        ],
+        "theta": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "In Luft (n₀ = 1) gilt sinθ_max = NA, also θ_max = arcsin {na} = {th}°."
+        ],
+        "delta": [
+          "Δ = (n₁² − n₂²)/(2n₁²).",
+          "n₁² − n₂² = {d2}.",
+          "Δ = {d2}/(2 × {n1}²) = {dl} %."
+        ]
+      },
+      "mistakes": {
+        "diff": "Sie haben n₁ − n₂ angegeben. Es gilt NA = √(n₁² − n₂²).",
+        "nosqrt": "Sie haben die Wurzel nicht gezogen (NA = √(n₁² − n₂²)).",
+        "nosq": "Sie haben √(n₁ − n₂) verwendet. Richtig ist die Wurzel aus der Differenz der Quadrate, n₁² − n₂².",
+        "full": "Sie haben den vollen Winkel 2θ_max angegeben. Gefragt ist der halbe Winkel.",
+        "core": "Das ist der Winkel im Kern, arcsin(NA/n₁). In Luft gilt sinθ_max = NA.",
+        "no2": "Sie haben nicht durch 2 geteilt (Δ = (n₁² − n₂²)/(2n₁²)).",
+        "na": "Sie haben die numerische Apertur NA angegeben."
+      }
+    },
+    "v-number": {
+      "name": "V-Parameter und Grenzwellenlänge der Faser",
+      "short": "Die normierte Frequenz V aus Kerngröße, Brechungsindizes und Wellenlänge oder die Grenzwellenlänge für einmodigen Betrieb bestimmen",
+      "formula": "V = 2πa·NA/λ; λ_c = 2πa·NA/2,405",
+      "q": {
+        "v": "Eine Stufenindexfaser mit den Brechungsindizes n₁ = {n1} (Kern) und n₂ = {n2} (Mantel) und dem Kerndurchmesser {dc} µm wird bei {lam} nm betrieben. Berechnen Sie die normierte Frequenz V.",
+        "lc": "Eine Stufenindexfaser hat die Brechungsindizes n₁ = {n1} (Kern) und n₂ = {n2} (Mantel) und den Kerndurchmesser {dc} µm. Berechnen Sie ihre Grenzwellenlänge λ_c (oberhalb davon einmodig)."
+      },
+      "steps": {
+        "v": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "Kernradius a = {dc}/2 = {a} µm.",
+          "V = 2πa·NA/λ = 2π × {a} µm × {na}/{lam} nm = {V} ({mode})."
+        ],
+        "lc": [
+          "NA = √(n₁² − n₂²) = {na}; Kernradius a = {dc}/2 = {a} µm.",
+          "V = 2,405 bei λ_c = 2πa·NA/2,405 = {lc} nm."
+        ]
+      },
+      "mistakes": {
+        "diam": "Sie haben den Kerndurchmesser als a verwendet. a ist der Kernradius (der halbe Durchmesser).",
+        "nopi": "Sie haben 2π weggelassen (V = 2πa·NA/λ).",
+        "no2": "Sie haben die 2 in 2π weggelassen."
+      }
+    },
+    "chrom-disp": {
+      "name": "Pulsverbreiterung durch chromatische Dispersion",
+      "short": "Die Pulsverbreiterung aus Dispersion, Länge und spektraler Breite oder die größte Länge für eine zulässige Verbreiterung bestimmen",
+      "formula": "Δτ = |D| L Δλ; Δλ = λ²Δν/c",
+      "q": {
+        "tau": "Ein Lichtpuls mit der spektralen Breite Δλ = {dl} nm durchläuft L = {L} km einer Faser mit der Dispersion D = {D} ps/(nm·km) (1550-nm-Band). Berechnen Sie die Verbreiterung Δτ.",
+        "nu": "Licht bei 1550 nm mit der spektralen Breite Δν = {dnu} GHz wird über L = {L} km einer Faser mit der Dispersion D = {D} ps/(nm·km) übertragen. Berechnen Sie die Pulsverbreiterung Δτ durch chromatische Dispersion (c = {c} m/s).",
+        "len": "Pulse mit der spektralen Breite Δλ = {dl} nm werden durch eine Faser mit der Dispersion D = {D} ps/(nm·km) geschickt. Berechnen Sie die größte Länge, bei der die Verbreiterung durch Dispersion höchstens {tau} ps beträgt."
+      },
+      "steps": {
+        "tau": [
+          "Δτ = |D| L Δλ.",
+          "Δτ = {D} × {L} × {dl} = {t} ps."
+        ],
+        "nu": [
+          "Spektrale Breite von der Frequenz in die Wellenlänge umrechnen: Δλ = λ²Δν/c = (1550 nm)² × {dnu} GHz/c = {dlc} nm.",
+          "Δτ = |D| L Δλ = {D} × {L} × {dlc} = {t} ps."
+        ],
+        "len": [
+          "Aus Δτ = |D| L Δλ folgt L = Δτ/(|D|Δλ).",
+          "|D|Δλ = {D} × {dl} = {Ddl} ps/km.",
+          "L = {tau}/{Ddl} = {L} km."
+        ]
+      },
+      "mistakes": {
+        "div": "Sie haben durch Δλ geteilt. Die Verbreiterung ist proportional zu Δλ (Δτ = |D| L Δλ).",
+        "raw": "Sie haben den Zahlenwert von Δν in GHz als Δλ in nm verwendet. Rechnen Sie mit Δλ = λ²Δν/c um (bei 1550 nm entspricht 1 GHz etwa 0,008 nm).",
+        "mult": "Sie haben Δτ × |D| × Δλ gerechnet. Richtig ist L = Δτ/(|D|Δλ).",
+        "inv": "Sie haben den Kehrwert gebildet: |D|Δλ/Δτ."
+      }
+    },
+    "db-power": {
+      "name": "Umrechnung dBm–mW und Faserdämpfung",
+      "short": "Optische Leistung zwischen mW und dBm umrechnen oder die Leistung nach einer in dB/km angegebenen Dämpfung bestimmen",
+      "formula": "P_dBm = 10 log₁₀(P/1 mW); P = P₀·10^(−αL/10)",
+      "q": {
+        "todbm": "Geben Sie die optische Leistung {P} mW in dBm an.",
+        "tomw": "Geben Sie die optische Leistung {dbm} dBm in mW an.",
+        "loss": "In eine Faser mit der Dämpfung {al} dB/km werden {Pin} mW Licht eingekoppelt. Berechnen Sie die optische Leistung nach {L} km."
+      },
+      "steps": {
+        "todbm": [
+          "P_dBm = 10 log₁₀(P/1 mW).",
+          "log₁₀ {P} = {lg}.",
+          "P_dBm = 10 × ({lg}) = {y} dBm."
+        ],
+        "tomw": [
+          "P = 1 mW × 10^(P_dBm/10).",
+          "P = 10^({e}) mW = {P} mW."
+        ],
+        "loss": [
+          "Gesamtdämpfung A = {al} × {L} = {A} dB.",
+          "P = P₀ × 10^(−A/10) = {Pin} × {f} = {P} mW."
+        ]
+      },
+      "mistakes": {
+        "ln": "Sie haben die Basis e statt 10 verwendet. Dezibel beruhen auf dem dekadischen Logarithmus (Basis 10).",
+        "x20": "Sie haben 20 log₁₀ (oder 10^(x/20)) verwendet. Für Leistungsgrößen wie die optische Leistung gilt 10 log₁₀ (20 gilt für Amplitudenverhältnisse wie Spannung oder Feldstärke).",
+        "w": "Sie haben 1 W als Bezug verwendet (dBW). dBm ist auf 1 mW bezogen.",
+        "np": "Sie haben die Dämpfung in dB direkt als Exponenten von e verwendet. Rechnen Sie mit P = P₀·10^(−A/10)."
+      }
+    },
+    "link-budget": {
+      "name": "Leistungsbudget einer optischen Übertragungsstrecke",
+      "short": "Faser-, Stecker- und Spleißverluste von der Sendeleistung abziehen, um Empfangsleistung und Systemreserve zu bestimmen",
+      "formula": "P_rx = P_tx − αL − N_cL_c − N_sL_s; M = P_rx − S",
+      "q": {
+        "prx": "Ein Sender koppelt {Ptx} dBm in {L} km Einmodenfaser mit der Dämpfung {al} dB/km bei {w} nm ein. Die Strecke hat {Nc} Steckverbindungen (je {Lc} dB) und {Ns} Schmelzspleiße (je {Ls} dB). Berechnen Sie die Empfangsleistung.",
+        "margin": "Ein Sender koppelt {Ptx} dBm in {L} km Einmodenfaser mit der Dämpfung {al} dB/km bei {w} nm ein. Die Strecke hat {Nc} Steckverbindungen (je {Lc} dB) und {Ns} Schmelzspleiße (je {Ls} dB). Die Empfängerempfindlichkeit beträgt {S} dBm. Berechnen Sie die Systemreserve."
+      },
+      "steps": {
+        "prx": [
+          "Faserdämpfung {al} × {L} = {Af} dB.",
+          "Stecker {Nc} × {Lc} = {Ac} dB; Spleiße {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm."
+        ],
+        "margin": [
+          "Faserdämpfung {al} × {L} = {Af} dB.",
+          "Stecker {Nc} × {Lc} = {Ac} dB; Spleiße {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm.",
+          "Systemreserve M = P_rx − S = {Prx} − ({S}) = {M} dB."
+        ]
+      },
+      "mistakes": {
+        "noconn": "Sie haben die Stecker- und Spleißverluste weggelassen.",
+        "nosp": "Sie haben den Spleißverlust von {As} dB weggelassen.",
+        "plus": "Sie haben die Verluste addiert. Verluste in dB werden von der Sendeleistung in dBm abgezogen.",
+        "prx": "Sie haben die Empfangsleistung P_rx angegeben. Die Systemreserve ist die Differenz zur Empfindlichkeit, P_rx − S."
+      }
+    },
+    "responsivity": {
+      "name": "Spektrale Empfindlichkeit und Quanteneffizienz einer Photodiode",
+      "short": "Die spektrale Empfindlichkeit oder den Photostrom aus Quanteneffizienz und Wellenlänge oder die Quanteneffizienz aus einem gemessenen Photostrom bestimmen",
+      "formula": "ℛ = ηqλ/(hc); I_p = ℛP",
+      "q": {
+        "r": "Eine Photodiode aus {det} hat bei {lam} nm die Quanteneffizienz η = {eta}. Berechnen Sie ihre spektrale Empfindlichkeit ℛ (q = {e} C; h = {h} J·s; c = {c} m/s).",
+        "ip": "Auf eine Photodiode aus {det}, deren Quanteneffizienz bei {lam} nm η = {eta} beträgt, fallen {P} µW Licht dieser Wellenlänge. Berechnen Sie den Photostrom (q = {e} C; h = {h} J·s; c = {c} m/s).",
+        "eta": "Fallen {P} µW Licht bei {lam} nm auf eine Photodiode aus {det}, beträgt der Photostrom {I} µA. Berechnen Sie die Quanteneffizienz η (q = {e} C; h = {h} J·s; c = {c} m/s)."
+      },
+      "steps": {
+        "r": [
+          "Spektrale Empfindlichkeit bei der Quanteneffizienz 1: qλ/(hc) = {r1} A/W (gleich λ[nm]/1239,84).",
+          "ℛ = η × {r1} = {R} A/W."
+        ],
+        "ip": [
+          "Spektrale Empfindlichkeit bei der Quanteneffizienz 1: qλ/(hc) = {r1} A/W.",
+          "ℛ = η × {r1} = {R} A/W.",
+          "I_p = ℛP = {R} A/W × {P} µW = {I} µA."
+        ],
+        "eta": [
+          "η = (I_p/q)/(P/(hν)) = (I_p/P)/(qλ/(hc)).",
+          "I_p/P = {Ri} A/W; qλ/(hc) = {r1} A/W.",
+          "η = {Ri}/{r1} = {eta} %."
+        ]
+      },
+      "mistakes": {
+        "noeta": "Sie haben die Quanteneffizienz η weggelassen (das ist die Obergrenze für η = 1).",
+        "inv": "Sie haben den Kehrwert gebildet (ℛ = ηqλ/(hc); I_p = ℛP).",
+        "r": "Sie haben die spektrale Empfindlichkeit I_p/P in A/W angegeben. Die Quanteneffizienz ist dieser Wert geteilt durch qλ/(hc)."
+      }
+    },
+    "shot-noise": {
+      "name": "Schrotrauschstrom",
+      "short": "Den Effektivwert des Schrotrauschstroms aus Photostrom, Dunkelstrom und Bandbreite bestimmen",
+      "formula": "⟨i²⟩ = 2q(I_p + I_d)Δf",
+      "q": "Eine Photodiode mit dem Photostrom {Ip} µA und dem Dunkelstrom {Id} nA wird mit der Bandbreite {bw} MHz betrieben. Berechnen Sie den Effektivwert des Schrotrauschstroms (q = {e} C).",
+      "steps": [
+        "⟨i²⟩ = 2q(I_p + I_d)Δf.",
+        "I_p + I_d = {I} A; Δf = {bwh} Hz.",
+        "⟨i²⟩ = 2 × {e} × {I} × {bwh} = {s2} A².",
+        "i = √⟨i²⟩ = {i} nA."
+      ],
+      "mistakes": {
+        "no2": "Sie haben den Faktor 2 weggelassen (⟨i²⟩ = 2qIΔf).",
+        "nodark": "Sie haben den Dunkelstrom I_d weggelassen. Auch der Dunkelstrom erzeugt Schrotrauschen."
+      }
+    },
+    "shg-coherence": {
+      "name": "Kohärenzlänge bei SHG und QPM-Periode",
+      "short": "Aus den Brechungsindizes von Grundwelle und zweiter Harmonischer die Kohärenzlänge ohne Phasenanpassung und die Polungsperiode von PPLN bestimmen",
+      "formula": "L_c = λ/(4(n₂ω − nω)); Λ = 2L_c",
+      "q": {
+        "lc": "In LiNbO₃ wird mit außerordentlicher Polarisation (24,5 °C) die zweite Harmonische ({lam2} nm) von Licht bei {lam} nm erzeugt. Die Brechungsindizes sind n(ω) = {n1} und n(2ω) = {n2}. Berechnen Sie die Kohärenzlänge L_c ohne Phasenanpassung.",
+        "qpm": "In LiNbO₃ wird mit außerordentlicher Polarisation (24,5 °C) die zweite Harmonische ({lam2} nm) von Licht bei {lam} nm erzeugt. Die Brechungsindizes sind n(ω) = {n1} und n(2ω) = {n2}. Berechnen Sie die Polungsperiode Λ für Quasi-Phasenanpassung erster Ordnung in periodisch gepoltem LiNbO₃ (PPLN)."
+      },
+      "steps": {
+        "lc": [
+          "Δk = k₂ω − 2kω = (4π/λ)(n₂ω − nω) (λ ist die Wellenlänge der Grundwelle).",
+          "n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = π/Δk = λ/(4(n₂ω − nω)) = {lam} nm/(4 × {dn}) = {lc} µm."
+        ],
+        "qpm": [
+          "Δk = (4π/λ)(n₂ω − nω); n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = λ/(4(n₂ω − nω)) = {lc} µm.",
+          "Für QPM erster Ordnung gilt Λ = 2L_c = {L} µm."
+        ]
+      },
+      "mistakes": {
+        "qpm": "λ/(2Δn) ist die QPM-Periode Λ = 2L_c. Die Kohärenzlänge ist L_c = λ/(4Δn).",
+        "lc": "Sie haben die Kohärenzlänge L_c angegeben. Die Polungsperiode ist Λ = 2L_c.",
+        "nofour": "Der Faktor im Nenner fehlt (L_c = λ/(4Δn); Λ = λ/(2Δn)).",
+        "sh": "Sie haben die Wellenlänge der zweiten Harmonischen λ/2 verwendet. Das λ in der Formel ist die Wellenlänge der Grundwelle."
+      }
+    },
+    "tbp": {
+      "name": "Zeit-Bandbreite-Produkt (Fourier-limitierte Pulse)",
+      "short": "Die spektrale Breite (in Frequenz oder Wellenlänge) aus der Pulsdauer oder den kürzesten Puls aus der spektralen Breite bestimmen",
+      "formula": "ΔνΔt = K; Δλ = λ²Δν/c",
+      "q": {
+        "nu": "Ein Fourier-limitierter {sh}-Puls (Zeit-Bandbreite-Produkt K = {K}) hat die Dauer (Halbwertsbreite der Intensität) Δt = {dt} fs. Berechnen Sie seine spektrale Breite Δν.",
+        "lam": "Ein Fourier-limitierter {sh}-Puls (K = {K}) mit der Mittenwellenlänge {lam} nm hat die Dauer Δt = {dt} fs. Berechnen Sie seine spektrale Breite in der Wellenlänge, Δλ (c = {c} m/s).",
+        "dt": "Licht mit der Mittenwellenlänge {lam} nm hat die spektrale Breite Δλ = {dl} nm. Berechnen Sie die Dauer Δt des kürzesten {sh}-Pulses, der damit möglich ist (Fourier-limitiert, K = {K}; c = {c} m/s)."
+      },
+      "steps": {
+        "nu": [
+          "Für einen Fourier-limitierten Puls gilt ΔνΔt = K.",
+          "Δν = {K}/({dt} × 10⁻¹⁵ s) = {nu} THz."
+        ],
+        "lam": [
+          "Δν = K/Δt = {nu} THz.",
+          "Δλ = λ²Δν/c = {dl} nm."
+        ],
+        "dt": [
+          "Δν = cΔλ/λ² = {nu} THz.",
+          "Δt = K/Δν = {dt} fs."
+        ]
+      },
+      "mistakes": {
+        "shape": "Sie haben das K der anderen Pulsform verwendet (Gauß 0,441; sech² 0,315).",
+        "one": "Sie haben ΔνΔt = 1 verwendet. Für einen Fourier-limitierten Puls gilt ΔνΔt = K (für diese Pulsform {K})."
+      }
+    },
+    "spdc-idler": {
+      "name": "Wellenlängen bei parametrischen Prozessen (Energieerhaltung)",
+      "short": "Die Idlerwellenlänge aus Pump- und Signalwellenlänge oder die Pumpwellenlänge aus Signal- und Idlerwellenlänge bestimmen",
+      "formula": "1/λ_p = 1/λ_s + 1/λ_i",
+      "q": {
+        "idler": "Mit Pumplicht bei {lp} nm wird parametrische Fluoreszenz (oder optische parametrische Oszillation) erzeugt; das Signal liegt bei {ls} nm. Berechnen Sie die Idlerwellenlänge.",
+        "pump": "Ein parametrischer Prozess erzeugt ein Signal bei {ls} nm und einen Idler bei {li} nm. Berechnen Sie die Pumpwellenlänge."
+      },
+      "steps": {
+        "idler": [
+          "Aus der Energieerhaltung ω_p = ω_s + ω_i folgt 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_i = 1/{lp} − 1/{ls} = {a} − {b} = {x} nm⁻¹.",
+          "λ_i = {li} nm."
+        ],
+        "pump": [
+          "Aus der Energieerhaltung ω_p = ω_s + ω_i folgt 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_p = {a} + {b} = {x} nm⁻¹.",
+          "λ_p = {lp} nm."
+        ]
+      },
+      "mistakes": {
+        "diff": "Sie haben die Wellenlängendifferenz λ_s − λ_p angegeben. Addiert und subtrahiert werden die Frequenzen (1/λ).",
+        "plus": "Sie haben 1/λ_p + 1/λ_s verwendet. Richtig ist 1/λ_i = 1/λ_p − 1/λ_s.",
+        "deg": "Das ist der entartete Fall (Signal und Idler beide bei 2λ_p). Das Signal liegt bei {ls} nm, der Idler also bei einer anderen Wellenlänge.",
+        "minus": "Sie haben 1/λ_s − 1/λ_i verwendet. Für die Pumpe werden die Kehrwerte addiert: 1/λ_p = 1/λ_s + 1/λ_i.",
+        "avg": "Sie haben die Hälfte des Mittelwerts von Signal- und Idlerwellenlänge genommen, (λ_s + λ_i)/4. Das stimmt nur nahe der Entartung. Exakt gilt 1/λ_p = 1/λ_s + 1/λ_i: Die Kehrwerte 1/λ (die Frequenzen) addieren sich."
+      }
+    },
+    "wien": {
+      "name": "Wiensches Verschiebungsgesetz",
+      "short": "Die Wellenlänge des Strahlungsmaximums eines schwarzen Strahlers aus der Temperatur oder die Temperatur aus dem Maximum bestimmen",
+      "formula": "λ_max T = b",
+      "q": {
+        "lam": "Berechnen Sie die Wellenlänge λ_max, bei der ein schwarzer Strahler der Temperatur {T} K am stärksten strahlt (Maximum des Spektrums pro Wellenlänge; b = {b} m·K).",
+        "tc": "Ein auf {tc} °C erhitzter Körper wird als schwarzer Strahler betrachtet. Berechnen Sie die Wellenlänge λ_max, bei der er am stärksten strahlt (Maximum des Spektrums pro Wellenlänge; b = {b} m·K).",
+        "temp": "Das Spektrum pro Wellenlänge einer Quelle, die sich wie ein schwarzer Strahler verhält, hat sein Maximum bei {lm} µm. Berechnen Sie ihre Temperatur (b = {b} m·K)."
+      },
+      "steps": {
+        "lam": [
+          "Wiensches Verschiebungsgesetz: λ_max T = b.",
+          "λ_max = {b}/{TK} m = {lm} µm."
+        ],
+        "tc": [
+          "In die absolute Temperatur umrechnen: T = {tc} + 273,15 = {TK} K.",
+          "λ_max = b/T = {b}/{TK} m = {lm} µm."
+        ],
+        "temp": [
+          "T = b/λ_max.",
+          "T = {b}/({lm} × 10⁻⁶) = {T} K."
+        ]
+      },
+      "mistakes": {
+        "nupeak": "Dieser Wert stammt aus dem Maximum des Spektrums pro Frequenz (ν_max = 5,879 × 10¹⁰ Hz/K × T). Für das Maximum pro Wellenlänge gilt λ_max T = b (die beiden Maxima liegen nicht bei derselben Wellenlänge).",
+        "celsius": "Sie haben den Zahlenwert in °C direkt verwendet. Verwenden Sie die absolute Temperatur T = t + 273,15."
+      }
+    },
+    "illuminance": {
+      "name": "Beleuchtungsstärke (Abstandsquadrat- und Kosinusgesetz)",
+      "short": "Die Beleuchtungsstärke aus der Lichtstärke einer Punktquelle, dem Abstand und der Neigung der Fläche bestimmen",
+      "formula": "E = I cosθ/d²",
+      "q": {
+        "n": "Berechnen Sie die Beleuchtungsstärke auf einer Fläche, die {d} m von einer Punktquelle mit {I} cd entfernt und ihr direkt zugewandt ist.",
+        "tilt": "Eine Fläche ist {d} m von einer Punktquelle mit {I} cd entfernt; ihre Normale ist um {th}° gegen die Richtung zur Quelle geneigt. Berechnen Sie die Beleuchtungsstärke auf der Fläche."
+      },
+      "steps": {
+        "n": [
+          "Beleuchtungsstärke E = I cosθ/d² (der Quelle zugewandt, cosθ = 1).",
+          "E = {I}/{d2} = {E} lx."
+        ],
+        "tilt": [
+          "Beleuchtungsstärke E = I cosθ/d².",
+          "d² = {d2} m²; cos{th}° = {c}.",
+          "E = {I} × {c}/{d2} = {E} lx."
+        ]
+      },
+      "mistakes": {
+        "nosq": "Sie haben den Abstand nicht quadriert (Abstandsquadratgesetz, E ∝ 1/d²).",
+        "nocos": "Sie haben cosθ für die Neigung der Fläche weggelassen.",
+        "sin": "Sie haben sinθ verwendet. θ ist der Winkel zwischen Flächennormale und Lichtrichtung; multiplizieren Sie also mit cosθ."
+      }
+    },
+    "photon-energy": {
+      "name": "Photonenenergie, Frequenz und Wellenzahl",
+      "short": "Photonenenergie (eV), Frequenz oder Wellenzahl aus der Wellenlänge oder die Grenzwellenlänge aus einer Bandlücke bestimmen",
+      "formula": "E = hc/λ; ν = c/λ; σ̃ = 1/λ",
+      "q": {
+        "ev": "Berechnen Sie die Energie eines Photons der Wellenlänge {lam} nm im Vakuum in eV (hc = {hc} eV·nm).",
+        "thz": "Berechnen Sie die Frequenz ν von Licht der Wellenlänge {lam} nm im Vakuum (c = {c} m/s).",
+        "kayser": "Berechnen Sie die Wellenzahl (Wellen pro cm) von Licht der Wellenlänge {lam} nm im Vakuum in cm⁻¹.",
+        "gap": "Berechnen Sie die größte Wellenlänge (Grenzwellenlänge), die ein Detektor aus {m} (Bandlücke {Eg} eV bei Raumtemperatur) absorbieren kann (hc = {hc} eV·nm)."
+      },
+      "steps": {
+        "ev": [
+          "E = hc/λ.",
+          "E = {hc}/{lam} = {E} eV (= {J} J)."
+        ],
+        "thz": [
+          "ν = c/λ.",
+          "ν = {c}/({lam} × 10⁻⁹) Hz = {nu} THz."
+        ],
+        "kayser": [
+          "Wellenzahl σ̃ = 1/λ. λ = {lc} cm.",
+          "σ̃ = 1/({lc}) = {s} cm⁻¹."
+        ],
+        "gap": [
+          "Ein Photon wird absorbiert, wenn seine Energie mindestens so groß wie die Bandlücke ist: hc/λ ≥ E_g.",
+          "λ_c = hc/E_g = {hc}/{Eg} = {l} nm (= {um} µm)."
+        ]
+      },
+      "mistakes": {
+        "inv": "Die Formel ist umgekehrt. E = hc/λ (kürzere Wellenlänge, höhere Energie) und λ = hc/E.",
+        "mult": "Sie haben E_g mit hc multipliziert. Es gilt λ_c = hc/E_g: Je kleiner die Bandlücke, desto größer die Grenzwellenlänge.",
+        "pi2": "Sie haben mit 2π multipliziert (Kreisfrequenz ω = 2πν oder Kreiswellenzahl k = 2π/λ). Frequenz ν und Wellenzahl σ̃ = 1/λ enthalten kein 2π."
+      }
+    },
+    "photon-flux": {
+      "name": "Photonenfluss",
+      "short": "Die Zahl der Photonen pro Sekunde aus Leistung und Wellenlänge oder die Leistung aus der Photonenrate bestimmen",
+      "formula": "Φ = Pλ/(hc)",
+      "q": {
+        "n": "Berechnen Sie die Zahl der Photonen pro Sekunde Φ, die Licht der Wellenlänge {lam} nm mit der Leistung {P} {pu} transportiert (h = {h} J·s; c = {c} m/s).",
+        "p": "Photonen der Wellenlänge {lam} nm treffen mit einer Rate von {phi} pro Sekunde ein. Berechnen Sie die optische Leistung (h = {h} J·s; c = {c} m/s)."
+      },
+      "steps": {
+        "n": [
+          "Energie eines Photons E = hc/λ = {E} J.",
+          "P = {PW} W.",
+          "Φ = P/E = {n} s⁻¹."
+        ],
+        "p": [
+          "Energie eines Photons E = hc/λ = {E} J.",
+          "P = ΦE = {phi} × {E} = {PW} W."
+        ]
+      },
+      "mistakes": {
+        "ev": "Sie haben die Photonenenergie in eV verwendet. Passend zu W (J/s) rechnen Sie in Joule (1 eV = 1,602 × 10⁻¹⁹ J)."
+      }
+    },
+    "solar-ff": {
+      "name": "Füllfaktor und Wirkungsgrad der Solarzelle",
+      "short": "Den Wirkungsgrad aus V_oc, J_sc und Füllfaktor oder den Füllfaktor aus dem Punkt maximaler Leistung bestimmen",
+      "formula": "FF = V_mp J_mp/(V_oc J_sc); η = FF V_oc J_sc/P_in",
+      "q": {
+        "eta": "Eine {cell} hat die Leerlaufspannung V_oc = {Voc} V, die Kurzschlussstromdichte J_sc = {Jsc} mA/cm² und den Füllfaktor FF = {FF}. Berechnen Sie ihren Wirkungsgrad η unter AM1.5G-Licht (1000 W/m²).",
+        "ff": "Eine {cell} hat V_oc = {Voc} V und J_sc = {Jsc} mA/cm²; ihr Punkt maximaler Leistung liegt bei V_mp = {Vmp} V und J_mp = {Jmp} mA/cm². Berechnen Sie den Füllfaktor FF."
+      },
+      "steps": {
+        "eta": [
+          "J_sc = {Jsc} mA/cm² = {J} A/m².",
+          "Maximale Ausgangsleistung P = FF V_oc J_sc = {FF} × {Voc} × {J} = {P} W/m².",
+          "η = P/P_in = {P}/1000 = {eta} %."
+        ],
+        "ff": [
+          "FF = V_mp J_mp/(V_oc J_sc).",
+          "V_mp J_mp = {pm} mW/cm²; V_oc J_sc = {p0} mW/cm².",
+          "FF = {pm}/{p0} = {ff} (unter AM1.5G mit 100 mW/cm² ist η = {eta} %)."
+        ]
+      },
+      "mistakes": {
+        "noff": "Sie haben den Füllfaktor FF weggelassen (V_oc und J_sc lassen sich nicht gleichzeitig entnehmen).",
+        "inv": "Das Verhältnis ist umgekehrt. FF ist kleiner als 1.",
+        "v": "Das ist nur das Spannungsverhältnis V_mp/V_oc. Multiplizieren Sie zusätzlich mit dem Stromverhältnis J_mp/J_sc.",
+        "j": "Das ist nur das Stromverhältnis J_mp/J_sc. Multiplizieren Sie zusätzlich mit dem Spannungsverhältnis V_mp/V_oc."
+      }
+    }
+  }
+}
