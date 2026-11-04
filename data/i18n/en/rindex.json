@@ -1,0 +1,306 @@
+{
+  "title": "Refractive Index Database: Dispersion Formulas, Group Index, GVD and Abbe Number",
+  "description": "Refractive indices of 32 materials (optical glasses, fused silica, crystals, infrared materials, water and air) from source-checked Sellmeier-type formulas. Enter a wavelength for n, group index, GVD, D, reflectance and Brewster angle; compare materials and export CSV.",
+  "h1": "Refractive Index Database",
+  "lead": "Calculate the refractive index of lens, window, fiber and crystal materials at any wavelength, compare two to four materials side by side, and export the values as CSV with their sources. Every coefficient was checked against the manufacturer's data sheet or the original paper, and nothing is calculated outside the valid range of a formula.",
+  "note": "Values are representative for the conditions of each source (temperature, composition, reference medium). The same material can differ with the melt, crystal orientation, film versus bulk, and temperature. Check the source and the manufacturer's current documents before using a value in a design.",
+  "sources_h": "Sources",
+  "groups": {
+    "glass": "Optical glass (SCHOTT)",
+    "window": "Fused silica and crystals",
+    "ir": "Infrared materials and semiconductors",
+    "fluid": "Water and air"
+  },
+  "ui": {
+    "noscript": "The calculator, chart, comparison and CSV need JavaScript. The material list below (formula, coefficients, range, source, n_d and ν_d) can be read without it.",
+    "toc": "On this page",
+    "calc_h": "Calculate at a wavelength",
+    "list_h": "Materials ({n})",
+    "add": "Add a material (up to 4)",
+    "add_ph": "Choose a material…",
+    "empty": "Choose a material to see its values here.",
+    "remove": "Remove {name}",
+    "max": "You can compare up to {n} materials. Remove one before adding another.",
+    "lam": "Wavelength",
+    "unit": "Unit",
+    "quick": "Common wavelengths",
+    "at": "Values at λ = {lam}",
+    "col_mat": "Material",
+    "col_ng": "Group index n_g",
+    "col_r": "Reflectance R",
+    "col_b": "Brewster angle",
+    "col_ray": "Ray",
+    "table_note": "n_g = n − λ dn/dλ. GVD is β₂ = λ³/(2πc²)·d²n/dλ² and D = −(λ/c)·d²n/dλ² (material dispersion only; waveguide dispersion in fibers is not included). R is the normal-incidence reflectance at an interface with air (n = 1), ((n − 1)/(n + 1))², and the Brewster angle is arctan n for light coming from air. Derivatives are calculated analytically from the formula.",
+    "out": "Outside the valid range ({range}). Not calculated",
+    "out_warn": "{list}: this wavelength is outside the valid range of the formula, so no values are calculated. Extrapolating a dispersion formula can give values that are far off.",
+    "tools_h": "Use this value in a calculator",
+    "tool_arcoat_sub": "Anti-reflection coating (substrate: {name}, nₛ = {n})",
+    "tool_arcoat_film": "Anti-reflection coating (coating: {name}, n₁ = {n})",
+    "tool_gauss": "Gaussian beam (medium: {name}, n = {n})",
+    "chart_h": "Chart of n(λ) and wavelength table",
+    "a": "Start (nm)",
+    "b": "End (nm)",
+    "s": "Step (nm)",
+    "chart_none": "None of the chosen materials has a valid formula in this wavelength range. Change the start and end.",
+    "chart_out": "formula not valid in this range",
+    "chart_label": "Chart of refractive index n against wavelength: {list}",
+    "axis_x_nm": "Wavelength λ (nm)",
+    "axis_x_um": "Wavelength λ (µm)",
+    "axis_y": "Refractive index n",
+    "csv_copy": "Copy CSV",
+    "csv_save": "Save CSV",
+    "share": "Copy link to these settings",
+    "csv_note": "The CSV is a table from the start to the end wavelength at each step, for all chosen materials, leaving out rows outside the valid range. Numbers always use a decimal point. Columns: material, ray, wavelength_nm, wavelength_um, n, group_index, dn_dlambda_per_um, gvd_fs2_per_mm, D_ps_per_nm_km, source. The link stores the chosen materials, wavelength, unit and table range, and opens the same view.",
+    "csv_many": "Too many rows (the limit is 5000). Use a larger step or a narrower range.",
+    "csv_none": "No row in this range is inside the valid range of a formula.",
+    "csv_copied": "Copied a CSV of {n} rows.",
+    "csv_saved": "Saved a CSV of {n} rows.",
+    "link_copied": "Link copied.",
+    "ray_o": "ordinary ray o",
+    "ray_e": "extraordinary ray e",
+    "count": "{n} of {total} materials",
+    "search": "Find a material",
+    "search_ph": "e.g. BK7, fused silica, CaF2, lithium niobate",
+    "groups": "Material type",
+    "all": "All",
+    "none": "No material matches.",
+    "pick": "Select",
+    "range": "Valid wavelengths",
+    "form_note": "The formula itself is not visible on the publisher's page, so it is shown in the form used by refractiveindex.info. The coefficients were checked against the source, and the values from this formula match the calculated values in the source's table.",
+    "abbe_none": "n_d and ν_d are not given because the valid range does not cover the F to C lines (486–656 nm).",
+    "sheet_short": "sheet",
+    "src": "Source",
+    "data_from": "Measured data fitted",
+    "sheet": "Data sheet checked",
+    "checked": "Source page checked",
+    "rii": "Coefficients imported from (refractiveindex.info)",
+    "sources_note": "Coefficients were imported from the refractiveindex.info database (CC0) and compared one by one with the sources above (manufacturers' data sheets and the publishers' pages of the papers). Materials that could not be checked against a source, such as crystal quartz, BBO, germanium, GaAs, PMMA and polycarbonate, are not included for now.",
+    "terms_h": "Related terms",
+    "rel_cats": "Practice questions in related topics"
+  },
+  "guide": [
+    {
+      "h": "How to read a dispersion formula",
+      "p": [
+        "Every formula on this page takes the wavelength λ in µm and gives the refractive index n. It is a fit to measured data. The most common is the Sellmeier equation n² − 1 = Σ Bᵢλ²/(λ² − Cᵢ), in which n changes steeply near the wavelengths where λ² − Cᵢ = 0, the positions of ultraviolet and infrared absorption.",
+        "Sources write the same Sellmeier equation in different ways. SCHOTT data sheets give Cᵢ in µm² (λᵢ² itself), while the papers of Malitson and Dodge give λᵢ in µm and square it in the formula. This page shows the coefficients with the symbols and units of each source.",
+        "The coefficients are fitted to data over a given wavelength range. Outside that range the formula has no guaranteed physical meaning, so this page does not calculate there and shows a warning instead."
+      ]
+    },
+    {
+      "h": "n_d and ν_d (Abbe number)",
+      "p": [
+        "n_d is the index at the helium d line (587.5618 nm). The Abbe number ν_d = (n_d − 1)/(n_F − n_C) measures how small the dispersion is from the index difference between the hydrogen F line (486.1327 nm) and C line (656.2725 nm). A larger ν_d means lower dispersion; optical glasses with ν_d above about 50 are called crowns and those below are called flints.",
+        "European standards also use n_e and ν_e, based on the mercury e line (546.0740 nm) and the cadmium F′ and C′ lines (479.9914 nm and 643.8469 nm). This page calculates all four from the formula and shows the data sheet values next to them where they exist. For the 18 SCHOTT glasses, n_d, ν_d, n_e and ν_e from the formula all agree with the data sheets to the digits printed.",
+        "An achromatic doublet combines a positive lens of high-ν_d crown with a negative lens of low-ν_d flint so that the F and C lines come to the same focus."
+      ]
+    },
+    {
+      "h": "Group index and group velocity dispersion",
+      "p": [
+        "A pulse or wave packet travels at the group velocity c/n_g, where the group index is n_g = n − λ dn/dλ. Where dispersion is normal (n falls as the wavelength grows), n_g is larger than n: for fused silica at 1550 nm, n = 1.4440 and n_g = 1.4626.",
+        "Group velocity dispersion, GVD β₂ = λ³/(2πc²)·d²n/dλ², measures how arrival time spreads with wavelength inside a pulse, and is given in fs²/mm for ultrashort pulses. In fiber optics the same property is given as the dispersion parameter D = −(λ/c)·d²n/dλ² in ps/(nm·km), with the opposite sign. The material dispersion of fused silica from Malitson's formula crosses zero at about 1273 nm; at shorter wavelengths GVD is positive (D is negative).",
+        "Standard single-mode fiber has its zero dispersion near 1310 nm because waveguide dispersion adds to the material dispersion. GVD and D on this page are for the material only."
+      ]
+    },
+    {
+      "h": "Temperature, valid range and other conditions",
+      "p": [
+        "Refractive index changes with temperature. For optical glasses dn/dT is of the order of 10⁻⁶ /K, but for semiconductors such as silicon it is about two orders of magnitude larger, so a difference of a few tens of °C changes the third or fourth decimal place. Check the temperature given for each material.",
+        "An index can be given relative to air or relative to vacuum (absolute index); the absolute index is the relative index times the index of air, so the two differ by n × (n_air − 1), about 4×10⁻⁴ for glass (n ≈ 1.5). The wavelength can likewise be the wavelength in air or in vacuum, depending on the source. These differences matter when you compare values beyond the third decimal place.",
+        "Evaporated films of MgF₂ or TiO₂ can differ in density and crystal structure from bulk single crystals, so their indices can differ too. For birefringent crystals the principal indices of the ordinary ray o and extraordinary ray e are given. When light travels at an angle θ to the optic axis, the extraordinary index follows 1/n(θ)² = cos²θ/n_o² + sin²θ/n_e²."
+      ]
+    },
+    {
+      "h": "When you cite a value",
+      "p": [
+        "When you use a value in a paper or report, cite the source given for the material (the paper or the manufacturer's data sheet), not this page. Stating the formula, coefficients, wavelength range and temperature lets readers reproduce the value.",
+        "The CSV has a source column. Coefficients are used with the digits of the source; SCHOTT data sheets sometimes print the coefficients rounded to fewer digits, and this page calculates with the digits of the manufacturer's catalog file (the difference is in the seventh decimal place of n or smaller)."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Are N-BK7 and BK7 the same glass?",
+      "The “N-” in SCHOTT glass names marks glasses reformulated without lead and arsenic. N-BK7 replaced BK7 and has n_d = 1.51680 and ν_d = 64.17. Values for BK7 in older literature can differ slightly in the last decimal places."
+    ],
+    [
+      "Why are wavelengths outside the range not calculated?",
+      "A dispersion formula is fitted to data over a given range. Extended outside it, the values can be far off near absorption bands or have no meaning at all. If you need a value outside the range, look for a source that measured that wavelength."
+    ],
+    [
+      "How many decimal places can I trust?",
+      "It depends on the source. SCHOTT data sheets give n_d to five decimal places, and papers usually state the fit residual; Malitson's formula for fused silica, for example, has an average residual of about 1×10⁻⁵. n is shown to five decimal places, but differences in temperature, composition or melt are often larger than that."
+    ],
+    [
+      "Under what conditions is the index of air given?",
+      "Ciddor's standard air: dry air at 15 °C, 101 325 Pa and 450 ppm CO₂, with vacuum wavelengths. For other temperatures, pressures or humidity, the value has to be recalculated with the procedure in the source."
+    ],
+    [
+      "For a material with both o and e, which should I use?",
+      "It depends on the polarization of the light and the direction of the crystal's optic axis. Light polarized perpendicular to the optic axis (the ordinary ray) sees n_o; light polarized in the plane containing the optic axis (the extraordinary ray) sees a value between n_o and n_e that depends on the direction of travel. On the chart, e is drawn as a dashed line."
+    ]
+  ],
+  "materials": {
+    "n-bk7": {
+      "name": "N-BK7",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "borosilicate crown"
+    },
+    "n-k5": {
+      "name": "N-K5",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "crown"
+    },
+    "n-bak1": {
+      "name": "N-BAK1",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "barium crown"
+    },
+    "n-bak2": {
+      "name": "N-BAK2",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "barium crown"
+    },
+    "n-bak4": {
+      "name": "N-BAK4",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "barium crown prism"
+    },
+    "n-sk16": {
+      "name": "N-SK16",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense crown"
+    },
+    "n-fk5": {
+      "name": "N-FK5",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "fluor crown low dispersion"
+    },
+    "n-fk51a": {
+      "name": "N-FK51A",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "fluor crown anomalous dispersion apochromat"
+    },
+    "n-lak22": {
+      "name": "N-LAK22",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "lanthanum crown"
+    },
+    "n-baf10": {
+      "name": "N-BAF10",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "barium flint"
+    },
+    "n-f2": {
+      "name": "N-F2",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "flint lead-free"
+    },
+    "f2": {
+      "name": "F2",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "flint lead"
+    },
+    "n-sf2": {
+      "name": "N-SF2",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense flint"
+    },
+    "n-sf5": {
+      "name": "N-SF5",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense flint"
+    },
+    "n-sf6": {
+      "name": "N-SF6",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense flint high index"
+    },
+    "n-sf10": {
+      "name": "N-SF10",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense flint"
+    },
+    "n-sf11": {
+      "name": "N-SF11",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "dense flint high dispersion"
+    },
+    "n-lasf9": {
+      "name": "N-LASF9",
+      "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
+      "kw": "lanthanum dense flint high index"
+    },
+    "fused-silica": {
+      "name": "Fused silica (SiO₂ glass)",
+      "cond": "20 °C",
+      "kw": "fused quartz silica glass synthetic"
+    },
+    "caf2": {
+      "name": "Calcium fluoride (CaF₂, fluorite)",
+      "cond": "24 °C",
+      "kw": "fluorite"
+    },
+    "caf2-duv": {
+      "name": "Calcium fluoride (CaF₂, deep UV to near IR)",
+      "cond": "20 °C, measured in nitrogen",
+      "kw": "fluorite deep ultraviolet DUV 193 nm lithography"
+    },
+    "baf2": {
+      "name": "Barium fluoride (BaF₂)",
+      "cond": "25 °C",
+      "kw": ""
+    },
+    "mgf2": {
+      "name": "Magnesium fluoride (MgF₂, crystal)",
+      "cond": "19 °C, single crystal (evaporated films can have a different index)",
+      "kw": "single crystal birefringent anti-reflection coating"
+    },
+    "sapphire": {
+      "name": "Sapphire (Al₂O₃, ordinary ray only)",
+      "cond": "24 °C, synthetic sapphire, ordinary ray (o)",
+      "kw": "alumina single crystal corundum"
+    },
+    "linbo3": {
+      "name": "Lithium niobate (LiNbO₃, congruent)",
+      "cond": "Room temperature, congruent composition (no MgO doping)",
+      "kw": "LN CLN electro-optic nonlinear birefringent"
+    },
+    "yag": {
+      "name": "YAG (Y₃Al₅O₁₂, undoped)",
+      "cond": "Room temperature, undoped",
+      "kw": "yttrium aluminum garnet Nd:YAG host"
+    },
+    "tio2": {
+      "name": "Titanium dioxide (TiO₂, rutile crystal)",
+      "cond": "Room temperature, rutile single crystal (TiO₂ films vary widely with the process)",
+      "kw": "rutile high index birefringent"
+    },
+    "znse": {
+      "name": "Zinc selenide (ZnSe, CVD)",
+      "cond": "CVD polycrystal (Raytran); temperature not stated in the source table",
+      "kw": "infrared CO2 laser window"
+    },
+    "si": {
+      "name": "Silicon (Si, infrared)",
+      "cond": "26 °C, single crystal",
+      "kw": "infrared silicon photonics 1550"
+    },
+    "zns": {
+      "name": "Zinc sulfide (ZnS, cubic)",
+      "cond": "Room temperature, cubic",
+      "kw": "Cleartran infrared window"
+    },
+    "water": {
+      "name": "Water (distilled)",
+      "cond": "20.0 °C, relative to vacuum (absolute index)",
+      "kw": "H2O pure water immersion"
+    },
+    "air": {
+      "name": "Air (standard air)",
+      "cond": "Standard air: dry, 15 °C, 101 325 Pa, 450 ppm CO₂; vacuum wavelengths",
+      "kw": "atmosphere"
+    }
+  }
+}
