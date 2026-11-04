@@ -74,3 +74,4 @@
 - 22:01 (JST) ポルトガル語の問題 第3部を公開(fourier-optics・led-display・microscopy・optical-materials・optical-sensing・spectroscopy の180問、訳の独立点検で16問を直す)
 - 22:25 (JST) ポルトガル語の問題 第4部を公開(comm-systems・image-sensor・photovoltaics・quantum-optics・ultrafast の150問、訳の独立点検で10問を直す)。これでポルトガル語で660問すべて出題。コース3つのポルトガル語も入れる
 - 22:37 (JST) 公式集の記号表の見出しを、狭い画面で語の途中で切らない(「Símbol/o」→ 言語のハイフネーションで「Sym-bol」)
+- 22:42 (JST) 公式集をポルトガル語で公開(78式、訳の独立点検で57か所を直す)
