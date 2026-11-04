@@ -1,0 +1,1126 @@
+{
+  "title": "Ejercicios de cálculo de óptica con desarrollo paso a paso",
+  "description": "Practique 34 tipos de cálculos habituales de óptica y fotónica con valores nuevos cada vez: ley de Snell, ángulo crítico, lentes delgadas, límite de difracción, redes de difracción, reflectancia de Fresnel, recubrimientos antirreflectantes, haces gaussianos, NA y número V de fibras, dBm, responsividad, energía del fotón y más. Las respuestas se corrigen con sus unidades y se muestran el desarrollo paso a paso y los errores habituales.",
+  "h1": "Ejercicios de cálculo",
+  "lead": "Problemas de cálculo habituales en los cursos y exámenes de óptica y fotónica, con valores nuevos cada vez. Resuelva cada uno por su cuenta e introduzca la respuesta con su unidad: verá si es correcta, el desarrollo paso a paso con los valores que entran en cada fórmula y el error habitual al que apunta su resultado. Si hay una calculadora para el tipo de problema, puede abrirla con los mismos valores para comprobarlo.",
+  "note": "Los valores de los problemas son valores de práctica que se generan cada vez dentro de un intervalo. Los índices de refracción y las constantes proceden de las mismas fuentes que la colección de fórmulas (indicadas más abajo) o se dan en el enunciado como supuestos. Para el diseño real, use los valores de las hojas de datos de los fabricantes y de las normas.",
+  "lowerNames": true,
+  "mat": {},
+  "groups": {
+    "geo": "Óptica geométrica y formación de imágenes",
+    "wave": "Interferencia, difracción, espectroscopia",
+    "pol": "Polarización",
+    "material": "Materiales ópticos y capas delgadas",
+    "laser": "Láseres y haces gaussianos",
+    "fiber": "Fibras ópticas y comunicaciones",
+    "detect": "Detección y sensores de imagen",
+    "nonlinear": "Óptica no lineal y pulsos ultracortos",
+    "photo": "Radiometría, fotometría y color",
+    "quantum": "Fotones, óptica cuántica, células solares"
+  },
+  "units": {
+    "s⁻¹": "s⁻¹ (por segundo)",
+    "″": "″ (segundo de arco)"
+  },
+  "names": {
+    "x": {
+      "med_air": "aire",
+      "med_water": "agua",
+      "med_silica": "sílice fundida",
+      "med_bk7": "N-BK7",
+      "med_f2": "vidrio F2",
+      "med_linbo3": "LiNbO₃ para el rayo extraordinario",
+      "med_gaas": "GaAs",
+      "med_si": "silicio",
+      "imm_air": "aire",
+      "imm_water": "agua",
+      "imm_oil": "aceite de inmersión",
+      "ng_air": "aire",
+      "ng_silica": "sílice fundida",
+      "xtal_quartz": "cuarzo",
+      "xtal_mgf2": "MgF₂ cristalino",
+      "film_mgf2": "MgF₂",
+      "film_sinx": "nitruro de silicio (SiNₓ)",
+      "det_si": "silicio",
+      "det_ingaas": "InGaAs",
+      "sh_gauss": "gaussiano",
+      "sh_sech": "de forma sech²",
+      "gap_si": "Si",
+      "gap_ge": "Ge",
+      "gap_gaas": "GaAs",
+      "gap_inp": "InP",
+      "gap_ingaas": "In₀.₅₃Ga₀.₄₇As",
+      "gap_gan": "GaN",
+      "cell_si": "célula solar de silicio",
+      "cell_gaas": "célula solar de GaAs",
+      "cell_perov": "célula solar de perovskita",
+      "mode_single": "V < 2,405, por lo que es monomodo",
+      "mode_multi": "V ≥ 2,405, por lo que es multimodo"
+    },
+    "diff": {}
+  },
+  "guide": [
+    {
+      "id": "how",
+      "h": "Cómo se usa",
+      "p": [
+        "Elija un área o un tipo de problema y empiece con un problema cada vez o con una serie de 5 o 10. Con “Más de mis tipos débiles” aparecen con más frecuencia los tipos en los que se equivocó la última vez o en los que se equivoca a menudo. Seleccione el nombre de un tipo en la lista de tipos de problema de más abajo para obtener un problema de ese tipo.",
+        "Introduzca la respuesta como número y elija la unidad en el menú. Se aceptan las formas 1,23e-5; 1,23×10^-5 y 1,23 × 10⁻⁵. Cuando puede elegir la unidad, sirve cualquiera (nm o µm, por ejemplo), siempre que el número corresponda a la unidad elegida.",
+        "Pulse “Comprobar” para ver la corrección y el desarrollo paso a paso. Si la respuesta es incorrecta, se indica el error habitual al que apunta su resultado (radio en lugar de diámetro, amplitud en lugar de intensidad, θ en lugar de 2θ, 10 en lugar de 20 en los decibelios, etc.). “Ver la respuesta” abre el desarrollo paso a paso sin responder.",
+        "“Copiar el enlace a este problema” da una URL que abre el mismo problema con los mismos valores. La URL contiene solo el tipo de problema y una semilla, nunca la respuesta. Su registro se guarda solo en este navegador (localStorage) y nunca se envía a un servidor. Si su navegador bloquea el almacenamiento, puede resolver los problemas igualmente; solo que no se conserva el registro."
+      ]
+    },
+    {
+      "id": "tips",
+      "h": "Consejos para resolver",
+      "p": [
+        "Empiece por escribir los datos y la magnitud buscada, con sus símbolos y unidades. Expresiones del enunciado como “diámetro del núcleo”, “ángulo total” o “FWHM espectral” pueden no coincidir con la magnitud de la fórmula (radio a, semiángulo θ, Δλ), así que conviene aclararlas primero.",
+        "Compruebe desde dónde se mide cada ángulo. En la ley de Snell, el ángulo crítico y el ángulo de Brewster, los ángulos se miden desde la normal a la superficie. Tenga cuidado de no confundir grados y radianes en la calculadora.",
+        "Distinga entre intensidad (potencia) y amplitud (campo). La reflectancia R es el cuadrado del coeficiente de amplitud r, la intensidad que atraviesa un polarizador varía como cos²θ y el dB es 10 log₁₀ de un cociente de potencias.",
+        "Cuando tenga un resultado, compruebe su orden de magnitud. Una superficie de vidrio refleja alrededor del 4 %, los fotones visibles tienen 2–3 eV, el número V de una fibra monomodo a 1550 nm ronda 2 y la separación entre modos longitudinales de un láser de He-Ne es de unos cientos de MHz. Si se desvía en un factor 10 o más, sospeche de una conversión de unidades o de una potencia de 10."
+      ]
+    },
+    {
+      "id": "units",
+      "h": "Unidades",
+      "p": [
+        "El menú de unidades ofrece otras unidades para la misma magnitud (nm y µm, GHz y MHz, mW y µW, ° y rad o mrad, etc.). Un valor correcto en la unidad elegida se considera correcto. Si solo hay una unidad, responda en esa unidad.",
+        "Las fracciones pueden introducirse como decimal entre 0 y 1 o en % (0,04 y 4 % son lo mismo). El dB y el dBm son unidades logarítmicas, por lo que no se convierten a mW ni a cocientes simples.",
+        "Las temperaturas pueden introducirse en K o en °C. Se convierten sumando o restando 273,15.",
+        "Conversiones habituales: 1 nm = 10⁻⁹ m; 1 µm = 10⁻⁶ m; 1 THz = 10¹² Hz; 1 mrad = 10⁻³ rad ≈ 0,0573°; 1 eV = 1,602 × 10⁻¹⁹ J; E[eV] ≈ 1239,84/λ[nm]; 1 mW = 0 dBm."
+      ]
+    },
+    {
+      "id": "sig",
+      "h": "Cifras significativas y corrección",
+      "p": [
+        "Los valores de cada problema se redondean a las cifras mostradas, y la respuesta de referencia se calcula con esos valores redondeados. Si usa los valores tal como se dan, el redondeo nunca hará que su respuesta sea incorrecta.",
+        "La corrección usa el error relativo. La mayoría de los tipos aceptan respuestas dentro de ±1 %. Los tipos que se responden con un ángulo (ángulos de refracción, crítico, de Brewster, de difracción y de aceptación) y los que se responden con un índice de refracción aceptan ±0,5 %. Los tipos que se responden en dBm o dB también usan el error relativo, de modo que para −16,0 dBm se admiten ±0,16 dB. La tolerancia se indica en cada problema.",
+        "Basta con dar la respuesta con el número de cifras usado en el problema (normalmente tres cifras significativas). También se admiten más cifras.",
+        "Si su resultado queda justo fuera de la tolerancia (dentro del 5 %), se muestra “Cerca”. Normalmente la fórmula es correcta, así que compruebe si redondeó demasiado los valores intermedios o si usó una constante (c, h, q, etc.) distinta de la del enunciado."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Mi respuesta debería ser correcta, pero se marca como incorrecta.",
+      "Compruebe primero el menú de unidades. Si la unidad elegida no corresponde al número introducido, incluso un valor correcto se marca como incorrecto (en la mayoría de los casos verá “Parece una confusión de unidades”). Si la unidad coincide y solo se desvía un poco, probablemente redondeó demasiado los valores intermedios o usó una constante distinta. Vuelva a calcular con los valores y las constantes del enunciado, conservando al menos cuatro cifras en los pasos intermedios."
+    ],
+    [
+      "¿Cómo se eligen los valores?",
+      "Para cada tipo se fija un intervalo que se da en componentes y experimentos reales, y se elige un valor dentro de él cada vez. Los índices de refracción son los mismos que en los ejemplos de la colección de fórmulas (datos de SCHOTT para N-BK7 y F2, ecuación de Sellmeier de Malitson para la sílice fundida, ecuación de Jundt para el LiNbO₃, etc.). Los valores que varían, como la birrefringencia o la dispersión de una fibra, se eligen dentro de un intervalo y se indican como supuestos en el enunciado."
+    ],
+    [
+      "¿Puedo resolver de nuevo el mismo problema o dárselo a otra persona?",
+      "Sí. Abra la URL de “Copiar el enlace a este problema” (?t=tipo&s=semilla) y obtendrá el mismo problema con los mismos valores. La URL no contiene la respuesta, así que puede usarse para plantearse problemas unos a otros."
+    ],
+    [
+      "¿Dónde se guarda mi registro? ¿Puedo borrarlo?",
+      "Solo en el localStorage de este navegador; nunca se envía a un servidor ni se comparte con otros dispositivos o navegadores. “Borrar el registro” lo elimina. En la navegación privada u otros modos que bloquean el almacenamiento no se conserva ningún registro, pero puede resolver los problemas con normalidad."
+    ],
+    [
+      "¿Qué se obtiene al abrir la calculadora?",
+      "La calculadora se abre con los mismos valores ya introducidos, de modo que puede comprobar la respuesta de otra manera o ver qué cambia al variar las condiciones. En un problema de haz gaussiano puede ver el radio del haz a otras distancias z; en uno de recubrimiento antirreflectante, la reflectancia fuera de la longitud de onda de diseño. Para los tipos sin calculadora se enlazan los términos relacionados y la colección de fórmulas."
+    ],
+    [
+      "La respuesta de mi libro de texto es ligeramente distinta.",
+      "Los libros de texto suelen redondear los valores intermedios o abreviar las constantes (hc ≈ 1240 eV·nm, c ≈ 3 × 10⁸ m/s, etc.), por lo que la tercera cifra puede diferir. Las respuestas de aquí se calculan con los valores y las constantes del enunciado sin redondeos intermedios. Dentro de la tolerancia, cualquiera de las dos respuestas se considera correcta."
+    ]
+  ],
+  "sources": [
+    {
+      "name": "Índices de refracción (visible, línea d 587,6 nm)",
+      "text": "N-BK7 1,5168 y F2 1,6200 (hojas de datos de SCHOTT), sílice fundida 1,4585 (ecuación de Sellmeier de Malitson 1965), agua 1,333. Coinciden con los ejemplos de la ecuación de Sellmeier y del número de Abbe de la colección de fórmulas."
+    },
+    {
+      "name": "Índices de refracción (infrarrojo cercano, 1550 nm)",
+      "text": "Sílice fundida 1,4440 y N-BK7 1,5007 (mismas ecuaciones de Sellmeier), Si 3,48, LiNbO₃ para el rayo extraordinario 2,138 (Jundt 1997), GaAs 3,37 (ecuación de Skauli et al. 2003). El índice de grupo de la sílice fundida, 1,4626, coincide con el ejemplo del índice de grupo de la colección de fórmulas."
+    },
+    {
+      "name": "Índices del LiNbO₃ para la SHG",
+      "text": "Valores de la onda fundamental y del segundo armónico obtenidos con la ecuación de Sellmeier para el rayo extraordinario del LiNbO₃ congruente a 24,5 °C, D. H. Jundt, Opt. Lett. 22, 1553 (1997) (por ejemplo, 2,1558/2,2342 a 1064/532 nm)."
+    },
+    {
+      "name": "Números de Abbe y vidrios",
+      "text": "N-BK7 V_d = 64,17 y F2 V_d = 36,37 (a partir de n_d, n_F y n_C de las hojas de datos de SCHOTT)."
+    },
+    {
+      "name": "Birrefringencia del cuarzo y del MgF₂",
+      "text": "n_e − n_o a cada longitud de onda, a partir de las ecuaciones de Sellmeier de G. Ghosh, Opt. Commun. 163, 95 (1999) para el cuarzo y de M. J. Dodge, Appl. Opt. 23, 1980 (1984) para el MgF₂ (por ejemplo, 0,00904 para el cuarzo y 0,01178 para el MgF₂ a 633 nm)."
+    },
+    {
+      "name": "Constantes físicas",
+      "text": "Valores exactos y recomendados de CODATA 2022 (c = 299 792 458 m/s; h = 6,626 070 15 × 10⁻³⁴ J·s; q = 1,602 176 634 × 10⁻¹⁹ C; constante de desplazamiento de Wien b = 2,897 772 × 10⁻³ m·K; hc = 1239,84 eV·nm)."
+    },
+    {
+      "name": "Energías de la banda prohibida (temperatura ambiente)",
+      "text": "Si 1,12 eV, Ge 0,66 eV, GaAs 1,42 eV, InP 1,34 eV, In₀.₅₃Ga₀.₄₇As 0,75 eV, GaN 3,4 eV (valores de Sze y Ng, Physics of Semiconductor Devices, 3.ª ed., y fuentes similares)."
+    },
+    {
+      "name": "Valores de fibras y enlaces",
+      "text": "Atenuación de la fibra monomodo de 0,35 dB/km a 1310 nm y 0,20 dB/km a 1550 nm, 0,5 dB por conector y 0,1 dB por empalme, iguales que en el ejemplo del balance de potencia de la colección de fórmulas (dentro del intervalo de ITU-T G.652). La dispersión D se elige dentro de un intervalo para la banda de 1550 nm y se indica como supuesto."
+    },
+    {
+      "name": "Valores supuestos",
+      "text": "El índice de las capas de nitruro de silicio, los coeficientes de absorción y de extinción, el índice de grupo de los láseres de semiconductor, la V_oc, la J_sc y el FF de las células solares y la corriente de oscuridad de los fotodiodos son valores de práctica elegidos dentro de intervalos realistas para esos materiales y dispositivos. Los productos tiempo-ancho de banda son 0,441 para pulsos gaussianos y 0,315 para pulsos de forma sech²."
+    }
+  ],
+  "types": {
+    "snell-angle": {
+      "name": "Ángulo de refracción (ley de Snell)",
+      "short": "Calcular el ángulo de refracción en la frontera entre dos medios a partir del ángulo de incidencia",
+      "formula": "n₁ sinθ₁ = n₂ sinθ₂",
+      "q": "Luz de longitud de onda {lam} nm pasa de {m1} (n₁ = {n1}) a {m2} (n₂ = {n2}) con un ángulo de incidencia de {t1}° (medido desde la normal a la superficie). Calcule el ángulo de refracción θ₂.",
+      "steps": [
+        "Por la ley de Snell n₁ sinθ₁ = n₂ sinθ₂: sinθ₂ = n₁ sinθ₁/n₂.",
+        "sin{t1}° = {s1}, así que sinθ₂ = {n1} × {s1}/{n2} = {s}.",
+        "θ₂ = arcsin {s} = {t2}°."
+      ],
+      "mistakes": {
+        "swap": "Ha intercambiado n₁ y n₂ (sinθ₂ = n₂ sinθ₁/n₁). n₁ es el índice del medio del que procede la luz.",
+        "surf": "Ha dado el ángulo medido desde la superficie (90° − θ₂). Los ángulos se miden desde la normal.",
+        "surfin": "Ha tomado el ángulo de incidencia como si se midiera desde la superficie (cos en lugar de sin). El ángulo dado se mide desde la normal."
+      }
+    },
+    "critical-angle": {
+      "name": "Ángulo crítico de la reflexión total interna",
+      "short": "Calcular el ángulo crítico para la luz que llega a una frontera desde el medio de mayor índice, o el índice a partir de un ángulo crítico medido",
+      "formula": "sinθ_c = n₂/n₁",
+      "q": {
+        "ang": "Luz de longitud de onda {lam} nm se propaga dentro de {m1} (n₁ = {n1}) hacia la frontera con {m2} (n₂ = {n2}). Calcule el ángulo crítico θ_c de la reflexión total interna.",
+        "n": "Luz que se propaga dentro de un material transparente llega a una frontera plana con {out} (n₂ = {n2}). La reflexión total interna comienza con un ángulo de incidencia (ángulo crítico) de {tc}°, medido desde la normal. Calcule el índice de refracción n₁ del material."
+      },
+      "steps": {
+        "ang": [
+          "En el ángulo crítico el ángulo de refracción es 90°: n₁ sinθ_c = n₂ sin90°, así que sinθ_c = n₂/n₁.",
+          "sinθ_c = {n2}/{n1} = {s}.",
+          "θ_c = arcsin {s} = {tc}°."
+        ],
+        "n": [
+          "De sinθ_c = n₂/n₁: n₁ = n₂/sinθ_c.",
+          "sin{tc}° = {s}.",
+          "n₁ = {n2}/{s} = {n1}."
+        ]
+      },
+      "mistakes": {
+        "brew": "Ha usado tanθ = n₂/n₁, que es el ángulo de Brewster. El ángulo crítico cumple sinθ_c = n₂/n₁.",
+        "comp": "Ha dado 90° − θ_c. El ángulo crítico también se mide desde la normal.",
+        "cos": "Ha usado cos (la forma para un ángulo medido desde la superficie). La condición es sinθ_c = n₂/n₁.",
+        "tan": "Ha usado tan. La condición es sinθ_c = n₂/n₁.",
+        "inv": "Ha calculado n₂ × sinθ_c. Es n₁ = n₂/sinθ_c (la reflexión total interna se produce desde el lado de mayor índice)."
+      }
+    },
+    "thin-lens": {
+      "name": "Lente delgada: distancia imagen y aumento",
+      "short": "Calcular la distancia imagen o el aumento lateral de una lente convergente a partir de su distancia focal y de la distancia objeto",
+      "formula": "1/a + 1/b = 1/f; m = −b/a",
+      "q": {
+        "b": "Un objeto se coloca a = {a} mm delante de una lente delgada convergente (en aire) de distancia focal f = {f} mm. Calcule la distancia b de la lente a la imagen.",
+        "m": "Un objeto se coloca a = {a} mm delante de una lente delgada convergente (en aire) de distancia focal f = {f} mm. Calcule el aumento lateral m con su signo (negativo para una imagen invertida)."
+      },
+      "steps": {
+        "b": [
+          "Por la ecuación de las lentes 1/a + 1/b = 1/f: 1/b = 1/f − 1/a.",
+          "1/b = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm (positiva: imagen real detrás de la lente)."
+        ],
+        "m": [
+          "Por la ecuación de las lentes 1/a + 1/b = 1/f: 1/b = 1/f − 1/a = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm.",
+          "m = −b/a = −{b}/{a} = {m} (negativo: imagen invertida)."
+        ]
+      },
+      "mistakes": {
+        "plus": "Ha usado 1/b = 1/f + 1/a. Con la distancia objeto a tomada como positiva, la ecuación es 1/a + 1/b = 1/f.",
+        "inv": "Ha usado m = −a/b. El aumento es tamaño de la imagen/tamaño del objeto = −b/a.",
+        "nosign": "El valor absoluto es correcto, pero el signo no. La imagen real de una lente convergente es invertida, así que m es negativo."
+      }
+    },
+    "two-lens": {
+      "name": "Dos lentes separadas: distancia focal del conjunto",
+      "short": "Calcular la distancia focal efectiva y la distancia focal posterior de dos lentes delgadas separadas por un espacio",
+      "formula": "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂); BFD = f(1 − d/f₁)",
+      "q": {
+        "f": "Dos lentes delgadas de distancias focales f₁ = {f1} mm y f₂ = {f2} mm se colocan en el mismo eje a una distancia d = {d} mm (en aire). Calcule la distancia focal f del conjunto.",
+        "bfd": "Dos lentes delgadas de distancias focales f₁ = {f1} mm y f₂ = {f2} mm se colocan en el mismo eje a una distancia d = {d} mm (en aire; la luz entra por la lente 1). Calcule la distancia de la lente 2 al foco imagen (distancia focal posterior)."
+      },
+      "steps": {
+        "f": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂).",
+          "1/f = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm."
+        ],
+        "bfd": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm.",
+          "BFD = f(1 − d/f₁) = {f} × (1 − {d}/{f1}) = {bfd} mm."
+        ]
+      },
+      "mistakes": {
+        "nod": "Ha omitido el término de la separación (esa es la fórmula para lentes en contacto, 1/f = 1/f₁ + 1/f₂).",
+        "plus": "Ha sumado el término d/(f₁f₂). Separar dos lentes convergentes reduce la potencia del conjunto, así que se resta.",
+        "f": "Ha dado la distancia focal f del conjunto. La distancia focal posterior se mide desde la lente 2: f(1 − d/f₁).",
+        "f2": "Ha usado f(1 − d/f₂). La distancia focal posterior usa f₁, la de la primera lente que encuentra la luz: f(1 − d/f₁)."
+      }
+    },
+    "na-fnumber": {
+      "name": "Apertura numérica y número f",
+      "short": "Calcular la NA de un objetivo, o el número f y la NA en el lado de la imagen a partir de la distancia focal y la apertura",
+      "formula": "NA = n sinθ; N = f/D; NA ≈ 1/(2N)",
+      "q": {
+        "na": "Un objetivo usado en {im} (n = {n}) tiene un semiángulo del rayo marginal de θ = {th}° en el lado del objeto. Calcule su apertura numérica NA.",
+        "fn": "Una lente de distancia focal f = {f} mm y diámetro de la pupila de entrada D = {D} mm forma la imagen de un objeto en el infinito. A partir del número f N = f/D, calcule la apertura numérica en el lado de la imagen con NA ≈ 1/(2N) (suponga que la lente cumple la condición de los senos)."
+      },
+      "steps": {
+        "na": [
+          "NA = n sinθ.",
+          "sin{th}° = {s}.",
+          "NA = {n} × {s} = {na}."
+        ],
+        "fn": [
+          "N = f/D = {f}/{D} = {N}.",
+          "NA ≈ 1/(2N) = 1/(2 × {N}) = {na}."
+        ]
+      },
+      "mistakes": {
+        "non": "Ha omitido el índice de refracción n del medio (NA = n sinθ). Con inmersión, la NA puede superar 1.",
+        "tan": "Ha usado tanθ. La apertura numérica es n sinθ.",
+        "n1": "Ha dado 1/N. La altura del rayo marginal es D/2, así que NA ≈ 1/(2N).",
+        "atan": "Ha tomado el seno de θ = arctan(D/(2f)). En una lente que cumple la condición de los senos, la altura del rayo marginal es f sinθ, así que sinθ = D/(2f).",
+        "nval": "Ha dado el número f N. Se pide NA ≈ 1/(2N)."
+      }
+    },
+    "young-fringe": {
+      "name": "Separación entre franjas en el experimento de Young",
+      "short": "Calcular la separación entre franjas de una doble rendija, o la longitud de onda a partir de una separación medida",
+      "formula": "Δy = λL/d",
+      "q": {
+        "dy": "En el experimento de doble rendija de Young, las rendijas están separadas d = {d} mm y la pantalla está a L = {L} m. Se usa luz de longitud de onda {lam} nm. Calcule la separación Δy entre franjas brillantes contiguas en la pantalla.",
+        "lam": "Dos rendijas separadas d = {d} mm iluminan una pantalla situada a L = {L} m. La distancia entre una franja brillante y la franja brillante situada {N} franjas más allá es de {s} mm. Calcule la longitud de onda de la luz."
+      },
+      "steps": {
+        "dy": [
+          "Para L ≫ d, la separación entre franjas brillantes contiguas es Δy = λL/d.",
+          "λ = {lm} m; d = {dm} m.",
+          "Δy = ({lm}) × {L}/({dm}) m = {dy} mm."
+        ],
+        "lam": [
+          "Separación entre franjas brillantes contiguas Δy = {s}/{N} = {dy} mm.",
+          "De Δy = λL/d: λ = Δy·d/L.",
+          "λ = {dy} mm × {d} mm/{L} m = {lam} nm."
+        ]
+      },
+      "mistakes": {
+        "half": "Le sobra un factor 2 (Δy = λL/(2d) o 2λL/d). La separación entre franjas es Δy = λL/d, sin ningún 2.",
+        "dbl": "Ha multiplicado por 2. La diferencia de camino cambia en λ de una franja brillante a la siguiente, así que Δy = λL/d.",
+        "non": "No ha dividido entre {N}. Los {s} mm abarcan {N} separaciones entre franjas.",
+        "n1": "Ha dividido entre {N} − 1. Desde una franja brillante hasta la situada {N} franjas más allá hay {N} separaciones."
+      }
+    },
+    "airy-spot": {
+      "name": "Límite de difracción (disco de Airy y criterio de Rayleigh)",
+      "short": "Calcular la resolución angular de un telescopio, el radio del disco de Airy de un punto enfocado o la resolución de un microscopio",
+      "formula": "θ_R = 1,22λ/D; r = 1,22λN; δ = 0,61λ/NA",
+      "q": {
+        "ang": "Un telescopio de apertura D = {D} mm observa luz de longitud de onda {lam} nm. Calcule el ángulo mínimo θ_R entre dos fuentes puntuales que pueden resolverse según el criterio de Rayleigh.",
+        "spot": "Una lente sin aberraciones de número f N = {N} enfoca un haz colimado de longitud de onda {lam} nm. Calcule el radio del disco de Airy en el plano focal (del centro al primer anillo oscuro).",
+        "res": "Un objetivo de microscopio con NA = {na} se usa con luz de longitud de onda {lam} nm. Calcule la resolución según el criterio de Rayleigh (separación mínima de dos puntos que pueden resolverse)."
+      },
+      "steps": {
+        "ang": [
+          "En la difracción por una abertura circular, el primer anillo oscuro está en sinθ_R = 1,22λ/D (θ_R ≈ 1,22λ/D para ángulos pequeños).",
+          "λ/D = {x} rad.",
+          "θ_R = 1,22 × {x} rad = {th} µrad (= {as}″)."
+        ],
+        "spot": [
+          "El radio del disco de Airy en el plano focal es r = 1,22λf/D = 1,22λN.",
+          "r = 1,22 × {lam} nm × {N} = {r} µm."
+        ],
+        "res": [
+          "Criterio de Rayleigh: el centro de una imagen cae sobre el primer anillo oscuro de la otra, en δ = 0,61λ/NA.",
+          "δ = 0,61 × {lam}/{na} = {d} nm."
+        ]
+      },
+      "mistakes": {
+        "no122": "Ha omitido el factor 1,22. Para una abertura circular, el primer anillo oscuro está en 1,22λ/D (1,22 es el primer cero de la función de Bessel J₁, 3,832, dividido entre π).",
+        "diam": "Ha dado el diámetro del primer anillo oscuro. Se pide la distancia del centro al primer anillo oscuro.",
+        "abbe": "Ha dado el límite de Abbe λ/(2NA). El criterio de Rayleigh es 0,61λ/NA.",
+        "no061": "Ha omitido el factor 0,61 (δ = 0,61λ/NA)."
+      }
+    },
+    "grating-angle": {
+      "name": "Red de difracción: ángulo y poder de resolución",
+      "short": "Calcular el ángulo de difracción con incidencia normal sobre una red, o la mínima diferencia de longitud de onda que resuelve",
+      "formula": "d sinβ = mλ; λ/δλ = mN",
+      "q": {
+        "beta": "Luz de longitud de onda {lam} nm incide normalmente sobre una red de {G} surcos por mm. Calcule el ángulo de difracción β del orden m = {m} (medido desde la normal a la red).",
+        "dl": "Una red de {G} surcos por mm se ilumina en toda su anchura de {W} mm con luz de longitud de onda cercana a {lam} nm. Calcule la mínima diferencia de longitud de onda δλ que se resuelve en el orden m = {m}."
+      },
+      "steps": {
+        "beta": [
+          "Periodo de la red d = 1 mm/{G} = {d} nm.",
+          "Con incidencia normal, d sinβ = mλ, así que sinβ = mλ/d = {m} × {lam}/{d} = {s}.",
+          "β = arcsin {s} = {b}°."
+        ],
+        "dl": [
+          "Número de surcos iluminados N = {G} × {W} = {N}.",
+          "Poder de resolución λ/δλ = mN = {m} × {N} = {R}.",
+          "δλ = λ/(mN) = {lam} nm/{R} = {dl} pm."
+        ]
+      },
+      "mistakes": {
+        "m1": "Este es el valor del primer orden. Se pide el orden {m} (sinβ = mλ/d, λ/δλ = mN).",
+        "tan": "Ha usado tanβ = mλ/d. La ecuación de la red es d sinβ = mλ.",
+        "nw": "Ha usado como N el número de surcos por mm, {G}. Multiplíquelo por la anchura iluminada: N = {G} × {W}."
+      }
+    },
+    "fsr-finesse": {
+      "name": "Fabry-Pérot: FSR, fineza y anchura de línea",
+      "short": "Calcular el rango espectral libre de un etalón, la fineza a partir de la reflectancia de los espejos o la anchura de un pico de transmisión",
+      "formula": "Δν_FSR = c/(2n_g L); 𝓕 = π√R/(1 − R); δν = Δν_FSR/𝓕",
+      "q": {
+        "fsr": "Un etalón de Fabry-Pérot de {med} (índice de grupo n_g = {ng}) tiene una separación entre espejos L = {L} mm. Calcule el rango espectral libre Δν_FSR en frecuencia (c = {c} m/s; incidencia normal).",
+        "fin": "Los dos espejos de una cavidad de Fabry-Pérot tienen una reflectancia R = {R} (sin pérdidas por absorción ni por dispersión). Calcule la fineza 𝓕.",
+        "lw": "Un etalón de Fabry-Pérot de {med} (índice de grupo n_g = {ng}) tiene una separación entre espejos L = {L} mm y una reflectancia de los espejos R = {R}. Calcule la anchura a media altura δν de un pico de transmisión (c = {c} m/s; incidencia normal, sin pérdidas)."
+      },
+      "steps": {
+        "fsr": [
+          "Δν_FSR = c/(2n_g L).",
+          "Δν_FSR = {c}/(2 × {ng} × {L} × 10⁻³) Hz = {fsr} GHz."
+        ],
+        "fin": [
+          "𝓕 = π√R/(1 − R).",
+          "√R = {sq}.",
+          "𝓕 = π × {sq}/(1 − {R}) = {F}."
+        ],
+        "lw": [
+          "Δν_FSR = c/(2n_g L) = {fsr} GHz.",
+          "𝓕 = π√R/(1 − R) = π × {sq}/(1 − {R}) = {F}.",
+          "δν = Δν_FSR/𝓕 = {fsr} GHz/{F} = {lw} MHz."
+        ]
+      },
+      "mistakes": {
+        "no2": "Falta el factor 2 (o está duplicado). La luz recorre el trayecto de ida y vuelta entre los espejos, así que Δν_FSR = c/(2n_g L).",
+        "non": "Ha omitido el índice de grupo n_g (salvo que el espacio sea aire, el camino óptico es n_g veces más largo).",
+        "coef": "Ha dado el coeficiente F = 4R/(1 − R)². La fineza 𝓕 = π√R/(1 − R) es otra magnitud (𝓕 = (π/2)√F).",
+        "nosq": "Ha usado R en lugar de √R (𝓕 = π√R/(1 − R)).",
+        "nopi": "Ha omitido π (𝓕 = π√R/(1 − R)).",
+        "mult": "Ha multiplicado Δν_FSR por 𝓕. La anchura de línea es Δν_FSR dividido entre 𝓕 (una fineza mayor da picos más estrechos).",
+        "fsr": "Ha dado el rango espectral libre. La anchura de línea es δν = Δν_FSR/𝓕."
+      }
+    },
+    "coherence-length": {
+      "name": "Longitud de coherencia",
+      "short": "Estimar la longitud de coherencia a partir de la anchura espectral de una fuente (en longitud de onda o en frecuencia)",
+      "formula": "l_c ≈ λ²/Δλ; l_c ≈ c/Δν",
+      "q": {
+        "lam": "Una fuente de banda ancha (como un SLD) tiene una longitud de onda central de {lam} nm y una FWHM espectral Δλ = {dl} nm. Calcule su longitud de coherencia con l_c ≈ λ²/Δλ.",
+        "nu": "Un láser tiene una anchura de línea espectral Δν = {dnu} MHz. Calcule su longitud de coherencia con l_c ≈ c/Δν (c = {c} m/s)."
+      },
+      "steps": {
+        "lam": [
+          "l_c ≈ λ²/Δλ.",
+          "λ² = {sq} nm².",
+          "l_c = {sq}/{dl} nm = {lc} µm."
+        ],
+        "nu": [
+          "l_c ≈ c/Δν.",
+          "Δν = {nu} Hz.",
+          "l_c = {c}/({nu}) m = {lc} m."
+        ]
+      },
+      "mistakes": {
+        "half": "Ha dividido entre 2. En un interferómetro con trayecto de ida y vuelta el espejo se desplaza l_c/2, pero la longitud de coherencia en sí es λ²/Δλ (c/Δν).",
+        "oct": "Ha dado (2 ln2/π)λ²/Δλ, la resolución axial de la OCT para un espectro gaussiano. Este problema usa l_c ≈ λ²/Δλ.",
+        "pi": "Ha dado c/(πΔν), otra definición que se usa para una línea lorentziana. Este problema usa l_c ≈ c/Δν."
+      }
+    },
+    "brewster": {
+      "name": "Ángulo de Brewster",
+      "short": "Calcular, a partir de los dos índices de refracción, el ángulo de incidencia con el que la luz con polarización p no se refleja",
+      "formula": "tanθ_B = n₂/n₁",
+      "q": "Luz de longitud de onda {lam} nm incide desde {m1} (n₁ = {n1}) sobre una frontera plana con {m2} (n₂ = {n2}). Calcule el ángulo de incidencia θ_B con el que la reflectancia para la polarización p es nula (ángulo de Brewster).",
+      "steps": [
+        "tanθ_B = n₂/n₁ = {n2}/{n1} = {x}.",
+        "θ_B = arctan {x} = {tb}°.",
+        "El ángulo de refracción es entonces 90° − θ_B = {tt}°, de modo que los rayos reflejado y refractado son perpendiculares."
+      ],
+      "mistakes": {
+        "inv": "Ha usado n₁/n₂. Es tanθ_B = n₂/n₁, donde n₁ es el índice del medio del que procede la luz.",
+        "crit": "Ha usado sinθ = (índice menor)/(índice mayor), que es el ángulo crítico. El ángulo de Brewster cumple tanθ_B = n₂/n₁."
+      }
+    },
+    "fresnel-normal": {
+      "name": "Reflectancia con incidencia normal (Fresnel)",
+      "short": "Calcular la reflectancia de una superficie con incidencia normal, la transmisión a través de una lámina o el índice a partir de una reflectancia medida",
+      "formula": "R = ((n₁ − n₂)/(n₁ + n₂))²",
+      "q": {
+        "r": "Luz de longitud de onda {lam} nm incide normalmente desde {m1} (n₁ = {n1}) sobre una superficie plana de {m2} (n₂ = {n2}). Calcule la reflectancia en intensidad R.",
+        "t2": "Luz de longitud de onda {lam} nm incide normalmente sobre una lámina plano-paralela de {m2} (n = {n2}) en aire. Teniendo en cuenta solo las reflexiones en las dos superficies (sin reflexiones múltiples dentro de la lámina ni absorción), calcule la fracción de la luz que atraviesa la lámina.",
+        "n": "Luz en aire incide normalmente sobre la superficie plana de un material no absorbente, y la reflectancia en intensidad es del {R} %. Calcule el índice de refracción n del material."
+      },
+      "steps": {
+        "r": [
+          "Coeficiente de reflexión en amplitud con incidencia normal r = (n₁ − n₂)/(n₁ + n₂) = {r}.",
+          "R = r² = {R} = {Rp} %."
+        ],
+        "t2": [
+          "Reflectancia de una superficie R = ((n − 1)/(n + 1))² = {Rp} %.",
+          "Fracción que atraviesa una superficie 1 − R = {T1}.",
+          "A través de las dos superficies (1 − R)² = {T2} = {T2p} %."
+        ],
+        "n": [
+          "De R = ((n − 1)/(n + 1))²: √R = (n − 1)/(n + 1).",
+          "√R = √({R} × 10⁻²) = {s}.",
+          "n = (1 + √R)/(1 − √R) = {n}."
+        ]
+      },
+      "mistakes": {
+        "amp": "Ha dado el coeficiente de amplitud |r|. La reflectancia en intensidad es su cuadrado, R = r².",
+        "trans": "Ha dado la transmitancia 1 − R. Se pide la reflectancia.",
+        "one": "Eso es 1 − R para una sola superficie. La lámina tiene dos superficies.",
+        "mult": "Eso es (1 − R)/(1 + R), que incluye las reflexiones múltiples dentro de la lámina. Este problema las desprecia: (1 − R)².",
+        "r": "Ha dado la reflectancia R de una superficie. Se pide la fracción que atraviesa la lámina.",
+        "nosqrt": "Ha usado (1 + R)/(1 − R) sin la raíz cuadrada. √R = (n − 1)/(n + 1).",
+        "inv": "Ha usado (1 − √R)/(1 + √R). El índice es el valor mayor que 1, (1 + √R)/(1 − √R)."
+      }
+    },
+    "malus": {
+      "name": "Ley de Malus (luz a través de polarizadores)",
+      "short": "Calcular la potencia después de que luz linealmente polarizada o no polarizada atraviese uno o varios polarizadores",
+      "formula": "I = I₀ cos²θ",
+      "q": {
+        "pol": "Luz linealmente polarizada con una potencia de {I0} mW atraviesa un polarizador ideal cuyo eje de transmisión forma un ángulo θ = {th}° con la polarización. Calcule la potencia transmitida.",
+        "unpol": "Luz no polarizada con una potencia de {I0} mW atraviesa dos polarizadores ideales cuyos ejes de transmisión forman un ángulo de {th}°. Calcule la potencia después del segundo polarizador.",
+        "three": "Luz no polarizada con una potencia de {I0} mW atraviesa sucesivamente tres polarizadores ideales con los ejes de transmisión a 0°, {th}° y 90°. Calcule la potencia después del tercer polarizador."
+      },
+      "steps": {
+        "pol": [
+          "Ley de Malus: I = I₀ cos²θ.",
+          "cos{th}° = {c}; cos²{th}° = {c2}.",
+          "I = {I0} × {c2} = {I} mW."
+        ],
+        "unpol": [
+          "El primer polarizador deja pasar la mitad de la luz no polarizada: {I0}/2 = {h} mW.",
+          "Ley de Malus en el segundo: cos²{th}° = {c2}.",
+          "I = {h} × {c2} = {I} mW."
+        ],
+        "three": [
+          "La mitad atraviesa el primer polarizador: {h} mW.",
+          "Segundo (a {th}° del primero): multiplicar por cos²{th}° = {c2} da {I2} mW.",
+          "Tercero (a {th3}° del segundo): multiplicar por cos²{th3}° = sin²{th}° = {s2} da {I} mW."
+        ]
+      },
+      "mistakes": {
+        "nosq": "No ha elevado cosθ al cuadrado. La amplitud del campo se multiplica por cosθ y la intensidad por cos²θ.",
+        "sin": "Ha usado sin²θ. θ es el ángulo entre la polarización y el eje de transmisión, y la fracción transmitida es cos²θ.",
+        "nohalf": "Ha olvidado que el primer polarizador deja pasar solo la mitad de la luz no polarizada.",
+        "one": "Esa es la potencia después del segundo polarizador. El tercero está a {th3}° del segundo, así que hay que multiplicar también por cos²{th3}°.",
+        "zero": "Solo se obtiene cero cuando están únicamente los dos polarizadores a 0° y 90°. Con el polarizador a {th}° entre ellos, sí pasa luz."
+      }
+    },
+    "waveplate": {
+      "name": "Espesor y retardo de una lámina de onda",
+      "short": "Calcular el espesor de una lámina λ/4 o λ/2 de orden cero, o el retardo de una lámina birrefringente en unidades de longitud de onda",
+      "formula": "Γ = 2π(n_e − n_o)d/λ; (n_e − n_o)d = λ/4",
+      "q": {
+        "qwp": "Una lámina λ/4 de orden cero para {lam} nm está hecha de {x} (tome n_e − n_o = {dn} a {lam} nm). Calcule el espesor d de la lámina.",
+        "hwp": "Una lámina λ/2 de orden cero para {lam} nm está hecha de {x} (tome n_e − n_o = {dn} a {lam} nm). Calcule el espesor d de la lámina.",
+        "ret": "Una lámina de {x} (tome n_e − n_o = {dn} a {lam} nm) de {d} mm de espesor, con el eje óptico en el plano de la lámina, se usa con incidencia normal. Calcule su retardo a {lam} nm en unidades de longitud de onda (Γ/2π)."
+      },
+      "steps": {
+        "qwp": [
+          "En una lámina λ/4, la diferencia de camino óptico (n_e − n_o)d entre las dos polarizaciones es λ/4.",
+          "d = λ/(4(n_e − n_o)) = {lam} nm/(4 × {dn}) = {d} µm."
+        ],
+        "hwp": [
+          "En una lámina λ/2, la diferencia de camino óptico (n_e − n_o)d es λ/2.",
+          "d = λ/(2(n_e − n_o)) = {lam} nm/(2 × {dn}) = {d} µm."
+        ],
+        "ret": [
+          "Diferencia de camino óptico (n_e − n_o)d = {dn} × {d} mm = {od} nm.",
+          "Γ/2π = (n_e − n_o)d/λ = {od}/{lam} = {w} (Γ = {G} rad)."
+        ]
+      },
+      "mistakes": {
+        "half": "λ/(2Δn) es el espesor de una lámina λ/2. Una lámina λ/4 tiene λ/(4Δn).",
+        "quarter": "λ/(4Δn) es el espesor de una lámina λ/4. Una lámina λ/2 tiene λ/(2Δn).",
+        "full": "Eso es λ/Δn, el espesor para una onda completa (retardo 2π).",
+        "nodn": "No ha dividido entre la birrefringencia n_e − n_o. λ/4 y λ/2 son diferencias de camino; el espesor es eso dividido entre n_e − n_o.",
+        "rad": "Ha dado el retardo en radianes (Γ = 2π × {w}). Se pide en unidades de longitud de onda (Γ/2π).",
+        "inv": "Lo ha invertido: λ/((n_e − n_o)d)."
+      }
+    },
+    "ar-coat": {
+      "name": "Recubrimiento antirreflectante λ/4: espesor, índice y reflectancia",
+      "short": "Calcular el espesor físico de un recubrimiento antirreflectante de una capa λ/4, el índice ideal del recubrimiento o la reflectancia a la longitud de onda de diseño",
+      "formula": "d = λ₀/(4n₁); n₁ = √(n₀nₛ); R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²",
+      "q": {
+        "d": "Se aplica a un sustrato de {s} (nₛ = {ns}) un recubrimiento antirreflectante de una capa de {film} (n₁ = {n1}), como capa λ/4 para la longitud de onda de diseño λ₀ = {lam0} nm. Calcule el espesor físico d del recubrimiento (en aire, incidencia normal).",
+        "n": "Se aplica a un sustrato de {s} (nₛ = {ns} a {lam0} nm) un recubrimiento antirreflectante de una capa λ/4 para uso en aire (n₀ = 1). Calcule el índice ideal n₁ del recubrimiento que da reflectancia nula a la longitud de onda de diseño.",
+        "r": "Se aplica a un sustrato de {s} (nₛ = {ns}) una capa λ/4 de {film} (n₁ = {n1}; longitud de onda de diseño {lam0} nm). Calcule la reflectancia de la superficie a la longitud de onda de diseño con incidencia normal (en aire, n₀ = 1)."
+      },
+      "steps": {
+        "d": [
+          "El espesor óptico n₁d debe ser igual a λ₀/4: n₁d = {lam0}/4 = {opt} nm.",
+          "d = λ₀/(4n₁) = {lam0}/(4 × {n1}) = {d} nm."
+        ],
+        "n": [
+          "Las reflexiones en las dos caras de la capa tienen la misma amplitud cuando n₁ = √(n₀nₛ).",
+          "n₁ = √(1 × {ns}) = {n}."
+        ],
+        "r": [
+          "Reflectancia de una capa λ/4 a la longitud de onda de diseño: R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))².",
+          "n₁² = {n12}; amplitud ({ns} − {n12})/({ns} + {n12}) = {r}.",
+          "R = {Rp} % ({R0p} % sin el recubrimiento)."
+        ]
+      },
+      "mistakes": {
+        "nodiv": "λ₀/4 es el espesor óptico. Dentro de la capa la longitud de onda se reduce a λ₀/n₁, así que el espesor físico es λ₀/(4n₁).",
+        "half": "λ₀/(2n₁) es una capa λ/2. A la longitud de onda de diseño, una capa λ/2 refleja como si no hubiera recubrimiento.",
+        "ns": "Ha dividido entre el índice del sustrato. El espesor depende del índice del recubrimiento n₁ (d = λ₀/(4n₁)).",
+        "mean": "Ha tomado la media aritmética de n₀ y nₛ. El índice ideal es la media geométrica √(n₀nₛ).",
+        "nosqrt": "No ha tomado la raíz cuadrada (n₁ = √(n₀nₛ)).",
+        "bare": "Esa es la reflectancia sin el recubrimiento, ((nₛ − 1)/(nₛ + 1))².",
+        "amp": "Ha dado el coeficiente de amplitud. La reflectancia en intensidad es su cuadrado.",
+        "simple": "Eso es ((nₛ − n₁)/(nₛ + n₁))², solo para la frontera recubrimiento-sustrato. Una capa λ/4 combina las dos reflexiones: ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²."
+      }
+    },
+    "achromat": {
+      "name": "Doblete acromático: distancias focales de las dos lentes",
+      "short": "Calcular la distancia focal de cada lente de un doblete acromático crown-flint pegado",
+      "formula": "φ₁/V₁ + φ₂/V₂ = 0; φ₁ = φV₁/(V₁ − V₂); φ₂ = −φV₂/(V₁ − V₂)",
+      "q": {
+        "f1": "Una lente convergente de N-BK7 (número de Abbe V₁ = {V1}) y una lente divergente de F2 (V₂ = {V2}) se pegan formando un doblete acromático (con las líneas C y F en el mismo foco) de distancia focal del conjunto f = {f} mm. Calcule la distancia focal f₁ de la lente de N-BK7.",
+        "f2": "Una lente convergente de N-BK7 (número de Abbe V₁ = {V1}) y una lente divergente de F2 (V₂ = {V2}) se pegan formando un doblete acromático (con las líneas C y F en el mismo foco) de distancia focal del conjunto f = {f} mm. Calcule la distancia focal f₂ de la lente de F2, con su signo."
+      },
+      "steps": {
+        "f1": [
+          "De la condición de acromatismo φ₁/V₁ + φ₂/V₂ = 0 y φ₁ + φ₂ = φ: φ₁ = φV₁/(V₁ − V₂).",
+          "V₁ − V₂ = {dV}; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₁ = 1/φ₁ = f(V₁ − V₂)/V₁ = {f1} mm."
+        ],
+        "f2": [
+          "De la condición de acromatismo φ₁/V₁ + φ₂/V₂ = 0 y φ₁ + φ₂ = φ: φ₂ = −φV₂/(V₁ − V₂).",
+          "V₁ − V₂ = {dV}; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₂ = 1/φ₂ = −f(V₁ − V₂)/V₂ = {f2} mm (divergente)."
+        ]
+      },
+      "mistakes": {
+        "swap": "Ha intercambiado V₁ y V₂.",
+        "inv": "Ha confundido la potencia φ con la distancia focal f = 1/φ (de φ₁ = φV₁/(V₁ − V₂) se obtiene f₁ = f(V₁ − V₂)/V₁)."
+      }
+    },
+    "absorption": {
+      "name": "Coeficiente de absorción y transmitancia (Beer-Lambert)",
+      "short": "Calcular la transmitancia interna a partir de α y del espesor, la profundidad de penetración 1/e, o α a partir del coeficiente de extinción",
+      "formula": "I = I₀e^(−αz); α = 4πκ/λ",
+      "q": {
+        "trans": "Una lámina de un material con coeficiente de absorción α = {a} cm⁻¹ tiene {z} mm de espesor. Calcule su transmitancia interna I/I₀ (sin contar las reflexiones en las superficies).",
+        "depth": "En un material con coeficiente de absorción α = {a} cm⁻¹, calcule la profundidad a la que la intensidad cae a 1/e (alrededor del 37 %) de su valor incidente.",
+        "kappa": "Un material tiene un coeficiente de extinción (parte imaginaria del índice complejo) κ = {kap}. Calcule el coeficiente de absorción en intensidad α a {lam} nm."
+      },
+      "steps": {
+        "trans": [
+          "I/I₀ = e^(−αz). z = {zc} cm.",
+          "αz = {a} × {zc} = {x}.",
+          "I/I₀ = e^(−{x}) = {T} %."
+        ],
+        "depth": [
+          "e^(−αz) = 1/e en z = 1/α.",
+          "1/α = {dc} cm = {dp} µm."
+        ],
+        "kappa": [
+          "Coeficiente de absorción en intensidad α = 4πκ/λ.",
+          "λ = {lc} cm.",
+          "α = 4π × ({kap})/({lc}) = {a} cm⁻¹."
+        ]
+      },
+      "mistakes": {
+        "log10": "Ha usado 10^(−αz). En la ley de Beer-Lambert, α va con la exponencial natural e^(−αz) (la base 10 corresponde a la absorbancia).",
+        "cm": "Ha multiplicado α en cm⁻¹ por el espesor en mm. Convierta primero z a cm (1 mm = 0,1 cm).",
+        "lin": "Ha usado la aproximación 1 − αz. Aquí αz no es pequeño, así que use e^(−αz).",
+        "ln2": "Eso es ln2/α, donde la intensidad se reduce a la mitad. Cae a 1/e en 1/α.",
+        "amp": "Eso es 2/α, donde la amplitud del campo cae a 1/e. La intensidad es el cuadrado de la amplitud, así que la respuesta es 1/α.",
+        "pi2": "2πκ/λ es el coeficiente de atenuación de la amplitud. El coeficiente en intensidad es el doble, 4πκ/λ.",
+        "nopi": "Ha omitido π (α = 4πκ/λ)."
+      }
+    },
+    "gauss-beam": {
+      "name": "Haz gaussiano: z_R, w(z) y divergencia",
+      "short": "A partir de la cintura del haz y de M², calcular la longitud de Rayleigh, el radio del haz a una distancia z o la divergencia en campo lejano",
+      "formula": "z_R = πw₀²/(M²λ); w(z) = w₀√(1 + (z/z_R)²); θ = M²λ/(πw₀)",
+      "q": {
+        "zr": "Un haz láser (en aire) tiene una longitud de onda de {lam} nm, un radio de la cintura w₀ = {w0} µm (1/e²) y M² = {m2}. Calcule la longitud de Rayleigh z_R.",
+        "wz": "Un haz láser (en aire) tiene una longitud de onda de {lam} nm, un radio de la cintura w₀ = {w0} µm (1/e²) y M² = {m2}. Calcule el radio del haz w(z) a z = {z} mm de la cintura.",
+        "div": "Un haz láser (en aire) tiene una longitud de onda de {lam} nm, un radio de la cintura w₀ = {w0} µm (1/e²) y M² = {m2}. Calcule el semiángulo de divergencia θ en campo lejano."
+      },
+      "steps": {
+        "zr": [
+          "z_R = πw₀²/(M²λ).",
+          "z_R = π × ({w0} µm)²/({m2} × {lam} nm) = {zr} mm."
+        ],
+        "wz": [
+          "z_R = πw₀²/(M²λ) = {zr} mm.",
+          "z/z_R = {z}/{zr} = {x}; (z/z_R)² = {x2}.",
+          "w(z) = w₀√(1 + (z/z_R)²) = {w0} × √(1 + {x2}) = {w} µm."
+        ],
+        "div": [
+          "θ = M²λ/(πw₀).",
+          "θ = {m2} × {lam} nm/(π × {w0} µm) = {th} mrad."
+        ]
+      },
+      "mistakes": {
+        "diam": "Ha usado el diámetro como w₀. w₀ es el radio (hasta el punto de intensidad 1/e²).",
+        "nopi": "Ha omitido π (z_R = πw₀²/(M²λ), θ = M²λ/(πw₀)).",
+        "m2": "Ha aplicado M² al revés. Un M² mayor acorta z_R (en un factor 1/M²) y aumenta θ (en un factor M²).",
+        "full": "Ha dado el ángulo total 2θ. Se pide el semiángulo.",
+        "nosqrt": "Ha olvidado la raíz cuadrada (w = w₀√(1 + (z/z_R)²)).",
+        "far": "Ha usado la aproximación de campo lejano w ≈ w₀z/z_R (= θz). A pocas z_R de la cintura, use √(1 + (z/z_R)²).",
+        "lin": "Ha usado w₀(1 + z/z_R). Es w₀√(1 + (z/z_R)²)."
+      }
+    },
+    "long-modes": {
+      "name": "Separación entre modos longitudinales",
+      "short": "Calcular la separación en frecuencia de los modos longitudinales a partir de la longitud de la cavidad, o la separación en longitud de onda de un láser de semiconductor",
+      "formula": "Δν = c/(2nL); Δλ = λ²/(2n_g L)",
+      "q": {
+        "nu": "Un láser de He-Ne tiene una longitud de cavidad L = {L} m (tome el índice dentro de la cavidad como 1). Calcule la separación en frecuencia Δν de sus modos longitudinales (c = {c} m/s).",
+        "lam": "Un láser de semiconductor de tipo Fabry-Pérot tiene una longitud L = {Lu} µm y un índice de grupo n_g = {ng}. Calcule la separación en longitud de onda Δλ de sus modos longitudinales cerca de {lam} nm."
+      },
+      "steps": {
+        "nu": [
+          "Separación entre modos longitudinales Δν = c/(2nL).",
+          "Δν = {c}/(2 × {L}) Hz = {dn} MHz."
+        ],
+        "lam": [
+          "Separación en longitud de onda Δλ = λ²/(2n_g L).",
+          "λ² = {sq} nm²; 2n_g L = {den} nm.",
+          "Δλ = {sq}/{den} = {dl} nm."
+        ]
+      },
+      "mistakes": {
+        "no2": "Ha omitido el 2. La luz recorre la cavidad de ida y vuelta, así que Δν = c/(2nL) y Δλ = λ²/(2n_g L).",
+        "half": "Ha dividido entre 4L. Es Δν = c/(2nL).",
+        "non": "Ha omitido el índice de grupo n_g."
+      }
+    },
+    "fiber-na": {
+      "name": "NA de una fibra, ángulo de aceptación y diferencia relativa de índices",
+      "short": "A partir de los índices del núcleo y del revestimiento, calcular la apertura numérica, el ángulo de aceptación en aire o la diferencia relativa de índices",
+      "formula": "NA = √(n₁² − n₂²) = sinθ_max; Δ = (n₁² − n₂²)/(2n₁²)",
+      "q": {
+        "na": "Una fibra de índice escalonado tiene un índice del núcleo n₁ = {n1} y un índice del revestimiento n₂ = {n2}. Calcule su apertura numérica NA.",
+        "theta": "Se acopla luz desde el aire a la cara de entrada de una fibra de índice escalonado con índice del núcleo n₁ = {n1} e índice del revestimiento n₂ = {n2}. Calcule el mayor ángulo de incidencia θ_max (semiángulo de aceptación) para el que la luz se guía en el núcleo.",
+        "delta": "Una fibra de índice escalonado tiene un índice del núcleo n₁ = {n1} y un índice del revestimiento n₂ = {n2}. Calcule la diferencia relativa de índices Δ = (n₁² − n₂²)/(2n₁²)."
+      },
+      "steps": {
+        "na": [
+          "NA = √(n₁² − n₂²).",
+          "n₁² − n₂² = {d2}.",
+          "NA = √{d2} = {na}."
+        ],
+        "theta": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "En aire (n₀ = 1), sinθ_max = NA, así que θ_max = arcsin {na} = {th}°."
+        ],
+        "delta": [
+          "Δ = (n₁² − n₂²)/(2n₁²).",
+          "n₁² − n₂² = {d2}.",
+          "Δ = {d2}/(2 × {n1}²) = {dl} %."
+        ]
+      },
+      "mistakes": {
+        "diff": "Ha dado n₁ − n₂. NA = √(n₁² − n₂²).",
+        "nosqrt": "No ha tomado la raíz cuadrada (NA = √(n₁² − n₂²)).",
+        "nosq": "Ha usado √(n₁ − n₂). Es la raíz cuadrada de la diferencia de cuadrados, n₁² − n₂².",
+        "full": "Ha dado el ángulo total 2θ_max. Se pide el semiángulo.",
+        "core": "Ese es el ángulo dentro del núcleo, arcsin(NA/n₁). En aire, sinθ_max = NA.",
+        "no2": "No ha dividido entre 2 (Δ = (n₁² − n₂²)/(2n₁²)).",
+        "na": "Ha dado la apertura numérica NA."
+      }
+    },
+    "v-number": {
+      "name": "Número V de una fibra y longitud de onda de corte",
+      "short": "Calcular la frecuencia normalizada V a partir del tamaño del núcleo, los índices y la longitud de onda, o la longitud de onda de corte para el funcionamiento monomodo",
+      "formula": "V = 2πa·NA/λ; λ_c = 2πa·NA/2,405",
+      "q": {
+        "v": "Una fibra de índice escalonado con índice del núcleo n₁ = {n1}, índice del revestimiento n₂ = {n2} y diámetro del núcleo {dc} µm se usa a {lam} nm. Calcule la frecuencia normalizada V.",
+        "lc": "Una fibra de índice escalonado tiene un índice del núcleo n₁ = {n1}, un índice del revestimiento n₂ = {n2} y un diámetro del núcleo de {dc} µm. Calcule su longitud de onda de corte λ_c (monomodo a longitudes de onda mayores)."
+      },
+      "steps": {
+        "v": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "Radio del núcleo a = {dc}/2 = {a} µm.",
+          "V = 2πa·NA/λ = 2π × {a} µm × {na}/{lam} nm = {V} ({mode})."
+        ],
+        "lc": [
+          "NA = √(n₁² − n₂²) = {na}; radio del núcleo a = {dc}/2 = {a} µm.",
+          "La longitud de onda a la que V = 2,405 es λ_c = 2πa·NA/2,405 = {lc} nm."
+        ]
+      },
+      "mistakes": {
+        "diam": "Ha usado el diámetro del núcleo como a. a es el radio del núcleo (la mitad del diámetro).",
+        "nopi": "Ha omitido 2π (V = 2πa·NA/λ).",
+        "no2": "Ha omitido el 2 de 2π."
+      }
+    },
+    "chrom-disp": {
+      "name": "Ensanchamiento de pulsos por dispersión cromática",
+      "short": "Calcular el ensanchamiento del pulso a partir de la dispersión, la longitud y la anchura espectral, o la longitud máxima para un ensanchamiento admitido",
+      "formula": "Δτ = |D| L Δλ; Δλ = λ²Δν/c",
+      "q": {
+        "tau": "Un pulso de luz con anchura espectral Δλ = {dl} nm recorre L = {L} km en una fibra con dispersión D = {D} ps/(nm·km) (banda de 1550 nm). Calcule el ensanchamiento Δτ.",
+        "nu": "Luz a 1550 nm con una anchura espectral Δν = {dnu} GHz se transmite por L = {L} km de fibra con dispersión D = {D} ps/(nm·km). Calcule el ensanchamiento del pulso Δτ debido a la dispersión cromática (c = {c} m/s).",
+        "len": "Se transmiten pulsos con anchura espectral Δλ = {dl} nm por una fibra con dispersión D = {D} ps/(nm·km). Calcule la longitud máxima para la que el ensanchamiento por dispersión no supera {tau} ps."
+      },
+      "steps": {
+        "tau": [
+          "Δτ = |D| L Δλ.",
+          "Δτ = {D} × {L} × {dl} = {t} ps."
+        ],
+        "nu": [
+          "Convierta la anchura en frecuencia a longitud de onda: Δλ = λ²Δν/c = (1550 nm)² × {dnu} GHz/c = {dlc} nm.",
+          "Δτ = |D| L Δλ = {D} × {L} × {dlc} = {t} ps."
+        ],
+        "len": [
+          "De Δτ = |D| L Δλ: L = Δτ/(|D|Δλ).",
+          "|D|Δλ = {D} × {dl} = {Ddl} ps/km.",
+          "L = {tau}/{Ddl} = {L} km."
+        ]
+      },
+      "mistakes": {
+        "div": "Ha dividido entre Δλ. El ensanchamiento es proporcional a Δλ (Δτ = |D| L Δλ).",
+        "raw": "Ha usado el número de Δν en GHz como Δλ en nm. Convierta con Δλ = λ²Δν/c (a 1550 nm, 1 GHz ≈ 0,008 nm).",
+        "mult": "Ha multiplicado Δτ × |D| × Δλ. Es L = Δτ/(|D|Δλ).",
+        "inv": "Lo ha invertido: |D|Δλ/Δτ."
+      }
+    },
+    "db-power": {
+      "name": "Conversión entre dBm y mW y atenuación de una fibra",
+      "short": "Convertir una potencia óptica entre mW y dBm, o calcular la potencia tras una atenuación dada en dB/km",
+      "formula": "P_dBm = 10 log₁₀(P/1 mW); P = P₀·10^(−αL/10)",
+      "q": {
+        "todbm": "Exprese una potencia óptica de {P} mW en dBm.",
+        "tomw": "Exprese una potencia óptica de {dbm} dBm en mW.",
+        "loss": "Se acoplan {Pin} mW de luz a una fibra con una atenuación de {al} dB/km. Calcule la potencia óptica después de {L} km."
+      },
+      "steps": {
+        "todbm": [
+          "P_dBm = 10 log₁₀(P/1 mW).",
+          "log₁₀ {P} = {lg}.",
+          "P_dBm = 10 × ({lg}) = {y} dBm."
+        ],
+        "tomw": [
+          "P = 1 mW × 10^(P_dBm/10).",
+          "P = 10^({e}) mW = {P} mW."
+        ],
+        "loss": [
+          "Atenuación total A = {al} × {L} = {A} dB.",
+          "P = P₀ × 10^(−A/10) = {Pin} × {f} = {P} mW."
+        ]
+      },
+      "mistakes": {
+        "ln": "Ha usado la base e en lugar de 10. Los decibelios usan el logaritmo decimal (base 10).",
+        "x20": "Ha usado 20 log₁₀ (o 10^(x/20)). Las magnitudes de potencia, como la potencia óptica, usan 10 log₁₀ (20 corresponde a cocientes de amplitudes, como la tensión o el campo).",
+        "w": "Ha usado 1 W como referencia (dBW). El dBm se refiere a 1 mW.",
+        "np": "Ha usado la atenuación en dB directamente como exponente de e. Use P = P₀·10^(−A/10)."
+      }
+    },
+    "link-budget": {
+      "name": "Balance de potencia de un enlace óptico",
+      "short": "Restar de la potencia emitida las pérdidas de la fibra, los conectores y los empalmes para hallar la potencia recibida y el margen",
+      "formula": "P_rx = P_tx − αL − N_cL_c − N_sL_s; M = P_rx − S",
+      "q": {
+        "prx": "Un transmisor acopla {Ptx} dBm a {L} km de fibra monomodo con una atenuación de {al} dB/km a {w} nm. El enlace tiene {Nc} conectores ({Lc} dB cada uno) y {Ns} empalmes por fusión ({Ls} dB cada uno). Calcule la potencia recibida.",
+        "margin": "Un transmisor acopla {Ptx} dBm a {L} km de fibra monomodo con una atenuación de {al} dB/km a {w} nm. El enlace tiene {Nc} conectores ({Lc} dB cada uno) y {Ns} empalmes por fusión ({Ls} dB cada uno). La sensibilidad del receptor es {S} dBm. Calcule el margen de potencia."
+      },
+      "steps": {
+        "prx": [
+          "Atenuación de la fibra {al} × {L} = {Af} dB.",
+          "Conectores {Nc} × {Lc} = {Ac} dB; empalmes {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm."
+        ],
+        "margin": [
+          "Atenuación de la fibra {al} × {L} = {Af} dB.",
+          "Conectores {Nc} × {Lc} = {Ac} dB; empalmes {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm.",
+          "Margen M = P_rx − S = {Prx} − ({S}) = {M} dB."
+        ]
+      },
+      "mistakes": {
+        "noconn": "Ha omitido las pérdidas de los conectores y de los empalmes.",
+        "nosp": "Ha omitido la pérdida de los empalmes, {As} dB.",
+        "plus": "Ha sumado las pérdidas. Las pérdidas en dB se restan de la potencia emitida en dBm.",
+        "prx": "Ha dado la potencia recibida P_rx. El margen es la diferencia respecto de la sensibilidad, P_rx − S."
+      }
+    },
+    "responsivity": {
+      "name": "Responsividad y eficiencia cuántica de un fotodiodo",
+      "short": "Calcular la responsividad o la fotocorriente a partir de la eficiencia cuántica y la longitud de onda, o la eficiencia cuántica a partir de una fotocorriente medida",
+      "formula": "ℛ = ηqλ/(hc); I_p = ℛP",
+      "q": {
+        "r": "Un fotodiodo de {det} tiene una eficiencia cuántica η = {eta} a {lam} nm. Calcule su responsividad ℛ (q = {e} C; h = {h} J·s; c = {c} m/s).",
+        "ip": "Inciden {P} µW de luz a {lam} nm sobre un fotodiodo de {det} con una eficiencia cuántica η = {eta} a esa longitud de onda. Calcule la fotocorriente (q = {e} C; h = {h} J·s; c = {c} m/s).",
+        "eta": "Cuando inciden {P} µW de luz a {lam} nm sobre un fotodiodo de {det}, la fotocorriente es de {I} µA. Calcule la eficiencia cuántica η (q = {e} C; h = {h} J·s; c = {c} m/s)."
+      },
+      "steps": {
+        "r": [
+          "Responsividad con eficiencia cuántica igual a 1: qλ/(hc) = {r1} A/W (igual a λ[nm]/1239,84).",
+          "ℛ = η × {r1} = {R} A/W."
+        ],
+        "ip": [
+          "Responsividad con eficiencia cuántica igual a 1: qλ/(hc) = {r1} A/W.",
+          "ℛ = η × {r1} = {R} A/W.",
+          "I_p = ℛP = {R} A/W × {P} µW = {I} µA."
+        ],
+        "eta": [
+          "η = (I_p/q)/(P/(hν)) = (I_p/P)/(qλ/(hc)).",
+          "I_p/P = {Ri} A/W; qλ/(hc) = {r1} A/W.",
+          "η = {Ri}/{r1} = {eta} %."
+        ]
+      },
+      "mistakes": {
+        "noeta": "Ha omitido la eficiencia cuántica η (este es el límite superior para η = 1).",
+        "inv": "Lo ha invertido (ℛ = ηqλ/(hc), I_p = ℛP).",
+        "r": "Ha dado la responsividad I_p/P en A/W. La eficiencia cuántica es ese valor dividido entre qλ/(hc)."
+      }
+    },
+    "shot-noise": {
+      "name": "Corriente de ruido de disparo",
+      "short": "Calcular la corriente eficaz de ruido de disparo a partir de la fotocorriente, la corriente de oscuridad y el ancho de banda",
+      "formula": "⟨i²⟩ = 2q(I_p + I_d)Δf",
+      "q": "Un fotodiodo con una fotocorriente de {Ip} µA y una corriente de oscuridad de {Id} nA se usa con un ancho de banda de {bw} MHz. Calcule la corriente eficaz (rms) de ruido de disparo (q = {e} C).",
+      "steps": [
+        "⟨i²⟩ = 2q(I_p + I_d)Δf.",
+        "I_p + I_d = {I} A; Δf = {bwh} Hz.",
+        "⟨i²⟩ = 2 × {e} × {I} × {bwh} = {s2} A².",
+        "i = √⟨i²⟩ = {i} nA."
+      ],
+      "mistakes": {
+        "no2": "Ha omitido el factor 2 (⟨i²⟩ = 2qIΔf).",
+        "nodark": "Ha omitido la corriente de oscuridad I_d. La corriente de oscuridad también produce ruido de disparo."
+      }
+    },
+    "shg-coherence": {
+      "name": "Longitud de coherencia de la SHG y periodo de QPM",
+      "short": "A partir de los índices de la onda fundamental y del segundo armónico, calcular la longitud de coherencia sin ajuste de fase y el periodo de inversión del PPLN",
+      "formula": "L_c = λ/(4(n₂ω − nω)); Λ = 2L_c",
+      "q": {
+        "lc": "Se genera el segundo armónico ({lam2} nm) de luz de {lam} nm en LiNbO₃ con polarización extraordinaria (24,5 °C). Los índices son n(ω) = {n1} y n(2ω) = {n2}. Calcule la longitud de coherencia L_c sin ajuste de fase.",
+        "qpm": "Se genera el segundo armónico ({lam2} nm) de luz de {lam} nm en LiNbO₃ con polarización extraordinaria (24,5 °C). Los índices son n(ω) = {n1} y n(2ω) = {n2}. Calcule el periodo de inversión Λ para el cuasiajuste de fase de primer orden en LiNbO₃ con polarización periódicamente invertida (PPLN)."
+      },
+      "steps": {
+        "lc": [
+          "Δk = k₂ω − 2kω = (4π/λ)(n₂ω − nω) (λ es la longitud de onda fundamental).",
+          "n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = π/Δk = λ/(4(n₂ω − nω)) = {lam} nm/(4 × {dn}) = {lc} µm."
+        ],
+        "qpm": [
+          "Δk = (4π/λ)(n₂ω − nω); n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = λ/(4(n₂ω − nω)) = {lc} µm.",
+          "Para el QPM de primer orden, Λ = 2L_c = {L} µm."
+        ]
+      },
+      "mistakes": {
+        "qpm": "λ/(2Δn) es el periodo de QPM Λ = 2L_c. La longitud de coherencia es L_c = λ/(4Δn).",
+        "lc": "Ha dado la longitud de coherencia L_c. El periodo de inversión es Λ = 2L_c.",
+        "nofour": "Falta el factor del denominador (L_c = λ/(4Δn), Λ = λ/(2Δn)).",
+        "sh": "Ha usado la longitud de onda del segundo armónico λ/2. La λ de la fórmula es la longitud de onda fundamental."
+      }
+    },
+    "tbp": {
+      "name": "Producto tiempo-ancho de banda (pulsos limitados por transformada)",
+      "short": "Calcular la anchura espectral (en frecuencia o en longitud de onda) a partir de la duración del pulso, o el pulso más corto a partir de la anchura espectral",
+      "formula": "ΔνΔt = K; Δλ = λ²Δν/c",
+      "q": {
+        "nu": "Un pulso {sh} limitado por transformada (producto tiempo-ancho de banda K = {K}) tiene una duración (FWHM de la intensidad) Δt = {dt} fs. Calcule su anchura espectral Δν.",
+        "lam": "Un pulso {sh} limitado por transformada (K = {K}) centrado en {lam} nm tiene una duración Δt = {dt} fs. Calcule su anchura espectral en longitud de onda, Δλ (c = {c} m/s).",
+        "dt": "Calcule la duración Δt del pulso {sh} más corto (limitado por transformada, K = {K}) que puede formarse con luz centrada en {lam} nm y de anchura espectral Δλ = {dl} nm (c = {c} m/s)."
+      },
+      "steps": {
+        "nu": [
+          "Para un pulso limitado por transformada, ΔνΔt = K.",
+          "Δν = {K}/({dt} × 10⁻¹⁵ s) = {nu} THz."
+        ],
+        "lam": [
+          "Δν = K/Δt = {nu} THz.",
+          "Δλ = λ²Δν/c = {dl} nm."
+        ],
+        "dt": [
+          "Δν = cΔλ/λ² = {nu} THz.",
+          "Δt = K/Δν = {dt} fs."
+        ]
+      },
+      "mistakes": {
+        "shape": "Ha usado la K de la otra forma de pulso (gaussiano 0,441; sech² 0,315).",
+        "one": "Ha usado ΔνΔt = 1. Para un pulso limitado por transformada, ΔνΔt = K ({K} para esta forma)."
+      }
+    },
+    "spdc-idler": {
+      "name": "Longitudes de onda en procesos paramétricos (conservación de la energía)",
+      "short": "Calcular la longitud de onda del idler a partir de las del bombeo y la señal, o la del bombeo a partir de la señal y el idler",
+      "formula": "1/λ_p = 1/λ_s + 1/λ_i",
+      "q": {
+        "idler": "Un bombeo a {lp} nm produce conversión paramétrica descendente (o alimenta un oscilador paramétrico óptico), y la señal está a {ls} nm. Calcule la longitud de onda del idler.",
+        "pump": "Un proceso paramétrico produce una señal a {ls} nm y un idler a {li} nm. Calcule la longitud de onda del bombeo."
+      },
+      "steps": {
+        "idler": [
+          "La conservación de la energía ω_p = ω_s + ω_i da 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_i = 1/{lp} − 1/{ls} = {a} − {b} = {x} nm⁻¹.",
+          "λ_i = {li} nm."
+        ],
+        "pump": [
+          "La conservación de la energía ω_p = ω_s + ω_i da 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_p = {a} + {b} = {x} nm⁻¹.",
+          "λ_p = {lp} nm."
+        ]
+      },
+      "mistakes": {
+        "diff": "Ha dado la diferencia de longitudes de onda λ_s − λ_p. Lo que se suma y se resta son las frecuencias (1/λ).",
+        "plus": "Ha usado 1/λ_p + 1/λ_s. Es 1/λ_i = 1/λ_p − 1/λ_s.",
+        "deg": "Ese es el caso degenerado (señal e idler ambos a 2λ_p). La señal está a {ls} nm, así que el idler está a otra longitud de onda.",
+        "minus": "Ha usado 1/λ_s − 1/λ_i. Para el bombeo se suman: 1/λ_p = 1/λ_s + 1/λ_i.",
+        "avg": "Ha tomado la mitad de la media de las longitudes de onda de la señal y del idler, (λ_s + λ_i)/4. Eso solo vale cerca de la degeneración. La relación exacta es 1/λ_p = 1/λ_s + 1/λ_i: se suman las 1/λ (frecuencias)."
+      }
+    },
+    "wien": {
+      "name": "Ley de desplazamiento de Wien",
+      "short": "Calcular la longitud de onda del máximo de la radiación de un cuerpo negro a partir de la temperatura, o la temperatura a partir del máximo",
+      "formula": "λ_max T = b",
+      "q": {
+        "lam": "Calcule la longitud de onda λ_max a la que un cuerpo negro a {T} K emite con mayor intensidad (máximo del espectro por unidad de longitud de onda; b = {b} m·K).",
+        "tc": "Un objeto calentado a {tc} °C se considera un cuerpo negro. Calcule la longitud de onda λ_max a la que emite con mayor intensidad (máximo del espectro por unidad de longitud de onda; b = {b} m·K).",
+        "temp": "El espectro por unidad de longitud de onda de una fuente que se comporta como un cuerpo negro tiene su máximo en {lm} µm. Calcule su temperatura (b = {b} m·K)."
+      },
+      "steps": {
+        "lam": [
+          "Ley de desplazamiento de Wien: λ_max T = b.",
+          "λ_max = {b}/{TK} m = {lm} µm."
+        ],
+        "tc": [
+          "Convierta a temperatura absoluta: T = {tc} + 273,15 = {TK} K.",
+          "λ_max = b/T = {b}/{TK} m = {lm} µm."
+        ],
+        "temp": [
+          "T = b/λ_max.",
+          "T = {b}/({lm} × 10⁻⁶) = {T} K."
+        ]
+      },
+      "mistakes": {
+        "nupeak": "Ese valor procede del máximo del espectro por unidad de frecuencia (ν_max = 5,879 × 10¹⁰ Hz/K × T). El máximo por unidad de longitud de onda cumple λ_max T = b (los dos máximos no están a la misma longitud de onda).",
+        "celsius": "Ha usado directamente el valor en grados Celsius. Use la temperatura absoluta T = t + 273,15."
+      }
+    },
+    "illuminance": {
+      "name": "Iluminancia (ley de la inversa del cuadrado y del coseno)",
+      "short": "Calcular la iluminancia a partir de la intensidad luminosa de una fuente puntual, la distancia y la inclinación de la superficie",
+      "formula": "E = I cosθ/d²",
+      "q": {
+        "n": "Calcule la iluminancia sobre una superficie situada frente a una fuente puntual de {I} cd a {d} m de distancia.",
+        "tilt": "Una superficie está a {d} m de una fuente puntual de {I} cd, y su normal está inclinada {th}° respecto de la dirección de la fuente. Calcule la iluminancia sobre la superficie."
+      },
+      "steps": {
+        "n": [
+          "Iluminancia E = I cosθ/d² (frente a la fuente, cosθ = 1).",
+          "E = {I}/{d2} = {E} lx."
+        ],
+        "tilt": [
+          "Iluminancia E = I cosθ/d².",
+          "d² = {d2} m²; cos{th}° = {c}.",
+          "E = {I} × {c}/{d2} = {E} lx."
+        ]
+      },
+      "mistakes": {
+        "nosq": "No ha elevado la distancia al cuadrado (ley de la inversa del cuadrado, E ∝ 1/d²).",
+        "nocos": "Ha omitido el cosθ de la inclinación de la superficie.",
+        "sin": "Ha usado sinθ. θ es el ángulo entre la normal a la superficie y la luz, así que hay que multiplicar por cosθ."
+      }
+    },
+    "photon-energy": {
+      "name": "Energía, frecuencia y número de onda del fotón",
+      "short": "Calcular la energía del fotón (eV), la frecuencia o el número de onda a partir de la longitud de onda, o la longitud de onda de corte a partir de la energía de la banda prohibida",
+      "formula": "E = hc/λ; ν = c/λ; σ̃ = 1/λ",
+      "q": {
+        "ev": "Calcule la energía en eV de un fotón de longitud de onda {lam} nm en el vacío (hc = {hc} eV·nm).",
+        "thz": "Calcule la frecuencia ν de la luz de longitud de onda {lam} nm en el vacío (c = {c} m/s).",
+        "kayser": "Calcule el número de onda (ondas por cm) de la luz de longitud de onda {lam} nm en el vacío, en cm⁻¹.",
+        "gap": "Calcule la longitud de onda más larga (longitud de onda de corte) que puede absorber un detector de {m} (energía de la banda prohibida {Eg} eV a temperatura ambiente; hc = {hc} eV·nm)."
+      },
+      "steps": {
+        "ev": [
+          "E = hc/λ.",
+          "E = {hc}/{lam} = {E} eV (= {J} J)."
+        ],
+        "thz": [
+          "ν = c/λ.",
+          "ν = {c}/({lam} × 10⁻⁹) Hz = {nu} THz."
+        ],
+        "kayser": [
+          "Número de onda σ̃ = 1/λ. λ = {lc} cm.",
+          "σ̃ = 1/({lc}) = {s} cm⁻¹."
+        ],
+        "gap": [
+          "Un fotón se absorbe si su energía es al menos la de la banda prohibida: hc/λ ≥ E_g.",
+          "λ_c = hc/E_g = {hc}/{Eg} = {l} nm (= {um} µm)."
+        ]
+      },
+      "mistakes": {
+        "inv": "La fórmula está invertida. E = hc/λ (a menor longitud de onda, mayor energía) y λ = hc/E.",
+        "mult": "Ha multiplicado E_g por hc. Es λ_c = hc/E_g: cuanto menor es la banda prohibida, más larga es la longitud de onda de corte.",
+        "pi2": "Ha multiplicado por 2π (frecuencia angular ω = 2πν o número de onda angular k = 2π/λ). La frecuencia ν y el número de onda σ̃ = 1/λ no llevan 2π."
+      }
+    },
+    "photon-flux": {
+      "name": "Flujo de fotones",
+      "short": "Calcular el número de fotones por segundo a partir de la potencia y la longitud de onda, o la potencia a partir del flujo de fotones",
+      "formula": "Φ = Pλ/(hc)",
+      "q": {
+        "n": "Calcule el número de fotones por segundo Φ que transporta una luz de longitud de onda {lam} nm y potencia {P} {pu} (h = {h} J·s; c = {c} m/s).",
+        "p": "Llegan fotones de longitud de onda {lam} nm a razón de {phi} por segundo. Calcule la potencia óptica (h = {h} J·s; c = {c} m/s)."
+      },
+      "steps": {
+        "n": [
+          "Energía de un fotón E = hc/λ = {E} J.",
+          "P = {PW} W.",
+          "Φ = P/E = {n} s⁻¹."
+        ],
+        "p": [
+          "Energía de un fotón E = hc/λ = {E} J.",
+          "P = ΦE = {phi} × {E} = {PW} W."
+        ]
+      },
+      "mistakes": {
+        "ev": "Ha usado la energía del fotón en eV. Para obtener W (J/s), trabaje en julios (1 eV = 1,602 × 10⁻¹⁹ J)."
+      }
+    },
+    "solar-ff": {
+      "name": "Factor de forma y eficiencia de una célula solar",
+      "short": "Calcular la eficiencia de conversión a partir de V_oc, J_sc y el factor de forma, o el factor de forma a partir del punto de máxima potencia",
+      "formula": "FF = V_mp J_mp/(V_oc J_sc); η = FF V_oc J_sc/P_in",
+      "q": {
+        "eta": "Una {cell} tiene una tensión de circuito abierto V_oc = {Voc} V, una densidad de corriente de cortocircuito J_sc = {Jsc} mA/cm² y un factor de forma FF = {FF}. Calcule su eficiencia de conversión η bajo iluminación AM1.5G (1000 W/m²).",
+        "ff": "Una {cell} tiene V_oc = {Voc} V y J_sc = {Jsc} mA/cm², y su punto de máxima potencia está en V_mp = {Vmp} V, J_mp = {Jmp} mA/cm². Calcule el factor de forma FF."
+      },
+      "steps": {
+        "eta": [
+          "J_sc = {Jsc} mA/cm² = {J} A/m².",
+          "Potencia máxima P = FF V_oc J_sc = {FF} × {Voc} × {J} = {P} W/m².",
+          "η = P/P_in = {P}/1000 = {eta} %."
+        ],
+        "ff": [
+          "FF = V_mp J_mp/(V_oc J_sc).",
+          "V_mp J_mp = {pm} mW/cm²; V_oc J_sc = {p0} mW/cm².",
+          "FF = {pm}/{p0} = {ff} (bajo AM1.5G a 100 mW/cm², η = {eta} %)."
+        ]
+      },
+      "mistakes": {
+        "noff": "Ha omitido el factor de forma FF (V_oc y J_sc no pueden darse a la vez).",
+        "inv": "El cociente está invertido. FF es menor que 1.",
+        "v": "Eso es solo el cociente de tensiones V_mp/V_oc. Multiplique también por el cociente de corrientes J_mp/J_sc.",
+        "j": "Eso es solo el cociente de corrientes J_mp/J_sc. Multiplique también por el cociente de tensiones V_mp/V_oc."
+      }
+    }
+  }
+}
