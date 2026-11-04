@@ -71,3 +71,4 @@
 - 21:28 (JST) 用語「光束」(luminous flux)を optical-design・spectroscopy・wave の問題でリンクしない(光線の束の意味で11ページが誤ってリンクされていた)。「コヒーレンス長」を nonlinear でリンクしない(位相整合の Lc の意味、2ページ)。全言語に効く
 - 21:32 (JST) ポルトガル語の問題 第2部を公開(measurement・nonlinear・optical-design・photometry-color・silicon-photonics の150問、訳の独立点検で10問を直す)
 - 21:55 (JST) 用語「M²」(ビーム品質)を microscopy の問題でリンクしない(倍率の2乗の意味。microscopy-027 など)
+- 22:01 (JST) ポルトガル語の問題 第3部を公開(fourier-optics・led-display・microscopy・optical-materials・optical-sensing・spectroscopy の180問、訳の独立点検で16問を直す)
