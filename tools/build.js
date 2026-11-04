@@ -22,6 +22,9 @@ const write = (p, s) => {
 };
 const esc = s => String(s).replace(/[&<>"']/g, ch => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[ch]);
 const fill = (tpl, vars) => tpl.replace(/\{\{(\w+)\}\}/g, (m, k) => (k in vars ? vars[k] : m));
+// 固定ページ冒頭の設定(title・description)は page() でエスケープするので、差し込んだエスケープ済みの値を元に戻す(fr の「Salle d'optique」が &amp;#39; にならないように)
+const unesc = s => s.replace(/&(amp|lt|gt|quot|#39);/g, (m, k) => ({ amp: '&', lt: '<', gt: '>', quot: '"', '#39': "'" })[k]);
+const pageMeta = (json, vars) => Object.fromEntries(Object.entries(JSON.parse(fill(json, vars))).map(([k, v]) => [k, typeof v === 'string' ? unesc(v) : v]));
 // 固定ページ(src/pages)の条件つきの部分: {{#名前}}…{{/名前}} は条件が真のとき、{{^名前}}…{{/名前}} は偽のときだけ残す
 // (プライバシーポリシーの、使っている広告・解析サービスの説明など。条件は pageFlags)
 // 入れ子にできる(外側から順に、変わらなくなるまで解く)。同じ名前を入れ子にはできない
@@ -1150,7 +1153,7 @@ function buildLang(L) {
     figures: figList.length > 0,
     tools: toolsIn(code).length > 0, // この言語の計算ツールがあるか(訳のない言語では、サイトについてのリンクを出さない)
   };
-  const itemSep = ['ja', 'zh-hant', 'zh'].includes(code) ? '：' : ': ';
+  const itemSep = ['ja', 'zh-hant', 'zh'].includes(code) ? '：' : code === 'fr' ? '\u00a0: ' : ': ';
   const common = {
     base, home, lang: code, htmlLang: L.htmlLang,
     siteName: esc(siteName),
@@ -1312,7 +1315,7 @@ function buildLang(L) {
     const jsonld = name === 'index' ? [{ '@context': 'https://schema.org', '@type': 'WebSite', name: siteName, url: abs(L.path),
       alternateName: altNames, inLanguage: L.htmlLang },
       { '@context': 'https://schema.org', '@type': 'Organization', name: siteName, alternateName: altNames, url: abs(''), logo: abs('icon-512.png') }] : null;
-    page({ path: pagePath(L, name), alt, jsonld, ...JSON.parse(fill(m[1], common)), content: fill(src.slice(m[0].length), common) });
+    page({ path: pagePath(L, name), alt, jsonld, ...pageMeta(m[1], common), content: fill(src.slice(m[0].length), common) });
   }
 
   // やさしい解説: 一覧 /learn/ と記事 /learn/{slug}/。本文の {{fig:図のid}} は図に、{{term:日本語の用語名|表示}} は用語ページへのリンクにする
@@ -1324,7 +1327,7 @@ function buildLang(L) {
     const fmtDay = d => new Intl.DateTimeFormat(L.locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(new Date(`${d}T00:00:00Z`));
     // 一覧に載せる既存の読み物(「微細化の先へ」など src/pages のページ)
     const extras = (learnData.extra ?? []).filter(x => pageNames(code).includes(x.page)).map(x => {
-      const meta = JSON.parse(fill(read(`src/pages/${code}/${x.page}.html`).match(/^<!--\s*(\{[\s\S]*?\})\s*-->/)[1], common));
+      const meta = pageMeta(read(`src/pages/${code}/${x.page}.html`).match(/^<!--\s*(\{[\s\S]*?\})\s*-->/)[1], common);
       return { ...x, title: meta.title, description: meta.description, href: `${home}${x.page}/` };
     });
     const items = [...learnArts.map(a => ({ ...a, href: `${home}learn/${a.slug}/` })), ...extras];
