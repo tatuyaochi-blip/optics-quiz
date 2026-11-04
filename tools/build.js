@@ -1778,7 +1778,7 @@ ${x.faq?.length ? `<section class="faq">
   // 計算ツール。計算はブラウザ側の {id}.js で行い、HTMLには入力欄・結果の枠・解説を置く。
   // ツールごとに違う部分(入力欄と結果の枠)は toolBody[id] が作り、解説・練習問題・よくある質問・関連用語は共通
   // 数の欄は type="text"(src/js/eng.js の parseNum が読む。type="number" だとブラウザによって de の小数のコンマが誤って読まれる)。de は既定値も小数のコンマ
-  const field = (name, label, value, attrs = '') => `<label class="dy-field"><span>${esc(label)}</span><input name="${name}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-num value="${code === 'de' ? String(value).replace('.', ',') : value}" ${attrs}></label>`;
+  const field = (name, label, value, attrs = '') => `<label class="dy-field"><span>${esc(label)}</span><input name="${name}" type="text" inputmode="decimal" autocomplete="off" spellcheck="false" data-num value="${/^(de|es|pt|fr|nl)/.test(code) ? String(value).replace('.', ',') : value}" ${attrs}></label>`;
   const select = (name, label, options, value) => `<label class="dy-field"><span>${esc(label)}</span><select name="${name}">${options.map(([v, text]) => `<option value="${v}"${v === value ? ' selected' : ''}>${esc(text)}</option>`).join('')}</select></label>`;
   const stat = (key, label) => `<div><dt>${esc(label)}</dt><dd data-out="${key}">–</dd></div>`;
   // 入力欄と結果の枠を data/tools/{ID}.json の form から作る(toolBody に専用の形がないツール)。
@@ -3234,7 +3234,7 @@ ${cmpSection(t('compare_more'), relatedCmp(e))}`,
     const aHome = `${home}atlas/`;
     const aPath = l => `${l.path}atlas/`;
     const aAlt = Object.fromEntries(langs.filter(x => atlasOn(x.code)).map(x => [x.code, aPath(x)]));
-    const num = (v, d = 2) => Number(v.toFixed(d)).toLocaleString(L.htmlLang, { useGrouping: !/^de/.test(L.htmlLang) });
+    const num = (v, d = 2) => Number(v.toFixed(d)).toLocaleString(L.htmlLang, { useGrouping: !/^(de|es|pt|fr|nl)/.test(L.htmlLang) });
     const width = um => (um >= 1000 ? `${num(um / 1000)} mm` : `${num(um)} µm`);
     const termChips = keys => keys.map(k => terms.find(x => x.key === k)).filter(Boolean).map(x => `<a class="chip" href="${home}term/${termSlug[x.key]}/">${esc(x.term)}</a>`).join(' ');
     const fill = (q, s) => (s.lever ? q.replaceAll(`{${s.lever.param}}`, String(s.lever.def)) : q);
@@ -3445,7 +3445,7 @@ ${relCats.length ? `<section>
     const typeLearn = x => (x.learn ?? []).map(s => learnArts.find(a => a.slug === s)).filter(Boolean).map(a => ({ n: a.title, u: `${home}learn/${a.slug}/` }));
     // 公式集でこの型を挙げている式(公式集のある言語だけ)
     const typeFml = x => (fml?.formulas ?? []).filter(f => (f.drill ?? []).includes(x.id)).map(f => ({ n: f.name, u: `${home}formulas/#f-${f.id}` }));
-    const pct = tol => { const s = String(+(tol * 100).toPrecision(2)); return /^de/.test(code) ? s.replace('.', ',') : s; };
+    const pct = tol => { const s = String(+(tol * 100).toPrecision(2)); return /^(de|es|pt|fr|nl)/.test(code) ? s.replace('.', ',') : s; };
     const tolText = x => t('drill_tol', { tol: [pct(x.tol), ...Object.values(x.tolv ?? {}).map(pct)].filter((v, i, a) => a.indexOf(v) === i).join(' / ') });
     // drill.js に渡すデータ(型・数値のデータ・名前・画面の文言)
     const jsData = {
@@ -3594,7 +3594,7 @@ ${relCats.length ? `<section>
     const ss = h => h.replace(/_([A-Za-z0-9Ͱ-Ͽ]+)/g, '<sub>$1</sub>').replace(/_\{([^{}]*)\}/g, '<sub>$1</sub>').replace(/\^\{([^{}]*)\}/g, '<sup>$1</sup>').replace(/\^([A-Za-z0-9]+)/g, '<sup>$1</sup>');
     const fx = s => ss(esc(s));
     // ドイツ語では式と定数の値の小数点もコンマにする(並びのコンマは「; 」にして紛れないように)
-    const dec = v => (/^de/.test(code) && /\d\.\d/.test(v) ? v.replace(/(\d), /g, '$1; ').replace(/(\d)\.(\d)/g, '$1,$2') : v);
+    const dec = v => (/^(de|es|pt|fr|nl)/.test(code) && /\d\.\d/.test(v) ? v.replace(/(\d), /g, '$1; ').replace(/(\d)\.(\d)/g, '$1,$2') : v);
     const fxLinked = s => linked(s).replace(/(^|>)([^<]+)/g, (m, a, b) => a + ss(b)); // 用語のリンクをつけた文(タグの外だけ変える)
     const plain = s => s.replace(/[_{}^]/g, '');
     // 検索の文字: どの言語の名前・語でも引ける(訳のファイルの名前・語も入れる)。正規化は formulas.js
@@ -3754,7 +3754,7 @@ ${relCats.length ? `<section>
     const rHome = `${home}refractive-index/`;
     const rPath = l => `${l.path}refractive-index/`;
     const rAlt = Object.fromEntries(langs.filter(x => riOn(x.code)).map(x => [x.code, rPath(x)]));
-    const de = /^de/.test(code);
+    const de = /^(de|es|pt|fr|nl)/.test(code);
     const dot = s => (de ? String(s).replace(/(\d)\.(\d)/g, '$1,$2') : String(s));
     const fixed = (x, k) => dot(x.toFixed(k)).replace(/^-/, '−');
     const um = x => dot(String(+x.toPrecision(6)));
@@ -4519,7 +4519,7 @@ ${relCats.length ? `<section>
     </tbody></table></div>
     ${src(f.src)}
   </article>`;
-    const num = (x, d) => new Intl.NumberFormat(L.locale, { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: !/^de/.test(L.locale) }).format(x);
+    const num = (x, d) => new Intl.NumberFormat(L.locale, { minimumFractionDigits: d, maximumFractionDigits: d, useGrouping: !/^(de|es|pt|fr|nl)/.test(L.locale) }).format(x);
     const gRows = D.gtable.rows.map(([g]) => { const na = msrJs.naFromG(g); return [g, na, msrJs.lFromG(g) * 1000, 1000 / Math.sqrt(na)]; });
     const fmlPage = id => (fml?.formulas.find(f => f.id === id));
     const chip = (href, text) => `<a class="chip" href="${href}">${esc(text)}</a>`;

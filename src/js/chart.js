@@ -4,7 +4,7 @@
 // 目盛りの数: 1万までは桁区切りで(ドイツ語は区切らない)、それより大きい・0.01 より小さい数は「2×10⁵」の形にする(「2e+5」は読みにくい)
 const SUP = { '-': '⁻', 0: '⁰', 1: '¹', 2: '²', 3: '³', 4: '⁴', 5: '⁵', 6: '⁶', 7: '⁷', 8: '⁸', 9: '⁹' };
 const fmtTick = (v, lang) => {
-  if (Math.abs(v) < 1e5 && (Math.abs(v) >= 0.01 || v === 0)) return v.toLocaleString(lang, { maximumFractionDigits: 2, useGrouping: !/^de/.test(lang) }).replace(/^-/, '−');
+  if (Math.abs(v) < 1e5 && (Math.abs(v) >= 0.01 || v === 0)) return v.toLocaleString(lang, { maximumFractionDigits: 2, useGrouping: !/^(de|es|pt|fr|nl)/.test(lang) }).replace(/^-/, '−');
   const [m, e] = Number(v.toPrecision(3)).toExponential().split('e');
   return `${m === '1' ? '' : `${m.replace(/^-/, '−')}×`}10${String(Number(e)).replace(/./g, c => SUP[c])}`;
 };

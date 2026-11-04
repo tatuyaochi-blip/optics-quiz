@@ -123,7 +123,7 @@ export function parseAnswer(raw, fam, lang = LANG) {
   const m = s.match(/^([+-]?(?:\d[\d.,]*|[.,]\d+))\s*(?:[eE]\s*([+-]?\d+)|[×xX*]\s*10\s*(?:\^|\*\*)?\s*\(?\s*([+-]?\d+)\s*\)?)?\s*(.*)$/);
   if (!m) return null;
   let t = m[1];
-  if (/^de/.test(lang)) t = t.includes(',') ? t.replace(/\./g, '').replace(',', '.') : t;
+  if (/^(de|es|pt|fr|nl)/.test(lang)) t = t.includes(',') ? t.replace(/\./g, '').replace(',', '.') : t;
   else if (/^[+-]?\d{1,3}(,\d{3})+(\.\d+)?$/.test(t)) t = t.replace(/,/g, '');
   else t = t.replace(',', '.');
   if ((t.match(/\./g) ?? []).length > 1) return null;

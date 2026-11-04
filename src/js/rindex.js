@@ -104,7 +104,7 @@ async function init(app) {
   const T = D.ui;
   const t = (k, v = {}) => (T[k] ?? k).replace(/\{(\w+)\}/g, (m, x) => (x in v ? v[x] : m));
   const lang = document.documentElement.lang || 'en';
-  const de = /^de/.test(lang);
+  const de = /^(de|es|pt|fr|nl)/.test(lang);
   const MAX = 4;
   const mats = D.materials;
   const byId = new Map(mats.map(m => [m.id, m]));
