@@ -1142,7 +1142,7 @@
         "Q factor",
         "full width at half maximum of the resonance"
       ],
-      "when": "One round trip of a waveguide ring. The resonance positions follow n_eff and their spacing follows n_g. Coupling strength and loss set the depth (zero at critical coupling) and width of the dips. Temperature changes n_eff and shifts the resonance (about 0.08 nm/K in silicon).",
+      "when": "One round trip of a waveguide ring. The resonance positions follow n_eff and their spacing follows n_g. Coupling strength and loss set the on-resonance transmission (zero at critical coupling) and the width of the dips. Temperature changes n_eff and shifts the resonance (about 0.08 nm/K in silicon).",
       "miss": "Using n_eff for the FSR (in silicon waveguides n_g ≈ 4.2 and n_eff ≈ 2.4 differ a lot). Using the radius for L.",
       "ex": "Silicon ring (radius 10 µm, L = 62.83 µm, n_g = 4.2) at 1550 nm: Δλ_FSR = 1.55²/(4.2 × 62.83) µm = 9.10 nm.",
       "kw": "ring resonator microring FSR Q factor silicon photonics"

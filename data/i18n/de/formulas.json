@@ -1142,7 +1142,7 @@
         "Güte",
         "Halbwertsbreite der Resonanz"
       ],
-      "when": "Ein Umlauf in einem Wellenleiterring. Die Lage der Resonanzen folgt n_eff, ihr Abstand n_g. Kopplungsstärke und Verluste bestimmen Tiefe (null bei kritischer Kopplung) und Breite der Einbrüche. Die Temperatur ändert n_eff und verschiebt die Resonanz (in Silizium etwa 0,08 nm/K).",
+      "when": "Ein Umlauf in einem Wellenleiterring. Die Lage der Resonanzen folgt n_eff, ihr Abstand n_g. Kopplungsstärke und Verluste bestimmen die Transmission in der Resonanz (null bei kritischer Kopplung) und die Breite der Einbrüche. Die Temperatur ändert n_eff und verschiebt die Resonanz (in Silizium etwa 0,08 nm/K).",
       "miss": "Für den FSR n_eff verwenden (in Siliziumwellenleitern unterscheiden sich n_g ≈ 4,2 und n_eff ≈ 2,4 stark). Für L den Radius einsetzen.",
       "ex": "Silizium-Ring (Radius 10 µm, L = 62,83 µm, n_g = 4,2) bei 1550 nm: Δλ_FSR = 1,55²/(4,2 × 62,83) µm = 9,10 nm.",
       "kw": "Ringresonator Mikroring FSR Güte Q-Faktor Siliziumphotonik"
