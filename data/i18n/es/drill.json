@@ -95,7 +95,7 @@
       "h": "Cifras significativas y corrección",
       "p": [
         "Los valores de cada problema se redondean a las cifras mostradas, y la respuesta de referencia se calcula con esos valores redondeados. Si usa los valores tal como se dan, el redondeo nunca hará que su respuesta sea incorrecta.",
-        "La corrección usa el error relativo. La mayoría de los tipos aceptan respuestas dentro de ±1 %. Los tipos que se responden con un ángulo (ángulos de refracción, crítico, de Brewster, de difracción y de aceptación) y los que se responden con un índice de refracción aceptan ±0,5 %. Los tipos que se responden en dBm o dB también usan el error relativo, de modo que para −16,0 dBm se admiten ±0,16 dB. La tolerancia se indica en cada problema.",
+        "La corrección usa el error relativo. La mayoría de los tipos aceptan respuestas dentro de ±1 %. Los tipos que se responden con un ángulo (ángulos de refracción, crítico, de Brewster, de difracción y de aceptación) y los que se responden con un índice de refracción aceptan ±0,5 %. La temperatura obtenida con la ley de Wien también admite ±0,5 %. Los tipos que se responden en dBm o dB también usan el error relativo, de modo que para −16,0 dBm se admiten ±0,16 dB. La tolerancia se indica en cada problema.",
         "Basta con dar la respuesta con el número de cifras usado en el problema (normalmente tres cifras significativas). También se admiten más cifras.",
         "Si su resultado queda justo fuera de la tolerancia (dentro del 5 %), se muestra “Cerca”. Normalmente la fórmula es correcta, así que compruebe si redondeó demasiado los valores intermedios o si usó una constante (c, h, q, etc.) distinta de la del enunciado."
       ]

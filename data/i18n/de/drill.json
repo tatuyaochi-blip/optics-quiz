@@ -95,7 +95,7 @@
       "h": "Signifikante Stellen und Bewertung",
       "p": [
         "Die Zahlen in jeder Aufgabe sind auf die angezeigten Stellen gerundet, und die Referenzlösung wird aus diesen gerundeten Zahlen berechnet. Wenn Sie die Zahlen so verwenden, wie sie angegeben sind, wird Ihre Antwort nie wegen der Rundung falsch.",
-        "Bewertet wird nach der relativen Abweichung. Bei den meisten Typen werden Antworten innerhalb von ±1 % akzeptiert. Bei Typen, deren Ergebnis ein Winkel ist (Brechungs-, Grenz-, Brewster-, Beugungs- und Akzeptanzwinkel), und bei Typen, deren Ergebnis ein Brechungsindex ist, sind es ±0,5 %. Auch bei Ergebnissen in dBm oder dB gilt die relative Abweichung; bei −16,0 dBm sind also ±0,16 dB zulässig. Die Toleranz wird bei jeder Aufgabe angezeigt.",
+        "Bewertet wird nach der relativen Abweichung. Bei den meisten Typen werden Antworten innerhalb von ±1 % akzeptiert. Bei Typen, deren Ergebnis ein Winkel ist (Brechungs-, Grenz-, Brewster-, Beugungs- und Akzeptanzwinkel), und bei Typen, deren Ergebnis ein Brechungsindex ist, sind es ±0,5 %. Auch bei der Temperatur aus dem Wienschen Verschiebungsgesetz sind es ±0,5 %. Auch bei Ergebnissen in dBm oder dB gilt die relative Abweichung; bei −16,0 dBm sind also ±0,16 dB zulässig. Die Toleranz wird bei jeder Aufgabe angezeigt.",
         "Es genügt, das Ergebnis mit so vielen Stellen anzugeben, wie in der Aufgabe verwendet werden (meist drei signifikante Stellen). Mehr Stellen sind ebenfalls in Ordnung.",
         "Liegen Sie knapp außerhalb der Toleranz (innerhalb von 5 %), meldet der Rechentrainer „Knapp daneben“. Meist stimmt dann die Formel; prüfen Sie, ob Sie Zwischenwerte zu stark gerundet oder eine andere Konstante (c, h, q usw.) als in der Aufgabe verwendet haben."
       ]
