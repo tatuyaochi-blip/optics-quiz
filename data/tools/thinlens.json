@@ -459,6 +459,72 @@
           "a": "Si las distancias se miden desde los puntos principales anterior y posterior, la misma ecuación vale en la región paraxial. Sin embargo, la posición de los puntos principales debe obtenerse de los datos de la lente, y si se introducen distancias medidas desde los extremos de la lente, el resultado se desvía. Además, el desenfoque de la imagen por aberraciones no se incluye en este cálculo."
         }
       ]
+    },
+    "pt": {
+      "nav": "Formação de imagens com lentes delgadas",
+      "card": "Calcule a distância da imagem e a ampliação a partir da distância focal e da distância do objeto, e também a distância focal combinada de duas lentes",
+      "title": "Calculadora de lentes delgadas (distância da imagem, ampliação lateral e distância focal combinada de duas lentes)",
+      "description": "A partir da equação das lentes delgadas 1/a + 1/b = 1/f, obtém, com a distância focal e a distância do objeto, a distância da imagem, a ampliação lateral e se a imagem é real ou virtual. Também calcula a distância focal combinada, a potência óptica e a distância focal posterior de duas lentes delgadas separadas por uma distância d.",
+      "h1": "Calculadora de lentes delgadas",
+      "lead": "Digite a distância focal f da lente e a distância a entre a lente e o objeto para calcular a posição b em que a imagem se forma, a ampliação lateral m e se a imagem é real ou virtual. Se você digitar a distância focal de uma segunda lente e a separação, obtém também a distância focal combinada ao considerar as duas lentes como uma só. Os valores padrão correspondem a um objeto situado 150 mm à frente de uma lente convergente de 50 mm de distância focal, com uma lente de 100 mm de distância focal 30 mm atrás.",
+      "in_heading": "Dados (no ar, aproximação paraxial)",
+      "f1": "Distância focal da lente 1, f₁ (mm; negativa para uma lente divergente)",
+      "a": "Distância do objeto à lente 1, a (mm)",
+      "f2": "Distância focal da lente 2, f₂ (mm; negativa para uma lente divergente)",
+      "d": "Separação entre as lentes 1 e 2, d (mm)",
+      "out_heading": "Resultados",
+      "b": "Distância da imagem b (imagem formada pela lente 1)",
+      "m": "Ampliação lateral m = −b/a",
+      "kind": "Tipo de imagem",
+      "p1": "Potência óptica da lente 1, 1/f₁",
+      "two_heading": "Combinação de duas lentes",
+      "fc": "Distância focal combinada f",
+      "pc": "Potência óptica combinada 1/f",
+      "bfd": "Distância focal posterior (da lente 2 ao foco posterior)",
+      "note": "O cálculo trata as lentes como lentes delgadas no ar e usa raios próximos ao eixo óptico (raios paraxiais). As distâncias são positivas para um objeto à frente da lente (a > 0) e para uma imagem atrás dela (b > 0); b < 0 indica uma imagem virtual do lado do objeto. Uma ampliação lateral negativa indica uma imagem invertida. As lentes reais têm espessura e aberrações, por isso a distância focal deve ser considerada medida a partir dos pontos principais.",
+      "practice": "Resolver questões de óptica geométrica e formação de imagens",
+      "related": "Termos relacionados",
+      "js": {
+        "real": "Real (invertida)",
+        "virtual": "Virtual (direita)",
+        "inf": "Imagem no infinito (luz colimada)",
+        "behind": "(atrás da lente)",
+        "front": "(à frente da lente)",
+        "afocal": "Infinita (sistema afocal)",
+        "zero": "Digite uma distância focal diferente de 0"
+      },
+      "sections": [
+        {
+          "h": "A equação das lentes delgadas e a convenção de sinais",
+          "p": "Em uma lente cuja espessura pode ser desprezada, a distância do objeto a, a distância da imagem b e a distância focal f satisfazem 1/a + 1/b = 1/f (fórmula de Gauss das lentes). Nesta ferramenta, a > 0 quando o objeto está à frente da lente e b > 0 quando a imagem se forma atrás dela (do lado para onde a luz avança); f > 0 para uma lente convergente e f < 0 para uma lente divergente. Com os valores padrão (f = 50 mm, a = 150 mm), 1/b = 1/50 − 1/150 = 2/150, de modo que b = 75 mm. Alguns livros didáticos usam uma convenção em que a distância do objeto é negativa (1/b − 1/a = 1/f), então verifique a convenção de sinais ao comparar com outras fontes."
+        },
+        {
+          "h": "Ampliação lateral e tipo de imagem",
+          "p": "A razão entre o tamanho da imagem e o do objeto é a ampliação lateral, m = −b/a. Com os valores padrão, m = −75/150 = −0,5: forma-se uma imagem real invertida com metade do tamanho. Com uma lente convergente, um objeto situado além do dobro da distância focal (2f) dá uma imagem real reduzida; entre f e 2f, uma imagem real ampliada; e exatamente em 2f, uma imagem do mesmo tamanho (m = −1). Se o objeto está mais perto que o foco, b é negativa e vê-se, do lado do objeto, uma imagem virtual, direita e ampliada. É o princípio da lupa. Se o objeto está no foco, a luz sai da lente colimada e a imagem se forma no infinito."
+        },
+        {
+          "h": "Distância focal combinada de duas lentes",
+          "p": "Se duas lentes delgadas de distâncias focais f₁ e f₂ forem colocadas a uma distância d uma da outra, a distância focal combinada f é dada por 1/f = 1/f₁ + 1/f₂ − d/(f₁f₂). Expressa pela potência óptica (o inverso da distância focal, cuja unidade é a dioptria D quando medida em metros), é P = P₁ + P₂ − dP₁P₂. Com as lentes em contato (d = 0), as potências simplesmente se somam: lentes de 100 mm e 200 mm dão 10 D + 5 D = 15 D, ou seja, f ≈ 66,7 mm. Com os valores padrão (50 mm, 100 mm, d = 30 mm), 1/f = 0,02 + 0,01 − 0,006 = 0,024 mm⁻¹, de modo que f ≈ 41,7 mm (24 D). Quando d = f₁ + f₂, a potência se anula e obtém-se um sistema afocal, como um expansor de feixe ou um telescópio."
+        },
+        {
+          "h": "Distância focal posterior e pontos principais",
+          "p": "Quando luz colimada entra em um sistema de duas lentes, o ponto em que ela converge (o foco posterior) fica a BFD = f·(1 − d/f₁) da segunda lente. Com os valores padrão, é 41,7 × (1 − 30/50) ≈ 16,7 mm, menor que a distância focal combinada de 41,7 mm. Isso ocorre porque a distância focal combinada é medida a partir do ponto principal posterior, que, com os valores padrão, fica 25 mm à frente da lente 2 (entre as duas lentes). Multiplicando as matrizes de raios (matrizes ABCD) das duas lentes e da separação, obtém-se o mesmo resultado. Nas objetivas de câmera reais, a distância focal e a distância da extremidade traseira da lente até o plano da imagem (distância focal posterior) em geral também não coincidem."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Como calcular com uma lente divergente?",
+          "a": "Digite uma distância focal negativa. Por exemplo, com f = −50 mm e a = 100 mm, obtém-se b ≈ −33,3 mm e m ≈ 0,33: à frente da lente forma-se uma imagem virtual, direita e reduzida. Uma única lente divergente sempre forma uma imagem virtual de um objeto real."
+        },
+        {
+          "q": "O que é a potência óptica (dioptrias)?",
+          "a": "É o inverso da distância focal expressa em metros, e a sua unidade é a dioptria (D = m⁻¹). Uma lente de 50 mm de distância focal tem 20 D, e um grau de óculos de −2 D corresponde a uma lente divergente de −0,5 m de distância focal. As potências de lentes delgadas em contato se somam."
+        },
+        {
+          "q": "Serve também para lentes espessas ou para objetivas de câmera reais?",
+          "a": "Se as distâncias forem medidas a partir dos pontos principais anterior e posterior, a mesma equação vale na região paraxial. No entanto, a posição dos pontos principais deve ser obtida dos dados da lente, e, se forem digitadas distâncias medidas a partir das extremidades da lente, o resultado se desvia. Além disso, o desfoque da imagem por aberrações não está incluído neste cálculo."
+        }
+      ]
     }
   }
 }

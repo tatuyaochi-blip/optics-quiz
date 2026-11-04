@@ -408,6 +408,63 @@
           "a": "Es la distancia hasta la que el radio del haz llega a √2 veces el de la cintura y el área de la sección se duplica. En este tramo el haz es casi colimado y su intensidad no disminuye mucho, por lo que en el procesado de materiales con láser sirve como referencia del margen de trabajo (profundidad de foco)."
         }
       ]
+    },
+    "pt": {
+      "nav": "Feixe gaussiano",
+      "card": "Calcule o comprimento de Rayleigh, a divergência e o diâmetro do feixe a uma distância z a partir da cintura do feixe",
+      "title": "Calculadora de feixes gaussianos (comprimento de Rayleigh, divergência, diâmetro do feixe e M²)",
+      "description": "A partir do comprimento de onda do laser e do raio da cintura do feixe w0, calcula o comprimento de Rayleigh zR, a profundidade de foco e a divergência, e obtém o raio do feixe w(z) e o raio de curvatura da frente de onda R(z) a uma distância z. Também aceita o fator de qualidade do feixe M².",
+      "h1": "Calculadora de feixes gaussianos",
+      "lead": "A partir do raio w0 no ponto mais estreito do feixe (a cintura) e do comprimento de onda, calcula a que distância e quanto o feixe se alarga. Os valores padrão correspondem a um feixe ideal (M² = 1) de 1064 nm com w0 = 500 µm, observado a 1000 mm da cintura.",
+      "in_heading": "Dados",
+      "lambda": "Comprimento de onda λ (nm, no vácuo)",
+      "w0": "Raio da cintura do feixe w0 (µm, 1/e²)",
+      "m2": "Fator de qualidade do feixe M²",
+      "n": "Índice de refração do meio n",
+      "z": "Distância a partir da cintura z (mm)",
+      "out_heading": "Resultados",
+      "zr": "Comprimento de Rayleigh zR",
+      "dof": "Profundidade de foco 2zR",
+      "theta": "Divergência (semiângulo) θ",
+      "z_heading": "Valores à distância z",
+      "wz": "Raio do feixe w(z)",
+      "dz": "Diâmetro do feixe 2w(z)",
+      "rz": "Raio de curvatura da frente de onda R(z)",
+      "note": "O raio do feixe é a distância até o ponto em que a intensidade cai para 1/e² (aproximadamente 13,5 %) do valor central. A divergência é o valor longe da cintura (z ≫ zR). Para feixes com M² maior que 1, o cálculo supõe que, com o mesmo w0, o feixe se alarga M² vezes mais depressa que um feixe gaussiano ideal.",
+      "practice": "Resolver questões de lasers e feixes gaussianos",
+      "related": "Termos relacionados",
+      "sections": [
+        {
+          "h": "O feixe gaussiano e o comprimento de Rayleigh",
+          "p": "A saída da maioria dos lasers é um feixe gaussiano (modo TEM00), cuja intensidade na seção transversal segue uma distribuição gaussiana. O feixe é mais estreito na cintura e, ao se afastar dela, alarga-se segundo w(z) = w0·√(1 + (z/zR)²). O comprimento de Rayleigh zR = πw0²/λ é a distância em que a área da seção do feixe dobrou (o raio foi multiplicado por √2), e dentro desse trecho o feixe pode ser considerado quase colimado. Com os valores padrão (λ = 1064 nm, w0 = 500 µm), zR = π × (0,5 mm)² / 1,064 µm ≈ 738 mm. A profundidade de foco costuma ser expressa como o dobro, 2zR, cerca de 1,48 m."
+        },
+        {
+          "h": "Divergência e produto de parâmetros do feixe",
+          "p": "Suficientemente longe da cintura, o feixe se abre com um ângulo constante cujo semiângulo é θ = λ/(πw0); com os valores padrão, é de cerca de 0,677 mrad. O produto w0·θ = λ/π depende apenas do comprimento de onda e expressa o compromisso de que, quanto mais estreito o feixe, mais depressa ele se alarga. Esse produto é chamado de produto de parâmetros do feixe (BPP) e, em um feixe real, passa a ser M²·λ/π. Para focalizar um feixe em um ponto pequeno com uma lente, é preciso alargar o feixe de entrada ou usar um comprimento de onda menor."
+        },
+        {
+          "h": "M²: indicador da qualidade do feixe",
+          "p": "O M² (M ao quadrado) expressa quantas vezes mais depressa um feixe real se alarga em relação a um feixe gaussiano ideal; para um feixe ideal, vale 1. Os lasers a fibra monomodo e os lasers de He-Ne ficam abaixo de 1,1, enquanto os lasers de estado sólido multimodo e o eixo lento dos lasers semicondutores vão de alguns a várias dezenas. Com um M² grande, para a mesma cintura a divergência é M² vezes maior e o comprimento de Rayleigh se reduz a 1/M², de modo que o feixe não se mantém estreito a grandes distâncias e o ponto focalizado também é maior."
+        },
+        {
+          "h": "Curvatura da frente de onda e cálculo da posição",
+          "p": "A frente de onda de um feixe gaussiano é plana na cintura e se curva ao se afastar dela, com raio de curvatura R(z) = z·(1 + (zR/z)²). R é mínimo em z = zR, onde vale 2zR. Longe da cintura, R ≈ z, e o feixe se aproxima de uma onda esférica centrada na cintura. Com o valor padrão z = 1000 mm, w(z) ≈ 842 µm e R(z) ≈ 1545 mm. No projeto de ressonadores, fazendo o raio de curvatura dos espelhos coincidir com esse R(z), obtém-se um modo estável dentro do ressonador."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Qual é a diferença entre o diâmetro do feixe em 1/e² e a FWHM?",
+          "a": "O diâmetro em 1/e² é medido onde a intensidade cai para aproximadamente 13,5 % do valor central e é o que as especificações de lasers costumam usar. A FWHM (largura a meia altura) é a largura onde a intensidade é 50 %; em um feixe gaussiano, é aproximadamente 0,589 vez o diâmetro em 1/e² (√(2 ln 2)/2 vezes)."
+        },
+        {
+          "q": "Qual é o tamanho do ponto ao focalizar com uma lente?",
+          "a": "Se um feixe largo com raio de cintura W entra em uma lente de distância focal f, o raio da cintura no foco é aproximadamente w0 ≈ M²·λf/(πW). Por exemplo, com λ = 1064 nm, f = 100 mm, W = 5 mm e M² = 1, é de cerca de 6,8 µm."
+        },
+        {
+          "q": "O que representa o comprimento de Rayleigh?",
+          "a": "É a distância até a qual o raio do feixe chega a √2 vezes o da cintura e a área da seção dobra. Nesse trecho o feixe é quase colimado e a sua intensidade não diminui muito, por isso, no processamento de materiais a laser, ele serve de referência para a margem de trabalho (profundidade de foco)."
+        }
+      ]
     }
   }
 }

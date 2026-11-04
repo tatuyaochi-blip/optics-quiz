@@ -1,0 +1,1345 @@
+{
+  "スネルの法則": {
+    "term": "Lei de Snell",
+    "desc": "Relação n₁ senθ₁ = n₂ senθ₂ entre os ângulos com que a luz se desvia na interface entre meios de índices de refração diferentes. Os ângulos são medidos a partir da normal à interface.",
+    "aliases": [
+      "lei de Snell-Descartes",
+      "Snell's law"
+    ]
+  },
+  "全反射": {
+    "term": "Reflexão interna total",
+    "desc": "Fenômeno em que, quando a luz passa de um meio de maior índice de refração para um de menor índice com ângulo de incidência maior que o ângulo crítico, não há luz transmitida e toda a luz é refletida.",
+    "aliases": [
+      "reflexão total",
+      "total internal reflection"
+    ]
+  },
+  "開口数": {
+    "term": "Abertura numérica (NA)",
+    "desc": "Grandeza NA = n senθ que expressa a faixa de ângulos dentro da qual uma lente ou uma fibra aceita a luz. Quanto maior, mais clara a imagem e maior a resolução.",
+    "aliases": [
+      "numerical aperture"
+    ]
+  },
+  "収差": {
+    "term": "Aberração",
+    "desc": "Desvio em relação à formação de imagem ideal. Há aberrações monocromáticas, como a aberração esférica, o coma e o astigmatismo, e a aberração cromática, causada pela dependência do índice de refração com o comprimento de onda.",
+    "aliases": [
+      "aberrações",
+      "aberration"
+    ]
+  },
+  "ABCD行列": {
+    "term": "Matriz ABCD",
+    "desc": "Método que representa a variação da altura e do ângulo de um raio paraxial com uma matriz 2×2. Multiplicando as matrizes dos elementos, analisa-se o sistema inteiro, e o método também se aplica à propagação de feixes gaussianos.",
+    "aliases": [
+      "matrizes ABCD",
+      "ABCD matrix"
+    ]
+  },
+  "コヒーレンス長": {
+    "term": "Comprimento de coerência",
+    "desc": "Medida aproximada da diferença de caminho óptico dentro da qual a luz ainda consegue interferir, cerca de λ²/Δλ. Quanto mais estreito o espectro, maior ele é: da ordem de km em lasers de largura de linha estreita e de µm na luz branca.",
+    "aliases": [
+      "comprimentos de coerência",
+      "coherence length"
+    ]
+  },
+  "反射防止膜": {
+    "term": "Revestimento antirreflexo",
+    "desc": "Filme fino que cancela por interferência a reflexão na superfície. Em uma camada única, o ideal é uma espessura óptica de λ/4 e um índice de refração de √(n₀ns). Com várias camadas, funciona em uma banda larga.",
+    "aliases": [
+      "revestimentos antirreflexo",
+      "revestimento antirrefletor",
+      "camada antirreflexo",
+      "filme antirreflexo",
+      "anti-reflection coating"
+    ]
+  },
+  "マイケルソン干渉計": {
+    "term": "Interferômetro de Michelson",
+    "desc": "Interferômetro que divide a luz em duas, reflete cada parte em um espelho e as superpõe de novo. A cada λ/2 de deslocamento do espelho, o padrão de franjas se desloca de uma franja, o que permite medir com precisão comprimentos e índices de refração.",
+    "aliases": [
+      "interferômetros de Michelson",
+      "Michelson interferometer"
+    ]
+  },
+  "ファブリ・ペロー共振器": {
+    "term": "Ressonador de Fabry-Pérot",
+    "desc": "Ressonador em que a luz vai e volta muitas vezes entre dois espelhos paralelos. Transmite de forma aguda quando o caminho óptico de ida e volta é um múltiplo inteiro do comprimento de onda, e o FSR é c/(2nL).",
+    "aliases": [
+      "ressonadores de Fabry-Pérot",
+      "cavidade de Fabry-Pérot",
+      "interferômetro de Fabry-Pérot",
+      "Fabry–Perot resonator",
+      "Fabry-Perot resonator"
+    ]
+  },
+  "回折格子": {
+    "term": "Rede de difração",
+    "desc": "Elemento com sulcos periódicos que difrata a luz nas direções dadas por d senθ = mλ, separando-a por comprimento de onda. É usada em espectrômetros e na seleção do comprimento de onda de lasers.",
+    "aliases": [
+      "redes de difração",
+      "grade de difração",
+      "diffraction grating"
+    ]
+  },
+  "エアリーディスク": {
+    "term": "Disco de Airy",
+    "desc": "Disco central brilhante que se forma quando a luz é focalizada através de uma abertura circular. O primeiro anel escuro fica no ângulo 1,22λ/D, que determina o limite de resolução de uma lente.",
+    "aliases": [
+      "discos de Airy",
+      "Airy disk"
+    ]
+  },
+  "偏光": {
+    "term": "Polarização",
+    "desc": "Direção em que o campo elétrico da luz oscila e o modo como ela varia. Conforme as amplitudes e a diferença de fase de duas componentes ortogonais, a luz tem polarização linear, circular ou elíptica.",
+    "aliases": [
+      "polarizações",
+      "polarização da luz",
+      "polarization"
+    ],
+    "noLinkIn": [
+      "nonlinear",
+      "detectors",
+      "photovoltaics"
+    ]
+  },
+  "ブリュースター角": {
+    "term": "Ângulo de Brewster",
+    "desc": "Ângulo de incidência em que a refletância da luz com polarização p se anula, com tanθB = n₂/n₁. Do ar para o vidro (1,5), é de cerca de 56°. A luz refletida tem apenas polarização s.",
+    "aliases": [
+      "Brewster's angle",
+      "Brewster angle"
+    ]
+  },
+  "波長板": {
+    "term": "Lâmina de onda",
+    "desc": "Lâmina que usa a birrefringência para criar uma diferença de fase entre duas polarizações ortogonais. A lâmina λ/4 transforma polarização linear em circular, e a lâmina λ/2 gira a direção da polarização.",
+    "aliases": [
+      "lâminas de onda",
+      "placa de onda",
+      "placas de onda",
+      "lâmina retardadora",
+      "lâminas retardadoras",
+      "lâmina de quarto de onda",
+      "lâmina de meia onda",
+      "lâmina λ/4",
+      "lâmina λ/2",
+      "wave plate",
+      "waveplate"
+    ]
+  },
+  "複屈折": {
+    "term": "Birrefringência",
+    "desc": "Propriedade de ter um índice de refração que depende da direção da polarização. Apresentada por cristais como a calcita e o quartzo, separa a luz em raio ordinário e raio extraordinário e é o princípio das lâminas de onda.",
+    "aliases": [
+      "dupla refração",
+      "birefringence"
+    ]
+  },
+  "ジョーンズ行列": {
+    "term": "Matriz de Jones",
+    "desc": "Método que representa a polarização pelas amplitudes complexas das componentes x e y (o vetor de Jones) e calcula a ação dos elementos polarizadores com matrizes 2×2. Trata a luz totalmente polarizada.",
+    "aliases": [
+      "matrizes de Jones",
+      "cálculo de Jones",
+      "vetor de Jones",
+      "Jones matrix",
+      "Jones calculus"
+    ]
+  },
+  "ファラデー回転子": {
+    "term": "Rotador de Faraday",
+    "desc": "Elemento que gira a polarização em um material magneto-óptico dentro de um campo magnético. É não recíproco: o sentido da rotação não depende do sentido de propagação da luz, por isso a rotação dobra na ida e volta.",
+    "aliases": [
+      "rotadores de Faraday",
+      "Faraday rotator"
+    ]
+  },
+  "光アイソレータ": {
+    "term": "Isolador óptico",
+    "desc": "Elemento que deixa a luz passar em um só sentido. Combina polarizadores com um rotador de Faraday de 45°, bloqueia a luz que volta por reflexão e mantém o laser estável.",
+    "aliases": [
+      "isoladores ópticos",
+      "optical isolator"
+    ]
+  },
+  "誘導放出": {
+    "term": "Emissão estimulada",
+    "desc": "Fenômeno em que um fóton que chega a um átomo excitado faz com que ele emita um fóton com a mesma frequência, fase, direção e polarização. É o princípio da amplificação nos lasers.",
+    "aliases": [
+      "stimulated emission"
+    ]
+  },
+  "反転分布": {
+    "term": "Inversão de população",
+    "desc": "Estado em que há mais átomos no nível superior do que no inferior. Não ocorre em equilíbrio térmico e é criada pelo bombeamento. É a condição para que a luz seja amplificada pela emissão estimulada em vez de absorvida.",
+    "aliases": [
+      "inversão de populações",
+      "population inversion"
+    ]
+  },
+  "縦モード": {
+    "term": "Modo longitudinal",
+    "desc": "Frequência de oscilação em que o caminho óptico de ida e volta no ressonador é um múltiplo inteiro do comprimento de onda. O espaçamento é c/(2nL) e é maior quanto mais curto o ressonador.",
+    "aliases": [
+      "modos longitudinais",
+      "longitudinal mode"
+    ]
+  },
+  "ガウシアンビーム": {
+    "term": "Feixe gaussiano",
+    "desc": "Forma básica da luz laser, cuja intensidade na seção transversal segue uma distribuição gaussiana. Sua propagação é determinada pelo raio da cintura w₀ e pelo comprimento de Rayleigh πw₀²/λ.",
+    "aliases": [
+      "feixes gaussianos",
+      "Gaussian beam"
+    ]
+  },
+  "レイリー長": {
+    "term": "Comprimento de Rayleigh",
+    "desc": "Distância zR = πw₀²/λ desde a cintura de um feixe gaussiano até o ponto em que o raio do feixe aumenta √2 vezes. Indica aproximadamente a região em que o feixe pode ser considerado colimado.",
+    "aliases": [
+      "distância de Rayleigh",
+      "Rayleigh range",
+      "Rayleigh length"
+    ]
+  },
+  "M²": {
+    "term": "Fator de qualidade do feixe (M²)",
+    "desc": "Indica a qualidade do feixe: quantas vezes o produto do raio da cintura pelo ângulo de divergência de um feixe real é maior que o de um feixe gaussiano ideal. Quanto mais próximo de 1, melhor.",
+    "aliases": [
+      "fator M²",
+      "M-squared",
+      "beam quality factor"
+    ]
+  },
+  "Qスイッチ": {
+    "term": "Chaveamento Q (Q-switching)",
+    "desc": "Método que mantém alta a perda do ressonador para acumular energia no meio de ganho e depois reduz a perda de repente para liberá-la, obtendo pulsos da ordem de ns com alta potência de pico.",
+    "aliases": [
+      "Q-switch",
+      "comutação Q"
+    ]
+  },
+  "モード同期": {
+    "term": "Travamento de modos (mode-locking)",
+    "desc": "Método que sincroniza as fases de muitos modos longitudinais para obter pulsos ultracurtos, de ps a fs. A frequência de repetição é o inverso do tempo de ida e volta no ressonador, c/(2L).",
+    "aliases": [
+      "mode locking",
+      "bloqueio de modos"
+    ]
+  },
+  "シングルモードファイバ": {
+    "term": "Fibra monomodo",
+    "desc": "Fibra óptica em que só se propaga o modo fundamental; em uma fibra de índice degrau, a condição é um número V menor que 2,405. Como não tem dispersão modal, é usada em comunicações de longa distância e alta velocidade.",
+    "aliases": [
+      "fibra óptica monomodo",
+      "fibras monomodo",
+      "fibras ópticas monomodo",
+      "single-mode fiber"
+    ]
+  },
+  "V値": {
+    "term": "Número V",
+    "desc": "Frequência normalizada de uma fibra óptica, V = 2πaNA/λ. Indica aproximadamente quantos modos se propagam; uma fibra de índice degrau é monomodo quando V é menor que 2,405.",
+    "aliases": [
+      "parâmetro V",
+      "frequência normalizada",
+      "V-number"
+    ]
+  },
+  "モードフィールド径": {
+    "term": "Diâmetro do campo modal (MFD)",
+    "desc": "Diâmetro em que a intensidade da luz guiada em uma fibra monomodo cai a 1/e². É maior que o diâmetro do núcleo, aumenta com o comprimento de onda e determina as perdas de emenda.",
+    "aliases": [
+      "diâmetro de campo modal",
+      "mode field diameter"
+    ]
+  },
+  "波長分散": {
+    "term": "Dispersão cromática",
+    "desc": "Fenômeno em que a velocidade de grupo da luz depende do comprimento de onda, de modo que os pulsos ópticos se alargam ao se propagar. É a soma da dispersão material e da dispersão de guia de onda e é expressa em ps/(nm·km).",
+    "aliases": [
+      "chromatic dispersion"
+    ]
+  },
+  "偏波モード分散": {
+    "term": "Dispersão dos modos de polarização (PMD)",
+    "desc": "Fenômeno em que uma leve birrefringência da fibra faz com que os dois modos de polarização tenham velocidades de grupo diferentes. A diferença de atraso cresce com a raiz quadrada da distância e flutua no tempo.",
+    "aliases": [
+      "dispersão do modo de polarização",
+      "dispersão por modo de polarização",
+      "polarization mode dispersion"
+    ]
+  },
+  "EDFA": {
+    "term": "EDFA (amplificador a fibra dopada com érbio)",
+    "desc": "Amplificador a fibra dopada com érbio. Bombeado em 980 nm ou 1480 nm, amplifica de uma só vez muitos comprimentos de onda da banda de 1,55 µm, sem converter a luz de volta em sinal elétrico.",
+    "aliases": [
+      "amplificador de fibra dopada com érbio",
+      "amplificadores a fibra dopada com érbio",
+      "EDFAs",
+      "erbium-doped fiber amplifier"
+    ]
+  },
+  "応答度": {
+    "term": "Responsividade",
+    "desc": "Fotocorrente (A/W) gerada quando 1 W de luz incide em um fotodetector. É determinada pelo comprimento de onda e pela eficiência quântica: R = ηqλ/(hc) ≈ η × λ[µm]/1,24.",
+    "aliases": [
+      "responsivity"
+    ]
+  },
+  "APD": {
+    "term": "APD (fotodiodo de avalanche)",
+    "desc": "Fotodiodo de avalanche: fotodetector que multiplica internamente a fotocorrente por multiplicação em avalanche sob alta tensão de polarização reversa. É acompanhado de ruído em excesso.",
+    "aliases": [
+      "fotodiodos de avalanche",
+      "APDs",
+      "avalanche photodiode"
+    ]
+  },
+  "ショット雑音": {
+    "term": "Ruído de disparo",
+    "desc": "Ruído causado pela chegada aleatória da carga em partículas discretas. O valor eficaz da corrente é √(2qIB), proporcional à raiz quadrada da corrente média I e da largura de banda B.",
+    "aliases": [
+      "ruído shot",
+      "ruído balístico",
+      "shot noise"
+    ]
+  },
+  "NEP": {
+    "term": "NEP (potência equivalente de ruído)",
+    "desc": "Potência equivalente de ruído: potência da luz incidente para a qual o sinal se iguala ao ruído, em W/√Hz. Quanto menor, mais fraca é a luz que se consegue detectar.",
+    "aliases": [
+      "potência equivalente ao ruído",
+      "noise-equivalent power"
+    ]
+  },
+  "暗電流": {
+    "term": "Corrente de escuro",
+    "desc": "Corrente que circula em um fotodetector quando não há luz incidente. Causada pela geração térmica e por fugas, aumenta com a temperatura e é uma fonte de ruído.",
+    "aliases": [
+      "corrente escura",
+      "dark current"
+    ]
+  },
+  "リング共振器": {
+    "term": "Ressonador em anel",
+    "desc": "Dispositivo em que a luz que circula em um guia de onda em forma de anel ressoa quando o caminho óptico de uma volta é um múltiplo inteiro do comprimento de onda. O FSR é λ²/(n_g L). É usado em filtros e moduladores.",
+    "aliases": [
+      "ressonadores em anel",
+      "anel ressonante",
+      "ring resonator"
+    ]
+  },
+  "群屈折率": {
+    "term": "Índice de grupo",
+    "desc": "Índice de refração que descreve a velocidade com que os pulsos de luz e a energia se propagam (a velocidade de grupo), n_g = n_eff − λ dn_eff/dλ. É usado para calcular o FSR e os tempos de atraso.",
+    "aliases": [
+      "índice de refração de grupo",
+      "group index"
+    ]
+  },
+  "方向性結合器": {
+    "term": "Acoplador direcional",
+    "desc": "Divisor que aproxima dois guias de onda e transfere a luz entre eles por acoplamento evanescente. O comprimento de acoplamento determina a razão de divisão, e metade do comprimento de acoplamento completo dá uma divisão de 3 dB.",
+    "aliases": [
+      "acopladores direcionais",
+      "directional coupler"
+    ]
+  },
+  "MMIカプラ": {
+    "term": "Acoplador MMI",
+    "desc": "Elemento de divisão e combinação que usa a autoimagem em um guia de onda multimodo largo. Sua razão de divisão tende a se manter estável diante de variações de fabricação e do comprimento de onda.",
+    "aliases": [
+      "acopladores MMI",
+      "MMI",
+      "MMIs",
+      "MMI coupler"
+    ]
+  },
+  "熱光学効果": {
+    "term": "Efeito termo-óptico",
+    "desc": "Variação do índice de refração com a temperatura. No silício é grande, de cerca de 1,8×10⁻⁴ /K, e é usado para ajustar a fase e o comprimento de onda de ressonância com aquecedores.",
+    "aliases": [
+      "thermo-optic effect"
+    ]
+  },
+  "グレーティングカプラ": {
+    "term": "Acoplador de grade",
+    "desc": "Estrutura periódica gravada em um guia de onda que acopla a luz a uma fibra situada acima do chip. Seu período é determinado pela condição de casamento de fase Λ = λ/(n_eff − senθ).",
+    "aliases": [
+      "acopladores de grade",
+      "acoplador em grade",
+      "grating coupler"
+    ]
+  },
+  "dBm": {
+    "term": "dBm",
+    "desc": "Expressão logarítmica da potência tomando 1 mW como referência, 10 log₁₀(P/1 mW). 0 dBm é 1 mW, 10 dBm são 10 mW e −30 dBm é 1 µW."
+  },
+  "OTDR": {
+    "term": "OTDR (refletômetro óptico no domínio do tempo)",
+    "desc": "Instrumento que injeta pulsos de luz em uma fibra e, a partir do tempo de ida e volta e da intensidade da luz retroespalhada e refletida, mede a distribuição das perdas e a posição de emendas e rupturas.",
+    "aliases": [
+      "reflectômetro óptico no domínio do tempo",
+      "optical time-domain reflectometer"
+    ]
+  },
+  "LiDAR": {
+    "term": "LiDAR",
+    "desc": "Técnica que ilumina objetos com luz laser e mede a distância até eles e sua forma a partir da luz refletida. Há o método ToF, que mede o tempo de ida e volta dos pulsos, e o método FMCW, com varredura de frequência.",
+    "linkOnlyIn": [
+      "measurement",
+      "optical-sensing"
+    ]
+  },
+  "OCT": {
+    "term": "OCT (tomografia de coerência óptica)",
+    "desc": "Tomografia de coerência óptica: técnica interferométrica que usa o curto comprimento de coerência da luz de banda larga para obter imagens da estrutura em profundidade de tecidos com resolução da ordem de µm.",
+    "aliases": [
+      "tomografia por coerência óptica",
+      "optical coherence tomography"
+    ]
+  },
+  "第2高調波発生": {
+    "term": "Geração de segundo harmônico (SHG)",
+    "desc": "Processo óptico não linear de segunda ordem em que a luz de frequência ω gera luz com o dobro da frequência, 2ω (metade do comprimento de onda). Abreviada como SHG.",
+    "aliases": [
+      "segundo harmônico",
+      "second-harmonic generation"
+    ]
+  },
+  "位相整合": {
+    "term": "Casamento de fase",
+    "desc": "Na conversão de comprimento de onda da óptica não linear, tornar nula a diferença de número de onda, Δk = 0, para que a luz gerada e a polarização que a produz não saiam de fase ao longo do cristal.",
+    "aliases": [
+      "casamento de fases",
+      "phase matching"
+    ]
+  },
+  "擬似位相整合": {
+    "term": "Quase casamento de fase (QPM)",
+    "desc": "Método que inverte periodicamente, a cada comprimento de coerência, o sentido da polarização de um cristal não linear, cancelando a defasagem para que a conversão continue. É usado no PPLN e em materiais semelhantes.",
+    "aliases": [
+      "quasi-phase matching"
+    ]
+  },
+  "光パラメトリック発振器": {
+    "term": "Oscilador paramétrico óptico (OPO)",
+    "desc": "Fonte de luz sintonizável que, em um cristal χ⁽²⁾, divide os fótons da luz de bombeamento em fótons de sinal e fótons complementares (idler) e oscila em um ressonador. Abreviado como OPO.",
+    "aliases": [
+      "osciladores paramétricos ópticos",
+      "optical parametric oscillator"
+    ]
+  },
+  "光カー効果": {
+    "term": "Efeito Kerr óptico",
+    "desc": "Efeito óptico não linear de terceira ordem em que o índice de refração varia proporcionalmente à intensidade da luz, n = n₀ + n₂I. É a causa da automodulação de fase e da autofocalização.",
+    "aliases": [
+      "optical Kerr effect"
+    ]
+  },
+  "自己位相変調": {
+    "term": "Automodulação de fase (SPM)",
+    "desc": "Fenômeno em que um pulso óptico tem a fase modulada, pelo efeito Kerr, pela variação temporal da sua própria intensidade, o que produz um chirp de frequência e alarga o espectro. SPM.",
+    "aliases": [
+      "self-phase modulation"
+    ]
+  },
+  "ポッケルス効果": {
+    "term": "Efeito Pockels",
+    "desc": "Efeito eletro-óptico linear (de primeira ordem) em que o índice de refração de um cristal sem simetria de inversão varia proporcionalmente ao campo elétrico aplicado. É usado em moduladores de LN e no chaveamento Q eletro-óptico.",
+    "aliases": [
+      "Pockels effect"
+    ]
+  },
+  "光ソリトン": {
+    "term": "Sóliton óptico",
+    "desc": "Pacote de ondas de luz que se propaga em uma fibra óptica mantendo a forma do pulso, porque o alargamento causado pela dispersão anômala se equilibra com o chirp da automodulação de fase.",
+    "aliases": [
+      "sólitons ópticos",
+      "optical soliton"
+    ]
+  },
+  "F値": {
+    "term": "Número f",
+    "desc": "Distância focal dividida pelo diâmetro da pupila de entrada, N = f/D. A iluminância no plano da imagem é inversamente proporcional a N², por isso a quantidade de luz cai à metade a cada vez que N aumenta √2 vezes (um ponto).",
+    "aliases": [
+      "números f",
+      "F-number"
+    ]
+  },
+  "開口絞り": {
+    "term": "Diafragma de abertura",
+    "desc": "Diafragma do sistema óptico que determina a largura do feixe de luz que parte de um ponto objeto no eixo. Sua imagem vista do lado do objeto é a pupila de entrada, e vista do lado da imagem é a pupila de saída.",
+    "aliases": [
+      "diafragmas de abertura",
+      "aperture stop"
+    ]
+  },
+  "ザイデル収差": {
+    "term": "Aberrações de Seidel",
+    "desc": "Aberrações monocromáticas de terceira ordem que surgem dos desvios em relação à aproximação paraxial. São cinco: a aberração esférica, o coma, o astigmatismo, a curvatura de campo e a distorção.",
+    "aliases": [
+      "aberração de Seidel",
+      "Seidel aberrations"
+    ],
+    "plural": true
+  },
+  "コマ収差": {
+    "term": "Aberração de coma",
+    "desc": "Aberração em que a imagem de um ponto fora do eixo fica com uma cauda, como um cometa, porque cada zona anular da pupila forma a imagem com uma ampliação diferente. É proporcional ao quadrado da abertura e ao ângulo de campo.",
+    "aliases": [
+      "coma",
+      "coma aberration"
+    ]
+  },
+  "色消しレンズ": {
+    "term": "Lente acromática",
+    "desc": "Lente que combina uma lente convergente e uma divergente de vidros crown e flint, com números de Abbe diferentes, para que dois comprimentos de onda tenham o foco na mesma posição.",
+    "aliases": [
+      "lentes acromáticas",
+      "dubleto acromático",
+      "dubletos acromáticos",
+      "achromatic lens",
+      "achromat"
+    ]
+  },
+  "MTF": {
+    "term": "MTF (função de transferência de modulação)",
+    "desc": "Função de transferência de modulação: indicador do desempenho de formação de imagem que expressa, em função da frequência espacial, quanto do contraste de um padrão senoidal de claros e escuros se conserva na imagem.",
+    "aliases": [
+      "modulation transfer function"
+    ]
+  },
+  "被写界深度": {
+    "term": "Profundidade de campo",
+    "desc": "Faixa de distâncias do lado do objeto, à frente e atrás da distância de foco, dentro da qual o desfoque da imagem fica dentro do círculo de confusão admissível. É maior quanto mais se fecha o diafragma e, para uma mesma distância, quanto menor a distância focal.",
+    "aliases": [
+      "depth of field"
+    ]
+  },
+  "ストレール比": {
+    "term": "Razão de Strehl",
+    "desc": "Intensidade no centro da imagem de um ponto de um sistema com aberrações dividida pela de um sistema sem aberrações, limitado por difração. Costuma-se considerar limitado por difração um sistema com 0,8 ou mais.",
+    "aliases": [
+      "relação de Strehl",
+      "Strehl ratio"
+    ]
+  },
+  "比視感度": {
+    "term": "Eficiência luminosa espectral",
+    "desc": "Função V(λ) que expressa como a sensação de brilho do olho humano varia com o comprimento de onda, normalizada a 1 no comprimento de onda de máximo. O máximo fica perto de 555 nm na visão fotópica e de 507 nm na visão escotópica.",
+    "aliases": [
+      "função de eficiência luminosa",
+      "função de eficiência luminosa espectral",
+      "luminous efficiency function"
+    ]
+  },
+  "光束": {
+    "term": "Fluxo luminoso",
+    "desc": "Grandeza fotométrica que expressa a quantidade de luz que sai de uma fonte ou atravessa uma superfície, ponderada pela eficiência luminosa espectral. Sua unidade é o lúmen (lm); a grandeza radiométrica correspondente é o fluxo radiante (W).",
+    "aliases": [
+      "luminous flux"
+    ]
+  },
+  "光度": {
+    "term": "Intensidade luminosa",
+    "desc": "Fluxo luminoso por unidade de ângulo sólido que uma fonte pontual emite em uma direção. Sua unidade é a candela (cd = lm/sr). Para uma fonte uniforme em todas as direções, é o fluxo luminoso total dividido por 4π.",
+    "aliases": [
+      "luminous intensity"
+    ]
+  },
+  "照度": {
+    "term": "Iluminância",
+    "desc": "Fluxo luminoso incidente em uma superfície por unidade de área. Sua unidade é o lux (lx = lm/m²). A iluminância produzida por uma fonte pontual é inversamente proporcional ao quadrado da distância e proporcional ao cosseno do ângulo de incidência.",
+    "aliases": [
+      "illuminance"
+    ]
+  },
+  "輝度": {
+    "term": "Luminância",
+    "desc": "Brilho de uma superfície vista de uma direção, expresso como fluxo luminoso por unidade de área e por unidade de ângulo sólido. Sua unidade é o cd/m². Não depende da distância de observação e é usada para o brilho das telas.",
+    "aliases": [
+      "luminance"
+    ]
+  },
+  "等色関数": {
+    "term": "Funções de correspondência de cor",
+    "desc": "Funções que dão as quantidades de três estímulos primários necessárias para igualar a cor da luz monocromática de cada comprimento de onda. Ponderando um espectro com as funções x̄, ȳ e z̄ da CIE, obtêm-se os valores triestímulo XYZ.",
+    "aliases": [
+      "função de correspondência de cor",
+      "funções de correspondência de cores",
+      "color-matching functions"
+    ],
+    "plural": true
+  },
+  "色温度": {
+    "term": "Temperatura de cor",
+    "desc": "Cor da luz expressa pela temperatura (K) do corpo negro que tem essa cor. Para fontes fora do lugar geométrico do corpo negro, usa-se a temperatura do corpo negro mais próximo (temperatura de cor correlata). Quanto mais alta, mais azulado o branco.",
+    "aliases": [
+      "temperatura de cor correlata",
+      "color temperature"
+    ]
+  },
+  "演色評価数": {
+    "term": "Índice de reprodução de cor",
+    "desc": "Indicador de quanto as cores dos objetos iluminados por uma fonte se aproximam das cores sob uma luz de referência com a mesma temperatura de cor. A média de oito cores de teste é o índice geral de reprodução de cor Ra, com máximo de 100.",
+    "aliases": [
+      "índice de reprodução de cores",
+      "IRC",
+      "CRI",
+      "color rendering index"
+    ]
+  },
+  "波長分解能": {
+    "term": "Resolução espectral",
+    "desc": "Menor diferença de comprimento de onda Δλ que um espectrômetro consegue separar; a razão R = λ/Δλ também é chamada de resolução (poder de resolução). Em uma rede de difração, o limite superior é mN, o produto da ordem pelo número de sulcos iluminados.",
+    "aliases": [
+      "poder de resolução espectral",
+      "resolving power"
+    ]
+  },
+  "逆線分散": {
+    "term": "Dispersão linear recíproca",
+    "desc": "Faixa de comprimentos de onda distribuída por unidade de comprimento no plano focal de um espectrômetro, dλ/dx (nm/mm). Em uma rede de difração é d cosβ/(mf), e multiplicada pela largura da imagem da fenda dá a largura de banda.",
+    "aliases": [
+      "dispersão linear inversa",
+      "reciprocal linear dispersion"
+    ]
+  },
+  "ブレーズド回折格子": {
+    "term": "Rede de difração blazed",
+    "desc": "Rede de difração cujos sulcos têm seção em dente de serra, com a direção de reflexão especular das faces ajustada a uma ordem específica. Perto do comprimento de onda de blaze, a eficiência de difração dessa ordem é alta.",
+    "aliases": [
+      "rede blazed",
+      "redes blazed",
+      "redes de difração blazed",
+      "blazed grating"
+    ]
+  },
+  "フーリエ変換分光法": {
+    "term": "Espectroscopia por transformada de Fourier",
+    "desc": "Método espectroscópico que obtém o espectro aplicando a transformada de Fourier ao interferograma registrado ao variar a diferença de caminho de um interferômetro de Michelson. O exemplo típico é a FTIR no infravermelho.",
+    "aliases": [
+      "espectroscopia de transformada de Fourier",
+      "FTIR",
+      "Fourier transform spectroscopy"
+    ]
+  },
+  "インターフェログラム": {
+    "term": "Interferograma",
+    "desc": "Registro da variação da intensidade da luz detectada quando se varia a diferença de caminho de um interferômetro. Aplicando-lhe a transformada de Fourier, obtém-se o espectro da luz.",
+    "aliases": [
+      "interferogramas",
+      "interferogram"
+    ]
+  },
+  "自由スペクトル領域": {
+    "term": "Intervalo espectral livre (FSR)",
+    "desc": "Faixa de comprimentos de onda (ou de frequências) que pode ser usada sem que se sobreponham os picos de transmissão ou a luz difratada de ordens adjacentes. É λ²/(2nL) em um Fabry-Pérot e cerca de λ/m na ordem m de uma rede de difração.",
+    "aliases": [
+      "faixa espectral livre",
+      "free spectral range"
+    ]
+  },
+  "フィネス": {
+    "term": "Finesse",
+    "desc": "Intervalo espectral livre de um interferômetro de Fabry-Pérot dividido pela largura total à meia altura dos picos de transmissão. Para espelhos sem perdas é π√R/(1 − R) e aumenta com a refletância."
+  },
+  "アッベ数": {
+    "term": "Número de Abbe",
+    "desc": "Número que expressa quão pequena é a dispersão de um material óptico, Vd = (nd − 1)/(nF − nC). Quanto maior, menor a diferença de índice de refração entre comprimentos de onda e menor a aberração cromática.",
+    "aliases": [
+      "números de Abbe",
+      "Abbe number"
+    ]
+  },
+  "セルマイヤーの式": {
+    "term": "Equação de Sellmeier",
+    "desc": "Equação que expressa a dependência do índice de refração com o comprimento de onda como n²(λ) = 1 + Σ Bᵢλ²/(λ² − Cᵢ). Cada termo corresponde a uma ressonância de absorção no ultravioleta ou no infravermelho, e ela representa com precisão a dispersão na região de transparência.",
+    "aliases": [
+      "fórmula de Sellmeier",
+      "Sellmeier equation"
+    ]
+  },
+  "正常分散": {
+    "term": "Dispersão normal",
+    "desc": "Propriedade de o índice de refração diminuir à medida que o comprimento de onda aumenta. Ocorre na região de transmissão dos materiais transparentes; dentro das bandas de absorção ela se inverte e passa a ser dispersão anômala.",
+    "aliases": [
+      "normal dispersion"
+    ]
+  },
+  "誘電体多層膜ミラー": {
+    "term": "Espelho dielétrico multicamadas",
+    "desc": "Espelho formado por camadas de λ/4 de dielétricos com índices de refração diferentes, empilhadas alternadamente para que as reflexões em cada interface se somem. Quase não tem absorção e pode superar 99,9 % de refletância.",
+    "aliases": [
+      "espelhos dielétricos multicamadas",
+      "espelho dielétrico",
+      "espelhos dielétricos",
+      "dielectric mirror"
+    ]
+  },
+  "フッ化カルシウム": {
+    "term": "Fluoreto de cálcio",
+    "desc": "Cristal de CaF₂. Transmite desde cerca de 0,13 µm, no ultravioleta de vácuo, até cerca de 10 µm, no infravermelho, e tem baixa dispersão. É usado em sistemas ópticos para lasers ultravioleta, em janelas para o infravermelho e em objetivas apocromáticas.",
+    "aliases": [
+      "CaF₂",
+      "fluorita",
+      "calcium fluoride"
+    ]
+  },
+  "レーザー損傷しきい値": {
+    "term": "Limiar de dano induzido por laser",
+    "desc": "Fluência (J/cm²) ou intensidade a partir da qual a luz laser começa a danificar um componente óptico ou um revestimento. Varia com o comprimento de onda, a largura do pulso e o tamanho do feixe, por isso é indicado junto com essas condições.",
+    "aliases": [
+      "LIDT",
+      "limiar de dano por laser",
+      "laser-induced damage threshold"
+    ]
+  },
+  "応力複屈折": {
+    "term": "Birrefringência induzida por tensão",
+    "desc": "Birrefringência que surge em um material isotrópico por efeito de tensões mecânicas. A diferença de caminho é Δ = Kσd (K é o coeficiente fotoelástico), e a tensão residual do vidro é expressa como diferença de caminho por cm de espessura (nm/cm).",
+    "aliases": [
+      "birrefringência por tensão",
+      "stress birefringence"
+    ]
+  },
+  "ファイバブラッググレーティング": {
+    "term": "Rede de Bragg em fibra (FBG)",
+    "desc": "Elemento com uma estrutura periódica do índice de refração gravada no núcleo de uma fibra, que reflete apenas a luz no comprimento de onda de Bragg λB = 2n_effΛ. É usado como sensor de deformação e de temperatura e como filtro de comprimento de onda.",
+    "aliases": [
+      "redes de Bragg em fibra",
+      "FBGs",
+      "grade de Bragg em fibra",
+      "fiber Bragg grating"
+    ]
+  },
+  "分布型光ファイバセンサ": {
+    "term": "Sensor distribuído em fibra óptica",
+    "desc": "Método que mede o retroespalhamento em uma fibra posição por posição, separando-o pelo tempo de ida e volta, para usar todo o comprimento da fibra como um sensor contínuo. Usa-se o espalhamento Raman, Brillouin ou Rayleigh conforme a grandeza.",
+    "aliases": [
+      "sensores distribuídos em fibra óptica",
+      "sensor de fibra óptica distribuído",
+      "sensoriamento distribuído em fibra óptica",
+      "distributed fiber optic sensor"
+    ]
+  },
+  "分布型温度センサ": {
+    "term": "Sensor distribuído de temperatura (DTS)",
+    "desc": "Sensor que obtém a temperatura em cada posição de uma fibra a partir da razão de intensidades entre a luz anti-Stokes e a luz Stokes do espalhamento Raman. É usado para monitorar a temperatura de cabos de energia, tubulações e poços.",
+    "aliases": [
+      "sensores distribuídos de temperatura",
+      "sensoriamento distribuído de temperatura",
+      "distributed temperature sensing"
+    ]
+  },
+  "ブリルアン散乱": {
+    "term": "Espalhamento Brillouin",
+    "desc": "Espalhamento da luz por ondas acústicas no meio. O deslocamento de frequência é 2nVa/λ, cerca de 11 GHz em fibra de sílica na banda de 1550 nm, e varia com a deformação e a temperatura.",
+    "aliases": [
+      "espalhamento de Brillouin",
+      "Brillouin scattering"
+    ]
+  },
+  "分布型音響センシング": {
+    "term": "Sensoriamento acústico distribuído (DAS)",
+    "desc": "Método que detecta, posição por posição ao longo de uma fibra, vibrações e sons a partir da variação da fase do retroespalhamento Rayleigh de pulsos de luz de largura de linha estreita. É usado no monitoramento sísmico e na detecção de intrusões.",
+    "aliases": [
+      "sensor acústico distribuído",
+      "distributed acoustic sensing"
+    ]
+  },
+  "FMCW": {
+    "term": "FMCW",
+    "desc": "Método que transmite luz contínua com frequência varrida linearmente e obtém a distância a partir da frequência de batimento com a luz que retorna e a velocidade a partir do deslocamento Doppler. A resolução em distância é c/(2B)."
+  },
+  "光学式エンコーダ": {
+    "term": "Encoder óptico",
+    "desc": "Sensor que mede posição ou ângulo de rotação lendo com luz uma grade graduada. Os sinais das fases A e B, defasados de 90°, determinam o sentido, e a multiplicação por 4 ou a interpolação aumentam a resolução.",
+    "aliases": [
+      "encoders ópticos",
+      "codificador óptico",
+      "encoder óptico rotativo",
+      "encoder óptico incremental",
+      "optical encoder"
+    ]
+  },
+  "レーザードップラー速度計": {
+    "term": "Velocímetro laser Doppler (LDV)",
+    "desc": "Instrumento que mede sem contato a velocidade de escoamentos e de outros objetos a partir da frequência v/d da luz espalhada pelas partículas que atravessam as franjas de interferência formadas no cruzamento de dois feixes laser.",
+    "aliases": [
+      "velocimetria laser Doppler",
+      "anemometria laser Doppler",
+      "laser Doppler velocimetry"
+    ]
+  },
+  "空間周波数": {
+    "term": "Frequência espacial",
+    "desc": "Número de vezes que as franjas claras e escuras se repetem por unidade de comprimento, o inverso do período. É expressa em ciclos/mm e serve para comparar o detalhamento de imagens e o desempenho de lentes.",
+    "aliases": [
+      "frequências espaciais",
+      "spatial frequency"
+    ]
+  },
+  "4f系": {
+    "term": "Sistema 4f",
+    "desc": "Sistema de formação de imagem com duas lentes de distâncias focais f₁ e f₂ separadas por f₁ + f₂, com comprimento total de 2f₁ + 2f₂. Entre elas se forma um plano de Fourier, e a ampliação é −f₂/f₁.",
+    "aliases": [
+      "sistemas 4f",
+      "4f system"
+    ]
+  },
+  "空間フィルタ": {
+    "term": "Filtro espacial",
+    "desc": "Método que elimina determinadas componentes de frequência espacial colocando um anteparo opaco ou um pinhole no plano de Fourier. É usado para limpar feixes laser e realçar contornos.",
+    "aliases": [
+      "filtros espaciais",
+      "filtragem espacial",
+      "spatial filter"
+    ]
+  },
+  "フラウンホーファー回折": {
+    "term": "Difração de Fraunhofer",
+    "desc": "Difração observada suficientemente longe da abertura, ou no plano focal de uma lente. A amplitude da figura de difração é a transformada de Fourier da distribuição de amplitude na abertura.",
+    "aliases": [
+      "Fraunhofer diffraction"
+    ]
+  },
+  "フレネル数": {
+    "term": "Número de Fresnel",
+    "desc": "Número NF = a²/(λL) formado pelo raio da abertura a, pela distância L e pelo comprimento de onda λ. Quando é muito menor que 1, a difração é tratada como difração de Fraunhofer, e quando é da ordem de 1, como difração de Fresnel.",
+    "aliases": [
+      "Fresnel number"
+    ]
+  },
+  "タルボ効果": {
+    "term": "Efeito Talbot",
+    "desc": "Fenômeno em que uma grade de período d iluminada com luz coerente produz, sem lentes, imagens idênticas à grade a cada distância 2d²/λ. Também é chamado de autoimagem.",
+    "aliases": [
+      "Talbot effect"
+    ]
+  },
+  "ホログラフィ": {
+    "term": "Holografia",
+    "desc": "Técnica que registra as franjas de interferência entre a onda objeto e a onda de referência e reconstrói a frente de onda do objeto difratando a onda de referência. Como registra tanto a amplitude quanto a fase, fornece imagens tridimensionais.",
+    "aliases": [
+      "holography"
+    ]
+  },
+  "計算機ホログラム": {
+    "term": "Holograma gerado por computador (CGH)",
+    "desc": "Holograma cuja distribuição de franjas ou de fase, projetada para produzir uma frente de onda desejada, é criada por cálculo. É realizado com moduladores espaciais de luz ou microfabricação e é usado na conformação de feixes e em pinças ópticas.",
+    "aliases": [
+      "hologramas gerados por computador",
+      "computer-generated hologram",
+      "computer-generated holograms"
+    ]
+  },
+  "ケーラー照明": {
+    "term": "Iluminação de Köhler",
+    "desc": "Método de iluminação que forma a imagem da fonte de luz no diafragma de abertura do condensador e a imagem do diafragma de campo no plano da amostra. Ilumina o campo de modo uniforme, independentemente das irregularidades da fonte, e permite ajustar a NA da iluminação.",
+    "aliases": [
+      "Köhler illumination"
+    ]
+  },
+  "暗視野照明": {
+    "term": "Iluminação de campo escuro",
+    "desc": "Método que ilumina com ângulos maiores que a NA da objetiva, de modo que a luz direta não entra na objetiva e a imagem se forma apenas com a luz espalhada ou difratada pela amostra. O fundo fica escuro e as partículas finas parecem brilhar.",
+    "aliases": [
+      "campo escuro",
+      "microscopia de campo escuro",
+      "darkfield illumination",
+      "dark-field illumination"
+    ]
+  },
+  "位相差顕微鏡": {
+    "term": "Microscópio de contraste de fase",
+    "desc": "Microscópio que defasa a luz direta em cerca de λ/4 com uma placa de fase e a faz interferir com a luz difratada, convertendo as diferenças de fase de amostras transparentes em diferenças de brilho. Foi concebido por Zernike.",
+    "aliases": [
+      "microscópios de contraste de fase",
+      "microscopia de contraste de fase",
+      "contraste de fase",
+      "phase-contrast microscope"
+    ]
+  },
+  "微分干渉顕微鏡": {
+    "term": "Microscópio de contraste por interferência diferencial (DIC)",
+    "desc": "Microscópio que faz passar pela amostra dois feixes de polarizações ortogonais, ligeiramente deslocados lateralmente, e mostra o gradiente da diferença de caminho óptico como claros e escuros com aspecto de relevo. Também é chamado de DIC.",
+    "aliases": [
+      "contraste por interferência diferencial",
+      "microscopia de contraste por interferência diferencial",
+      "microscopia DIC",
+      "differential interference contrast microscope"
+    ]
+  },
+  "ストークスシフト": {
+    "term": "Deslocamento de Stokes",
+    "desc": "Deslocamento do comprimento de onda da fluorescência para valores maiores que o da luz de excitação. Surge porque a molécula excitada perde energia por relaxação vibracional antes de emitir, e permite separar com filtros a luz de excitação da fluorescência.",
+    "aliases": [
+      "desvio de Stokes",
+      "Stokes shift"
+    ]
+  },
+  "共焦点顕微鏡": {
+    "term": "Microscópio confocal",
+    "desc": "Microscópio que varre a amostra com luz focalizada em um ponto e bloqueia a luz de fora do plano focal com um pinhole em uma posição conjugada ao foco, obtendo imagens de uma camada fina ao longo do eixo óptico (seções ópticas).",
+    "aliases": [
+      "microscópios confocais",
+      "microscopia confocal",
+      "confocal microscope"
+    ]
+  },
+  "二光子励起顕微鏡": {
+    "term": "Microscópio de excitação por dois fótons",
+    "desc": "Microscópio que excita a fluorescência pela absorção simultânea de dois fótons. Como a absorção é proporcional ao quadrado da intensidade, só o foco é excitado, e a luz no infravermelho próximo permite observar regiões profundas de tecidos vivos.",
+    "aliases": [
+      "microscópios de excitação por dois fótons",
+      "microscopia de excitação por dois fótons",
+      "microscópio de dois fótons",
+      "microscopia de dois fótons",
+      "two-photon excitation microscope"
+    ]
+  },
+  "STED顕微鏡": {
+    "term": "Microscópio STED",
+    "desc": "Microscópio de super-resolução que apaga a fluorescência ao redor do ponto excitado por emissão estimulada com um feixe em forma de rosca, tornando a região que emite mais estreita que o limite de difração.",
+    "aliases": [
+      "microscopia STED",
+      "STED",
+      "STED microscope"
+    ]
+  },
+  "外部量子効率": {
+    "term": "Eficiência quântica externa (EQE)",
+    "desc": "Em um LED ou dispositivo semelhante, número de fótons que saem do dispositivo por elétron injetado. É o produto da eficiência de injeção, da eficiência quântica interna e da eficiência de extração de luz.",
+    "aliases": [
+      "external quantum efficiency"
+    ]
+  },
+  "光取り出し効率": {
+    "term": "Eficiência de extração de luz",
+    "desc": "Fração dos fótons gerados na camada ativa que consegue sair do dispositivo. Dentro de um semicondutor de alto índice de refração, a luz fica presa por reflexão interna total, por isso a eficiência é aumentada com a texturização da superfície e outros meios.",
+    "aliases": [
+      "light-extraction efficiency"
+    ]
+  },
+  "効率ドループ": {
+    "term": "Queda de eficiência (droop)",
+    "desc": "Diminuição da eficiência quântica externa de um LED em correntes altas, depois de atingir o máximo em certa corrente. Considera-se que as principais causas são a recombinação Auger e a fuga de portadores.",
+    "aliases": [
+      "efficiency droop"
+    ]
+  },
+  "白色LED": {
+    "term": "LED branco",
+    "desc": "LED que converte parte da luz de um LED azul em amarelo ou em outras cores com um fósforo e mistura as cores para obter branco. Adicionar um fósforo vermelho melhora a reprodução de cor, mas tende a reduzir a eficácia luminosa.",
+    "aliases": [
+      "LEDs brancos",
+      "white LED"
+    ]
+  },
+  "有機EL": {
+    "term": "OLED (diodo orgânico emissor de luz)",
+    "desc": "Dispositivo que emite luz quando uma corrente atravessa filmes finos de material orgânico. Como os pixels emitem luz própria, as telas conseguem mostrar um preto profundo, e os materiais fosforescentes, que também emitem a partir dos tripletos, aumentam a eficiência.",
+    "aliases": [
+      "OLEDs",
+      "diodos orgânicos emissores de luz",
+      "organic light-emitting diode"
+    ]
+  },
+  "液晶ディスプレイ": {
+    "term": "Tela de cristal líquido (LCD)",
+    "desc": "Tela que deixa passar ou bloqueia, pixel por pixel, a luz da retroiluminação com dois polarizadores e um cristal líquido cuja orientação molecular muda com a tensão aplicada.",
+    "aliases": [
+      "telas de cristal líquido",
+      "display de cristal líquido",
+      "liquid-crystal display"
+    ]
+  },
+  "色域": {
+    "term": "Gama de cores",
+    "desc": "Faixa de cores que uma tela ou dispositivo semelhante consegue reproduzir. No diagrama de cromaticidade é o interior do triângulo cujos vértices são as cromaticidades das três cores primárias; há padrões como sRGB e BT.2020.",
+    "aliases": [
+      "gamas de cores",
+      "gama cromática",
+      "gamut",
+      "color gamut"
+    ]
+  },
+  "量子ドット": {
+    "term": "Ponto quântico",
+    "desc": "Nanopartícula semicondutora de alguns nm. O comprimento de onda de emissão muda com o tamanho e o espectro é estreito, por isso é usado na conversão de cor que amplia a gama de cores das telas.",
+    "aliases": [
+      "pontos quânticos",
+      "quantum dot",
+      "quantum dots"
+    ]
+  },
+  "CMOSイメージセンサ": {
+    "term": "Sensor de imagem CMOS",
+    "desc": "Sensor de imagem com um transistor de amplificação em cada pixel, lido selecionando linha por linha. Pode integrar no mesmo chip todo o processamento até a conversão A/D, por isso é rápido e consome pouca energia.",
+    "aliases": [
+      "sensores de imagem CMOS",
+      "CIS",
+      "CMOS image sensor"
+    ]
+  },
+  "CCDイメージセンサ": {
+    "term": "Sensor de imagem CCD",
+    "desc": "Sensor de imagem que transfere sucessivamente a carga de cada pixel alternando as tensões dos eletrodos e a converte em tensão com poucos amplificadores de saída. A variação entre pixels é pequena.",
+    "aliases": [
+      "sensores de imagem CCD",
+      "CCD",
+      "CCD image sensor"
+    ]
+  },
+  "フルウェル容量": {
+    "term": "Capacidade de poço cheio",
+    "desc": "Número máximo de elétrons que um pixel consegue armazenar. Acima dele o pixel satura; determina o extremo claro da faixa dinâmica e a S/N máxima que se pode obter (a raiz quadrada desse número).",
+    "aliases": [
+      "capacidade de poço completo",
+      "full well",
+      "full-well capacity"
+    ]
+  },
+  "読み出し雑音": {
+    "term": "Ruído de leitura",
+    "desc": "Ruído acrescentado ao converter a carga de um pixel em tensão e lê-la, expresso como valor eficaz em número de elétrons. Determina a S/N em cenas escuras e o extremo escuro da faixa dinâmica.",
+    "aliases": [
+      "read noise",
+      "readout noise"
+    ]
+  },
+  "ダイナミックレンジ": {
+    "term": "Faixa dinâmica",
+    "desc": "Razão entre o maior sinal que uma medição ou um registro consegue tratar e o menor, determinado pelo ruído. Em sensores de imagem, a razão entre a capacidade de poço cheio e o ruído de leitura é expressa em dB ou em pontos (stops).",
+    "aliases": [
+      "alcance dinâmico",
+      "dynamic range"
+    ]
+  },
+  "ベイヤー配列": {
+    "term": "Mosaico de Bayer",
+    "desc": "Arranjo de filtros de cor com dois filtros verdes, um vermelho e um azul em cada bloco de 2×2 pixels. Cada pixel mede apenas uma cor, e as outras são interpoladas a partir dos pixels vizinhos (demosaico).",
+    "aliases": [
+      "matriz de Bayer",
+      "filtro de Bayer",
+      "padrão de Bayer",
+      "Bayer filter",
+      "Bayer pattern",
+      "Bayer filter array"
+    ]
+  },
+  "裏面照射型": {
+    "term": "Iluminação traseira (BSI)",
+    "desc": "Estrutura de sensor de imagem em que a luz entra pelo lado oposto às camadas de fiação (a parte de trás do wafer). Como a fiação não bloqueia a luz, mesmo pixels pequenos mantêm a sensibilidade.",
+    "aliases": [
+      "sensor com iluminação traseira",
+      "backside illumination",
+      "back-illuminated sensor"
+    ]
+  },
+  "ローリングシャッタ": {
+    "term": "Obturador rolante",
+    "desc": "Esquema de obturador eletrônico que expõe e lê cada linha em um instante ligeiramente defasado. Objetos que se movem rápido saem distorcidos. O esquema que expõe todos os pixels ao mesmo tempo é o obturador global.",
+    "aliases": [
+      "obturadores rolantes",
+      "rolling shutter"
+    ]
+  },
+  "波長分割多重": {
+    "term": "Multiplexação por divisão de comprimento de onda (WDM)",
+    "desc": "Método de multiplexação que coloca um sinal diferente em cada uma de várias luzes de frequências diferentes e as transmite ao mesmo tempo por uma única fibra. A capacidade cresce proporcionalmente ao número de comprimentos de onda.",
+    "aliases": [
+      "multiplexação por comprimento de onda",
+      "wavelength-division multiplexing"
+    ]
+  },
+  "光信号対雑音比": {
+    "term": "Relação sinal-ruído óptica (OSNR)",
+    "desc": "Razão entre a potência do sinal óptico e a potência do ruído óptico dentro de uma largura de banda definida (normalmente 0,1 nm). É determinada principalmente pelo ruído ASE dos amplificadores e é usada como medida da qualidade da transmissão.",
+    "aliases": [
+      "razão sinal-ruído óptica",
+      "optical signal-to-noise ratio"
+    ]
+  },
+  "分散補償ファイバ": {
+    "term": "Fibra compensadora de dispersão (DCF)",
+    "desc": "Fibra com dispersão cromática grande e de sinal oposto ao da fibra de transmissão. É inserida ao longo do enlace ou no lado do receptor para cancelar a dispersão acumulada.",
+    "aliases": [
+      "fibras compensadoras de dispersão",
+      "fibra de compensação de dispersão",
+      "dispersion-compensating fiber"
+    ]
+  },
+  "利得平坦化フィルタ": {
+    "term": "Filtro de aplainamento de ganho (GFF)",
+    "desc": "Filtro óptico cujo espectro de perdas cancela a dependência do ganho do EDFA com o comprimento de onda. É usado para igualar as potências dos canais na amplificação em cascata.",
+    "aliases": [
+      "filtros de aplainamento de ganho",
+      "filtro aplainador de ganho",
+      "filtro de equalização de ganho",
+      "filtros de equalização de ganho",
+      "gain-flattening filter"
+    ]
+  },
+  "四光波混合": {
+    "term": "Mistura de quatro ondas (FWM)",
+    "desc": "Efeito óptico não linear de terceira ordem em que, a partir de luzes de três frequências, se gera luz na frequência f_i + f_j − f_k. Torna-se intenso quando a dispersão é pequena e causa diafonia em sistemas WDM.",
+    "aliases": [
+      "four-wave mixing"
+    ]
+  },
+  "パワーバジェット": {
+    "term": "Balanço de potência",
+    "desc": "Orçamento de perdas que distribui a diferença entre a potência do transmissor e a sensibilidade do receptor entre as perdas na fibra e nas conexões e uma margem. É usado para estimar a distância máxima de transmissão de um enlace óptico.",
+    "aliases": [
+      "balanços de potência",
+      "orçamento de potência",
+      "balanço de perdas",
+      "power budget",
+      "link budget"
+    ]
+  },
+  "直交振幅変調": {
+    "term": "Modulação de amplitude em quadratura (QAM)",
+    "desc": "Formato de modulação que coloca informação nas amplitudes tanto da componente em fase quanto da componente em quadratura da portadora. A 16QAM usa 16 pontos de constelação e transporta 4 bits por símbolo.",
+    "aliases": [
+      "16QAM",
+      "quadrature amplitude modulation"
+    ]
+  },
+  "コヒーレント受信": {
+    "term": "Recepção coerente",
+    "desc": "Método de recepção que faz o sinal recebido interferir com a luz de um oscilador local para medir a amplitude e a fase do campo elétrico. Permite demodular formatos multinível e compensar digitalmente a dispersão cromática.",
+    "aliases": [
+      "detecção coerente",
+      "receptor coerente",
+      "receptores coerentes",
+      "coherent detection"
+    ]
+  },
+  "時間帯域幅積": {
+    "term": "Produto tempo-largura de banda",
+    "desc": "Produto ΔνΔt da duração de um pulso pela sua largura espectral. O limite inferior depende da forma do pulso: 0,441 para a forma gaussiana e 0,315 para a forma sech². A igualdade vale quando não há chirp.",
+    "aliases": [
+      "time-bandwidth product"
+    ]
+  },
+  "チャープ": {
+    "term": "Chirp",
+    "desc": "Variação no tempo da frequência instantânea dentro de um pulso. Quando a frequência aumenta com o tempo, chama-se up-chirp. É produzido pela dispersão e pela automodulação de fase.",
+    "aliases": [
+      "chirp de frequência"
+    ]
+  },
+  "群遅延分散": {
+    "term": "Dispersão do atraso de grupo (GDD)",
+    "desc": "Taxa com que o atraso de grupo varia com a frequência angular, d²φ/dω² (em fs²). Quando é positiva, os comprimentos de onda longos se adiantam, e o pulso ganha up-chirp e se alarga.",
+    "aliases": [
+      "group delay dispersion"
+    ]
+  },
+  "可飽和吸収体": {
+    "term": "Absorvedor saturável",
+    "desc": "Material ou dispositivo cuja absorção diminui (satura) à medida que a luz se torna mais intensa. Dentro de um ressonador, os picos mais intensos sofrem menos perdas, por isso é usado no travamento de modos passivo e no chaveamento Q passivo.",
+    "aliases": [
+      "absorvedores saturáveis",
+      "saturable absorber"
+    ]
+  },
+  "チャープパルス増幅": {
+    "term": "Amplificação de pulsos com chirp (CPA)",
+    "desc": "Método de amplificação de pulsos ultracurtos de alta intensidade que estica o pulso com dispersão para reduzir a potência de pico, amplifica-o e, por fim, o comprime de volta ao pulso curto original.",
+    "aliases": [
+      "amplificação de pulso com chirp",
+      "chirped-pulse amplification"
+    ]
+  },
+  "光周波数コム": {
+    "term": "Pente de frequências óptico",
+    "desc": "Luz com muitas linhas espectrais estreitas e igualmente espaçadas. A frequência de cada linha é fₙ = nf_rep + f_ceo, e o pente é obtido com lasers de travamento de modos e fontes semelhantes.",
+    "aliases": [
+      "pentes de frequências ópticos",
+      "pente de frequências",
+      "pentes de frequências",
+      "pente de frequência",
+      "pentes de frequência",
+      "pente de frequência óptico",
+      "optical frequency comb",
+      "frequency comb"
+    ]
+  },
+  "キャリア・エンベロープ位相": {
+    "term": "Fase portadora-envoltória (CEP)",
+    "desc": "Fase da portadora em relação ao pico da envoltória do pulso. Em pulsos de apenas alguns ciclos, determina a forma do campo elétrico, e sua variação de um pulso para outro se torna o f_ceo do pente de frequências.",
+    "aliases": [
+      "fase entre a portadora e a envoltória",
+      "carrier-envelope phase"
+    ]
+  },
+  "強度自己相関": {
+    "term": "Autocorrelação de intensidade",
+    "desc": "Método que divide um pulso em dois com um atraso entre eles e mede a intensidade do segundo harmônico gerado pela sobreposição em função do atraso. O resultado é convertido em duração do pulso supondo uma forma de pulso.",
+    "aliases": [
+      "intensity autocorrelation"
+    ]
+  },
+  "2次の相関関数": {
+    "term": "Função de correlação de segunda ordem",
+    "desc": "Correlação temporal da intensidade da luz, g⁽²⁾(τ) = ⟨I(t)I(t + τ)⟩/⟨I⟩². Em τ = 0 vale 1 para a luz laser, 2 para a luz térmica e menos de 1 para uma fonte de fóton único.",
+    "aliases": [
+      "g⁽²⁾",
+      "second-order correlation function"
+    ]
+  },
+  "HBT干渉計": {
+    "term": "Interferômetro HBT (Hanbury Brown-Twiss)",
+    "desc": "Montagem que divide a luz com um divisor de feixe e mede as coincidências entre dois detectores em função do atraso. Determina g⁽²⁾(τ) para estudar o agrupamento e o antiagrupamento de fótons.",
+    "aliases": [
+      "HBT",
+      "montagem HBT",
+      "interferômetro de Hanbury Brown e Twiss",
+      "Hanbury Brown–Twiss interferometer"
+    ]
+  },
+  "スクイーズド光": {
+    "term": "Luz comprimida",
+    "desc": "Luz em que a flutuação de uma das componentes de quadratura do campo elétrico é reduzida abaixo da flutuação do vácuo, enquanto a da outra aumenta. É usada em medições com ruído abaixo do ruído de disparo.",
+    "aliases": [
+      "estado comprimido",
+      "estados comprimidos",
+      "vácuo comprimido",
+      "squeezed light",
+      "squeezed state"
+    ]
+  },
+  "自発的パラメトリック下方変換": {
+    "term": "Conversão paramétrica descendente espontânea (SPDC)",
+    "desc": "Processo em um cristal χ⁽²⁾ em que um fóton de bombeamento se divide em dois fótons, conservando a energia e o momento. É usado como fonte de pares de fótons e de pares de fótons emaranhados.",
+    "aliases": [
+      "conversão paramétrica descendente",
+      "spontaneous parametric down-conversion"
+    ]
+  },
+  "量子もつれ": {
+    "term": "Emaranhamento quântico",
+    "desc": "Correlação entre várias partículas cujo estado conjunto não pode ser escrito como produto dos estados individuais. Em um par de fótons emaranhados em polarização, a polarização de cada fóton não está definida, mas os resultados das medições têm forte correlação.",
+    "aliases": [
+      "emaranhamento",
+      "entrelaçamento quântico",
+      "fótons emaranhados",
+      "par de fótons emaranhados",
+      "pares de fótons emaranhados",
+      "quantum entanglement"
+    ]
+  },
+  "単一光子アバランシェダイオード": {
+    "term": "Diodo de avalanche de fóton único (SPAD)",
+    "desc": "Fotodiodo polarizado reversamente acima da tensão de ruptura (modo Geiger) que detecta um único fóton disparando uma avalanche. Tem tempo morto e pós-pulsos (afterpulsing).",
+    "aliases": [
+      "diodos de avalanche de fóton único",
+      "SPADs",
+      "single-photon avalanche diode"
+    ]
+  },
+  "超伝導ナノワイヤ単一光子検出器": {
+    "term": "Detector de fóton único de nanofio supercondutor (SNSPD)",
+    "desc": "Detector que usa um fio supercondutor fino, resfriado a temperatura criogênica, que passa localmente ao estado normal ao absorver um fóton. Tem alta eficiência mesmo no infravermelho próximo, poucas contagens de escuro e pequeno jitter temporal.",
+    "aliases": [
+      "detectores de fóton único de nanofio supercondutor",
+      "detector de nanofio supercondutor",
+      "detectores de nanofio supercondutor",
+      "superconducting nanowire single-photon detector"
+    ]
+  },
+  "量子鍵配送": {
+    "term": "Distribuição quântica de chaves (QKD)",
+    "desc": "Método de compartilhar uma chave criptográfica codificada em estados quânticos, como os de fótons. Como medir os estados para espionar introduz erros, a taxa de erros revela se houve espionagem. O BB84 é o protocolo mais conhecido.",
+    "aliases": [
+      "quantum key distribution"
+    ]
+  },
+  "光起電力効果": {
+    "term": "Efeito fotovoltaico",
+    "desc": "Aparecimento de uma tensão entre os terminais quando os elétrons e as lacunas gerados pela luz são separados pelo campo elétrico interno de uma junção. Permite obter energia elétrica sem fonte externa e é o princípio das células solares.",
+    "aliases": [
+      "photovoltaic effect"
+    ]
+  },
+  "開放電圧": {
+    "term": "Tensão de circuito aberto",
+    "desc": "Tensão de uma célula solar com os terminais em aberto. É a tensão em que a fotocorrente e a corrente de recombinação se equilibram, aproximadamente (kT/q) ln(J_sc/J₀); qV_oc é menor que a energia da banda proibida.",
+    "aliases": [
+      "V_oc",
+      "voltagem de circuito aberto",
+      "open-circuit voltage"
+    ]
+  },
+  "短絡電流": {
+    "term": "Corrente de curto-circuito",
+    "desc": "Corrente que circula quando os terminais de uma célula solar estão em curto-circuito. A densidade de corrente de curto-circuito J_sc, por unidade de área, é determinada pelo número de fótons incidentes e pela eficiência quântica externa.",
+    "aliases": [
+      "J_sc",
+      "densidade de corrente de curto-circuito",
+      "short-circuit current"
+    ]
+  },
+  "曲線因子": {
+    "term": "Fator de forma",
+    "desc": "Potência máxima dividida pelo produto da tensão de circuito aberto pela corrente de curto-circuito, FF. Expressa quão retangular é a curva I-V e diminui por efeito da resistência em série, da resistência em paralelo e da recombinação.",
+    "aliases": [
+      "fator de preenchimento",
+      "fill factor"
+    ]
+  },
+  "ショックレー・クワイサー限界": {
+    "term": "Limite de Shockley-Queisser",
+    "desc": "Limite superior da eficiência de conversão de uma célula solar de junção única, obtido pelo balanço detalhado. Para AM1.5G é de cerca de 33 %, com banda proibida próxima de 1,3–1,4 eV.",
+    "aliases": [
+      "limite SQ",
+      "limite de Shockley–Queisser",
+      "Shockley–Queisser limit",
+      "Shockley-Queisser limit"
+    ]
+  },
+  "タンデム太陽電池": {
+    "term": "Célula solar tandem",
+    "desc": "Célula solar que empilha células de bandas proibidas diferentes e aproveita os comprimentos de onda curtos na célula superior, de banda proibida maior, e os longos na célula inferior. Reduz as perdas por termalização e por transmissão.",
+    "aliases": [
+      "células solares tandem",
+      "célula tandem",
+      "células tandem",
+      "célula solar multijunção",
+      "células solares multijunção",
+      "tandem solar cell",
+      "multijunction solar cell"
+    ]
+  },
+  "ペロブスカイト太陽電池": {
+    "term": "Célula solar de perovskita",
+    "desc": "Célula solar que absorve a luz em um filme fino de perovskita de haleto metálico. Pode ser fabricada por deposição a partir de solução e outros processos a baixa temperatura, e a banda proibida pode ser ajustada pela composição. A estabilidade é um desafio.",
+    "aliases": [
+      "células solares de perovskita",
+      "perovskita de haleto",
+      "perovskitas de haleto",
+      "perovskite solar cell",
+      "halide perovskite"
+    ]
+  },
+  "エアマス": {
+    "term": "Massa de ar (AM)",
+    "desc": "Comprimento do caminho da luz solar pela atmosfera em relação ao valor 1 para o Sol a pino; com ângulo zenital θ, é aproximadamente 1/cos θ. As células solares são avaliadas com o espectro AM1.5G.",
+    "aliases": [
+      "AM1.5G",
+      "AM1.5",
+      "air mass"
+    ]
+  }
+}

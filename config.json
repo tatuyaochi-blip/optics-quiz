@@ -6,7 +6,8 @@
     "zh-hant": "光學教室",
     "ko": "광학 교실",
     "de": "Lernraum Optik",
-    "es": "Aula de Óptica"
+    "es": "Aula de Óptica",
+    "pt": "Sala de Óptica"
   },
   "languages": [
     {
@@ -50,6 +51,13 @@
       "htmlLang": "es",
       "locale": "es-ES",
       "label": "Español"
+    },
+    {
+      "code": "pt",
+      "path": "pt/",
+      "htmlLang": "pt-BR",
+      "locale": "pt-BR",
+      "label": "Português"
     }
   ],
   "mainLang": "ja",
@@ -144,6 +152,19 @@
       "hero": "Aprenda óptica y fotónica con cuestionarios breves",
       "hero_lead": "Desde las lentes y la interferencia hasta los láseres, las fibras ópticas y la fotónica de silicio. Todas las preguntas incluyen una explicación.",
       "tools_lead": "Calculadoras gratuitas en el navegador para el día a día de la óptica: conversión entre longitud de onda y energía del fotón, haces gaussianos, y NA y número V de las fibras ópticas."
+    },
+    "pt": {
+      "subject": "óptica e fotônica",
+      "subject_title": "óptica e fotônica",
+      "site": "Sala de Óptica",
+      "site_en": "Optics Room",
+      "search_example": "abertura numérica",
+      "tools_example": "o diâmetro de um feixe e a NA de uma fibra",
+      "full_title": "Sala de Óptica | Questões de prática sobre lasers, fibras ópticas e fotônica de silício",
+      "scope": "óptica geométrica, interferência e polarização, lasers e feixes gaussianos, fibras ópticas, fotodetectores, fotônica de silício e metrologia óptica",
+      "hero": "Aprenda óptica e fotônica com quizzes rápidos",
+      "hero_lead": "Das lentes e da interferência aos lasers, às fibras ópticas e à fotônica de silício. Todas as questões vêm com explicação.",
+      "tools_lead": "Calculadoras gratuitas no navegador para o dia a dia da óptica: conversão entre comprimento de onda e energia do fóton, feixes gaussianos, e NA e número V de fibras ópticas."
     }
   },
   "icon": {

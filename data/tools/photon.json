@@ -394,6 +394,62 @@
       "js": {
         "per_s": "fotones/s"
       }
+    },
+    "pt": {
+      "nav": "Conversão de comprimento de onda e energia",
+      "card": "Converta entre comprimento de onda, frequência, energia do fóton (eV) e número de onda",
+      "title": "Conversor de comprimento de onda, frequência e energia do fóton (nm ⇔ THz ⇔ eV ⇔ cm⁻¹)",
+      "description": "Converte entre si o comprimento de onda (nm), a frequência (THz), a energia do fóton (eV) e o número de onda (cm⁻¹) da luz. A partir da potência óptica, calcula também o número de fótons por segundo e a responsividade de um fotodetector com eficiência quântica de 100 %.",
+      "h1": "Conversor de comprimento de onda, frequência e energia do fóton",
+      "lead": "Ao alterar qualquer um dos campos, os demais são convertidos. Se você digitar uma potência óptica, verá também quantos fótons chegam por segundo e a responsividade de um fotodetector ideal. O valor padrão é 1550 nm, da banda C das comunicações ópticas.",
+      "in_heading": "Dados (você pode alterar qualquer campo)",
+      "nm": "Comprimento de onda λ (nm)",
+      "thz": "Frequência ν (THz)",
+      "ev": "Energia do fóton E (eV)",
+      "kayser": "Número de onda (cm⁻¹)",
+      "mw": "Potência óptica (mW)",
+      "out_heading": "Resultados",
+      "joule": "Energia de um fóton",
+      "rate": "Fótons por segundo",
+      "resp": "Responsividade máxima (eficiência quântica de 100 %)",
+      "note": "Os comprimentos de onda são tratados como valores no vácuo (dentro de um material, o comprimento de onda passa a ser 1/n, mas a frequência e a energia do fóton não mudam). As constantes são c = 299 792 458 m/s, h = 6,62607015 × 10⁻³⁴ J·s e e = 1,602176634 × 10⁻¹⁹ C.",
+      "practice": "Resolver questões de fotodetectores e detecção de luz",
+      "related": "Termos relacionados",
+      "sections": [
+        {
+          "h": "Relação entre o comprimento de onda e a energia do fóton",
+          "p": "A energia de um fóton é E = hν = hc/λ e é maior quanto mais curto é o comprimento de onda. Expressa em elétron-volts (eV) e nanômetros (nm), E[eV] ≈ 1239,84/λ[nm]; uma regra prática é “1240 dividido pelo comprimento de onda em nanômetros dá os eV”. Para os 1550 nm padrão, são cerca de 0,80 eV; para a luz visível verde (530 nm), cerca de 2,34 eV; e para o ultravioleta de 365 nm, cerca de 3,40 eV. Nos fotodetectores e nas fontes de luz semicondutoras, comparar a banda proibida com a energia do fóton indica se aquele comprimento de onda pode ser absorvido ou emitido."
+        },
+        {
+          "h": "Frequência e número de onda",
+          "p": "A frequência é ν = c/λ, e 1550 nm equivale a cerca de 193,4 THz. A multiplexação densa por divisão de comprimento de onda (DWDM) das comunicações ópticas define os canais por frequência, e não por comprimento de onda, com espaçamentos de 50 GHz ou 100 GHz centrados em 193,1 THz. Perto de 1550 nm, 100 GHz correspondem a cerca de 0,8 nm. O número de onda (cm⁻¹) é o número de ondas por centímetro, 1/λ expresso em cm⁻¹. É a unidade usual em espectroscopia no infravermelho e espectroscopia Raman; 1550 nm equivale a cerca de 6452 cm⁻¹."
+        },
+        {
+          "h": "Potência óptica e número de fótons",
+          "p": "Dividindo a potência óptica P pela energia de um fóton, obtém-se o número de fótons por segundo, N = P/(hν). Para 1 mW em 1550 nm, são cerca de 7,80 × 10¹⁵ fótons/s. Com a mesma potência, quanto maior o comprimento de onda, menor a energia de cada fóton e, portanto, maior o número de fótons. Esse número de fótons é o ponto de partida para analisar o ruído de disparo ou a detecção de fótons individuais."
+        },
+        {
+          "h": "Limite superior da responsividade",
+          "p": "A responsividade de um fotodetector é R = η·qλ/(hc) e, com eficiência quântica η de 100 %, R[A/W] ≈ λ[nm]/1239,84. O limite superior é de cerca de 1,25 A/W em 1550 nm e de cerca de 0,686 A/W em 850 nm. Os fotodiodos de InGaAs reais têm em 1550 nm uma responsividade de aproximadamente 0,9 a 1,0 A/W, o que corresponde a uma eficiência quântica entre 70 % e 80 %. A responsividade é proporcional ao comprimento de onda porque, com a mesma potência, os comprimentos de onda longos transportam mais fótons."
+        }
+      ],
+      "faq": [
+        {
+          "q": "Como converter de eV para nm?",
+          "a": "Com λ[nm] ≈ 1239,84/E[eV]. Por exemplo, a banda proibida do silício, de 1,12 eV, corresponde a cerca de 1107 nm, e os 3,4 eV do GaN, a cerca de 365 nm."
+        },
+        {
+          "q": "A energia do fóton muda dentro de um material?",
+          "a": "Não. Em um material de índice de refração n, a velocidade e o comprimento de onda da luz passam a ser 1/n dos seus valores no vácuo, mas a frequência e a energia do fóton não mudam. Esta calculadora trata os comprimentos de onda como valores no vácuo."
+        },
+        {
+          "q": "Qual é a energia dos fótons de 1550 nm e de 1310 nm?",
+          "a": "1550 nm corresponde a cerca de 0,800 eV (cerca de 193,4 THz), e 1310 nm, a cerca de 0,946 eV (cerca de 228,8 THz). Os dois valores são menores que a banda proibida do silício (cerca de 1,12 eV), por isso o silício não os absorve, e para detectá-los usam-se InGaAs ou Ge."
+        }
+      ],
+      "js": {
+        "per_s": "fótons/s"
+      }
     }
   }
 }
