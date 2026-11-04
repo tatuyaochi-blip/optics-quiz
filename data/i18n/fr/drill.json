@@ -1,0 +1,1126 @@
+{
+  "title": "Exercices de calcul d'optique avec résolution détaillée",
+  "description": "Entraînez-vous sur 34 types de calculs classiques d'optique et de photonique, avec de nouvelles valeurs à chaque fois : loi de Snell-Descartes, angle critique, lentilles minces, limite de diffraction, réseaux de diffraction, réflectance de Fresnel, traitements antireflet, faisceaux gaussiens, ouverture numérique et fréquence normalisée V des fibres, dBm, sensibilité spectrale, énergie du photon, etc. Saisissez la réponse avec son unité : elle est vérifiée, puis la résolution détaillée et les erreurs courantes s'affichent.",
+  "h1": "Exercices de calcul",
+  "lead": "Des problèmes de calcul classiques des cours et des examens d'optique et de photonique, avec de nouvelles valeurs à chaque fois. Résolvez chaque problème vous-même et saisissez la réponse avec son unité : vous verrez si elle est juste, la résolution détaillée avec les valeurs qui entrent dans chaque formule, et l'erreur courante que trahit votre résultat. Lorsqu'un calculateur couvre le type de problème, vous pouvez l'ouvrir avec les mêmes valeurs pour vérifier.",
+  "note": "Les valeurs des problèmes sont des valeurs d'entraînement tirées à chaque fois dans un intervalle. Les indices de réfraction et les constantes proviennent des mêmes sources que le formulaire (indiquées plus bas) ou sont posés comme hypothèses dans l'énoncé. Pour une conception réelle, utilisez les valeurs des fiches techniques des fabricants et des normes.",
+  "lowerNames": true,
+  "mat": {},
+  "groups": {
+    "geo": "Optique géométrique et formation des images",
+    "wave": "Interférences, diffraction et spectroscopie",
+    "pol": "Polarisation",
+    "material": "Matériaux optiques et couches minces",
+    "laser": "Lasers et faisceaux gaussiens",
+    "fiber": "Fibres optiques et télécommunications optiques",
+    "detect": "Détection et imagerie",
+    "nonlinear": "Optique non linéaire et impulsions ultracourtes",
+    "photo": "Radiométrie, photométrie et couleur",
+    "quantum": "Photons, optique quantique et cellules solaires"
+  },
+  "units": {
+    "s⁻¹": "s⁻¹ (par seconde)",
+    "″": "″ (seconde d'arc)"
+  },
+  "names": {
+    "x": {
+      "med_air": "air",
+      "med_water": "eau",
+      "med_silica": "silice fondue",
+      "med_bk7": "N-BK7",
+      "med_f2": "verre F2",
+      "med_linbo3": "LiNbO₃, rayon extraordinaire",
+      "med_gaas": "GaAs",
+      "med_si": "silicium",
+      "imm_air": "air",
+      "imm_water": "eau",
+      "imm_oil": "huile d'immersion",
+      "ng_air": "air",
+      "ng_silica": "silice fondue",
+      "xtal_quartz": "quartz",
+      "xtal_mgf2": "MgF₂ cristallin",
+      "film_mgf2": "MgF₂",
+      "film_sinx": "nitrure de silicium (SiNₓ)",
+      "det_si": "silicium",
+      "det_ingaas": "InGaAs",
+      "sh_gauss": "gaussienne",
+      "sh_sech": "sech²",
+      "gap_si": "Si",
+      "gap_ge": "Ge",
+      "gap_gaas": "GaAs",
+      "gap_inp": "InP",
+      "gap_ingaas": "In₀.₅₃Ga₀.₄₇As",
+      "gap_gan": "GaN",
+      "cell_si": "cellule solaire au silicium",
+      "cell_gaas": "cellule solaire en GaAs",
+      "cell_perov": "cellule solaire à pérovskite",
+      "mode_single": "V < 2,405, donc monomode",
+      "mode_multi": "V ≥ 2,405, donc multimode"
+    },
+    "diff": {}
+  },
+  "guide": [
+    {
+      "id": "how",
+      "h": "Mode d'emploi",
+      "p": [
+        "Choisissez un domaine ou un type de problème, puis lancez les problèmes un par un ou par séries de 5 ou de 10. Avec « Davantage de types manqués », les types que vous avez manqués la dernière fois ou que vous manquez souvent reviennent plus souvent. Cliquez sur le nom d'un type dans la liste des types de problèmes plus bas pour obtenir un problème de ce type.",
+        "Saisissez la réponse sous forme de nombre et choisissez l'unité dans le menu. Les formes 1,23e-5 ; 1,23×10^-5 et 1,23 × 10⁻⁵ sont toutes acceptées. Lorsque l'unité peut être choisie, n'importe laquelle convient (nm ou µm, par exemple), pourvu que le nombre corresponde à l'unité choisie.",
+        "Cliquez sur « Vérifier » pour voir la correction et la résolution détaillée. Si la réponse est fausse, l'exercice indique l'erreur courante que trahit votre résultat (rayon ou diamètre, amplitude ou intensité, θ ou 2θ, 10 ou 20 en décibels, etc.). « Voir la réponse » affiche la résolution détaillée sans que vous ayez à répondre.",
+        "« Copier l'URL de ce problème » donne une URL qui ouvre le même problème avec les mêmes valeurs. L'URL ne contient que le type de problème et une graine, jamais la réponse. Votre historique est enregistré uniquement dans ce navigateur (localStorage) et n'est jamais envoyé à un serveur. Si votre navigateur bloque le stockage, vous pouvez tout de même résoudre les problèmes ; seul l'historique n'est pas conservé."
+      ]
+    },
+    {
+      "id": "tips",
+      "h": "Conseils de résolution",
+      "p": [
+        "Commencez par écrire les données et la grandeur cherchée, avec leurs symboles et leurs unités. Les termes de l'énoncé comme « diamètre du cœur », « angle total » ou « largeur spectrale à mi-hauteur » peuvent différer de la grandeur qui entre dans la formule (rayon a, demi-angle θ, Δλ) : faites la correction dès cette étape.",
+        "Vérifiez à partir d'où chaque angle est mesuré. Dans la loi de Snell-Descartes, l'angle critique et l'angle de Brewster, les angles se mesurent par rapport à la normale à l'interface. Attention aussi à la confusion entre degrés et radians sur la calculatrice.",
+        "Distinguez l'intensité (puissance) de l'amplitude (champ). La réflectance R est le carré du coefficient de réflexion en amplitude r, l'intensité transmise par un polariseur varie en cos²θ, et le dB vaut 10 log₁₀ d'un rapport de puissances.",
+        "Une fois la réponse obtenue, vérifiez son ordre de grandeur. Une surface de verre réfléchit environ 4 %, les photons visibles portent 2 à 3 eV, la fréquence normalisée V d'une fibre monomode à 1550 nm vaut environ 2, et l'écart entre modes longitudinaux d'un laser He-Ne est de quelques centaines de MHz. Si vous vous écartez de ces valeurs d'un facteur 10 ou plus, soupçonnez une conversion d'unités ou une puissance de 10."
+      ]
+    },
+    {
+      "id": "units",
+      "h": "Unités",
+      "p": [
+        "Le menu des unités propose d'autres unités pour la même grandeur (nm et µm, GHz et MHz, mW et µW, ° et rad ou mrad, etc.). Une valeur correcte dans l'unité choisie est jugée juste. S'il n'y a qu'une seule unité, répondez dans cette unité.",
+        "Les proportions peuvent être saisies sous forme décimale (entre 0 et 1) ou en % (0,04 et 4 % sont équivalents). Le dB et le dBm sont des unités logarithmiques : ils ne sont pas convertis en mW ni en simples rapports.",
+        "Les températures peuvent être saisies en K ou en °C. La conversion se fait en ajoutant ou en retranchant 273,15.",
+        "Conversions usuelles : 1 nm = 10⁻⁹ m ; 1 µm = 10⁻⁶ m ; 1 THz = 10¹² Hz ; 1 mrad = 10⁻³ rad ≈ 0,0573° ; 1 eV = 1,602 × 10⁻¹⁹ J ; E[eV] ≈ 1239,84/λ[nm] ; 1 mW = 0 dBm."
+      ]
+    },
+    {
+      "id": "sig",
+      "h": "Chiffres significatifs et correction",
+      "p": [
+        "Les valeurs de chaque problème sont arrondies aux chiffres affichés, et la réponse de référence est calculée à partir de ces valeurs arrondies. Si vous utilisez les valeurs telles qu'elles sont données, l'arrondi ne rendra jamais votre réponse fausse.",
+        "La correction porte sur l'erreur relative. La plupart des types acceptent les réponses à ±1 % près. Les types dont la réponse est un angle (angles de réfraction, critique, de Brewster, de diffraction et d'acceptance) et ceux dont la réponse est un indice de réfraction acceptent ±0,5 %. Les types dont la réponse est en dBm ou en dB utilisent aussi l'erreur relative : pour −16,0 dBm, la tolérance est de ±0,16 dB. La tolérance est indiquée avec chaque problème.",
+        "Il suffit de donner la réponse avec le nombre de chiffres de l'énoncé (en général trois chiffres significatifs). Davantage de chiffres conviennent aussi.",
+        "Si vous êtes juste en dehors de la tolérance (à moins de 5 %), l'exercice affiche « Presque ». La formule est généralement la bonne : vérifiez si vous avez trop arrondi les valeurs intermédiaires ou utilisé une constante (c, h, q, etc.) différente de celle de l'énoncé."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Ma réponse devrait être juste, mais elle est jugée fausse.",
+      "Vérifiez d'abord le menu des unités. Si l'unité choisie ne correspond pas au nombre saisi, même une valeur correcte est jugée fausse (le plus souvent, le message « Il semble y avoir une confusion d'unités » s'affiche). Si l'unité est la bonne et que l'écart est faible, vous avez probablement trop arrondi les valeurs intermédiaires ou utilisé une autre constante. Refaites le calcul avec les valeurs et les constantes de l'énoncé, en gardant au moins quatre chiffres en cours de route."
+    ],
+    [
+      "Comment les valeurs sont-elles choisies ?",
+      "Pour chaque type, nous fixons un intervalle de valeurs que l'on rencontre dans les composants et les expériences réels, et nous y tirons les valeurs à chaque fois. Les indices de réfraction sont les mêmes que dans les exemples du formulaire (données SCHOTT pour N-BK7 et F2, formule de Sellmeier de Malitson pour la silice fondue, formule de Jundt pour LiNbO₃, etc.). Les valeurs qui varient, comme la biréfringence ou la dispersion des fibres, sont choisies dans un intervalle et posées comme hypothèses dans l'énoncé."
+    ],
+    [
+      "Puis-je refaire le même problème, ou donner le même problème à quelqu'un d'autre ?",
+      "Oui. Ouvrez l'URL obtenue avec « Copier l'URL de ce problème » (?t=type&s=graine) : vous obtenez le même problème avec les mêmes valeurs. L'URL ne contient pas la réponse ; vous pouvez donc vous en servir pour vous poser des problèmes entre vous."
+    ],
+    [
+      "Où mon historique est-il enregistré ? Puis-je l'effacer ?",
+      "Uniquement dans le localStorage de ce navigateur ; il n'est jamais envoyé à un serveur ni partagé avec d'autres appareils ou navigateurs. « Effacer l'historique » le supprime. En navigation privée ou dans d'autres modes qui bloquent le stockage, aucun historique n'est conservé, mais vous pouvez résoudre les problèmes normalement."
+    ],
+    [
+      "Qu'apporte l'ouverture du calculateur ?",
+      "Le calculateur s'ouvre avec les mêmes valeurs déjà saisies : vous pouvez vérifier la réponse par une autre voie ou voir ce qui change quand vous modifiez les conditions. Pour un problème de faisceau gaussien, vous voyez le rayon du faisceau à d'autres distances z ; pour un problème de traitement antireflet, la réflectance en dehors de la longueur d'onde de conception. Pour les types sans calculateur, l'exercice propose des liens vers les termes associés et vers le formulaire."
+    ],
+    [
+      "La réponse de mon manuel est légèrement différente.",
+      "Les manuels arrondissent souvent les valeurs intermédiaires ou abrègent les constantes (hc ≈ 1240 eV·nm, c ≈ 3 × 10⁸ m/s, etc.) ; le troisième chiffre peut donc différer. Les réponses de cet exercice sont calculées à partir des valeurs et des constantes de l'énoncé, sans arrondi intermédiaire. Dans les limites de la tolérance, les deux réponses sont jugées justes."
+    ]
+  ],
+  "sources": [
+    {
+      "name": "Indices de réfraction (visible, raie d, 587,6 nm)",
+      "text": "N-BK7 1,5168 et F2 1,6200 (fiches techniques SCHOTT) ; silice fondue 1,4585 (formule de Sellmeier de Malitson, 1965) ; eau 1,333. Ces valeurs concordent avec les exemples de la formule de Sellmeier et de la constringence du formulaire."
+    },
+    {
+      "name": "Indices de réfraction (proche infrarouge, 1550 nm)",
+      "text": "Silice fondue 1,4440 et N-BK7 1,5007 (mêmes formules de Sellmeier) ; Si 3,48 ; LiNbO₃ pour le rayon extraordinaire 2,138 (Jundt, 1997) ; GaAs 3,37 (formule de Skauli et al., 2003). L'indice de groupe de la silice fondue, 1,4626, concorde avec l'exemple d'indice de groupe du formulaire."
+    },
+    {
+      "name": "Indices du LiNbO₃ pour la SHG",
+      "text": "Valeurs de l'onde fondamentale et du second harmonique obtenues avec la formule de Sellmeier du rayon extraordinaire du LiNbO₃ congruent à 24,5 °C, D. H. Jundt, Opt. Lett. 22, 1553 (1997) (par exemple 2,1558/2,2342 à 1064/532 nm)."
+    },
+    {
+      "name": "Constringences et verres",
+      "text": "N-BK7 V_d = 64,17 et F2 V_d = 36,37 (d'après n_d, n_F et n_C des fiches techniques SCHOTT)."
+    },
+    {
+      "name": "Biréfringence du quartz et du MgF₂",
+      "text": "n_e − n_o à chaque longueur d'onde, d'après les formules de Sellmeier de G. Ghosh, Opt. Commun. 163, 95 (1999), pour le quartz et de M. J. Dodge, Appl. Opt. 23, 1980 (1984), pour le MgF₂ (par exemple 0,00904 pour le quartz et 0,01178 pour le MgF₂ à 633 nm)."
+    },
+    {
+      "name": "Constantes physiques",
+      "text": "Valeurs exactes et recommandées du CODATA 2022 (c = 299 792 458 m/s ; h = 6,626 070 15 × 10⁻³⁴ J·s ; q = 1,602 176 634 × 10⁻¹⁹ C ; constante de déplacement de Wien b = 2,897 772 × 10⁻³ m·K ; hc = 1239,84 eV·nm)."
+    },
+    {
+      "name": "Énergies de bande interdite (température ambiante)",
+      "text": "Si 1,12 eV ; Ge 0,66 eV ; GaAs 1,42 eV ; InP 1,34 eV ; In₀.₅₃Ga₀.₄₇As 0,75 eV ; GaN 3,4 eV (valeurs de Sze et Ng, Physics of Semiconductor Devices, 3ᵉ éd., et de sources analogues)."
+    },
+    {
+      "name": "Valeurs des fibres et des liaisons",
+      "text": "Atténuation de la fibre monomode de 0,35 dB/km à 1310 nm et de 0,20 dB/km à 1550 nm, 0,5 dB par connecteur et 0,1 dB par épissure : ce sont les mêmes valeurs que dans l'exemple de bilan de liaison du formulaire (dans la plage de la recommandation UIT-T G.652). La dispersion D est choisie dans un intervalle pour la bande de 1550 nm et posée comme hypothèse."
+    },
+    {
+      "name": "Valeurs supposées",
+      "text": "L'indice des couches de nitrure de silicium, les coefficients d'absorption et d'extinction, l'indice de groupe des lasers à semi-conducteur, les V_oc, J_sc et FF des cellules solaires et le courant d'obscurité des photodiodes sont des valeurs d'entraînement choisies dans des intervalles réalistes pour ces matériaux et composants. Les produits durée-largeur spectrale valent 0,441 pour les impulsions gaussiennes et 0,315 pour les impulsions sech²."
+    }
+  ],
+  "types": {
+    "snell-angle": {
+      "name": "Angle de réfraction (loi de Snell-Descartes)",
+      "short": "Calculez l'angle de réfraction à l'interface entre deux milieux à partir de l'angle d'incidence",
+      "formula": "n₁ sinθ₁ = n₂ sinθ₂",
+      "q": "Une lumière de longueur d'onde {lam} nm passe du milieu 1 ({m1}, n₁ = {n1}) au milieu 2 ({m2}, n₂ = {n2}) sous un angle d'incidence de {t1}° (mesuré par rapport à la normale à l'interface). Calculez l'angle de réfraction θ₂.",
+      "steps": [
+        "D'après la loi de Snell-Descartes n₁ sinθ₁ = n₂ sinθ₂ : sinθ₂ = n₁ sinθ₁/n₂.",
+        "sin{t1}° = {s1} ; donc sinθ₂ = {n1} × {s1}/{n2} = {s}.",
+        "θ₂ = arcsin {s} = {t2}°."
+      ],
+      "mistakes": {
+        "swap": "Vous avez inversé n₁ et n₂ (sinθ₂ = n₂ sinθ₁/n₁). n₁ est l'indice du milieu d'où vient la lumière.",
+        "surf": "Vous avez donné l'angle mesuré par rapport à l'interface (90° − θ₂). Les angles se mesurent par rapport à la normale.",
+        "surfin": "Vous avez traité l'angle d'incidence comme s'il était mesuré par rapport à l'interface (cos au lieu de sin). L'angle donné est mesuré par rapport à la normale."
+      }
+    },
+    "critical-angle": {
+      "name": "Angle critique de réflexion totale",
+      "short": "Calculez l'angle critique pour une lumière qui arrive sur une interface depuis le milieu d'indice le plus élevé, ou l'indice à partir d'un angle critique mesuré",
+      "formula": "sinθ_c = n₂/n₁",
+      "q": {
+        "ang": "Une lumière de longueur d'onde {lam} nm se propage dans le milieu 1 ({m1}, n₁ = {n1}) vers l'interface avec le milieu 2 ({m2}, n₂ = {n2}). Calculez l'angle critique θ_c de réflexion totale.",
+        "n": "Une lumière qui se propage dans un matériau transparent arrive sur une interface plane avec le milieu extérieur ({out}, n₂ = {n2}). La réflexion totale commence pour un angle d'incidence (angle critique) de {tc}°, mesuré par rapport à la normale. Calculez l'indice de réfraction n₁ du matériau."
+      },
+      "steps": {
+        "ang": [
+          "À l'angle critique, l'angle de réfraction vaut 90° : n₁ sinθ_c = n₂ sin90°, donc sinθ_c = n₂/n₁.",
+          "sinθ_c = {n2}/{n1} = {s}.",
+          "θ_c = arcsin {s} = {tc}°."
+        ],
+        "n": [
+          "De sinθ_c = n₂/n₁, on tire n₁ = n₂/sinθ_c.",
+          "sin{tc}° = {s}.",
+          "n₁ = {n2}/{s} = {n1}."
+        ]
+      },
+      "mistakes": {
+        "brew": "Vous avez utilisé tanθ = n₂/n₁, qui donne l'angle de Brewster. L'angle critique vérifie sinθ_c = n₂/n₁.",
+        "comp": "Vous avez donné 90° − θ_c. L'angle critique se mesure lui aussi par rapport à la normale.",
+        "cos": "Vous avez utilisé cos (la forme valable pour un angle mesuré par rapport à l'interface). La condition est sinθ_c = n₂/n₁.",
+        "tan": "Vous avez utilisé tan. La condition est sinθ_c = n₂/n₁.",
+        "inv": "Vous avez calculé n₂ × sinθ_c. Or n₁ = n₂/sinθ_c (la réflexion totale se produit du côté de l'indice le plus élevé)."
+      }
+    },
+    "thin-lens": {
+      "name": "Lentille mince : position de l'image et grandissement",
+      "short": "Calculez la position de l'image ou le grandissement transversal d'une lentille convergente à partir de sa distance focale et de la position de l'objet",
+      "formula": "1/a + 1/b = 1/f ; m = −b/a",
+      "q": {
+        "b": "Un objet est placé à a = {a} mm devant une lentille mince convergente (dans l'air) de distance focale f = {f} mm. Calculez la distance b de la lentille à l'image.",
+        "m": "Un objet est placé à a = {a} mm devant une lentille mince convergente (dans l'air) de distance focale f = {f} mm. Calculez le grandissement transversal m avec son signe (négatif pour une image renversée)."
+      },
+      "steps": {
+        "b": [
+          "D'après la relation de conjugaison 1/a + 1/b = 1/f : 1/b = 1/f − 1/a.",
+          "1/b = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm (positif : image réelle derrière la lentille)."
+        ],
+        "m": [
+          "D'après la relation de conjugaison 1/a + 1/b = 1/f : 1/b = 1/f − 1/a = 1/{f} − 1/{a} = {inv} mm⁻¹.",
+          "b = {b} mm.",
+          "m = −b/a = −{b}/{a} = {m} (négatif : image renversée)."
+        ]
+      },
+      "mistakes": {
+        "plus": "Vous avez utilisé 1/b = 1/f + 1/a. Avec la distance objet a comptée positivement, la relation est 1/a + 1/b = 1/f.",
+        "inv": "Vous avez utilisé m = −a/b. Le grandissement transversal est taille de l'image/taille de l'objet = −b/a.",
+        "nosign": "La valeur absolue est juste, mais pas le signe. L'image réelle donnée par une lentille convergente est renversée, donc m est négatif."
+      }
+    },
+    "two-lens": {
+      "name": "Deux lentilles écartées : focale équivalente",
+      "short": "Calculez la focale équivalente et le tirage (BFD) de deux lentilles minces séparées par un intervalle",
+      "formula": "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) ; BFD = f(1 − d/f₁)",
+      "q": {
+        "f": "Deux lentilles minces de distances focales f₁ = {f1} mm et f₂ = {f2} mm sont placées sur le même axe, à d = {d} mm l'une de l'autre (dans l'air). Calculez la focale équivalente f.",
+        "bfd": "Deux lentilles minces de distances focales f₁ = {f1} mm et f₂ = {f2} mm sont placées sur le même axe, à d = {d} mm l'une de l'autre (dans l'air ; la lumière entre par la lentille 1). Calculez la distance de la lentille 2 au foyer image (tirage)."
+      },
+      "steps": {
+        "f": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂).",
+          "1/f = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm."
+        ],
+        "bfd": [
+          "1/f = 1/f₁ + 1/f₂ − d/(f₁f₂) = {p1} + {p2} − {pd} = {P} mm⁻¹.",
+          "f = {f} mm.",
+          "BFD = f(1 − d/f₁) = {f} × (1 − {d}/{f1}) = {bfd} mm."
+        ]
+      },
+      "mistakes": {
+        "nod": "Vous avez omis le terme d'écartement (c'est la formule des lentilles accolées, 1/f = 1/f₁ + 1/f₂).",
+        "plus": "Vous avez ajouté le terme d/(f₁f₂). Écarter deux lentilles convergentes diminue la vergence de l'ensemble : ce terme se soustrait.",
+        "f": "Vous avez donné la focale équivalente f. Le tirage est la position du foyer mesurée depuis la lentille 2 : f(1 − d/f₁).",
+        "f2": "Vous avez utilisé f(1 − d/f₂). Le tirage fait intervenir f₁, la distance focale de la lentille que la lumière traverse en premier : f(1 − d/f₁)."
+      }
+    },
+    "na-fnumber": {
+      "name": "Ouverture numérique et nombre d'ouverture",
+      "short": "Calculez l'ouverture numérique (NA) d'un objectif, ou le nombre d'ouverture et l'ouverture numérique côté image à partir de la distance focale et du diamètre d'ouverture",
+      "formula": "NA = n sinθ ; N = f/D ; NA ≈ 1/(2N)",
+      "q": {
+        "na": "Un objectif est utilisé dans un milieu d'indice n = {n} ({im}). Côté objet, le demi-angle du rayon marginal vaut θ = {th}°. Calculez son ouverture numérique NA.",
+        "fn": "Une lentille de distance focale f = {f} mm, dont la pupille d'entrée a un diamètre D = {D} mm, forme l'image d'un objet à l'infini. À partir du nombre d'ouverture N = f/D, calculez l'ouverture numérique côté image avec NA ≈ 1/(2N) (on suppose que la lentille satisfait la condition des sinus)."
+      },
+      "steps": {
+        "na": [
+          "NA = n sinθ.",
+          "sin{th}° = {s}.",
+          "NA = {n} × {s} = {na}."
+        ],
+        "fn": [
+          "N = f/D = {f}/{D} = {N}.",
+          "NA ≈ 1/(2N) = 1/(2 × {N}) = {na}."
+        ]
+      },
+      "mistakes": {
+        "non": "Vous avez oublié l'indice de réfraction n du milieu (NA = n sinθ). Avec un objectif à immersion, NA peut dépasser 1.",
+        "tan": "Vous avez utilisé tanθ. L'ouverture numérique vaut n sinθ.",
+        "n1": "Vous avez donné 1/N. La hauteur du rayon marginal vaut D/2, donc NA ≈ 1/(2N).",
+        "atan": "Vous avez pris le sinus de θ = arctan(D/(2f)). Pour une lentille qui satisfait la condition des sinus, la hauteur du rayon marginal vaut f sinθ, donc sinθ = D/(2f).",
+        "nval": "Vous avez donné le nombre d'ouverture N. La question porte sur NA ≈ 1/(2N)."
+      }
+    },
+    "young-fringe": {
+      "name": "Interfrange des fentes d'Young",
+      "short": "Calculez l'interfrange d'une double fente, ou la longueur d'onde à partir d'un interfrange mesuré",
+      "formula": "Δy = λL/d",
+      "q": {
+        "dy": "Dans l'expérience des fentes d'Young, les fentes sont distantes de d = {d} mm et l'écran est à L = {L} m. On utilise une lumière de longueur d'onde {lam} nm. Calculez l'interfrange Δy, distance entre deux franges brillantes voisines sur l'écran.",
+        "lam": "Deux fentes distantes de d = {d} mm éclairent un écran situé à L = {L} m. Entre une frange brillante et la {N}ᵉ frange brillante suivante, la distance (égale à {N} fois l'interfrange) est de {s} mm. Calculez la longueur d'onde de la lumière."
+      },
+      "steps": {
+        "dy": [
+          "Pour L ≫ d, l'interfrange (distance entre franges brillantes voisines) vaut Δy = λL/d.",
+          "λ = {lm} m ; d = {dm} m.",
+          "Δy = ({lm}) × {L}/({dm}) m = {dy} mm."
+        ],
+        "lam": [
+          "Interfrange Δy = {s}/{N} = {dy} mm.",
+          "De Δy = λL/d, on tire λ = Δy·d/L.",
+          "λ = {dy} mm × {d} mm/{L} m = {lam} nm."
+        ]
+      },
+      "mistakes": {
+        "half": "Un facteur 2 s'est glissé dans votre calcul (Δy = λL/(2d) ou 2λL/d). L'interfrange vaut Δy = λL/d, sans facteur 2.",
+        "dbl": "Vous avez multiplié par 2. La différence de marche varie de λ d'une frange brillante à la suivante, donc Δy = λL/d.",
+        "non": "Vous n'avez pas divisé par {N}. La distance de {s} mm vaut {N} fois l'interfrange.",
+        "n1": "Vous avez divisé par {N} − 1. Entre une frange brillante et la {N}ᵉ frange brillante suivante, la distance vaut {N} fois l'interfrange."
+      }
+    },
+    "airy-spot": {
+      "name": "Limite de diffraction (tache d'Airy et critère de Rayleigh)",
+      "short": "Calculez la résolution angulaire d'un télescope, le rayon de la tache d'Airy d'un faisceau focalisé ou la résolution d'un microscope",
+      "formula": "θ_R = 1,22λ/D ; r = 1,22λN ; δ = 0,61λ/NA",
+      "q": {
+        "ang": "Un télescope de diamètre d'ouverture D = {D} mm observe une lumière de longueur d'onde {lam} nm. Calculez le plus petit angle θ_R entre deux sources ponctuelles séparables selon le critère de Rayleigh.",
+        "spot": "Une lentille sans aberrations, de nombre d'ouverture N = {N}, focalise un faisceau collimaté de longueur d'onde {lam} nm. Calculez le rayon de la tache d'Airy dans le plan focal (du centre au premier anneau sombre).",
+        "res": "Un objectif de microscope d'ouverture numérique NA = {na} est utilisé avec une lumière de longueur d'onde {lam} nm. Calculez la résolution selon le critère de Rayleigh (plus petite distance entre deux points séparables)."
+      },
+      "steps": {
+        "ang": [
+          "Pour la diffraction par une ouverture circulaire, le premier anneau sombre se trouve à sinθ_R = 1,22λ/D (θ_R ≈ 1,22λ/D pour les petits angles).",
+          "λ/D = {x} rad.",
+          "θ_R = 1,22 × {x} rad = {th} µrad (= {as}″)."
+        ],
+        "spot": [
+          "Le rayon de la tache d'Airy dans le plan focal vaut r = 1,22λf/D = 1,22λN.",
+          "r = 1,22 × {lam} nm × {N} = {r} µm."
+        ],
+        "res": [
+          "Critère de Rayleigh : le centre d'une image tombe sur le premier anneau sombre de l'autre, soit δ = 0,61λ/NA.",
+          "δ = 0,61 × {lam}/{na} = {d} nm."
+        ]
+      },
+      "mistakes": {
+        "no122": "Vous avez omis le facteur 1,22. Pour une ouverture circulaire, le premier anneau sombre se trouve à 1,22λ/D (1,22 est le premier zéro de la fonction de Bessel J₁, 3,832, divisé par π).",
+        "diam": "Vous avez donné le diamètre du premier anneau sombre. La question porte sur la distance du centre au premier anneau sombre.",
+        "abbe": "Vous avez donné la limite d'Abbe λ/(2NA). Le critère de Rayleigh donne 0,61λ/NA.",
+        "no061": "Vous avez omis le facteur 0,61 (δ = 0,61λ/NA)."
+      }
+    },
+    "grating-angle": {
+      "name": "Réseau de diffraction : angle et pouvoir de résolution",
+      "short": "Calculez l'angle de diffraction en incidence normale sur un réseau, ou le plus petit écart de longueur d'onde qu'il permet de séparer",
+      "formula": "d sinβ = mλ ; λ/δλ = mN",
+      "q": {
+        "beta": "Une lumière de longueur d'onde {lam} nm arrive en incidence normale sur un réseau de {G} traits par mm. Calculez l'angle de diffraction β de l'ordre m = {m} (mesuré par rapport à la normale au réseau).",
+        "dl": "Un réseau de {G} traits par mm est éclairé sur toute sa largeur de {W} mm par une lumière voisine de {lam} nm. Calculez le plus petit écart de longueur d'onde δλ que le réseau peut séparer dans l'ordre m = {m}."
+      },
+      "steps": {
+        "beta": [
+          "Pas du réseau d = 1 mm/{G} = {d} nm.",
+          "En incidence normale, d sinβ = mλ, donc sinβ = mλ/d = {m} × {lam}/{d} = {s}.",
+          "β = arcsin {s} = {b}°."
+        ],
+        "dl": [
+          "Nombre de traits éclairés N = {G} × {W} = {N}.",
+          "Pouvoir de résolution λ/δλ = mN = {m} × {N} = {R}.",
+          "δλ = λ/(mN) = {lam} nm/{R} = {dl} pm."
+        ]
+      },
+      "mistakes": {
+        "m1": "C'est la valeur à l'ordre 1. La question porte sur l'ordre m = {m} (sinβ = mλ/d ; λ/δλ = mN).",
+        "tan": "Vous avez utilisé tanβ = mλ/d. La formule des réseaux est d sinβ = mλ.",
+        "nw": "Vous avez pris pour N le nombre de traits par mm, {G}. Multipliez-le par la largeur éclairée : N = {G} × {W}."
+      }
+    },
+    "fsr-finesse": {
+      "name": "Fabry-Pérot : ISL, finesse et largeur de raie",
+      "short": "Calculez l'intervalle spectral libre d'un étalon, la finesse à partir de la réflectance des miroirs ou la largeur de raie d'un pic de transmission",
+      "formula": "Δν_FSR = c/(2n_g L) ; 𝓕 = π√R/(1 − R) ; δν = Δν_FSR/𝓕",
+      "q": {
+        "fsr": "Un étalon de Fabry-Pérot (milieu entre les miroirs : {med} ; indice de groupe n_g = {ng}) a des miroirs espacés de L = {L} mm. Calculez l'intervalle spectral libre Δν_FSR en fréquence (c = {c} m/s ; incidence normale).",
+        "fin": "Les deux miroirs d'une cavité de Fabry-Pérot ont une réflectance R = {R} (sans pertes par absorption ni par diffusion). Calculez la finesse 𝓕.",
+        "lw": "Un étalon de Fabry-Pérot (milieu entre les miroirs : {med} ; indice de groupe n_g = {ng}) a des miroirs espacés de L = {L} mm, de réflectance R = {R}. Calculez la largeur totale à mi-hauteur δν d'un pic de transmission (c = {c} m/s ; incidence normale, sans pertes)."
+      },
+      "steps": {
+        "fsr": [
+          "Δν_FSR = c/(2n_g L).",
+          "Δν_FSR = {c}/(2 × {ng} × {L} × 10⁻³) Hz = {fsr} GHz."
+        ],
+        "fin": [
+          "𝓕 = π√R/(1 − R).",
+          "√R = {sq}.",
+          "𝓕 = π × {sq}/(1 − {R}) = {F}."
+        ],
+        "lw": [
+          "Δν_FSR = c/(2n_g L) = {fsr} GHz.",
+          "𝓕 = π√R/(1 − R) = π × {sq}/(1 − {R}) = {F}.",
+          "δν = Δν_FSR/𝓕 = {fsr} GHz/{F} = {lw} MHz."
+        ]
+      },
+      "mistakes": {
+        "no2": "Le facteur 2 manque (ou il est compté deux fois). La lumière fait un aller-retour entre les miroirs, donc Δν_FSR = c/(2n_g L).",
+        "non": "Vous avez oublié l'indice de groupe n_g (sauf pour une lame d'air, le chemin optique est n_g fois plus long).",
+        "coef": "Vous avez donné le coefficient F = 4R/(1 − R)². La finesse 𝓕 = π√R/(1 − R) est une autre grandeur (𝓕 = (π/2)√F).",
+        "nosq": "Vous avez utilisé R au lieu de √R (𝓕 = π√R/(1 − R)).",
+        "nopi": "Vous avez oublié π (𝓕 = π√R/(1 − R)).",
+        "mult": "Vous avez multiplié Δν_FSR par 𝓕. La largeur de raie est Δν_FSR divisé par 𝓕 (plus la finesse est élevée, plus les pics sont fins).",
+        "fsr": "Vous avez donné l'intervalle spectral libre. La largeur de raie vaut δν = Δν_FSR/𝓕."
+      }
+    },
+    "coherence-length": {
+      "name": "Longueur de cohérence",
+      "short": "Estimez la longueur de cohérence d'une source à partir de sa largeur spectrale (en longueur d'onde ou en fréquence)",
+      "formula": "l_c ≈ λ²/Δλ ; l_c ≈ c/Δν",
+      "q": {
+        "lam": "Une source à large bande (une diode superluminescente SLD, par exemple) a une longueur d'onde centrale de {lam} nm et une largeur spectrale à mi-hauteur Δλ = {dl} nm. Calculez sa longueur de cohérence avec l_c ≈ λ²/Δλ.",
+        "nu": "Un laser a une largeur de raie Δν = {dnu} MHz. Calculez sa longueur de cohérence avec l_c ≈ c/Δν (c = {c} m/s)."
+      },
+      "steps": {
+        "lam": [
+          "l_c ≈ λ²/Δλ.",
+          "λ² = {sq} nm².",
+          "l_c = {sq}/{dl} nm = {lc} µm."
+        ],
+        "nu": [
+          "l_c ≈ c/Δν.",
+          "Δν = {nu} Hz.",
+          "l_c = {c}/({nu}) m = {lc} m."
+        ]
+      },
+      "mistakes": {
+        "half": "Vous avez divisé par 2. Dans un interféromètre où la lumière fait un aller-retour, le miroir se déplace de l_c/2, mais la longueur de cohérence elle-même vaut λ²/Δλ (c/Δν).",
+        "oct": "Vous avez donné (2 ln2/π)λ²/Δλ, la résolution axiale de l'OCT pour un spectre gaussien. Cette question utilise l_c ≈ λ²/Δλ.",
+        "pi": "Vous avez donné c/(πΔν), une autre définition employée pour une raie lorentzienne. Cette question utilise l_c ≈ c/Δν."
+      }
+    },
+    "brewster": {
+      "name": "Angle de Brewster",
+      "short": "Calculez, à partir des indices des deux milieux, l'angle d'incidence pour lequel la lumière polarisée p n'est pas réfléchie",
+      "formula": "tanθ_B = n₂/n₁",
+      "q": "Une lumière de longueur d'onde {lam} nm se propage dans le milieu 1 ({m1}, n₁ = {n1}) et arrive sur une interface plane avec le milieu 2 ({m2}, n₂ = {n2}). Calculez l'angle d'incidence θ_B pour lequel la réflectance en polarisation p est nulle (angle de Brewster).",
+      "steps": [
+        "tanθ_B = n₂/n₁ = {n2}/{n1} = {x}.",
+        "θ_B = arctan {x} = {tb}°.",
+        "L'angle de réfraction vaut alors 90° − θ_B = {tt}° : les rayons réfléchi et réfracté sont perpendiculaires."
+      ],
+      "mistakes": {
+        "inv": "Vous avez utilisé n₁/n₂. La relation est tanθ_B = n₂/n₁, où n₁ est l'indice du milieu d'où vient la lumière.",
+        "crit": "Vous avez utilisé sinθ = (indice le plus faible)/(indice le plus élevé), qui donne l'angle critique. L'angle de Brewster vérifie tanθ_B = n₂/n₁."
+      }
+    },
+    "fresnel-normal": {
+      "name": "Réflectance en incidence normale (Fresnel)",
+      "short": "Calculez la réflectance d'une surface en incidence normale, la transmission à travers une lame ou l'indice à partir d'une réflectance mesurée",
+      "formula": "R = ((n₁ − n₂)/(n₁ + n₂))²",
+      "q": {
+        "r": "Une lumière de longueur d'onde {lam} nm se propage dans le milieu 1 ({m1}, n₁ = {n1}) et arrive en incidence normale sur la surface plane du milieu 2 ({m2}, n₂ = {n2}). Calculez la réflectance en intensité R.",
+        "t2": "Une lumière de longueur d'onde {lam} nm arrive en incidence normale sur une lame à faces parallèles placée dans l'air (matériau : {m2} ; n = {n2}). En ne tenant compte que des réflexions sur les deux faces (réflexions multiples dans la lame et absorption négligées), calculez la fraction de la lumière qui traverse la lame.",
+        "n": "Une lumière arrive en incidence normale, dans l'air, sur la surface plane d'un matériau non absorbant, et la réflectance en intensité vaut {R} %. Calculez l'indice de réfraction n du matériau."
+      },
+      "steps": {
+        "r": [
+          "Coefficient de réflexion en amplitude en incidence normale : r = (n₁ − n₂)/(n₁ + n₂) = {r}.",
+          "R = r² = {R} = {Rp} %."
+        ],
+        "t2": [
+          "Réflectance d'une face : R = ((n − 1)/(n + 1))² = {Rp} %.",
+          "Fraction transmise par une face : 1 − R = {T1}.",
+          "À travers les deux faces : (1 − R)² = {T2} = {T2p} %."
+        ],
+        "n": [
+          "De R = ((n − 1)/(n + 1))², on tire √R = (n − 1)/(n + 1).",
+          "√R = √({R} × 10⁻²) = {s}.",
+          "n = (1 + √R)/(1 − √R) = {n}."
+        ]
+      },
+      "mistakes": {
+        "amp": "Vous avez donné le coefficient en amplitude |r|. La réflectance en intensité est son carré, R = r².",
+        "trans": "Vous avez donné la transmittance 1 − R. La question porte sur la réflectance.",
+        "one": "C'est 1 − R pour une seule face. La lame a deux faces.",
+        "mult": "C'est (1 − R)/(1 + R), qui inclut les réflexions multiples dans la lame. Cette question les néglige : (1 − R)².",
+        "r": "Vous avez donné la réflectance R d'une face. La question porte sur la fraction qui traverse la lame.",
+        "nosqrt": "Vous avez utilisé (1 + R)/(1 − R) sans la racine carrée. √R = (n − 1)/(n + 1).",
+        "inv": "Vous avez utilisé (1 − √R)/(1 + √R). L'indice est la valeur supérieure à 1, (1 + √R)/(1 − √R)."
+      }
+    },
+    "malus": {
+      "name": "Loi de Malus (lumière à travers des polariseurs)",
+      "short": "Calculez la puissance d'une lumière polarisée rectilignement ou non polarisée après un ou plusieurs polariseurs",
+      "formula": "I = I₀ cos²θ",
+      "q": {
+        "pol": "Une lumière polarisée rectilignement de puissance {I0} mW traverse un polariseur idéal dont l'axe de transmission fait un angle θ = {th}° avec la direction de polarisation. Calculez la puissance transmise.",
+        "unpol": "Une lumière non polarisée de puissance {I0} mW traverse deux polariseurs idéaux dont les axes de transmission font entre eux un angle de {th}°. Calculez la puissance après le second polariseur.",
+        "three": "Une lumière non polarisée de puissance {I0} mW traverse successivement trois polariseurs idéaux dont les axes de transmission sont à 0°, {th}° et 90°. Calculez la puissance après le troisième polariseur."
+      },
+      "steps": {
+        "pol": [
+          "Loi de Malus : I = I₀ cos²θ.",
+          "cos{th}° = {c} ; cos²{th}° = {c2}.",
+          "I = {I0} × {c2} = {I} mW."
+        ],
+        "unpol": [
+          "Le premier polariseur transmet la moitié d'une lumière non polarisée : {I0}/2 = {h} mW.",
+          "Loi de Malus au second polariseur : cos²{th}° = {c2}.",
+          "I = {h} × {c2} = {I} mW."
+        ],
+        "three": [
+          "La moitié de la lumière traverse le premier polariseur : {h} mW.",
+          "Deuxième polariseur ({th}° par rapport au premier) : on multiplie par cos²{th}° = {c2} et on obtient {I2} mW.",
+          "Troisième polariseur ({th3}° par rapport au deuxième) : on multiplie par cos²{th3}° = sin²{th}° = {s2} et on obtient {I} mW."
+        ]
+      },
+      "mistakes": {
+        "nosq": "Vous n'avez pas élevé cosθ au carré. L'amplitude du champ est multipliée par cosθ, l'intensité par cos²θ.",
+        "sin": "Vous avez utilisé sin²θ. θ est l'angle entre la polarisation et l'axe de transmission, et la fraction transmise vaut cos²θ.",
+        "nohalf": "Vous avez oublié que le premier polariseur ne transmet que la moitié d'une lumière non polarisée.",
+        "one": "C'est la puissance après le deuxième polariseur. Le troisième fait un angle de {th3}° avec le deuxième : multipliez encore par cos²{th3}°.",
+        "zero": "La puissance serait nulle avec les seuls polariseurs à 0° et à 90°. Avec le polariseur à {th}° placé entre les deux, la lumière passe."
+      }
+    },
+    "waveplate": {
+      "name": "Épaisseur et retard d'une lame d'onde",
+      "short": "Calculez l'épaisseur d'une lame quart d'onde ou demi-onde d'ordre zéro, ou le retard d'une lame biréfringente en nombre de longueurs d'onde",
+      "formula": "Γ = 2π(n_e − n_o)d/λ ; (n_e − n_o)d = λ/4",
+      "q": {
+        "qwp": "Une lame quart d'onde (λ/4) d'ordre zéro pour {lam} nm est réalisée en {x} (on prend n_e − n_o = {dn} à {lam} nm). Calculez l'épaisseur d de la lame.",
+        "hwp": "Une lame demi-onde (λ/2) d'ordre zéro pour {lam} nm est réalisée en {x} (on prend n_e − n_o = {dn} à {lam} nm). Calculez l'épaisseur d de la lame.",
+        "ret": "Une lame en {x} (on prend n_e − n_o = {dn} à {lam} nm), d'épaisseur {d} mm et dont l'axe optique est dans le plan de la lame, est utilisée en incidence normale. Calculez son retard à {lam} nm en nombre de longueurs d'onde (Γ/2π)."
+      },
+      "steps": {
+        "qwp": [
+          "Pour une lame quart d'onde, la différence de chemin optique (n_e − n_o)d entre les deux polarisations vaut λ/4.",
+          "d = λ/(4(n_e − n_o)) = {lam} nm/(4 × {dn}) = {d} µm."
+        ],
+        "hwp": [
+          "Pour une lame demi-onde, la différence de chemin optique (n_e − n_o)d vaut λ/2.",
+          "d = λ/(2(n_e − n_o)) = {lam} nm/(2 × {dn}) = {d} µm."
+        ],
+        "ret": [
+          "Différence de chemin optique (n_e − n_o)d = {dn} × {d} mm = {od} nm.",
+          "Γ/2π = (n_e − n_o)d/λ = {od}/{lam} = {w} (Γ = {G} rad)."
+        ]
+      },
+      "mistakes": {
+        "half": "λ/(2Δn) est l'épaisseur d'une lame demi-onde. Celle d'une lame quart d'onde vaut λ/(4Δn).",
+        "quarter": "λ/(4Δn) est l'épaisseur d'une lame quart d'onde. Celle d'une lame demi-onde vaut λ/(2Δn).",
+        "full": "C'est λ/Δn, l'épaisseur correspondant à une longueur d'onde entière (retard de 2π).",
+        "nodn": "Vous n'avez pas divisé par la biréfringence n_e − n_o. λ/4 et λ/2 sont des différences de chemin optique ; l'épaisseur s'obtient en les divisant par n_e − n_o.",
+        "rad": "Vous avez donné le retard en radians (Γ = 2π × {w}). La question le demande en nombre de longueurs d'onde (Γ/2π).",
+        "inv": "Vous avez pris l'inverse : λ/((n_e − n_o)d)."
+      }
+    },
+    "ar-coat": {
+      "name": "Traitement antireflet quart d'onde : épaisseur, indice et réflectance",
+      "short": "Calculez l'épaisseur physique d'un traitement antireflet monocouche quart d'onde, l'indice idéal de la couche ou la réflectance à la longueur d'onde de conception",
+      "formula": "d = λ₀/(4n₁) ; n₁ = √(n₀nₛ) ; R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²",
+      "q": {
+        "d": "Un traitement antireflet monocouche (couche : {film} ; n₁ = {n1}) est déposé sur un substrat ({s} ; nₛ = {ns}) sous forme de couche quart d'onde pour la longueur d'onde de conception λ₀ = {lam0} nm. Calculez l'épaisseur physique d de la couche (dans l'air, incidence normale).",
+        "n": "Un traitement antireflet monocouche quart d'onde, destiné à être utilisé dans l'air (n₀ = 1), est déposé sur un substrat ({s} ; nₛ = {ns} à {lam0} nm). Calculez l'indice idéal n₁ de la couche, qui annule la réflectance à la longueur d'onde de conception.",
+        "r": "Une couche quart d'onde ({film} ; n₁ = {n1} ; longueur d'onde de conception {lam0} nm) est déposée sur un substrat ({s} ; nₛ = {ns}). Calculez la réflectance de la surface à la longueur d'onde de conception, en incidence normale (dans l'air, n₀ = 1)."
+      },
+      "steps": {
+        "d": [
+          "On rend l'épaisseur optique n₁d égale à λ₀/4 : n₁d = {lam0}/4 = {opt} nm.",
+          "d = λ₀/(4n₁) = {lam0}/(4 × {n1}) = {d} nm."
+        ],
+        "n": [
+          "Les deux réflexions ont la même amplitude lorsque n₁ = √(n₀nₛ).",
+          "n₁ = √(1 × {ns}) = {n}."
+        ],
+        "r": [
+          "Réflectance d'une couche quart d'onde à la longueur d'onde de conception : R = ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))².",
+          "n₁² = {n12} ; en amplitude, ({ns} − {n12})/({ns} + {n12}) = {r}.",
+          "R = {Rp} % ({R0p} % sans traitement)."
+        ]
+      },
+      "mistakes": {
+        "nodiv": "λ₀/4 est l'épaisseur optique. Dans la couche, la longueur d'onde se réduit à λ₀/n₁ : l'épaisseur physique vaut donc λ₀/(4n₁).",
+        "half": "λ₀/(2n₁) correspond à une couche demi-onde. À la longueur d'onde de conception, une couche demi-onde réfléchit comme s'il n'y avait pas de traitement.",
+        "ns": "Vous avez divisé par l'indice du substrat. L'épaisseur dépend de l'indice de la couche n₁ (d = λ₀/(4n₁)).",
+        "mean": "Vous avez pris la moyenne arithmétique de n₀ et nₛ. L'indice idéal est la moyenne géométrique √(n₀nₛ).",
+        "nosqrt": "Vous n'avez pas pris la racine carrée (n₁ = √(n₀nₛ)).",
+        "bare": "C'est la réflectance sans traitement, ((nₛ − 1)/(nₛ + 1))².",
+        "amp": "Vous avez donné le coefficient en amplitude. La réflectance en intensité est son carré.",
+        "simple": "C'est ((nₛ − n₁)/(nₛ + n₁))², pour la seule interface couche-substrat. Une couche quart d'onde combine les deux réflexions : ((n₀nₛ − n₁²)/(n₀nₛ + n₁²))²."
+      }
+    },
+    "achromat": {
+      "name": "Doublet achromatique : distances focales des deux lentilles",
+      "short": "Calculez la distance focale de chaque lentille d'un doublet achromatique collé crown-flint",
+      "formula": "φ₁/V₁ + φ₂/V₂ = 0 ; φ₁ = φV₁/(V₁ − V₂) ; φ₂ = −φV₂/(V₁ − V₂)",
+      "q": {
+        "f1": "Une lentille convergente en N-BK7 (constringence V₁ = {V1}) et une lentille divergente en F2 (V₂ = {V2}) sont collées pour former un doublet achromatique (foyers des raies C et F confondus) de focale équivalente f = {f} mm. Calculez la distance focale f₁ de la lentille en N-BK7.",
+        "f2": "Une lentille convergente en N-BK7 (constringence V₁ = {V1}) et une lentille divergente en F2 (V₂ = {V2}) sont collées pour former un doublet achromatique (foyers des raies C et F confondus) de focale équivalente f = {f} mm. Calculez la distance focale f₂ de la lentille en F2, avec son signe."
+      },
+      "steps": {
+        "f1": [
+          "De la condition d'achromatisme φ₁/V₁ + φ₂/V₂ = 0 et de φ₁ + φ₂ = φ, on tire φ₁ = φV₁/(V₁ − V₂).",
+          "V₁ − V₂ = {dV} ; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₁ = 1/φ₁ = f(V₁ − V₂)/V₁ = {f1} mm."
+        ],
+        "f2": [
+          "De la condition d'achromatisme φ₁/V₁ + φ₂/V₂ = 0 et de φ₁ + φ₂ = φ, on tire φ₂ = −φV₂/(V₁ − V₂).",
+          "V₁ − V₂ = {dV} ; φ = 1/{f} = {phi} mm⁻¹.",
+          "f₂ = 1/φ₂ = −f(V₁ − V₂)/V₂ = {f2} mm (lentille divergente)."
+        ]
+      },
+      "mistakes": {
+        "swap": "Vous avez inversé V₁ et V₂.",
+        "inv": "Vous avez confondu la vergence φ et la distance focale f = 1/φ (de φ₁ = φV₁/(V₁ − V₂), on tire f₁ = f(V₁ − V₂)/V₁)."
+      }
+    },
+    "absorption": {
+      "name": "Coefficient d'absorption et transmittance (loi de Beer-Lambert)",
+      "short": "Calculez la transmittance interne à partir de α et de l'épaisseur, la profondeur de pénétration à 1/e, ou α à partir du coefficient d'extinction",
+      "formula": "I = I₀e^(−αz) ; α = 4πκ/λ",
+      "q": {
+        "trans": "Une lame d'un matériau de coefficient d'absorption α = {a} cm⁻¹ a une épaisseur de {z} mm. Calculez sa transmittance interne I/I₀ (réflexions sur les faces exclues).",
+        "depth": "Dans un matériau de coefficient d'absorption α = {a} cm⁻¹, calculez la profondeur à laquelle l'intensité tombe à 1/e (environ 37 %) de sa valeur incidente.",
+        "kappa": "Un matériau a un coefficient d'extinction (partie imaginaire de l'indice complexe) κ = {kap}. Calculez le coefficient d'absorption en intensité α à {lam} nm."
+      },
+      "steps": {
+        "trans": [
+          "I/I₀ = e^(−αz) ; z = {zc} cm.",
+          "αz = {a} × {zc} = {x}.",
+          "I/I₀ = e^(−{x}) = {T} %."
+        ],
+        "depth": [
+          "e^(−αz) = 1/e pour z = 1/α.",
+          "1/α = {dc} cm = {dp} µm."
+        ],
+        "kappa": [
+          "Coefficient d'absorption en intensité : α = 4πκ/λ.",
+          "λ = {lc} cm.",
+          "α = 4π × ({kap})/({lc}) = {a} cm⁻¹."
+        ]
+      },
+      "mistakes": {
+        "log10": "Vous avez utilisé 10^(−αz). Dans la loi de Beer-Lambert, α s'emploie avec l'exponentielle naturelle e^(−αz) (la base 10 sert pour l'absorbance).",
+        "cm": "Vous avez multiplié α en cm⁻¹ par l'épaisseur en mm. Convertissez d'abord z en cm (1 mm = 0,1 cm).",
+        "lin": "Vous avez utilisé l'approximation 1 − αz. Ici, αz n'est pas petit : utilisez e^(−αz).",
+        "ln2": "C'est ln2/α, la profondeur où l'intensité est divisée par deux. Elle tombe à 1/e à la profondeur 1/α.",
+        "amp": "C'est 2/α, la profondeur où l'amplitude du champ tombe à 1/e. L'intensité est le carré de l'amplitude : la réponse est 1/α.",
+        "pi2": "2πκ/λ est le coefficient d'atténuation de l'amplitude. Le coefficient en intensité vaut le double, 4πκ/λ.",
+        "nopi": "Vous avez oublié π (α = 4πκ/λ)."
+      }
+    },
+    "gauss-beam": {
+      "name": "Faisceau gaussien : zR, w(z) et divergence",
+      "short": "À partir du rayon au col et de M², calculez la longueur de Rayleigh, le rayon du faisceau à une distance z ou la divergence en champ lointain",
+      "formula": "z_R = πw₀²/(M²λ) ; w(z) = w₀√(1 + (z/z_R)²) ; θ = M²λ/(πw₀)",
+      "q": {
+        "zr": "Un faisceau laser (dans l'air) a une longueur d'onde de {lam} nm, un rayon au col w₀ = {w0} µm (à 1/e²) et M² = {m2}. Calculez la longueur de Rayleigh z_R.",
+        "wz": "Un faisceau laser (dans l'air) a une longueur d'onde de {lam} nm, un rayon au col w₀ = {w0} µm (à 1/e²) et M² = {m2}. Calculez le rayon du faisceau w(z) à z = {z} mm du col.",
+        "div": "Un faisceau laser (dans l'air) a une longueur d'onde de {lam} nm, un rayon au col w₀ = {w0} µm (à 1/e²) et M² = {m2}. Calculez le demi-angle de divergence θ en champ lointain."
+      },
+      "steps": {
+        "zr": [
+          "z_R = πw₀²/(M²λ).",
+          "z_R = π × ({w0} µm)²/({m2} × {lam} nm) = {zr} mm."
+        ],
+        "wz": [
+          "z_R = πw₀²/(M²λ) = {zr} mm.",
+          "z/z_R = {z}/{zr} = {x} ; (z/z_R)² = {x2}.",
+          "w(z) = w₀√(1 + (z/z_R)²) = {w0} × √(1 + {x2}) = {w} µm."
+        ],
+        "div": [
+          "θ = M²λ/(πw₀).",
+          "θ = {m2} × {lam} nm/(π × {w0} µm) = {th} mrad."
+        ]
+      },
+      "mistakes": {
+        "diam": "Vous avez pris le diamètre pour w₀. w₀ est le rayon (jusqu'au point où l'intensité vaut 1/e² de sa valeur au centre).",
+        "nopi": "Vous avez oublié π (z_R = πw₀²/(M²λ) ; θ = M²λ/(πw₀)).",
+        "m2": "M² est appliqué dans le mauvais sens. Un M² plus grand raccourcit z_R (facteur 1/M²) et augmente θ (facteur M²).",
+        "full": "Vous avez donné l'angle total 2θ. La question porte sur le demi-angle.",
+        "nosqrt": "Vous avez oublié la racine carrée (w = w₀√(1 + (z/z_R)²)).",
+        "far": "Vous avez utilisé l'approximation de champ lointain w ≈ w₀z/z_R (= θz). À moins de quelques z_R du col, utilisez √(1 + (z/z_R)²).",
+        "lin": "Vous avez utilisé w₀(1 + z/z_R). La bonne expression est w₀√(1 + (z/z_R)²)."
+      }
+    },
+    "long-modes": {
+      "name": "Écart entre modes longitudinaux",
+      "short": "Calculez l'écart en fréquence entre modes longitudinaux à partir de la longueur de la cavité, ou l'écart en longueur d'onde d'un laser à semi-conducteur",
+      "formula": "Δν = c/(2nL) ; Δλ = λ²/(2n_g L)",
+      "q": {
+        "nu": "Un laser He-Ne a une cavité de longueur L = {L} m (on prend un indice égal à 1 dans la cavité). Calculez l'écart en fréquence Δν entre ses modes longitudinaux (c = {c} m/s).",
+        "lam": "Un laser à semi-conducteur de type Fabry-Pérot a une longueur L = {Lu} µm et un indice de groupe n_g = {ng}. Calculez l'écart en longueur d'onde Δλ entre ses modes longitudinaux au voisinage de {lam} nm."
+      },
+      "steps": {
+        "nu": [
+          "Écart entre modes longitudinaux : Δν = c/(2nL).",
+          "Δν = {c}/(2 × {L}) Hz = {dn} MHz."
+        ],
+        "lam": [
+          "Écart en longueur d'onde : Δλ = λ²/(2n_g L).",
+          "λ² = {sq} nm² ; 2n_g L = {den} nm.",
+          "Δλ = {sq}/{den} = {dl} nm."
+        ]
+      },
+      "mistakes": {
+        "no2": "Vous avez omis le facteur 2. La lumière fait un aller-retour dans la cavité, donc Δν = c/(2nL) et Δλ = λ²/(2n_g L).",
+        "half": "Vous avez divisé par 4L. La relation est Δν = c/(2nL).",
+        "non": "Vous avez oublié l'indice de groupe n_g."
+      }
+    },
+    "fiber-na": {
+      "name": "Fibre : ouverture numérique, angle d'acceptance et différence d'indice relative",
+      "short": "À partir des indices du cœur et de la gaine, calculez l'ouverture numérique, l'angle d'acceptance dans l'air ou la différence d'indice relative",
+      "formula": "NA = √(n₁² − n₂²) = sinθ_max ; Δ = (n₁² − n₂²)/(2n₁²)",
+      "q": {
+        "na": "Une fibre à saut d'indice a un indice de cœur n₁ = {n1} et un indice de gaine n₂ = {n2}. Calculez son ouverture numérique NA.",
+        "theta": "On injecte de la lumière depuis l'air dans la face d'entrée d'une fibre à saut d'indice (indice du cœur n₁ = {n1} ; indice de la gaine n₂ = {n2}). Calculez le plus grand angle d'incidence θ_max (demi-angle d'acceptance) pour lequel la lumière est guidée dans le cœur.",
+        "delta": "Une fibre à saut d'indice a un indice de cœur n₁ = {n1} et un indice de gaine n₂ = {n2}. Calculez la différence d'indice relative Δ = (n₁² − n₂²)/(2n₁²)."
+      },
+      "steps": {
+        "na": [
+          "NA = √(n₁² − n₂²).",
+          "n₁² − n₂² = {d2}.",
+          "NA = √{d2} = {na}."
+        ],
+        "theta": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "Dans l'air (n₀ = 1), sinθ_max = NA, donc θ_max = arcsin {na} = {th}°."
+        ],
+        "delta": [
+          "Δ = (n₁² − n₂²)/(2n₁²).",
+          "n₁² − n₂² = {d2}.",
+          "Δ = {d2}/(2 × {n1}²) = {dl} %."
+        ]
+      },
+      "mistakes": {
+        "diff": "Vous avez donné n₁ − n₂. NA = √(n₁² − n₂²).",
+        "nosqrt": "Vous n'avez pas pris la racine carrée (NA = √(n₁² − n₂²)).",
+        "nosq": "Vous avez utilisé √(n₁ − n₂). Il s'agit de la racine carrée de la différence des carrés, n₁² − n₂².",
+        "full": "Vous avez donné l'angle total 2θ_max. La question porte sur le demi-angle.",
+        "core": "C'est l'angle dans le cœur, arcsin(NA/n₁). Dans l'air, sinθ_max = NA.",
+        "no2": "Vous n'avez pas divisé par 2 (Δ = (n₁² − n₂²)/(2n₁²)).",
+        "na": "Vous avez donné l'ouverture numérique NA."
+      }
+    },
+    "v-number": {
+      "name": "Fréquence normalisée V d'une fibre et longueur d'onde de coupure",
+      "short": "Calculez la fréquence normalisée V à partir de la taille du cœur, des indices et de la longueur d'onde, ou la longueur d'onde de coupure au-delà de laquelle la fibre est monomode",
+      "formula": "V = 2πa·NA/λ ; λ_c = 2πa·NA/2,405",
+      "q": {
+        "v": "Une fibre à saut d'indice (indice du cœur n₁ = {n1} ; indice de la gaine n₂ = {n2} ; diamètre du cœur {dc} µm) est utilisée à {lam} nm. Calculez la fréquence normalisée V.",
+        "lc": "Soit une fibre à saut d'indice (indice du cœur n₁ = {n1} ; indice de la gaine n₂ = {n2} ; diamètre du cœur {dc} µm). Calculez sa longueur d'onde de coupure λ_c (au-delà de laquelle la fibre est monomode)."
+      },
+      "steps": {
+        "v": [
+          "NA = √(n₁² − n₂²) = {na}.",
+          "Rayon du cœur a = {dc}/2 = {a} µm.",
+          "V = 2πa·NA/λ = 2π × {a} µm × {na}/{lam} nm = {V} ({mode})."
+        ],
+        "lc": [
+          "NA = √(n₁² − n₂²) = {na} ; rayon du cœur a = {dc}/2 = {a} µm.",
+          "V = 2,405 à la longueur d'onde de coupure λ_c = 2πa·NA/2,405 = {lc} nm."
+        ]
+      },
+      "mistakes": {
+        "diam": "Vous avez pris le diamètre du cœur pour a. a est le rayon du cœur (la moitié du diamètre).",
+        "nopi": "Vous avez oublié 2π (V = 2πa·NA/λ).",
+        "no2": "Vous avez omis le 2 de 2π."
+      }
+    },
+    "chrom-disp": {
+      "name": "Élargissement des impulsions par dispersion chromatique",
+      "short": "Calculez l'élargissement d'une impulsion à partir de la dispersion, de la longueur et de la largeur spectrale, ou la longueur maximale pour un élargissement admissible",
+      "formula": "Δτ = |D| L Δλ ; Δλ = λ²Δν/c",
+      "q": {
+        "tau": "Une impulsion lumineuse de largeur spectrale Δλ = {dl} nm parcourt L = {L} km dans une fibre de dispersion D = {D} ps/(nm·km) (bande de 1550 nm). Calculez l'élargissement Δτ.",
+        "nu": "Une lumière à 1550 nm, de largeur spectrale Δν = {dnu} GHz, est transmise sur L = {L} km d'une fibre de dispersion D = {D} ps/(nm·km). Calculez l'élargissement Δτ de l'impulsion dû à la dispersion chromatique (c = {c} m/s).",
+        "len": "Des impulsions de largeur spectrale Δλ = {dl} nm sont transmises dans une fibre de dispersion D = {D} ps/(nm·km). Calculez la longueur maximale pour laquelle l'élargissement dû à la dispersion reste inférieur ou égal à {tau} ps."
+      },
+      "steps": {
+        "tau": [
+          "Δτ = |D| L Δλ.",
+          "Δτ = {D} × {L} × {dl} = {t} ps."
+        ],
+        "nu": [
+          "On convertit la largeur en fréquence en largeur en longueur d'onde : Δλ = λ²Δν/c = (1550 nm)² × {dnu} GHz/c = {dlc} nm.",
+          "Δτ = |D| L Δλ = {D} × {L} × {dlc} = {t} ps."
+        ],
+        "len": [
+          "De Δτ = |D| L Δλ, on tire L = Δτ/(|D|Δλ).",
+          "|D|Δλ = {D} × {dl} = {Ddl} ps/km.",
+          "L = {tau}/{Ddl} = {L} km."
+        ]
+      },
+      "mistakes": {
+        "div": "Vous avez divisé par Δλ. L'élargissement est proportionnel à Δλ (Δτ = |D| L Δλ).",
+        "raw": "Vous avez pris la valeur de Δν en GHz pour Δλ en nm. Convertissez avec Δλ = λ²Δν/c (à 1550 nm, 1 GHz ≈ 0,008 nm).",
+        "mult": "Vous avez calculé Δτ × |D| × Δλ. La relation est L = Δτ/(|D|Δλ).",
+        "inv": "Vous avez pris l'inverse : |D|Δλ/Δτ."
+      }
+    },
+    "db-power": {
+      "name": "Conversion entre dBm et mW, atténuation d'une fibre",
+      "short": "Convertissez une puissance optique entre mW et dBm, ou calculez la puissance après une atténuation donnée en dB/km",
+      "formula": "P_dBm = 10 log₁₀(P/1 mW) ; P = P₀·10^(−αL/10)",
+      "q": {
+        "todbm": "Exprimez en dBm une puissance optique de {P} mW.",
+        "tomw": "Exprimez en mW une puissance optique de {dbm} dBm.",
+        "loss": "On injecte {Pin} mW de lumière dans une fibre d'atténuation {al} dB/km. Calculez la puissance optique après {L} km."
+      },
+      "steps": {
+        "todbm": [
+          "P_dBm = 10 log₁₀(P/1 mW).",
+          "log₁₀ {P} = {lg}.",
+          "P_dBm = 10 × ({lg}) = {y} dBm."
+        ],
+        "tomw": [
+          "P = 1 mW × 10^(P_dBm/10).",
+          "P = 10^({e}) mW = {P} mW."
+        ],
+        "loss": [
+          "Atténuation totale A = {al} × {L} = {A} dB.",
+          "P = P₀ × 10^(−A/10) = {Pin} × {f} = {P} mW."
+        ]
+      },
+      "mistakes": {
+        "ln": "Vous avez utilisé la base e au lieu de 10. Les décibels utilisent le logarithme décimal (base 10).",
+        "x20": "Vous avez utilisé 20 log₁₀ (ou 10^(x/20)). Les grandeurs de puissance comme la puissance optique utilisent 10 log₁₀ (20 sert pour les rapports d'amplitudes, de tensions ou de champs).",
+        "w": "Vous avez pris 1 W comme référence (dBW). La référence du dBm est 1 mW.",
+        "np": "Vous avez utilisé directement l'atténuation en dB comme exposant de e. Utilisez P = P₀·10^(−A/10)."
+      }
+    },
+    "link-budget": {
+      "name": "Bilan de puissance d'une liaison optique",
+      "short": "Retranchez de la puissance émise les pertes de la fibre, des connecteurs et des épissures pour obtenir la puissance reçue et la marge",
+      "formula": "P_rx = P_tx − αL − N_cL_c − N_sL_s ; M = P_rx − S",
+      "q": {
+        "prx": "Un émetteur injecte {Ptx} dBm dans {L} km de fibre monomode d'atténuation {al} dB/km à {w} nm. La liaison comporte {Nc} connecteurs ({Lc} dB chacun) et {Ns} épissures par fusion ({Ls} dB chacune). Calculez la puissance reçue.",
+        "margin": "Un émetteur injecte {Ptx} dBm dans {L} km de fibre monomode d'atténuation {al} dB/km à {w} nm. La liaison comporte {Nc} connecteurs ({Lc} dB chacun) et {Ns} épissures par fusion ({Ls} dB chacune). La sensibilité du récepteur est de {S} dBm. Calculez la marge de puissance."
+      },
+      "steps": {
+        "prx": [
+          "Pertes de la fibre : {al} × {L} = {Af} dB.",
+          "Connecteurs : {Nc} × {Lc} = {Ac} dB ; épissures : {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm."
+        ],
+        "margin": [
+          "Pertes de la fibre : {al} × {L} = {Af} dB.",
+          "Connecteurs : {Nc} × {Lc} = {Ac} dB ; épissures : {Ns} × {Ls} = {As} dB.",
+          "P_rx = {Ptx} − {Af} − {Ac} − {As} = {Prx} dBm.",
+          "Marge M = P_rx − S = {Prx} − ({S}) = {M} dB."
+        ]
+      },
+      "mistakes": {
+        "noconn": "Vous avez oublié les pertes des connecteurs et des épissures.",
+        "nosp": "Vous avez oublié les pertes des épissures, soit {As} dB.",
+        "plus": "Vous avez additionné les pertes. Les pertes en dB se retranchent de la puissance émise en dBm.",
+        "prx": "Vous avez donné la puissance reçue P_rx. La marge est l'écart avec la sensibilité, P_rx − S."
+      }
+    },
+    "responsivity": {
+      "name": "Sensibilité spectrale et rendement quantique d'une photodiode",
+      "short": "Calculez la sensibilité spectrale ou le photocourant à partir du rendement quantique et de la longueur d'onde, ou le rendement quantique à partir d'un photocourant mesuré",
+      "formula": "ℛ = ηqλ/(hc) ; I_p = ℛP",
+      "q": {
+        "r": "Une photodiode en {det} a un rendement quantique η = {eta} à {lam} nm. Calculez sa sensibilité spectrale ℛ (q = {e} C ; h = {h} J·s ; c = {c} m/s).",
+        "ip": "Une puissance lumineuse de {P} µW à {lam} nm arrive sur une photodiode en {det} dont le rendement quantique vaut η = {eta} à cette longueur d'onde. Calculez le photocourant (q = {e} C ; h = {h} J·s ; c = {c} m/s).",
+        "eta": "Lorsqu'une puissance lumineuse de {P} µW à {lam} nm arrive sur une photodiode en {det}, le photocourant vaut {I} µA. Calculez le rendement quantique η (q = {e} C ; h = {h} J·s ; c = {c} m/s)."
+      },
+      "steps": {
+        "r": [
+          "Sensibilité spectrale pour un rendement quantique égal à 1 : qλ/(hc) = {r1} A/W (identique à λ[nm]/1239,84).",
+          "ℛ = η × {r1} = {R} A/W."
+        ],
+        "ip": [
+          "Sensibilité spectrale pour un rendement quantique égal à 1 : qλ/(hc) = {r1} A/W.",
+          "ℛ = η × {r1} = {R} A/W.",
+          "I_p = ℛP = {R} A/W × {P} µW = {I} µA."
+        ],
+        "eta": [
+          "η = (I_p/q)/(P/(hν)) = (I_p/P)/(qλ/(hc)).",
+          "I_p/P = {Ri} A/W ; qλ/(hc) = {r1} A/W.",
+          "η = {Ri}/{r1} = {eta} %."
+        ]
+      },
+      "mistakes": {
+        "noeta": "Vous avez oublié le rendement quantique η (c'est la valeur limite pour η = 1).",
+        "inv": "Vous avez pris l'inverse (ℛ = ηqλ/(hc) ; I_p = ℛP).",
+        "r": "Vous avez donné la sensibilité spectrale I_p/P en A/W. Le rendement quantique s'obtient en la divisant par qλ/(hc)."
+      }
+    },
+    "shot-noise": {
+      "name": "Courant de bruit de grenaille",
+      "short": "Calculez la valeur efficace du courant de bruit de grenaille à partir du photocourant, du courant d'obscurité et de la bande passante",
+      "formula": "⟨i²⟩ = 2q(I_p + I_d)Δf",
+      "q": "Une photodiode qui délivre un photocourant de {Ip} µA et présente un courant d'obscurité de {Id} nA est utilisée avec une bande passante de {bw} MHz. Calculez la valeur efficace du courant de bruit de grenaille (q = {e} C).",
+      "steps": [
+        "⟨i²⟩ = 2q(I_p + I_d)Δf.",
+        "I_p + I_d = {I} A ; Δf = {bwh} Hz.",
+        "⟨i²⟩ = 2 × {e} × {I} × {bwh} = {s2} A².",
+        "i = √⟨i²⟩ = {i} nA."
+      ],
+      "mistakes": {
+        "no2": "Vous avez omis le facteur 2 (⟨i²⟩ = 2qIΔf).",
+        "nodark": "Vous avez oublié le courant d'obscurité I_d. Il produit lui aussi du bruit de grenaille."
+      }
+    },
+    "shg-coherence": {
+      "name": "SHG : longueur de cohérence et période de quasi-accord de phase",
+      "short": "À partir des indices de l'onde fondamentale et du second harmonique, calculez la longueur de cohérence sans accord de phase et la période d'inversion du PPLN",
+      "formula": "L_c = λ/(4(n₂ω − nω)) ; Λ = 2L_c",
+      "q": {
+        "lc": "On génère le second harmonique ({lam2} nm) d'une lumière à {lam} nm dans du LiNbO₃ en polarisation extraordinaire (24,5 °C). Les indices valent n(ω) = {n1} et n(2ω) = {n2}. Calculez la longueur de cohérence L_c sans accord de phase.",
+        "qpm": "On génère le second harmonique ({lam2} nm) d'une lumière à {lam} nm dans du LiNbO₃ en polarisation extraordinaire (24,5 °C). Les indices valent n(ω) = {n1} et n(2ω) = {n2}. Calculez la période d'inversion Λ pour un quasi-accord de phase du premier ordre dans du LiNbO₃ polarisé périodiquement (PPLN)."
+      },
+      "steps": {
+        "lc": [
+          "Δk = k₂ω − 2kω = (4π/λ)(n₂ω − nω) (λ est la longueur d'onde fondamentale).",
+          "n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = π/Δk = λ/(4(n₂ω − nω)) = {lam} nm/(4 × {dn}) = {lc} µm."
+        ],
+        "qpm": [
+          "Δk = (4π/λ)(n₂ω − nω) ; n₂ω − nω = {n2} − {n1} = {dn}.",
+          "L_c = λ/(4(n₂ω − nω)) = {lc} µm.",
+          "Pour un quasi-accord de phase du premier ordre, Λ = 2L_c = {L} µm."
+        ]
+      },
+      "mistakes": {
+        "qpm": "λ/(2Δn) est la période de quasi-accord de phase Λ = 2L_c. La longueur de cohérence vaut L_c = λ/(4Δn).",
+        "lc": "Vous avez donné la longueur de cohérence L_c. La période d'inversion vaut Λ = 2L_c.",
+        "nofour": "Le facteur du dénominateur manque (L_c = λ/(4Δn) ; Λ = λ/(2Δn)).",
+        "sh": "Vous avez utilisé la longueur d'onde du second harmonique, λ/2. Le λ de la formule est la longueur d'onde fondamentale."
+      }
+    },
+    "tbp": {
+      "name": "Produit durée-largeur spectrale (impulsions limitées par transformée de Fourier)",
+      "short": "Calculez la largeur spectrale (en fréquence ou en longueur d'onde) à partir de la durée de l'impulsion, ou l'impulsion la plus courte à partir de la largeur spectrale",
+      "formula": "ΔνΔt = K ; Δλ = λ²Δν/c",
+      "q": {
+        "nu": "Une impulsion {sh} limitée par transformée de Fourier (produit durée-largeur spectrale K = {K}) a une durée (largeur à mi-hauteur en intensité) Δt = {dt} fs. Calculez sa largeur spectrale Δν.",
+        "lam": "Une impulsion {sh} limitée par transformée de Fourier (K = {K}), centrée à {lam} nm, a une durée Δt = {dt} fs. Calculez sa largeur spectrale en longueur d'onde, Δλ (c = {c} m/s).",
+        "dt": "Une lumière centrée à {lam} nm a une largeur spectrale Δλ = {dl} nm. Calculez la durée Δt de l'impulsion {sh} la plus courte qu'elle permet d'obtenir (limitée par transformée de Fourier, K = {K} ; c = {c} m/s)."
+      },
+      "steps": {
+        "nu": [
+          "Pour une impulsion limitée par transformée de Fourier, ΔνΔt = K.",
+          "Δν = {K}/({dt} × 10⁻¹⁵ s) = {nu} THz."
+        ],
+        "lam": [
+          "Δν = K/Δt = {nu} THz.",
+          "Δλ = λ²Δν/c = {dl} nm."
+        ],
+        "dt": [
+          "Δν = cΔλ/λ² = {nu} THz.",
+          "Δt = K/Δν = {dt} fs."
+        ]
+      },
+      "mistakes": {
+        "shape": "Vous avez utilisé le K de l'autre forme d'impulsion (gaussienne : 0,441 ; sech² : 0,315).",
+        "one": "Vous avez utilisé ΔνΔt = 1. Pour une impulsion limitée par transformée de Fourier, ΔνΔt = K ({K} pour cette forme)."
+      }
+    },
+    "spdc-idler": {
+      "name": "Longueurs d'onde des processus paramétriques (conservation de l'énergie)",
+      "short": "Calculez la longueur d'onde du complémentaire (idler) à partir des longueurs d'onde de pompe et de signal, ou la longueur d'onde de pompe à partir du signal et du complémentaire",
+      "formula": "1/λ_p = 1/λ_s + 1/λ_i",
+      "q": {
+        "idler": "Une pompe à {lp} nm produit une conversion paramétrique descendante (ou fait fonctionner un oscillateur paramétrique optique), et le signal est à {ls} nm. Calculez la longueur d'onde du complémentaire (idler).",
+        "pump": "Un processus paramétrique produit un signal à {ls} nm et un complémentaire (idler) à {li} nm. Calculez la longueur d'onde de pompe."
+      },
+      "steps": {
+        "idler": [
+          "La conservation de l'énergie ω_p = ω_s + ω_i donne 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_i = 1/{lp} − 1/{ls} = {a} − {b} = {x} nm⁻¹.",
+          "λ_i = {li} nm."
+        ],
+        "pump": [
+          "La conservation de l'énergie ω_p = ω_s + ω_i donne 1/λ_p = 1/λ_s + 1/λ_i.",
+          "1/λ_p = {a} + {b} = {x} nm⁻¹.",
+          "λ_p = {lp} nm."
+        ]
+      },
+      "mistakes": {
+        "diff": "Vous avez donné la différence de longueurs d'onde λ_s − λ_p. Ce sont les fréquences (1/λ) qui s'additionnent et se soustraient.",
+        "plus": "Vous avez utilisé 1/λ_p + 1/λ_s. La relation est 1/λ_i = 1/λ_p − 1/λ_s.",
+        "deg": "C'est le cas dégénéré (signal et complémentaire tous deux à 2λ_p). Le signal est à {ls} nm : le complémentaire est donc à une autre longueur d'onde.",
+        "minus": "Vous avez utilisé 1/λ_s − 1/λ_i. Pour la pompe, les termes s'additionnent : 1/λ_p = 1/λ_s + 1/λ_i.",
+        "avg": "Vous avez pris la moitié de la moyenne des longueurs d'onde du signal et du complémentaire, (λ_s + λ_i)/4. Cela ne vaut qu'au voisinage de la dégénérescence. La relation exacte est 1/λ_p = 1/λ_s + 1/λ_i : ce sont les 1/λ (fréquences) qui s'additionnent."
+      }
+    },
+    "wien": {
+      "name": "Loi du déplacement de Wien",
+      "short": "Calculez la longueur d'onde du maximum du rayonnement d'un corps noir à partir de la température, ou la température à partir du maximum",
+      "formula": "λ_max T = b",
+      "q": {
+        "lam": "Calculez la longueur d'onde λ_max à laquelle un corps noir à {T} K rayonne le plus (maximum du spectre par unité de longueur d'onde ; b = {b} m·K).",
+        "tc": "Un objet chauffé à {tc} °C est assimilé à un corps noir. Calculez la longueur d'onde λ_max à laquelle il rayonne le plus (maximum du spectre par unité de longueur d'onde ; b = {b} m·K).",
+        "temp": "Le spectre par unité de longueur d'onde d'une source assimilable à un corps noir présente son maximum à {lm} µm. Calculez sa température (b = {b} m·K)."
+      },
+      "steps": {
+        "lam": [
+          "Loi du déplacement de Wien : λ_max T = b.",
+          "λ_max = {b}/{TK} m = {lm} µm."
+        ],
+        "tc": [
+          "Conversion en température absolue : T = {tc} + 273,15 = {TK} K.",
+          "λ_max = b/T = {b}/{TK} m = {lm} µm."
+        ],
+        "temp": [
+          "T = b/λ_max.",
+          "T = {b}/({lm} × 10⁻⁶) = {T} K."
+        ]
+      },
+      "mistakes": {
+        "nupeak": "Cette valeur provient du maximum du spectre par unité de fréquence (ν_max = 5,879 × 10¹⁰ Hz/K × T). Le maximum par unité de longueur d'onde vérifie λ_max T = b (les deux maxima ne sont pas à la même longueur d'onde).",
+        "celsius": "Vous avez utilisé directement la valeur en degrés Celsius. Utilisez la température absolue T = t + 273,15."
+      }
+    },
+    "illuminance": {
+      "name": "Éclairement lumineux (loi en inverse du carré et loi du cosinus)",
+      "short": "Calculez l'éclairement à partir de l'intensité lumineuse d'une source ponctuelle, de la distance et de l'inclinaison de la surface",
+      "formula": "E = I cosθ/d²",
+      "q": {
+        "n": "Calculez l'éclairement d'une surface placée face à une source ponctuelle d'intensité lumineuse {I} cd, à {d} m de celle-ci.",
+        "tilt": "Une surface se trouve à {d} m d'une source ponctuelle d'intensité lumineuse {I} cd, et sa normale est inclinée de {th}° par rapport à la direction de la source. Calculez l'éclairement de la surface."
+      },
+      "steps": {
+        "n": [
+          "Éclairement E = I cosθ/d² (surface face à la source : cosθ = 1).",
+          "E = {I}/{d2} = {E} lx."
+        ],
+        "tilt": [
+          "Éclairement E = I cosθ/d².",
+          "d² = {d2} m² ; cos{th}° = {c}.",
+          "E = {I} × {c}/{d2} = {E} lx."
+        ]
+      },
+      "mistakes": {
+        "nosq": "Vous n'avez pas élevé la distance au carré (loi en inverse du carré, E ∝ 1/d²).",
+        "nocos": "Vous avez oublié le facteur cosθ dû à l'inclinaison de la surface.",
+        "sin": "Vous avez utilisé sinθ. θ est l'angle entre la normale à la surface et la direction de la lumière : multipliez par cosθ."
+      }
+    },
+    "photon-energy": {
+      "name": "Énergie, fréquence et nombre d'onde du photon",
+      "short": "Calculez l'énergie du photon (en eV), la fréquence ou le nombre d'onde à partir de la longueur d'onde, ou la longueur d'onde de coupure à partir de l'énergie de bande interdite",
+      "formula": "E = hc/λ ; ν = c/λ ; σ̃ = 1/λ",
+      "q": {
+        "ev": "Calculez en eV l'énergie d'un photon de longueur d'onde {lam} nm dans le vide (hc = {hc} eV·nm).",
+        "thz": "Calculez la fréquence ν d'une lumière de longueur d'onde {lam} nm dans le vide (c = {c} m/s).",
+        "kayser": "Calculez en cm⁻¹ le nombre d'onde (nombre d'ondes par cm) d'une lumière de longueur d'onde {lam} nm dans le vide.",
+        "gap": "Calculez la plus grande longueur d'onde (longueur d'onde de coupure) que peut absorber un détecteur en {m} (énergie de bande interdite {Eg} eV à température ambiante ; hc = {hc} eV·nm)."
+      },
+      "steps": {
+        "ev": [
+          "E = hc/λ.",
+          "E = {hc}/{lam} = {E} eV (= {J} J)."
+        ],
+        "thz": [
+          "ν = c/λ.",
+          "ν = {c}/({lam} × 10⁻⁹) Hz = {nu} THz."
+        ],
+        "kayser": [
+          "Nombre d'onde σ̃ = 1/λ ; λ = {lc} cm.",
+          "σ̃ = 1/({lc}) = {s} cm⁻¹."
+        ],
+        "gap": [
+          "Un photon est absorbé si son énergie est au moins égale à l'énergie de bande interdite : hc/λ ≥ E_g.",
+          "λ_c = hc/E_g = {hc}/{Eg} = {l} nm (= {um} µm)."
+        ]
+      },
+      "mistakes": {
+        "inv": "La formule est inversée. E = hc/λ (plus la longueur d'onde est courte, plus l'énergie est grande) et λ = hc/E.",
+        "mult": "Vous avez multiplié E_g par hc. La relation est λ_c = hc/E_g : plus la bande interdite est petite, plus la longueur d'onde de coupure est grande.",
+        "pi2": "Vous avez multiplié par 2π (pulsation ω = 2πν ou nombre d'onde angulaire k = 2π/λ). La fréquence ν et le nombre d'onde σ̃ = 1/λ ne comportent pas de 2π."
+      }
+    },
+    "photon-flux": {
+      "name": "Nombre de photons (flux de photons)",
+      "short": "Calculez le nombre de photons par seconde à partir de la puissance et de la longueur d'onde, ou la puissance à partir du flux de photons",
+      "formula": "Φ = Pλ/(hc)",
+      "q": {
+        "n": "Calculez le nombre de photons par seconde Φ transportés par une lumière de longueur d'onde {lam} nm et de puissance {P} {pu} (h = {h} J·s ; c = {c} m/s).",
+        "p": "Des photons de longueur d'onde {lam} nm arrivent au rythme de {phi} par seconde. Calculez la puissance optique (h = {h} J·s ; c = {c} m/s)."
+      },
+      "steps": {
+        "n": [
+          "Énergie d'un photon : E = hc/λ = {E} J.",
+          "P = {PW} W.",
+          "Φ = P/E = {n} s⁻¹."
+        ],
+        "p": [
+          "Énergie d'un photon : E = hc/λ = {E} J.",
+          "P = ΦE = {phi} × {E} = {PW} W."
+        ]
+      },
+      "mistakes": {
+        "ev": "Vous avez utilisé l'énergie du photon en eV. Pour obtenir des W (J/s), calculez en joules (1 eV = 1,602 × 10⁻¹⁹ J)."
+      }
+    },
+    "solar-ff": {
+      "name": "Facteur de forme et rendement d'une cellule solaire",
+      "short": "Calculez le rendement de conversion à partir de V_oc, de J_sc et du facteur de forme, ou le facteur de forme à partir du point de puissance maximale",
+      "formula": "FF = V_mp J_mp/(V_oc J_sc) ; η = FF V_oc J_sc/P_in",
+      "q": {
+        "eta": "Une {cell} a une tension de circuit ouvert V_oc = {Voc} V, une densité de courant de court-circuit J_sc = {Jsc} mA/cm² et un facteur de forme FF = {FF}. Calculez son rendement de conversion η sous un éclairement AM1.5G (1000 W/m² incidents).",
+        "ff": "Une {cell} a V_oc = {Voc} V et J_sc = {Jsc} mA/cm², et son point de puissance maximale se situe à V_mp = {Vmp} V, J_mp = {Jmp} mA/cm². Calculez le facteur de forme FF."
+      },
+      "steps": {
+        "eta": [
+          "J_sc = {Jsc} mA/cm² = {J} A/m².",
+          "Puissance maximale P = FF V_oc J_sc = {FF} × {Voc} × {J} = {P} W/m².",
+          "η = P/P_in = {P}/1000 = {eta} %."
+        ],
+        "ff": [
+          "FF = V_mp J_mp/(V_oc J_sc).",
+          "V_mp J_mp = {pm} mW/cm² ; V_oc J_sc = {p0} mW/cm².",
+          "FF = {pm}/{p0} = {ff} (sous AM1.5G à 100 mW/cm², η = {eta} %)."
+        ]
+      },
+      "mistakes": {
+        "noff": "Vous avez oublié le facteur de forme FF (V_oc et J_sc ne peuvent pas être obtenus en même temps).",
+        "inv": "Le rapport est inversé. FF est inférieur à 1.",
+        "v": "Ce n'est que le rapport des tensions V_mp/V_oc. Multipliez aussi par le rapport des courants J_mp/J_sc.",
+        "j": "Ce n'est que le rapport des courants J_mp/J_sc. Multipliez aussi par le rapport des tensions V_mp/V_oc."
+      }
+    }
+  }
+}
