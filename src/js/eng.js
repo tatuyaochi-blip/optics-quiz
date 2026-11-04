@@ -38,6 +38,12 @@ export const parseNum = x => {
   const s = String(x ?? '').trim().replace(/^−/, '-');
   return s === '' || !NUM_RE.test(s) || GROUP_RE.test(s) ? NaN : Number(s.replace(',', '.'));
 };
+// URL のクエリの数を読む。URL の数は言語によらず小数点「.」で書く(String(数))ので、言語の書き方では読まない
+// (de・es などで parseNum を使うと、632.816 や 1.385 が桁区切りと見なされて読めない)
+export const parseUrlNum = x => {
+  const s = String(x ?? '').trim();
+  return /^[+-]?(?:\d+(?:\.\d*)?|\.\d+)(?:[eE][+-]?\d+)?$/.test(s) ? Number(s) : NaN;
+};
 // 入力欄に入れる値(de は小数のコンマ)
 export const inVal = x => (/^(de|es|pt|fr|nl)/.test(lang) ? String(x).replace('.', ',') : String(x));
 // 空欄・読めない入力・下限より小さい値は既定値を使う。読めない入力と下限割れの欄には aria-invalid を立てる
