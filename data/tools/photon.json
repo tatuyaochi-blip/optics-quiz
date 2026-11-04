@@ -338,6 +338,62 @@
       "js": {
         "per_s": "Photonen/s"
       }
+    },
+    "es": {
+      "nav": "Conversión de longitud de onda y energía",
+      "card": "Convierta entre longitud de onda, frecuencia, energía del fotón (eV) y número de onda",
+      "title": "Conversor de longitud de onda, frecuencia y energía del fotón (nm ⇔ THz ⇔ eV ⇔ cm⁻¹)",
+      "description": "Convierte entre sí la longitud de onda (nm), la frecuencia (THz), la energía del fotón (eV) y el número de onda (cm⁻¹) de la luz. A partir de la potencia óptica, calcula también el número de fotones por segundo y la responsividad de un fotodetector con una eficiencia cuántica del 100 %.",
+      "h1": "Conversor de longitud de onda, frecuencia y energía del fotón",
+      "lead": "Al modificar cualquiera de los campos, los demás se convierten. Si introduce una potencia óptica, también verá cuántos fotones llegan por segundo y la responsividad de un fotodetector ideal. El valor predeterminado es 1550 nm, de la banda C de las comunicaciones ópticas.",
+      "in_heading": "Datos (puede modificar cualquier campo)",
+      "nm": "Longitud de onda λ (nm)",
+      "thz": "Frecuencia ν (THz)",
+      "ev": "Energía del fotón E (eV)",
+      "kayser": "Número de onda (cm⁻¹)",
+      "mw": "Potencia óptica (mW)",
+      "out_heading": "Resultados",
+      "joule": "Energía de un fotón",
+      "rate": "Fotones por segundo",
+      "resp": "Responsividad máxima (eficiencia cuántica del 100 %)",
+      "note": "Las longitudes de onda se tratan como valores en el vacío (dentro de un material la longitud de onda pasa a ser 1/n, pero la frecuencia y la energía del fotón no cambian). Las constantes son c = 299 792 458 m/s, h = 6,62607015 × 10⁻³⁴ J·s y e = 1,602176634 × 10⁻¹⁹ C.",
+      "practice": "Resolver preguntas de fotodetectores y detección de luz",
+      "related": "Términos relacionados",
+      "sections": [
+        {
+          "h": "Relación entre la longitud de onda y la energía del fotón",
+          "p": "La energía de un fotón es E = hν = hc/λ y es mayor cuanto más corta es la longitud de onda. Expresada en electronvoltios (eV) y nanómetros (nm), E[eV] ≈ 1239,84/λ[nm]; una regla práctica es “1240 dividido entre la longitud de onda en nanómetros da los eV”. Para los 1550 nm predeterminados son unos 0,80 eV; para la luz visible verde (530 nm), unos 2,34 eV, y para el ultravioleta de 365 nm, unos 3,40 eV. En los fotodetectores y las fuentes de luz de semiconductor, comparar la banda prohibida con la energía del fotón indica si esa longitud de onda puede absorberse o emitirse."
+        },
+        {
+          "h": "Frecuencia y número de onda",
+          "p": "La frecuencia es ν = c/λ, y 1550 nm equivale a unos 193,4 THz. La multiplexación densa por división de longitud de onda (DWDM) de las comunicaciones ópticas define los canales por frecuencia y no por longitud de onda, con separaciones de 50 GHz o 100 GHz centradas en 193,1 THz. Cerca de 1550 nm, 100 GHz corresponden a unos 0,8 nm. El número de onda (cm⁻¹) es el número de ondas por centímetro, 1/λ expresado en cm⁻¹. Es la unidad habitual en espectroscopia infrarroja y espectroscopia Raman; 1550 nm equivale a unos 6452 cm⁻¹."
+        },
+        {
+          "h": "Potencia óptica y número de fotones",
+          "p": "Dividiendo la potencia óptica P entre la energía de un fotón se obtiene el número de fotones por segundo, N = P/(hν). Para 1 mW a 1550 nm son unos 7,80 × 10¹⁵ fotones/s. Con la misma potencia, cuanto mayor es la longitud de onda, menor es la energía de cada fotón y, por tanto, mayor el número de fotones. Este número de fotones es el punto de partida para analizar el ruido de disparo o la detección de fotones individuales."
+        },
+        {
+          "h": "Límite superior de la responsividad",
+          "p": "La responsividad de un fotodetector es R = η·qλ/(hc), y con una eficiencia cuántica η del 100 %, R[A/W] ≈ λ[nm]/1239,84. El límite superior es de unos 1,25 A/W a 1550 nm y de unos 0,686 A/W a 850 nm. Los fotodiodos de InGaAs reales tienen a 1550 nm una responsividad de 0,9 a 1,0 A/W aproximadamente, lo que corresponde a una eficiencia cuántica de entre el 70 % y el 80 %. La responsividad es proporcional a la longitud de onda porque, con la misma potencia, las longitudes de onda largas transportan más fotones."
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Cómo se convierte de eV a nm?",
+          "a": "Con λ[nm] ≈ 1239,84/E[eV]. Por ejemplo, la banda prohibida del silicio, de 1,12 eV, corresponde a unos 1107 nm, y los 3,4 eV del GaN, a unos 365 nm."
+        },
+        {
+          "q": "¿Cambia la energía del fotón dentro de un material?",
+          "a": "No. En un material de índice de refracción n, la velocidad y la longitud de onda de la luz pasan a ser 1/n de sus valores en el vacío, pero la frecuencia y la energía del fotón no cambian. Esta calculadora trata las longitudes de onda como valores en el vacío."
+        },
+        {
+          "q": "¿Qué energía tienen los fotones de 1550 nm y de 1310 nm?",
+          "a": "1550 nm corresponde a unos 0,800 eV (unos 193,4 THz), y 1310 nm, a unos 0,946 eV (unos 228,8 THz). Ambos valores son menores que la banda prohibida del silicio (unos 1,12 eV), por lo que el silicio no los absorbe y para detectarlos se usan InGaAs o Ge."
+        }
+      ],
+      "js": {
+        "per_s": "fotones/s"
+      }
     }
   }
 }

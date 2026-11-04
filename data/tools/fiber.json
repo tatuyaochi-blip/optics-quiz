@@ -373,6 +373,68 @@
           "a": "Dann werden auch Moden höherer Ordnung wie LP11 geführt, die Faser arbeitet mehrmodig, und Interferenz und Dispersion zwischen den Moden stören das Signal. Einmodenfasern betreibt man bei Wellenlängen oberhalb der Grenzwellenlänge (im 1310-nm- oder 1550-nm-Band)."
         }
       ]
+    },
+    "es": {
+      "nav": "NA y número V de fibras ópticas",
+      "card": "Calcule la apertura numérica, el ángulo de aceptación, el número V y la longitud de onda de corte a partir de los índices de refracción del núcleo y del revestimiento",
+      "title": "Calculadora de fibras ópticas (apertura numérica NA, ángulo de aceptación, número V, condición monomodo y longitud de onda de corte)",
+      "description": "A partir de los índices de refracción del núcleo y del revestimiento, el radio del núcleo y la longitud de onda de una fibra óptica de salto de índice, calcula la apertura numérica NA, el ángulo de aceptación máximo, la diferencia relativa de índices, la frecuencia normalizada V, la condición monomodo (V < 2,405) y la longitud de onda de corte.",
+      "h1": "Calculadora de NA y número V de fibras ópticas",
+      "lead": "A partir de los índices de refracción del núcleo y del revestimiento, el radio del núcleo y la longitud de onda de trabajo, determina el ángulo con que la fibra acepta la luz y cuántos modos se propagan. Los valores predeterminados se aproximan a los de una fibra monomodo estándar usada a 1550 nm (radio del núcleo de 4,1 µm).",
+      "in_heading": "Datos",
+      "n1": "Índice de refracción del núcleo n1",
+      "n2": "Índice de refracción del revestimiento n2",
+      "a": "Radio del núcleo a (µm)",
+      "lambda": "Longitud de onda λ (nm)",
+      "out_heading": "Resultados",
+      "na": "Apertura numérica NA",
+      "theta": "Ángulo de aceptación máximo (en aire, semiángulo)",
+      "delta": "Diferencia relativa de índices Δ",
+      "mode_heading": "Modos",
+      "v": "Frecuencia normalizada V",
+      "mode": "Régimen",
+      "lc": "Longitud de onda de corte λc",
+      "modes": "Número de modos que se propagan (aproximado)",
+      "note": "El cálculo supone una fibra de salto de índice (índice de refracción uniforme en el núcleo). A longitudes de onda mayores que la de corte, la fibra es monomodo. La estimación del número de modos V²/2 es una aproximación para fibras multimodo con V suficientemente grande.",
+      "practice": "Resolver preguntas de fibras ópticas",
+      "related": "Términos relacionados",
+      "js": {
+        "single": "Monomodo (V < 2,405)",
+        "multi": "Multimodo (V ≥ 2,405)",
+        "bad": "n1 debe ser mayor que n2"
+      },
+      "sections": [
+        {
+          "h": "Apertura numérica y ángulo de aceptación",
+          "p": "Una fibra óptica rodea un núcleo de índice de refracción alto (n1) con un revestimiento de índice menor (n2) y confina la luz por reflexión total interna en la frontera. La condición de reflexión total interna fija el ángulo máximo θmax con el que la luz que entra por el extremo de la fibra se propaga; en aire, sinθmax = NA = √(n1² − n2²). Con los valores predeterminados, NA ≈ 0,124 y el ángulo de aceptación es de unos 7,1° (semiángulo). La NA de las fibras multimodo suele ser de 0,2 a 0,3, y la de las fibras monomodo, de 0,1 a 0,14; cuanto mayor es la NA, más fácil es acoplar la luz, pero mayor es la dispersión entre modos."
+        },
+        {
+          "h": "Número V y condición monomodo",
+          "p": "El número de modos que se propagan por una fibra lo determina básicamente la frecuencia normalizada V = 2πa·NA/λ. Una fibra de salto de índice es monomodo, es decir, solo se propaga el modo fundamental (LP01), cuando V < 2,405. El valor 2,405 es el primer cero de la función de Bessel de orden 0. A 1550 nm, con los valores predeterminados, V ≈ 2,06 y la fibra es monomodo. En la misma fibra, al acortar la longitud de onda V aumenta, y por debajo de cierta longitud de onda la fibra pasa a ser multimodo. Ese límite es la longitud de onda de corte λc = 2πa·NA/2,405, de unos 1327 nm con los valores predeterminados."
+        },
+        {
+          "h": "Diferencia relativa de índices",
+          "p": "La diferencia relativa de índices Δ = (n1² − n2²)/(2n1²) ≈ (n1 − n2)/n1 expresa en términos relativos la diferencia entre los índices de refracción del núcleo y del revestimiento. Con los valores predeterminados es de aproximadamente el 0,365 %, y en las fibras monomodo de sílice lo habitual es entre el 0,3 % y el 0,4 %. La NA también puede escribirse como n1·√(2Δ). Si se aumenta Δ, la luz queda más confinada y disminuyen las pérdidas por curvatura, pero para mantener la fibra monomodo hay que reducir el núcleo."
+        },
+        {
+          "h": "Número de modos en fibras multimodo",
+          "p": "En una fibra de salto de índice con V grande, el número de modos que se propagan es aproximadamente V²/2. Por ejemplo, con un núcleo de 50 µm de diámetro, una NA de 0,2 y una longitud de onda de 850 nm, V ≈ 37 y hay unos 680 modos. Como cada modo se propaga a una velocidad distinta, se produce dispersión modal, que ensancha los pulsos y limita la distancia y la velocidad de transmisión. Con un perfil de índice gradual, en el que el índice es mayor en el centro, las diferencias de velocidad entre modos se reducen mucho."
+        }
+      ],
+      "faq": [
+        {
+          "q": "¿Qué es el 2,405 de la condición monomodo V < 2,405?",
+          "a": "Es el primer cero (aproximadamente 2,405) de la función de Bessel de primera especie y orden 0, J0. Cuando V supera este valor, empieza a propagarse el segundo modo (LP11)."
+        },
+        {
+          "q": "¿Qué relación hay entre la NA y el ángulo de aceptación?",
+          "a": "En aire, NA = sinθmax. Si la luz entra desde un líquido u otro medio de índice de refracción n0, n0·sinθmax = NA, y el ángulo de aceptación es menor."
+        },
+        {
+          "q": "¿Qué ocurre si la fibra se usa a una longitud de onda menor que la de corte?",
+          "a": "También se propagan modos de orden superior como el LP11, y la fibra funciona en régimen multimodo, con lo que la interferencia y la dispersión entre modos degradan la señal. Las fibras monomodo se usan a longitudes de onda mayores que la de corte (las bandas de 1310 nm y de 1550 nm)."
+        }
+      ]
     }
   }
 }

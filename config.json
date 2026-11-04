@@ -5,7 +5,8 @@
     "en": "Optics Room",
     "zh-hant": "光學教室",
     "ko": "광학 교실",
-    "de": "Lernraum Optik"
+    "de": "Lernraum Optik",
+    "es": "Aula de Óptica"
   },
   "languages": [
     {
@@ -42,6 +43,13 @@
       "htmlLang": "de",
       "locale": "de-DE",
       "label": "Deutsch"
+    },
+    {
+      "code": "es",
+      "path": "es/",
+      "htmlLang": "es",
+      "locale": "es-ES",
+      "label": "Español"
     }
   ],
   "mainLang": "ja",
@@ -123,6 +131,19 @@
       "hero": "Optik und Photonik lernen – mit kurzen Quizfragen",
       "hero_lead": "Von Linsen und Interferenz bis zu Lasern, Lichtwellenleitern und Siliziumphotonik – zu jeder Frage gibt es eine Erläuterung.",
       "tools_lead": "Kostenlose Rechner im Browser für den Optik-Alltag: Umrechnung von Wellenlänge und Photonenenergie, Gauß-Strahlen sowie NA und V-Parameter von Lichtwellenleitern."
+    },
+    "es": {
+      "subject": "óptica y fotónica",
+      "subject_title": "óptica y fotónica",
+      "site": "Aula de Óptica",
+      "site_en": "Optics Room",
+      "search_example": "apertura numérica",
+      "tools_example": "el diámetro de un haz y la NA de una fibra",
+      "full_title": "Aula de Óptica | Preguntas de práctica sobre láseres, fibras ópticas y fotónica de silicio",
+      "scope": "óptica geométrica, interferencia y polarización, láseres y haces gaussianos, fibras ópticas, fotodetectores, fotónica de silicio y metrología óptica",
+      "hero": "Aprenda óptica y fotónica con cuestionarios breves",
+      "hero_lead": "Desde las lentes y la interferencia hasta los láseres, las fibras ópticas y la fotónica de silicio. Todas las preguntas incluyen una explicación.",
+      "tools_lead": "Calculadoras gratuitas en el navegador para el día a día de la óptica: conversión entre longitud de onda y energía del fotón, haces gaussianos, y NA y número V de las fibras ópticas."
     }
   },
   "icon": {

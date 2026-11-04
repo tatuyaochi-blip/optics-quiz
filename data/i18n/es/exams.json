@@ -1,0 +1,11 @@
+{
+  "main": {
+    "name": "Óptica",
+    "groups": {
+      "basic": "Fundamentos de la luz",
+      "sources": "Fuentes de luz y transmisión",
+      "devices": "Detección y fotónica integrada",
+      "applied": "Metrología y aplicaciones"
+    }
+  }
+}
