@@ -855,7 +855,7 @@
  "reading": "えむにじょう",
  "desc": "ビーム品質係数。実際のビームのウエスト半径と発散角の積が、理想的なガウシアンビームの何倍かを表す。1に近いほど良い。",
  "cat": "laser",
- "noLinkIn": ["detectors"],
+ "noLinkIn": ["detectors", "microscopy"],
  "about": [
   {
    "h": "ビーム品質を1つの数で表す",
