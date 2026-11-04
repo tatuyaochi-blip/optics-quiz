@@ -138,7 +138,7 @@
     ],
     [
       "For a material with both o and e, which should I use?",
-      "It depends on the polarization of the light and the direction of the crystal's optic axis. Light polarized perpendicular to the optic axis (the ordinary ray) sees n_o; light polarized in the plane containing the optic axis (the extraordinary ray) sees a value between n_o and n_e that depends on the direction of travel. On the chart, e is drawn as a dashed line."
+      "It depends on the polarization of the light and the direction of the crystal's optic axis. Light polarized perpendicular to the optic axis (the ordinary ray) sees n_o; light polarized in the principal section, the plane containing the optic axis and the direction of travel (the extraordinary ray), sees a value between n_o and n_e that depends on the direction of travel. On the chart, e is drawn as a dashed line."
     ]
   ],
   "materials": {
