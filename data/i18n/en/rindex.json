@@ -73,7 +73,7 @@
     "data_from": "Measured data fitted",
     "sheet": "Data sheet checked",
     "checked": "Source page checked",
-    "rii": "Coefficients imported from (refractiveindex.info)",
+    "rii": "Coefficients imported from refractiveindex.info",
     "sources_note": "Coefficients were imported from the refractiveindex.info database (CC0) and compared one by one with the sources above (manufacturers' data sheets and the publishers' pages of the papers). Materials that could not be checked against a source, such as crystal quartz, BBO, germanium, GaAs, PMMA and polycarbonate, are not included for now.",
     "terms_h": "Related terms",
     "rel_cats": "Practice questions in related topics"
@@ -180,7 +180,7 @@
     "n-fk51a": {
       "name": "N-FK51A",
       "cond": "SCHOTT data sheet values (the measurement conditions are not stated on the sheet)",
-      "kw": "fluor crown anomalous dispersion apochromat"
+      "kw": "fluor crown anomalous partial dispersion apochromat"
     },
     "n-lak22": {
       "name": "N-LAK22",
