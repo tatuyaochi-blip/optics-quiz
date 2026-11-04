@@ -178,5 +178,50 @@
       "Signal und Idler sind beide ordentliche Strahlen mit gleicher Polarisation; die Photonen zweier gegenüberliegender Punkte auf einem Kegel lassen sich unmittelbar als polarisationsverschränktes Paar entnehmen"
     ],
     "explanation": "Bei der Phasenanpassung vom Typ II zerfällt eine außerordentliche Pumpe in ein ordentliches (o) und ein außerordentliches (e) Photon (e → o + e), daher sind die Polarisationen der Paarphotonen senkrecht zueinander. Da o- und e-Photon verschiedene Brechungsindizes haben, treten sie jeweils auf zwei Kegeln mit gegeneinander verschobenen Mitten aus; in den beiden Richtungen, in denen sich die Kegel schneiden, kann das Photon einer Richtung sowohl o als auch e sein. Der Paarzustand wird daher (|HV⟩ + e^(iφ)|VH⟩)/√2, und gleicht man Phase φ und Zeitversatz mit Kompensatorplatten ab, erhält man polarisationsverschränkte Photonenpaare. Gleiche Polarisation beider Photonen (o + o) ergibt Typ I; mit einem einzelnen Kristall vom Typ I erhält man Polarisationsverschränkung nicht unmittelbar und verwendet etwa zwei gestapelte Kristalle mit senkrecht zueinander stehenden optischen Achsen. Eine Kombination, in der alle drei dieselbe Polarisation haben, lässt sich mit doppelbrechender Phasenanpassung nicht erfüllen."
+  },
+  "quantum-optics-021": {
+    "question": "In einem nichtlinearen Kristall, der bei 405 nm gepumpt wird, entstehen durch spontane parametrische Fluoreszenz (SPDC) Photonenpaare. Welcher Wert kommt der Wellenlänge des anderen Photons (Idler) am nächsten, wenn das eine Photon (Signal) die Wellenlänge 780 nm hat?",
+    "choices": [
+      "ca. 842 nm",
+      "ca. 810 nm",
+      "ca. 375 nm"
+    ],
+    "explanation": "Bei der SPDC wird die Energie eines Pumpphotons auf zwei Photonen aufgeteilt, daher gilt ωp = ωs + ωi, also 1/λp = 1/λs + 1/λi. Aus 1/λi = 1/405 − 1/780 folgt λi = 405 × 780/(780 − 405) ≈ 842 nm. Der Wert ca. 810 nm gilt für den entarteten Fall, in dem beide Photonen dieselbe Wellenlänge (das Doppelte der Pumpwellenlänge) haben, und trifft bei einem Signal von 780 nm nicht zu. Der Wert ca. 375 nm subtrahiert die Wellenlängen direkt und übersieht, dass die Energie nicht in der Wellenlänge, sondern in der Frequenz (dem Kehrwert der Wellenlänge) erhalten bleibt. Welches Wellenlängenpaar entsteht, bestimmt die Phasenanpassungsbedingung; eingestellt wird es über Winkel oder Temperatur des Kristalls."
+  },
+  "quantum-optics-022": {
+    "question": "Das Licht einer Einzelphotonenquelle, deren in einer HBT-Anordnung gemessenes g⁽²⁾(0) vor der Abschwächung 0,1 beträgt, wird mit einem Filter mit 10 % Transmission abgeschwächt und in derselben Anordnung erneut gemessen. Welche Aussage über das gemessene g⁽²⁾(0) trifft zu, wenn Dunkelzählungen und Hintergrundlicht vernachlässigbar sind?",
+    "choices": [
+      "Durch das Ausdünnen treffen die Photonen zufällig ein, daher nähert es sich wie bei Laserlicht dem Wert 1",
+      "Die Einzelzählraten sinken auf 1/10, daher sinkt auch g⁽²⁾(0) auf 1/10, also auf 0,01",
+      "Einzelzählraten und Koinzidenzrate sinken im gleichen Verhältnis, daher bleibt g⁽²⁾(0) nahezu bei 0,1"
+    ],
+    "explanation": "g⁽²⁾(0) ist die Koinzidenzrate, normiert auf das Produkt der Zählraten der beiden Detektoren. Bei einer Abschwächung mit der Transmission η skaliert jede Einzelzählrate mit η und die Koinzidenzen zweier gemeinsam eintreffender Photonen mit η²; auch der Normierungsnenner skaliert mit η², daher bleibt das Verhältnis unverändert. Lineare Verluste entfernen Photonen zufällig und erhöhen oder verringern den Anteil der Ereignisse mit zwei oder mehr Photonen relativ zum Mittelwert nicht. g⁽²⁾(0) bleibt daher bei 0,1 und nähert sich weder 1, noch sinkt es auf 0,01. Im Gegensatz zu gequetschtem Licht, das sich durch Verluste verschlechtert, weil Vakuumfluktuationen beigemischt werden, lässt sich der Einzelphotonencharakter daher auch bei schwachem Licht nachweisen. Je weniger Zählereignisse es gibt, desto stärker fallen allerdings Dunkelzählungen ins Gewicht."
+  },
+  "quantum-optics-023": {
+    "question": "Bringt man einen Quantenpunkt in einen kleinen optischen Resonator (etwa eine Mikrosäule) und stimmt seine Emissionswellenlänge auf eine Resonatormode ab, verbessert sich seine Leistungsfähigkeit als Einzelphotonenquelle. Was ist der Hauptgrund dafür?",
+    "choices": [
+      "Während das Licht im Resonator hin- und herläuft, tritt stimulierte Emission auf, sodass eine Anregung zwei oder mehr phasengleiche Photonen gemeinsam in dieselbe Richtung aussendet und die Helligkeit steigt",
+      "Der Purcell-Effekt beschleunigt die spontane Emission in die Resonatormode, die Photonen gehen bevorzugt in diese Mode, lassen sich effizient in einer festgelegten Richtung auskoppeln, und die Lebensdauer wird kürzer",
+      "Die Rate der spontanen Emission wird allein durch das Material des Quantenpunkts bestimmt und vom Resonator nicht verändert, daher richtet der Resonator das Licht lediglich mit Spiegeln in eine Richtung aus"
+    ],
+    "explanation": "Die Rate der spontanen Emission hängt nicht nur vom Emitter selbst, sondern auch von der Dichte der elektromagnetischen Moden in seiner Umgebung ab. Stimmt man die Emissionswellenlänge auf eine Resonatormode mit hoher Güte und kleinem Volumen ab, steigt die Emissionsrate in diese Mode auf das Mehrfache bis einige Zehnfache der Rate im freien Raum (Purcell-Effekt, proportional zu Q/V). Der größte Teil der Photonen geht in diese Mode, daher lassen sie sich effizient als Strahl in einer festgelegten Richtung sammeln, und die kürzere Lebensdauer erlaubt hohe Wiederholraten. Eine Anregung liefert weiterhin nur ein Photon; würde stimulierte Emission die Photonen vermehren, wäre es keine Einzelphotonenquelle mehr. Der Resonator verändert die Emissionsrate selbst, daher ist die Aussage, er richte nur die Richtung aus, falsch."
+  },
+  "quantum-optics-024": {
+    "question": "Eine Phase wird mit einem Interferometer gemessen, das im Mittel N = 1×10⁶ Photonen verwendet. Die durch das Schrotrauschen unabhängiger Photonen bestimmte Grenze (Standardquantengrenze) sei Δφ ≈ 1/√N, die prinzipiell mit Verschränkung und Ähnlichem erreichbare Grenze (Heisenberg-Grenze) sei Δφ ≈ 1/N. Welche Kombination der beiden Grenzen trifft zu?",
+    "choices": [
+      "Standardquantengrenze 1×10⁻³ rad; Heisenberg-Grenze 1×10⁻⁶ rad",
+      "Standardquantengrenze 1×10⁻⁶ rad; Heisenberg-Grenze 1×10⁻³ rad",
+      "Beide 1×10⁻³ rad (nur durch die Photonenzahl bestimmt, unabhängig vom Quantenzustand des Lichts)"
+    ],
+    "explanation": "Bei unabhängigen Photonen schwankt die Zahl der Photonen, die sich auf die Ausgänge verteilen, gemäß der Poisson-Verteilung um √N, daher beträgt die Phasenunsicherheit Δφ ≈ 1/√N = 1/10³ = 1×10⁻³ rad. Mit verschränkten Zuständen und Ähnlichem lässt sie sich prinzipiell bis auf Δφ ≈ 1/N = 1×10⁻⁶ rad senken, also bei gleicher Photonenzahl 1000-mal feiner messen. Die Aussage mit vertauschten Werten verkennt, dass die Heisenberg-Grenze die strengere (kleinere) Grenze ist. Die Aussage, die Grenze hänge nicht vom Quantenzustand des Lichts ab, ist falsch; in Gravitationswellendetektoren wird tatsächlich gequetschtes Licht eingespeist, um das Rauschen unter die Standardquantengrenze zu senken. Bei Verlusten geht die Verbesserung durch den Quantenzustand allerdings rasch verloren."
+  },
+  "quantum-optics-025": {
+    "question": "Bei der Quantenteleportation werden das zu sendende Photon und ein Photon eines verschränkten Paares einer Bell-Messung mit rein linearer Optik aus Strahlteilern und Einzelphotonendetektoren unterzogen. Welche Kombination aus der Zahl der unterscheidbaren unter den vier Bell-Zuständen und der maximalen Erfolgswahrscheinlichkeit trifft ohne Hilfsphotonen oder nichtlineare Elemente zu?",
+    "choices": [
+      "Alle vier lassen sich unterscheiden; die Erfolgswahrscheinlichkeit beträgt höchstens 100 %",
+      "Nur einer lässt sich unterscheiden; die Erfolgswahrscheinlichkeit beträgt höchstens 25 %",
+      "Bis zu zwei lassen sich unterscheiden; die Erfolgswahrscheinlichkeit beträgt höchstens 50 %"
+    ],
+    "explanation": "Bei der Bell-Messung werden die beiden Photonen an einem Strahlteiler überlagert und zur Interferenz gebracht. Durch die Hong-Ou-Mandel-Interferenz verlassen die beiden Photonen nur im antisymmetrischen Zustand den Strahlteiler über verschiedene Ausgänge, sodass dieser Zustand erkannt wird; trennt man zusätzlich an den Ausgängen die Polarisation, lässt sich ein weiterer Bell-Zustand erkennen. Die übrigen beiden ergeben jedoch dasselbe Detektionsmuster und lassen sich nicht unterscheiden; für rein lineare Optik ist bewiesen, dass die Erfolgswahrscheinlichkeit höchstens 50 % beträgt. Nur einen Zustand mit 25 % zu unterscheiden, entspricht der einfachsten Anordnung, die nur den antisymmetrischen Zustand nachweist, und ist nicht der Höchstwert. Um alle vier zu unterscheiden, sind Hilfsphotonen oder ein nichtlinearer Prozess nötig, in dem die Photonen miteinander wechselwirken."
   }
 }

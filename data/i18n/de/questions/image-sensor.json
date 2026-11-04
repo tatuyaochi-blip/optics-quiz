@@ -178,5 +178,50 @@
       "ca. 2,4 Elektronen"
     ],
     "explanation": "Die Breite einer Stufe beträgt 20 000/4096 ≈ 4,9 Elektronen. Der Quantisierungsfehler lässt sich als gleichverteilt zwischen −0,5 und +0,5 Stufen betrachten; sein Effektivwert ist das 1/√12 ≈ 0,29-Fache der Stufenbreite, also 4,9 × 0,29 ≈ 1,4 Elektronen. Ca. 4,9 Elektronen ist die Stufenbreite selbst, ca. 2,4 Elektronen die halbe Breite; dabei werden der Höchstwert und der Effektivwert des Fehlers verwechselt. Beträgt das Ausleserauschen z. B. 3 Elektronen, steigt das Gesamtrauschen leicht auf √(3² + 1,4²) ≈ 3,3 Elektronen. Bei Sensoren mit kleinem Ausleserauschen unterdrückt man den Einfluss des Quantisierungsrauschens, indem man die Bitzahl erhöht oder dunkle Signale vor der Wandlung stark verstärkt."
+  },
+  "image-sensor-021": {
+    "question": "Um die Ungleichmäßigkeit des Dunkelstroms von Pixel zu Pixel (festes Muster) aus einer Langzeitbelichtung zu entfernen, wird ein Dunkelbild abgezogen, das bei gleicher Temperatur und Belichtungszeit aufgenommen wurde. Das zeitliche Rauschen des Lichtbilds sei σ, und jedes Dunkelbild habe ein davon unabhängiges Rauschen gleicher Größe σ. Welche Kombination aus dem Rauschen nach Abzug eines einzelnen Dunkelbilds und nach Abzug des Mittels aus 16 Dunkelbildern trifft zu?",
+    "choices": [
+      "Ein Bild: weiterhin σ; Mittel aus 16: ca. 0,25σ",
+      "Ein Bild: ca. 2σ; Mittel aus 16: ca. 1,06σ",
+      "Ein Bild: ca. 1,41σ; Mittel aus 16: ca. 1,03σ"
+    ],
+    "explanation": "Unabhängige Rauschanteile addieren sich in der Varianz. Zieht man ein Dunkelbild ab, beträgt die Varianz σ² + σ² = 2σ², und das Rauschen steigt auf √2σ ≈ 1,41σ. Das Mittel aus 16 Dunkelbildern hat das Rauschen σ/√16 = σ/4, daher beträgt das Rauschen nach dem Abzug √(σ² + σ²/16) ≈ 1,03σ. Die Annahme, das Rauschen bleibe σ, übersieht das Rauschen des abgezogenen Bildes und nimmt zudem fälschlich an, das Mitteln senke auch das Rauschen des Lichtbilds. Der Wert ca. 2σ addiert die Rauschamplituden statt der Varianzen (σ + σ), der Wert ca. 1,06σ nimmt an, dass das Mitteln das Rauschen auf 1/16 senkt, und addiert ebenfalls die Amplituden (σ + σ/16). Mittelt man viele Dunkelbilder, wird nur das feste Muster entfernt; in der Astrofotografie und bei Fluoreszenzaufnahmen nimmt man daher viele Dunkelbilder auf."
+  },
+  "image-sensor-022": {
+    "question": "Viele Pixel von CMOS-Bildsensoren besitzen eine vergrabene Photodiode (Pinned Photodiode), bei der auf der Oberflächenseite der Photodiode eine hoch dotierte p⁺-Schicht liegt, sowie ein Transfergate, das die Ladung zur Floating Diffusion überträgt (4-Transistor-Pixel). Welcher Vorteil dieser Struktur trifft zu?",
+    "choices": [
+      "Die p⁺-Schicht unterdrückt den Dunkelstrom aus Grenzflächenzuständen, und die Ladung wird vollständig übertragen, daher gibt es keine Nachbilder, und die korrelierte Doppelabtastung entfernt auch das Rücksetzrauschen",
+      "Das starke Feld in der p⁺-Schicht bewirkt eine Lawinenvervielfachung der Elektronen, sodass ein Photon viele Elektronen liefert und das auf Elektronen bezogene Ausleserauschen praktisch vernachlässigbar wird",
+      "Die Kapazität der Photodiode dient selbst als Kapazität der Floating Diffusion, daher steigt die Konversionsverstärkung bei großer Kapazität, und auch die Full-Well-Kapazität nimmt zu"
+    ],
+    "explanation": "An der Grenzfläche zwischen Silizium und Oxid gibt es viele Grenzflächenzustände; wo eine Raumladungszone sie berührt, entstehen thermisch Elektronen und Löcher als Dunkelstrom. Eine p⁺-Schicht an der Oberfläche hält die Raumladungszone von der Grenzfläche fern und füllt die Grenzflächenzustände mit Löchern, wodurch der Dunkelstrom stark sinkt. Außerdem ist der Potentialverlauf durch den Entwurf festgelegt, sodass beim Öffnen des Transfergates alle gesammelten Elektronen vollständig zur Floating Diffusion übergehen und kein Nachbild des vorherigen Bildes entsteht. Da der Rücksetzpegel vor der Ladungsübertragung gelesen werden kann, entfernt die korrelierte Doppelabtastung das kTC-Rauschen. Die p⁺-Schicht verursacht keine Lawinenvervielfachung. Das Konzept dieses Pixels besteht darin, Ladungsspeicherung und Ladungs-Spannungs-Wandlung zu trennen und die Kapazität der Floating Diffusion klein zu halten, um eine hohe Konversionsverstärkung zu erreichen."
+  },
+  "image-sensor-023": {
+    "question": "Welches Problem tritt bei einem CMOS-Bildsensor mit Global Shutter, der alle Pixel gleichzeitig belichtet, im Vergleich zu einem Sensor mit Rolling Shutter eher auf?",
+    "choices": [
+      "Alle Pixel werden gleichzeitig belichtet und mit parallelen Ausleseschaltungen auf einmal ausgelesen, daher wächst das Ausleserauschen proportional zur Wurzel der Pixelzahl",
+      "Jedes Pixel braucht einen Speicherknoten für seine Ladung, was lichtempfindliche Fläche und Full-Well-Kapazität meist verringert; in den Speicher dringendes Licht und Dunkelstrom verursachen Fehler",
+      "Der Belichtungszeitpunkt verschiebt sich von Zeile zu Zeile, daher werden schnell bewegte Motive schräg verzerrt, und flackernde Beleuchtung erzeugt horizontale helle und dunkle Streifen"
+    ],
+    "explanation": "Beim Global Shutter endet die Belichtung aller Pixel gleichzeitig, danach werden die Zeilen nacheinander ausgelesen. Um die Ladung (oder Spannung) in der Zwischenzeit zu halten, braucht jedes Pixel einen Speicherknoten, wodurch Photodiodenfläche und Full-Well-Kapazität meist kleiner werden. Dringt während der Wartezeit bis zum Auslesen Licht in den Speicherknoten ein, kommt zusätzliche Ladung zum Signal hinzu (parasitäre Lichtempfindlichkeit), und während der Haltezeit sammelt sich auch Dunkelstrom an. Ausgelesen wird zeilenweise, daher wächst das Ausleserauschen nicht mit der Wurzel der Pixelzahl. Verzerrungen und Streifen durch zeilenweise versetzte Belichtungszeitpunkte sind Merkmale des Rolling Shutter; der Global Shutter ist gerade das Verfahren, um sie zu vermeiden."
+  },
+  "image-sensor-024": {
+    "question": "Ein CCD mit einem Ausleserauschen von 50 e⁻ (Effektivwert) hat vor dem Ausleseverstärker eine Elektronenvervielfachungsstufe, die die Signalelektronen mit der Verstärkung G = 500 vermehrt (EMCCD). Welcher Wert kommt dem auf die Zahl der Signalelektronen vor der Vervielfachung umgerechneten Ausleserauschen am nächsten?",
+    "choices": [
+      "ca. 0,1 e⁻",
+      "ca. 2,2 e⁻",
+      "ca. 25000 e⁻"
+    ],
+    "explanation": "Die Vervielfachungsstufe liegt vor dem Ausleseverstärker, daher wird das Signal mit G multipliziert, das erst im Verstärker hinzukommende Ausleserauschen aber nicht. Auf die Eingangselektronen umgerechnet beträgt es 50/500 = 0,1 e⁻, sodass sich selbst ein Signal aus einem einzigen Photon vom Ausleserauschen unterscheiden lässt. Der Wert ca. 25000 e⁻ multipliziert auch das Rauschen mit der Verstärkung und rechnet damit in die falsche Richtung um. Der Wert ca. 2,2 e⁻ teilt durch die Wurzel der Verstärkung. Da die Vervielfachung jedoch statistisch erfolgt, beträgt der Zusatzrauschfaktor etwa √2, und unter hellen, schrotrauschbegrenzten Bedingungen verschlechtert sich das S/N so, als wäre die Quanteneffizienz halbiert. Vorteilhaft ist ein EMCCD nur unter sehr dunklen Bedingungen, in denen das Ausleserauschen dominiert."
+  },
+  "image-sensor-025": {
+    "question": "Welche Aussage über das Prinzip der doppelten Konversionsverstärkung (Dual Conversion Gain), bei der das Signal eines Pixels gleichzeitig mit hoher und mit niedriger Konversionsverstärkung ausgelesen und zu einem Bild kombiniert wird, trifft zu?",
+    "choices": [
+      "Durch zweimaliges Auslesen werden die Photonen doppelt gezählt, daher verbessert sich das schrotrauschbegrenzte S/N heller Bereiche um den Faktor √2",
+      "Eine niedrigere Konversionsverstärkung verringert die Zahl der verarbeitbaren Elektronen, daher werden dunkle Bereiche mit niedriger und helle Bereiche mit hoher Konversionsverstärkung ausgelesen",
+      "Dunkle Bereiche werden mit hoher Konversionsverstärkung (kleines Ausleserauschen in Elektronen), helle mit niedriger (viele Elektronen) ausgelesen; kombiniert erweitert das den Dynamikumfang"
+    ],
+    "explanation": "Eine kleinere Kapazität der Floating Diffusion ergibt eine größere Spannung je Elektron (höhere Konversionsverstärkung) und ein kleineres auf Elektronen bezogenes Ausleserauschen, doch im zulässigen Spannungshub finden weniger Elektronen Platz. Bei der doppelten Konversionsverstärkung wird die Kapazität umgeschaltet und dieselbe Ladung unter beiden Bedingungen gelesen; für dunkle Bereiche werden die Werte mit hoher, für helle Bereiche die mit niedriger Verstärkung kombiniert, sodass der Dynamikumfang an beiden Enden wächst. Da die Ladung derselben Belichtung gelesen wird, zeigen bewegte Motive weniger Versatz als bei Verfahren, die Bilder unterschiedlicher Belichtungszeit zusammensetzen. Zweimaliges Auslesen erhöht die Photonenzahl nicht, daher bleibt das Schrotrauschen unverändert. Niedrige Verstärkung für dunkle Bereiche zu verwenden, kehrt den Zusammenhang zwischen Verstärkung und Rauschen um."
   }
 }

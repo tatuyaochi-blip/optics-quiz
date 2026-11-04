@@ -178,5 +178,50 @@
       "Ein hoher Zusatz hochbrechender Schwermetalloxide verstärkt die atomaren Bindungen, sodass Wärmeschwingungen unterdrückt werden und die Ausdehnung nahezu null wird"
     ],
     "explanation": "Bei der Wärmebehandlung eines Glases auf Lithium-Alumosilicat-Basis scheiden sich feine Kristalle mit einer Struktur ähnlich der Hochtemperaturmodifikation des Quarzes aus. Diese Kristalle haben eine negative Ausdehnung, ziehen sich also bei Erwärmung zusammen; stimmt man ihren Volumenanteil auf die verbleibende Glasphase mit positiver Ausdehnung ab, lässt sich die Ausdehnung um Raumtemperatur nahezu auf null bringen. Sind die Kristalle deutlich kleiner als die Lichtwellenlänge, entstehen auch Werkstoffe, die sichtbares Licht gut durchlassen. Auch Quarzglas mit einigen Prozent TiO₂ ist ein Werkstoff mit geringer Ausdehnung. Ein amorpher Zustand allein beseitigt die Ausdehnung nicht; auch amorphes synthetisches Quarzglas dehnt sich mit ca. 0,55×10⁻⁶ /K aus. Bindungsverstärkende Zusätze allein bringen die Ausdehnung nicht auf null; eine nahezu verschwindende Ausdehnung erreicht man durch das Aufheben positiver und negativer Beiträge."
+  },
+  "optical-materials-021": {
+    "question": "Ein 10 mm dickes Fenster aus synthetischem Quarzglas (Brechungsindex n = 1,45, thermooptischer Koeffizient dn/dT = 1,0×10⁻⁵ /K, linearer Ausdehnungskoeffizient α = 0,55×10⁻⁶ /K) erwärmt sich um 10 K. Die Änderung der optischen Weglänge nL durch das Fenster sei Δ(nL) = L(dn/dT + nα)ΔT. Welcher Wert kommt ihr am nächsten?",
+    "choices": [
+      "ca. 0,08 µm",
+      "ca. 11 µm",
+      "ca. 1,1 µm"
+    ],
+    "explanation": "Mit dn/dT + nα = 1,0×10⁻⁵ + 1,45 × 0,55×10⁻⁶ ≈ 1,08×10⁻⁵ /K ergibt sich Δ(nL) = 10 mm × 1,08×10⁻⁵ × 10 ≈ 1,08×10⁻³ mm, also ca. 1,1 µm. Der Wert ca. 0,08 µm verwendet nur den Ausdehnungsterm nα und übersieht, dass bei synthetischem Quarzglas die Brechungsindexänderung mehr als das 10-Fache beiträgt. Der Wert ca. 11 µm beruht auf einem Fehler um eine Größenordnung bei der Umrechnung von mm in µm. 1,1 µm ist etwa das 1,7-Fache der Wellenlänge 633 nm; bei Interferometerfenstern und Bauelementen im Laserresonator werden Temperaturgradienten daher direkt zu Wellenfrontstörungen (thermische Linse). Auch bei synthetischem Quarzglas mit geringer Ausdehnung bestimmt der thermooptische Koeffizient die Stabilität der optischen Weglänge."
+  },
+  "optical-materials-022": {
+    "question": "Auch als aus Pulver gesinterte polykristalline Keramik lassen sich YAG (Y₃Al₅O₁₂) und Spinell (MgAl₂O₄) transparent herstellen, während gesintertes Aluminiumoxid (Al₂O₃) leicht milchig weiß aussieht. Was ist der Hauptgrund für diesen Unterschied?",
+    "choices": [
+      "YAG und Spinell sind kubisch und nicht doppelbrechend, Aluminiumoxid ist dagegen doppelbrechend, sodass sich der Brechungsindex an jeder Grenze zwischen unterschiedlich orientierten Körnern ändert und Licht gestreut wird",
+      "Aluminiumoxid hat eine kleine Bandlücke und absorbiert den kurzwelligen Teil des sichtbaren Lichts stark, daher wird das Licht in der Keramik geschwächt, und nur an der Oberfläche gestreutes Licht erscheint weiß",
+      "Beim Sintern verschmelzen die Körner von YAG und Spinell zu einem großen Einkristall ohne Korngrenzen, während Aluminiumoxid ein Polykristall aus kleinen Körnern bleibt"
+    ],
+    "explanation": "In einem Polykristall durchläuft Licht viele Grenzen zwischen regellos orientierten Körnern. Kubisches YAG und Spinell sind optisch isotrop und haben für jede Kornorientierung denselben Brechungsindex; sind Poren und Verunreinigungen beseitigt, streuen die Korngrenzen nicht, und die Keramik kann so klar wie Glas werden. Aluminiumoxid (derselbe Kristall wie Saphir) ist doppelbrechend (etwa 0,008), daher ändert sich der Brechungsindex an jeder Grenze zwischen unterschiedlich orientierten Körnern geringfügig, und die sich summierende Streuung macht es milchig. Die Bandlücke von Aluminiumoxid ist mit etwa 9 eV groß, und es absorbiert kein sichtbares Licht; das Weiß beruht also auf Streuung, nicht auf Absorption. Transparente Keramiken bleiben polykristallin und werden nicht zu Einkristallen."
+  },
+  "optical-materials-023": {
+    "question": "Wird optisches Glas lange ionisierender Strahlung (etwa Gammastrahlung) oder intensivem Ultraviolett ausgesetzt, kann es sich braun färben, und die Transmission am kurzwelligen Ende des sichtbaren Bereichs sinkt. Welche Kombination aus Ursache und Abhilfe trifft zu?",
+    "choices": [
+      "Organische Verschmutzungen auf der Oberfläche verbrennen durch die Strahlung zu einem Kohlenstofffilm; Nachpolieren und anschließendes Reinigen der Oberfläche stellt die Transmission vollständig wieder her",
+      "Durch die Strahlung erzeugte Elektronen und Löcher werden an Defekten im Glas eingefangen und bilden Farbzentren mit Absorptionsbanden; strahlungsresistentes, ceriumdotiertes Glas unterdrückt dies",
+      "Die Strahlung erhöht Dichte und Brechungsindex des Glases und damit den Reflexionsgrad der Oberfläche; eine dickere Antireflexschicht gleicht die zusätzliche Reflexion aus"
+    ],
+    "explanation": "Strahlung und Ultraviolett erzeugen im Glas Elektronen und Löcher. Werden sie an Defekten wie Sauerstofffehlstellen eingefangen, entstehen Farbzentren mit Absorptionsbanden im Sichtbaren und Ultravioletten; die Absorption nimmt von der kurzwelligen Seite her zu, und das Glas erscheint braun. In ceriumdotiertem Glas fangen Ce³⁺ und Ce⁴⁺ die Elektronen und Löcher zuerst ein und unterdrücken die Bildung von Farbzentren; solches Glas wird daher in Optiken für kerntechnische Anlagen und die Raumfahrt eingesetzt. Farbzentren entstehen im Inneren des Glases, daher beseitigt Nachpolieren sie nicht (durch Erwärmen verschwindet ein Teil). Eine Zunahme des Reflexionsgrads kann die Braunfärbung und die wellenlängenabhängige Absorption nicht erklären."
+  },
+  "optical-materials-024": {
+    "question": "Welche Aussage über spritzgegossene Kunststofflinsen etwa aus PMMA (Acrylglas) im Vergleich zu Linsen aus optischem Glas trifft zu?",
+    "choices": [
+      "Thermooptischer Koeffizient und Wärmeausdehnung sind kleiner als bei Glas, daher verschiebt sich der Fokus mit der Temperatur kaum, was sie für Optiken der Präzisionsmesstechnik geeignet macht",
+      "Spannungsdoppelbrechung durch das Formen tritt seltener auf als bei Glas, daher lassen sie sich ohne Weiteres in Polarisationsoptiken und Interferometern einsetzen",
+      "Asphären lassen sich günstig in Serie formen, doch der thermooptische Koeffizient ist 1 bis 2 Größenordnungen größer als bei Glas (negativ), die Ausdehnung ebenfalls groß; der Fokus verschiebt sich leicht mit der Temperatur"
+    ],
+    "explanation": "Kunststoff wird in eine Form gespritzt und verfestigt, daher lassen sich auch asphärische Linsen ohne Einzelpolitur kostengünstig in großen Stückzahlen herstellen; sie sind leicht und bruchfest und werden deshalb häufig in Mobilgeräten mit Kamera und in der Beleuchtung eingesetzt. Andererseits beträgt dn/dT von PMMA etwa −1×10⁻⁴ /K und ist damit um 1 bis 2 Größenordnungen größer als bei den meisten optischen Gläsern (etwa 10⁻⁶ /K), und der lineare Ausdehnungskoeffizient ist mit etwa 7×10⁻⁵ /K rund 10-mal so groß wie bei Glas; die Brennweite ändert sich daher leicht mit der Temperatur. Die Aussage, sie seien unempfindlich gegen Temperaturänderungen, kehrt das um. Durch die Fließorientierung des Kunststoffs beim Formen und ungleichmäßiges Abkühlen bleibt leicht Spannungsdoppelbrechung zurück, was bei Anwendungen mit Polarisation Vorsicht erfordert. Auch Wasseraufnahme kann Brechungsindex und Form verändern."
+  },
+  "optical-materials-025": {
+    "question": "Welche Kombination aus allgemeinem Trend und der Einordnung von lanthanoxidhaltigen Gläsern trifft zu, wenn optische Gläser in einem Diagramm mit Brechungsindex nd und Abbe-Zahl Vd als Achsen (Abbe-Diagramm) eingetragen werden?",
+    "choices": [
+      "Brechungsindex und Abbe-Zahl hängen nicht zusammen und streuen gleichmäßig über das Diagramm; lanthanoxidhaltige Gläser haben wie bleihaltige Flintgläser einen niedrigen Brechungsindex und eine hohe Dispersion und dienen als negatives Element von Achromaten",
+      "Gläser mit höherem Brechungsindex haben tendenziell eine höhere Dispersion (kleinere Abbe-Zahl), doch lanthanoxidhaltige Gläser haben bei gleicher Abbe-Zahl einen höheren Brechungsindex, was flachere Krümmungen und geringere Aberrationen ermöglicht",
+      "Gläser mit höherem Brechungsindex haben tendenziell eine größere Abbe-Zahl und geringere Dispersion; lanthanoxidhaltige Gläser senken den Brechungsindex, um die Abbe-Zahl weiter zu erhöhen, und dienen der Transmission im Ultravioletten"
+    ],
+    "explanation": "Der Brechungsindex wird durch die Absorptionsresonanzen im Ultravioletten bestimmt; Gläser, deren Resonanzen näher am Sichtbaren (bei längeren Wellenlängen) liegen, haben einen höheren Brechungsindex und zugleich eine stärkere Dispersion im Sichtbaren. Im Abbe-Diagramm liegen Gläser mit höherem Brechungsindex daher in einem Band, das zu kleineren Abbe-Zahlen verschoben ist (die horizontale Achse trägt üblicherweise größere Abbe-Zahlen links auf, sodass das Band nach rechts ansteigt). Gläser mit Zusätzen wie Lanthanoxid liegen außerhalb dieses Bandes in dem Bereich, in dem der Brechungsindex bei gleicher Abbe-Zahl höher ist. Ein höherer Brechungsindex liefert dieselbe Brechkraft mit flacherer Krümmung, was sphärische und andere Aberrationen verringert; diese Gläser werden daher häufig in Fotoobjektiven verwendet. Die Annahme, es gebe keinen Zusammenhang, oder ein höherer Brechungsindex gehe mit geringerer Dispersion einher, verkennt diesen Trend."
   }
 }
