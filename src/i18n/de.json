@@ -1116,5 +1116,8 @@
   "measure_conv_w_range": "G = {g} liegt außerhalb des Bereichs der Tabellen in E112 (00 bis 14). Die Umrechnung setzt lediglich die Formeln fort und ergibt keine Korngrößenkennzahl im Sinne der Norm.",
   "measure_gtab_n100": "n (je in² bei 100-facher Vergrößerung)",
   "measure_gtab_abar": "Ā (µm²)",
-  "measure_gtab_more": "Auch n und Ā wurden mit Tabelle 4 von E112 abgeglichen."
+  "measure_gtab_more": "Auch n und Ā wurden mit Tabelle 4 von E112 abgeglichen.",
+  "nav_rindex": "Brechungsindex-Datensammlung",
+  "home_feat_rindex_desc": "Brechungsindizes von {n} Materialien wie optischen Gläsern, Kristallen und Infrarotmaterialien mit den Dispersionsformeln der Originalquellen berechnen. Vergleich und CSV-Export",
+  "about_rindex": "Brechungsindizes von optischen Gläsern, Quarzglas, Kristallen, Infrarotmaterialien, Wasser und Luft, berechnet mit Dispersionsformeln, deren Koeffizienten anhand von Herstellerdatenblättern und Originalveröffentlichungen geprüft wurden. Nach Eingabe einer Wellenlänge erhalten Sie Brechungsindex, Gruppenindex, Gruppengeschwindigkeitsdispersion, Abbe-Zahl, Reflexionsgrad und Brewster-Winkel, können 2–4 Materialien nebeneinander vergleichen und die Werte als CSV mit Quellenangaben exportieren."
 }

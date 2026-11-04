@@ -1,0 +1,306 @@
+{
+  "title": "Brechungsindex-Datensammlung: Dispersionsformeln, Gruppenindex, GVD und Abbe-Zahl",
+  "description": "Brechungsindizes von 32 Materialien (optische Gläser, Quarzglas, Kristalle, Infrarotmaterialien, Wasser und Luft), berechnet mit den Koeffizienten der Sellmeier-Gleichung und anderer Formeln aus den Originalquellen. Nach Eingabe einer Wellenlänge erhalten Sie n, Gruppenindex, GVD, Dispersionsparameter D, Reflexionsgrad und Brewster-Winkel; Materialien lassen sich vergleichen und als CSV exportieren.",
+  "h1": "Brechungsindex-Datensammlung",
+  "lead": "Berechnen Sie den Brechungsindex von Linsen-, Fenster-, Faser- und Kristallmaterialien bei beliebiger Wellenlänge, vergleichen Sie zwei bis vier Materialien nebeneinander und exportieren Sie die Werte mit ihren Quellen als CSV. Alle Koeffizienten wurden anhand des Herstellerdatenblatts oder der Originalveröffentlichung geprüft; außerhalb des Gültigkeitsbereichs einer Formel wird nichts berechnet.",
+  "note": "Die Angaben sind typische Werte unter den Bedingungen der jeweiligen Quelle (Temperatur, Zusammensetzung, Bezugsmedium). Auch Materialien gleichen Namens unterscheiden sich je nach Schmelze, Kristallorientierung, Dünnschicht oder Volumenmaterial und Temperatur. Prüfen Sie vor der Verwendung in einer Auslegung die Quelle und die aktuellen Unterlagen des Herstellers.",
+  "sources_h": "Quellen",
+  "groups": {
+    "glass": "Optisches Glas (SCHOTT)",
+    "window": "Quarzglas und Kristalle",
+    "ir": "Infrarotmaterialien und Halbleiter",
+    "fluid": "Wasser und Luft"
+  },
+  "ui": {
+    "noscript": "Rechner, Diagramm, Vergleich und CSV benötigen JavaScript. Die Materialliste unten (Formel, Koeffizienten, Gültigkeitsbereich, Quelle, n_d und ν_d) lässt sich auch ohne JavaScript lesen.",
+    "toc": "Auf dieser Seite",
+    "calc_h": "Bei einer Wellenlänge berechnen",
+    "list_h": "Materialien ({n})",
+    "add": "Material hinzufügen (bis zu 4)",
+    "add_ph": "Material auswählen …",
+    "empty": "Wählen Sie ein Material, dann erscheinen hier seine Werte.",
+    "remove": "{name} entfernen",
+    "max": "Sie können bis zu {n} Materialien vergleichen. Entfernen Sie eines, bevor Sie ein weiteres hinzufügen.",
+    "lam": "Wellenlänge",
+    "unit": "Einheit",
+    "quick": "Häufig verwendete Wellenlängen",
+    "at": "Werte bei λ = {lam}",
+    "col_mat": "Material",
+    "col_ng": "Gruppenindex n_g",
+    "col_r": "Reflexionsgrad R",
+    "col_b": "Brewster-Winkel",
+    "col_ray": "Strahl",
+    "table_note": "n_g = n − λ dn/dλ. Die GVD ist β₂ = λ³/(2πc²)·d²n/dλ², D = −(λ/c)·d²n/dλ² (beides nur die Materialdispersion; die Wellenleiterdispersion in Fasern ist nicht enthalten). R ist der Reflexionsgrad bei senkrechtem Einfall an einer Grenzfläche zu Luft (n = 1), ((n − 1)/(n + 1))²; der Brewster-Winkel ist arctan n für Licht, das aus Luft einfällt. Die Ableitungen werden analytisch aus der Formel berechnet.",
+    "out": "Außerhalb des Gültigkeitsbereichs ({range}). Nicht berechnet",
+    "out_warn": "{list}: Diese Wellenlänge liegt außerhalb des Gültigkeitsbereichs der Formel, daher werden keine Werte berechnet. Wird eine Dispersionsformel über ihren Bereich hinaus verwendet, können die Werte stark abweichen.",
+    "tools_h": "Diesen Wert in einem Rechner verwenden",
+    "tool_arcoat_sub": "Antireflexschicht (Substrat: {name}, nₛ = {n})",
+    "tool_arcoat_film": "Antireflexschicht (Schicht: {name}, n₁ = {n})",
+    "tool_gauss": "Gauß-Strahl (Medium: {name}, n = {n})",
+    "chart_h": "Diagramm von n(λ) und Wellenlängentabelle",
+    "a": "Anfang (nm)",
+    "b": "Ende (nm)",
+    "s": "Schrittweite (nm)",
+    "chart_none": "Für keines der gewählten Materialien gilt die Formel in diesem Wellenlängenbereich. Ändern Sie Anfang und Ende.",
+    "chart_out": "Formel in diesem Bereich nicht gültig",
+    "chart_label": "Diagramm des Brechungsindex n über der Wellenlänge: {list}",
+    "axis_x_nm": "Wellenlänge λ (nm)",
+    "axis_x_um": "Wellenlänge λ (µm)",
+    "axis_y": "Brechungsindex n",
+    "csv_copy": "CSV kopieren",
+    "csv_save": "CSV speichern",
+    "share": "Link zu diesen Einstellungen kopieren",
+    "csv_note": "Die CSV-Datei enthält eine Tabelle von der Anfangs- bis zur Endwellenlänge in der gewählten Schrittweite für alle gewählten Materialien; Zeilen außerhalb des Gültigkeitsbereichs entfallen. Zahlen verwenden unabhängig von der Sprache immer den Dezimalpunkt „.“. Spalten: material, ray, wavelength_nm, wavelength_um, n, group_index, dn_dlambda_per_um, gvd_fs2_per_mm, D_ps_per_nm_km, source (Quelle). Der Link speichert die gewählten Materialien, die Wellenlänge, die Einheit und den Tabellenbereich und öffnet dieselbe Ansicht.",
+    "csv_many": "Zu viele Zeilen (höchstens 5000). Wählen Sie eine größere Schrittweite oder einen kleineren Bereich.",
+    "csv_none": "In diesem Bereich liegt keine Zeile im Gültigkeitsbereich einer Formel.",
+    "csv_copied": "CSV mit {n} Zeilen kopiert.",
+    "csv_saved": "CSV mit {n} Zeilen gespeichert.",
+    "link_copied": "Link kopiert.",
+    "ray_o": "ordentlicher Strahl o",
+    "ray_e": "außerordentlicher Strahl e",
+    "count": "{n} von {total} Materialien",
+    "search": "Material suchen",
+    "search_ph": "z. B. BK7, Quarzglas, CaF2, Lithiumniobat",
+    "groups": "Materialart",
+    "all": "Alle",
+    "none": "Kein passendes Material.",
+    "pick": "Auswählen",
+    "range": "Gültiger Wellenlängenbereich",
+    "form_note": "Die Formel in der Form der Originalquelle ist auf der Seite des Verlags nicht einsehbar; sie wird daher in der Form von refractiveindex.info angegeben. Die Koeffizienten wurden mit der Quelle abgeglichen, und die mit dieser Formel berechneten Werte stimmen mit den berechneten Werten in der Tabelle der Quelle überein.",
+    "abbe_none": "n_d und ν_d werden nicht angegeben, da der Gültigkeitsbereich der Formel den Bereich von der F- bis zur C-Linie (486–656 nm) nicht abdeckt.",
+    "sheet_short": "Datenblatt",
+    "src": "Quelle",
+    "data_from": "Messdaten, an die die Formel angepasst wurde",
+    "sheet": "Geprüftes Datenblatt",
+    "checked": "Geprüfte Seite der Originalquelle",
+    "rii": "Koeffizienten übernommen aus refractiveindex.info",
+    "sources_note": "Die Koeffizienten wurden aus der Datenbank von refractiveindex.info (CC0) übernommen und einzeln mit den oben genannten Originalquellen (Datenblätter der Hersteller und Verlagsseiten der Veröffentlichungen) verglichen. Materialien, die sich nicht anhand einer Originalquelle prüfen ließen, etwa kristalliner Quarz, BBO, Germanium, GaAs, PMMA und Polycarbonat, sind vorerst nicht enthalten.",
+    "terms_h": "Verwandte Begriffe",
+    "rel_cats": "Übungsfragen zu verwandten Themen"
+  },
+  "guide": [
+    {
+      "h": "Dispersionsformeln lesen",
+      "p": [
+        "Alle Formeln auf dieser Seite sind Anpassungen an Messdaten: Man setzt die Wellenlänge λ in µm ein und erhält den Brechungsindex n. Am häufigsten ist die Sellmeier-Gleichung n² − 1 = Σ Bᵢλ²/(λ² − Cᵢ); in ihr ändert sich n stark in der Nähe der Wellenlängen, bei denen λ² − Cᵢ = 0 wird, d. h. bei den Absorptionswellenlängen im Ultravioletten und Infraroten.",
+        "Dieselbe Sellmeier-Gleichung wird in den Quellen unterschiedlich geschrieben. Die SCHOTT-Datenblätter geben Cᵢ in µm² an (also λᵢ² selbst), die Veröffentlichungen von Malitson und Dodge dagegen λᵢ in µm, das in der Formel quadriert wird. Diese Seite gibt die Koeffizienten mit den Formelzeichen und Einheiten der jeweiligen Quelle an.",
+        "Die Koeffizienten sind an Messwerte in einem bestimmten Wellenlängenbereich angepasst. Außerhalb dieses Bereichs ist eine physikalische Bedeutung der Formel nicht gewährleistet; diese Seite berechnet dort daher nichts und zeigt stattdessen eine Warnung."
+      ]
+    },
+    {
+      "h": "n_d und ν_d (Abbe-Zahl)",
+      "p": [
+        "n_d ist der Brechungsindex bei der d-Linie des Heliums (587,5618 nm). Die Abbe-Zahl ν_d = (n_d − 1)/(n_F − n_C) gibt anhand der Brechungsindexdifferenz zwischen der F-Linie (486,1327 nm) und der C-Linie (656,2725 nm) des Wasserstoffs an, wie gering die Dispersion ist. Je größer ν_d, desto kleiner die Dispersion; optische Gläser mit ν_d über etwa 50 heißen Krongläser, die mit kleinerem ν_d Flintgläser.",
+        "In europäischen Normen werden auch n_e und ν_e verwendet, die auf der e-Linie des Quecksilbers (546,0740 nm) und der F′- und C′-Linie des Cadmiums (479,9914 nm und 643,8469 nm) beruhen. Diese Seite berechnet alle vier Werte aus der Formel und stellt die Werte aus dem Datenblatt daneben, wo es sie gibt. Bei den 18 SCHOTT-Gläsern stimmen n_d, ν_d, n_e und ν_e aus der Formel auf alle angegebenen Stellen mit den Datenblättern überein.",
+        "Ein Achromat kombiniert eine Sammellinse aus Kronglas mit großem ν_d und eine Zerstreuungslinse aus Flintglas mit kleinem ν_d, sodass F- und C-Linie im selben Brennpunkt liegen."
+      ]
+    },
+    {
+      "h": "Gruppenindex und Gruppengeschwindigkeitsdispersion",
+      "p": [
+        "Ein Puls oder Wellenpaket breitet sich mit der Gruppengeschwindigkeit c/n_g aus; der Gruppenindex ist n_g = n − λ dn/dλ. Im Bereich normaler Dispersion (n nimmt mit wachsender Wellenlänge ab) ist n_g größer als n: Für Quarzglas bei 1550 nm ist n = 1,4440 und n_g = 1,4626.",
+        "Die Gruppengeschwindigkeitsdispersion GVD β₂ = λ³/(2πc²)·d²n/dλ² beschreibt, wie stark die Ankunftszeiten der einzelnen Wellenlängen innerhalb eines Pulses auseinanderlaufen; für ultrakurze Pulse wird sie in fs²/mm angegeben. In der Glasfasertechnik gibt man dieselbe Größe als Dispersionsparameter D = −(λ/c)·d²n/dλ² in ps/(nm·km) an, mit umgekehrtem Vorzeichen. Die Materialdispersion von Quarzglas wird nach der Formel von Malitson bei etwa 1273 nm null; bei kürzeren Wellenlängen ist die GVD positiv (D negativ).",
+        "Dass die Nulldispersion einer Standard-Einmodenfaser bei etwa 1310 nm liegt, kommt daher, dass zur Materialdispersion die Wellenleiterdispersion hinzukommt. GVD und D auf dieser Seite gelten nur für das Material."
+      ]
+    },
+    {
+      "h": "Temperatur, Gültigkeitsbereich und weitere Bedingungen",
+      "p": [
+        "Der Brechungsindex ändert sich mit der Temperatur. Bei optischen Gläsern liegt dn/dT in der Größenordnung von 10⁻⁶ /K, bei Halbleitern wie Silizium jedoch etwa zwei Größenordnungen höher, sodass schon ein Unterschied von einigen zehn °C die dritte bis vierte Nachkommastelle ändert. Prüfen Sie die bei jedem Material angegebene Temperatur.",
+        "Ein Brechungsindex kann auf Luft (relativer Brechungsindex) oder auf Vakuum (absoluter Brechungsindex) bezogen sein. Der absolute Brechungsindex ist das Produkt aus dem relativen Brechungsindex und dem Brechungsindex der Luft; der Unterschied beträgt daher n × (n_air − 1), bei Glas (n ≈ 1,5) etwa 4×10⁻⁴. Ebenso kann die Wellenlänge je nach Quelle die Wellenlänge in Luft oder im Vakuum sein. Diese Unterschiede spielen eine Rolle, wenn Sie Werte ab der vierten Nachkommastelle vergleichen.",
+        "Aufgedampfte Schichten aus MgF₂ oder TiO₂ können sich in Dichte und Kristallzustand vom einkristallinen Volumenmaterial unterscheiden und daher auch einen anderen Brechungsindex haben. Für doppelbrechende Kristalle sind die Hauptbrechungsindizes des ordentlichen Strahls o und des außerordentlichen Strahls e angegeben. Läuft das Licht unter dem Winkel θ zur optischen Achse, folgt der Brechungsindex des außerordentlichen Strahls aus 1/n(θ)² = cos²θ/n_o² + sin²θ/n_e²."
+      ]
+    },
+    {
+      "h": "Hinweise zum Zitieren",
+      "p": [
+        "Wenn Sie einen Wert in einer Veröffentlichung oder einem Bericht verwenden, zitieren Sie nicht diese Seite, sondern die beim Material angegebene Originalquelle (die Veröffentlichung oder das Herstellerdatenblatt). Geben Sie Formel, Koeffizienten, Wellenlängenbereich und Temperatur mit an, damit andere den Wert nachrechnen können.",
+        "Die CSV-Datei hat eine Spalte mit der Quelle. Die Koeffizienten werden mit den Stellen der Originalquelle verwendet; die SCHOTT-Datenblätter drucken die Koeffizienten teils auf weniger Stellen gerundet, und diese Seite rechnet mit den Stellen der Katalogdatei des Herstellers (der Unterschied liegt in der siebten Nachkommastelle von n oder darunter)."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "Sind N-BK7 und BK7 dasselbe Glas?",
+      "Das „N-“ in den Glasnamen von SCHOTT kennzeichnet Gläser, deren Zusammensetzung ohne Blei und Arsen neu formuliert wurde. N-BK7 ist der Nachfolger von BK7 und hat n_d = 1,51680 und ν_d = 64,17. Werte für BK7 in älterer Literatur können in den letzten Nachkommastellen geringfügig abweichen."
+    ],
+    [
+      "Warum werden Wellenlängen außerhalb des Bereichs nicht berechnet?",
+      "Eine Dispersionsformel ist an Messwerte in einem bestimmten Bereich angepasst. Wird sie über diesen Bereich hinaus verwendet, können die Werte in der Nähe von Absorptionsbanden stark abweichen oder gar keine Bedeutung haben. Wenn Sie einen Wert außerhalb des Bereichs brauchen, suchen Sie eine Quelle, die diese Wellenlänge gemessen hat."
+    ],
+    [
+      "Wie viele Nachkommastellen sind verlässlich?",
+      "Das hängt von der Quelle ab. Die SCHOTT-Datenblätter geben n_d auf fünf Nachkommastellen an, und das Residuum der Anpassung steht meist in der Veröffentlichung; die Formel von Malitson für Quarzglas hat zum Beispiel ein mittleres Residuum von etwa 1×10⁻⁵. Angezeigt wird n mit fünf Nachkommastellen, doch Unterschiede in Temperatur, Zusammensetzung oder Schmelze sind oft größer."
+    ],
+    [
+      "Für welche Bedingungen gilt der Brechungsindex der Luft?",
+      "Für die Standardluft nach Ciddor: trockene Luft bei 15 °C, 101 325 Pa und 450 ppm CO₂, mit Vakuumwellenlängen. Für andere Temperaturen, Drücke oder Luftfeuchten muss der Wert nach dem Verfahren der Quelle neu berechnet werden."
+    ],
+    [
+      "Welchen Wert verwende ich bei einem Material mit o und e?",
+      "Das hängt von der Polarisation des Lichts und der Richtung der optischen Achse des Kristalls ab. Licht, das senkrecht zur optischen Achse polarisiert ist (ordentlicher Strahl), erfährt n_o; Licht, das im Hauptschnitt polarisiert ist, der Ebene aus optischer Achse und Ausbreitungsrichtung (außerordentlicher Strahl), erfährt einen Wert zwischen n_o und n_e, der von der Ausbreitungsrichtung abhängt. Im Diagramm ist e gestrichelt dargestellt."
+    ]
+  ],
+  "materials": {
+    "n-bk7": {
+      "name": "N-BK7",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Borkron Borosilikat-Kronglas Borosilikatglas"
+    },
+    "n-k5": {
+      "name": "N-K5",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Kron Kronglas"
+    },
+    "n-bak1": {
+      "name": "N-BAK1",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Baritkron Bariumkronglas"
+    },
+    "n-bak2": {
+      "name": "N-BAK2",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Baritkron Bariumkronglas"
+    },
+    "n-bak4": {
+      "name": "N-BAK4",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Baritkron Bariumkronglas Prisma"
+    },
+    "n-sk16": {
+      "name": "N-SK16",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerkron Schwerkronglas"
+    },
+    "n-fk5": {
+      "name": "N-FK5",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Fluorkron Fluorkronglas geringe Dispersion"
+    },
+    "n-fk51a": {
+      "name": "N-FK51A",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Fluorkron Fluorkronglas anomale Teildispersion Apochromat"
+    },
+    "n-lak22": {
+      "name": "N-LAK22",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Lanthankron Lanthankronglas"
+    },
+    "n-baf10": {
+      "name": "N-BAF10",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Baritflint Bariumflintglas"
+    },
+    "n-f2": {
+      "name": "N-F2",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Flint Flintglas bleifrei"
+    },
+    "f2": {
+      "name": "F2",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Flint Flintglas bleihaltig Blei"
+    },
+    "n-sf2": {
+      "name": "N-SF2",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerflint Schwerflintglas"
+    },
+    "n-sf5": {
+      "name": "N-SF5",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerflint Schwerflintglas"
+    },
+    "n-sf6": {
+      "name": "N-SF6",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerflint Schwerflintglas hochbrechend"
+    },
+    "n-sf10": {
+      "name": "N-SF10",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerflint Schwerflintglas"
+    },
+    "n-sf11": {
+      "name": "N-SF11",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Schwerflint Schwerflintglas hohe Dispersion"
+    },
+    "n-lasf9": {
+      "name": "N-LASF9",
+      "cond": "Werte aus dem SCHOTT-Datenblatt (Messbedingungen wie die Temperatur sind im Datenblatt nicht angegeben)",
+      "kw": "Lanthanschwerflint Lanthanschwerflintglas hochbrechend"
+    },
+    "fused-silica": {
+      "name": "Quarzglas (SiO₂-Glas)",
+      "cond": "20 °C",
+      "kw": "Kieselglas synthetisches Quarzglas"
+    },
+    "caf2": {
+      "name": "Calciumfluorid (CaF₂, Fluorit)",
+      "cond": "24 °C",
+      "kw": "Fluorit Flussspat Kalziumfluorid"
+    },
+    "caf2-duv": {
+      "name": "Calciumfluorid (CaF₂, tiefes UV bis nahes IR)",
+      "cond": "20 °C, gemessen in Stickstoff",
+      "kw": "Fluorit Flussspat Kalziumfluorid tiefes Ultraviolett DUV 193 nm Lithografie"
+    },
+    "baf2": {
+      "name": "Bariumfluorid (BaF₂)",
+      "cond": "25 °C",
+      "kw": ""
+    },
+    "mgf2": {
+      "name": "Magnesiumfluorid (MgF₂, Kristall)",
+      "cond": "19 °C, Einkristall (aufgedampfte Schichten können einen anderen Brechungsindex haben)",
+      "kw": "Einkristall doppelbrechend Antireflexschicht Entspiegelung"
+    },
+    "sapphire": {
+      "name": "Saphir (Al₂O₃, nur ordentlicher Strahl)",
+      "cond": "24 °C, synthetischer Saphir, ordentlicher Strahl (o)",
+      "kw": "Aluminiumoxid Korund Einkristall"
+    },
+    "linbo3": {
+      "name": "Lithiumniobat (LiNbO₃, kongruent)",
+      "cond": "Raumtemperatur, kongruente Zusammensetzung (ohne MgO-Dotierung)",
+      "kw": "LN CLN elektrooptisch nichtlinear doppelbrechend"
+    },
+    "yag": {
+      "name": "YAG (Y₃Al₅O₁₂, undotiert)",
+      "cond": "Raumtemperatur, undotiert",
+      "kw": "Yttrium-Aluminium-Granat Nd:YAG Wirtskristall"
+    },
+    "tio2": {
+      "name": "Titandioxid (TiO₂, Rutil-Einkristall)",
+      "cond": "Raumtemperatur, Rutil-Einkristall (TiO₂-Dünnschichten unterscheiden sich je nach Herstellungsverfahren stark)",
+      "kw": "Rutil hochbrechend doppelbrechend"
+    },
+    "znse": {
+      "name": "Zinkselenid (ZnSe, CVD)",
+      "cond": "CVD-Polykristall (Raytran); Temperatur in der Tabelle der Quelle nicht angegeben",
+      "kw": "Infrarot CO2-Laser Fenster"
+    },
+    "si": {
+      "name": "Silizium (Si, Infrarot)",
+      "cond": "26 °C, Einkristall",
+      "kw": "Infrarot Siliziumphotonik 1550"
+    },
+    "zns": {
+      "name": "Zinksulfid (ZnS, kubisch)",
+      "cond": "Raumtemperatur, kubisch",
+      "kw": "Cleartran Infrarot Fenster"
+    },
+    "water": {
+      "name": "Wasser (destilliert)",
+      "cond": "20,0 °C, bezogen auf Vakuum (absoluter Brechungsindex)",
+      "kw": "H2O reines Wasser Immersion"
+    },
+    "air": {
+      "name": "Luft (Standardluft)",
+      "cond": "Standardluft: trocken, 15 °C, 101 325 Pa, 450 ppm CO₂; Vakuumwellenlängen",
+      "kw": "Atmosphäre"
+    }
+  }
+}
