@@ -1,0 +1,306 @@
+{
+  "title": "Índices de refracción: recopilación de datos (fórmulas de dispersión, índice de grupo, GVD y número de Abbe)",
+  "description": "Índices de refracción de 32 materiales (vidrios ópticos, sílice fundida, cristales, materiales para infrarrojo, agua y aire) calculados con los coeficientes de la ecuación de Sellmeier y otras fórmulas de las fuentes originales. Introduzca una longitud de onda para obtener n, el índice de grupo, la GVD, el parámetro de dispersión D, la reflectancia y el ángulo de Brewster; compare materiales y exporte los valores en CSV.",
+  "h1": "Índices de refracción: recopilación de datos",
+  "lead": "Esta página calcula el índice de refracción de materiales para lentes, ventanas, fibras ópticas y cristales a cualquier longitud de onda, compara de dos a cuatro materiales en paralelo y exporta los valores en CSV con sus fuentes. Todos los coeficientes se han comprobado con la hoja de datos del fabricante o con el artículo original, y no se calcula nada fuera del rango de validez de cada fórmula.",
+  "note": "Los valores son representativos de las condiciones de cada fuente (temperatura, composición, medio de referencia). Un mismo material puede variar según el lote de fusión, la orientación del cristal, si se trata de una película delgada o de material masivo, y la temperatura. Antes de usar un valor en un diseño, compruebe la fuente y la documentación vigente del fabricante.",
+  "sources_h": "Fuentes",
+  "groups": {
+    "glass": "Vidrio óptico (SCHOTT)",
+    "window": "Sílice fundida y cristales",
+    "ir": "Materiales para infrarrojo y semiconductores",
+    "fluid": "Agua y aire"
+  },
+  "ui": {
+    "noscript": "El cálculo, la gráfica, la comparación y el CSV necesitan JavaScript. La lista de materiales de abajo (fórmula, coeficientes, rango, fuente, n_d y ν_d) puede leerse sin él.",
+    "toc": "En esta página",
+    "calc_h": "Calcular a una longitud de onda",
+    "list_h": "Materiales ({n})",
+    "add": "Añadir un material (hasta 4)",
+    "add_ph": "Elija un material…",
+    "empty": "Elija un material para ver aquí sus valores.",
+    "remove": "Quitar {name}",
+    "max": "Se pueden comparar hasta {n} materiales. Quite uno antes de añadir otro.",
+    "lam": "Longitud de onda",
+    "unit": "Unidad",
+    "quick": "Longitudes de onda frecuentes",
+    "at": "Valores a λ = {lam}",
+    "col_mat": "Material",
+    "col_ng": "Índice de grupo n_g",
+    "col_r": "Reflectancia R",
+    "col_b": "Ángulo de Brewster",
+    "col_ray": "Rayo",
+    "table_note": "n_g = n − λ dn/dλ. La GVD es β₂ = λ³/(2πc²)·d²n/dλ² y D = −(λ/c)·d²n/dλ² (ambas solo para la dispersión del material; no incluyen la dispersión de guía de onda de las fibras). R es la reflectancia con incidencia normal en una interfaz con el aire (n = 1), ((n − 1)/(n + 1))², y el ángulo de Brewster es arctan n para luz que llega desde el aire. Las derivadas se calculan analíticamente a partir de la fórmula.",
+    "out": "Fuera del rango de validez ({range}). No se calcula",
+    "out_warn": "{list}: esta longitud de onda está fuera del rango de validez de la fórmula, por lo que no se calcula ningún valor. Extrapolar una fórmula de dispersión fuera de su rango puede dar valores muy alejados de los reales.",
+    "tools_h": "Usar este valor en una calculadora",
+    "tool_arcoat_sub": "Recubrimiento antirreflectante (sustrato: {name}, nₛ = {n})",
+    "tool_arcoat_film": "Recubrimiento antirreflectante (capa: {name}, n₁ = {n})",
+    "tool_gauss": "Haz gaussiano (medio: {name}, n = {n})",
+    "chart_h": "Gráfica de n(λ) y tabla de longitudes de onda",
+    "a": "Inicio (nm)",
+    "b": "Fin (nm)",
+    "s": "Paso (nm)",
+    "chart_none": "Ninguno de los materiales elegidos tiene una fórmula válida en este rango de longitudes de onda. Cambie el inicio y el fin.",
+    "chart_out": "la fórmula no es válida en este rango",
+    "chart_label": "Gráfica del índice de refracción n frente a la longitud de onda: {list}",
+    "axis_x_nm": "Longitud de onda λ (nm)",
+    "axis_x_um": "Longitud de onda λ (µm)",
+    "axis_y": "Índice de refracción n",
+    "csv_copy": "Copiar CSV",
+    "csv_save": "Guardar CSV",
+    "share": "Copiar el enlace con estos ajustes",
+    "csv_note": "El CSV es una tabla desde la longitud de onda de inicio hasta la de fin con el paso indicado, para todos los materiales elegidos, sin las filas que quedan fuera del rango de validez. Los números usan siempre el punto como separador decimal, sea cual sea el idioma. Columnas: material, ray, wavelength_nm, wavelength_um, n, group_index, dn_dlambda_per_um, gvd_fs2_per_mm, D_ps_per_nm_km, source (fuente). El enlace guarda los materiales elegidos, la longitud de onda, la unidad y el rango de la tabla, y abre la misma vista.",
+    "csv_many": "Demasiadas filas (el límite es 5000). Use un paso mayor o un rango más estrecho.",
+    "csv_none": "En este rango no hay ninguna fila dentro del rango de validez de una fórmula.",
+    "csv_copied": "Se ha copiado un CSV de {n} filas.",
+    "csv_saved": "Se ha guardado un CSV de {n} filas.",
+    "link_copied": "Enlace copiado.",
+    "ray_o": "rayo ordinario o",
+    "ray_e": "rayo extraordinario e",
+    "count": "{n} de {total} materiales",
+    "search": "Buscar un material",
+    "search_ph": "p. ej., BK7, sílice fundida, CaF2, niobato de litio",
+    "groups": "Tipo de material",
+    "all": "Todos",
+    "none": "Ningún material coincide.",
+    "pick": "Elegir",
+    "range": "Longitudes de onda válidas",
+    "form_note": "No se pudo consultar la forma original de la fórmula en la página de la editorial, por lo que se muestra en la forma que usa refractiveindex.info. Se ha comprobado que los coeficientes coinciden con la fuente y que los valores calculados con esta fórmula coinciden con los de la tabla de la fuente.",
+    "abbe_none": "No se dan n_d ni ν_d porque el rango de validez de la fórmula no abarca de la línea F a la línea C (486–656 nm).",
+    "sheet_short": "hoja",
+    "src": "Fuente",
+    "data_from": "Datos medidos a los que se ajustó la fórmula",
+    "sheet": "Hoja de datos comprobada",
+    "checked": "Página de la fuente comprobada",
+    "rii": "Coeficientes importados de refractiveindex.info",
+    "sources_note": "Los coeficientes se importaron de la base de datos refractiveindex.info (CC0) y se compararon uno por uno con los de las fuentes indicadas arriba (hojas de datos de los fabricantes y páginas de las editoriales de los artículos). Por ahora no se incluyen los materiales que no pudieron comprobarse con una fuente, como el cuarzo cristalino, el BBO, el germanio, el GaAs, el PMMA y el policarbonato.",
+    "terms_h": "Términos relacionados",
+    "rel_cats": "Preguntas de los temas relacionados"
+  },
+  "guide": [
+    {
+      "h": "Cómo leer una fórmula de dispersión",
+      "p": [
+        "Todas las fórmulas de esta página toman la longitud de onda λ en µm y dan el índice de refracción n; son ajustes a datos medidos. La más habitual es la ecuación de Sellmeier n² − 1 = Σ Bᵢλ²/(λ² − Cᵢ), en la que n varía bruscamente cerca de las longitudes de onda donde λ² − Cᵢ = 0, que corresponden a las absorciones del ultravioleta y del infrarrojo.",
+        "Aunque se trate de la misma ecuación de Sellmeier, cada fuente escribe las constantes de forma distinta. Las hojas de datos de SCHOTT dan Cᵢ en µm² (es decir, λᵢ² directamente), mientras que los artículos de Malitson y de Dodge dan λᵢ en µm y lo elevan al cuadrado dentro de la fórmula. Esta página muestra los coeficientes con los símbolos y las unidades de cada fuente.",
+        "Los coeficientes se ajustan a datos medidos en un rango de longitudes de onda determinado. Fuera de ese rango la fórmula no tiene un significado físico garantizado, por lo que esta página no calcula allí y muestra un aviso."
+      ]
+    },
+    {
+      "h": "n_d y ν_d (número de Abbe)",
+      "p": [
+        "n_d es el índice en la línea d del helio (587,5618 nm). El número de Abbe ν_d = (n_d − 1)/(n_F − n_C) indica lo pequeña que es la dispersión a partir de la diferencia de índices entre la línea F (486,1327 nm) y la línea C (656,2725 nm) del hidrógeno. Cuanto mayor es ν_d, menor es la dispersión; los vidrios ópticos con ν_d mayor que unos 50 se llaman vidrios crown, y los de valor menor, vidrios flint.",
+        "Las normas europeas usan también n_e y ν_e, basados en la línea e del mercurio (546,0740 nm) y en las líneas F′ y C′ del cadmio (479,9914 nm y 643,8469 nm). Esta página calcula los cuatro valores a partir de la fórmula y, cuando existen, muestra al lado los de la hoja de datos. En los 18 vidrios de SCHOTT, los valores de n_d, ν_d, n_e y ν_e obtenidos con la fórmula coinciden con los de las hojas de datos en todas las cifras impresas.",
+        "Un doblete acromático combina una lente convergente de vidrio crown de ν_d alto con una lente divergente de vidrio flint de ν_d bajo, de modo que las líneas F y C se enfocan en el mismo punto."
+      ]
+    },
+    {
+      "h": "Índice de grupo y dispersión de la velocidad de grupo",
+      "p": [
+        "Un pulso o un paquete de ondas se propaga a la velocidad de grupo c/n_g, donde el índice de grupo es n_g = n − λ dn/dλ. En la región de dispersión normal (n disminuye al aumentar la longitud de onda), n_g es mayor que n: para la sílice fundida a 1550 nm, n = 1,4440 y n_g = 1,4626.",
+        "La dispersión de la velocidad de grupo, GVD β₂ = λ³/(2πc²)·d²n/dλ², mide cuánto se separan los tiempos de llegada de las distintas longitudes de onda dentro de un pulso, y para pulsos ultracortos se expresa en fs²/mm. En fibras ópticas, la misma propiedad se expresa con el parámetro de dispersión D = −(λ/c)·d²n/dλ², en ps/(nm·km), que tiene el signo contrario. La dispersión del material de la sílice fundida, según la fórmula de Malitson, se anula hacia los 1273 nm; a longitudes de onda más cortas la GVD es positiva (y D, negativo).",
+        "La fibra monomodo estándar de telecomunicaciones tiene su dispersión nula cerca de 1310 nm porque a la dispersión del material se suma la dispersión de guía de onda. La GVD y D de esta página corresponden solo al material."
+      ]
+    },
+    {
+      "h": "Temperatura, rango de validez y otras condiciones",
+      "p": [
+        "El índice de refracción cambia con la temperatura. En los vidrios ópticos dn/dT es del orden de 10⁻⁶ /K, pero en semiconductores como el silicio es unos dos órdenes de magnitud mayor, de modo que una diferencia de unas decenas de °C cambia la tercera o la cuarta cifra decimal. Compruebe la temperatura indicada para cada material.",
+        "El índice puede darse respecto al aire (índice relativo) o respecto al vacío (índice absoluto); el índice absoluto es el relativo multiplicado por el índice del aire, así que ambos difieren en n × (n_air − 1), unos 4×10⁻⁴ para un vidrio (n ≈ 1,5). Del mismo modo, la longitud de onda puede ser la longitud de onda en el aire o en el vacío, según la fuente. Estas diferencias importan cuando se comparan valores a partir de la cuarta cifra decimal.",
+        "Las películas evaporadas de MgF₂ o de TiO₂ pueden diferir en densidad y estructura cristalina de los monocristales masivos, por lo que también su índice puede ser distinto. Para los cristales birrefringentes se dan los índices principales del rayo ordinario o y del rayo extraordinario e. Cuando la luz se propaga formando un ángulo θ con el eje óptico, el índice del rayo extraordinario viene dado por 1/n(θ)² = cos²θ/n_o² + sin²θ/n_e²."
+      ]
+    },
+    {
+      "h": "Al citar un valor",
+      "p": [
+        "Si utiliza un valor en un artículo o en un informe, cite la fuente indicada para el material (el artículo o la hoja de datos del fabricante), no esta página. Indicar la fórmula, los coeficientes, el rango de longitudes de onda y la temperatura permite a los lectores reproducir el valor.",
+        "El CSV incluye una columna con la fuente. Los coeficientes se usan con las cifras de la fuente; las hojas de datos de SCHOTT a veces imprimen los coeficientes redondeados a menos cifras, y esta página calcula con las cifras del archivo de catálogo del fabricante (la diferencia aparece en la séptima cifra decimal de n o más allá)."
+      ]
+    }
+  ],
+  "faq": [
+    [
+      "¿Son N-BK7 y BK7 el mismo vidrio?",
+      "La «N-» en los nombres de los vidrios de SCHOTT indica vidrios reformulados sin plomo ni arsénico. N-BK7 sustituyó a BK7 y tiene n_d = 1,51680 y ν_d = 64,17. Los valores de BK7 de la bibliografía antigua pueden diferir ligeramente en las últimas cifras decimales."
+    ],
+    [
+      "¿Por qué no se calculan las longitudes de onda fuera del rango?",
+      "Una fórmula de dispersión se ajusta a datos medidos en un rango determinado. Si se extiende fuera de él, los valores pueden alejarse mucho cerca de las bandas de absorción o no tener ningún sentido. Si necesita un valor fuera del rango, busque una fuente que haya medido esa longitud de onda."
+    ],
+    [
+      "¿Cuántas cifras decimales son fiables?",
+      "Depende de la fuente. Las hojas de datos de SCHOTT dan n_d con cinco cifras decimales, y los artículos suelen indicar el residuo del ajuste; por ejemplo, la fórmula de Malitson para la sílice fundida tiene un residuo medio de alrededor de 1×10⁻⁵. Esta página muestra n con cinco cifras decimales, pero las diferencias de temperatura, de composición o de lote de fusión suelen ser mayores."
+    ],
+    [
+      "¿En qué condiciones se da el índice del aire?",
+      "Para el aire estándar de Ciddor: aire seco a 15 °C, 101 325 Pa y 450 ppm de CO₂, con longitudes de onda en el vacío. Para otras temperaturas, presiones o humedades, el valor debe recalcularse con el procedimiento de la fuente."
+    ],
+    [
+      "Si un material tiene valores para o y para e, ¿cuál debo usar?",
+      "Depende de la polarización de la luz y de la orientación del eje óptico del cristal. La luz polarizada perpendicularmente al eje óptico (rayo ordinario) ve n_o; la luz polarizada en la sección principal, el plano que contiene el eje óptico y la dirección de propagación (rayo extraordinario), ve un valor entre n_o y n_e que depende de la dirección de propagación. En la gráfica, e se dibuja con línea discontinua."
+    ]
+  ],
+  "materials": {
+    "n-bk7": {
+      "name": "N-BK7",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown borosilicato vidrio borosilicatado"
+    },
+    "n-k5": {
+      "name": "N-K5",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown vidrio crown"
+    },
+    "n-bak1": {
+      "name": "N-BAK1",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de bario"
+    },
+    "n-bak2": {
+      "name": "N-BAK2",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de bario"
+    },
+    "n-bak4": {
+      "name": "N-BAK4",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de bario prisma"
+    },
+    "n-sk16": {
+      "name": "N-SK16",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown denso"
+    },
+    "n-fk5": {
+      "name": "N-FK5",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de flúor baja dispersión"
+    },
+    "n-fk51a": {
+      "name": "N-FK51A",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de flúor dispersión parcial anómala apocromático"
+    },
+    "n-lak22": {
+      "name": "N-LAK22",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "crown de lantano"
+    },
+    "n-baf10": {
+      "name": "N-BAF10",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint de bario"
+    },
+    "n-f2": {
+      "name": "N-F2",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint vidrio flint sin plomo"
+    },
+    "f2": {
+      "name": "F2",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint vidrio flint con plomo"
+    },
+    "n-sf2": {
+      "name": "N-SF2",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf5": {
+      "name": "N-SF5",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf6": {
+      "name": "N-SF6",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso alto índice"
+    },
+    "n-sf10": {
+      "name": "N-SF10",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso"
+    },
+    "n-sf11": {
+      "name": "N-SF11",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso alta dispersión"
+    },
+    "n-lasf9": {
+      "name": "N-LASF9",
+      "cond": "Valores de la hoja de datos de SCHOTT (la hoja no indica las condiciones de medida, como la temperatura)",
+      "kw": "flint denso de lantano alto índice"
+    },
+    "fused-silica": {
+      "name": "Sílice fundida (vidrio de SiO₂)",
+      "cond": "20 °C",
+      "kw": "cuarzo fundido vidrio de sílice sílice sintética"
+    },
+    "caf2": {
+      "name": "Fluoruro de calcio (CaF₂, fluorita)",
+      "cond": "24 °C",
+      "kw": "fluorita"
+    },
+    "caf2-duv": {
+      "name": "Fluoruro de calcio (CaF₂, del UV profundo al IR cercano)",
+      "cond": "20 °C, medido en nitrógeno",
+      "kw": "fluorita ultravioleta profundo DUV 193 nm litografía"
+    },
+    "baf2": {
+      "name": "Fluoruro de bario (BaF₂)",
+      "cond": "25 °C",
+      "kw": ""
+    },
+    "mgf2": {
+      "name": "Fluoruro de magnesio (MgF₂, cristal)",
+      "cond": "19 °C, monocristal (las películas evaporadas pueden tener otro índice)",
+      "kw": "monocristal birrefringente recubrimiento antirreflectante"
+    },
+    "sapphire": {
+      "name": "Zafiro (Al₂O₃, solo rayo ordinario)",
+      "cond": "24 °C, zafiro sintético, rayo ordinario (o)",
+      "kw": "alúmina monocristal corindón"
+    },
+    "linbo3": {
+      "name": "Niobato de litio (LiNbO₃, congruente)",
+      "cond": "Temperatura ambiente, composición congruente (sin dopaje de MgO)",
+      "kw": "LN CLN electroóptico no lineal birrefringente"
+    },
+    "yag": {
+      "name": "YAG (Y₃Al₅O₁₂, sin dopar)",
+      "cond": "Temperatura ambiente, sin dopar",
+      "kw": "granate de itrio y aluminio Nd:YAG matriz"
+    },
+    "tio2": {
+      "name": "Dióxido de titanio (TiO₂, monocristal de rutilo)",
+      "cond": "Temperatura ambiente, monocristal de rutilo (las películas de TiO₂ varían mucho según el proceso)",
+      "kw": "rutilo alto índice birrefringente"
+    },
+    "znse": {
+      "name": "Seleniuro de zinc (ZnSe, CVD)",
+      "cond": "Policristal CVD (Raytran); la tabla de la fuente no indica la temperatura",
+      "kw": "seleniuro de cinc infrarrojo láser de CO2 ventana"
+    },
+    "si": {
+      "name": "Silicio (Si, infrarrojo)",
+      "cond": "26 °C, monocristal",
+      "kw": "infrarrojo fotónica de silicio 1550"
+    },
+    "zns": {
+      "name": "Sulfuro de zinc (ZnS, cúbico)",
+      "cond": "Temperatura ambiente, cúbico",
+      "kw": "sulfuro de cinc Cleartran infrarrojo ventana"
+    },
+    "water": {
+      "name": "Agua (destilada)",
+      "cond": "20,0 °C, respecto al vacío (índice absoluto)",
+      "kw": "H2O agua pura inmersión"
+    },
+    "air": {
+      "name": "Aire (aire estándar)",
+      "cond": "Aire estándar: seco, 15 °C, 101 325 Pa, 450 ppm de CO₂; longitudes de onda en el vacío",
+      "kw": "atmósfera"
+    }
+  }
+}
