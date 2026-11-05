@@ -2391,7 +2391,7 @@
  "reading": "こうそく",
  "desc": "光源から出る、または面を通る光の量を、比視感度で重みづけして表した測光量。単位はルーメン(lm)。放射量では放射束(W)に対応する。",
  "cat": "photometry-color",
- "noLinkIn": ["optical-design", "spectroscopy", "wave"],
+ "noLinkIn": ["geometric", "optical-design", "spectroscopy", "wave"],
  "about": [
   {
    "h": "目の感度で重みづけした光の量",
@@ -2431,6 +2431,7 @@
  "reading": "こうど",
  "desc": "点光源がある方向に出す、単位立体角あたりの光束。単位はカンデラ(cd = lm/sr)。全方向に一様な光源なら全光束を4πで割った値。",
  "cat": "photometry-color",
+ "noLinkIn": ["microscopy", "polarization", "spectroscopy", "wave"],
  "about": [
   {
    "h": "ある方向への光の強さ",
